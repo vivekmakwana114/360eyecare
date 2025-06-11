@@ -16,46 +16,76 @@ import {
 } from 'react-share';
 import RecentPosts from "../../../components/blog/RecentPosts";
 import SearchSuggestion from "../../../components/SearchSuggestion";
+import { useRouter } from "next/navigation";
+
+
 
 const page = () => {
   const { slug } = useParams();
   const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [shareUrl, setShareUrl] = useState('');
+  const [error, setError] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     // Set the share URL when component mounts
     if (typeof window !== 'undefined') {
-      setShareUrl(`${window.location.origin}/blog/${slug}`);
+      setShareUrl(`${window.location.origin}/${slug}`);
     }
   }, [slug]);
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchPost = async () => {
-        setIsLoading(true);
-        try {
-          const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/posts?slug=${slug}`
-          );
-          if (!res.ok) {
-            throw new Error("Failed to fetch post");
-          }
-          const data = await res.json();
-          console.log(data[0]);
-          setData(data[0]);
-        } catch (err) {
-          console.error("Error fetching post:", err);
-        } finally {
+      if (!slug) {
+        router.push('/not-found');
+        return;
+      }
+
+      setIsLoading(true);
+      setError(null);
+      
+      try {
+        const baseUrl = process.env.NEXT_PUBLIC_BLOG_BASE_URL || '';
+        const apiUrl = `${baseUrl}/posts?slug=${encodeURIComponent(slug)}`;
+        
+        const res = await fetch(apiUrl);
+        
+        if (!res.ok) {
+          throw new Error(`Failed to fetch post: ${res.status} ${res.statusText}`);
+        }
+        
+        const postData = await res.json();
+        
+        if (!isMounted) return;
+        
+        if (!postData || postData.length === 0) {
+          throw new Error('Post not found');
+        }
+        
+        setData(postData[0]);
+      } catch (err) {
+        console.error("Error fetching post:", err);
+        if (isMounted) {
+          setError(err.message);
+          router.push('/not-found');
+        }
+      } finally {
+        if (isMounted) {
           setIsLoading(false);
         }
+      }
     };
 
     fetchPost();
 
     return () => {
-      setData([]);
+      isMounted = false;
+      setData(null);
     };
-  }, [slug]);
+  }, []);
 
   // Share data
   const shareTitle = data?.title?.rendered || 'Check out this article';
@@ -63,10 +93,43 @@ const page = () => {
   const shareImage = data?.yoast_head_json?.og_image?.[0]?.url || '';
 
   return (
-    <main className="pt-[110px] h-auto">
+    <main className="pt-[110px] min-h-screen">
         {isLoading ? (
-            <div className="flex items-center justify-center min-h-screen bg-white">
-            <div className="w-24 h-24 border-8 border-combination-100 border-t-transparent rounded-full animate-spin"></div>
+          <div className="flex flex-col items-center justify-center min-h-[60vh] py-12">
+            <div className="w-16 h-16 border-4 border-combination-100 border-t-transparent rounded-full animate-spin mb-4"></div>
+            <p className="text-gray-600">Loading post...</p>
+          </div>
+        ) : error ? (
+          <div className="flex flex-col items-center justify-center min-h-[60vh] py-12 text-center px-4">
+            <div className="w-20 h-20 rounded-full bg-red-100 flex items-center justify-center mb-4">
+              <svg className="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-800 mb-2">Something went wrong</h2>
+            <p className="text-gray-600 mb-6">We couldn't load the post. Please try again later.</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="px-6 py-2 bg-combination-100 text-white rounded-md hover:bg-combination-200 transition-colors"
+            >
+              Retry
+            </button>
+          </div>
+        ) : !data ? (
+          <div className="flex flex-col items-center justify-center min-h-[60vh] py-12">
+            <div className="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+              <svg className="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">No post found</h2>
+            <p className="text-gray-600 mb-6">The post you're looking for doesn't exist or has been removed.</p>
+            <Link 
+              href="/blog" 
+              className="px-6 py-2 bg-combination-100 text-white rounded-md hover:bg-combination-200 transition-colors"
+            >
+              Back to Blog
+            </Link>
           </div>
         ) : (
         

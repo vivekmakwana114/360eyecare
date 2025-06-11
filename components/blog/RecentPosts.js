@@ -69,7 +69,7 @@ const RecentPosts = () => {
                   {post.excerpt.rendered.slice(3, 105)}....
                 </p>
                                                 
-                <Link href={`/blog/${post.slug}`}>
+                <Link href={`${post.slug}`}>
                   <div className="flex flex-row gap-2 items-center hover:opacity-80 transition-opacity">
                     <p className="text-[#41BBC8] font-medium text-[16px]">Read More</p>
                     <Image src="/Icons/circleblue.svg" alt="Read More" className="w-[24px] h-[24px]" width={24} height={24}/>
