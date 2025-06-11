@@ -1,19 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    domains: ['www.360eyecare.ca', '360eyecare.snag-zilla.com'],
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080],
     imageSizes: [16, 32, 48, 64, 96],
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: false,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "360eyecare.ca",
-        port: "",
-        pathname: "/images/**",
-      },
-    ],
   },
   experimental: {
     optimizeCss: true,
