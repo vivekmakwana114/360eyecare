@@ -129,7 +129,7 @@ const ReviewsCarousel = ({ title ,data}) => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 px-6 lg:px-4 relative">
+    <div className="w-full max-w-7xl mx-auto p-4 px-6 lg:px-4 relative my-12">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-combination-200 mb-4 md:mb-6 text-center md:text-left">
   {title}
       </h1>
