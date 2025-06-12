@@ -129,7 +129,7 @@ const ReviewsCarousel = ({ title ,data}) => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4 px-6 lg:px-4 relative my-12">
+    <div className="w-full max-w-7xl mx-auto p-4 px-0 md:px-6 lg:px-4 relative my-12">
       <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-combination-200 mb-4 md:mb-6 text-center md:text-left">
   {title}
       </h1>
@@ -137,7 +137,7 @@ const ReviewsCarousel = ({ title ,data}) => {
 
       {/* Left arrow - visible on both mobile and desktop */}
       <button
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hover:bg-gray-50 transition-colors"
+        className="absolute md:left-8 left-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hover:bg-gray-50 transition-colors"
         onClick={handlePrev}
         aria-label="Previous reviews"
       >
@@ -145,17 +145,18 @@ const ReviewsCarousel = ({ title ,data}) => {
       </button>
 
       {/* Reviews carousel */}
-      <div className="flex flex-col md:flex-row gap-4 lg:gap-6">
+      <div className="flex flex-col md:flex-row gap-4 lg:gap-6 max-w-[1120px] mx-auto px-5">
         {visibleReviews.map((review, idx) => (
           <div
             key={`${currentIndex}-${idx}`}
-            className="flex-1 bg-white rounded-lg shadow-md p-6 min-h-[320px] lg:min-h-[550px] flex flex-col justify-between border border-gray-300"
+            className="flex-1 bg-white rounded-[24px] p-6 min-h-[450px] lg:min-h-[550px] flex flex-col justify-between border border-gray-300"
           >
             <div>
               <div className="flex justify-center mb-4">
                 {renderStars(review.stars)}
               </div>
-              <p className="text-center text-gray-600 mb-6 flex-grow leading-relaxed">{review.reviewDescription}</p>
+              <p className="text-center text-gray-600 mb-6 flex-grow leading-relaxed hidden md:block">{review.reviewDescription.length > 345 ? review.reviewDescription.slice(0, 345) + "...." : review.reviewDescription}</p>
+              <p className="text-center text-gray-600 mb-6 flex-grow leading-relaxed block md:hidden">{review.reviewDescription.length > 208 ? review.reviewDescription.slice(0, 208) + "...." : review.reviewDescription}</p>
             </div>
 
             <div className="flex flex-col items-center">
@@ -177,10 +178,10 @@ const ReviewsCarousel = ({ title ,data}) => {
                 </div>
               )}
 
-              <span className="font-medium text-gray-700">
+              <span className="font-medium text-gray-700 mb-4 ">
                 {review.reviewName}
               </span>
-              <p className="text-gray-500 text-sm mb-4">{review.reviewDate}</p>
+              {/* <p className="text-gray-500 text-sm mb-4">{review.reviewDate}</p> */}
 
 
 <div className="flex flex-row gap-4 items-center">
@@ -227,7 +228,7 @@ const ReviewsCarousel = ({ title ,data}) => {
 
       {/* Right arrow - visible on both mobile and desktop */}
       <button
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hover:bg-gray-50 transition-colors"
+        className="absolute md:right-8 right-2 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md z-10 hover:bg-gray-50 transition-colors"
         onClick={handleNext}
         aria-label="Next reviews"
       >
