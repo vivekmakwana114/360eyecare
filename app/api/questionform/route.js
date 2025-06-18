@@ -56,7 +56,7 @@ export async function POST(req) {
     const mailOptions = {
       from: email,
       replyTo: email,
-      to: process.env.EMAIL_TO,
+      to: process.env.NEXT_FOR_BEACHES_LOCATION,
       subject: "New Contact Form Submission",
       text: `
         Name: ${fullName}

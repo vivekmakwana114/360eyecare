@@ -1,4 +1,5 @@
 "use client";
+import Footer from "components/Footer";
 import { useEffect } from "react";
 
 const Page = () => {
@@ -11,14 +12,17 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="w-full h-screen overflow-hidden">
-      <iframe
-        src="https://www.360eyecare.ca/shop/"
-        className="w-full h-full border-0"
-        title="360 Eyecare Shop"
-        scrolling="yes"
-      />
-    </div>
+    <>
+      <div className="w-full h-screen overflow-hidden">
+        <iframe
+          src="https://360eyecare.ottooptics.io/reorder/"
+          className="w-full h-full border-0"
+          title="360 Eyecare Shop"
+          scrolling="yes"
+        />
+        <Footer />
+      </div>
+    </>
   );
 };
 

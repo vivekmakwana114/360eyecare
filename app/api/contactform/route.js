@@ -47,6 +47,22 @@ export async function POST(req) {
       );
     }
 
+    // Determine recipient email based on location
+    let recipientEmail = process.env.NEXT_PUBLIC_EMAIL_TO;
+
+    if (location) {
+      if (location.toLowerCase().includes("beaches")) {
+        recipientEmail = process.env.NEXT_FOR_BEACHES_LOCATION;
+      } else if (location.toLowerCase().includes("rosedale")) {
+        recipientEmail = process.env.NEXT_FOR_YORKVILLE_LOCATION;
+      }
+    }
+
+    // Fallback to default if location-specific email is not configured
+    if (!recipientEmail) {
+      recipientEmail = process.env.NEXT_PUBLIC_EMAIL_TO;
+    }
+
     // Create a transporter
     const transporter = nodemailer.createTransport({
       host: process.env.EMAIL_SERVER_HOST,
@@ -62,7 +78,7 @@ export async function POST(req) {
     const mailOptions = {
       from: email,
       replyTo: email,
-      to: process.env.EMAIL_TO,
+      to: recipientEmail,
       subject: "New Contact Form Submission",
       text: `
         Name: ${name}
@@ -88,7 +104,6 @@ export async function POST(req) {
       `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
     // Return success
@@ -97,7 +112,6 @@ export async function POST(req) {
       message: "Email sent successfully",
     });
   } catch (error) {
-    // console.error("Error sending email:", error);
     return Response.json({ error: "Failed to send email" }, { status: 500 });
   }
 }

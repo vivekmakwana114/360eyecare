@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { BeachImage, YorkVilleRosedale } from "../constants/Images";
-import HappyClientBeaches from "./HappyClientBeaches";
-import HappyClientYorkVilla from "./HappyClientYorkVilla";
+
 import Link from "next/link";
+import ReviewsCarousel from "./ReviewsCarousel";
+import mockBeachesReviews from "../constants/beachesReviews.json";
+import mockRosedaleReviews from "../constants/rosedaleReviews.json";
 
 const NearYou = () => {
   return (
@@ -74,8 +76,8 @@ const NearYou = () => {
         </div>
       </div>
 
-      <HappyClientBeaches />
-      <HappyClientYorkVilla />
+      <ReviewsCarousel title="Happy Clients of The Beaches!" data={mockBeachesReviews} />
+      <ReviewsCarousel title="Happy Clients of Yorkville Rosedale!" data={mockRosedaleReviews} />
     </div>
   );
 };

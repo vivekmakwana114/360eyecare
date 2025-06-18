@@ -119,7 +119,7 @@ const NavBar = () => {
     },
     {
       name: "Blog",
-      link: "https://www.360eyecare.ca/blog/",
+      link: "/blog",
       dropdown: null,
     },
     {
