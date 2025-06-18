@@ -27,12 +27,12 @@ const BlogsPage = () => {
         }
         const data = await res.json();
         const totalPages = parseInt(res.headers.get('X-WP-TotalPages') || '1');
-        console.log(data);
+        // console.log(data);
         setPosts(data);
         setHasMore(currentPage < totalPages);
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching posts:', err);
+        // console.error('Error fetching posts:', err);
       } finally {
         setIsLoading(false);
       }
@@ -60,7 +60,7 @@ const BlogsPage = () => {
       setHasMore(nextPage < totalPages);
     } catch (err) {
       setError(err.message);
-      console.error('Error fetching more posts:', err);
+      // console.error('Error fetching more posts:', err);
     } finally {
       setIsLoadingMore(false);
     }

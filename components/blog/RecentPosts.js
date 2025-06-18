@@ -21,7 +21,7 @@ const RecentPosts = () => {
             const data = await res.json();
             setPosts(data);
           } catch (err) {
-            console.error('Error fetching posts:', err);
+            // console.error('Error fetching posts:', err);
           }
         };
     

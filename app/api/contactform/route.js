@@ -14,7 +14,6 @@ export async function POST(req) {
       location,
       recaptchaToken,
     } = body;
-
     // Validate required fields
     if (!name || !email || !phone) {
       return Response.json(
@@ -33,7 +32,7 @@ export async function POST(req) {
 
     // Verify reCAPTCHA token with Google
     const recaptchaResponse = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
       { method: "POST" }
     );
 
@@ -65,12 +64,12 @@ export async function POST(req) {
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_SERVER_HOST,
-      port: process.env.EMAIL_SERVER_PORT,
-      secure: process.env.EMAIL_SERVER_SECURE === "true", // true for 465, false for other ports
+      host: process.env.NEXT_PUBLIC_EMAIL_SERVER_HOST,
+      port: process.env.NEXT_PUBLIC_EMAIL_SERVER_PORT,
+      secure: process.env.NEXT_PUBLIC_EMAIL_SERVER_SECURE === "true", // true for 465, false for other ports
       auth: {
-        user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASSWORD,
+        user: process.env.NEXT_PUBLIC_EMAIL_SERVER_USER,
+        pass: process.env.NEXT_PUBLIC_EMAIL_SERVER_PASSWORD,
       },
     });
 
