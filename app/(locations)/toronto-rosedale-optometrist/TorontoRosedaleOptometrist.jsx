@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import MeetOurFounder from "components/MeetOurFounder";
 import Banner3 from "../../../components/Banner3";
 import BeforeAppointmentRosedale from "../../../components/BeforeAppointmentRosedale";
+import mockRosedaleReviews from "../../../constants/rosedaleReviews.json";
+
 import {
   Rosedalechoose360eyeCareData,
   RosedaleeyeCareServiceData,
@@ -14,6 +16,8 @@ import {
 } from "constants/Constants";
 import EyeCareServices from "components/EyeCareServices";
 import DryFaqs from "components/DryFaqs";
+import ReviewsCarousel from "../../../components/ReviewsCarousel";
+
 const TorontoRosedaleOptometrist = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -114,6 +118,11 @@ const TorontoRosedaleOptometrist = () => {
         <Banner3 />
       </div>
       <BeforeAppointmentRosedale />
+
+      <ReviewsCarousel
+        title="Happy Clients of Yorkville Rosedale!"
+        data={mockRosedaleReviews}
+      />
 
       <DryFaqs
         faqData={RosedaleFaqData}

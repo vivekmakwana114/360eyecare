@@ -7,12 +7,15 @@ import { useState, useEffect } from "react";
 import MeetOurFounder from "../../../components/MeetOurFounder";
 import EyeCareServices from "../../../components/EyeCareServices";
 import BeforeYourAppoinment from "../../../components/BeforeYourAppoinment";
+
 import {
   choose360eyeCareData,
   eyeCareServiceData,
   torontoBeachesFaqData,
 } from "constants/Constants";
 import DryFaqs from "components/DryFaqs";
+import ReviewsCarousel from "../../../components/ReviewsCarousel";
+import mockBeachesReviews from "../../../constants/beachesReviews.json";
 
 const TorontoBeachesOptometrist = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
@@ -107,6 +110,12 @@ const TorontoBeachesOptometrist = () => {
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
       />
       <BeforeYourAppoinment />
+
+      <ReviewsCarousel
+        title="Happy Clients of The Beaches!"
+        data={mockBeachesReviews}
+      />
+
       <DryFaqs
         faqData={torontoBeachesFaqData}
         title="FAQs (Frequently Asked Questions)"
