@@ -159,7 +159,7 @@ const Footer = () => {
                 <FaTwitter size={24} aria-hidden="true" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/360eyecare/"
+                href="https://www.linkedin.com/company/360-eyecare/?originalSubdomain=ca"
                 className="text-white hover:text-combination-100"
                 aria-label="LinkedIn"
                 rel="noopener noreferrer"
@@ -260,7 +260,7 @@ const Footer = () => {
                 <FaTwitter size={24} aria-hidden="true" />
               </Link>
               <Link
-                href="https://www.linkedin.com/company/360eyecare/"
+                href="https://www.linkedin.com/company/360-eyecare/?originalSubdomain=ca"
                 className="text-white hover:text-combination-100"
                 aria-label="LinkedIn"
                 rel="noopener noreferrer"
