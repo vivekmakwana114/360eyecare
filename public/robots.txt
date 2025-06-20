@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://360eyecare.ca/sitemap.xml
 
-# Optimize crawling
-Crawl-delay: 10
+Sitemap: https://www.360eyecare.ca/sitemap.xml

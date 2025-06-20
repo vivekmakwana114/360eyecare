@@ -528,7 +528,7 @@ export const services = [
   },
   {
     label: "Dry Eye Treatment",
-    icon: "/homeIcons/drytest.png",
+    icon: "/homeIcons/dryEye.png",
     image: DryEyeImage,
     title: "Effective Dry Eye Treatment Solutions",
     description:

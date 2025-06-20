@@ -65,6 +65,14 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-68FLR804EH');
           `}
         </Script>
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=G-68FLR804EH"
+            height="0" 
+            width="0" 
+            style={{display: 'none', visibility: 'hidden'}}
+          ></iframe>
+        </noscript>
         
         <RootLayout2>{children}</RootLayout2>
       </body>
