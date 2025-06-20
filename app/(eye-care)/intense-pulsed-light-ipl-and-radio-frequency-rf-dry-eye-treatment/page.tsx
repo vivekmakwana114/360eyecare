@@ -156,7 +156,7 @@ const page = () => {
         <video
           controls
           muted
-          src="https://www.360eyecare.ca/wp-content/uploads/2024/08/Lumecca-Animation-with-Intro-2019-online-video-cutter.com-2.mp4"
+          src="https://360eyecare.ca/dashboard/wp-content/uploads/2024/08/Lumecca-Animation-with-Intro-2019-online-video-cutter.com-2.mp4"
           className="w-full h-full"
         />
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
@@ -286,7 +286,7 @@ const page = () => {
         <video
           controls
           muted
-          src="https://www.360eyecare.ca/wp-content/uploads/2024/06/video2.mp4"
+          src="https://360eyecare.ca/dashboard/wp-content/uploads/2024/06/video2.mp4"
           className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
         />
 

@@ -12,6 +12,7 @@ const LocationHeroSection = ({
   ctaClinic,
   ctaNumber,
   imageSrc,
+  onCtaClick,
 }) => {
   const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -32,6 +33,12 @@ const LocationHeroSection = ({
             <div className="flex flex-col lg:flex-row md:flex-row gap-4 lg:gap-5 md:gap-5 w-full items-center lg:items-start md:items-start">
               <Link
                 href={ctaLink}
+                onClick={(e) => {
+                  if (onCtaClick) {
+                    e.preventDefault();
+                    onCtaClick(e);
+                  }
+                }}
                 className="py-[16px] px-[32px] text-center w-[218px] text-nowrap h-[56px] bg-combination-100 text-white rounded-full font-bold"
               >
                 {ctaText}

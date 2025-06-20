@@ -310,7 +310,7 @@ export const eyeCareServices = [
         and Radiofrequency (RF) treatments offer lasting relief by addressing
         the root cause of dry eye disease. Our{" "}
         <Link
-          href="/our-doctors"
+          href="/our-team/optometrists"
           className="text-combination-100 hover:text-combination-100"
         >
           eye doctors
@@ -1765,12 +1765,12 @@ export const eyeCareServiceData = [
     para: (
       <>
         Regular{" "}
-        <Link href="" className="underline">
-          eye exams in Toronto{" "}
-        </Link>
+        <Link href="/eye-exams" className="underline">
+          eye exams in Toronto
+        </Link>{" "}
         are essential for maintaining good vision and early detection of eye
         diseases. Our thorough eye exams for children, adults, and seniors
-        ensure you enjoy clear vision and long-term eye health.",
+        ensure you enjoy clear vision and long-term eye health.
       </>
     ),
   },
@@ -1781,12 +1781,12 @@ export const eyeCareServiceData = [
     para: (
       <>
         If you suffer from dry, irritated, or fatigued eyes, our{" "}
-        <Link href="" className="underline">
+        <Link href="/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment" className="underline">
           Intense Pulsed Light{" "}
         </Link>{" "}
         (IPL) and Radiofrequency (RF) treatments offer lasting relief by
         addressing the root cause of dry eye disease. Our{" "}
-        <Link href="" className="underline">
+        <Link href="/optometrists" className="underline">
           eye doctors
         </Link>{" "}
         provide customized treatment plans to help restore your eye comfort.

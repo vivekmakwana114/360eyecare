@@ -10,6 +10,7 @@ import {
   FaFax,
   FaEnvelope,
   FaChevronUp,
+  FaLinkedin,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
@@ -157,6 +158,14 @@ const Footer = () => {
               >
                 <FaTwitter size={24} aria-hidden="true" />
               </Link>
+              <Link
+                href="https://www.linkedin.com/company/360eyecare/"
+                className="text-white hover:text-combination-100"
+                aria-label="LinkedIn"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={24} aria-hidden="true" />
+              </Link>
             </div>
           </div>
 
@@ -249,6 +258,14 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FaTwitter size={24} aria-hidden="true" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/company/360eyecare/"
+                className="text-white hover:text-combination-100"
+                aria-label="LinkedIn"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin size={24} aria-hidden="true" />
               </Link>
             </div>
           </div>

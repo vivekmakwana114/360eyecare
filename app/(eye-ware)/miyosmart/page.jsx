@@ -51,9 +51,9 @@ const page = () => {
   ];
 
   return (
-    <main className="pt-[110px] px-4 md:px-6 lg:px-0">
+    <main className="pt-[110px]  md:px-6 lg:px-0">
       <SubHeader text="MiyoSmart Lenses" />
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ">
         <DetailsDescripton
           title="Introducing Miyosmart Lenses: Revolutionizing Vision"
           description={dataDescription}

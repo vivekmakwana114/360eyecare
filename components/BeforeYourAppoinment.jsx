@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-const BeforeYourAppoinment = () => {
+const BeforeYourAppoinment = ({ id }) => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://scheduler.getsetpro.com/js/scheduler.js";
@@ -17,7 +17,7 @@ const BeforeYourAppoinment = () => {
   }, []);
 
   return (
-    <div className="w-full bg-[#28305F] py-12 px-4 md:px-0">
+    <div className="w-full bg-[#28305F] py-12 px-4 md:px-0" id={id}>
       <div className="max-w-7xl mx-auto md:px-[60px] flex flex-col md:flex-row md:justify-between gap-10">
         {/* Contact Information Column */}
         <div className="w-full md:w-[50%] flex flex-col gap-6">

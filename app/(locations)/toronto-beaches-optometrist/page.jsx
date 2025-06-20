@@ -2,14 +2,13 @@ import React from "react";
 import TorontoBeachesOptometrist from "./TorontoBeachesOptometrist";
 export async function generateMetadata() {
   return {
-    title: "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
+    title: "Optometrist Beaches Toronto | Optometry Clinic | 360 Eyecare",
     description:
-      "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
+      "360 Eyecare Optometrist Beaches Toronto is an optometry clinic providing full scope vision and medical eye care for patients of all ages.",
     openGraph: {
-      title:
-        "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
+      title: "Optometrist Beaches Toronto | Optometry Clinic | 360 Eyecare",
       description:
-        "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
+        "360 Eyecare Optometrist Beaches Toronto is an optometry clinic providing full scope vision and medical eye care for patients of all ages.",
       url: "https://www.360eyecare.ca/toronto-beaches-optometrist/",
       siteName: "360 Eyecare",
       type: "website",

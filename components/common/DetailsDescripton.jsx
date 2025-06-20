@@ -14,7 +14,7 @@ const DetailsDescription = ({
 }) => {
   return (
     <div
-      className={`max-w-7xl mx-auto py-8 md:py-16 px-4 sm:px-6 lg:px-8 flex flex-col ${
+      className={`max-w-7xl mx-auto pt-6 px-4 sm:px-6 lg:px-8 mb-8 flex flex-col ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
       } gap-6 md:gap-10 justify-between items-start`}
     >
@@ -51,7 +51,7 @@ const DetailsDescription = ({
           </Link>
         ))}
       </div>
-      <div className="w-full md:w-1/2 mt-6 md:mt-0 flex flex-row items-end">
+      <div className="w-full md:w-1/2 md:mt-0 flex flex-row items-end">
         <div className="w-[30px] h-[180px] bg-combination-100" />
         <Image
           src={image}

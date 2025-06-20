@@ -1,14 +1,14 @@
 import TorontoRosedaleOptometrist from "./TorontoRosedaleOptometrist";
 export async function generateMetadata() {
   return {
-    title: "Optometrist in Rosedale, Toronto | 360 Eyecare",
+    title: "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
     description:
-      "Visit 360 Eyecare – Rosedale for comprehensive optometry services including eye exams, dry eye treatment, and eyewear. Conveniently located in Toronto’s Rosedale neighborhood.",
+      "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
     openGraph: {
-      title: "360 Eyecare – Rosedale Location",
+      title:
+        "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
       description:
-        "Comprehensive eye care in Rosedale, Toronto. Book your eye exam with trusted optometrists at 360 Eyecare.",
-      url: "https://www.360eyecare.ca/toronto-rosedale-optometrist/",
+        "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
       siteName: "360 Eyecare",
       type: "website",
     },

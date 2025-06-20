@@ -21,6 +21,24 @@ const TorontoBeachesOptometrist = () => {
   const [showFullDescription, setShowFullDescription] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const scrollToForm = (e) => {
+    if (typeof window !== "undefined") {
+      e.preventDefault();
+      const formSection = document.getElementById("beachesLocation-form");
+      if (formSection) {
+        const headerOffset = 120; // Adjust this value based on your header height
+        const elementPosition = formSection.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  };
+
   useEffect(() => {
     // Check if we're on the client side
     if (typeof window !== "undefined") {
@@ -34,8 +52,32 @@ const TorontoBeachesOptometrist = () => {
       // Listen for resize events
       window.addEventListener("resize", checkMobile);
 
+      // Handle initial scroll if coming from a link with hash
+      const handleInitialScroll = () => {
+        if (window.location.hash === "#beachesLocation-form") {
+          const formSection = document.getElementById("beachesLocation-form");
+          if (formSection) {
+            const headerOffset = 120;
+            const elementPosition = formSection.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        }
+      };
+
+      // Small delay to ensure DOM is loaded
+      const timer = setTimeout(handleInitialScroll, 100);
+
       // Cleanup
-      return () => window.removeEventListener("resize", checkMobile);
+      return () => {
+        window.removeEventListener("resize", checkMobile);
+        clearTimeout(timer);
+      };
     }
   }, []);
 
@@ -74,9 +116,10 @@ const TorontoBeachesOptometrist = () => {
           </>
         }
         ctaText="Book Appointment"
-        ctaLink="/book-eye-exam#book-appointment"
+        ctaLink="#beachesLocation-form"
         ctaClinic="Call Our Clinic"
         ctaNumber="416-698-3937"
+        onCtaClick={scrollToForm}
         imageSrc={locationHeroBeaches}
       />
 
@@ -109,7 +152,7 @@ const TorontoBeachesOptometrist = () => {
         choose360eyeCareData={choose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
       />
-      <BeforeYourAppoinment />
+      <BeforeYourAppoinment id="beachesLocation-form" />
 
       <ReviewsCarousel
         title="Happy Clients of The Beaches!"
