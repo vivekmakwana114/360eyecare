@@ -58,7 +58,7 @@ const page = () => {
         }
 
         const postData = await res.json();
-
+        console.log(postData, "check the data");
         if (!isMounted) return;
 
         if (!postData || postData.length === 0) {

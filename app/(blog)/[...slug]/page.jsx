@@ -19,42 +19,76 @@ export async function generateMetadata({ params }) {
     }
 
     const postData = post[0];
-    const cleanExcerpt =
-      postData.excerpt?.rendered?.replace(/<[^>]*>/g, "") || "";
-    const imageUrl = postData.yoast_head_json?.og_image?.[0]?.url || "";
+    const yoastData = postData.yoast_head_json || {};
+
+    // Extract Twitter data
+    const twitterData = {
+      card: yoastData.twitter_card || "summary_large_image",
+      title: yoastData.twitter_title || yoastData.title,
+      description: yoastData.twitter_description || yoastData.description,
+      images: yoastData.twitter_image
+        ? [{ url: yoastData.twitter_image }]
+        : yoastData.og_image
+        ? [{ url: yoastData.og_image[0]?.url }]
+        : [],
+      creator: yoastData.twitter_creator || "",
+      site: yoastData.twitter_site || "",
+    };
+
+    // Extract article data
+    const articleData = {
+      publishedTime: yoastData.article_published_time,
+      modifiedTime: yoastData.article_modified_time,
+      authors: yoastData.author ? [yoastData.author] : [],
+      tags: yoastData.schema?.article?.keywords || [],
+      section: yoastData.schema?.article?.articleSection || [],
+    };
 
     return {
-      title: postData.title?.rendered || "Blog Post",
-      description: cleanExcerpt,
+      title: yoastData.title || "Blog Post",
+      description: yoastData.description || "",
+      alternates: {
+        canonical: yoastData.canonical || "",
+      },
       openGraph: {
-        title: postData.title?.rendered || "Blog Post",
-        description: cleanExcerpt,
-        images: imageUrl
-          ? [
-              {
-                url: imageUrl,
-                alt: postData.title?.rendered || "Blog post image",
-              },
-            ]
+        title: yoastData.og_title || yoastData.title,
+        description: yoastData.og_description || yoastData.description,
+        url: yoastData.og_url || yoastData.canonical,
+        siteName: yoastData.og_site_name || "360 Eyecare",
+        images: yoastData.og_image
+          ? yoastData.og_image.map((img) => ({
+              url: img.url,
+              width: img.width,
+              height: img.height,
+              alt: yoastData.og_title || yoastData.title,
+            }))
           : [],
-        // url: `https://yourdomain.com/blog/${slug}`,
-        type: "article",
-        article: {
-          publishedTime: postData.date,
-          modifiedTime: postData.modified,
-          authors: [postData.yoast_head_json?.author || "360 Eyecare"],
-          tags: postData.tags || [],
-        },
+        locale: yoastData.og_locale || "en_US",
+        type: yoastData.og_type || "article",
+        article: articleData,
       },
-      twitter: {
-        card: "summary_large_image",
-        title: postData.title?.rendered || "Blog Post",
-        description: cleanExcerpt,
-        images: imageUrl ? [imageUrl] : [],
-      },
+      twitter: twitterData,
+      authors: articleData.authors,
+      publisher: yoastData.article_publisher
+        ? { name: "360 Eyecare", url: yoastData.article_publisher }
+        : undefined,
+      robots: yoastData.robots
+        ? {
+            index: yoastData.robots.index === "index",
+            follow: yoastData.robots.follow === "follow",
+            nocache: yoastData.robots["max-snippet"] === "-1",
+            googleBot: {
+              index: yoastData.robots.index === "index",
+              follow: yoastData.robots.follow === "follow",
+              noimageindex: yoastData.robots["max-image-preview"] === "none",
+              "max-video-preview": yoastData.robots["max-video-preview"],
+              "max-image-preview": yoastData.robots["max-image-preview"],
+              "max-snippet": yoastData.robots["max-snippet"],
+            },
+          }
+        : undefined,
     };
   } catch (error) {
-    // console.error("Error generating metadata:", error);
     return {
       title: "Error Loading Post",
       description: "There was an error loading this post.",
