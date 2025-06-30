@@ -341,7 +341,7 @@ const pages = () => {
                 </Link>{" "}
                 and{" "}
                 <Link
-                  href="/contact-lenses-toronto"
+                  href="/contact-lenses-faq"
                   className="text-combination-200 hover:text-combination-100"
                 >
                   Custom Lenses

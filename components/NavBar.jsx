@@ -87,9 +87,9 @@ const NavBar = () => {
     },
     {
       name: "Eye Wear",
-      link: "/eyeglasses",
+      link: "/eye-glasses",
       dropdown: [
-        { name: "Eyeglasses", link: "/eyeglasses" },
+        { name: "Eyeglasses", link: "/eye-glasses" },
         { name: "Prescription Lenses", link: "/prescription-lenses" },
         { name: "Custom Contact Lenses", link: "/custom-lenses-toronto" },
         {
@@ -105,7 +105,7 @@ const NavBar = () => {
         },
         {
           name: "Contact Lenses Toronto",
-          link: "/contact-lenses-toronto",
+          link: "/contact-lenses-faq",
         },
         {
           name: "Contact Lens Shop",
