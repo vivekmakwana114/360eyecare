@@ -90,7 +90,7 @@ const DigitalEyeStrain = () => {
               width={553}
               height={600}
               alt="Eye examination with specialized equipment"
-              className="w-full md:h-[600px] h-[300px] rounded-lg shadow-lg"
+              className="w-full md:h-[600px] h-[300px] rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
@@ -106,7 +106,7 @@ const DigitalEyeStrain = () => {
               height={640}
               src="/digital-stain2.webp"
               alt="Optometrist examining patient's eyes"
-              className="w-full md:h-[640px]  h-[300px] rounded-lg shadow-lg"
+              className="w-full md:h-[640px]  h-[300px] rounded-lg shadow-lg object-cover"
             />
           </div>
         </div>
@@ -129,7 +129,13 @@ const DigitalEyeStrain = () => {
               {digitalstaindata2.map((item, index) => (
                 <React.Fragment key={index}>
                   <div className="flex items-center gap-4 border border-[#E1E6EB] p-4 rounded-lg">
-                    <Image src={item.icon} width={80} height={80} alt="icon" />
+                    <Image
+                      src={item.icon}
+                      width={80}
+                      height={80}
+                      alt="icon"
+                      className="object-cover"
+                    />
 
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold text-[#28305F] mb-2">

@@ -6,8 +6,8 @@ const PrimaryBackground = () => {
     <div className="bg-[#28305F] max-w-[1550px] mx-auto flex justify-center items-center overflow-hidden">
       <div className="flex flex-col-reverse md:flex-row justify-between">
         <div className="w-full md:w-[60%] flex flex-col gap-[16px] md:gap-[24px] justify-center md:items-start px-[20px] md:pl-[67px] py-[40px] md:py-0 items-center ">
-          <div className="flex flex-row items-end gap-[4px]">
-            <div className="w-[60px] bg-[#40BCC8] h-1" />
+          <div className="flex flex-row items-end gap-[8px]">
+            <div className="w-[60px] bg-[#40BCC8] h-[2px]" />
             <p className="text-[14px] md:text-[16px] font-[500] text-[#40BCC8] md:text-left text-center">
               About 360 Eyecare
             </p>

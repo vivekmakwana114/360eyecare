@@ -5,28 +5,28 @@ import React from "react";
 const links = [
   {
     icon: "/call.svg",
-    number: "123 456 7890",
-    text: "123 456 7890",
+    number: "416-901-2725",
+    text: "416-901-2725",
   },
   {
     icon: "/email.svg",
-    email: "Support@360.com",
-    text: "Support@360.com",
+    email: "yorkville@360eyecare.ca",
+    text: "yorkville@360eyecare.ca",
   },
 ];
 
 const socialLinks = [
   {
     icon: "/facebook.svg",
-    link: "www.facebook.com",
+    link: "https://www.facebook.com/360eyecare.yorkville?locale=ms_MY",
   },
   {
     icon: "/instagram.svg",
-    link: "www.instagram.com",
+    link: "https://www.instagram.com/360eyecare_yorkville/?hl=en",
   },
   {
     icon: "/twitter.svg",
-    link: "www.twitter.com",
+    link: "https://x.com/360eyecare",
   },
 ];
 
@@ -65,7 +65,7 @@ const Footer = () => {
                 >
                   <div className="flex flex-row gap-[4px] items-center">
                     <Image src={link.icon} width={28} height={28} alt="" />
-                    <p className="font-[500] text-[14px] text-primary">
+                    <p className="font-[500] text-[14px] text-white">
                       {link.text}
                     </p>
                   </div>
@@ -76,7 +76,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex flex-row gap-[16px] md:gap-[20px]">
               {socialLinks.map((link) => (
-                <Link key={link.link} href={`https://${link.link}`}>
+                <Link key={link.link} href={link.link}>
                   <Image src={link.icon} width={28} height={28} alt="" />
                 </Link>
               ))}

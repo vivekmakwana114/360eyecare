@@ -134,7 +134,7 @@ const ScheduleForm = () => {
               </label>
               <input
                 id="phoneNumber"
-                type="tel"
+                type="number"
                 placeholder="Your Phone"
                 className={`w-full px-4 py-2 bg-white border rounded-lg text-sm outline-none transition-colors ${
                   errors.phoneNumber
