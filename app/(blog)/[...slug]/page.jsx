@@ -3,7 +3,7 @@ import { getPostBySlug } from "./blogService";
 
 export async function generateMetadata({ params }) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
     const post = await getPostBySlug(slug);
 
     if (!post || post.length === 0) {

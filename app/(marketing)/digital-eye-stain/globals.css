@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --color-primary : #28305F;
+  --color-secondary : #40BCC8;
+  --color-dull-text : #888888;
+  --color-dark-text : #000000;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-poppins);
+}

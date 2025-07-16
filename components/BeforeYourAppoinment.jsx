@@ -42,7 +42,6 @@ const BeforeYourAppoinment = ({ id }) => {
               {
                 icon: "/location/icons/fax.svg",
                 head: "416-698-1161",
-                link: "tel:416-698-1161",
               },
               {
                 icon: "/location/icons/email.svg",
@@ -54,9 +53,14 @@ const BeforeYourAppoinment = ({ id }) => {
                 <div className="w-8 h-8 bg-combination-100 rounded-[6px] flex items-center justify-center">
                   <Image src={item.icon} alt="Icon" width={24} height={24} />
                 </div>
-                <Link href={item.link} className="text-base text-white">
-                  {item.head}
-                </Link>
+
+                {item.link ? (
+                  <Link href={item.link} className="text-base text-white">
+                    {item.head}
+                  </Link>
+                ) : (
+                  <p className="text-base text-white">{item.head}</p>
+                )}
               </div>
             ))}
           </div>

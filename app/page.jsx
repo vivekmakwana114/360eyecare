@@ -5,7 +5,7 @@ import OptometryServices from "../components/Optometry";
 import NearYou from "../components/NearYou";
 import Associate from "../components/Associate";
 import LatestEyeCareInsight from "../components/LatestEyeCareInsight";
-import Banner from "../components/Banner";
+import Banner from "../components/Banner.jsx";
 import HeroSection from "../components/HeroSection";
 import Script from "next/script";
 

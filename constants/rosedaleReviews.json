@@ -1,16 +1,7 @@
 [
+
     {
-        "id": 1,
-        "stars": 5,
-        "reviewDescription": "My wife dropped in this week to get my sunglasses repaired. Service was outstanding and incredibly friendly. Fixed in minutes. Highly recommend!",
-        "reviewName": "Rich Andrews",
-        "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjXbiejDMv-OL5dPt6eFU_t_Z_tSQeKa49FMhTZk_IQoXpXuCo9d=w72-h72-p-rp-mo-br100",
-        "reviewDate": "a week ago",
-        "reviewLink": "https://www.google.com/maps/reviews/@43.6695695,-79.3886079,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VPblNvNW5iN0xXY1dREAE!2m1!1s0x0:0x484cf43a7093e7e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-    
-    },
-    {
-    "id": 2,
+    "id": 1,
     "stars": 5,
     "reviewDescription": "I initially had a misunderstanding regarding the refund policy when I made my purchase. This led to some confusion and frustration.However, after raising my concerns, the team at 360 Eyecare took my feedback seriously and handled the issue with professionalism.I appreciate their efforts to resolve the matter in a fair and timely manner. It’s clear that they care about customer satisfaction and are willing to take responsibility when things go wrong.Thank you to the staff at 360 Eyecare for helping to bring this to a positive resolution.",
     "reviewName": "XM Yan",
@@ -20,7 +11,7 @@
 
 },
 {
-    "id": 3,
+    "id": 2,
     "stars": 5,
     "reviewDescription": "I highly recommend 360 Eyecare.  The patient experience is exceptional.  Dr. Deepinder Swatch is knowledgeable, friendly and affords her patients as much time as they need to ask questions. Laura is as delightful and amazing.  She expertly helped me choose frames that suit my face and I have to say, I have actually had compliments on my glasses!  She took the time to make sure the fit is perfect and she even adjusted the frames of my non prescription sunglasses.  I will be a forever client:).",
     "reviewName": "Cathy O'Shea",
@@ -29,7 +20,7 @@
     "reviewLink": "https://www.google.com/maps/reviews/@43.6695695,-79.3886079,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VMWDl2cGZYNjlTWGhRRRAB!2m1!1s0x0:0x484cf43a7093e7e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
 },
 {
-    "id": 4,
+    "id": 3,
     "stars": 5,
     "reviewDescription": "I visited 360 to look for a new optometrist. I also had a couple of general questions. Laura was FABULOUS and is so sincere, bright and accommodating. Thank you -- I look forward to my June appointment!",
     "reviewName": "Rudy",
@@ -38,7 +29,7 @@
     "reviewLink": "https://www.google.com/maps/reviews/@43.6695695,-79.3886079,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VMSDJxNjZCc19mZzdnRRAB!2m1!1s0x0:0x484cf43a7093e7e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
 },
 {
-"id": 5,
+"id": 4,
 "stars": 5,
 "reviewDescription": "I had some irritation in my right eye and my husband recommended me to pop into 360 Eyecare to see what the issue was. I was new to the clinic and a little nervous as I haven’t had an eye exam since grade school. Sam made me feel comfortable and was able to find the problem in my eye (something was stuck) and got it out for me! I was in and out in no time :) Would definitely recommend!",
 "reviewName": "Pamela",
@@ -48,7 +39,7 @@
 
 },
 {
-"id": 6,
+"id": 5,
 "stars": 5,
 "reviewName": "Noella Zuniga",
 "reviewDescription": "Opticians are very friendly and hepful. Dr. Swatch is very thorough and answers queries confidently. Overall, a great experience!",
@@ -58,7 +49,7 @@
 
 },
 {
-"id": 7,
+"id": 6,
 "stars": 5,
 "reviewName": "John P. Davis",
 "reviewDescription": "Took care of my wife same day w something in her eye! Amazing professional clean and superb spot!",
@@ -68,7 +59,7 @@
 
 },
 {   
-"id": 8,
+"id": 7,
 "stars": 5,
 "reviewDescription": "Best service",
 "reviewName": "Nazgol Mahdavian",
@@ -78,7 +69,7 @@
 
 },
 {
-"id": 9,
+"id": 8,
 "stars": 5,
 "reviewName": "",
 "reviewDescription": "Two years in and I’m still happy to come with their services and updated technological equipment..",
@@ -88,7 +79,7 @@
 
 },
 {
-"id": 10,
+"id": 9,
 "stars": 5,
 "reviewDescription": "Entire team was responsive and helpful in rescheduling my appointment a couple of times. Upon arrival, all tests and process was great. Dr. Baraam is fantastic and knowledge. He also can be reassuring and confident when asking him questions. Great optometrist!",
 "reviewName": "Mohamed Eldah",
@@ -98,7 +89,7 @@
 
 },
 {
-"id": 11,
+"id": 10,
 "stars": 5,
 "reviewDescription": "Amazing service and attention for the customer",
 "reviewName": "Kadrion Dollani",
@@ -107,7 +98,7 @@
 "reviewLink": "https://www.google.com/maps/reviews/@43.6695695,-79.3886079,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNvbHAzd1N3EAE!2m1!1s0x0:0x484cf43a7093e7e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
 },
 {
-"id": 12,
+"id": 11,
 "stars": 5,
 "reviewDescription": "From out of town and my glasses broke.  Went in to get my glasses fixed after one of the arms fell off.  They fixed it for free, were super welcoming, and tightened everything for me!  Good as new. Highly recommend!",
 "reviewName": "Grace Locker",
@@ -117,7 +108,7 @@
 
 },
 {
-"id": 13,
+"id": 12,
 "stars": 5,
 "reviewDescription": "Quickly repaired my glasses for free! Many thanks :)",
 "reviewName": "Free Pain",
@@ -127,7 +118,7 @@
 
 },
 {
-"id": 14,
+"id": 13,
 "stars": 5,
 "reviewDescription": "Excellent service, as per usual from Dr. Baraam and team. They are passionate about providing the best care to their clients.",
 "reviewName": "Stephanie Hare",
@@ -136,7 +127,7 @@
 "reviewLink": "https://www.google.com/maps/reviews/@43.6695695,-79.3886079,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUR3a09LaWFnEAE!2m1!1s0x0:0x484cf43a7093e7e0?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
 },
 {
-"id": 15,
+"id": 14,
 "stars": 5,
 "reviewDescription": "Awesome experience as always Dr. Baraam is knowledgeable and informative in his assessment of your diagnosis.  His team is professional and knowledgeable and very helpful, friendly. Great new location beautiful offices. Thanks again for your services. A++++++",
 "reviewName": "Pierre Robichaud",

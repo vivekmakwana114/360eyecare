@@ -6,12 +6,13 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 const RootLayout2 = ({ children }) => {
-  const hideLayout = usePathname() === "/shop";
+  const hideLayout =
+    usePathname() === "/shop" || usePathname() === "/digital-eye-stain";
   return (
     <>
       {!hideLayout && <NavBar />}
       {children}
-      <Footer />
+      {!hideLayout && <Footer />}
     </>
   );
 };

@@ -13,6 +13,13 @@ gsp-scheduler.has-book-columns {
   background-color: #f5f5f5;
 }
 
+@theme {
+  --color-primary : #28305F;
+  --color-secondary : #40BCC8;
+  --color-dull-text : #888888;
+  --color-dark-text : #000000;
+}
+
 .font-poppins {
   font-family: var(--font-poppins);
 }

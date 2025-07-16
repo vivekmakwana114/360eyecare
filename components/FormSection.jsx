@@ -108,7 +108,7 @@ const FormSection = ({ css }) => {
 
   return (
     <form
-      className={`flex flex-col gap-4   w-full ${css}`}
+      className="flex flex-col gap-4 w-full max-w-full sm:px-0 mx-auto"
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* Hidden input for location to register with react-hook-form */}
@@ -129,7 +129,7 @@ const FormSection = ({ css }) => {
           {...register("name", {
             required: "Name is required",
           })}
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="*Name:"
         />
         {errors.name && (
@@ -147,7 +147,7 @@ const FormSection = ({ css }) => {
             },
           })}
           type="email"
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="*Email:"
         />
         {errors.email && (
@@ -164,7 +164,7 @@ const FormSection = ({ css }) => {
               message: "Please enter a valid phone number",
             },
           })}
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="*Phone Number:"
         />
         {errors.phone && (
@@ -176,7 +176,7 @@ const FormSection = ({ css }) => {
         <input
           {...register("dob")}
           type="date"
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="Date of Birth"
         />
       </div>
@@ -184,7 +184,7 @@ const FormSection = ({ css }) => {
       <div className="w-full">
         <textarea
           {...register("message")}
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded resize-none text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded resize-none text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="Message:"
           rows={4}
         />
@@ -197,7 +197,7 @@ const FormSection = ({ css }) => {
         <input
           id="promoCode"
           {...register("promoCode")}
-          className="w-full bg-gray-50 border border-gray-300 px-4 py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100"
+          className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
         />
       </div>
 

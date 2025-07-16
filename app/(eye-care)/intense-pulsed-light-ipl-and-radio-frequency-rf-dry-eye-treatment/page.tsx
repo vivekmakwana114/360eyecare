@@ -11,6 +11,7 @@ import {
   OptometryImage,
 } from "../../../constants/Images";
 import { ChevronRight } from "lucide-react";
+import FormSection from "components/FormSection";
 export async function generateMetadata() {
   return {
     title: "Advanced Dry Eye Treatments | IPL and RF Eye Treatment Toronto",
@@ -286,7 +287,7 @@ const page = () => {
         <video
           controls
           muted
-          src="https://360eyecare.ca/dashboard/wp-content/uploads/2024/06/video2.mp4"
+          src={`https://www.360eyecare.ca/dashboard/wp-content/uploads/2024/06/video2.mp4`}
           className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
         />
 
@@ -516,12 +517,15 @@ const page = () => {
                   eye symptoms with advanced dry eye treatments.
                 </p>
                 <div className="w-[60%]">
-                  <iframe
+                  {/* <iframe
                     src="https://oes.eyecarepro.net/w/c/48NWLwkoqicRpYspwAoB?height=350&width=700&src=https%3A%2F%2Fwww.360eyecare.ca%2Fintense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment%2F&title=Advanced%20Dry%20Eye%20Treatments%20%7C%20IPL%20and%20RF%20Eye%20Treatment%20Toronto"
                     id="48NWLwkoqicRpYspwAoB"
                     className="max-w-[450px] max-w-w-[490px] w-[323px] md:w-[490px] h-[350px]"
                     title="Advanced Dry Eye Treatments | IPL and RF Eye Treatment Toronto"
-                  />
+                  /> */}
+                  <div className="w-[340px] md:w-[550px]">
+                    <FormSection css={{}} />
+                  </div>
                 </div>
               </div>
 

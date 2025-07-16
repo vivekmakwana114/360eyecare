@@ -88,7 +88,7 @@ export const OptometryServices = [
     description:
       "Choose from our handcrafted and designer frames to suit your style and vision needs",
     buttonText: "Our Eyewear Collections",
-    buttonLink: "/eyeglasses",
+    buttonLink: "/eye-glasses",
   },
 ];
 // export const cardData = [
@@ -1011,14 +1011,14 @@ export const faqDatapediatric = [
 export const Orthokeratology = [
   {
     id: "01",
-
+    icon: "/eyecare/persistent.png",
     title: "Non-Surgical and Reversible",
     description:
       "Unlike LASIK or other refractive surgeries, Ortho-K is non-invasive and completely reversible. If the patient discontinues wearing the lenses, the cornea gradually returns to its original shape.",
   },
   {
     id: "02",
-
+    icon: "/eyecare/complications.png",
     title: "Freedom from Daytime Eyewear",
     description:
       "Ortho-K allows patients to experience clear vision without glasses or contact lenses during the day, which can be especially beneficial for athletes, swimmers, and individuals in dusty or dry environments.",
@@ -1781,7 +1781,10 @@ export const eyeCareServiceData = [
     para: (
       <>
         If you suffer from dry, irritated, or fatigued eyes, our{" "}
-        <Link href="/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment" className="underline">
+        <Link
+          href="/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment"
+          className="underline"
+        >
           Intense Pulsed Light{" "}
         </Link>{" "}
         (IPL) and Radiofrequency (RF) treatments offer lasting relief by

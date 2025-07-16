@@ -29,13 +29,18 @@ const LatestEyeCareInsight = () => {
             <div className="flex flex-col md:flex-row gap-6">
               {/* Post Image */}
               <div className="w-full md:w-[70%]">
-                <Image
-                  src={IrritatingEyeImage}
-                  alt="Man with eye irritation"
-                  width={300}
-                  height={200}
-                  className="w-full h-auto rounded"
-                />
+                <Link
+                  href="/emergency-eye-care-toronto-guide"
+                  className=" hover:text-combination-100"
+                >
+                  <Image
+                    src={IrritatingEyeImage}
+                    alt="Man with eye irritation"
+                    width={300}
+                    height={200}
+                    className="w-full h-auto rounded"
+                  />
+                </Link>
               </div>
 
               {/* Post Content */}
@@ -44,7 +49,7 @@ const LatestEyeCareInsight = () => {
                   <div className="flex items-center gap-2">
                     <MdOutlineDateRange className="text-combination-100" />
                     <Link
-                      href="https://www.360eyecare.ca/emergency-eye-care-toronto-guide/"
+                      href="/emergency-eye-care-toronto-guide"
                       className=" hover:text-combination-100"
                     >
                       April 21, 2025
@@ -53,15 +58,23 @@ const LatestEyeCareInsight = () => {
                   //
                   <div className="flex items-center gap-2">
                     <FaUser className="text-combination-100" />
-                    <Link href="/" className=" hover:text-combination-100">
+                    <Link
+                      href="/emergency-eye-care-toronto-guide"
+                      className=" hover:text-combination-100"
+                    >
                       360Eyecare
                     </Link>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-brand-blue">
-                  Top 10 Most Common Eye Emergencies and How to Handle Them
-                </h3>
+                <Link
+                  href="/emergency-eye-care-toronto-guide"
+                  className=" hover:text-combination-100"
+                >
+                  <h3 className="text-xl font-bold text-brand-blue">
+                    Top 10 Most Common Eye Emergencies and How to Handle Them
+                  </h3>
+                </Link>
 
                 <p className="text-neutral-600">
                   Unlike a broken arm or bleeding wound, when it comes to eye
