@@ -7,7 +7,8 @@ import { usePathname } from "next/navigation";
 
 const RootLayout2 = ({ children }) => {
   const hideLayout =
-    usePathname() === "/shop" || usePathname() === "/digital-eye-stain";
+    usePathname() === "/shop" ||
+    usePathname() === "/landing-digital-eye-stain-checkup";
   return (
     <>
       {!hideLayout && <NavBar />}
