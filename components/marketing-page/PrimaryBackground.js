@@ -14,7 +14,7 @@ const PrimaryBackground = () => {
               </p>
             </div>
             <h2 className="text-[24px] sm:text-[28px] md:text-[36px] lg:text-[36px] font-[700] text-white leading-tight md:text-left text-center">
-              Proudly Serving Toronto’s Yorkville and Beaches Neighbors
+              Proudly Serving Toronto’s Yorkville
             </h2>
             <p className="text-[14px] md:text-[16px] font-[400] text-white leading-relaxed md:text-left text-center">
               What started as a small practice has grown into a place where
@@ -22,13 +22,15 @@ const PrimaryBackground = () => {
               that comes with clear vision. Some of our most treasured moments
               happen when someone puts on their new glasses for the first time.
               The sudden smile and the quiet "wow" are the moments that remind
-              us why we fell in love with eye care. We're not just your eye
-              doctors; we're part of your community, invested in the moments
-              that matter most to you and your family. We're the place where
-              three generations of families trust us with their vision care.
-              Whether you're managing a condition or simply curious about your
-              eye health, we're here to guide you with clarity, empathy, and
-              expertise.
+              us why we fell in love with eye care.
+            </p>
+            <p className="text-[14px] md:text-[16px] font-[400] text-white leading-relaxed md:text-left text-center">
+              We're not just your eye doctors; we're part of your community,
+              invested in the moments that matter most to you and your family.
+              We're the place where three generations of families trust us with
+              their vision care. Whether you're managing a condition or simply
+              curious about your eye health, we're here to guide you with
+              clarity, empathy, and expertise.
             </p>
             <button
               className="bg-[#40BCC8] w-auto md:w-[303px] h-[48px] md:h-[60px] font-[600] text-[14px] md:text-[16px] px-[20px] py-[16px] rounded-[6px] cursor-pointer flex items-center gap-[8px] text-white justify-center"

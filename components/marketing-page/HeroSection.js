@@ -64,10 +64,10 @@ const HeroSection = () => {
             <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center text-center md:text-left px-4 py-8 md:py-0">
               <div className="absolute md:hidden inset-0 bg-[#111530EB] z-0"></div>
               <div className="relative z-10">
-                <h2 className="text-[32px] md:leading-[84px] leading-[42px] h-auto md:text-[48px] font-[700] text-white md:text-left text-center mb-4">
+                <h2 className="text-[32px] md:leading-[64px] leading-[42px] h-auto md:text-[48px] font-[700] text-white md:text-left text-center mb-4">
                   Feeling Eye Fatigue from Too Much Screen Time?
                 </h2>
-                <p className="text-white text-sm sm:text-base md:text-[18px] md:text-left text-center">
+                <p className="text-white text-sm sm:text-base md:text-[18px] md:text-left text-center leading-[32px] tracking-normal">
                   Book your Free Digital Eye Strain Consultation with a
                   certified optometrist at 360 Eyecare.
                 </p>
