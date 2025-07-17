@@ -66,26 +66,26 @@ const ScheduleForm = () => {
   };
 
   return (
-    <div className="w-full md:w-1/2 items-center justify-center">
-      <div className="bg-[#40BCC8] md:rounded-[8px] rounded-none p-[24px] md:p-[32px] w-full max-w-[539px]">
-        <h3 className="text-[#28305F] text-center text-[18px] md:text-[20px] font-[600] mb-[20px] md:mb-[24px]">
+    <div className="w-full flex items-center justify-center">
+      <div className="bg-[#40BCC8] md:rounded-[12px] rounded-none md:p-[40px] p-[24px] w-full max-w-[536px] flex flex-col">
+        <h3 className="text-[#28305F] text-center text-[20px] md:text-[24px] font-[700] mb-[32px]">
           Schedule your Appointment
         </h3>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-[20px]">
             {/* First Name */}
             <div>
               <label
                 htmlFor="firstName"
-                className="text-[28305F] text-sm font-medium block mb-1"
+                className="text-[#28305F] text-[16px] font-[500] block mb-[8px]"
               >
-                First Name *
+                First Name
               </label>
               <input
                 id="firstName"
                 type="text"
-                placeholder="Your First Name"
-                className={`w-full px-4 py-2 bg-white border rounded-lg text-sm outline-none transition-colors ${
+                placeholder=""
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
                   errors.firstName
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
@@ -95,7 +95,7 @@ const ScheduleForm = () => {
                 })}
               />
               {errors.firstName && (
-                <p className="mt-1 text-xs text-red-500">
+                <p className="mt-[4px] text-[12px] text-red-500">
                   {errors.firstName.message}
                 </p>
               )}
@@ -105,15 +105,15 @@ const ScheduleForm = () => {
             <div>
               <label
                 htmlFor="lastName"
-                className="text-[28305F] text-sm font-medium block mb-1"
+                className="text-[#28305F] text-[16px] font-[500] block mb-[8px]"
               >
-                Last Name *
+                Last Name
               </label>
               <input
                 id="lastName"
                 type="text"
-                placeholder="Your Last Name"
-                className={`w-full px-4 py-2 bg-white border rounded-lg text-sm outline-none transition-colors ${
+                placeholder=""
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
                   errors.lastName
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
@@ -123,7 +123,7 @@ const ScheduleForm = () => {
                 })}
               />
               {errors.lastName && (
-                <p className="mt-1 text-xs text-red-500">
+                <p className="mt-[4px] text-[12px] text-red-500">
                   {errors.lastName.message}
                 </p>
               )}
@@ -133,15 +133,15 @@ const ScheduleForm = () => {
             <div>
               <label
                 htmlFor="phoneNumber"
-                className="text-[28305F] text-sm font-medium block mb-1"
+                className="text-[#28305F] text-[16px] font-[500] block mb-[8px]"
               >
-                Phone Number *
+                Phone number
               </label>
               <input
                 id="phoneNumber"
-                type="number"
-                placeholder="Your Phone"
-                className={`w-full px-4 py-2 bg-white border rounded-lg text-sm outline-none transition-colors ${
+                type="tel"
+                placeholder=""
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
                   errors.phoneNumber
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
@@ -155,7 +155,7 @@ const ScheduleForm = () => {
                 })}
               />
               {errors.phoneNumber && (
-                <p className="mt-1 text-xs text-red-500">
+                <p className="mt-[4px] text-[12px] text-red-500">
                   {errors.phoneNumber.message}
                 </p>
               )}
@@ -165,15 +165,15 @@ const ScheduleForm = () => {
             <div>
               <label
                 htmlFor="email"
-                className="text-[28305F] text-sm font-medium block mb-1"
+                className="text-[#28305F] text-[16px] font-[500] block mb-[8px]"
               >
-                Email *
+                Email
               </label>
               <input
                 id="email"
                 type="email"
-                placeholder="Your Email"
-                className={`w-full px-4 py-2 bg-white border rounded-lg text-sm outline-none transition-colors ${
+                placeholder=""
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
                   errors.email
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
@@ -187,7 +187,7 @@ const ScheduleForm = () => {
                 })}
               />
               {errors.email && (
-                <p className="mt-1 text-xs text-red-500">
+                <p className="mt-[4px] text-[12px] text-red-500">
                   {errors.email.message}
                 </p>
               )}
@@ -197,7 +197,7 @@ const ScheduleForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-[#28305F] text-white py-3 px-4 rounded-lg text-sm font-semibold transition-colors ${
+              className={`w-full bg-[#28305F] text-white py-[14px] px-[16px] rounded-[6px] text-[16px] font-[600] transition-colors mt-[12px] ${
                 isSubmitting
                   ? "opacity-70 cursor-not-allowed"
                   : "hover:bg-[#1a1f3d]"
@@ -209,7 +209,7 @@ const ScheduleForm = () => {
             {/* Status Message */}
             {/* {submitStatus.message && (
               <div
-                className={`mt-2 p-3 rounded-lg text-sm ${
+                className={`mt-[8px] p-[12px] rounded-[6px] text-[12px] ${
                   submitStatus.success
                     ? "bg-green-100 text-green-700"
                     : "bg-red-100 text-red-700"

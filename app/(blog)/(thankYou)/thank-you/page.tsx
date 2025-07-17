@@ -26,13 +26,13 @@ export default function ThankYouPage() {
       >
         <div className="flex justify-center mb-6">
           <div className="bg-green-100 p-3 rounded-full">
-            <CheckCircle className="h-12 w-12 text-green-600" />
+            <CheckCircle className="h-12 w-12 text-" />
           </div>
         </div>
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Thank You!</h1>
         <p className="text-gray-600 mb-6">
-          Your submission has been received. We appreciate your time and will
-          get back to you soon.
+          Thank you for scheduling with us. Your appointment has been noted, and
+          we’ll be reaching out soon.
         </p>
         <div className="w-full bg-gray-200 rounded-full h-2.5">
           <motion.div
@@ -43,7 +43,7 @@ export default function ThankYouPage() {
           />
         </div>
         <p className="text-sm text-gray-500 mt-4">
-          Redirecting to home page...
+          Taking you back to the homepage...
         </p>
       </motion.div>
     </div>

@@ -53,34 +53,40 @@ const HeroSection = () => {
     <>
       {/* Hero Content */}
       <div
-        className="md:max-w-[1550px] mx-auto md:bg-[url('/herosection.webp')] md:bg-cover md:bg-center md:bg-no-repeat bg-contain  relative "
+        className="md:max-w-svh mx-auto md:bg-[url('/herosection.webp')] md:bg-cover md:bg-center md:bg-no-repeat bg-contain relative"
         id="hero-form-section"
       >
         <div className="absolute inset-0 !bg-[#111530EB]"></div>
 
         <div className="relative z-10 md:px-4 px-0 py-0 md:py-16">
-          <div className="flex flex-col md:flex-row  md:gap-12 max-w-[1200px] mx-auto  justify-center items-center md:bg-none bg-[url('/herosection.webp')] bg-cover bg-center bg-no-repeat">
+          <div className="flex flex-col md:flex-row md:gap-12 max-w-[1200px] md:h-[636px]  md:min-h-0 mx-auto justify-center items-center md:bg-none bg-[url('/herosection.webp')] bg-cover bg-center bg-no-repeat">
             {/* Left side - Text content */}
-            <div className="relative w-full md:w-1/2 items-center justify-center text-center md:text-left px-4 py-8">
+            <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center text-center md:text-left px-4 py-8 md:py-0">
               <div className="absolute md:hidden inset-0 bg-[#111530EB] z-0"></div>
-              <h2 className="relative z-10 text-[24px] md:text-[48px] font-[700] text-white leading-tight md:text-left text-center mb-4">
-                Feeling Eye Fatigue from Too Much Screen Time?
-              </h2>
-              <p className="relative z-10 text-white text-sm sm:text-base md:text-left text-center">
-                Book your Free Digital Eye Strain Consultation with a certified
-                optometrist at 360 Eyecare.
-              </p>
+              <div className="relative z-10">
+                <h2 className="text-[32px] md:leading-[84px] leading-[42px] h-auto md:text-[48px] font-[700] text-white md:text-left text-center mb-4">
+                  Feeling Eye Fatigue from Too Much Screen Time?
+                </h2>
+                <p className="text-white text-sm sm:text-base md:text-[18px] md:text-left text-center">
+                  Book your Free Digital Eye Strain Consultation with a
+                  certified optometrist at 360 Eyecare.
+                </p>
+              </div>
             </div>
 
             {/* Right side - Form */}
-            <ScheduleForm />
+            <div className="w-full md:w-1/2  md:px-0">
+              <ScheduleForm />
+            </div>
           </div>
-          <div className="mt-[24px] py-4 md:py-8 hidden md:block ">
-            <div className="max-w-[1004px] mx-auto px-4">
+
+          {/* Desktop Statistics */}
+          <div className="mt-[24px] py-4 md:py-8 hidden md:block">
+            <div className="max-w-[1200px] mx-auto px-4">
               <div className="flex flex-row items-center text-center p-4">
                 {statitsicsdata.map((item, index) => (
                   <div key={index}>
-                    <div className="flex flex-row items-center text-center p-4  gap-4">
+                    <div className="flex flex-row items-center text-center pr-12 gap-4">
                       <div className="flex flex-col items-start justify-center gap-4 md:gap-2 mb-1">
                         <div className="flex flex-row items-center gap-2">
                           <Image
@@ -102,7 +108,7 @@ const HeroSection = () => {
                         </div>
                       </div>
                       {index !== statitsicsdata.length - 1 && (
-                        <div className="w-[1px] h-[99px] bg-[#495287] "></div>
+                        <div className="w-[1px] h-[99px] bg-[#495287]"></div>
                       )}
                     </div>
                   </div>
@@ -113,15 +119,14 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Statistics section - Full width background */}
-
-      <div className="bg-white py-4 md:py-8 block md:hidden ">
+      {/* Mobile Statistics section */}
+      <div className="bg-white py-4 md:py-8 block md:hidden">
         <div className="max-w-[1004px] mx-auto px-4">
           <div className="flex flex-col gap-[24px] items-center justify-center">
             {statitsicsdata2.map((item, index) => (
               <div key={index}>
-                <div className="flex flex-col items-center justify-center text-center gap-2 ">
-                  <div className="flex items-center justify-center gap-1  ">
+                <div className="flex flex-col items-center justify-center text-center gap-2">
+                  <div className="flex items-center justify-center gap-1">
                     <Image
                       src={item.icon}
                       width={20}
@@ -139,7 +144,7 @@ const HeroSection = () => {
                 </div>
 
                 {index !== statitsicsdata2.length - 1 && (
-                  <div className="w-[214px] h-[1px]    bg-[#E1E6EB] "></div>
+                  <div className="w-[214px] h-[1px] bg-[#E1E6EB]"></div>
                 )}
               </div>
             ))}

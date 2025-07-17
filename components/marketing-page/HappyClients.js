@@ -67,7 +67,7 @@ const HappyClients = () => {
   const CHARACTER_LIMIT = 160;
 
   return (
-    <div className="max-w-6xl mx-auto h-auto px-4 sm:px-6 lg:px-0 md:my-12 my-8">
+    <div className="max-w-[1200px] mx-auto h-auto px-4 sm:px-6 lg:px-0 md:my-12 my-8">
       <div className="flex flex-col sm:flex-row gap-[24px] sm:gap-[48px] items-start sm:items-center justify-between">
         <div className="flex flex-col gap-[16px]">
           <h2 className="text-[28px] sm:text-[36px] lg:text-[36px] font-[700] text-[#28305F]">
