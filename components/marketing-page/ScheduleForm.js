@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 const ScheduleForm = () => {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({
     success: null,
@@ -43,10 +45,13 @@ const ScheduleForm = () => {
       if (response.ok) {
         setSubmitStatus({
           success: true,
-          message:
-            "Appointment scheduled successfully! We will contact you soon.",
+          message: "Appointment scheduled successfully! Redirecting...",
         });
         reset();
+        // Redirect to thank you page after a short delay to show success message
+        setTimeout(() => {
+          router.push("/thank-you");
+        }, 1500);
       } else {
         throw new Error(result.message || "Failed to schedule appointment");
       }
@@ -202,7 +207,7 @@ const ScheduleForm = () => {
             </button>
 
             {/* Status Message */}
-            {submitStatus.message && (
+            {/* {submitStatus.message && (
               <div
                 className={`mt-2 p-3 rounded-lg text-sm ${
                   submitStatus.success
@@ -212,7 +217,7 @@ const ScheduleForm = () => {
               >
                 {submitStatus.message}
               </div>
-            )}
+            )} */}
           </div>
         </form>
       </div>
