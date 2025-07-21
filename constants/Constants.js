@@ -33,14 +33,10 @@ import { Eye, CheckSquare, Clock, Shield, Heart, User } from "lucide-react";
 import {
   ContactLensIcon,
   ContactLensImage,
-  DryEyeIcon,
   DryEyeImage,
-  EyeExamIcon,
   EyeExamImage,
-  MyopiaIcon,
   MyopiaImage,
   PediatricEyeCareImage,
-  PediatricIcon,
 } from "./Images";
 
 import {
@@ -528,7 +524,7 @@ export const services = [
   },
   {
     label: "Dry Eye Treatment",
-    icon: "/homeIcons/dryEye.png",
+    icon: "/homeIcons/dryeye.png",
     image: DryEyeImage,
     title: "Effective Dry Eye Treatment Solutions",
     description:

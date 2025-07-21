@@ -139,18 +139,20 @@ const ScheduleForm = () => {
               </label>
               <input
                 id="phoneNumber"
-                type="number"
-                placeholder=""
+                type="tel"
                 className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
                   errors.phoneNumber
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
                 }`}
+                onInput={(e) => {
+                  e.target.value = e.target.value.replace(/[^0-9]/g, "");
+                }}
                 {...register("phoneNumber", {
                   required: "Phone number is required",
                   pattern: {
-                    value: /^[0-9+\-\s()]{10,}$/,
-                    message: "Please enter a valid phone number",
+                    value: /^[0-9]{10,}$/,
+                    message: "Please enter a valid phone number (numbers only)",
                   },
                 })}
               />
