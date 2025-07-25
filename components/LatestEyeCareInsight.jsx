@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { MdOutlineDateRange } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import Image from "next/image";
@@ -8,6 +9,19 @@ import { IrritatingEyeImage } from "../constants/Images";
 import Link from "next/link";
 
 const LatestEyeCareInsight = () => {
+  const [latestBlog, setLatestBlog] = useState(null);
+
+  useEffect(() => {
+    const fetchLatestBlog = async () => {
+      const res = await fetch(process.env.NEXT_PUBLIC_BLOG_BASE_URL + "/posts");
+      const data = await res.json();
+      setLatestBlog(data[0]);
+    };
+    fetchLatestBlog();
+  }, []);
+
+  console.log(latestBlog);
+
   return (
     <div className="w-full py-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -30,11 +44,11 @@ const LatestEyeCareInsight = () => {
               {/* Post Image */}
               <div className="w-full md:w-[70%]">
                 <Link
-                  href="/emergency-eye-care-toronto-guide"
+                  href={latestBlog?.slug || "/"}
                   className=" hover:text-combination-100"
                 >
                   <Image
-                    src={IrritatingEyeImage}
+                    src={latestBlog?.yoast_head_json?.og_image[0]?.url}
                     alt="Man with eye irritation"
                     width={300}
                     height={200}
@@ -49,37 +63,39 @@ const LatestEyeCareInsight = () => {
                   <div className="flex items-center gap-2">
                     <MdOutlineDateRange className="text-combination-100" />
                     <Link
-                      href="/emergency-eye-care-toronto-guide"
+                      href={latestBlog?.slug || "/"}
                       className=" hover:text-combination-100"
                     >
-                      April 21, 2025
+                      {latestBlog?.date}
                     </Link>
                   </div>
                   //
                   <div className="flex items-center gap-2">
                     <FaUser className="text-combination-100" />
                     <Link
-                      href="/emergency-eye-care-toronto-guide"
+                      href={latestBlog?.slug || "/"}
                       className=" hover:text-combination-100"
                     >
-                      360Eyecare
+                      {latestBlog?.author}
                     </Link>
                   </div>
                 </div>
 
                 <Link
-                  href="/emergency-eye-care-toronto-guide"
+                  href={latestBlog?.slug || "/"}
                   className=" hover:text-combination-100"
                 >
                   <h3 className="text-xl font-bold text-brand-blue">
-                    Top 10 Most Common Eye Emergencies and How to Handle Them
+                    {latestBlog?.title.rendered}
                   </h3>
                 </Link>
 
-                <p className="text-neutral-600">
-                  Unlike a broken arm or bleeding wound, when it comes to eye
-                  emergencies, we are often caught between "maybe it..."
-                </p>
+                <div
+                  className="content-wrapper prose prose-lg max-w-none"
+                  dangerouslySetInnerHTML={{
+                    __html: latestBlog?.content?.rendered.slice(0, 200),
+                  }}
+                />
               </div>
             </div>
           </div>
