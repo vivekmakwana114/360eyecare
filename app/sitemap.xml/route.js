@@ -10,66 +10,87 @@ const WORDPRESS_API_URL =
 
 // Ensure the URL has the correct format
 const formatUrl = (url) => {
-  if (url.startsWith("http")) return url;
-  return `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+  if (url.startsWith("http")) {
+    return url.endsWith("/") ? url : `${url}/`;
+  }
+  const baseUrl = `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
+  return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
 };
 
-// Static pages that should be included in the sitemap
+// Helper function to create page objects with consistent structure
+const createPage = (url, options = {}) => ({
+  url,
+  changefreq: options.changefreq || "weekly",
+  priority: options.priority || 0.7,
+  lastmod: new Date().toISOString(),
+});
+
+// Static pages organized by category
 const staticPages = [
-  { url: "/", changefreq: "daily", priority: 1.0 },
-  { url: "/about", changefreq: "weekly", priority: 0.8 },
-  { url: "/services", changefreq: "weekly", priority: 0.8 },
-  { url: "/contact", changefreq: "weekly", priority: 0.7 },
-  { url: "/blog", changefreq: "daily", priority: 0.9 },
-  { url: "/book-eye-exam", changefreq: "weekly", priority: 0.8 },
-  { url: "/contact-address-directions", changefreq: "weekly", priority: 0.7 },
-  { url: "/direct-billing", changefreq: "weekly", priority: 0.7 },
-  { url: "/find-eye-doctor-near-me", changefreq: "weekly", priority: 0.7 },
-  { url: "/virtual-consult", changefreq: "weekly", priority: 0.7 },
-  { url: "/virtual-consult-consent-form", changefreq: "weekly", priority: 0.7 },
-  { url: "/payment-plans", changefreq: "weekly", priority: 0.7 },
-  { url: "/common-eye-conditions", changefreq: "weekly", priority: 0.7 },
-  { url: "/eye-emergencies", changefreq: "weekly", priority: 0.7 },
-  {
-    url: "/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment",
-    changefreq: "weekly",
-    priority: 0.7,
-  },
-  { url: "/laser-vision-correction", changefreq: "weekly", priority: 0.7 },
-  { url: "/myopia-control-clinic", changefreq: "weekly", priority: 0.7 },
-  {
-    url: "/dry-eye-syndrome-keratograph-i-pen",
-    changefreq: "weekly",
-    priority: 0.7,
-  },
-  { url: "/orthokeratology-treatment", changefreq: "weekly", priority: 0.7 },
-  { url: "/contact-lenses-faq", changefreq: "weekly", priority: 0.7 },
-  { url: "/pediatric-eye-exams", changefreq: "weekly", priority: 0.7 },
-  {
-    url: "/advanced-diagnostics-eye-exams",
-    changefreq: "weekly",
-    priority: 0.7,
-  },
-  { url: "/custom-lenses-toronto", changefreq: "weekly", priority: 0.7 },
-  { url: "/custom-lenses", changefreq: "weekly", priority: 0.7 },
-  { url: "/eye-glasses", changefreq: "weekly", priority: 0.7 },
-  { url: "/maui-jim-lens-technology", changefreq: "weekly", priority: 0.7 },
-  { url: "/prescription-lenses", changefreq: "weekly", priority: 0.7 },
-  { url: "/miyosmart", changefreq: "weekly", priority: 0.7 },
-  { url: "/virtual-shopping", changefreq: "weekly", priority: 0.7 },
-  { url: "/eye-exams", changefreq: "weekly", priority: 0.7 },
-  { url: "/selection-guide", changefreq: "weekly", priority: 0.7 },
-  { url: "/toronto-beaches-optometrist", changefreq: "weekly", priority: 0.7 },
-  { url: "/shipping-return-policy", changefreq: "weekly", priority: 0.5 },
-  { url: "/terms-conditions", changefreq: "weekly", priority: 0.5 },
-  { url: "/toronto-rosedale-optometrist", changefreq: "weekly", priority: 0.7 },
-  { url: "/shop", changefreq: "weekly", priority: 0.8 },
-  { url: "/privacy-policy", changefreq: "weekly", priority: 0.5 },
-  { url: "/giving-back", changefreq: "weekly", priority: 0.5 },
-  { url: "/optometrists", changefreq: "weekly", priority: 0.7 },
-  { url: "/career-opportunities", changefreq: "weekly", priority: 0.5 },
-  { url: "/sunglasses", changefreq: "weekly", priority: 0.8 },
-  { url: "/about-us", changefreq: "weekly", priority: 0.8 },
+  // Homepage
+  createPage("/", { changefreq: "daily", priority: 1.0 }),
+
+  // Main navigation
+  createPage("/about-us", { priority: 0.8 }),
+  createPage("/services", { priority: 0.8 }),
+  createPage("/contact", { priority: 0.8 }),
+  createPage("/blog", { changefreq: "daily", priority: 0.9 }),
+  createPage("/shop", { priority: 0.9 }),
+
+  // Services
+  createPage("/book-eye-consultation-yorkville", { priority: 0.9 }),
+  createPage("/book-eye-exam", { priority: 0.8 }),
+  createPage("/eye-exams", { priority: 0.8 }),
+  createPage("/pediatric-eye-exams", { priority: 0.8 }),
+  createPage("/contact-lenses-faq", { priority: 0.8 }),
+  createPage("/laser-vision-correction", { priority: 0.8 }),
+  createPage("/myopia-control-clinic", { priority: 0.8 }),
+  createPage("/orthokeratology-treatment", { priority: 0.8 }),
+  createPage("/advanced-diagnostics-eye-exams", { priority: 0.8 }),
+  createPage(
+    "intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment"
+  ),
+  createPage("dry-eye-syndrome-keratograph-i-pen"),
+
+  // Products
+  createPage("/eye-glasses", { priority: 0.8 }),
+  createPage("/prescription-lenses", { priority: 0.8 }),
+  createPage("/custom-lenses", { priority: 0.8 }),
+  createPage("/custom-lenses-toronto", { priority: 0.8 }),
+  createPage("/maui-jim-lens-technology", { priority: 0.7 }),
+  createPage("/miyosmart", { priority: 0.7 }),
+  createPage("/sunglasses", { priority: 0.8 }),
+
+  // Locations
+  createPage("/find-eye-doctor-near-me", { priority: 0.8 }),
+  createPage("/toronto-beaches-optometrist", { priority: 0.8 }),
+  createPage("/toronto-rosedale-optometrist", { priority: 0.8 }),
+  createPage("/contact-address-directions", { priority: 0.7 }),
+
+  // Patient info
+  createPage("/direct-billing", { priority: 0.7 }),
+  createPage("/payment-plans", { priority: 0.7 }),
+  createPage("/virtual-consult", { priority: 0.7 }),
+  createPage("/virtual-consult-consent-form", { priority: 0.5 }),
+  createPage("/virtual-shopping", { priority: 0.6 }),
+
+  // Eye health
+  createPage("/common-eye-conditions", { priority: 0.7 }),
+  createPage("/eye-emergencies", { priority: 0.8 }),
+  createPage("/selection-guide", { priority: 0.6 }),
+
+  // Company
+  createPage("/optometrists", { priority: 0.7 }),
+  createPage("/giving-back", { priority: 0.5 }),
+  createPage("/career-opportunities", { priority: 0.5 }),
+
+  // Legal
+  createPage("/privacy-policy", { priority: 0.3 }),
+  createPage("/terms-conditions", { priority: 0.3 }),
+  createPage("/shipping-return-policy", { priority: 0.3 }),
+
+  // System pages
+  createPage("/thank-you", { priority: 0.1 }),
 ];
 
 // Fetch all WordPress posts with pagination

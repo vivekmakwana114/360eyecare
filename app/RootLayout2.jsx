@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation";
 
 const RootLayout2 = ({ children }) => {
   const hideLayout =
-    usePathname() === "/shop" ||
-    usePathname() === "/book-eye-consultation-yorkville" ||
-    usePathname() === "/thank-you";
+    usePathname() === "/shop/" ||
+    usePathname() === "/book-eye-consultation-yorkville/" ||
+    usePathname() === "/thank-you/";
 
   return (
     <>

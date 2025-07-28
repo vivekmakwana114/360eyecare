@@ -281,7 +281,7 @@ const Footer = () => {
               <ul className="flex flex-col space-y-3 text-base list-none p-0">
                 <li>
                   <Link
-                    href="/terms-conditions"
+                    href="/terms-conditions/"
                     className="hover:text-combination-100"
                   >
                     Terms of Service & Conditions
@@ -289,7 +289,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/privacy-policy"
+                    href="/privacy-policy/"
                     className="hover:text-combination-100"
                   >
                     Privacy Policy
@@ -297,7 +297,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    href="/shipping-return-policy"
+                    href="/shipping-return-policy/"
                     className="hover:text-combination-100"
                   >
                     Shipping & Return Policy
