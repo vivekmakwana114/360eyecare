@@ -8,11 +8,11 @@ export async function generateMetadata({ params }) {
 
     if (!post || post.length === 0) {
       return {
-        title: "Post Not Found",
-        description: "This post doesn't exist or may have been removed.",
+        title: "Route Not Found",
+        description: "This route doesn't exist or may have been removed.",
         openGraph: {
-          title: "Post Not Found",
-          description: "This post doesn't exist or may have been removed.",
+          title: "Route Not Found",
+          description: "This route doesn't exist or may have been removed.",
           images: [],
         },
       };
@@ -90,11 +90,11 @@ export async function generateMetadata({ params }) {
     };
   } catch (error) {
     return {
-      title: "Error Loading Post",
-      description: "There was an error loading this post.",
+      title: "Error Loading Route",
+      description: "There was an error loading this route.",
       openGraph: {
-        title: "Error Loading Post",
-        description: "There was an error loading this post.",
+        title: "Error Loading Route",
+        description: "There was an error loading this route.",
         images: [],
       },
     };

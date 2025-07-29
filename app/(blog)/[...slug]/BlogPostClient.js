@@ -37,10 +37,10 @@ const page = () => {
     let isMounted = true;
 
     const fetchPost = async () => {
-      if (!slug) {
-        router.push("/not-found");
-        return;
-      }
+      // if (!slug) {
+      //   router.push("/not-found");
+      //   return;
+      // }
 
       setIsLoading(true);
       setError(null);
@@ -68,10 +68,10 @@ const page = () => {
         setData(postData[0]);
       } catch (err) {
         // console.error("Error fetching post:", err);
-        if (isMounted) {
-          setError(err.message);
-          router.push("/not-found");
-        }
+        // if (isMounted) {
+        //   setError(err.message);
+        //   router.push("/not-found");
+        // }
       } finally {
         if (isMounted) {
           setIsLoading(false);
@@ -98,7 +98,7 @@ const page = () => {
       {isLoading ? (
         <div className="flex flex-col items-center justify-center min-h-[60vh] py-12">
           <div className="w-16 h-16 border-4 border-combination-100 border-t-transparent rounded-full animate-spin mb-4"></div>
-          <p className="text-gray-600">Loading post...</p>
+          <p className="text-gray-600">Loading ...</p>
         </div>
       ) : error ? (
         <div className="flex flex-col items-center justify-center min-h-[60vh] py-12 text-center px-4">
@@ -150,16 +150,16 @@ const page = () => {
             </svg>
           </div>
           <h2 className="text-xl font-semibold text-gray-800 mb-2">
-            No post found
+            404 Not Found
           </h2>
           <p className="text-gray-600 mb-6">
-            The post you're looking for doesn't exist or has been removed.
+            The page you're looking for doesn't exist.
           </p>
           <Link
-            href="/blog"
+            href="/"
             className="px-6 py-2 bg-combination-100 text-white rounded-md hover:bg-combination-200 transition-colors"
           >
-            Back to Blog
+            Back to Home
           </Link>
         </div>
       ) : (
