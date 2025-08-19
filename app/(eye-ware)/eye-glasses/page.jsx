@@ -84,7 +84,7 @@ const pages = () => {
       tagline: "LaFont Eyeglasses: Parisian Elegance and Style",
       description:
         "LaFont eyeglasses are synonymous with Parisian elegance and style. Known for their bold colors and unique patterns, LaFont frames are designed to make a statement. With a focus on quality craftsmanship and attention to detail, LaFont eyeglasses are the perfect choice for those who want to stand out.",
-      catalogLink: "https://lafont.com/",
+      catalogLink: "https://www.lafont.com/",
       logoImg: Brand3,
     },
 
@@ -113,7 +113,7 @@ const pages = () => {
       tagline: "Integrum Eyeglasses: Fusion of Style and Comfort",
       description:
         "Integrum eyeglasses offer a fusion of style and comfort, providing eyewear that enhances your vision and complements your fashion sense. With a focus on quality materials and innovative design, Integrum frames are ideal for those seeking functionality and style.",
-      catalogLink: "https://integrum.com/",
+      catalogLink: "https://integrumeyewear.com/",
       logoImg: Brand5,
     },
     {
@@ -133,7 +133,7 @@ const pages = () => {
       tagline: "Munic Eyeglasses: Modern and Innovative Designs",
       description:
         "Munic eyeglasses feature modern and innovative designs that blend fashion and technology. With lightweight materials and stylish frames, Munic offers comfortable and trendy eyewear. Whether you're looking for classic styles or bold statements, Munic has a frame to suit your style.",
-      catalogLink: "https://munic.com/",
+      catalogLink: "https://www.municeyewear.com/",
       logoImg: Brand7,
     },
     {
@@ -142,7 +142,7 @@ const pages = () => {
       tagline: "O&X New York Eyeglasses: Urban Sophistication",
       description:
         "O&X New York eyeglasses exude urban sophistication and style. With sleek designs and high-quality materials, O&X frames are perfect for those who want to make a statement. Whether in the city or the suburbs, O&X New York eyeglasses are the perfect accessory for any outfit.",
-      catalogLink: "https://oxny.com/",
+      catalogLink: "https://www.onxnewyork.com/",
       logoImg: Brand8,
     },
     {
@@ -238,7 +238,8 @@ const pages = () => {
       tagline: "Life Italia Kids Eyeglasses: Stylish and Durable",
       description:
         "Life Italia Kids eyeglasses are designed to be stylish and durable, perfect for active kids. With a focus on quality materials and comfortable designs, Life Italia Kids frames are functional and fashionable. Whether your child needs glasses for everyday wear or sports activities, Life Italia Kids has a frame to suit their needs.",
-      catalogLink: "https://lifeitalia.com/",
+      catalogLink:
+        "https://www.westgroupe.com/US/catalog/index?brandName=Life%20Italia",
       logoImg: Brand18,
     },
 
@@ -258,7 +259,8 @@ const pages = () => {
       tagline: "Superflex Kids Eyeglasses: Flexible and Fun",
       description:
         "Superflex Kids eyeglasses are flexible and fun, perfect for active kids. With durable materials and vibrant colors, Superflex Kids frames are designed to withstand the demands of everyday wear. Whether your child needs glasses for school or play, Superflex Kids has a frame to match their style and personality.",
-      catalogLink: "https://superflexkids.com/",
+      catalogLink:
+        "https://www.westgroupe.com/US/catalog/index?brandName=superflex",
       logoImg: Brand20,
     },
     {
@@ -278,7 +280,7 @@ const pages = () => {
       tagline: "Emporio Armani Eyeglasses: Italian Style and Sophistication",
       description:
         "Emporio Armani eyeglasses embody Italian style and sophistication. With sleek designs and high-quality materials, Emporio Armani frames symbolize modern elegance. Whether you're looking for classic rectangular frames or trendy round styles, Emporio Armani has a frame to match your style.",
-      catalogLink: "https://emporioarmani.com/",
+      catalogLink: "https://www.armani.com/en-ca/",
       logoImg: Brand22,
     },
     {
