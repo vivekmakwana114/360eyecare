@@ -9,9 +9,9 @@ const page = () => {
   return (
     <main>
       <HeroSection />
-      <DigitalEyeStain />
-      <PrimaryBackground />
       <HappyClients />
+      <PrimaryBackground />
+      <DigitalEyeStain />      
       <Banner />
     </main>
   );

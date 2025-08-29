@@ -67,10 +67,16 @@ const ScheduleForm = () => {
 
   return (
     <div className="w-full flex items-center justify-center">
-      <div className="bg-[#40BCC8] md:rounded-[12px] rounded-none md:p-[40px] p-[24px] w-full max-w-[536px] flex flex-col">
-        <h3 className="text-[#28305F] text-center text-[20px] md:text-[24px] font-[700] mb-[32px]">
-          Schedule your Appointment
-        </h3>
+      <div className="bg-[#FFFFFF80] md:rounded-[12px] rounded-none md:p-[40px] p-[24px] w-full max-w-[500px] flex flex-col gap-y-5">
+        <div>
+          <h3 className="text-[#28305F] text-center text-[20px] md:text-[24px] font-[700] mb-[32px]">
+            Book Your FREE Consultation
+          </h3>
+          <p className="text-black text-center flex justify-center items-center space-x-2">
+            <img src="/icons/clock.gif" alt="" width={30} height={30} className="inline-block mix-blend-multiply" />
+            <span>Only 6 spots left today</span>
+          </p>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="flex flex-col gap-[20px]">
             {/* First Name */}
@@ -85,11 +91,10 @@ const ScheduleForm = () => {
                 id="firstName"
                 type="text"
                 placeholder=""
-                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
-                  errors.firstName
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${errors.firstName
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
-                }`}
+                  }`}
                 {...register("firstName", {
                   required: "First name is required",
                 })}
@@ -113,11 +118,10 @@ const ScheduleForm = () => {
                 id="lastName"
                 type="text"
                 placeholder=""
-                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
-                  errors.lastName
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${errors.lastName
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
-                }`}
+                  }`}
                 {...register("lastName", {
                   required: "Last name is required",
                 })}
@@ -140,11 +144,10 @@ const ScheduleForm = () => {
               <input
                 id="phoneNumber"
                 type="tel"
-                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
-                  errors.phoneNumber
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${errors.phoneNumber
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
-                }`}
+                  }`}
                 onInput={(e) => {
                   e.target.value = e.target.value.replace(/[^0-9]/g, "");
                 }}
@@ -175,11 +178,10 @@ const ScheduleForm = () => {
                 id="email"
                 type="email"
                 placeholder=""
-                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${
-                  errors.email
+                className={`w-full px-[16px] py-[12px] bg-white border rounded-[6px] text-[14px] outline-none transition-colors ${errors.email
                     ? "border-red-500"
                     : "border-gray-200 focus:border-[#28305F]"
-                }`}
+                  }`}
                 {...register("email", {
                   required: "Email is required",
                   pattern: {
@@ -199,13 +201,12 @@ const ScheduleForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`w-full bg-[#28305F] text-white py-[14px] px-[16px] rounded-[6px] text-[16px] font-[600] transition-colors mt-[12px] ${
-                isSubmitting
+              className={`w-full bg-[#28305F] text-white py-[14px] px-[16px] rounded-[6px] text-[16px] font-[600] transition-colors mt-[12px] ${isSubmitting
                   ? "opacity-70 cursor-not-allowed"
                   : "hover:bg-[#1a1f3d]"
-              }`}
+                }`}
             >
-              {isSubmitting ? "Scheduling..." : "Schedule your Appointment"}
+              {isSubmitting ? "Scheduling..." : "GET MY FREE CONSULTATION NOW"}
             </button>
 
             {/* Status Message */}
@@ -221,6 +222,25 @@ const ScheduleForm = () => {
               </div>
             )} */}
           </div>
+
+          <div className="text-[12px] text-[#28305F] flex flex-col gap-y-2 p-4 items-center">
+            <div className="flex gap-x-10">
+              <div className="flex flex-row items-center gap-x-2">
+                <img src="/icons/no-hidden-fees.png" alt="" className="w-5 h-4 object-contain" />
+                <span>No hidden Fees</span>
+              </div>
+              <div className="flex flex-row items-center gap-x-2">
+                <img src="/icons/no-card-require.png" alt="" className="w-5 h-4 object-contain" />
+                <span>No Card require</span>
+              </div>
+            </div>
+
+            <div className="flex flex-row items-center gap-x-2">
+              <img src="/icons/call.png" alt="" className="w-4 h-4 object-contain" />
+              <span>We'll call you within 2 hours to confirm</span>
+            </div>
+          </div>
+
         </form>
       </div>
     </div>

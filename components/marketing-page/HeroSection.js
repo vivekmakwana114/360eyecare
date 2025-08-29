@@ -53,25 +53,61 @@ const HeroSection = () => {
     <>
       {/* Hero Content */}
       <div
-        className="md:max-w-svh mx-auto md:bg-[url('/herosection.webp')] md:bg-cover md:bg-center md:bg-no-repeat bg-contain relative"
+        className="md:max-w-svh mx-auto md:bg-cover md:bg-center bg-contain relative bg-[#E1E6EB]"
         id="hero-form-section"
       >
-        <div className="absolute inset-0 !bg-[#111530EB]"></div>
+        <div className="absolute inset-0 bg-[#E1E6EB] py-10"></div>
 
         <div className="relative z-10 md:px-4 px-0 py-0 md:py-16">
-          <div className="flex flex-col md:flex-row md:gap-12 max-w-[1200px] md:h-[636px]  md:min-h-0 mx-auto justify-center items-center md:bg-none bg-[url('/herosection.webp')] bg-cover bg-center bg-no-repeat">
+          <div className="flex flex-col md:flex-row md:gap-3 max-w-[1300px] md:h-[636px]  md:min-h-0 mx-auto justify-center items-center md:bg-none bg-[url('/herosection.webp')] bg-cover bg-center bg-no-repeat ">
             {/* Left side - Text content */}
-            <div className="relative w-full md:w-1/2 flex flex-col items-center justify-center text-center md:text-left px-4 py-8 md:py-0">
-              <div className="absolute md:hidden inset-0 bg-[#111530EB] z-0"></div>
-              <div className="relative z-10">
-                <h2 className="text-[32px] md:leading-[64px] leading-[42px] h-auto md:text-[48px] font-[700] text-white md:text-left text-center mb-4">
-                  Feeling Eye Fatigue from Too Much Screen Time?
+            <div className="relative w-full md:w-1/2 flex flex-col items-start justify-center text-center md:text-left py-8 md:py-0 h-full gap-y-5">
+              <div className="bg-[#FBF7B9] p-2 border-red-600 border-2 rounded-sm">
+                <img src="/icons/time.gif" alt="" width={20} height={20}  className="inline-block mix-blend-multiply" />
+                <span>Limited Time : </span>
+                <span className="text-[#D00000]"> FREE Consultation Worth $150 </span></div>
+              <div className="absolute md:hidden inset-0 bg-[#E1E6EB] z-0"></div>
+
+              {/* list */}
+              <div className="relative z-10 space-y-4">
+                <h2 className="text-[32px] md:leading-[64px] leading-[42px] h-auto md:text-[40px] font-[700] text-[#28305F] md:text-left text-center mb-4">
+                  <p>Stop Eye Strain From</p>
+                  <p>Destroying Your Productivity</p>
                 </h2>
-                <p className="text-white text-sm sm:text-base md:text-[18px] md:text-left text-center leading-[32px] tracking-normal">
-                  Book your Free Digital Eye Strain Consultation with a
-                  certified optometrist at 360 Eyecare.
+
+                <p className="text-black text-sm sm:text-base md:text-[18px] md:text-left text-center leading-[32px] tracking-normal">
+                  Get a personalized solution to eliminate headaches, blurred vision, and tired eyes in just 15 minutes with our certified optometrist.
                 </p>
+
+                <div className="text-black">
+                  <ul className="space-y-6 relative">
+                    {[
+                      "Identify what's really causing your eye strain and headaches",
+                      "Learn proper screen positioning and lighting techniques",
+                      "Get personalized recommendations for your workspace setup",
+                      "Understand if you need specialized computer glasses",
+                    ].map((item, index, arr) => (
+                      <li key={index} className="flex items-start gap-3 relative">
+                        {/* Tick with line */}
+                        <div className="relative flex flex-col items-center">
+                          <img
+                            src="/icons/tick-mark.png"
+                            alt="tick"
+                            className="w-6 h-6 z-10"
+                          />
+                          {index !== arr.length - 1 && (
+                            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+12px)] bg-[#CFCFCF]" />
+                          )}
+                        </div>
+
+                        {/* Text */}
+                        <span className="text-base md:text-lg leading-6">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
+
             </div>
 
             {/* Right side - Form */}
@@ -81,76 +117,11 @@ const HeroSection = () => {
           </div>
 
           {/* Desktop Statistics */}
-          <div className="mt-[24px] py-4 md:py-8 hidden md:block">
-            <div className="max-w-[1200px] mx-auto px-4">
-              <div className="flex flex-row items-center text-center p-4">
-                {statitsicsdata.map((item, index) => (
-                  <div key={index}>
-                    <div className="flex flex-row items-center text-center pr-12 gap-4">
-                      <div className="flex flex-col items-start justify-center gap-4 md:gap-2 mb-1">
-                        <div className="flex flex-row items-center gap-2">
-                          <Image
-                            src={item.icon}
-                            width={24}
-                            height={24}
-                            alt="icon"
-                            className="text-white"
-                          />
-                          <h3 className="text-[16px] md:text-[20px] font-[600] text-white">
-                            {item.title}
-                          </h3>
-                        </div>
 
-                        <div>
-                          <p className="text-white text-[12px] md:text-[16px] font-[500] text-nowrap">
-                            {item.description}
-                          </p>
-                        </div>
-                      </div>
-                      {index !== statitsicsdata.length - 1 && (
-                        <div className="w-[1px] h-[99px] bg-[#495287]"></div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
       {/* Mobile Statistics section */}
-      <div className="bg-white py-4 md:py-8 block md:hidden">
-        <div className="max-w-[1004px] mx-auto px-4">
-          <div className="flex flex-col gap-[24px] items-center justify-center">
-            {statitsicsdata2.map((item, index) => (
-              <div key={index}>
-                <div className="flex flex-col items-center justify-center text-center gap-2">
-                  <div className="flex items-center justify-center gap-1">
-                    <Image
-                      src={item.icon}
-                      width={20}
-                      height={20}
-                      alt="icon"
-                      className="text-[#28305F]"
-                    />
-                    <h3 className="text-[18px] font-[600] text-[#28305F]">
-                      {item.title}
-                    </h3>
-                  </div>
-                  <p className="text-[#888888] text-[12px] font-[500] mb-4">
-                    {item.description}
-                  </p>
-                </div>
-
-                {index !== statitsicsdata2.length - 1 && (
-                  <div className="w-[214px] h-[1px] bg-[#E1E6EB]"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </>
   );
 };
