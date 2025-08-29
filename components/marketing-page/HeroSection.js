@@ -53,20 +53,19 @@ const HeroSection = () => {
     <>
       {/* Hero Content */}
       <div
-        className="md:max-w-svh mx-auto md:bg-cover md:bg-center bg-contain relative bg-[#E1E6EB]"
+        className="md:max-w-svh mx-auto md:bg-cover md:bg-center bg-contain relative bg-[#E1E6EB] py-24"
         id="hero-form-section"
       >
         <div className="absolute inset-0 bg-[#E1E6EB] py-10"></div>
 
-        <div className="relative z-10 md:px-4 px-0 py-0 md:py-16">
-          <div className="flex flex-col md:flex-row md:gap-3 max-w-[1300px] md:h-[636px]  md:min-h-0 mx-auto justify-center items-center md:bg-none bg-[url('/herosection.webp')] bg-cover bg-center bg-no-repeat ">
+        <div className="relative z-10 md:px-4 px-5 py-0 md:py-16 ">
+          <div className="flex flex-col md:flex-row md:gap-3 max-w-[1300px] md:h-[636px]  md:min-h-0 mx-auto justify-center items-center md:bg-none  ">
             {/* Left side - Text content */}
-            <div className="relative w-full md:w-1/2 flex flex-col items-start justify-center text-center md:text-left py-8 md:py-0 h-full gap-y-5">
+            <div className="relative w-full md:w-1/2 flex flex-col md:items-start items-center justify-center text-center md:text-left py-8 md:py-0 h-full gap-y-8 text-xs md:text-base ">
               <div className="bg-[#FBF7B9] p-2 border-red-600 border-2 rounded-sm">
-                <img src="/icons/time.gif" alt="" width={20} height={20}  className="inline-block mix-blend-multiply" />
+                <img src="/icons/time.gif" alt="" width={20} height={20} className="inline-block mix-blend-multiply" />
                 <span>Limited Time : </span>
                 <span className="text-[#D00000]"> FREE Consultation Worth $150 </span></div>
-              <div className="absolute md:hidden inset-0 bg-[#E1E6EB] z-0"></div>
 
               {/* list */}
               <div className="relative z-10 space-y-4">
@@ -75,7 +74,7 @@ const HeroSection = () => {
                   <p>Destroying Your Productivity</p>
                 </h2>
 
-                <p className="text-black text-sm sm:text-base md:text-[18px] md:text-left text-center leading-[32px] tracking-normal">
+                <p className="text-black text-sm sm:text-base md:text-[18px] text-left leading-[32px] tracking-normal">
                   Get a personalized solution to eliminate headaches, blurred vision, and tired eyes in just 15 minutes with our certified optometrist.
                 </p>
 
@@ -87,13 +86,16 @@ const HeroSection = () => {
                       "Get personalized recommendations for your workspace setup",
                       "Understand if you need specialized computer glasses",
                     ].map((item, index, arr) => (
-                      <li key={index} className="flex items-start gap-3 relative">
-                        {/* Tick with line */}
+                      <li
+                        key={index}
+                        className="grid grid-cols-[auto,1fr] gap-2 relative items-start text-left"
+                      >
+                        {/* Icon + line */}
                         <div className="relative flex flex-col items-center">
                           <img
                             src="/icons/tick-mark.png"
                             alt="tick"
-                            className="w-6 h-6 z-10"
+                            className="md:w-6 md:h-6 w-5 h-4"
                           />
                           {index !== arr.length - 1 && (
                             <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+12px)] bg-[#CFCFCF]" />
@@ -101,17 +103,18 @@ const HeroSection = () => {
                         </div>
 
                         {/* Text */}
-                        <span className="text-base md:text-lg leading-6">{item}</span>
+                        <span className="md:text-lg leading-6 text-sm text-left">{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
+
               </div>
 
             </div>
 
             {/* Right side - Form */}
-            <div className="w-full md:w-1/2  md:px-0">
+            <div className="w-full md:w-1/2 bg-[#E1E6EB]  md:px-0">
               <ScheduleForm />
             </div>
           </div>

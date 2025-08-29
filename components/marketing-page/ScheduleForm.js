@@ -223,8 +223,8 @@ const ScheduleForm = () => {
             )} */}
           </div>
 
-          <div className="text-[12px] text-[#28305F] flex flex-col gap-y-2 p-4 items-center">
-            <div className="flex gap-x-10">
+          <div className="text-[12px] text-[#28305F] flex flex-col gap-y-2 md:p-4 px-2 py-4 items-center">
+            <div className="flex md:gap-x-10 gap-x-5">
               <div className="flex flex-row items-center gap-x-2">
                 <img src="/icons/no-hidden-fees.png" alt="" className="w-5 h-4 object-contain" />
                 <span>No hidden Fees</span>
