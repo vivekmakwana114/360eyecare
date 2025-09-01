@@ -11,9 +11,8 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full py-[15px]  ${
-        isBookingPage ? "bg-[#E1E6EB] shadow-sm shadow-[#0D2B64] border-b border-[#CFCFCF]" : "bg-gray-50 border-b border-[#E1E6EB]"
-      }`}
+      className={`w-full py-[15px]  ${isBookingPage ? "bg-[#E1E6EB] shadow-sm shadow-[#0D2B64] border-b border-[#CFCFCF]" : "bg-gray-50 border-b border-[#E1E6EB]"
+        }`}
     >
       <div className="flex items-center justify-between md:max-w-[1200px] md:mx-auto h-[70px] mx-auto sticky top-0 z-50 px-4">
         {/* Logo */}
@@ -28,8 +27,7 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-x-2">
-        <Image
-            src="/public/phone.png"
+          <img src="/public/phone.png"
             alt="not available"
             width={20}
             height={20}
