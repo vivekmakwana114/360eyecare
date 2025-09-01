@@ -31,7 +31,7 @@ const Header = () => {
         {isBookingPage && (
           <div className="flex gap-[4px]">
             <div className="w-[30px] h-[30px]">
-            <img src="/icons/phone.png" alt="" />
+            <img src="/phone.png" alt="not available" />
             </div>
             <span className="text-[20px] font-bold text-[#28305F]"> 416-901-2725 </span>
           </div>
