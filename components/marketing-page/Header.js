@@ -29,7 +29,7 @@ const Header = () => {
 
         <div className="flex items-center gap-x-2">
         <Image
-            src="/phone.png"
+            src="/public/phone.png"
             alt="not available"
             width={20}
             height={20}
