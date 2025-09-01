@@ -26,6 +26,17 @@ const Header = () => {
             className="w-[100px] h-[50px] object-contain md:w-[142px] md:h-[70px]"
           />
         </Link>
+
+        <div className="flex items-center gap-x-2">
+        <Image
+            src="/phone.png"
+            alt="not available"
+            width={20}
+            height={20}
+            className="w-[20px] h-[20px] object-contain"
+          />
+          <span className="font-bold text-[#28305F] text-[20px]">416-901-2725</span>
+        </div>
       </div>
     </div>
   );

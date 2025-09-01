@@ -73,7 +73,7 @@ const ScheduleForm = () => {
             Book Your FREE Consultation
           </h3>
           <p className="text-black text-center flex justify-center items-center space-x-2">
-            <img src="/clock.gif" alt="" width={30} height={30} className="inline-block mix-blend-multiply" />
+            <img src="/public/clock.gif" alt="" width={30} height={30} className="inline-block mix-blend-multiply" />
             <span>Only 6 spots left today</span>
           </p>
         </div>
@@ -226,17 +226,17 @@ const ScheduleForm = () => {
           <div className="text-[12px] text-[#28305F] flex flex-col gap-y-2 md:p-4 px-2 py-4 items-center">
             <div className="flex md:gap-x-10 gap-x-5">
               <div className="flex flex-row items-center gap-x-2">
-                <img src="/no-hidden-fees.png" alt="" className="w-5 h-4 object-contain" />
+                <img src="/public/no-hidden-fees.png" alt="" className="w-5 h-4 object-contain" />
                 <span>No hidden Fees</span>
               </div>
               <div className="flex flex-row items-center gap-x-2">
-                <img src="/no-card-require.png" alt="" className="w-5 h-4 object-contain" />
+                <img src="/public/no-card-require.png" alt="" className="w-5 h-4 object-contain" />
                 <span>No Card require</span>
               </div>
             </div>
 
             <div className="flex flex-row items-center gap-x-2">
-              <img src="/call.png" alt="" className="w-4 h-4 object-contain" />
+              <img src="/public/call.png" alt="" className="w-4 h-4 object-contain" />
               <span>We'll call you within 2 hours to confirm</span>
             </div>
           </div>
