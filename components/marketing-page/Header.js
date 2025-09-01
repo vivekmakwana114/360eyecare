@@ -26,16 +26,6 @@ const Header = () => {
             className="w-[100px] h-[50px] object-contain md:w-[142px] md:h-[70px]"
           />
         </Link>
-
-        {/* Only show phone number on booking page */}
-        {isBookingPage && (
-          <div className="flex gap-[4px]">
-            <div className="w-[30px] h-[30px]">
-            <img src="/icons/phone.png" alt="" />
-            </div>
-            <span className="text-[20px] font-bold text-[#28305F]"> 416-901-2725 </span>
-          </div>
-        )}
       </div>
     </div>
   );
