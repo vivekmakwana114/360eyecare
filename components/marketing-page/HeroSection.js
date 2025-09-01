@@ -53,7 +53,7 @@ const HeroSection = () => {
     <>
       {/* Hero Content */}
       <div
-        className="md:max-w-svh mx-auto md:bg-cover md:bg-center bg-contain relative bg-[#E1E6EB] py-24"
+        className="md:max-w-svh mx-auto md:bg-cover md:bg-center bg-contain relative bg-[#E1E6EB] md:py-24 py-3 "
         id="hero-form-section"
       >
         <div className="absolute inset-0 bg-[#E1E6EB] py-10"></div>
