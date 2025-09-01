@@ -236,7 +236,7 @@ const ScheduleForm = () => {
             </div>
 
             <div className="flex flex-row items-center gap-x-2">
-              <img src="/public/call.png" alt="" className="w-4 h-4 object-contain" />
+              <img src="/public/Call.png" alt="" className="w-4 h-4 object-contain" />
               <span>We'll call you within 2 hours to confirm</span>
             </div>
           </div>
