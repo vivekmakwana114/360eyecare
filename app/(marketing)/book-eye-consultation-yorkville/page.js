@@ -19,10 +19,10 @@ const page = () => {
         <BookFreeConsultation />
       </div>
 
-
       <div className="block md:hidden fixed bottom-0 left-0 right-0 z-50">
         <BookFreeConsultation />
       </div>
+
     </main>
   );
 };

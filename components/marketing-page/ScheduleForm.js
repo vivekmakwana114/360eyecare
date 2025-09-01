@@ -66,7 +66,7 @@ const ScheduleForm = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center">
+    <div className="w-full flex items-center justify-center" id="form-section">
       <div className="bg-[#FFFFFF80] md:rounded-[12px] rounded-none md:p-[40px] p-[24px] w-full max-w-[500px] flex flex-col gap-y-5">
         <div>
           <h3 className="text-[#28305F] text-center text-[20px] md:text-[24px] font-[700] mb-[32px]">

@@ -32,7 +32,7 @@ const socialLinks = [
 
 const Footer = () => {
   return (
-    <div className="w-full max-w-svh mx-auto bg-[#40BCC8] border-t border-[#E1E6EB] py-[20px]">
+    <div className="w-full max-w-svh mx-auto bg-[#40BCC8] border-t border-[#E1E6EB] py-[20px] pb-28 md:pb-0">
       <div className="max-w-[1200px] w-full px-4 md:px-0 mx-auto">
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-[24px] border-b border-[#55D3DF] pb-[20px]">
           {/* Logo */}

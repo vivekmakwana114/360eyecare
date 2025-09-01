@@ -91,14 +91,14 @@ const HeroSection = () => {
                         className="grid grid-cols-[auto,1fr] gap-2 relative items-start text-left"
                       >
                         {/* Icon + line */}
-                        <div className="relative flex flex-col items-center">
+                        <div className="relative flex flex-col items-center gap-y-2">
                           <img
                             src="/public/tick-mark.png"
                             alt="tick"
-                            className="md:w-6 md:h-6 w-5 h-4"
+                            className="md:w-6 md:h-6 w-4 h-4"
                           />
                           {index !== arr.length - 1 && (
-                            <div className="absolute top-6 left-1/2 -translate-x-1/2 w-[2px] h-[calc(100%+12px)] bg-[#CFCFCF]" />
+                            <div className="absolute top-7 left-1/2 -translate-x-1/2 w-[2px] md:h-5 h-[calc(100%+12px)] bg-[#CFCFCF]" />
                           )}
                         </div>
 
