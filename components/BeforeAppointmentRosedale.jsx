@@ -61,7 +61,7 @@ const BeforeAppointmentRosedale = () => {
               </p>
               <p className="flex items-start gap-2 mt-4">
                 <Image
-                  src="/icons/location.svg"
+                  src="/Icons/location.svg"
                   alt="location"
                   width={24}
                   height={24}
@@ -127,7 +127,7 @@ const BeforeAppointmentRosedale = () => {
                     className="flex flex-row gap-3 items-center"
                   >
                     <Image
-                      src={"/icons/leaf.svg"}
+                      src={"/Icons/leaf.svg"}
                       alt="Clock Icon"
                       width={24}
                       height={24}

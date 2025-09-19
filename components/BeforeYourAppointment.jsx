@@ -166,7 +166,9 @@ const BeforeYourAppointment = ({ id }) => {
                   className="flex flex-row gap-3 items-center"
                 >
                   <Image
-                    src={"/icons/leaf.svg"}
+
+                    src={"/Icons/leaf.svg"}
+
                     alt="Icon"
                     width={24}
                     height={24}

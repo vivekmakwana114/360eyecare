@@ -146,7 +146,7 @@ const ReviewsCarousel = ({ title, data }) => {
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
             >
               <Image
-                src="/icons/arrow-right.svg"
+                src="/Icons/arrow-right.svg"
                 alt="Google Logo"
                 width={30}
                 height={30}
@@ -159,7 +159,7 @@ const ReviewsCarousel = ({ title, data }) => {
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
             >
               <Image
-                src="/icons/arrow-left.svg"
+                src="/Icons/arrow-left.svg"
                 alt="Google Logo"
                 width={30}
                 height={30}

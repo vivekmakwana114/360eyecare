@@ -5,32 +5,32 @@ import Image from "next/image";
 const EyeExam = ({ heading }) => {
   const ExamOptionData = {
     "Before Your Visit": [
-      { icon: "/icons/eyeglasses.svg", text: "Bring current glasses/contacts" },
-      { icon: "/icons/medicine.svg", text: "List of current medications" },
-      { icon: "/icons/insurance.svg", text: "Insurance information" },
+      { icon: "/Icons/eyeglasses.svg", text: "Bring current glasses/contacts" },
+      { icon: "/Icons/medicine.svg", text: "List of current medications" },
+      { icon: "/Icons/insurance.svg", text: "Insurance information" },
       {
-        icon: "/icons/eyeglasses.svg",
+        icon: "/Icons/eyeglasses.svg",
         text: "Bring sunglasses (pupils may be dilated)",
       },
-      { icon: "/icons/time.svg", text: "Arrive 10 minutes early" },
+      { icon: "/Icons/time.svg", text: "Arrive 10 minutes early" },
     ],
     "During Your Exam": [
-      { icon: "/icons/vision.svg", text: "Comprehensive vision testing" },
-      { icon: "/icons/eye.svg", text: "Ocular health assessment" },
-      { icon: "/icons/retina.svg", text: "Digital retinal photography" },
-      { icon: "/icons/pressure.svg", text: "Peripheral vision testing" },
-      { icon: "/icons/oct.svg", text: "OCT scan and review" },
-      { icon: "/icons/peripheral.svg", text: "Eye pressure measurement" },
+      { icon: "/Icons/vision.svg", text: "Comprehensive vision testing" },
+      { icon: "/Icons/eye.svg", text: "Ocular health assessment" },
+      { icon: "/Icons/retina.svg", text: "Digital retinal photography" },
+      { icon: "/Icons/pressure.svg", text: "Peripheral vision testing" },
+      { icon: "/Icons/oct.svg", text: "OCT scan and review" },
+      { icon: "/Icons/peripheral.svg", text: "Eye pressure measurement" },
     ],
     "After Your Exam": [
-      { icon: "/icons/note.svg", text: "Detailed results discussion" },
+      { icon: "/Icons/note.svg", text: "Detailed results discussion" },
       {
-        icon: "/icons/prescribe.svg",
+        icon: "/Icons/prescribe.svg",
         text: "Prescription updates if needed",
       },
-      { icon: "/icons/eyetreat.svg", text: "Treatment recommendations" },
-      { icon: "/icons/glasses.svg", text: "Same-day eyewear ordering" },
-      { icon: "/icons/schedule.svg", text: "Follow-up scheduling" },
+      { icon: "/Icons/eyetreat.svg", text: "Treatment recommendations" },
+      { icon: "/Icons/glasses.svg", text: "Same-day eyewear ordering" },
+      { icon: "/Icons/schedule.svg", text: "Follow-up scheduling" },
     ],
   };
 
