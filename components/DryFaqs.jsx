@@ -18,7 +18,7 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
           className={`font-medium cursor-pointer ${
             isOpen
               ? "text-white font-semibold "
-              : "text-combination-200 hover:text-combination-100"
+              : "text-[#111111] hover:text-combination-100"
           }`}
         >
           {faq.question}
@@ -59,7 +59,7 @@ const DryFaqs = ({ title, faqData }) => {
   };
 
   return (
-    <div className="w-full max-w-7xl bg-white mx-auto p-4  md:py-12 font-sans">
+    <div className="w-full max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-3xl bg-white mx-auto p-4  md:py-12 font-sans">
       <div className="mb-6">
         <h1 className="text-3xl font-bold text-center text-combination-200 mb-3">
           {title}

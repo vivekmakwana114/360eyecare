@@ -5,7 +5,7 @@ import React from "react";
 
 const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 md:py-14">
+    <div className="max-w-7xl mx-auto px-4 pt-4 md:pt-14">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Image Container */}
         <div className="w-full md:w-[40%]">
@@ -20,7 +20,11 @@ const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
 
         {/* Text Container */}
         <div className="w-full md:w-[50%] flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-          <h1 className="font-poppins font-[700] text-2xl md:text-[32px] lg:text-[36px] text-[#28305F]">
+          <div className="inline-block px-6 py-3 bg-[#41BBC8] text-[#FFFFFF] font-medium shadow cursor-text">
+            Meet Dr. Sam Baraam
+          </div>
+
+          <h1 className="font-poppins font-[700] text-2xl md:text-[32px] lg:text-[36px] text-[#28305F] leading-relaxed">
             {title}
           </h1>
 
@@ -30,7 +34,7 @@ const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
 
           <Link
             href={ctaLink}
-            className="w-full flex justify-center md:justify-start mt-2"
+            className="w-full flex justify-center md:justify-start mt-2 mb-4"
           >
             <div className="py-4 px-8 w-[267px] md:w-auto text-center bg-[#28305F] text-white rounded-full font-bold">
               {ctaText}

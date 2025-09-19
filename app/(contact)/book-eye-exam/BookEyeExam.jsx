@@ -9,7 +9,7 @@ import { PatientScaledImage } from "../../../constants/Images";
 import AboutUsSection from "components/AboutUsSection";
 import { bookEyeExamCardData, bookeyeexamFaqdata } from "constants/Constants";
 
-import BeforeYourAppoinment from "../../../components/BeforeYourAppoinment";
+import BeforeYourAppointment from "../../../components/BeforeYourAppointment";
 import DryFaqs from "components/DryFaqs";
 
 const BookEyeExam = () => {
@@ -79,7 +79,7 @@ const BookEyeExam = () => {
           <AboutUsSection cardData={bookEyeExamCardData} />
         </div>
 
-        <BeforeYourAppoinment />
+        <BeforeYourAppointment />
 
         <div className="max-w-7xl mx-auto my-8 md:my-16 px-4 md:px-0">
           <div className="flex flex-col md:flex-row justify-between items-start">
@@ -120,3 +120,4 @@ const BookEyeExam = () => {
 };
 
 export default BookEyeExam;
+

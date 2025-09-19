@@ -5,13 +5,21 @@ import Link from "next/link";
 import { locationHeroBeaches } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "../../../components/MeetOurFounder";
+import ExpertiseSection from "../../../components/ExpertiseSection";
 import EyeCareServices from "../../../components/EyeCareServices";
-import BeforeYourAppoinment from "../../../components/BeforeYourAppoinment";
+import Banner3 from "../../../components/Banner3";
+import EyeExam from "../../../components/EyeExam";
+import BeforeYourAppointment from "../../../components/BeforeYourAppointment";
+import Image from "next/image";
+import LocationServices from "../../../components/LocationServices";
 
 import {
   choose360eyeCareData,
   eyeCareServiceData,
   torontoBeachesFaqData,
+  theBeachesMajorStreets,
+  theBeachesLandmarks,
+  theBeachesAccessPoints,
 } from "constants/Constants";
 import DryFaqs from "components/DryFaqs";
 import ReviewsCarousel from "../../../components/ReviewsCarousel";
@@ -84,15 +92,17 @@ const TorontoBeachesOptometrist = () => {
   return (
     <main className="pt-[110px] ">
       <LocationHeroSection
-        title="360 Eyecare – The Beaches, Toronto"
-        subtitle="Your Trusted Optometry Clinic in The Beaches, Toronto"
+        title="360 Eyecare - Top Optometrist in the Beaches, Toronto"
+        subtitle="Premium Eye Care Clinic Near You In The Beaches"
         desciption={
           <>
-            At 360 Eyecare – The Beaches, we deliver high-quality,
-            patient-focused vision care to individuals and families across The
-            Beaches, Leslieville, East Danforth, Upper Beaches, Danforth
-            Village, and nearby areas. Our The Beaches Optometrist team
-            {!isMobile || showFullDescription ? (
+            Discover exceptional eye care with Dr. Sam Baraam at 360 Eyecare -
+            The Beaches. Located on Queen Street East, near Woodbine Beach, we
+            offer comprehensive eye exams, advanced dry eye treatments,
+            pediatric eye exams, and personalized eye care for families across
+            The Beaches, Leslieville, East Danforth, Upper Beaches, Danforth
+            Village, and nearby areas.
+            {/* {!isMobile || showFullDescription ? (
               <>
                 {" "}
                 offers comprehensive eye exams, advanced dry eye treatment,{" "}
@@ -112,10 +122,10 @@ const TorontoBeachesOptometrist = () => {
                   more
                 </button>
               </>
-            )}
+            )} */}
           </>
         }
-        ctaText="Book Appointment"
+        ctaText="Book Your Eye Exam Today"
         ctaLink="#beachesLocation-form"
         ctaClinic="Call Our Clinic"
         ctaNumber="416-698-3937"
@@ -124,40 +134,72 @@ const TorontoBeachesOptometrist = () => {
       />
 
       <MeetOurFounder
-        title="Meet Our Founder: The Best Eye Doctor in The Beaches"
+        title="Your Trusted Beaches Optometrist"
         description={
           <>
-            Dr. Sam Baraam, the lead optometrist at 360 Eyecare – The Beaches,
-            is recognized as one of the top eye doctors in The Beaches, Toronto.
-            He is celebrated for delivering exceptional patient care,
-            cutting-edge treatment solutions, and a commitment to the local
-            community. With extensive experience and a passion for eye health,
-            Dr. Baraam is certified to treat and manage ocular disease and is
-            thoroughly trained in cataract management and laser vision
-            correction procedures. He is also further trained in binocular
-            vision, orthokeratology lenses and dry eye disease management.{" "}
-            <Link className="underline" href="/team-members/dr-sam-baraam">
+            As the lead optometrist at 360 Eyecare - The Beaches, Dr. Sam Baraam
+            has established himself as one of Toronto's most respected eye care
+            doctors. Serving the vibrant Beaches community with dedication to
+            innovative treatments and exceptional patient care, Dr. Baraam
+            brings extensive expertise in comprehensive eye health management.
+            {/* <Link className="underline" href="/team-members/dr-sam-baraam">
               Dr. Sam Baraam
-            </Link>{" "}
+            </Link>
             ensures that each patient receives personalized, top-quality vision
-            care on each visit to the eye clinic in The Beaches, Toronto.
+            care on each visit to the eye clinic in The Beaches, Toronto. */}
           </>
         }
-        ctaText="Book an Eye Exam Today"
+        ctaText="Book with Dr. Baraam"
         ctaLink="/book-eye-exam"
       />
-
+      <ExpertiseSection
+        title="Specialized Training & Certifications :"
+        description={[
+          "Therapeutic Optometry Certification - Licensed to diagnose and treat eye diseases",
+          "Ortho-K Specialty Training - Advanced myopia control techniques",
+          "Dry Eye Treatment Expert - IPL and RF therapy certified",
+          "Cataract Co-Management - Pre and post-surgical care specialist",
+          "Pediatric Eye Care Specialist - Child vision development expertise",
+        ]}
+        experience={[
+          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Years of Experience" },
+        ]}
+      />
       <EyeCareServices
+        heading="Our Complete Eye Care Services in the Beaches"
         eyeCareServiceData={eyeCareServiceData}
         choose360eyeCareData={choose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
       />
-      <BeforeYourAppoinment id="beachesLocation-form" />
+      <div>
+        <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} />
+      </div>
 
-      <ReviewsCarousel
-        title="Happy Clients of The Beaches!"
-        data={mockBeachesReviews}
+      <div className="my-12">
+        <Banner3 />
+      </div>
+
+      <div className="mt-12">
+        <EyeExam heading="What to Expect During Your Beaches Eye Exam" />
+      </div>
+
+      <BeforeYourAppointment id="beachesLocation-form" />
+
+      <LocationServices
+        mainTitle="Serving the Greater Beaches Community"
+        majorStreetsTitle="Beaches Neighborhoods & Streets"
+        landmarksTitle="Famous Beaches Landmarks & Attractions"
+        accessTitle="Getting to Our Queen Street East Clinic"
+        majorStreets={theBeachesMajorStreets}
+        landmarks={theBeachesLandmarks}
+        accessPoints={theBeachesAccessPoints}
+        disclaimerText={`*Ideal for residents of Leslieville, East Danforth, Upper Beaches, Danforth Village, and beach visitors seeking quality eye care.`}
+        searchText={`*Searching for "eye doctor Queen Street East", "optometrist near Woodbine Beach", or "Beaches eye clinic"? You've found the best eye care destination in Toronto's beach community!`}
       />
+
+      <ReviewsCarousel title="Happy Clients!" data={mockBeachesReviews} />
 
       <DryFaqs
         faqData={torontoBeachesFaqData}

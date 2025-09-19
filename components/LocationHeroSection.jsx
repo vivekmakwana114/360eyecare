@@ -18,7 +18,7 @@ const LocationHeroSection = ({
 
   return (
     <div className="w-full bg-[#28305F]  ">
-      <div className="max-w-7xl mx-auto flex lg:flex-row md:flex-row flex-col-reverse">
+      <div className="max-w-7xl mx-auto flex lg:flex-row md:flex-row flex-col">
         <div className="lg:w-[50%] md:w-[50%] w-full  p-5 flex md:justify-between md:items-center">
           <div className="lg:max-w-[568px] lg:max-h-[446px]  md:max-w-full flex flex-col gap-4 text-white text-center lg:text-left md:text-left">
             <h1 className="font-poppins font-[700] text-[28px] md:text-[32px] lg:text-[40px] text-white">
@@ -27,7 +27,7 @@ const LocationHeroSection = ({
             <p className="lg:text-base md:text-base text-[14px] font-semibold">
               {subtitle}
             </p>
-            <p className="lg:text-base md:text-base text-[14px] font-[400]">
+            <p className="lg:text-base md:text-base text-[14px] font-semibold">
               {typeof desciption === "string" ? desciption : desciption}
             </p>
             <div className="flex flex-col lg:flex-row md:flex-row gap-4 lg:gap-5 md:gap-5 w-full items-center lg:items-start md:items-start">
@@ -39,7 +39,7 @@ const LocationHeroSection = ({
                     onCtaClick(e);
                   }
                 }}
-                className="py-[16px] px-[32px] text-center w-[218px] text-nowrap h-[56px] bg-combination-100 text-white rounded-full font-bold"
+                className="inline-flex items-center justify-center px-8 py-4 text-center  text-nowrap  bg-combination-100 text-white rounded-full font-semibold "
               >
                 {ctaText}
               </Link>

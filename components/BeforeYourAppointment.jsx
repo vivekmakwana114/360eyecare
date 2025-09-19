@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-const BeforeYourAppoinment = ({ id }) => {
+const BeforeYourAppointment = ({ id }) => {
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://scheduler.getsetpro.com/js/scheduler.js";
@@ -63,6 +63,40 @@ const BeforeYourAppoinment = ({ id }) => {
                 )}
               </div>
             ))}
+            <div className="text-white leading-relaxed ">
+              <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
+                Locate Us
+              </p>
+              <p className="font-semibold mt-4">360 Eyecare - The Beaches</p>
+              <div className="flex flex-col md:flex-row gap-3 items-center justify-between mt-2">
+              <div className="flex flex-row gap-2 items-center">
+                <Image
+                  src={"/location/icons/location.svg"}
+                  alt="Icon"
+                  width={24}
+                  height={24}
+                />
+                <p className="text-base text-white font-normal text-center md:text-left">
+                  2199 Queen St E, Toronto, ON M4E 1E5
+                </p>
+              </div>
+              <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
+                <Image
+                  src={"/location/icons/redo.svg"}
+                  alt="Icon"
+                  width={24}
+                  height={24}
+                />
+                <Link
+                  href="https://www.google.com/maps?daddr=2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
+                  className="text-combination-100 underline cursor-pointer"
+                >
+                  Direction
+                </Link>
+              </div>
+            </div>
+              
+            </div>
           </div>
 
           {/* Business Hours Section */}
@@ -102,9 +136,9 @@ const BeforeYourAppoinment = ({ id }) => {
           {/* Address Section */}
           <div className="w-full border border-combination-100 p-6 md:p-10 flex flex-col gap-6">
             <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
-              Our Address
+              Easy Transit Accessibility
             </p>
-            <div className="flex flex-col md:flex-row gap-3 items-center justify-between">
+            {/* <div className="flex flex-col md:flex-row gap-3 items-center justify-between">
               <div className="flex flex-row gap-2 items-center">
                 <Image
                   src={"/location/icons/location.svg"}
@@ -116,22 +150,37 @@ const BeforeYourAppoinment = ({ id }) => {
                   2199 Queen St E, Toronto, ON M4E 1E5
                 </p>
               </div>
-              <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
-                <Image
-                  src={"/location/icons/redo.svg"}
-                  alt="Icon"
-                  width={24}
-                  height={24}
-                />
-                <Link
-                  href="https://www.google.com/maps?daddr=2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
-                  className="text-combination-100 underline cursor-pointer"
+             
+            </div> */}
+             <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+              {[
+                 { id: 1, para: "51 Queen Streetcar " },
+                  { id: 2, para: "Woodbine Station" },
+                  { id: 3, para: "Walk-ins Welcome" },
+                  { id: 4, para: "Street Parking" },
+                  { id: 5, para: "Bike Friendly" },
+                  { id: 6, para: "Boardwalk Access" },
+              ].map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-row gap-3 items-center"
                 >
-                  Direction
-                </Link>
-              </div>
+                  <Image
+                    src={"/icons/leaf.svg"}
+                    alt="Icon"
+                    width={24}
+                    height={24}
+                  />
+                  <p className="text-base text-white">
+                    {item.head}
+                    <span className="text-white">{item.para}</span>
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
+
+          
         </div>
 
         {/* Booking Section */}
@@ -156,4 +205,4 @@ const BeforeYourAppoinment = ({ id }) => {
   );
 };
 
-export default BeforeYourAppoinment;
+export default BeforeYourAppointment;

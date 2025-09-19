@@ -7,22 +7,28 @@ const EyeCareServices = ({
   eyeCareServiceData,
   choose360eyeCareData,
   choose360eyeCareTitle,
+  heading,
 }) => {
   const [openIndex, setOpenIndex] = useState(1);
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 md:py-14">
+      {/* Heading and paragraph*/}
+      <div className="flex flex-col gap-6 text-center md:text-left mb-10 justify-items-center items-center">
+        <h2 className="font-poppins font-[700] text-[28px] md:text-[32px] lg:text-[40px] text-[#28305F]">
+          {heading}
+        </h2>
+        <p className="font-poppins font-[400] text-[14px] md:text-[16px] lg:text-[18px] text-neutral-500">
+          Explore the treatments and specialties we provide for your complete
+          vision care.
+        </p>
+      </div>
+
+      {/* ✅ Accordion + Right side image */}
       <div className="flex md:flex-row gap-10 justify-between flex-col-reverse">
+        {/* Accordion left side */}
         <div className="md:w-[50%] w-full">
           <div className="flex flex-col gap-6">
-            <h2 className="font-poppins font-[700] text-[28px] md:text-[32px] lg:text-[40px] text-[#28305F]">
-              Our Eye Care Services
-            </h2>
-            <p className="font-poppins font-[400] text-[14px] md:text-[16px] lg:text-[18px] text-neutral-500">
-              Explore the treatments and specialties we provide for your
-              complete vision care.
-            </p>
-
-            {eyeCareServiceData.map((item, index) => {
+            {eyeCareServiceData.map((item) => {
               return (
                 <div
                   className="border border-[#E1E6EB] rounded-[8px] p-[10px]"
@@ -35,8 +41,8 @@ const EyeCareServices = ({
                         setOpenIndex(item.id === openIndex ? null : item.id)
                       }
                     >
-                      <div className="flex flex-row gap-3 md:items-start items-center ">
-                        <div className="bg-combination-100 w-7 h-7 rounded-[6px] flex justify-center items-center shrink-0 ">
+                      <div className="flex flex-row gap-3 md:items-start items-center">
+                        <div className="bg-combination-100 w-7 h-7 rounded-[6px] flex justify-center items-center shrink-0">
                           <Image
                             src={item.icon}
                             alt="Eye Care Service"
@@ -65,9 +71,19 @@ const EyeCareServices = ({
                     </div>
 
                     {item.id === openIndex && (
-                      <p className="text-[16px] font-[400] tracking-wider">
-                        {item.para}
-                      </p>
+                      // <p className="text-[16px] font-[400] tracking-wider">
+                      //   {item.para}
+                      // </p>
+                      <div className="flex flex-col gap-2">
+                        <p className="text-[16px] font-poppins text-[#888888]">
+                          {item.para[0]}
+                        </p>
+                        <ul className="list-disc list-inside px-2 font-poppins text-[#888888] marker:text-combination-200 leading-relaxed">
+                         {item?.para?.slice(1)?.map((point,idx)=>(
+                          <li key={idx}>{point}</li>
+                         ))}
+                        </ul>
+                      </div>
                     )}
                   </div>
                 </div>
@@ -76,7 +92,8 @@ const EyeCareServices = ({
           </div>
         </div>
 
-        <div className="md:w-[50%] w-full">
+        {/* Right side image */}
+        <div className="md:w-[50%] w-full flex justify-center">
           <Image
             src={eyeCareServicesImage}
             alt="Eye Care Service"
@@ -86,6 +103,7 @@ const EyeCareServices = ({
         </div>
       </div>
 
+      {/* ✅ Second section as it is */}
       <div className="flex flex-col gap-10 mt-[100px]">
         <div className="flex flex-col gap-4 justify-center items-center">
           <h2 className="font-[700] text-[36px] text-center text-[#28305F] max-w-xl">
@@ -102,7 +120,7 @@ const EyeCareServices = ({
             return (
               <div
                 key={index}
-                className="md:w-[285px] w-full md:h-[352px] h-full  border-[#E1E6EB] border-[1px] rounded-[8px] p-5"
+                className="md:w-[285px] w-full md:h-[352px] h-full border-[#E1E6EB] border-[1px] rounded-[8px] p-5"
               >
                 <div className="flex flex-col gap-3">
                   <div className="bg-combination-100 w-[60px] h-[60px] rounded-[8px] flex justify-center items-center">
@@ -116,7 +134,7 @@ const EyeCareServices = ({
                   <p className="font-[600] text-[18px] text-[#28305F]">
                     {item.head}
                   </p>
-                  <p className="font-[400] text-[16px]  text-neutral-500">
+                  <p className="font-[400] text-[16px] text-neutral-500">
                     {item.para}
                   </p>
                 </div>

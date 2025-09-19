@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-[#334F72] opacity-80 visibility-hidden z-10 pointer-events-none transition-opacity duration-300"
+        className="absolute inset-0 bg-[#204066] opacity-90 visibility-hidden z-10 pointer-events-none transition-opacity duration-300"
         aria-hidden="true"
       ></div>
 
@@ -64,7 +64,7 @@ const Footer = () => {
                 priority
               />
             </div>
-            <p className="mb-6 text-base">
+            <p className="mb-6 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
               Focused on your vision - Providing you with complete optometric
               services in Toronto.
             </p>
@@ -83,7 +83,7 @@ const Footer = () => {
                 size={18}
                 aria-hidden="true"
               />
-              <address className="text-base not-italic">
+              <address className="font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
                 2199 Queen Street East,
                 <br />
                 Toronto, ON M4E 1E5
@@ -97,8 +97,8 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <p className="text-base">
-                <span className="mr-2">Phone:</span>
-                <a href="tel:4166983937" className="hover:text-combination-100">
+                <span className="mr-2 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">Phone:</span>
+                <a href="tel:4166983937" className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
                   416-698-3937
                 </a>
               </p>
@@ -111,8 +111,8 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <p className="text-base">
-                <span className="mr-2">Fax:</span>
-                416-698-1161
+                <span className="mr-2 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">Fax:</span>
+                <a className=" hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae] ">416-698-1161</a>
               </p>
             </div>
 
@@ -126,7 +126,7 @@ const Footer = () => {
                 <span className="sr-only">Email:</span>
                 <a
                   href="mailto:beaches@360eyecare.ca"
-                  className="hover:text-combination-100"
+                  className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                 >
                   beaches@360eyecare.ca
                 </a>
@@ -158,14 +158,14 @@ const Footer = () => {
               >
                 <FaTwitter size={24} aria-hidden="true" />
               </Link>
-              <Link
+              {/* <Link
                 href="https://www.linkedin.com/company/360-eyecare/?originalSubdomain=ca"
                 className="text-white hover:text-combination-100"
                 aria-label="LinkedIn"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={24} aria-hidden="true" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -182,7 +182,7 @@ const Footer = () => {
                 size={18}
                 aria-hidden="true"
               />
-              <address className="text-base not-italic">
+              <address className="font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
                 Concourse level
                 <br />
                 55 Bloor St W Suite 03,
@@ -198,8 +198,8 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <p className="text-base">
-                <span className="mr-2">Phone:</span>
-                <a href="tel:4169012725" className="hover:text-combination-100">
+                <span className="mr-2 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">Phone:</span>
+                <a href="tel:4169012725" className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
                   416-901-2725
                 </a>
               </p>
@@ -212,8 +212,8 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <p className="text-base">
-                <span className="mr-2">Fax:</span>
-                416-901-2727
+                <span className="mr-2 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">Fax:</span>
+                <a className="hover:text-combination-100 mr-3 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">416-901-2727</a>
               </p>
             </div>
 
@@ -224,10 +224,10 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <p className="text-base">
-                <span className="sr-only">Email:</span>
+                <span className="sr-only ">Email:</span>
                 <a
                   href="mailto:yorkville@360eyecare.ca"
-                  className="hover:text-combination-100"
+                  className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                 >
                   yorkville@360eyecare.ca
                 </a>
@@ -259,14 +259,14 @@ const Footer = () => {
               >
                 <FaTwitter size={24} aria-hidden="true" />
               </Link>
-              <Link
+              {/* <Link
                 href="https://www.linkedin.com/company/360-eyecare/?originalSubdomain=ca"
                 className="text-white hover:text-combination-100"
                 aria-label="LinkedIn"
                 rel="noopener noreferrer"
               >
                 <FaLinkedin size={24} aria-hidden="true" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
@@ -282,7 +282,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/terms-conditions/"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Terms of Service & Conditions
                   </Link>
@@ -290,7 +290,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/privacy-policy/"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Privacy Policy
                   </Link>
@@ -298,7 +298,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="/shipping-return-policy/"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Shipping & Return Policy
                   </Link>
@@ -306,7 +306,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="https://360eyecare.ottooptics.io/reorder/product/?cat=6"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Dry Eye Product Shop
                   </Link>
@@ -314,7 +314,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="https://360eyecare.ottooptics.io/reorder/product/?cat=1"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Contact Lens Shop
                   </Link>
@@ -322,7 +322,7 @@ const Footer = () => {
                 <li>
                   <Link
                     href="https://integrumeyewear.com/"
-                    className="hover:text-combination-100"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
                   >
                     Integrum Eyewear
                   </Link>
@@ -352,7 +352,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="py-6 text-center text-sm font-[400]">
+        <div className="py-6 text-center text-sm font-[400] font-poppins not-italic leading-[27px] text-[#aeaeae]">
           Copyright © 2025
           <Link href={"/"} className="text-white hover:text-combination-100">
             {" "}

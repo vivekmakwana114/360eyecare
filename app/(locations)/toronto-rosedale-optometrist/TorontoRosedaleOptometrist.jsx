@@ -2,10 +2,15 @@
 import GoogleMapEmbed from "../../../components/GoogleMapEmbed";
 import Link from "next/link";
 import LocationHeroSection from "../../../components/LocationHeroSection";
+import ExpertiseSection from "../../../components/ExpertiseSection";
 import { locationHeroYorkVille } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "components/MeetOurFounder";
 import Banner3 from "../../../components/Banner3";
+import EyeExam from "../../../components/EyeExam";
+import LocationServices from "../../../components/LocationServices";
+import Image from "next/image";
+
 import BeforeAppointmentRosedale from "../../../components/BeforeAppointmentRosedale";
 import mockRosedaleReviews from "../../../constants/rosedaleReviews.json";
 
@@ -13,6 +18,9 @@ import {
   Rosedalechoose360eyeCareData,
   RosedaleeyeCareServiceData,
   RosedaleFaqData,
+  RosedaleMajorStreets,
+  RosedaleLandmarks,
+  RosedaleAccessPoints,
 } from "constants/Constants";
 import EyeCareServices from "components/EyeCareServices";
 import DryFaqs from "components/DryFaqs";
@@ -43,17 +51,16 @@ const TorontoRosedaleOptometrist = () => {
   return (
     <main className="pt-[110px]">
       <LocationHeroSection
-        title="360 Eyecare – Yorkville Rosedale | Optometrist"
-        subtitle="Experience Premium Eye Care in Yorkville and Rosedale, Toronto"
+        title="Leading Eye Clinic in Yorkville, Toronto | 360 Eyecare"
+        // subtitle="Experience Premium Eye Care in Yorkville and Rosedale, Toronto"
         desciption={
           <>
-            At 360 Eyecare, we are dedicated to providing exceptional eye care
-            for our vibrant community. Serving Yorkville, Rosedale, The Annex,
-            Summerhill, Church and Wellesley (The Village), and surrounding
-            neighbourhoods, our optometry clinic offers state-of-the-art
-            diagnostics, personalized treatment plans, and a curated selection
-            of eyewear to suit your lifestyle.
-            {!isMobile || showFullDescription ? (
+            Experience premium eye care with our optometrist, Dr. Sam Baraam,
+            and our caring eye doctors in Yorkville. Conveniently located on
+            Bloor Street West near Bay Street, serving Yorkville, The Annex, 
+            Downtown Toronto, and Rosedale with comprehensive eye exams,
+            advanced dry eye treatment, and personalized vision solutions.
+            {/* {!isMobile || showFullDescription ? (
               <>
                 {" "}
                 Whether you need a{" "}
@@ -80,49 +87,79 @@ const TorontoRosedaleOptometrist = () => {
                   more
                 </button>
               </>
-            )}
+            )} */}
           </>
         }
-        ctaText="Book Appointment"
+        ctaText="Book Your Eye Exam Today"
         ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"
         ctaClinic="Call Our Clinic"
         ctaNumber="416-901-2725"
         imageSrc={locationHeroYorkVille}
       />
       <MeetOurFounder
-        title="Meet Our Founder: A Leading Optometrist in Yorkville Rosedale"
+        title="Your Trusted Optometrist in Yorkville, Toronto"
         description={
           <>
-            Dr. Sam Baraam, the driving force behind 360 Eyecare
-            Yorkville-Rosedale, is recognized as one of Toronto’s prominent eye
-            doctors. With a dedication to patient education, innovative
+            Dr. Sam Baraam is recognized as one of Toronto's leading eye
+            doctors, bringing over 10 years of expertise to 360 Eyecare
+            Yorkville. With a dedication to patient education, innovative
             treatments, and community engagement, Dr. Baraam provides
-            personalized vision care to every patient who walks through our
-            doors. Certified by the Canadian National Boards (CSAO), Dr. Baraam
-            has also successfully completed all three parts of the US National
-            Board examinations (NBEO). He’s now an active member of the Ontario
-            Association of Optometrists, the Canadian Association of
-            Optometrists, as well as the College of Optometrists in Vision
-            Development (COVD).
+            personalized vision care to every patient.
           </>
         }
-        ctaText="Book an Eye Exam Today"
+        ctaText="Book with Dr. Baraam"
         ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"
       />
+
+      <ExpertiseSection
+        title="Professional Credentials & Expertise:"
+        description={[
+          "Canadian Association of Optometrists (CAO) - Certified Member",
+          "Ontario Association of Optometrists - Active Member",
+          "US National Board Examinations (NBEO) - Successfully completed all three parts",
+          "College of Optometrists in Vision Development (COVD) - Member",
+          "Advanced Dry Eye Treatment - IPL and RF Therapy Experienced",
+          "Pediatric Eye Care Specialist - Child vision development expertise",
+        ]}
+        experience={[
+          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Years of Experience" },
+        ]}
+      />
       <EyeCareServices
+        heading="Our Eye Care Services"
         eyeCareServiceData={RosedaleeyeCareServiceData}
         choose360eyeCareData={Rosedalechoose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Yorkville Rosedale?"
       />
+
+      <div>
+        <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} />
+      </div>
       <div className="my-12">
         <Banner3 />
       </div>
+
+      <div>
+        <EyeExam heading="What to Expect During Your Yorkville Eye Exam" />
+      </div>
+
       <BeforeAppointmentRosedale />
 
-      <ReviewsCarousel
-        title="Happy Clients of Yorkville Rosedale!"
-        data={mockRosedaleReviews}
+      <LocationServices
+        mainTitle="Serving Toronto Streets & Neighborhoods"
+        majorStreetsTitle="Major Streets We Serve"
+        landmarksTitle="Nearby Toronto Landmarks & Areas"
+        accessTitle="Easy Access from All Downtown Areas"
+        majorStreets={RosedaleMajorStreets}
+        landmarks={RosedaleLandmarks}
+        accessPoints={RosedaleAccessPoints}
+        disclaimerText="*Perfect for residents and workers along Bloor Street corridor, Bay Street financial district, Church-Wellesley Village, and Queen's Park government area."
+        searchText={`*Searching for "eye doctor Bloor Street", "optometrist near Queen's Park", "Bay Street eye clinic", or "Church Street optometrist"? "We're your closest, best eye care on Bloor Street West!`}
       />
+
+      <ReviewsCarousel title="Happy Clients!" data={mockRosedaleReviews} />
 
       <DryFaqs
         faqData={RosedaleFaqData}

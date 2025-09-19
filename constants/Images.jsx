@@ -48,7 +48,7 @@ import GlaucomaImage from "../public/Glaucoma-jpg.webp";
 import DryEyeSyndromeImage from "../public/Dry-Eye-Syndrome-jpg.webp";
 import DiabeticImage from "../public/Diabetic-Retinopathy.webp";
 import MacularImage from "../public/Macular-Degeneration-scaled.webp";
-import eyeCareServiceImage from "../public/eye-care-service.webp";
+import eyeCareServiceImage from "../public/our-eye-care.jpg";
 import UnderstandImage1 from "../public/understand1.webp";
 import UnderstandImage2 from "../public/understand2.webp";
 import UnderstandImage3 from "../public/understand3.webp";
@@ -114,7 +114,8 @@ import ColorfulGlassesImage from "../public/colourfulglesses.webp";
 import locationHeroBeaches from "../public/location/HeroBeaches.png";
 import locationHeroYorkVille from "../public/location/HeroYorkville.png";
 import FounderImage from "../public/location/founder.png";
-import eyeCareServicesImage from "../public/location/eyeServiceImage.png";
+import FounderName from "../public/location/name.png";
+import eyeCareServicesImage from "../public/location/eyeServiceImage.svg";
 
 import kewbeachlbcImage from "../public/kewbeachlbc.jpg";
 import kid2kidimage from "../public/kid2kid.avif";

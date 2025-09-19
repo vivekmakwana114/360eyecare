@@ -1686,26 +1686,26 @@ export const bookeyeexamFaqdata = [
 export const torontoBeachesFaqData = [
   {
     id: 1,
-    question: "Can I visit your clinic for urgent eye care needs?",
+    question: "Q1. Can I visit your clinic for urgent eye care needs?",
     answer:
       "Yes, 360 Eyecare provides emergency services at our Eye Clinic in The Beaches, handling eye injuries, infections, and sudden vision problems.",
   },
   {
     id: 2,
-    question: "Do you offer contact lens fittings and consultations?",
+    question: "Q2. Do you offer contact lens fittings and consultations?",
     answer:
       "Yes, our Optometry provides comprehensive contact lens fittings, including options for Ortho-K lenses for myopia control.",
   },
   {
     id: 3,
     question:
-      "Do you provide laser vision correction consultations in The Beaches?",
+      "Q3. Do you provide laser vision correction consultations in The Beaches?",
     answer:
       "Yes, our Optometrist in The Beaches team offers laser vision correction consultations to guide you through pre- and post-operative care.",
   },
   {
     id: 4,
-    question: "How often should I have an eye exam?",
+    question: "Q4. How often should I have an eye exam?",
     answer: (
       <>
         <p>{"=>"} Adults (19–64): Every 1–2 years</p>
@@ -1718,7 +1718,7 @@ export const torontoBeachesFaqData = [
   },
   {
     id: 5,
-    question: "Do you accept vision insurance?",
+    question: "Q5. Do you accept vision insurance?",
     answer: (
       <>
         Yes! We accept most vision insurance plans.{" "}
@@ -1735,19 +1735,19 @@ export const RosedaleFaqData = [
   {
     id: 1,
     question:
-      "Do you offer emergency eye care services in Yorkville and Rosedale Toronto?",
+      "Q1. Do you offer emergency eye care services in Yorkville and Rosedale Toronto?",
     answer:
       "Yes, our Eye Doctors in Yorkville and Rosedale are available to treat urgent eye issues such as infections, injuries, and sudden vision changes.",
   },
   {
     id: 2,
-    question: "Do you offer consultations for laser vision correction?",
+    question: "Q2. Do you offer consultations for laser vision correction?",
     answer:
       "Yes, our Optometrists in Yorkville and Rosedale provide laser vision correction consultations, including pre- and post-operative care.",
   },
   {
     id: 3,
-    question: "Can I bring my child for an eye exam at your clinic?",
+    question: "Q3. Can I bring my child for an eye exam at your clinic?",
     answer:
       "Absolutely! We provide pediatric Eye Exams in Yorkville and Rosedale, ensuring early detection and management of vision problems in children.",
   },
@@ -1758,23 +1758,19 @@ export const eyeCareServiceData = [
     id: 1,
     head: "Comprehensive Eye Exams",
     icon: "/location/icons/eyeExam.svg",
-    para: (
-      <>
-        Regular{" "}
-        <Link href="/eye-exams" className="underline">
-          eye exams in Toronto
-        </Link>{" "}
-        are essential for maintaining good vision and early detection of eye
-        diseases. Our thorough eye exams for children, adults, and seniors
-        ensure you enjoy clear vision and long-term eye health.
-      </>
-    ),
+    para: [
+      "Thorough vision assessments using cutting-edge technology for optimal eye health and vision clarity.",
+      "Advanced digital retinal imaging",
+      "Glaucoma and macular degeneration screening",
+      "OHIP billing for eligible patients",
+      "Same-day results and recommendations",
+    ],
   },
   {
     id: 2,
-    head: "Advanced Dry Eye Treatment – IPL & RF Therapy",
+    head: "Advanced Dry Eye Treatment",
     icon: "/location/icons/dryeye.svg",
-    para: (
+    para: [
       <>
         If you suffer from dry, irritated, or fatigued eyes, our{" "}
         <Link
@@ -1789,53 +1785,59 @@ export const eyeCareServiceData = [
           eye doctors
         </Link>{" "}
         provide customized treatment plans to help restore your eye comfort.
-      </>
-    ),
+      </>,
+    ],
   },
   {
     id: 3,
-    head: "Pediatric Eye Care",
+    head: "Family Eye Care & Pediatrics",
     icon: "/location/icons/eyeTest.svg",
-    para: "Children’s vision plays a crucial role in their learning and development. Our pediatric eye exams in The Beaches detect early vision issues such as nearsightedness, lazy eye (amblyopia), and eye coordination problems, ensuring your child sees the world clearly.",
+    para: [
+      "Children’s vision plays a crucial role in their learning and development. Our pediatric eye exams in The Beaches detect early vision issues such as nearsightedness, lazy eye (amblyopia), and eye coordination problems, ensuring your child sees the world clearly.",
+    ],
   },
   {
     id: 4,
-    head: "Emergency Eye Care – Immediate Attention When You Need It Most",
+    head: "Emergency Eye Care",
     icon: "/location/icons/emergencyeye.svg",
-    para: "Eye emergencies require urgent medical attention. If you experience sudden vision loss, severe eye pain, flashes of light, eye infections, or injuries, contact us immediately for emergency care.",
+    para: [
+      "Eye emergencies require urgent medical attention. If you experience sudden vision loss, severe eye pain, flashes of light, eye infections, or injuries, contact us immediately for emergency care.",
+    ],
   },
   {
     id: 5,
-    head: "Eyewear & Contact Lens Fittings",
+    head: "Premium Eyewear & Frames",
     icon: "/location/icons/contactLens.svg",
-    para: "If you are looking for stylish and functional eyewear, we carry a wide range of designer frames, prescription glasses, and specialty contact lenses. Our opticians will ensure you have the perfect fit for your lifestyle and vision needs.",
+    para: [
+      "If you are looking for stylish and functional eyewear, we carry a wide range of designer frames, prescription glasses, and specialty contact lenses. Our opticians will ensure you have the perfect fit for your lifestyle and vision needs.",
+    ],
   },
 ];
 
 export const choose360eyeCareData = [
-  {
+ {
     id: 1,
-    head: "Led by the Best Optometrist in The Beaches, Toronto",
+    head: "Led by an Experienced Optometrist in Toronto",
     icon: "/location/icons/checkup.svg",
-    para: "Our founder, Dr. Sam Baraam, is a highly respected optometrist known for expertise, compassionate care, and dedication to patient well-being.",
+    para: "Dr. Sam Baraam leads our clinic with years of experience, delivering trusted care, compassionate service, and a deep commitment to every patient’s eye health.",
   },
   {
     id: 2,
-    head: "State-of-the-Art Technology & Personalized Eye Care",
+    head: "Modern Technology for Personalized Eye Care",
     icon: "/location/icons/eyeExamination.svg",
-    para: "We use cutting-edge diagnostic tools to provide accurate assessments and customized treatment plans for optimal vision health.",
+    para: "We use cutting-edge diagnostic tools to assess vision, detect early conditions, and create custom treatment plans that suit your unique needs and lifestyle.",
   },
   {
     id: 3,
-    head: "Comprehensive Eye Care for All Ages",
+    head: "Comprehensive Eye Care for All Age Groups",
     icon: "/location/icons/comprehensive.svg",
-    para: "We offer eyecare services for every stage of life from pediatric eye exams to senior vision care.",
+    para: "From young children to seniors, we provide full-spectrum vision care services tailored to every stage of life, ensuring clarity, comfort, and ongoing protection.",
   },
   {
     id: 4,
-    head: "Convenient Booking Options",
+    head: "Flexible Scheduling and Simple Booking Options",
     icon: "/location/icons/testing.svg",
-    para: "While we welcome walk-ins when possible, we offer online and phone bookings to provide efficient service with minimal wait times.",
+    para: "Book online, by phone, or visit in person. We offer flexible scheduling options to reduce waiting time and deliver seamless, stress-free appointment experiences.",
   },
 ];
 
@@ -1844,58 +1846,75 @@ export const RosedaleeyeCareServiceData = [
     id: 1,
     head: "Comprehensive Eye Exams",
     icon: "/location/icons/eyeExam.svg",
-    para: "Regular vision check-ups are essential for maintaining healthy eyesight and detecting potential issues early. Our detailed eye exams in Yorkville and Rosedale assess vision clarity, eye health, and overall ocular function, providing personalized recommendations for corrective lenses or treatment if needed.",
+    para: [
+      "Complete vision assessment and eye health screening using advanced diagnostic technology.",
+      "Digital retinal imaging and OCT scanning",
+      "Glaucoma and cataract screening",
+      "Personalized vision correction recommendations",
+      "OHIP coverage for eligible patients",
+      "Insurance direct billing is available",
+    ],
   },
   {
     id: 2,
     head: "Advanced Dry Eye Treatment – IPL and RF Therapy",
     icon: "/location/icons/dryeye.svg",
-    para: "Chronic dry eye can significantly impact your comfort and daily activities. Our innovative Intense Pulsed Light (IPL) and Radiofrequency (RF) treatments target the underlying causes of dry eye, offering long-lasting relief and improved tear production.",
+    para: [
+      "Chronic dry eye can significantly impact your comfort and daily activities. Our innovative Intense Pulsed Light (IPL) and Radiofrequency (RF) treatments target the underlying causes of dry eye, offering long-lasting relief and improved tear production.",
+    ],
   },
   {
     id: 3,
     head: "Pediatric Eye Care",
     icon: "/location/icons/eyeTest.svg",
-    para: "Early detection of vision problems is crucial for children’s learning and development. Our pediatric eye exams in Yorkville and Rosedale assess visual acuity, eye coordination, and common conditions like myopia and amblyopia, ensuring your child gets the best start in eye health.",
+    para: [
+      "Early detection of vision problems is crucial for children’s learning and development. Our pediatric eye exams in Yorkville and Rosedale assess visual acuity, eye coordination, and common conditions like myopia and amblyopia, ensuring your child gets the best start in eye health.",
+    ],
   },
   {
     id: 4,
     head: "Emergency Eye Care",
     icon: "/location/icons/emergencyeye.svg",
-    para: "Sudden vision loss, severe eye pain, or injuries require immediate care. Our optometrists provide emergency eye services to address infections, foreign objects, retinal concerns, and more, helping you protect your vision when it matters most.",
+    para: [
+      "Sudden vision loss, severe eye pain, or injuries require immediate care. Our optometrists provide emergency eye services to address infections, foreign objects, retinal concerns, and more, helping you protect your vision when it matters most.",
+    ],
   },
   {
     id: 5,
     head: "Designer Eyewear & Contact Lenses",
     icon: "/location/icons/contactLens.svg",
-    para: "Yorkville and Rosedale are known for their style; your eyewear should be no exception. Our boutique selection of designer frames, precision prescription lenses, and specialty contact lenses ensures you find eyewear that complements both your look and lifestyle.",
+    para: [
+      "Yorkville and Rosedale are known for their style; your eyewear should be no exception. Our boutique selection of designer frames, precision prescription lenses, and specialty contact lenses ensures you find eyewear that complements both your look and lifestyle.",
+    ],
   },
 ];
+
+
 
 export const Rosedalechoose360eyeCareData = [
   {
     id: 1,
-    head: "Led by a Top-Rated Optometrist",
+    head: "Led by an Experienced Optometrist in Toronto",
     icon: "/location/icons/checkup.svg",
-    para: "Our founder, Dr. Sam Baraam, is highly regarded for his expertise, compassionate approach, and commitment to cutting-edge eye care.",
+    para: "Dr. Sam Baraam leads our clinic with years of experience, delivering trusted care, compassionate service, and a deep commitment to every patient’s eye health.",
   },
   {
     id: 2,
-    head: "Advanced Technology for Precision Eye Health",
+    head: "Modern Technology for Personalized Eye Care",
     icon: "/location/icons/eyeExamination.svg",
-    para: "Our clinic utilizes the latest diagnostic tools to detect and manage vision conditions early, ensuring the best outcomes for your eye health.",
+    para: "We use cutting-edge diagnostic tools to assess vision, detect early conditions, and create custom treatment plans that suit your unique needs and lifestyle.",
   },
   {
     id: 3,
-    head: "Customized Eye Care for Every Stage of Life",
+    head: "Comprehensive Eye Care for All Age Groups",
     icon: "/location/icons/comprehensive.svg",
-    para: "We provide specialized services for children, adults, and seniors, addressing everything from vision correction to age-related eye diseases.",
+    para: "From young children to seniors, we provide full-spectrum vision care services tailored to every stage of life, ensuring clarity, comfort, and ongoing protection.",
   },
   {
     id: 4,
-    head: "Flexible Appointment Booking",
+    head: "Flexible Scheduling and Simple Booking Options",
     icon: "/location/icons/testing.svg",
-    para: "While walk-ins are welcome when possible, we encourage online and phone bookings for a seamless and efficient experience.",
+    para: "Book online, by phone, or visit in person. We offer flexible scheduling options to reduce waiting time and deliver seamless, stress-free appointment experiences.",
   },
 ];
 
@@ -1946,3 +1965,231 @@ export const bookEyeExamCardData = [
     bgColor: "bg-combination-100",
   },
 ];
+
+
+export const RosedaleMajorStreets = [
+    {
+      name: "Bloor Street West",
+      description: "Our clinic location (steps from Bay & Bloor)",
+    },
+    {
+      name: "Yonge Street",
+      description: "2-minute walk east",
+    },
+    {
+      name: "Bay Street",
+      description: "1-minute walk west",
+    },
+    {
+      name: "Church Street",
+      description: "5-minute walk east",
+    },
+    {
+      name: "Avenue Road",
+      description: "10-minute walk west",
+    },
+    {
+      name: "Cumberland Street",
+      description: "Heart of Yorkville shopping",
+    },
+    {
+      name: "Yorkville Avenue",
+      description: "Historic cultural district",
+    },
+    {
+      name: "Charles Street",
+      description: "Residential Yorkville area",
+    },
+    {
+      name: "Scollard Street",
+      description: "Boutique shopping district",
+    },
+  ];
+
+export const RosedaleLandmarks = [
+    {
+      name: "Royal Ontario Museum (ROM)",
+      description: "5-minute walk north on Avenue Road",
+    },
+    {
+      name: "University of Toronto",
+      description: "Queen's Park campus, 10 minutes south",
+    },
+    {
+      name: "Queen's Park",
+      description: "Ontario legislature & government district",
+    },
+    {
+      name: "Yorkville Village Mall",
+      description: "Connected via Cumberland Street",
+    },
+    {
+      name: "Village of Yorkville Park",
+      description: "Historic granite rock parkland",
+    },
+    {
+      name: "Four Seasons Hotel Toronto",
+      description: "Same block on Bay Street",
+    },
+    {
+      name: "Park Hyatt Toronto",
+      description: "3 blocks north on Avenue Road",
+    },
+    {
+      name: "The Mink Mile",
+      description: "Bloor Street luxury shopping corridor",
+    },
+    {
+      name: "Gardiner Museum",
+      description: "Museum district near Queen's Park",
+    },
+    {
+      name: "Church-Wellesley Village",
+      description: "10-minute walk east",
+    },
+    {
+      name: "Casa Loma",
+      description: "15 minutes north via subway",
+    },
+    {
+      name: "St. George Campus",
+      description: "University of Toronto main campus",
+    },
+  ];
+
+ export const RosedaleAccessPoints = [
+    {
+      name: "From Queen's Park & Government District",
+      description:
+        "8-minute walk south on Avenue Road to Bloor, then east to our optometry clinic",
+    },
+    {
+      name: "From Church Street Corridor",
+      description:
+        "Walk west on Bloor Street directly to our Manulife Centre location",
+    },
+    {
+      name: "From Bay Street Financial District",
+      description:
+        "Take Bay Street north directly to our building at Bloor intersection",
+    },
+    {
+      name: "From University of Toronto (St. George Campus)",
+      description:
+        "One subway stop to Bay Station or 10-minute walk via Bloor Street",
+    },
+    {
+      name: "From Yonge Street",
+      description:
+        "2-minute walk west on Bloor Street to our optometry clinic entrance",
+    },
+  ];
+
+
+export const theBeachesMajorStreets = [
+    {
+      name: "Queen Street East",
+      description: "Our main location on the cultural strip",
+    },
+    {
+      name: "Woodbine Avenue",
+      description: "Gateway to Woodbine Beach (5-minute walk)",
+    },
+    {
+      name: "Coxwell Avenue",
+      description: "Western Beaches boundary",
+    },
+    {
+      name: "Victoria Park Avenue",
+      description: "Eastern Beaches limit",
+    },
+    {
+      name: "Kingston Road",
+      description: "Upper Beaches residential area",
+    },
+    {
+      name: "Lakeshore Boulevard",
+      description: "Waterfront access route",
+    },
+    {
+      name: "Main Street",
+      description: "Upper Beaches community hub",
+    },
+    {
+      name: "Gerrard Street East",
+      description: "Northern Beaches corridor",
+    },
+  ];
+
+export const theBeachesLandmarks = [
+    {
+      name: "Woodbine Beach",
+      description: "Toronto's premier beach (3-minute walk)",
+    },
+    {
+      name: "Kew Gardens Park",
+      description: "Historic community center and Jazz Festival venue",
+    },
+    {
+      name: "Toronto Beaches Boardwalk",
+      description: "3.5km lakefront promenade",
+    },
+    {
+      name: "Balmy Beach Park",
+      description: "Eastern beaches recreation area",
+    },
+    {
+      name: "Leuty Lifeguard Station",
+      description: "Iconic heritage landmark",
+    },
+    {
+      name: "R.C. Harris Water Treatment Plant",
+      description: " Art Deco architectural masterpiece",
+    },
+    {
+      name: "Martin Goodman Trail",
+      description: "Waterfront cycling and walking path",
+    },
+    {
+      name: "Ashbridge's Bay",
+      description: "Natural harbor and park space",
+    },
+    {
+      name: "Beaches Branch Library",
+      description: "Historic 1916 Carnegie library",
+    },
+    {
+      name: "Kew Beach Tennis Club",
+      description: "Community sports facility",
+    },
+  ];
+
+ export const theBeachesAccessPoints = [
+    {
+      name: "From Woodbine Beach",
+      description:
+        "3-minute walk north on Woodbine Avenue to Queen Street East",
+    },
+    {
+      name: "From TTC Subway",
+      description:
+        "Take Bloor-Danforth Line to Woodbine Station, then 92 Woodbine bus south to Queen",
+    },
+    {
+      name: "From Downtown Toronto",
+      description:
+        "Take 501 Queen streetcar east directly to our location",
+    },
+    {
+      name: "From Kingston Road (Upper Beaches)",
+      description:
+        "Short walk south on local streets to Queen Street",
+    },
+    {
+      name: "By Car",
+      description:
+        "Street parking available on Queen Street East and side streets",
+    },
+  ];
+
+

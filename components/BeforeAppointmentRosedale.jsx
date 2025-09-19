@@ -27,11 +27,11 @@ const BeforeAppointmentRosedale = () => {
                 head: "416-901-2725",
                 link: "tel:416-901-2725",
               },
-              {
-                icon: "/location/icons/fax.svg",
-                head: "416-901-2727",
-                link: "tel:416-901-2727",
-              },
+              // {
+              //   icon: "/location/icons/fax.svg",
+              //   head: "416-901-2727",
+              //   link: "tel:416-901-2727",
+              // },
               {
                 icon: "/location/icons/email.svg",
                 head: "yorkville@360eyecare.ca",
@@ -52,6 +52,23 @@ const BeforeAppointmentRosedale = () => {
                 </Link>
               </div>
             ))}
+            <div className="text-white leading-relaxed ">
+              <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
+                Locate Us
+              </p>
+              <p className="font-semibold mt-4">
+                360 Eyecare Yorkville-Rosedale
+              </p>
+              <p className="flex items-start gap-2 mt-4">
+                <Image
+                  src="/icons/location.svg"
+                  alt="location"
+                  width={24}
+                  height={24}
+                />
+                Concourse Level, 55 Bloor St W, Suite 03, Toronto, ON M4W 1A5
+              </p>
+            </div>
           </div>
 
           {/* Business Hours Section */}
@@ -68,6 +85,7 @@ const BeforeAppointmentRosedale = () => {
                 { head: "Thur : ", para: " 9:00am – 6:00pm" },
                 { head: "Fri : ", para: " 9:00am – 6:00pm" },
                 { head: "Sat : ", para: "9:00am – 4:00pm" },
+                { head: "Sun : ", para: "Closed" },
               ].map((item) => (
                 <div
                   key={item.head}
@@ -92,37 +110,34 @@ const BeforeAppointmentRosedale = () => {
           <div className="border border-combination-100 p-6 flex flex-col justify-between gap-6">
             <div className="flex flex-col gap-6">
               <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
-                Our Address
+                Transit & Accessibility
               </p>
 
-              <div className="flex flex-row gap-2 items-center">
-                <Image
-                  src={"/location/icons/location.svg"}
-                  alt="Location Icon"
-                  width={24}
-                  height={24}
-                />
-                <p className="text-base text-white font-normal">
-                  Concourse level, 55 Bloor St W Suite 03, Toronto, ON M4W 1A5,
-                  Canada
-                </p>
+              <div className="grid grid-cols-1 gap-y-3">
+                {[
+                  { id: 1, para: "Bloor-Yonge Station" },
+                  { id: 2, para: "Bay Station" },
+                  { id: 3, para: "PATH Connected" },
+                  { id: 4, para: "Manulife Centre" },
+                  { id: 5, para: "TTC Bus Routes" },
+                  { id: 6, para: "Street Parking" },
+                ].map((item) => (
+                  <div
+                    key={item.id}
+                    className="flex flex-row gap-3 items-center"
+                  >
+                    <Image
+                      src={"/icons/leaf.svg"}
+                      alt="Clock Icon"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-base text-white">
+                      <span className="text-white">{item.para}</span>
+                    </p>
+                  </div>
+                ))}
               </div>
-            </div>
-            <div className="flex flex-row items-center gap-2">
-              <Image
-                src={"/location/icons/redo.svg"}
-                alt="Direction Icon"
-                width={24}
-                height={24}
-              />
-              <Link
-                href="https://www.google.com/maps/dir//360+Eyecare+-+Yorkville+Rosedale+Concourse+Level+55+Bloor+St+W+Suite+03+Toronto,+ON+M4W+1A5,+Canada/@43.6695695,-79.3886079,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x882b35d768b1c51d:0x484cf43a7093e7e0"
-                className="text-combination-100 underline cursor-pointer hover:text-opacity-80 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Direction
-              </Link>
             </div>
           </div>
         </div>
