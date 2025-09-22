@@ -12,6 +12,7 @@ import EyeExam from "../../../components/EyeExam";
 import BeforeYourAppointment from "../../../components/BeforeYourAppointment";
 import Image from "next/image";
 import LocationServices from "../../../components/LocationServices";
+import Insurance from "../../../components/Insurance";
 
 import {
   choose360eyeCareData,
@@ -174,7 +175,8 @@ const TorontoBeachesOptometrist = () => {
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
       />
       <div>
-        <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} />
+        {/* <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} /> */}
+        <Insurance/>
       </div>
 
       <div className="my-12">

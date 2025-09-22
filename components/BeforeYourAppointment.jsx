@@ -35,16 +35,16 @@ const BeforeYourAppointment = ({ id }) => {
             </p>
             {[
               {
-                icon: "/location/icons/call.svg",
+                icon: "/public/call.svg",
                 head: "416-698-3937",
                 link: "tel:416-698-3937",
               },
               {
-                icon: "/location/icons/fax.svg",
+                icon: "/public/fax.svg",
                 head: "416-698-1161",
               },
               {
-                icon: "/location/icons/email.svg",
+                icon: "/public/email1.svg",
                 head: "beaches@360eyecare.ca",
                 link: "mailto:beaches@360eyecare.ca",
               },
@@ -71,8 +71,8 @@ const BeforeYourAppointment = ({ id }) => {
               <div className="flex flex-col md:flex-row gap-3 items-center justify-between mt-2">
               <div className="flex flex-row gap-2 items-center">
                 <Image
-                  src={"/location/icons/location.svg"}
-                  alt="Icon"
+                  src={"/public/address.svg"}
+                  alt="address"
                   width={24}
                   height={24}
                 />
@@ -82,7 +82,7 @@ const BeforeYourAppointment = ({ id }) => {
               </div>
               <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
                 <Image
-                  src={"/location/icons/redo.svg"}
+                  src={"/public/redo.svg"}
                   alt="Icon"
                   width={24}
                   height={24}
@@ -119,7 +119,7 @@ const BeforeYourAppointment = ({ id }) => {
                   className="flex flex-row gap-3 items-center"
                 >
                   <Image
-                    src={"/location/icons/clock.svg"}
+                    src={"/public/clock.svg"}
                     alt="Icon"
                     width={24}
                     height={24}
@@ -141,7 +141,7 @@ const BeforeYourAppointment = ({ id }) => {
             {/* <div className="flex flex-col md:flex-row gap-3 items-center justify-between">
               <div className="flex flex-row gap-2 items-center">
                 <Image
-                  src={"/location/icons/location.svg"}
+                  src={"/public/address.svg"}
                   alt="Icon"
                   width={24}
                   height={24}
@@ -167,9 +167,9 @@ const BeforeYourAppointment = ({ id }) => {
                 >
                   <Image
 
-                    src={"/Icons/leaf.svg"}
+                    src={"/public/leaf.svg"}
 
-                    alt="Icon"
+                    alt="leaf"
                     width={24}
                     height={24}
                   />

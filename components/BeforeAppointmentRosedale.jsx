@@ -23,17 +23,17 @@ const BeforeAppointmentRosedale = () => {
             </p>
             {[
               {
-                icon: "/location/icons/call.svg",
+                icon: "/public/call.svg",
                 head: "416-901-2725",
                 link: "tel:416-901-2725",
               },
               // {
-              //   icon: "/location/icons/fax.svg",
+              //   icon: "/public/fax.svg",
               //   head: "416-901-2727",
               //   link: "tel:416-901-2727",
               // },
               {
-                icon: "/location/icons/email.svg",
+                icon: "/public/email.svg",
                 head: "yorkville@360eyecare.ca",
                 link: "mailto:yorkville@360eyecare.ca",
               },
@@ -61,7 +61,7 @@ const BeforeAppointmentRosedale = () => {
               </p>
               <p className="flex items-start gap-2 mt-4">
                 <Image
-                  src="/Icons/location.svg"
+                  src="/public/location.svg"
                   alt="location"
                   width={24}
                   height={24}
@@ -92,7 +92,7 @@ const BeforeAppointmentRosedale = () => {
                   className="flex flex-row gap-3 items-center"
                 >
                   <Image
-                    src={"/location/icons/clock.svg"}
+                    src={"/public/clock.svg"}
                     alt="Clock Icon"
                     width={24}
                     height={24}
@@ -127,7 +127,7 @@ const BeforeAppointmentRosedale = () => {
                     className="flex flex-row gap-3 items-center"
                   >
                     <Image
-                      src={"/Icons/leaf.svg"}
+                      src={"/public/leaf.svg"}
                       alt="Clock Icon"
                       width={24}
                       height={24}

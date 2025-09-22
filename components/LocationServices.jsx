@@ -39,7 +39,7 @@ const LocationServices = ({
             {displayMajorStreets.map((street, index) => (
               <div key={index} className="flex items-start gap-3">
                 <Image
-                  src="/Icons/loc.svg"
+                  src="/public/location2.svg"
                   alt="location"
                   width={20}
                   height={20}
@@ -67,7 +67,7 @@ const LocationServices = ({
             {displayLandmarks.map((landmark, index) => (
               <div key={index} className="flex items-start gap-3">
                 <Image
-                  src="/Icons/loc.svg"
+                  src="/public/location2.svg"
                   alt="location"
                   width={20}
                   height={20}
@@ -107,7 +107,7 @@ const LocationServices = ({
               {displayAccessPoints.map((access, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <Image
-                    src="/Icons/loc.svg"
+                    src="/public/location2.svg"
                     alt="location"
                     width={20}
                     height={20}
