@@ -1,18 +1,33 @@
 import BlogPostClient from "./BlogPostClient";
 import { getPostBySlug } from "./blogService";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }) {
   try {
     const { slug } = await params;
+
+    // Validate slug structure - should not contain multiple segments
+    if (Array.isArray(slug) && slug.length > 1) {
+      return {
+        title: "Page Not Found",
+        description: "The page you are looking for does not exist.",
+        openGraph: {
+          title: "Page Not Found",
+          description: "The page you are looking for does not exist.",
+          images: [],
+        },
+      };
+    }
+
     const post = await getPostBySlug(slug);
 
     if (!post || post.length === 0) {
       return {
-        title: "Route Not Found",
-        description: "This route doesn't exist or may have been removed.",
+        title: "Post Not Found",
+        description: "The requested blog post was not found.",
         openGraph: {
-          title: "Route Not Found",
-          description: "This route doesn't exist or may have been removed.",
+          title: "Post Not Found",
+          description: "The requested blog post was not found.",
           images: [],
         },
       };
@@ -101,6 +116,30 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default function BlogPostPage({ params, searchParams }) {
-  return <BlogPostClient params={params} searchParams={searchParams} />;
+export default async function BlogPostPage({ params, searchParams }) {
+  try {
+    const { slug } = await params;
+
+    // Validate slug structure - return 404 for multi-segment URLs
+    if (Array.isArray(slug) && slug.length > 1) {
+      notFound();
+    }
+
+    const post = await getPostBySlug(slug);
+
+    // Return 404 if post doesn't exist
+    if (!post || post.length === 0) {
+      notFound();
+    }
+
+    return (
+      <BlogPostClient
+        params={params}
+        searchParams={searchParams}
+        post={post[0]}
+      />
+    );
+  } catch (error) {
+    notFound();
+  }
 }
