@@ -10,6 +10,8 @@ import Banner3 from "../../../components/Banner3";
 import EyeExam from "../../../components/EyeExam";
 import LocationServices from "../../../components/LocationServices";
 import Image from "next/image";
+import Insurance from "../../../components/Insurance";
+
 
 import BeforeAppointmentRosedale from "../../../components/BeforeAppointmentRosedale";
 import mockRosedaleReviews from "../../../constants/rosedaleReviews.json";
@@ -52,7 +54,6 @@ const TorontoRosedaleOptometrist = () => {
     <main className="pt-[110px]">
       <LocationHeroSection
         title="Leading Eye Clinic in Yorkville, Toronto | 360 Eyecare"
-        // subtitle="Experience Premium Eye Care in Yorkville and Rosedale, Toronto"
         desciption={
           <>
             Experience premium eye care with our optometrist, Dr. Sam Baraam,
@@ -60,34 +61,6 @@ const TorontoRosedaleOptometrist = () => {
             Bloor Street West near Bay Street, serving Yorkville, The Annex, 
             Downtown Toronto, and Rosedale with comprehensive eye exams,
             advanced dry eye treatment, and personalized vision solutions.
-            {/* {!isMobile || showFullDescription ? (
-              <>
-                {" "}
-                Whether you need a{" "}
-                <Link href="/eye-exams">
-                  <span className="underline">routine eye exam</span>
-                </Link>
-                , advanced dry eye therapy,{" "}
-                <Link href="/pediatric-eye-exams">
-                  <span className="underline">pediatric eye care</span>
-                </Link>
-                , or emergency eye services, our Yorkville{" "}
-                <Link href="/optometrists">
-                  <span className="underline">optometrists</span>
-                </Link>{" "}
-                are here to ensure optimal vision health for all ages.
-              </>
-            ) : (
-              <>
-                ...
-                <button
-                  onClick={() => setShowFullDescription(true)}
-                  className="text-[#7ACACB] font-semibold"
-                >
-                  more
-                </button>
-              </>
-            )} */}
           </>
         }
         ctaText="Book Your Eye Exam Today"
@@ -95,6 +68,7 @@ const TorontoRosedaleOptometrist = () => {
         ctaClinic="Call Our Clinic"
         ctaNumber="416-901-2725"
         imageSrc={locationHeroYorkVille}
+        imageAlt="360 Eyecare Optometrist in Yorkville Toronto"
       />
       <MeetOurFounder
         title="Your Trusted Optometrist in Yorkville, Toronto"
@@ -109,33 +83,59 @@ const TorontoRosedaleOptometrist = () => {
         }
         ctaText="Book with Dr. Baraam"
         ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"
+        imageAlt="Dr Sam Baraam Optometrist Yorkville Toronto"
       />
 
       <ExpertiseSection
         title="Professional Credentials & Expertise:"
+
         description={[
-          "Canadian Association of Optometrists (CAO) - Certified Member",
-          "Ontario Association of Optometrists - Active Member",
-          "US National Board Examinations (NBEO) - Successfully completed all three parts",
-          "College of Optometrists in Vision Development (COVD) - Member",
-          "Advanced Dry Eye Treatment - IPL and RF Therapy Experienced",
-          "Pediatric Eye Care Specialist - Child vision development expertise",
+          <>
+            <strong>Canadian Association of Optometrists (CAO)</strong> -
+            Certified Member
+          </>,
+          <>
+            <strong>Ontario Association of Optometrists</strong> - Active Member
+          </>,
+          <>
+            <strong>US National Board Examinations (NBEO)</strong> -
+            Successfully completed all three parts
+          </>,
+          <>
+            <strong>
+              College of Optometrists in Vision Development (COVD)
+            </strong>{" "}
+            - Member
+          </>,
+          <>
+            <strong>Advanced Dry Eye Treatment</strong> - IPL and RF Therapy
+            Experienced
+          </>,
+          <>
+            <strong>Pediatric Eye Care Specialist</strong> - Child vision
+            development expertise
+          </>,
         ]}
         experience={[
           { years: "10+", label: "Years of Experience" },
-          { years: "10+", label: "Years of Experience" },
-          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Skilled Optometrists and Staff" },
+          { years: "10,000+", label: "10,000+ Satisfied Patients" },
         ]}
       />
+
       <EyeCareServices
-        heading="Our Eye Care Services"
+        heading="Our Eye Care Services in Yorkville, Toronto"
         eyeCareServiceData={RosedaleeyeCareServiceData}
         choose360eyeCareData={Rosedalechoose360eyeCareData}
-        choose360eyeCareTitle="Why Choose 360 Eyecare Yorkville Rosedale?"
+        choose360eyeCareTitle="Why Choose 360 Eyecare Yorkville?"
+        imageBack="/eyecareservice_image1_rosedale.svg"
+        altBack="360 Eyecare Eye Clinic Yorkville Toronto"
+        imageFront="/eyecareservice_image2_rosedale.svg"
+        altFront="Eyewear in Yorkville Toronto"
       />
 
       <div>
-        <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} />
+        <Insurance/>
       </div>
       <div className="my-12">
         <Banner3 />

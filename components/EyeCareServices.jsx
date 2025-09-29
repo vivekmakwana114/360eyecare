@@ -8,6 +8,10 @@ const EyeCareServices = ({
   choose360eyeCareData,
   choose360eyeCareTitle,
   heading,
+  imageFront,
+  imageBack,
+  altFront,
+  altBack,
 }) => {
   const [openIndex, setOpenIndex] = useState(1);
   return (
@@ -23,87 +27,98 @@ const EyeCareServices = ({
         </p>
       </div>
 
-      {/* ✅ Accordion + Right side image */}
-      <div className="flex md:flex-row gap-10 justify-between flex-col-reverse">
-        {/* Accordion left side */}
-        <div className="md:w-[50%] w-full">
+      {/*  Accordion + Right side image  */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        
+        {/* Left side - Accordion Section */}
+        <div className="w-full order-2 md:order-1">
           <div className="flex flex-col gap-6">
-            {eyeCareServiceData.map((item) => {
-              return (
-                <div
-                  className="border border-[#E1E6EB] rounded-[8px] p-[10px]"
-                  key={item.id}
-                >
-                  <div className="flex flex-col gap-3">
-                    <div
-                      className="flex flex-row justify-between cursor-pointer"
-                      onClick={() =>
-                        setOpenIndex(item.id === openIndex ? null : item.id)
-                      }
-                    >
-                      <div className="flex flex-row gap-3 md:items-start items-center">
-                        <div className="bg-combination-100 w-7 h-7 rounded-[6px] flex justify-center items-center shrink-0">
-                          <Image
-                            src={item.icon}
-                            alt="Eye Care Service"
-                            width={24}
-                            height={24}
-                            className="object-contain"
-                          />
-                        </div>
-                        <p className="text-[#28305F] font-[600] text-[18px]">
-                          {item.head}
-                        </p>
-                      </div>
-
-                      <div className="flex justify-center items-center border border-[#E1E6EB] rounded-[6px] w-[22px] h-[22px] shrink-0">
+            {eyeCareServiceData.map((item) => (
+              <div
+                key={item.id}
+                className="border border-[#E1E6EB] rounded-[8px] p-[10px]"
+              >
+                <div className="flex flex-col gap-3">
+                  <div
+                    className="flex flex-row justify-between cursor-pointer"
+                    onClick={() =>
+                      setOpenIndex(item.id === openIndex ? null : item.id)
+                    }
+                  >
+                    <div className="flex flex-row gap-3 md:items-start items-center">
+                      <div className="bg-combination-100 w-7 h-7 rounded-[6px] flex justify-center items-center shrink-0">
                         <Image
-                          src={`${
-                            item.id === openIndex
-                              ? "/public/minusIcon.svg"
-                              : "/public/plusIcon.svg"
-                          }`}
+                          src={item.icon}
                           alt="Eye Care Service"
-                          width={12}
-                          height={12}
+                          width={24}
+                          height={24}
+                          className="object-contain"
                         />
                       </div>
+                      <p className="text-[#28305F] font-[600] text-[18px]">
+                        {item.head}
+                      </p>
                     </div>
 
-                    {item.id === openIndex && (
-                      // <p className="text-[16px] font-[400] tracking-wider">
-                      //   {item.para}
-                      // </p>
-                      <div className="flex flex-col gap-2">
-                        <p className="text-[16px] font-poppins text-[#888888]">
-                          {item.para[0]}
-                        </p>
-                        <ul className="list-disc list-inside px-2 font-poppins text-[#888888] marker:text-combination-200 leading-relaxed">
-                         {item?.para?.slice(1)?.map((point,idx)=>(
-                          <li key={idx}>{point}</li>
-                         ))}
-                        </ul>
-                      </div>
-                    )}
+                    <div className="flex justify-center items-center border border-[#E1E6EB] rounded-[6px] w-[22px] h-[22px] shrink-0">
+                      <Image
+                        src={`${
+                          item.id === openIndex
+                            ? "/public/minusIcon.svg"
+                            : "/public/plusIcon.svg"
+                        }`}
+                        alt="Eye Care Service"
+                        width={12}
+                        height={12}
+                      />
+                    </div>
                   </div>
+
+                  {item.id === openIndex && (
+                    <div className="flex flex-col gap-2">
+                      <p className="text-[16px] font-poppins text-[#888888]">
+                        {item.para[0]}
+                      </p>
+                      <ul className="list-disc list-inside px-2 font-poppins text-[#888888] marker:text-combination-200 leading-relaxed">
+                        {item?.para?.slice(1)?.map((point, idx) => (
+                          <li key={idx}>{point}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Right side image */}
-        <div className="md:w-[50%] w-full flex justify-center">
-          <Image
-            src={eyeCareServicesImage}
-            alt="Eye Care Service"
-            width={500}
-            height={500}
-          />
+        {/* Right side - Images Section */}
+        <div className="w-full order-1 md:order-2">
+          <div className="relative h-[400px] flex justify-center items-center">
+            <div className="absolute top-0 right-0 z-10 border-4 border-[#41BBC8] bg-white">
+              <Image
+                src={imageBack}
+                alt={altBack}
+                width={350}
+                height={250}
+                className="rounded-lg shadow-md object-cover m-6"
+              />
+            </div>
+            
+            <div className="absolute -bottom-14 z-20 border-4 border-[#28305F] bg-white">
+              <Image
+                src={imageFront}
+                alt={altFront}
+                width={350}
+                height={250}
+                className="rounded-lg shadow-lg object-cover m-6"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* ✅ Second section as it is */}
+      
       <div className="flex flex-col gap-10 mt-[100px]">
         <div className="flex flex-col gap-4 justify-center items-center">
           <h2 className="font-[700] text-[36px] text-center text-[#28305F] max-w-xl">

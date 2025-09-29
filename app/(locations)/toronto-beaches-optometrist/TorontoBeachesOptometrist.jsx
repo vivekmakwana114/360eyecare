@@ -35,7 +35,7 @@ const TorontoBeachesOptometrist = () => {
       e.preventDefault();
       const formSection = document.getElementById("beachesLocation-form");
       if (formSection) {
-        const headerOffset = 120; // Adjust this value based on your header height
+        const headerOffset = 120;
         const elementPosition = formSection.getBoundingClientRect().top;
         const offsetPosition =
           elementPosition + window.pageYOffset - headerOffset;
@@ -103,27 +103,7 @@ const TorontoBeachesOptometrist = () => {
             pediatric eye exams, and personalized eye care for families across
             The Beaches, Leslieville, East Danforth, Upper Beaches, Danforth
             Village, and nearby areas.
-            {/* {!isMobile || showFullDescription ? (
-              <>
-                {" "}
-                offers comprehensive eye exams, advanced dry eye treatment,{" "}
-                <Link href="/pediatric-eye-exams">
-                  <span className="underline">pediatric eye care</span>
-                </Link>
-                , and emergency eye services to ensure the best possible vision
-                health for you and your family.
-              </>
-            ) : (
-              <>
-                ...
-                <button
-                  onClick={() => setShowFullDescription(true)}
-                  className="text-[#7ACACB] font-semibold"
-                >
-                  more
-                </button>
-              </>
-            )} */}
+           
           </>
         }
         ctaText="Book Your Eye Exam Today"
@@ -132,6 +112,7 @@ const TorontoBeachesOptometrist = () => {
         ctaNumber="416-698-3937"
         onCtaClick={scrollToForm}
         imageSrc={locationHeroBeaches}
+        imageAlt="360 Eyecare Optometrist in Beaches Toronto"
       />
 
       <MeetOurFounder
@@ -143,29 +124,43 @@ const TorontoBeachesOptometrist = () => {
             doctors. Serving the vibrant Beaches community with dedication to
             innovative treatments and exceptional patient care, Dr. Baraam
             brings extensive expertise in comprehensive eye health management.
-            {/* <Link className="underline" href="/team-members/dr-sam-baraam">
-              Dr. Sam Baraam
-            </Link>
-            ensures that each patient receives personalized, top-quality vision
-            care on each visit to the eye clinic in The Beaches, Toronto. */}
           </>
         }
         ctaText="Book with Dr. Baraam"
         ctaLink="/book-eye-exam"
+        onCtaClick={scrollToForm}
+        imageAlt="Dr Sam Baraam Optometrist Beaches Toronto"
       />
+
       <ExpertiseSection
         title="Specialized Training & Certifications :"
+
         description={[
-          "Therapeutic Optometry Certification - Licensed to diagnose and treat eye diseases",
-          "Ortho-K Specialty Training - Advanced myopia control techniques",
-          "Dry Eye Treatment Expert - IPL and RF therapy certified",
-          "Cataract Co-Management - Pre and post-surgical care specialist",
-          "Pediatric Eye Care Specialist - Child vision development expertise",
+          <>
+            <strong>Therapeutic Optometry Certification</strong> -
+            Licensed to diagnose and treat eye diseases
+          </>,
+          <>
+            <strong>Ortho-K Specialty Training</strong> - Advanced myopia control techniques
+          </>,
+          <>
+            <strong>Dry Eye Treatment Expert</strong> -
+            IPL and RF therapy certified
+          </>,
+          <>
+            <strong>
+              Cataract Co-Management 
+            </strong>{" "}
+           - Pre and post-surgical care specialist
+          </>,
+          <>
+            <strong>Pediatric Eye Care Specialist</strong> - Child vision development expertise
+          </>,
         ]}
         experience={[
           { years: "10+", label: "Years of Experience" },
-          { years: "10+", label: "Years of Experience" },
-          { years: "10+", label: "Years of Experience" },
+          { years: "10+", label: "Skilled Optometrists and Staff" },
+          { years: "10,000+", label: "10,000+ Satisfied Patients" },
         ]}
       />
       <EyeCareServices
@@ -173,9 +168,12 @@ const TorontoBeachesOptometrist = () => {
         eyeCareServiceData={eyeCareServiceData}
         choose360eyeCareData={choose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
+        imageBack="/eyecareservice_image1_beaches.webp"
+        altBack="Eye Care in Beaches Toronto "
+        imageFront="/eyecareservice_image2_beaches.webp"
+        altFront="Beaches Optometry "
       />
       <div>
-        {/* <Image src="/Insurance.svg" width={1450} alt="insurance" height={300} /> */}
         <Insurance/>
       </div>
 

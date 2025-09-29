@@ -138,20 +138,6 @@ const BeforeYourAppointment = ({ id }) => {
             <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
               Easy Transit Accessibility
             </p>
-            {/* <div className="flex flex-col md:flex-row gap-3 items-center justify-between">
-              <div className="flex flex-row gap-2 items-center">
-                <Image
-                  src={"/public/address.svg"}
-                  alt="Icon"
-                  width={24}
-                  height={24}
-                />
-                <p className="text-base text-white font-normal text-center md:text-left">
-                  2199 Queen St E, Toronto, ON M4E 1E5
-                </p>
-              </div>
-             
-            </div> */}
              <div className="grid grid-cols-2 gap-x-2 gap-y-3">
               {[
                  { id: 1, para: "51 Queen Streetcar " },

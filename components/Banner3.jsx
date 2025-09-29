@@ -14,7 +14,7 @@ const Banner3 = () => {
           pediatric eye care, or emergency services, we're here to help.
         </p>
         <Link
-          href="https://360rosedale.mypatientportal.xyz/dashboard"
+          href="https://www.360eyecare.ca/book-eye-exam"
           className="bg-combination-200 font-semibold text-sm md:text-base 
                      py-2 px-6 rounded-full w-full max-w-[267px] 
                      h-[52px] flex justify-center items-center 

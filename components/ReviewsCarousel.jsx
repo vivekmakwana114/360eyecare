@@ -107,9 +107,9 @@ const ReviewsCarousel = ({ title, data }) => {
   if (loading) {
     return (
       <div className="w-full max-w-6xl mx-auto p-4">
-        <h1 className="text-4xl font-bold text-combination-200 mb-6">
+        <h2 className="text-4xl font-bold text-combination-200 mb-6">
           {title}
-        </h1>
+        </h2>
         <div className="h-1 w-32 bg-blue-300 mb-10"></div>
         <div className="text-center py-10">Loading reviews...</div>
       </div>
@@ -119,9 +119,9 @@ const ReviewsCarousel = ({ title, data }) => {
   if (!reviews || reviews.length === 0) {
     return (
       <div className="w-full max-w-6xl mx-auto p-4">
-        <h1 className="text-4xl font-bold text-combination-200 mb-6">
+        <h2 className="text-4xl font-bold text-combination-200 mb-6">
           {title}
-        </h1>
+        </h2>
         <div className="h-1 w-32 bg-combination-100 mb-10"></div>
         <div className="text-center py-10">No reviews available.</div>
       </div>
@@ -131,9 +131,9 @@ const ReviewsCarousel = ({ title, data }) => {
   return (
     <div className="w-full max-w-7xl mx-auto p-4 px-0 md:px-6 lg:px-4 relative my-12">
       <div className="w-full max-w-[1120px] mx-auto px-5 mb-6">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-combination-200 mb-2">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-combination-200 mb-2">
           {title}
-        </h1>
+        </h2>
 
         <div className="flex items-center justify-between">
           <h4 className="text-[#888888] text-base md:text-lg">
@@ -151,7 +151,6 @@ const ReviewsCarousel = ({ title, data }) => {
                 width={30}
                 height={30}
               />
-              {/* <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-gray-600" /> */}
             </button>
             <button
               onClick={handleNext}
@@ -207,25 +206,11 @@ const ReviewsCarousel = ({ title, data }) => {
                   </span>
                 </div>
               </div>
-              {/* <p className="text-gray-500 text-sm mb-4">{review.reviewDate}</p> */}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Dots navigation - hidden on mobile, visible on desktop */}
-      {/* <div className="hidden md:flex justify-center mt-8 gap-2">
-        {Array.from({ length: getTotalDots() }, (_, index) => (
-          <button
-            key={index}
-            onClick={() => handleDotClick(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              getActiveDot() === index ? "bg-gray-800" : "bg-gray-300"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div> */}
       <div className="w-full flex justify-center mt-10">
         <div className="w-full max-w-4xl flex flex-col items-center border border-[#E1E6EB] p-16">
           <div className="flex justify-center gap-8 items-center w-full mb-6">
@@ -245,8 +230,8 @@ const ReviewsCarousel = ({ title, data }) => {
             </span>
           </div>
 
-          <p className="font-bold text-2xl md:text-lg text-[#111111] whitespace-nowrap">
-            4.9/5 stars based on 160+ Google reviews
+          <p className="font-bold text-2xl md:text-lg text-center text-[#111111]">
+            4.9/5 stars based on 315+ Google reviews
           </p>
 
            <Link

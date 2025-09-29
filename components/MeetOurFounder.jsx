@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
+const MeetOurFounder = ({ title, description, ctaText, ctaLink, imageAlt, onCtaClick }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 pt-4 md:pt-14">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -11,7 +11,7 @@ const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
         <div className="w-full md:w-[40%]">
           <Image
             src={FounderImage}
-            alt="Founder"
+            alt={imageAlt || "Dr Sam Baraam Optometrist"}
             width={483}
             height={566}
             className="w-full"
@@ -24,22 +24,22 @@ const MeetOurFounder = ({ title, description, ctaText, ctaLink }) => {
             Meet Dr. Sam Baraam
           </div>
 
-          <h1 className="font-poppins font-[700] text-2xl md:text-[32px] lg:text-[36px] text-[#28305F] leading-relaxed">
+          <h2 className="font-poppins font-[700] text-2xl md:text-[32px] lg:text-[36px] text-[#28305F] leading-relaxed">
             {title}
-          </h1>
+          </h2>
 
           <p className="text-sm md:text-base font-[400] text-neutral-500 tracking-wide">
             {description}
           </p>
 
-          <Link
-            href={ctaLink}
+          <button
+            onClick={onCtaClick ? onCtaClick : () => window.location.href = ctaLink}
             className="w-full flex justify-center md:justify-start mt-2 mb-4"
           >
             <div className="py-4 px-8 w-[267px] md:w-auto text-center bg-[#28305F] text-white rounded-full font-bold">
               {ctaText}
             </div>
-          </Link>
+          </button>
         </div>
       </div>
     </div>

@@ -44,7 +44,6 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
 
 // Main FAQ Component
 const DryFaqs = ({ title, faqData }) => {
-  // Changed from single state to an array of open FAQ IDs
   const [openFAQs, setOpenFAQs] = useState([]);
 
   const toggleFAQ = (id) => {
@@ -61,9 +60,9 @@ const DryFaqs = ({ title, faqData }) => {
   return (
     <div className="w-full max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-3xl bg-white mx-auto p-4  md:py-12 font-sans">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-center text-combination-200 mb-3">
+        <h2 className="text-3xl font-bold text-center text-combination-200 mb-3">
           {title}
-        </h1>
+        </h2>
         <div className="w-24 h-1 bg-combination-100 mb-4 mx-auto"></div>
       </div>
 

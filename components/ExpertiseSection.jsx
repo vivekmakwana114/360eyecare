@@ -19,7 +19,7 @@ export default function ExpertiseSection({
               <li key={idx} className="flex items-center gap-2">
                 <Image
                   src="/public/point.svg"
-                  alt="Triangle arrow"
+                  alt="Triangle Arrow"
                   width={20}
                   height={20}
                 />

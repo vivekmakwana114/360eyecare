@@ -12,9 +12,10 @@ const LocationHeroSection = ({
   ctaClinic,
   ctaNumber,
   imageSrc,
+  imageAlt,
   onCtaClick,
 }) => {
-  const [showFullDescription, setShowFullDescription] = useState(false);
+  
 
   return (
     <div className="w-full bg-[#28305F]  ">
@@ -56,7 +57,7 @@ const LocationHeroSection = ({
         <div className="lg:w-[50%] md:w-[50%] w-full">
           <Image
             src={imageSrc}
-            alt="Location Hero"
+            alt={imageAlt || "Hero Image"}
             width={951}
             height={634}
             className="lg:max-w-[951px] lg:max-h-[634px] md:max-w-full md:max-h-full max-w-full max-h-full  "
