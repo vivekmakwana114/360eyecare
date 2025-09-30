@@ -168,9 +168,9 @@ const TorontoBeachesOptometrist = () => {
         eyeCareServiceData={eyeCareServiceData}
         choose360eyeCareData={choose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Beaches For Your Eye Care?"
-        imageBack="/public/eyecareservice_image1_beaches.webp"
+        imageBack="/public/eyecareservice_image1_beaches.svg"
         altBack="Eye Care in Beaches Toronto"
-        imageFront="/public/eyecareservice_image2_beaches.webp"
+        imageFront="/public/eyecareservice_image2_beaches.svg"
         altFront="Beaches Optometry"
       />
       <div>
