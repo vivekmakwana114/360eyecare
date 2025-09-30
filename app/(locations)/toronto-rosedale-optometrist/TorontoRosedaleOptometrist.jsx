@@ -128,9 +128,9 @@ const TorontoRosedaleOptometrist = () => {
         eyeCareServiceData={RosedaleeyeCareServiceData}
         choose360eyeCareData={Rosedalechoose360eyeCareData}
         choose360eyeCareTitle="Why Choose 360 Eyecare Yorkville?"
-        imageBack="/eyecareservice_image1_rosedale.svg"
+        imageBack="/public/eyecareservice_image1_rosedale.svg"
         altBack="360 Eyecare Eye Clinic Yorkville Toronto"
-        imageFront="/eyecareservice_image2_rosedale.svg"
+        imageFront="/public/eyecareservice_image2_rosedale.svg"
         altFront="Eyewear in Yorkville Toronto"
       />
 
