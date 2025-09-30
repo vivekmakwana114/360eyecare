@@ -12,6 +12,7 @@ import {
 } from "react-share";
 import RecentPosts from "../../../components/blog/RecentPosts";
 import SearchSuggestion from "../../../components/SearchSuggestion";
+import he from "he";
 
 const BlogPostClient = ({ post: initialPost }) => {
   const { slug } = useParams();
@@ -20,6 +21,12 @@ const BlogPostClient = ({ post: initialPost }) => {
   const [isLoading, setIsLoading] = useState(!initialPost);
   const [error, setError] = useState(null);
   const [shareUrl, setShareUrl] = useState("");
+
+  // Clean text function
+  const cleanText = (text) => {
+    if (!text) return "";
+    return he.decode(text);
+  };
 
   // Set share URL
   useEffect(() => {
@@ -61,7 +68,24 @@ const BlogPostClient = ({ post: initialPost }) => {
           throw new Error("Post not found");
         }
 
-        setData(postData[0]);
+        // Clean the fetched data
+        const cleanedPost = {
+          ...postData[0],
+          title: {
+            ...postData[0].title,
+            rendered: cleanText(postData[0].title.rendered),
+          },
+          content: {
+            ...postData[0].content,
+            rendered: cleanText(postData[0].content.rendered),
+          },
+          excerpt: {
+            ...postData[0].excerpt,
+            rendered: cleanText(postData[0].excerpt.rendered),
+          },
+        };
+
+        setData(cleanedPost);
       } catch (err) {
         if (isMounted) {
           setError(err.message);
@@ -86,6 +110,15 @@ const BlogPostClient = ({ post: initialPost }) => {
       router.replace("/not-found");
     }
   }, [error, isLoading, data, initialPost, router]);
+
+  // Clean author name for display
+  const cleanedAuthor = data?.yoast_head_json?.author
+    ? cleanText(data.yoast_head_json.author)
+    : "Unknown Author";
+
+  // Share data
+  const shareTitle = data?.title?.rendered || "Check out this article";
+  const shareImage = data?.yoast_head_json?.og_image?.[0]?.url || "";
 
   // Loading state
   if (isLoading) {
@@ -137,10 +170,6 @@ const BlogPostClient = ({ post: initialPost }) => {
     );
   }
 
-  // Share data
-  const shareTitle = data?.title?.rendered || "Check out this article";
-  const shareImage = data?.yoast_head_json?.og_image?.[0]?.url || "";
-
   return (
     <main className="pt-[110px] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -174,7 +203,7 @@ const BlogPostClient = ({ post: initialPost }) => {
               <div className="flex flex-row gap-2 items-center">
                 <LuUserPen size={21} color="#888888" />
                 <p className="text-[#888888] text-[14px] font-[400]">
-                  {data?.yoast_head_json?.author || "Unknown Author"}
+                  {cleanedAuthor}
                 </p>
               </div>
             </div>
