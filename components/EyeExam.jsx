@@ -3,12 +3,20 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const EyeExam = ({ heading }) => {
+  const [activeTab, setActiveTab] = useState("Before Your Visit");
+
   const ExamOptionData = {
     "Before Your Visit": [
-      { icon: "/public/eyeglasses.svg", text: "Bring current glasses/contacts" },
+      {
+        icon: "/public/eyeglasses.svg",
+        text: "Bring current glasses/contacts",
+      },
       { icon: "/public/medicine.svg", text: "List of current medications" },
       { icon: "/public/inc.svg", text: "Insurance information" },
-      { icon: "/public/eyeglasses.svg", text: "Bring sunglasses (pupils may be dilated)" },
+      {
+        icon: "/public/eyeglasses.svg",
+        text: "Bring sunglasses (pupils may be dilated)",
+      },
       { icon: "/public/time.svg", text: "Arrive 10 minutes early" },
     ],
     "During Your Exam": [
@@ -28,35 +36,42 @@ const EyeExam = ({ heading }) => {
     ],
   };
 
-  // Dynamic grid class based on item count
-  const getGridClass = (total) => {
-    if (total === 5) {
-      return "grid grid-cols-3 gap-6 flex-1 relative [&>:nth-child(4)]:col-start-2 [&>:nth-child(5)]:col-start-3";
-    }
-    return "grid sm:grid-cols-3 gap-6 flex-1 relative";
-  };
 
-  const [activeTab, setActiveTab] = useState("Before Your Visit");
+  const getGridClass = (total) => {
+  if (total === 5) {
+    return `
+      grid 
+      grid-cols-1 sm:grid-cols-3 
+      gap-6 flex-1 relative 
+      sm:[&>:nth-child(4)]:col-start-2 
+      sm:[&>:nth-child(5)]:col-start-3
+    `;
+  }
+  return "grid grid-cols-1 sm:grid-cols-3 gap-6 flex-1 relative";
+};
 
   return (
     <div className="max-w-7xl mx-auto px-8 py-12">
       {/* heading */}
       <div className="text-start mb-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#28305F]">{heading}</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#28305F]">
+          {heading}
+        </h2>
         <p className="text-neutral-500 mt-2">
-          Our comprehensive eye examination process is designed to ensure your optimal eye health and vision.
+          Our comprehensive eye examination process is designed to ensure your
+          optimal eye health and vision.
         </p>
       </div>
 
       {/* 2 Column layout */}
       <div className="flex flex-col md:flex-row gap-6">
         {/* Left Side Options */}
-        <div className="flex flex-col gap-3 md:w-2xl">
+        <div className="flex md:flex-col flex-row md:w-2xl  overflow-x-auto gap-3 pb-2">
           {Object.keys(ExamOptionData)?.map((tab) => (
             <button
               key={tab}
               onMouseEnter={() => setActiveTab(tab)}
-              className={`px-6 py-3 rounded-md text-left font-medium transition border border-[#E1E6EB] ${
+              className={`flex-shrink-0 px-6 py-3 rounded-md text-left font-medium transition border border-[#E1E6EB] ${
                 activeTab === tab
                   ? "bg-[#28305F] text-[#FFFFFF]"
                   : "bg-[#F3F3F3] text-[#111111]"
@@ -68,7 +83,11 @@ const EyeExam = ({ heading }) => {
         </div>
 
         {/* Right side options */}
-        <div className={getGridClass(ExamOptionData[activeTab]?.length)}>
+        <div
+          className={`${getGridClass(
+            ExamOptionData[activeTab]?.length
+          )} mt-4 md:mt-0 w-full`}
+        >
           {ExamOptionData[activeTab]?.map((item, idx) => (
             <div
               key={idx}
