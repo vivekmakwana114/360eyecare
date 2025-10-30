@@ -28,8 +28,7 @@ const EyeCareServices = ({
       </div>
 
       {/*  Accordion + Right side image  */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Left side - Accordion Section */}
         <div className="w-full order-2 md:order-1">
           <div className="flex flex-col gap-6">
@@ -94,31 +93,45 @@ const EyeCareServices = ({
 
         {/* Right side - Images Section */}
         <div className="w-full order-1 md:order-2">
-          <div className="relative h-[400px] flex justify-center items-center">
-            <div className="absolute top-0 right-0 z-10 border-4 border-[#41BBC8] bg-white">
-              <Image
-                src={imageBack}
-                alt={altBack}
-                width={350}
-                height={250}
-                className="rounded-lg shadow-md object-cover m-6"
-              />
+          <div
+            className="relative flex justify-center items-center overflow-visible 
+                  h-[280px] sm:h-[340px] md:h-[400px]"
+          >
+            {/* Back Image */}
+            <div
+              className="absolute top-0 right-0 z-10 border-4 border-[#41BBC8] bg-white 
+                    w-[80%] sm:w-[300px] md:w-[350px]  shadow-md"
+            >
+              <div className="relative aspect-[7/5] m-3 sm:m-4 md:m-6">
+                <Image
+                  src={imageBack}
+                  alt={altBack}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 80vw, 350px"
+                />
+              </div>
             </div>
-            
-            <div className="absolute -bottom-14 z-20 border-4 border-[#28305F] bg-white">
-              <Image
-                src={imageFront}
-                alt={altFront}
-                width={350}
-                height={250}
-                className="rounded-lg shadow-lg object-cover m-6"
-              />
+
+            {/* Front Image */}
+            <div
+              className="absolute  -bottom-8 sm:-bottom-10 md:-bottom-14 z-20 border-4 border-[#28305F] bg-white 
+                    w-[80%] sm:w-[300px] md:w-[350px]  shadow-lg"
+            >
+              <div className="relative  aspect-[7/5] m-3 sm:m-4 md:m-6">
+                <Image
+                  src={imageFront}
+                  alt={altFront}
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="(max-width: 768px) 80vw, 350px"
+                />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      
       <div className="flex flex-col gap-10 mt-[100px]">
         <div className="flex flex-col gap-4 justify-center items-center">
           <h2 className="font-[700] text-[36px] text-center text-[#28305F] max-w-xl">
