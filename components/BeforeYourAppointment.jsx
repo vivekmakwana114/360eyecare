@@ -69,33 +69,32 @@ const BeforeYourAppointment = ({ id }) => {
               </p>
               <p className="font-semibold mt-4">360 Eyecare - The Beaches</p>
               <div className="flex flex-col md:flex-row gap-3 items-center justify-between mt-2">
-              <div className="flex flex-row gap-2 items-center">
-                <Image
-                  src={"/public/address.svg"}
-                  alt="address"
-                  width={24}
-                  height={24}
-                />
-                <p className="text-base text-white font-normal text-center md:text-left">
-                  2199 Queen St E, Toronto, ON M4E 1E5
-                </p>
+                <div className="flex flex-row gap-2 items-center">
+                  <Image
+                    src={"/public/address.svg"}
+                    alt="address"
+                    width={24}
+                    height={24}
+                  />
+                  <p className="text-base text-white font-normal text-center md:text-left">
+                    2199 Queen St E, Toronto, ON M4E 1E5
+                  </p>
+                </div>
+                <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
+                  <Image
+                    src={"/public/redo.svg"}
+                    alt="Icon"
+                    width={24}
+                    height={24}
+                  />
+                  <Link
+                    href="https://www.google.com/maps?daddr=2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
+                    className="text-combination-100 underline cursor-pointer"
+                  >
+                    Direction
+                  </Link>
+                </div>
               </div>
-              <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
-                <Image
-                  src={"/public/redo.svg"}
-                  alt="Icon"
-                  width={24}
-                  height={24}
-                />
-                <Link
-                  href="https://www.google.com/maps?daddr=2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
-                  className="text-combination-100 underline cursor-pointer"
-                >
-                  Direction
-                </Link>
-              </div>
-            </div>
-              
             </div>
           </div>
 
@@ -138,23 +137,18 @@ const BeforeYourAppointment = ({ id }) => {
             <p className="font-poppins font-semibold text-white text-xl md:text-[22px]">
               Easy Transit Accessibility
             </p>
-             <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+            <div className="grid grid-cols-2 gap-x-2 gap-y-3">
               {[
-                 { id: 1, para: "51 Queen Streetcar " },
-                  { id: 2, para: "Woodbine Station" },
-                  { id: 3, para: "Walk-ins Welcome" },
-                  { id: 4, para: "Street Parking" },
-                  { id: 5, para: "Bike Friendly" },
-                  { id: 6, para: "Boardwalk Access" },
+                { id: 1, para: "51 Queen Streetcar " },
+                { id: 2, para: "Woodbine Station" },
+                { id: 3, para: "Walk-ins Welcome" },
+                { id: 4, para: "Street Parking" },
+                { id: 5, para: "Bike Friendly" },
+                { id: 6, para: "Boardwalk Access" },
               ].map((item) => (
-                <div
-                  key={item.id}
-                  className="flex flex-row gap-3 items-center"
-                >
+                <div key={item.id} className="flex flex-row gap-3 items-center">
                   <Image
-
                     src={"/public/leaf.svg"}
-
                     alt="leaf"
                     width={24}
                     height={24}
@@ -167,8 +161,6 @@ const BeforeYourAppointment = ({ id }) => {
               ))}
             </div>
           </div>
-
-          
         </div>
 
         {/* Booking Section */}
@@ -185,6 +177,31 @@ const BeforeYourAppointment = ({ id }) => {
             <gsp-scheduler
               className="w-full "
               account_id="3709"
+              form_fields_update='{
+      "insertFields": [
+          {
+            "after": "health_card_number",
+            "fields": [
+                {
+                    "field_id": "eyelid_cleaning",
+                    "type": "select",
+                    "label": "Would you like to add Ocular hygiene/microexfoliation treatment to your exam (Eyelid Cleaning)?",
+                    "required": true,
+                    "options": [
+                        {
+                            "value": "yes",
+                            "label": "Yes"
+                        },
+                        {
+                            "value": "no",
+                            "label": "No"
+                        }
+                    ]
+                }
+            ]
+        }
+      ]
+  }'
             ></gsp-scheduler>
           </div>
         </div>
