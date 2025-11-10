@@ -175,17 +175,33 @@ const BeforeYourAppointment = ({ id }) => {
             id="book-appointment"
           >
             <gsp-scheduler
-              className="w-full "
-              account_id="3709"
+              className="w-full"
+              account_id="4340"
               form_fields_update='{
       "insertFields": [
           {
-            "after": "health_card_number",
+            "before": "health_card_number",
             "fields": [
                 {
                     "field_id": "eyelid_cleaning",
                     "type": "select",
                     "label": "Would you like to add Ocular hygiene/microexfoliation treatment to your exam (Eyelid Cleaning)?",
+                    "required": true,
+                    "options": [
+                        {
+                            "value": "yes",
+                            "label": "Yes"
+                        },
+                        {
+                            "value": "no",
+                            "label": "No"
+                        }
+                    ]
+                },
+                {
+                    "field_id": "patient_contacts",
+                    "type": "select",
+                    "label": "Do you wear contact lenses?",
                     "required": true,
                     "options": [
                         {
