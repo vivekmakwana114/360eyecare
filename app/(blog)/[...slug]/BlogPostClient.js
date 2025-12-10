@@ -29,9 +29,36 @@ const BlogPostClient = ({ post: initialPost }) => {
   };
 
   // Set share URL
+ useEffect(() => {
+    if (typeof window !== "undefined") {
+      const cleanSlug = Array.isArray(slug) ? slug.join("/") : slug;
+      setShareUrl(`${window.location.origin}/${cleanSlug}`);
+    }
+  }, [slug]);
+
+  // Add canonical meta tag to prevent duplicate canonical
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setShareUrl(`${window.location.origin}/blog/${slug}`);
+      // Remove any existing canonical tags
+      const allCanonicals = document.querySelectorAll('link[rel="canonical"]');
+      allCanonicals.forEach((canonical) => canonical.remove());
+
+      // Add the correct canonical
+      const link = document.createElement("link");
+      link.rel = "canonical";
+      link.href = `https://360eyecare.ca/${slug}`;
+      document.head.appendChild(link);
+
+      return () => {
+        // Cleanup - safely remove the link
+        try {
+          if (link && link.parentNode) {
+            link.parentNode.removeChild(link);
+          }
+        } catch (error) {
+          console.warn("Error removing canonical tag:", error);
+        }
+      };
     }
   }, [slug]);
 

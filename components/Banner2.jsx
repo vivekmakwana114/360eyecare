@@ -29,7 +29,7 @@ const Banner2 = ({
               {title}
             </h2>
             <p className="text-lg font-medium text-left mt-2">
-              <span className="font-bold">Rosedale: </span>
+              <span className="font-bold">Yorkville: </span>
 
               <span className="font-normal text-white hover:text-combination-200">
                 416-901-2725

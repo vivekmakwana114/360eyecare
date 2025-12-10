@@ -388,17 +388,17 @@ const Symptoms = () => {
           Discover the potential of dry eye treatment with RF (Radiofrequency)
           at our{" "}
           <Link
-            href="/book-eye-exam"
+            href="/toronto-beaches-optometrist"
             className="text-combination-200 hover:text-combination-100"
           >
             Optometry Clinic Beaches
           </Link>{" "}
           and{" "}
           <Link
-            href="/book-eye-exam"
+            href="/toronto-rosedale-optometrist"
             className="text-combination-200 hover:text-combination-100"
           >
-            Optometry Clinic Rosedale
+            Optometry Clinic Yorkville
           </Link>
           . Our specialists are ready to help you find the best solution for
           your eye health.

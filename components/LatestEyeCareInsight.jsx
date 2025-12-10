@@ -4,6 +4,7 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { FaUser } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import he from "he";
 
 import { ImageSlider } from "./common/ImageSlider";
 
@@ -26,10 +27,10 @@ const LatestEyeCareInsight = () => {
         }
 
         const data = await res.json();
+
         setLatestBlog(data[0]);
       } catch (err) {
         setError(err.message);
-        console.error("Error fetching blog:", err);
       } finally {
         setLoading(false);
       }
@@ -39,7 +40,7 @@ const LatestEyeCareInsight = () => {
   }, []);
 
   // Helper function to strip HTML tags and truncate text
-  const getExcerpt = (htmlContent, maxLength = 200) => {
+  const getExcept = (htmlContent, maxLength = 200) => {
     if (!htmlContent) return "";
     const textContent = htmlContent.replace(/<[^>]*>/g, "");
     return textContent.length > maxLength
@@ -142,7 +143,7 @@ const LatestEyeCareInsight = () => {
                   </Link>
 
                   <p className="text-neutral-600 leading-relaxed">
-                    {getExcerpt(latestBlog?.content?.rendered)}
+                    {he.decode(getExcept(latestBlog?.content?.rendered))}
                   </p>
 
                   <Link

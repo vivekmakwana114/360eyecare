@@ -90,7 +90,7 @@ const page = () => {
         title="Discover The Perfect Frames!"
         phones={[
           { label: "Beaches", number: "416-698-3937" },
-          { label: "Rosedale", number: "416-901-2725" },
+          { label: "Yorkville", number: "416-901-2725" },
         ]}
         description="Book an appointment with our Opticians for personalized eyewear recommendations."
         buttonText="Book An Appointment"

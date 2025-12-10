@@ -21,6 +21,23 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },
+
+  async redirects() {
+    return [
+      // Redirect WordPress dashboard URLs to clean blog URLs
+      {
+        source: '/dashboard/blog/:slug',
+        destination: '/:slug',
+        permanent: true,
+      },
+      // // Redirect any /dashboard/ routes to clean URLs
+      // {
+      //   source: '/dashboard/:slug((?!wp-json|wp-admin|wp-content).*)',
+      //   destination: '/:slug*',
+      //   permanent: true,
+      // },
+    ];
+  },
   async headers() {
     return [
       {

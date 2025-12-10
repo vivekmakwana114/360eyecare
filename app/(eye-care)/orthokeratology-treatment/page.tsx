@@ -163,7 +163,7 @@ const page = () => {
       </div>
       <Banner2
         title="Book Your Eye Exam"
-        description="For exceptional eye care, schedule your eye exam at our Beaches and Rosedale, Toronto locations today!"
+        description="For exceptional eye care, schedule your eye exam at our Beaches and Yorkville, Toronto locations today!"
         rosedale={true}
         ctaText="Book An Eye Exam"
         ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"

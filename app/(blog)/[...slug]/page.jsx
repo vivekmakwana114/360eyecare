@@ -2,6 +2,12 @@ import BlogPostClient from "./BlogPostClient";
 import { getPostBySlug } from "./blogService";
 import { notFound } from "next/navigation";
 
+// Helper function to clean URLs from dashboard path
+const cleanUrl = (url) => {
+  if (!url) return url;
+  return url.replace(/\/dashboard\//g, "/");
+};
+
 export async function generateMetadata({ params }) {
   try {
     const { slug } = await params;
@@ -34,7 +40,26 @@ export async function generateMetadata({ params }) {
     }
 
     const postData = post[0];
-    const yoastData = postData.yoast_head_json || {};
+    let yoastData = postData.yoast_head_json || {};
+
+    // Clean the slug and create canonical URL
+    const cleanSlug = Array.isArray(slug) ? slug.join("/") : slug;
+    const cleanCanonical = `https://360eyecare.ca/${cleanSlug}`;
+    console.log(yoastData.og_url,"og_url");
+    console.log(yoastData.canonical,"canonical");
+
+    // CRITICAL: Clean Yoast data to remove dashboard URLs
+    if (yoastData) {
+      yoastData = {
+        ...yoastData,
+        // Remove dashboard from canonical
+        canonical: cleanUrl(yoastData.canonical),
+        // Clean OG URL
+        og_url: cleanUrl(yoastData.og_url),
+        // Clean article publisher URL
+        article_publisher: cleanUrl(yoastData.article_publisher),
+      };
+    }
 
     // Extract Twitter data
     const twitterData = {
@@ -63,12 +88,12 @@ export async function generateMetadata({ params }) {
       title: yoastData.title || "Blog Post",
       description: yoastData.description || "",
       alternates: {
-        canonical: yoastData.canonical || "",
+        canonical: cleanCanonical,
       },
       openGraph: {
         title: yoastData.og_title || yoastData.title,
         description: yoastData.og_description || yoastData.description,
-        url: yoastData.og_url || yoastData.canonical,
+        url: cleanCanonical,
         siteName: yoastData.og_site_name || "360 Eyecare",
         images: yoastData.og_image
           ? yoastData.og_image.map((img) => ({
@@ -140,6 +165,7 @@ export default async function BlogPostPage({ params, searchParams }) {
       />
     );
   } catch (error) {
+    console.error("Error in BlogPostPage:", error);
     notFound();
   }
 }

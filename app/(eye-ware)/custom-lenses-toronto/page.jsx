@@ -134,7 +134,7 @@ const page = () => {
         title="Ready for Custom Lenses? call us Today"
         phones={[
           { label: "Beaches", number: "416-698-3937" },
-          { label: "Rosedale", number: "416-901-2725" },
+          { label: "Yorkville", number: "416-901-2725" },
         ]}
         description="Get started with custom lenses tailored to your unique vision needs. Our experts are ready to assist you"
         buttonText="Book An Appointment"

@@ -58,9 +58,9 @@ const IntroSection = () => (
       </p>
       <p className="text-neutral-500 text-base md:text-lg mb-2">
         Our pediatric optometry clinics are located in two convenient locations
-        in Toronto – Beaches and Rosedale. Beaches is situated in the east end
+        in Toronto – Beaches and Yorkville. Beaches is situated in the east end
         of Toronto, near the waterfront, and is in close proximity to
-        Leslieville, Riverdale, and East York. Rosedale, on the other hand, is
+        Leslieville, Riverdale, and East York. Yorkville, on the other hand, is
         located just north of Downtown Toronto, and is surrounded by nearby
         areas such as Yorkville, Summerhill, and St. James Town. Our clinics are
         easily accessible from all parts of the city, making it convenient for

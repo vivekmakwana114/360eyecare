@@ -8,13 +8,14 @@ const WORDPRESS_API_URL =
   process.env.NEXT_PUBLIC_BLOG_BASE_URL ||
   `${SITE_URL}/dashboard/wp-json/wp/v2`;
 
-// Ensure the URL has the correct format
+
+// Ensure the URL has the correct format (no trailing slash)
 const formatUrl = (url) => {
   if (url.startsWith("http")) {
-    return url.endsWith("/") ? url : `${url}/`;
+    return url.endsWith("/") ? url.slice(0, -1) : url;
   }
   const baseUrl = `${SITE_URL}${url.startsWith("/") ? "" : "/"}${url}`;
-  return baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  return baseUrl.endsWith("/") ? baseUrl.slice(0, -1) : baseUrl;
 };
 
 // Helper function to create page objects with consistent structure
@@ -32,8 +33,8 @@ const staticPages = [
 
   // Main navigation
   createPage("/about-us", { priority: 0.8 }),
-  createPage("/services", { priority: 0.8 }),
-  createPage("/contact", { priority: 0.8 }),
+  // createPage("/services", { priority: 0.8 }),
+  // createPage("/contact", { priority: 0.8 }),
   createPage("/blog", { changefreq: "daily", priority: 0.9 }),
   createPage("/shop", { priority: 0.9 }),
 
@@ -73,6 +74,14 @@ const staticPages = [
   createPage("/virtual-consult", { priority: 0.7 }),
   createPage("/virtual-consult-consent-form", { priority: 0.5 }),
   createPage("/virtual-shopping", { priority: 0.6 }),
+
+  // Team Members
+  createPage("/team-members/dr-sam-baraam", { priority: 0.7 }),
+  createPage("/team-members/dr-anita-sritharan", { priority: 0.7 }),
+  createPage("/team-members/dr-gina-chen", { priority: 0.7 }),
+  createPage("/team-members/dr-harmandeep-gill", { priority: 0.7 }),
+  createPage("/team-members/dr-alina-shahid", { priority: 0.7 }),
+  createPage("/team-members/dr-deepinder-swatch", { priority: 0.7 }),
 
   // Eye health
   createPage("/common-eye-conditions", { priority: 0.7 }),
@@ -162,6 +171,9 @@ export async function GET() {
       })),
       ...wordPressPosts,
     ];
+
+    console.log("Generated Sitemap URLs:", allUrls.map((u) => u.loc));
+
 
     // Generate the sitemap
     return getServerSideSitemap(allUrls);

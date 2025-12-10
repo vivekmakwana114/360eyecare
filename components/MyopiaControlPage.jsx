@@ -203,7 +203,7 @@ export default function MyopiaControlPage() {
           Protect your child's vision for a lifetime of clear sight. Contact our
           Myopia Control Clinic today at{" "}
           <span className="font-semibold">
-            Beaches: 416-699-3937, Rosedale: 416-901-2728
+            Beaches: 416-698-3937, Yorkville: 416-901-2725
           </span>{" "}
           to schedule an appointment or visit our{" "}
           <Link
@@ -221,13 +221,13 @@ export default function MyopiaControlPage() {
             className="font-semibold text-combination-200"
             href={"/toronto-rosedale-optometrist"}
           >
-            Rosedale Optometry
+            Yorkville Optometry
           </Link>{" "}
           at{" "}
           <span className="font-semibold">
-            120 Bloor Street East, Unit 100B, Toronto, ON M4W 1B7
+            Concourse level 55 Bloor St W Suite 03, Toronto, ON M4W 1A5, Canada.
           </span>
-          .
+          
         </p>
         <p className="text-neutral-500 text-base mb-2">
           Remember, early intervention is important. Together, we can ensure
