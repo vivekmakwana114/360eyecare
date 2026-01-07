@@ -139,7 +139,7 @@ const BeforeYourAppointment = ({ id }) => {
             </p>
             <div className="grid grid-cols-2 gap-x-2 gap-y-3">
               {[
-                { id: 1, para: "51 Queen Streetcar " },
+                { id: 1, para: "501 Queen Streetcar " },
                 { id: 2, para: "Woodbine Station" },
                 { id: 3, para: "Walk-ins Welcome" },
                 { id: 4, para: "Street Parking" },

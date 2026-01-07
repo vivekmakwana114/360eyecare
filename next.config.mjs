@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.360eyecare.ca', '360eyecare.snag-zilla.com', 'lh3.googleusercontent.com'],
+    domains: [
+      "www.360eyecare.ca",
+      "lh3.googleusercontent.com",
+      "secure.gravatar.com",
+    ],
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080],
     imageSizes: [16, 32, 48, 64, 96],

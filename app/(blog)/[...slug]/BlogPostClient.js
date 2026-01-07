@@ -11,6 +11,7 @@ import {
   PinterestShareButton,
 } from "react-share";
 import RecentPosts from "../../../components/blog/RecentPosts";
+import AuthorBioCard from "../../../components/blog/AuthorBioCard";
 import SearchSuggestion from "../../../components/SearchSuggestion";
 import he from "he";
 
@@ -18,6 +19,7 @@ const BlogPostClient = ({ post: initialPost }) => {
   const { slug } = useParams();
   const router = useRouter();
   const [data, setData] = useState(initialPost);
+  const [authorData, setAuthorData] = useState(null);
   const [isLoading, setIsLoading] = useState(!initialPost);
   const [error, setError] = useState(null);
   const [shareUrl, setShareUrl] = useState("");
@@ -130,6 +132,27 @@ const BlogPostClient = ({ post: initialPost }) => {
       isMounted = false;
     };
   }, [slug, initialPost]);
+
+  // Fetch Author Data
+  useEffect(() => {
+    if (data?.author) {
+      const fetchAuthor = async () => {
+        try {
+          const res = await fetch(
+            `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/users/${data?.author}`
+          );
+          if (res.ok) {
+            const userData = await res.json();
+            console.log("Fetched Author Data:", userData);
+            setAuthorData(userData);
+          }
+        } catch (e) {
+          console.error("Failed to fetch author", e);
+        }
+      };
+      fetchAuthor();
+    }
+  }, [data?.author]);
 
   // Redirect to 404 for invalid posts
   useEffect(() => {
@@ -348,6 +371,25 @@ const BlogPostClient = ({ post: initialPost }) => {
                   </div>
                 </PinterestShareButton>
               </div>
+            </div>
+
+            {/* Author Bio Card */}
+            <div className="mt-8">
+              <AuthorBioCard
+                name={authorData?.name || cleanedAuthor}
+                description={authorData?.description}
+                image={
+                  authorData?.avatar_urls?.["24"] ||
+                  authorData?.avatar_urls?.["48"] ||
+                  authorData?.avatar_urls?.["96"]
+                }
+                title={authorData?.acf?.job_title || "Optometrist"}
+                socials={{
+                  facebook: authorData?.acf?.social_facebook,
+                  linkedin: authorData?.acf?.social_linkedin,
+                  instagram: authorData?.acf?.social_instagram,
+                }}
+              />
             </div>
           </article>
 
