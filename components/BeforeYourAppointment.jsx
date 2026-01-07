@@ -35,16 +35,16 @@ const BeforeYourAppointment = ({ id }) => {
             </p>
             {[
               {
-                icon: "/public/call.svg",
+                icon: "/call.svg",
                 head: "416-698-3937",
                 link: "tel:416-698-3937",
               },
               {
-                icon: "/public/fax.svg",
+                icon: "/fax.svg",
                 head: "416-698-1161",
               },
               {
-                icon: "/public/email1.svg",
+                icon: "/email1.svg",
                 head: "beaches@360eyecare.ca",
                 link: "mailto:beaches@360eyecare.ca",
               },
@@ -71,7 +71,7 @@ const BeforeYourAppointment = ({ id }) => {
               <div className="flex flex-col md:flex-row gap-3 items-center justify-between mt-2">
                 <div className="flex flex-row gap-2 items-center">
                   <Image
-                    src={"/public/address.svg"}
+                    src={"/address.svg"}
                     alt="address"
                     width={24}
                     height={24}
@@ -82,7 +82,7 @@ const BeforeYourAppointment = ({ id }) => {
                 </div>
                 <div className="flex flex-row items-center gap-2 mt-2 md:mt-0">
                   <Image
-                    src={"/public/redo.svg"}
+                    src={"/redo.svg"}
                     alt="Icon"
                     width={24}
                     height={24}
@@ -118,7 +118,7 @@ const BeforeYourAppointment = ({ id }) => {
                   className="flex flex-row gap-3 items-center"
                 >
                   <Image
-                    src={"/public/clock.svg"}
+                    src={"/clock.svg"}
                     alt="Icon"
                     width={24}
                     height={24}
@@ -148,7 +148,7 @@ const BeforeYourAppointment = ({ id }) => {
               ].map((item) => (
                 <div key={item.id} className="flex flex-row gap-3 items-center">
                   <Image
-                    src={"/public/leaf.svg"}
+                    src={"/leaf.svg"}
                     alt="leaf"
                     width={24}
                     height={24}

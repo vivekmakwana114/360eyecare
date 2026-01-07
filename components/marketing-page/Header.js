@@ -27,7 +27,7 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-x-2">
-          <img src="/public/phone.png"
+          <img src="/phone.png"
             alt="not available"
             width={20}
             height={20}

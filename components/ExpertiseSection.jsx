@@ -18,7 +18,7 @@ export default function ExpertiseSection({
             {description?.map((desc, idx) => (
               <li key={idx} className="flex items-center gap-2">
                 <Image
-                  src="/public/point.svg"
+                  src="/point.svg"
                   alt="Triangle Arrow"
                   width={20}
                   height={20}
@@ -39,7 +39,7 @@ export default function ExpertiseSection({
               {/* Circular Icon */}
               <div className="flex items-center justify-center w-15 h-15 bg-white rounded-full p-1">
                 <Image
-                  src="/public/medal.svg"
+                  src="/medal.svg"
                   alt="Award"
                   width={45}
                   height={45}

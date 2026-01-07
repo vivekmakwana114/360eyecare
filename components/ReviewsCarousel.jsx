@@ -146,7 +146,7 @@ const ReviewsCarousel = ({ title, data }) => {
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
             >
               <Image
-                src="/public/arrow-right.svg"
+                src="/arrow-right.svg"
                 alt="arrow right"
                 width={30}
                 height={30}
@@ -158,7 +158,7 @@ const ReviewsCarousel = ({ title, data }) => {
               className="bg-white rounded-full p-2 shadow-md hover:bg-gray-50 transition-colors"
             >
               <Image
-                src="/public/arrow-left.svg"
+                src="/arrow-left.svg"
                 alt="arrow left"
                 width={30}
                 height={30}

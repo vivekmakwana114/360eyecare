@@ -8,7 +8,7 @@ function BookFreeConsultation() {
                     behavior: "smooth",
                 });
             }}>
-                <img src="/public/Right.png" alt="not available" />
+                <img src="/Right.png" alt="not available" />
                 <span>Book Free Consultation Now</span>
                 
             </div>

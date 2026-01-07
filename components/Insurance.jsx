@@ -6,14 +6,14 @@ const InsuranceSection = () => {
   const scrollRef = useRef(null);
 
   const insuranceCompanies = [
-    { logo: "/public/sunlife.svg", alt: "Sun Life" },
-    { logo: "/public/manulife.svg", alt: "Manulife" },
-    { logo: "/public/greenshield.svg", alt: "GreenShield" },
-    { logo: "/public/standardlife.svg", alt: "Standard Life" },
-    { logo: "/public/chambers.svg", alt: "Chambers" },
-    { logo: "/public/bluecross.svg", alt: "Blue Cross" },
-    { logo: "/public/desjardins.svg", alt: "Desjardins" },
-    { logo: "/public/greatwest.svg", alt: "Great-West Life" },
+    { logo: "/sunlife.svg", alt: "Sun Life" },
+    { logo: "/manulife.svg", alt: "Manulife" },
+    { logo: "/greenshield.svg", alt: "GreenShield" },
+    { logo: "/standardlife.svg", alt: "Standard Life" },
+    { logo: "/chambers.svg", alt: "Chambers" },
+    { logo: "/bluecross.svg", alt: "Blue Cross" },
+    { logo: "/desjardins.svg", alt: "Desjardins" },
+    { logo: "/greatwest.svg", alt: "Great-West Life" },
   ];
 
   // Auto-scroll effect for mobile only

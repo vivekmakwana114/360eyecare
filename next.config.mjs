@@ -1,16 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "www.360eyecare.ca",
-      "lh3.googleusercontent.com",
-      "secure.gravatar.com",
+    // domains: [
+    //   "www.360eyecare.ca",
+    //   "lh3.googleusercontent.com",
+    //   "secure.gravatar.com",
+    // ],
+    // formats: ["image/avif", "image/webp"],
+    // deviceSizes: [640, 750, 828, 1080],
+    // imageSizes: [16, 32, 48, 64, 96],
+    // minimumCacheTTL: 31536000,
+    // dangerouslyAllowSVG: true,
+
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
     ],
-    formats: ["image/avif", "image/webp"],
-    deviceSizes: [640, 750, 828, 1080],
-    imageSizes: [16, 32, 48, 64, 96],
-    minimumCacheTTL: 31536000,
-    dangerouslyAllowSVG: false,
   },
   experimental: {
     optimizeCss: true,

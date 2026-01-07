@@ -4,12 +4,12 @@ import React from "react";
 
 const links = [
   {
-    icon: "/public/call.svg",
+    icon: "/call.svg",
     number: "416-901-2725",
     text: "416-901-2725",
   },
   {
-    icon: "/public/email.svg",
+    icon: "/email.svg",
     email: "yorkville@360eyecare.ca",
     text: "yorkville@360eyecare.ca",
   },
@@ -17,15 +17,15 @@ const links = [
 
 const socialLinks = [
   {
-    icon: "/public/facebook.svg",
+    icon: "/facebook.svg",
     link: "https://www.facebook.com/360eyecare.yorkville?locale=ms_MY",
   },
   {
-    icon: "/public/instagram.svg",
+    icon: "/instagram.svg",
     link: "https://www.instagram.com/360eyecare_yorkville/?hl=en",
   },
   {
-    icon: "/public/twitter.svg",
+    icon: "/twitter.svg",
     link: "https://x.com/360eyecare",
   },
 ];

@@ -63,7 +63,7 @@ const HeroSection = () => {
             {/* Left side - Text content */}
             <div className="relative w-full md:w-1/2 flex flex-col md:items-start items-center justify-center text-center md:text-left py-8 md:py-0 h-full gap-y-8 text-xs md:text-base ">
               <div className="bg-[#FBF7B9] p-2 border-red-600 border-2 rounded-sm">
-                <img src="/public/time.gif" alt="" width={20} height={20} className="inline-block mix-blend-multiply" />
+                <img src="/time.gif" alt="" width={20} height={20} className="inline-block mix-blend-multiply" />
                 <span>Limited Time : </span>
                 <span className="text-[#D00000]"> FREE Consultation Worth $150 </span></div>
 
@@ -93,7 +93,7 @@ const HeroSection = () => {
                         {/* Icon + line */}
                         <div className="relative flex flex-col items-center gap-y-2">
                           <img
-                            src="/public/tick-mark.png"
+                            src="/tick-mark.png"
                             alt="tick"
                             className="md:w-6 md:h-6 w-4 h-4"
                           />

@@ -63,8 +63,8 @@ const EyeCareServices = ({
                       <Image
                         src={`${
                           item.id === openIndex
-                            ? "/public/minusIcon.svg"
-                            : "/public/plusIcon.svg"
+                            ? "/minusIcon.svg"
+                            : "/plusIcon.svg"
                         }`}
                         alt="Eye Care Service"
                         width={12}

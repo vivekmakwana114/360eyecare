@@ -8,31 +8,31 @@ const EyeExam = ({ heading }) => {
   const ExamOptionData = {
     "Before Your Visit": [
       {
-        icon: "/public/eyeglasses.svg",
+        icon: "/eyeglasses.svg",
         text: "Bring current glasses/contacts",
       },
-      { icon: "/public/medicine.svg", text: "List of current medications" },
-      { icon: "/public/inc.svg", text: "Insurance information" },
+      { icon: "/medicine.svg", text: "List of current medications" },
+      { icon: "/inc.svg", text: "Insurance information" },
       {
-        icon: "/public/eyeglasses.svg",
+        icon: "/eyeglasses.svg",
         text: "Bring sunglasses (pupils may be dilated)",
       },
-      { icon: "/public/time.svg", text: "Arrive 10 minutes early" },
+      { icon: "/time.svg", text: "Arrive 10 minutes early" },
     ],
     "During Your Exam": [
-      { icon: "/public/vision.svg", text: "Comprehensive vision testing" },
-      { icon: "/public/eye.svg", text: "Ocular health assessment" },
-      { icon: "/public/retina.svg", text: "Digital retinal photography" },
-      { icon: "/public/pressure.svg", text: "Peripheral vision testing" },
-      { icon: "/public/oct.svg", text: "OCT scan and review" },
-      { icon: "/public/peripheral.svg", text: "Eye pressure measurement" },
+      { icon: "/vision.svg", text: "Comprehensive vision testing" },
+      { icon: "/eye.svg", text: "Ocular health assessment" },
+      { icon: "/retina.svg", text: "Digital retinal photography" },
+      { icon: "/pressure.svg", text: "Peripheral vision testing" },
+      { icon: "/oct.svg", text: "OCT scan and review" },
+      { icon: "/peripheral.svg", text: "Eye pressure measurement" },
     ],
     "After Your Exam": [
-      { icon: "/public/note.svg", text: "Detailed results discussion" },
-      { icon: "/public/prescribe.svg", text: "Prescription updates if needed" },
-      { icon: "/public/eyetreat.svg", text: "Treatment recommendations" },
-      { icon: "/public/glasses.svg", text: "Same-day eyewear ordering" },
-      { icon: "/public/schedule.svg", text: "Follow-up scheduling" },
+      { icon: "/note.svg", text: "Detailed results discussion" },
+      { icon: "/prescribe.svg", text: "Prescription updates if needed" },
+      { icon: "/eyetreat.svg", text: "Treatment recommendations" },
+      { icon: "/glasses.svg", text: "Same-day eyewear ordering" },
+      { icon: "/schedule.svg", text: "Follow-up scheduling" },
     ],
   };
 
