@@ -235,7 +235,7 @@ const ReviewsCarousel = ({ title, data }) => {
           </p>
 
            <Link
-          href="https://360rosedale.mypatientportal.xyz/dashboard"
+          href="https://360rosedale.mypatientsportal.com/select-location"
           className="bg-combination-200 font-semibold text-sm md:text-base text-[#FFFFFF]
                      py-2 px-6 rounded-full w-full max-w-[267px] 
                      h-[52px] flex justify-center items-center 

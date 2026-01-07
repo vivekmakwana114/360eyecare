@@ -44,7 +44,7 @@ const BookEyeExam = () => {
               description:
                 "Your next eye exam could change how you see the world. Let’s take care of your vision together. It’s just a click away.",
               ctaText: "Book at Yorkville",
-              ctaLink: "https://360rosedale.mypatientportal.xyz/dashboard",
+              ctaLink: "https://360rosedale.mypatientsportal.com/select-location",
               ctabgColor: "bg-combination-100",
               bgColor: "bg-[#28305F]",
             },

@@ -64,7 +64,7 @@ const TorontoRosedaleOptometrist = () => {
           </>
         }
         ctaText="Book Your Eye Exam Today"
-        ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"
+        ctaLink="https://360rosedale.mypatientsportal.com/select-location"
         ctaClinic="Call Our Clinic"
         ctaNumber="416-901-2725"
         imageSrc={locationHeroYorkVille}
@@ -82,7 +82,7 @@ const TorontoRosedaleOptometrist = () => {
           </>
         }
         ctaText="Book with Dr. Baraam"
-        ctaLink="https://360rosedale.mypatientportal.xyz/dashboard"
+        ctaLink="https://360rosedale.mypatientsportal.com/select-location"
         imageAlt="Dr Sam Baraam Optometrist Yorkville Toronto"
       />
 
