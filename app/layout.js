@@ -36,7 +36,7 @@ export const viewport = {
   themeColor: "#28305F",
 };
 
-// ✅ JSON-LD Schema Markup
+// JSON-LD Schema Markup
 const schemaData = {
   "@context": "https://schema.org",
   "@graph": [
@@ -206,7 +206,7 @@ export default function RootLayout({ children }) {
           crossOrigin="anonymous"
         />
 
-        {/* ✅ JSON-LD Structured Data for crawlers */}
+        {/* JSON-LD Structured Data for crawlers */}
         <Script
           id="schema-jsonld"
           type="application/ld+json"
