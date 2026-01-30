@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const ReviewsCarousel = ({ title, data }) => {
+const ReviewsCarousel = ({ title, data, href, reviewText }) => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visibleReviews, setVisibleReviews] = useState([]);
@@ -174,14 +174,12 @@ const ReviewsCarousel = ({ title, data }) => {
             key={`${currentIndex}-${idx}`}
             className="flex-1 bg-white rounded-[24px] p-6 min-h-[320px] flex flex-col border border-gray-200 shadow-sm hover:shadow-md transition"
           >
-            {/* Review text */}
             <p className="text-[#888888] text-base leading-relaxed flex-grow mb-6 text-center md:text-left">
               {review.reviewDescription.length > 220
                 ? review.reviewDescription.slice(0, 220) + "..."
                 : review.reviewDescription}
             </p>
 
-            {/* Footer section: user + stars + name */}
             <div className="flex flex-col items-start border-t border-gray-100 pt-4">
               <div className="flex items-center gap-3 mb-2">
                 {review.reviewImage ? (
@@ -231,11 +229,12 @@ const ReviewsCarousel = ({ title, data }) => {
           </div>
 
           <p className="font-bold text-2xl md:text-lg text-center text-[#111111]">
-            4.9/5 stars based on 315+ Google reviews
+            {/* 4.9/5 stars based on 315+ Google reviews */}
+            {reviewText}
           </p>
 
            <Link
-          href="https://360rosedale.mypatientsportal.com/select-location"
+          href={href}
           className="bg-combination-200 font-semibold text-sm md:text-base text-[#FFFFFF]
                      py-2 px-6 rounded-full w-full max-w-[267px] 
                      h-[52px] flex justify-center items-center 

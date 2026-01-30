@@ -159,7 +159,7 @@ const TorontoRosedaleOptometrist = () => {
         searchText={`*Searching for "eye doctor Bloor Street", "optometrist near Queen's Park", "Bay Street eye clinic", or "Church Street optometrist"? "We're your closest, best eye care on Bloor Street West!`}
       />
 
-      <ReviewsCarousel title="Happy Clients!" data={mockRosedaleReviews} />
+      <ReviewsCarousel title="Happy Clients!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" reviewText="4.9/5 stars based on 185+ Google reviews" />
 
       <DryFaqs
         faqData={RosedaleFaqData}
