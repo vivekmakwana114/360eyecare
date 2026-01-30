@@ -327,6 +327,14 @@ const Footer = () => {
                     Integrum Eyewear
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/faq"
+                    className="hover:text-combination-100 font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]"
+                  >
+                    FAQ's
+                  </Link>
+                </li>
               </ul>
             </nav>
 
