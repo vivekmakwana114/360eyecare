@@ -588,7 +588,7 @@ const faqSchema = {
         text: "RF (Radiofrequency) treatment uses gentle heat to stimulate the meibomian glands and improve natural tear production. The controlled warming melts blocked oils, reduces inflammation, and enhances gland function. RF therapy complements IPL treatment and provides long-term relief from dry eye symptoms. Available at both 360 Eyecare locations with comfortable, painless treatment sessions.",
       },
     },
-    
+
   ],
 };
 
@@ -629,7 +629,7 @@ const FAQPage = () => {
                      h-[52px] flex justify-center items-center 
                      cursor-pointer hover:opacity-90 transition-opacity mt-4"
         >
-          Schedule Your Appointment
+          Schedule Your Appointmen
         </Link>
       </div>
     </main>
