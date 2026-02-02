@@ -629,7 +629,7 @@ const FAQPage = () => {
                      h-[52px] flex justify-center items-center 
                      cursor-pointer hover:opacity-90 transition-opacity mt-4"
         >
-          Schedule Your Appointmen
+          Schedule Your Appointment
         </Link>
       </div>
     </main>
