@@ -1,7 +1,5 @@
 [
-
-
-{
+  {
     "id": 1,
     "stars": 5,
     "reviewDescription": "Wonderful team here. Location is perfect in the beaches. Thank you to the reception team and Dr. Anita for great care. Everyone was very kind and helpful. Would absolutely recommend! Direct billing is a huge bonus!!",
@@ -9,38 +7,35 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjUaRCqWlCw-6syHTGFmhGCFxOHwkB_95L69PMD2Ys-n9NNtoGCo=w72-h72-p-rp-mo-ba2-br100",
     "reviewDate": "a week ago",
     "reviewLink": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2sxQlRYcHphMUkwT1hoalJsOVBlVEpDTlZkS1kyYxAB!2m1!1s0x0:0xa8b556984f2cd509!3m1!1s2@1:CAIQACodChtycF9oOk1BTXpza1I0OXhjRl9PeTJCNVdKY2c%7C0cK9JdazC1C%7C?entry=tts&g_ep=EgoyMDI1MDYzMC4wIPu8ASoASAFQAw%3D%3D&skid=94aa12df-1204-44a7-9c1d-a23b44f388c8"
-},
-        {
-        "id": 2,
-        "stars": 5,
-        "reviewDescription": "Great service, fast and friendly team.",
-        "reviewName": "Rob Fraser",
-        "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjWq8w6qEkOq-Do3bQkA2g6ZBEExDwxE4RRLuQf9nvcXi9b6oG6x=w72-h72-p-rp-mo-ba4-br100",
-        "reviewDate": "a month ago",
-        "reviewLink": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VQU0ttSUtjNkpYZTFBRRAB!2m1!1s0x0:0xa8b556984f2cd509!3m1!1s2@1:CIHM0ogKEPSKmIKc6JXe1AE%7CCgwI8Z7uwAYQyNnn1gI%7C?hl=en-GB&source=sh/x/kp/local/m1/0&kgs=856e4fdb631c422c"
-
-    },
-    {
-        "id": 3,
-        "stars": 5,
-        "reviewDescription": "Amazing selection of kids glasses. Everyone at the beaches store are amazing and truly care about you picking the correct glasses.",
-        "reviewName": "Adam Gunn",
-        "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjVbVt0giP8b9AIkeS-cSPvlnu3Q7wwr32aHzQK27Tfzsj9GwL8=w72-h72-p-rp-mo-ba3-br100",
-        "reviewDate": "a month ago",
-        "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNZcnJ5eERnEAE!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-    },
-    {
-        "id": 4,
-        "stars": 5,
-        "reviewDescription": "A big shoutout to Vanessa and Dr. Baraam for providing high-quality service.",
-        "reviewName": "Idil Ugut",
-        "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjX_iBhbDmG3lDmiZzF4qNKiMNlzeVGdoMi2UwF3T9tXqhjDF_PF=w72-h72-p-rp-mo-br100",
-        "reviewDate": "2 month ago",
-        "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNZX05QWHR3RRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
+    "id": 2,
+    "stars": 5,
+    "reviewDescription": "Great service, fast and friendly team.",
+    "reviewName": "Rob Fraser",
+    "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjWq8w6qEkOq-Do3bQkA2g6ZBEExDwxE4RRLuQf9nvcXi9b6oG6x=w72-h72-p-rp-mo-ba4-br100",
+    "reviewDate": "a month ago",
+    "reviewLink": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VQU0ttSUtjNkpYZTFBRRAB!2m1!1s0x0:0xa8b556984f2cd509!3m1!1s2@1:CIHM0ogKEPSKmIKc6JXe1AE%7CCgwI8Z7uwAYQyNnn1gI%7C?hl=en-GB&source=sh/x/kp/local/m1/0&kgs=856e4fdb631c422c"
+  },
+  {
+    "id": 3,
+    "stars": 5,
+    "reviewDescription": "Amazing selection of kids glasses. Everyone at the beaches store are amazing and truly care about you picking the correct glasses.",
+    "reviewName": "Adam Gunn",
+    "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjVbVt0giP8b9AIkeS-cSPvlnu3Q7wwr32aHzQK27Tfzsj9GwL8=w72-h72-p-rp-mo-ba3-br100",
+    "reviewDate": "a month ago",
+    "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNZcnJ5eERnEAE!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  {
+    "id": 4,
+    "stars": 5,
+    "reviewDescription": "A big shoutout to Vanessa and Dr. Baraam for providing high-quality service.",
+    "reviewName": "Idil Ugut",
+    "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjX_iBhbDmG3lDmiZzF4qNKiMNlzeVGdoMi2UwF3T9tXqhjDF_PF=w72-h72-p-rp-mo-br100",
+    "reviewDate": "2 month ago",
+    "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNZX05QWHR3RRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
+  },
+  {
     "id": 5,
     "stars": 5,
     "reviewDescription": "Quick and smooth experience. The measurement equipment is modern and up to date—highly recommended",
@@ -48,9 +43,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjX2cRl12n6ArqpVr8IQQvqD2wrdvMG-syqqNNgHnjyiq75QR7Cb=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 month ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURvZ2VIUHVBRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 6,
     "stars": 5,
     "reviewDescription": "Dr. Baram always takes the time to ensure my contacts work for my eyes and for my lifestyle. He is generous with his time and willing to keep trying until we find a workable solution. His team in the store are always efficient and welcoming. A pleasure doing business with them.",
@@ -58,9 +52,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjUSAmBdKet3tRYlQLPR9sjZ6T9d4nwjsYZY9icBh2hBTTOiv3g=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 month ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnSUNjNGMyNmpnRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 7,
     "stars": 5,
     "reviewDescription": "The kindness and patience shown me by the Staff was amazing, and I can't thank them enough for putting up with me and my indecision over the frames! My eye exam by Dr. Baraam was thorough and the results clearly explained to me. She took great pains to make sure she understood what I was trying to tell her, and has assured me that 'All is well'....thank you everyone, at 360 Eyecare..",
@@ -68,9 +61,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjVt4lypSRRc0k8QSby5hBKxd3FMT3khGTItPYp2bhh275hVu6Ow=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNveU1MdDB3RRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{   
+  },
+  {
     "id": 8,
     "stars": 5,
     "reviewDescription": "Friendly, professional and always available, with great results! What more could you ask for?",
@@ -78,9 +70,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjU3EeYipj3cKC-liUCe_kLtP2Uu3DGyxOMYhJiIXAqsf7VSZqs=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTURJa2FhdGhRRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 9,
     "stars": 5,
     "reviewDescription": "The staff at 360 Eyecare in the Beaches are always so friendly, organized, and they provide excellent eye care to my children and myself. I would recommend them to anyone!",
@@ -88,9 +79,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjWLPWkRqahpqpLh3G21shtI7yhu4IvtMp9RriuhoZlPZVtSGXw=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTURJcXZxbEt3EAE!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 10,
     "stars": 5,
     "reviewDescription": "Positive experience, clean and modern space throughout. Friendly staff who were patient when I needed time to organize issues with my insurance. The optometrist was thorough, knowledgeable and pleasant.",
@@ -98,9 +88,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjV0y1t340GR1sEkieS7vMQ-a1PJUVY0387CGUVsXjT_MJTuzOfL=w72-h72-p-rp-mo-br100",
     "reviewDate": "2 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNJMDR5UjRnRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 11,
     "stars": 5,
     "reviewDescription": "I love coming here! The staff are amazing and extremely helpful. I would highly recommend this clinic to anyone!!",
@@ -108,9 +97,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjWT_Fdxx9yZ-Zatkx6lwLfbo5XxhQn768ef2os3s2iyj2hpcNo=w72-h72-p-rp-mo-br100",
     "reviewDate": "3 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChZDSUhNMG9nS0VJQ0FnTUNJc2V5eVh3EAE!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 12,
     "stars": 5,
     "reviewDescription": "Very friendly and was able to see me very quickly. Thorough exam and nice clean space.",
@@ -118,9 +106,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjXGhF7uVBhZtUXIVNxA6MBeRfIloanxbx1MM7POUFnFwTkP35g=w72-h72-p-rp-mo-ba6-br100",
     "reviewDate": "3 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNJb2RHVXJnRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 13,
     "stars": 5,
     "reviewDescription": "Excellent service as always.Very thorough eye exam and all details explained. A wide variety of glasses to choose from. Quality glasses with a range of price points … I am seeing “A whole new world!!”. So thank-you to  everyone at 360 Eyecare.",
@@ -128,9 +115,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjXkMJeFuW7SkrhgKHxbcLy6qyiRNk9p7P5EQ-dSBYxWloTmlweB=w72-h72-p-rp-mo-br100",
     "reviewDate": "3 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!4m6!14m5!1m4!2m3!1sChdDSUhNMG9nS0VJQ0FnTUNJenFiOG5nRRAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 14,
     "stars": 5,
     "reviewDescription": "The staff at 360 Eyecare in the Beaches are outstanding. Dr. Anita was so friendly and professional, and the store staff are beyond amazing! Thank you for making me feel so valued and welcome.If you're looking for great eyecare, and a huge selection of glasses, look no further than 360 Eyecare! ",
@@ -138,9 +124,8 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjWF949J_sjPPaZVQpggc0OlkFa9mYd7r_r9zWMhnCbL4L7pb0Yn=w72-h72-p-rp-mo-ba3-br100",
     "reviewDate": "3 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/@43.6706242,-79.2968277,17z/data=!3m1!4b1!4m6!14m5!1m4!2m3!1sChRDSUhNMG9nS0VJQ0FnTUNJaUxGchAB!2m1!1s0x0:0xa8b556984f2cd509?hl=en-GB&entry=ttu&g_ep=EgoyMDI1MDYwOS4wIKXMDSoASAFQAw%3D%3D"
-
-},
-{
+  },
+  {
     "id": 15,
     "stars": 5,
     "reviewDescription": "I had a fantastic experience at 360 Eye Care Beaches! The entire team was incredibly kind and helpful from start to finish. I brought my 5-year-old with me to my appointment, and they were so accommodating that she was even able to have an exam too! Dr. Sritharan was wonderful—thorough, professional, and great with my little one. It made the whole process smooth and stress-free. Highly recommend for anyone looking for excellent eye care for the whole family!",
@@ -148,6 +133,5 @@
     "reviewImage": "https://lh3.googleusercontent.com/a-/ALV-UjUa-E23N34qoifQBoZKDamX-HG5_LFED9ccQIac8ouI8KEVYl-R=w72-h72-p-rp-mo-br100",
     "reviewDate": "3 months ago",
     "reviewLink": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnTURRdHViNVZ3EAE!2m1!1s0x0:0xa8b556984f2cd509!3m1!1s2@1:CIHM0ogKEICAgMDQtub5Vw%7CCgsIoaK-vgYQuMGUSA%7C?hl=en-GB&source=sh/x/kp/local/m1/0&kgs=bc2f58ec1ecc66ac"
-
-}
+  }
 ]

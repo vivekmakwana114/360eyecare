@@ -20,7 +20,7 @@ export async function generateMetadata() {
   };
 }
 
-export const faqSections = [
+const faqSections = [
   {
     sectionId: "general-information",
     sectionTitle: "General Information",
@@ -142,14 +142,18 @@ export const faqSections = [
         answer: (
           <>
             <span>
-              Visit {" "}
+              Visit{" "}
               <Link
                 href="https://www.360eyecare.ca/book-eye-exam"
                 className="text-[#28305F] hover:underline font-medium"
               >
                 360eyecare.ca
               </Link>{" "}
-              and click on "Contact Us", Select your preferred location (Yorkville or Beaches), choose an available date and time, and fill in your contact information. You'll receive confirmation by email. Alternatively, call Yorkville at 416-901-2725 or Beaches at 416-698-3937.
+              and click on "Contact Us", Select your preferred location
+              (Yorkville or Beaches), choose an available date and time, and
+              fill in your contact information. You'll receive confirmation by
+              email. Alternatively, call Yorkville at 416-901-2725 or Beaches at
+              416-698-3937.
             </span>
           </>
         ),

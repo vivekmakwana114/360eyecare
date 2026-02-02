@@ -11,7 +11,8 @@ export default function YorkvilleLayout({ children }) {
   const optometristSchema = {
     "@context": "https://schema.org",
     "@type": "Optometrist",
-    "@id": "https://www.360eyecare.ca/toronto-rosedale-optometrist/#optometrist",
+    "@id":
+      "https://www.360eyecare.ca/toronto-rosedale-optometrist/#optometrist",
     name: "360 Eyecare Yorkville",
     url: "https://www.360eyecare.ca/toronto-rosedale-optometrist",
     telephone: "+1-416-901-2725",
@@ -35,12 +36,42 @@ export default function YorkvilleLayout({ children }) {
       longitude: -79.38856498,
     },
     openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "19:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "16:00" },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Monday",
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Tuesday",
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Wednesday",
+        opens: "09:00",
+        closes: "19:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Thursday",
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Friday",
+        opens: "09:00",
+        closes: "18:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Saturday",
+        opens: "09:00",
+        closes: "16:00",
+      },
     ],
     sameAs: [
       "https://www.facebook.com/360eyecare.yorkville/",
@@ -109,27 +140,25 @@ export default function YorkvilleLayout({ children }) {
   };
 
   return (
-    <html lang="en">
-      <head>
-        {/*  Location-schema - yorkville rosedale JSON-LD schema */}
-        <Script
-          id="yorkville-schema-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(optometristSchema)}
-        </Script>
+    <>
+      {/*  Location-schema - yorkville rosedale JSON-LD schema */}
+      <Script
+        id="yorkville-schema-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(optometristSchema)}
+      </Script>
 
-        {/*  FAQ schema */}
-        <Script
-          id="yorkville-faq-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(faqSchema)}
-        </Script>
-      </head>
-      <body>{children}</body>
-    </html>
+      {/*  FAQ schema */}
+      <Script
+        id="yorkville-faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(faqSchema)}
+      </Script>
+      {children}
+    </>
   );
 }
