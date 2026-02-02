@@ -2,16 +2,17 @@ import SubHeader from "../../../components/SubHeader";
 import DryFaqs from "../../../components/DryFaqs";
 import React from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 export async function generateMetadata() {
   return {
-    title: "FAQ - 360 Eyecare",
+    title: "360 Eyecare FAQs | Eye Exams, Insurance & Appointments",
     description:
-      "Frequently asked questions about our services, eye exams, insurance coverage, and more.",
+      "Get answers to common questions about eye exams, appointments, insurance, kids’ eye care & more at 360 Eyecare. Book your visit today.",
     openGraph: {
-      title: "FAQ - 360 Eyecare",
+      title: "360 Eyecare FAQs | Eye Exams, Insurance & Appointments",
       description:
-        "Frequently asked questions about our services, eye exams, insurance coverage, and more.",
+        "Get answers to common questions about eye exams, appointments, insurance, kids’ eye care & more at 360 Eyecare. Book your visit today.",
       url: "https://www.360eyecare.ca/faq/",
       siteName: "360 Eyecare",
       type: "website",
@@ -20,7 +21,7 @@ export async function generateMetadata() {
   };
 }
 
-export const faqSections = [
+const faqSections = [
   {
     sectionId: "general-information",
     sectionTitle: "General Information",
@@ -142,14 +143,18 @@ export const faqSections = [
         answer: (
           <>
             <span>
-              Visit {" "}
+              Visit{" "}
               <Link
                 href="https://www.360eyecare.ca/book-eye-exam"
                 className="text-[#28305F] hover:underline font-medium"
               >
                 360eyecare.ca
               </Link>{" "}
-              and click on "Contact Us", Select your preferred location (Yorkville or Beaches), choose an available date and time, and fill in your contact information. You'll receive confirmation by email. Alternatively, call Yorkville at 416-901-2725 or Beaches at 416-698-3937.
+              and click on "Contact Us", Select your preferred location
+              (Yorkville or Beaches), choose an available date and time, and
+              fill in your contact information. You'll receive confirmation by
+              email. Alternatively, call Yorkville at 416-901-2725 or Beaches at
+              416-698-3937.
             </span>
           </>
         ),
@@ -451,9 +456,152 @@ export const faqSections = [
   },
 ];
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How do I find the best optometrist near me in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Finding the best optometrist in Toronto starts with location and services. 360 Eyecare has two convenient locations in Yorkville and the Beaches, offering comprehensive eye exams, advanced diagnostics technology, and experienced optometrists. Look for clinics that provide same day appointments, accepts your insurance, and offer specialized services like dry eye treatment and myopia control.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is 360 Eyecare a walk-in eye clinic near me?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, 360 Eyecare welcomes same-day appointments at both our Yorkville and Beaches locations when possible. However, we recommend booking online or calling ahead to ensure minimal wait times. Our Beaches location can be reached at 416-698-3937, and Yorkville at 416-901-2725. We offer extended hours including evenings and Saturdays for your convenience.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer same-day or walk-in eye exams in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, we accommodate same-day and walk-in appointments at both locations. For urgent eye care needs or emergency appointments, call our Yorkville location at 416-901-2725 or Beaches at 416-698-3937. We reserve time slots for urgent cases including eye injuries, sudden vision changes, and severe eye pain.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What services does an eye clinic near me typically provide?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "360 Eyecare provides comprehensive eye care services at both Yorkville and Beaches locations, including: comprehensive eye exams, contact lens fittings, eyeglasses and prescription lenses, pediatric eye exams, myopia control treatments, advanced dry eye therapy (IPL and RF), emergency eye care, and retinal imaging and OCT scans. We also have a full optical shop at each location.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is 360 Eyecare considered one of the best optometry clinics in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "360 Eyecare is recognized as a leading optometry clinic in Toronto. Our optometrist, Dr. Sam Baraam, brings over 10 years of expertise and is certified by the Canadian Association of Optometrists. Both our Yorkville and Beaches locations feature cutting-edge diagnostic technology, specialized treatments, and comprehensive family eye care. We're known for patient-centered care and innovative solutions for dry eye and myopia management.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you accept vision insurance for eye exams in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, 360 Eyecare accepts most major insurance plans at both Yorkville and Beaches locations including Sun Life, Manulife, Great-West Life, Blue Cross, Green Shield, and Chambers of Commerce plans. We offer direct billing so you don't pay upfront for covered services. Contact us with your insurance information for verification.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is OHIP accepted for eye exams?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, OHIP covers eye exams for children under 20, adults 65 and older, and people with specific medical conditions like diabetes, glaucoma, or cataracts. OHIP-eligible exams are fully covered at both our Yorkville and Beaches locations. Adults aged 20-64 without medical conditions typically need private insurance or pay out-of-pocket.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does an eye exam cost in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Eye exam costs vary based on coverage. OHIP-covered exams (under 20, 65+, medical conditions) are free. Contact our Yorkville (416-901-2725) or Beaches (416-698-3937) location for current pricing and insurance verification.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How can I book an appointment online with 360 Eyecare?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Visit 360eyecare.ca and click on “Contact Us”, Select your preferred location (Yorkville or Beaches), choose an available date and time, and fill in your contact information. You'll receive confirmation by email. Alternatively, call Yorkville at 416-901-2725 or Beaches at 416-698-3937.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer emergency or urgent eye care services?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, both our Yorkville and Beaches locations accommodate urgent eye care needs and emergency appointments. We handle eye injuries, sudden vision changes, severe eye pain, foreign object removal, infections (pink eye), and contact lens complications. Call immediately for same-day emergency care: Yorkville 416-901-2725 or Beaches 416-698-3937. We reserve time slots daily for urgent cases.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer eye testing for adults and seniors in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, both our Yorkville and Beaches locations provide comprehensive eye testing for adults and seniors. We assess vision clarity, screen for conditions like glaucoma, cataracts, and macular degeneration, and evaluate overall eye health. Adults 65+ receive OHIP-covered annual exams. Our optometrists are trained in managing age-related eye conditions.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you offer contact lens exams in Toronto?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, 360 Eyecare offers comprehensive contact lens exams at both Yorkville and Beaches locations. The exam includes contact lens fitting, prescription determination, instruction on proper insertion and care, and follow-up appointments to ensure comfort. We fit soft daily and monthly lenses, rigid gas permeable lenses, specialty lenses for astigmatism, and Ortho-K overnight lenses.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you handle same-day emergencies?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. 360 Eyecare reserves time daily for urgent cases. If you have an eye emergency during business hours, call us immediately. We'll fit you in as quickly as possible.",
+      },
+    },
+     {
+      "@type": "Question",
+      name: "Are pediatric eye exams available at your Yorkville and Beaches locations?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, pediatric eye exams are available at both 360 Eyecare locations. Our Yorkville clinic is at 55 Bloor Street West (call 416-901-2725) and our Beaches clinic is at 2199 Queen Street East (call 416-698-3937). Both locations offer comprehensive children's eye care, myopia control programs, and OHIP-covered exams for children under 20.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is myopia control and how does it help children?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Myopia control is a treatment program that slows or stops nearsightedness progression in children. At 360 Eyecare's Yorkville and Beaches locations, we use specialized therapies including MiYOSMART and MyoCare lenses, Ortho-K overnight lenses, and specialized contact lenses. Myopia control reduces dependency on strong prescriptions and lowers the risk of serious eye conditions like retinal detachment later in life.",
+      },
+    },
+     {
+      "@type": "Question",
+      name: "What is RF eye treatment and how does it help dry eyes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "RF (Radiofrequency) treatment uses gentle heat to stimulate the meibomian glands and improve natural tear production. The controlled warming melts blocked oils, reduces inflammation, and enhances gland function. RF therapy complements IPL treatment and provides long-term relief from dry eye symptoms. Available at both 360 Eyecare locations with comfortable, painless treatment sessions.",
+      },
+    },
+
+  ],
+};
+
 const FAQPage = () => {
   return (
     <main className="pt-[110px]">
+      <Script
+        id="faq-schema-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(faqSchema)}
+      </Script>
       <SubHeader text="Frequently Asked Questions" />
 
       <div className="max-w-7xl mx-auto my-10 px-4 space-y-12">
@@ -473,10 +621,13 @@ const FAQPage = () => {
           eye care professional.
         </p>
       </div>
-      <div className="flex justify-center p-5">
+      <div className="flex justify-center p-5 whitespace-nowrap">
         <Link
           href="https://www.360eyecare.ca/book-eye-exam"
-          className="text-sm md:text-lg font-bold text-center text-[#28305F] hover:text-[#40BCC8] underline"
+          className="bg-combination-200 font-semibold text-sm md:text-base text-[#FFFFFF]
+                     py-2 px-6 rounded-full w-full max-w-[267px] 
+                     h-[52px] flex justify-center items-center 
+                     cursor-pointer hover:opacity-90 transition-opacity mt-4"
         >
           Schedule Your Appointment
         </Link>

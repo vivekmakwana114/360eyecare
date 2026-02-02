@@ -199,7 +199,7 @@ const TorontoBeachesOptometrist = () => {
         searchText={`*Searching for "eye doctor Queen Street East", "optometrist near Woodbine Beach", or "Beaches eye clinic"? You've found the best eye care destination in Toronto's beach community!`}
       />
 
-      <ReviewsCarousel title="Happy Clients!" data={mockBeachesReviews} />
+      <ReviewsCarousel title="Happy Clients!" data={mockBeachesReviews} href="https://360eyecare.ca/book-eye-exam" reviewText="4.9/5 stars based on 339+ Google reviews" />
 
       <DryFaqs
         faqData={torontoBeachesFaqData}

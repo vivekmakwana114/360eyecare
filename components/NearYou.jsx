@@ -73,11 +73,11 @@ const NearYou = () => {
               Yorkville Rosedale →
             </button>
           </Link>
-        </div>
+        </div> 
       </div>
 
-      <ReviewsCarousel title="Happy Clients of The Beaches!" data={mockBeachesReviews} />
-      <ReviewsCarousel title="Happy Clients of Yorkville Rosedale!" data={mockRosedaleReviews} />
+      {/* <ReviewsCarousel title="Happy Clients of The Beaches!" data={mockBeachesReviews} href="https://360eyecare.ca/book-my-eye-exam" />
+      <ReviewsCarousel title="Happy Clients of Yorkville Rosedale!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" /> */}
     </div>
   );
 };
