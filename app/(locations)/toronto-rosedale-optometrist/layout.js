@@ -140,27 +140,25 @@ export default function YorkvilleLayout({ children }) {
   };
 
   return (
-    <html lang="en">
-      <head>
-        {/*  Location-schema - yorkville rosedale JSON-LD schema */}
-        <Script
-          id="yorkville-schema-jsonld"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(optometristSchema)}
-        </Script>
+    <>
+      {/*  Location-schema - yorkville rosedale JSON-LD schema */}
+      <Script
+        id="yorkville-schema-jsonld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(optometristSchema)}
+      </Script>
 
-        {/*  FAQ schema */}
-        <Script
-          id="yorkville-faq-schema"
-          type="application/ld+json"
-          strategy="afterInteractive"
-        >
-          {JSON.stringify(faqSchema)}
-        </Script>
-      </head>
-      <body>{children}</body>
-    </html>
+      {/*  FAQ schema */}
+      <Script
+        id="yorkville-faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+      >
+        {JSON.stringify(faqSchema)}
+      </Script>
+      {children}
+    </>
   );
 }
