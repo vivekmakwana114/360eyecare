@@ -233,17 +233,16 @@ const ReviewsCarousel = ({ title, data, href, reviewText }) => {
             {reviewText}
           </p>
 
-           <Link
-          href={href}
-          className="bg-combination-200 font-semibold text-sm md:text-base text-[#FFFFFF]
+          <Link
+            href={href}
+            className="bg-combination-200 font-semibold text-sm md:text-base text-[#FFFFFF]
                      py-2 px-6 rounded-full w-full max-w-[267px] 
                      h-[52px] flex justify-center items-center 
                      cursor-pointer hover:opacity-90 transition-opacity mt-4"
-        >
-          Book an Eye Exam Today
-        </Link>
+          >
+            Book an Eye Exam Today
+          </Link>
         </div>
-       
       </div>
     </div>
   );

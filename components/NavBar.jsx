@@ -146,8 +146,9 @@ const NavBar = () => {
         },
         { name: "Direct Billing", link: "/direct-billing/" },
         { name: "Payment Plans", link: "/payment-plans/" },
+        { name: "FAQ's", link: "/faq/" },
       ],
-    },
+    }, 
   ];
 
   const isActiveParent = (item) => {
