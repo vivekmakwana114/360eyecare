@@ -437,7 +437,7 @@ export const orgImages = [
     height: 103,
   },
   {
-    src: "/associate/associate7.webp",
+    src: "/associate/associate7.png",
     alt: "Optometry Giving Sight",
     width: 784,
     height: 165,
