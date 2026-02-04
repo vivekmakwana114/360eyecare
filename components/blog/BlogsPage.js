@@ -22,7 +22,7 @@ const BlogsPage = () => {
     const fetchPosts = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/posts?page=1&per_page=${perPage}`
+          `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/posts?page=1&per_page=${perPage}&_embed`,
         );
         if (!res.ok) {
           throw new Error("Failed to fetch posts");
@@ -51,7 +51,7 @@ const BlogsPage = () => {
 
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/posts?page=${nextPage}&per_page=${perPage}`
+        `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/posts?page=${nextPage}&per_page=${perPage}&_embed`,
       );
       if (!res.ok) {
         throw new Error("Failed to fetch more posts");
@@ -129,7 +129,9 @@ const BlogsPage = () => {
                   <div className="flex flex-row gap-2 items-center">
                     <LuUserPen size={21} color="#888888" />
                     <p className="text-[#888888] text-[14px] font-[400]">
-                      {post?.yoast_head_json?.author}
+                      {post?._embedded?.author?.[0]?.name ||
+                        post?.yoast_head_json?.author?.[0]?.name ||
+                        "Unknown Author"}
                     </p>
                   </div>
                 </div>
