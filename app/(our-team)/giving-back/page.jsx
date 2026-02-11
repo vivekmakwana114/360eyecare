@@ -291,6 +291,101 @@ const GivingBack = () => {
           className="w-40 md:w-[187px] md:h-[187px] h-auto"
         />
       </div>
+
+      <div className="max-w-8xl mx-auto flex flex-col md:flex-col p-6 md:px-16 md:pt-12 gap-4">
+        <div className="text-brand-subheader text-2xl md:text-4xl font-bold mb-2">
+          360 Eyecare Earns Bronze Recognition in 2025 World Sight Day Challenge
+        </div>
+        <hr className="w-20 h-1 bg-combination-100 mb-4" />
+
+        <div className="flex justify-center my-6">
+          <Image
+            src="/giveback/Bronze_Medallion_WSDC_2025.png"
+            alt="Silver Recognition Medal"
+            width={300}
+            height={300}
+          />
+        </div>
+
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          We're excited to share some news that means a lot to our team here at
+          360 Eyecare. This year, our practice earned the Bronze Award from
+          Optometry Giving Sight for our participation in the World Sight Day
+          Challenge, and it feels pretty wonderful.
+        </p>
+
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          World Sight Day happens every October, and it's meant to shine a light
+          on clear vision that most of us take for granted. Around the world,
+          millions of people lack access to basic eye care because they can't
+          reach the solutions available. That's where Optometry Giving Sight
+          comes in.
+        </p>
+
+        <h3 className="text-brand-subheader text-xl font-bold mt-4 mb-2">
+          What the World Sight Day Challenge Actually Does
+        </h3>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          The funds raised through this challenge go directly toward programs
+          that provide eye exams, glasses, and training for eye care
+          professionals in underserved communities.
+        </p>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          Dr. Baraam and our team have always believed that eye care is about
+          opportunity. When someone can see clearly, they can work, learn, and
+          participate fully in their community. It sounds simple because it is.
+          But the impact is anything but small.
+        </p>
+
+        <h3 className="text-brand-subheader text-xl font-bold mt-4 mb-2">
+          Why We Keep Coming Back
+        </h3>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          This isn't our first year supporting Optometry Giving Sight, and it
+          won't be our last. Year after year, we make this contribution because
+          we've seen what happens when eye care reaches people who need it most.
+        </p>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          We know a Bronze Award might seem like a modest achievement, but to
+          us, it's proof that even a single practice can make a tangible
+          difference in global eye health. Every donation, regardless of size,
+          contributes to a world where vision care is a basic right.
+        </p>
+
+        <h3 className="text-brand-subheader text-xl font-bold mt-4 mb-2">
+          The Bigger Picture
+        </h3>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          Running an optometry practice in Toronto, we're fortunate to serve a
+          community that has access to comprehensive eye care. But that
+          privilege comes with responsibility. We can't ignore the fact that{" "}
+          <Link
+            href="https://www.who.int/news-room/fact-sheets/detail/blindness-and-visual-impairment"
+            className="text-brand-blue hover:text-combination-100"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            1.1 billion people worldwide have vision impairment
+          </Link>{" "}
+          that could have been prevented or treated.
+        </p>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          Supporting initiatives like the World Sight Day Challenge is our way
+          of extending our care beyond our clinic walls. It's how we participate
+          in solving an entirely fixable problem - if enough people decide to
+          act.
+        </p>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          To everyone who's been part of our 360 Eyecare community, this
+          recognition reflects your support too. When you choose us for your eye
+          care needs, you're indirectly contributing to these global efforts.
+        </p>
+        <p className="text-base text-neutral-500 leading-7 md:leading-8 font-normal">
+          We're grateful to Optometry Giving Sight for the work they do, and
+          we're already looking forward to next year's challenge. Because clear
+          vision shouldn't be determined by where someone happens to be born.
+        </p>
+      </div>
     </main>
   );
 };
