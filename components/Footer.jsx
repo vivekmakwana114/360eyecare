@@ -370,18 +370,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Scroll to top button - conditionally rendered */}
-      {showScrollButton && (
-        <div className="fixed bottom-8 right-8 z-50">
-          <button
-            onClick={scrollToTop}
-            className="bg-combination-100 text-white p-3 rounded-full hover:bg-combination-200 focus:outline-none focus:ring-2 focus:ring-teal-300"
-            aria-label="Scroll to top"
-          >
-            <FaChevronUp size={18} aria-hidden="true" />
-          </button>
-        </div>
-      )}
     </footer>
   );
 };

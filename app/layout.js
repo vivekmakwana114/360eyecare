@@ -30,6 +30,10 @@ const lora = Lora({
   fallback: ["system-ui", "arial"],
 });
 
+export const metadata = {
+  metadataBase: new URL("https://www.360eyecare.ca"),
+};
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,

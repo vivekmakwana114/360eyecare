@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EyeCareLogo } from "../constants/Images";
+import { guides } from "../constants/guideData";
 import {
   Sheet,
   SheetContent,
@@ -121,6 +122,16 @@ const NavBar = () => {
       ],
     },
     {
+      name: "Guide",
+      link: "/guide/",
+      dropdown: [
+        ...Object.keys(guides).map((slug) => ({
+          name: guides[slug].title,
+          link: slug === "page-1" ? "/guide/" : `/guide/${slug}/`,
+        })),
+      ],
+    },
+    {
       name: "Blog",
       link: "/blog/",
       dropdown: null,
@@ -148,7 +159,7 @@ const NavBar = () => {
         { name: "Payment Plans", link: "/payment-plans/" },
         { name: "FAQ's", link: "/faq/" },
       ],
-    }, 
+    },
   ];
 
   const isActiveParent = (item) => {
@@ -357,14 +368,14 @@ const NavBar = () => {
                                   "flex w-full items-center justify-between px-6 py-3 text-base font-medium text-left",
                                   isActive
                                     ? "text-brand-blue bg-neutral-50"
-                                    : "text-neutral-700"
+                                    : "text-neutral-700",
                                 )}
                                 aria-expanded={openCollapsible === index}
                               >
                                 <span
                                   className={cn(
                                     "",
-                                    isActive && "text-combination-200"
+                                    isActive && "text-combination-200",
                                   )}
                                 >
                                   {item.name}
@@ -375,7 +386,7 @@ const NavBar = () => {
                                     "transform transition-transform duration-200",
                                     openCollapsible === index
                                       ? "rotate-180 text-brand-blue"
-                                      : "text-neutral-500"
+                                      : "text-neutral-500",
                                   )}
                                   aria-hidden="true"
                                 />
@@ -397,7 +408,7 @@ const NavBar = () => {
                                       "relative block px-8 py-2 text-sm transition-colors duration-150 hover:text-combination-100 group",
                                       isSubItemActive
                                         ? "text-brand-blue font-medium bg-neutral-100"
-                                        : "text-neutral-700"
+                                        : "text-neutral-700",
                                     )}
                                   >
                                     {subItem.name}
@@ -406,7 +417,7 @@ const NavBar = () => {
                                         "absolute left-6 bottom-1 h-[2px]",
                                         isSubItemActive
                                           ? "w-[calc(100%-3rem)] bg-combination-100"
-                                          : "w-0 bg-combination-100 transition-all duration-300 group-hover:w-[calc(100%-3rem)]"
+                                          : "w-0 bg-combination-100 transition-all duration-300 group-hover:w-[calc(100%-3rem)]",
                                       )}
                                     ></span>
                                   </a>
@@ -419,7 +430,7 @@ const NavBar = () => {
                                         "relative block px-8 py-2 text-sm transition-colors duration-150 hover:text-combination-100 group",
                                         isSubItemActive
                                           ? "text-brand-blue font-medium bg-neutral-100"
-                                          : "text-neutral-700"
+                                          : "text-neutral-700",
                                       )}
                                       aria-current={
                                         isSubItemActive ? "page" : undefined
@@ -431,7 +442,7 @@ const NavBar = () => {
                                           "absolute left-6 bottom-1 h-[2px]",
                                           isSubItemActive
                                             ? "w-[calc(100%-3rem)] bg-combination-100"
-                                            : "w-0 bg-combination-100 transition-all duration-300 group-hover:w-[calc(100%-3rem)]"
+                                            : "w-0 bg-combination-100 transition-all duration-300 group-hover:w-[calc(100%-3rem)]",
                                         )}
                                       ></span>
                                     </Link>
@@ -448,7 +459,7 @@ const NavBar = () => {
                                 "px-6 py-3 text-base font-medium block",
                                 isActive
                                   ? "text-brand-blue bg-neutral-50"
-                                  : "text-neutral-700 hover:bg-neutral-50"
+                                  : "text-neutral-700 hover:bg-neutral-50",
                               )}
                               aria-current={isActive ? "page" : undefined}
                             >
