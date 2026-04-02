@@ -1,5 +1,4 @@
 "use client";
-console.log('AuthorBio module loaded — AuthorBio.js')
 import Image from "next/image";
 import { FaLinkedin, FaFacebookF, FaInstagram } from "react-icons/fa";
 
@@ -12,7 +11,7 @@ const AuthorBio = ({ author }) => {
   const authorDescription = author.description || "";
   const authorAvatar = author.avatar_urls?.["96"] || "/default-avatar.png";
   const authorRole = author.acf?.role || "Optometrist, 360 Eye Care - Beaches"; // ACF custom field or fallback
-  
+
   // Social links (if using ACF or custom fields)
   const socialLinks = {
     linkedin: author.acf?.linkedin || "",
@@ -62,10 +61,12 @@ const AuthorBio = ({ author }) => {
           )}
 
           {/* Social Links */}
-          {(socialLinks.linkedin || socialLinks.facebook || socialLinks.instagram) && (
+          {(socialLinks.linkedin ||
+            socialLinks.facebook ||
+            socialLinks.instagram) && (
             <div className="flex items-center gap-3">
               <p className="text-gray-600 text-[14px] font-medium">
-                Follow {authorName.split(' ')[0]}
+                Follow {authorName.split(" ")[0]}
               </p>
               <div className="flex gap-2">
                 {socialLinks.linkedin && (

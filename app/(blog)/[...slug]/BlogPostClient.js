@@ -31,7 +31,7 @@ const BlogPostClient = ({ post: initialPost }) => {
   };
 
   // Set share URL
- useEffect(() => {
+  useEffect(() => {
     if (typeof window !== "undefined") {
       const cleanSlug = Array.isArray(slug) ? slug.join("/") : slug;
       setShareUrl(`${window.location.origin}/${cleanSlug}`);
@@ -85,7 +85,7 @@ const BlogPostClient = ({ post: initialPost }) => {
 
         if (!res.ok) {
           throw new Error(
-            `Failed to fetch post: ${res.status} ${res.statusText}`
+            `Failed to fetch post: ${res.status} ${res.statusText}`,
           );
         }
 
@@ -139,7 +139,7 @@ const BlogPostClient = ({ post: initialPost }) => {
       const fetchAuthor = async () => {
         try {
           const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/users/${data?.author}`
+            `${process.env.NEXT_PUBLIC_BLOG_BASE_URL}/users/${data?.author}`,
           );
           if (res.ok) {
             const userData = await res.json();
@@ -162,9 +162,11 @@ const BlogPostClient = ({ post: initialPost }) => {
   }, [error, isLoading, data, initialPost, router]);
 
   // Clean author name for display
-  const cleanedAuthor = data?.yoast_head_json?.author
-    ? cleanText(data.yoast_head_json.author)
-    : "Unknown Author";
+  const cleanedAuthor = authorData?.name
+    ? cleanText(authorData.name)
+    : data?.yoast_head_json?.author
+      ? cleanText(data.yoast_head_json.author)
+      : "Unknown Author";
 
   // Share data
   const shareTitle = data?.title?.rendered || "Check out this article";
