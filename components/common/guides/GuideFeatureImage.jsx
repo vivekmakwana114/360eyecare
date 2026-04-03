@@ -9,7 +9,7 @@ const GuideFeatureImage = ({ image, content }) => {
   if (!image && !content) return null;
 
   return (
-    <section className="max-w-[1216px] mx-auto my-12 sm:my-20 px-4 xl:px-0">
+    <section className="max-w-[1216px] mx-auto mt-12 sm:mt-20 mb-8 sm:mb-10 px-4 xl:px-0">
       {image && (
         <div className="relative w-full aspect-[2.02/1] overflow-hidden rounded-2xl shadow-xl border border-gray-100 mb-10 group">
           <Image
@@ -26,12 +26,12 @@ const GuideFeatureImage = ({ image, content }) => {
       )}
 
       {content && (
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-7xl">
           <div className="text-neutral-600 text-lg leading-relaxed space-y-6 font-light">
             {content}
           </div>
           <div className="mt-8 flex justify-start">
-            <hr className="w-16 h-1 bg-combination-100 rounded-full" />
+            {/* <hr className="w-16 h-1 bg-combination-100 rounded-full" /> */}
           </div>
         </div>
       )}

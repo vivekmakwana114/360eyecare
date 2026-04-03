@@ -8,15 +8,16 @@ import GuideImageCenter from "../../../components/common/guides/GuideImageCenter
 import GuideImageFullRight from "../../../components/common/guides/GuideImageFullRight";
 import GuideCarousel from "../../../components/common/guides/GuideCarousel";
 import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
+import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeaways";
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
-const Page8Guide = () => {
-  const guideData = guides["page-8"];
+const GlassesGuide = () => {
+  const guideData = guides["choose-glasses-contact-lenses-guide"];
   if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
-       <SubHeader
+      <SubHeader
       text={guideData.title}
       />
       
@@ -24,6 +25,8 @@ const Page8Guide = () => {
         image={guideData.featureImage} 
         content={guideData.content} 
       />
+
+      <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
       {/* Sections will be added here directly when data is available */}
       
@@ -41,4 +44,4 @@ const Page8Guide = () => {
     </main>
   );
 };
-export default Page8Guide;
+export default GlassesGuide;

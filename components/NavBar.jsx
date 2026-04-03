@@ -123,12 +123,44 @@ const NavBar = () => {
     },
     {
       name: "Guide",
-      link: "/guide/",
+      link: "/eye-problems-treatments-toronto/",
       dropdown: [
-        ...Object.keys(guides).map((slug) => ({
-          name: guides[slug].title,
-          link: slug === "page-1" ? "/guide/" : `/guide/${slug}/`,
-        })),
+        {
+          name: "Eye Problems & Treatments",
+          link: "/eye-problems-treatments-toronto/",
+        },
+        {
+          name: "Dry Eye 101",
+          link: "/dry-eye-syndrome-symptoms-causes-treatments-toronto/",
+        },
+        {
+          name: "Eye Emergency 101",
+          link: "/eye-emergency-immediate-actions-toronto/",
+        },
+        {
+          name: "Glasses vs Contact Lenses",
+          link: "/choose-glasses-contact-lenses-guide/",
+        },
+        {
+          name: "Eye Exam Cost & OHIP",
+          link: "/eye-exams-cost-ohip-coverage-toronto/",
+        },
+        {
+          name: "Optometrist vs Ophthalmologist",
+          link: "/eye-doctor-toronto-optometrist-ophthalmologist-optician/",
+        },
+        {
+          name: "Pediatric Eye Care 101",
+          link: "/pediatric-optometrists-toronto-child-eye-care/",
+        },
+        {
+          name: "Eye Care 101",
+          link: "/eye-care-tips-toronto-healthy-vision/",
+        },
+        {
+          name: "Eye Protection 101",
+          link: "/eye-protection-101-toronto-tips/",
+        },
       ],
     },
     {

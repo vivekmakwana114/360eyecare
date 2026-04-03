@@ -8,11 +8,12 @@ import GuideImageCenter from "../../../components/common/guides/GuideImageCenter
 import GuideImageFullRight from "../../../components/common/guides/GuideImageFullRight";
 import GuideCarousel from "../../../components/common/guides/GuideCarousel";
 import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
+import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeaways";
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
-const Page10Guide = () => {
-  const guideData = guides["page-10"];
+const EyeProblemsGuide = () => {
+  const guideData = guides["eye-problems-treatments-toronto"];
   if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
@@ -24,8 +25,18 @@ const Page10Guide = () => {
         image={guideData.featureImage} 
         content={guideData.content} 
       />
+
+      <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
-      {/* Sections will be added here directly when data is available */}
+      {guideData.sections.map((section, index) => {
+        const SectionComponent = index % 2 === 0 ? GuideImageRight : GuideImageLeft;
+        return (
+          <SectionComponent 
+            key={section.id || index}
+            {...section}
+          />
+        );
+      })}
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
@@ -41,4 +52,4 @@ const Page10Guide = () => {
     </main>
   );
 };
-export default Page10Guide;
+export default EyeProblemsGuide;

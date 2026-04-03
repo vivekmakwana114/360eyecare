@@ -13,7 +13,7 @@ const GuideImageCenter = ({
   contentBottom,
 }) => {
   return (
-    <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0 text-center">
+    <section className="max-w-6xl mx-auto mt-8 sm:mt-10 mb-12 sm:mb-16 px-4 sm:px-0 text-center">
       <div className="max-w-4xl mx-auto mb-10">
         {heading && (
           <>

@@ -8,11 +8,12 @@ import GuideImageCenter from "../../../components/common/guides/GuideImageCenter
 import GuideImageFullRight from "../../../components/common/guides/GuideImageFullRight";
 import GuideCarousel from "../../../components/common/guides/GuideCarousel";
 import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
+import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeaways";
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
-const Page5Guide = () => {
-  const guideData = guides["page-5"];
+const EyeCareTipsGuide = () => {
+  const guideData = guides["eye-care-tips-toronto-healthy-vision"];
   if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
@@ -24,6 +25,8 @@ const Page5Guide = () => {
         image={guideData.featureImage} 
         content={guideData.content} 
       />
+
+      <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
       {/* Sections will be added here directly when data is available */}
       
@@ -41,4 +44,4 @@ const Page5Guide = () => {
     </main>
   );
 };
-export default Page5Guide;
+export default EyeCareTipsGuide;
