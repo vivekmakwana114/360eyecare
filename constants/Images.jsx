@@ -119,6 +119,7 @@ import eyeCareServicesImage from "../public/location/eyeServiceImage.svg";
 
 import kewbeachlbcImage from "../public/kewbeachlbc.jpg";
 import kid2kidimage from "../public/kid2kid.avif";
+import ScreenHeadachesFeature from "../public/screen-headaches-feature.png";
 export {
   EyeCareLogo,
   virtualshoppingfagimg,
@@ -128,6 +129,7 @@ export {
   eyeglassescommitted,
   eyeCareServicesImage,
   kid2kidimage,
+  ScreenHeadachesFeature,
   locationHeroYorkVille,
   glassesImage,
   VirtualConsultImage,

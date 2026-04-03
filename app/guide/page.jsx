@@ -7,6 +7,7 @@ import { guides } from "../../constants/guideData";
 import GuideImageRight from "../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../components/common/guides/GuideImageCenter";
+import GuideFeatureImage from "../../components/common/guides/GuideFeatureImage";
 
 import Faqs from "../../components/Faqs";
 import FloatingBookButton from "../../components/common/guides/FloatingBookButton";
@@ -22,9 +23,12 @@ const GuidePage = () => {
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
-        title={guideData.title}
-        subtitle={guideData.subtitle}
-        backgroundImage={guideData.headerImage}
+      text={guideData.title}
+      />
+      
+      <GuideFeatureImage 
+        image={guideData.featureImage} 
+        content={guideData.content} 
       />
       
       <GuideImageRight {...guideData.sections[0]} />

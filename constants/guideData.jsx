@@ -14,6 +14,7 @@ import {
   IrritatingEyeImage,
   UnderstandImage4,
   BeachImage,
+  ScreenHeadachesFeature,
 } from "./Images";
 
 export const guides = {
@@ -21,6 +22,25 @@ export const guides = {
     title: "Eye Problems and Treatments",
     headerImage: BeachImage,
     subtitle: "Your Vision Shapes Everything You Do",
+    featureImage: ScreenHeadachesFeature,
+    content: (
+      <>
+        <p>
+          In today's digital age, screen-related headaches have become one of the
+          most common complaints in eye clinics across Toronto. Whether you're working
+          from a home office in The Beaches or commuting to a tech hub downtown,
+          prolonged exposure to digital devices can strain your eyes and lead to
+          persistent discomfort.
+        </p>
+        <p>
+          Understanding the root causes of these headaches is the first step toward
+          finding relief. From blue light exposure to improper posture and infrequent
+          blinking, several factors contribute to "Computer Vision Syndrome."
+          In this guide, we'll explore 6 daily habits that can significantly reduce
+          eye strain and help you maintain crystal-clear vision in a digital world.
+        </p>
+      </>
+    ),
     sections: [
       {
         id: "intro-summary",
@@ -430,6 +450,13 @@ export const guides = {
   },
   "page-2": {
     title: "Myopia Control Clinic",
+    content: (
+      <p>
+        Myopia, or nearsightedness, has become a global health concern. Our clinic 
+        specializes in advanced myopia control strategies to slow its progression 
+        and protect long-term vision health.
+      </p>
+    ),
     sections: [],
     faqs: [
       {
@@ -441,6 +468,13 @@ export const guides = {
   },
   "page-3": {
     title: "Dry Eye Clinic",
+    content: (
+      <p>
+        Dry eye is more than just a nuisance; it's a clinical condition that 
+        requires professional care. We offer sophisticated diagnostics and 
+        personalized treatment plans for lasting relief.
+      </p>
+    ),
     sections: [],
     faqs: [
       {
@@ -450,11 +484,46 @@ export const guides = {
       },
     ],
   },
-  "page-4": { title: "Orthokeratology", sections: [], faqs: [] },
-  "page-5": { title: "Pediatric Eye Exams", sections: [], faqs: [] },
-  "page-6": { title: "Advanced Diagnostics", sections: [], faqs: [] },
-  "page-7": { title: "Laser Vision Correction", sections: [], faqs: [] },
-  "page-8": { title: "Eye Emergencies", sections: [], faqs: [] },
-  "page-9": { title: "Eye Conditions", sections: [], faqs: [] },
-  "page-10": { title: "Other Services", sections: [], faqs: [] },
+  "page-4": { 
+    title: "Orthokeratology", 
+    content: <p>Discover the freedom of clear vision without surgery or daytime lenses. Ortho-K reshaping happens while you sleep.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-5": { 
+    title: "Pediatric Eye Exams", 
+    content: <p>Early eye exams are essential for developmental success. We provide a friendly, thorough environment for our youngest patients.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-6": { 
+    title: "Advanced Diagnostics", 
+    content: <p>Our clinic invests in state-of-the-art technology to provide the most precise diagnosis and monitoring for your eye health.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-7": { 
+    title: "Laser Vision Correction", 
+    content: <p>Explore the possibilities of life with reduced dependence on glasses or contacts through modern laser procedures.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-8": { 
+    title: "Eye Emergencies", 
+    content: <p>If you're experiencing sudden vision loss, flashing lights, or chemical exposure, our clinic provides immediate emergency eye care.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-9": { 
+    title: "Eye Conditions", 
+    content: <p>From cataracts to glaucoma, we provide comprehensive care and management for a wide range of ocular health conditions.</p>,
+    sections: [], 
+    faqs: [] 
+  },
+  "page-10": { 
+    title: "Other Services", 
+    content: <p>Learn about our specialized eye care services tailored to meet your unique visual needs and lifestyle.</p>,
+    sections: [], 
+    faqs: [] 
+  },
 };

@@ -52,7 +52,7 @@ const NearYou = () => {
           <div className="relative w-full h-[250px] md:h-[350px] lg:w-[600px] lg:h-[397px]">
             <Image
               src={YorkVilleRosedale}
-              alt="55 Bloor St W Suite 03, Toronto"
+              alt="55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada"
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 600px"
               quality={75}
@@ -62,7 +62,7 @@ const NearYou = () => {
               className="rounded shadow object-cover"
             />
             <div className="absolute bottom-[-15px] md:bottom-[-20px] right-0 md:right-[-10px] bg-brand-btn text-white w-full max-w-[250px] md:w-[280px] h-[70px] md:h-[82px] font-medium text-xs md:text-base flex justify-center text-center items-center px-4 md:px-6 rounded-md shadow">
-              55 Bloor St W Suite 03, Toronto
+              55 Bloor St W, Suite 03, Toronto
             </div>
           </div>
           <Link
@@ -70,7 +70,7 @@ const NearYou = () => {
             className="flex justify-end w-full mt-8 md:mr-20 md-0"
           >
             <button className="bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white px-4 md:px-6 py-2 md:py-3 rounded font-semibold w-[200px] md:w-[240px] h-[45px] md:h-[54px] text-sm md:text-base">
-              Yorkville Rosedale →
+              Yorkville →
             </button>
           </Link>
         </div> 

@@ -7,6 +7,7 @@ import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
 import GuideImageFullRight from "../../../components/common/guides/GuideImageFullRight";
 import GuideCarousel from "../../../components/common/guides/GuideCarousel";
+import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
@@ -15,7 +16,14 @@ const Page3Guide = () => {
   if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
-      <SubHeader title={guideData.title} subtitle={guideData.subtitle} backgroundImage={guideData.headerImage} />
+      <SubHeader
+      text={guideData.title}
+      />
+      
+      <GuideFeatureImage 
+        image={guideData.featureImage} 
+        content={guideData.content} 
+      />
       
       {/* Sections will be added here directly when data is available */}
       

@@ -172,7 +172,7 @@ const Footer = () => {
           {/* Yorkville Location */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">
-              Yorkville Rosedale, Toronto
+              Yorkville, Toronto
             </h3>
             <div className="h-1 w-16 bg-teal-400 mb-4"></div>
 
@@ -183,9 +183,11 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <address className="font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
-                Concourse level
+                55 Bloor St W,
                 <br />
-                55 Bloor St W Suite 03,
+                Concourse level, Suite 03,
+                <br />
+                Manulife Centre,
                 <br />
                 Toronto, ON M4W 1A5, Canada
               </address>
