@@ -2,10 +2,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { ArrowDown, ArrowUp } from "lucide-react";
 
-/**
- * FloatingBookButton: A refined FAB that stops at the LocationSection
- * and hides when near the top navbar. Features a horizontal layout.
- */
 const FloatingBookButton = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
@@ -16,30 +12,37 @@ const FloatingBookButton = () => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      const fullHeight = document.documentElement.scrollHeight;
       
-      // 1. Visibility: Hide when at the very top (under navbar area)
-      setIsVisible(scrollY > 150);
+      setIsVisible(scrollY > 200);
 
-      // 2. Icon Toggle: Change to Up arrow when near the bottom
-      // We check if we are within the LocationSection or near the end
       const locationSection = document.getElementById("locations");
       if (locationSection) {
         const rect = locationSection.getBoundingClientRect();
-        // If the top of location section is visible, we are "at bottom"
-        setIsAtBottom(rect.top < windowHeight * 0.8);
-        
-        // 3. Sticking Logic: Stop fixed positioning before footer
-        // If the bottom of location section is visible, we stick to it
-        setIsStuck(rect.bottom < windowHeight - 40);
-      } else {
-        setIsAtBottom(scrollY + windowHeight > fullHeight - 600);
+        setIsAtBottom(rect.top < windowHeight * 0.7);
       }
     };
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsStuck(entry.isIntersecting);
+      },
+      { 
+        root: null, 
+        threshold: 0,
+        rootMargin: "0px 0px -40px 0px" 
+      }
+    );
+
+    const footer = document.querySelector("footer");
+    if (footer) observer.observe(footer);
+
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initial check
-    return () => window.removeEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (footer) observer.unobserve(footer);
+    };
   }, []);
 
   const handleClick = () => {
@@ -57,21 +60,19 @@ const FloatingBookButton = () => {
 
   return (
     <div 
-      className={`fixed right-6 sm:right-10 z-50 transition-all duration-300 ${
-        isStuck ? "bottom-[420px]" : "bottom-10"
+      className={`right-6 sm:right-10 z-[60] ${
+        isStuck ? "absolute bottom-4" : "fixed bottom-10"
       }`}
       style={{
-        // If stuck, we might want to adjust based on exact footer height if known,
-        // but 420px is a safe estimate for this project's large footer.
-        transition: "bottom 0.1s ease-out" 
+        transition: "opacity 0.3s ease, transform 0.3s ease"
       }}
     >
       <button
         ref={buttonRef}
         onClick={handleClick}
-        className="flex items-center gap-3 group transition-all duration-300 bg-white border border-combination-100 rounded-full pl-6 pr-2 py-2 shadow-xl hover:shadow-2xl active:scale-95"
+        className="flex items-center group transition-all duration-300 bg-white border border-combination-100 rounded-full p-2 hover:pl-6 shadow-xl hover:shadow-2xl active:scale-95"
       >
-        <span className="text-combination-100 text-xs sm:text-sm font-extrabold uppercase tracking-widest">
+        <span className="w-0 opacity-0 overflow-hidden text-combination-100 text-xs sm:text-sm font-extrabold uppercase tracking-widest transition-all duration-300 group-hover:w-auto group-hover:opacity-100 group-hover:mr-3 whitespace-nowrap">
           {isAtBottom ? "Back to Top" : "Book Eye Exam"}
         </span>
         

@@ -37,17 +37,17 @@ const GuideImageRight = ({
 
         {/* Image Side - Image on Right */}
         {image?.src && (
-          <div className="w-full sm:w-[585px] flex flex-row items-stretch">
+          <div className="w-full sm:w-auto flex flex-row items-stretch">
             {/* Decorative Gray Bar */}
-            <div className="hidden sm:block w-[10px] bg-gray-100 mr-4 shrink-0" />
+            <div className="hidden sm:block w-[4px] bg-gray-300 mr-4 shrink-0" />
             
-            <div className="relative w-full overflow-hidden rounded-sm">
+            <div className="relative overflow-hidden rounded-sm bg-gray-50 flex items-center justify-center sm:w-[585px] sm:h-[536px]">
               <Image
                 src={image.src}
                 alt={image.alt || heading || "Guide Image"}
-                width={image.width || 585}
-                height={image.height || 536}
-                className="w-full h-auto object-cover"
+                width={585}
+                height={536}
+                className="w-full h-full object-cover sm:w-[585px] sm:h-[536px]"
                 priority
               />
             </div>

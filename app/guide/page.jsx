@@ -7,8 +7,6 @@ import { guides } from "../../constants/guideData";
 import GuideImageRight from "../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../components/common/guides/GuideImageCenter";
-import GuideImageFullRight from "../../components/common/guides/GuideImageFullRight";
-import GuideCarousel from "../../components/common/guides/GuideCarousel";
 
 import Faqs from "../../components/Faqs";
 import FloatingBookButton from "../../components/common/guides/FloatingBookButton";
@@ -21,38 +19,61 @@ const GuidePage = () => {
   
   if (!guideData) return <div>Guide not found</div>;
 
-  const renderSection = (section, index) => {
-    /* ... renderSection code ... */
-    const commonProps = {
-      key: index,
-      heading: section.heading,
-      subheading: section.subheading,
-      image: section.image,
-      contentTop: section.contentTop,
-      contentBottom: section.contentBottom,
-      points: section.points,
-    };
-
-    switch (section.layout) {
-      case "image-right": return <GuideImageRight {...commonProps} />;
-      case "image-left": return <GuideImageLeft {...commonProps} />;
-      case "image-center": return <GuideImageCenter {...commonProps} />;
-      case "image-full-right": return <GuideImageFullRight {...commonProps} />;
-      case "grid-points": return <GuideCarousel {...commonProps} />;
-      default: return <GuideImageRight {...commonProps} />;
-    }
-  };
-
   return (
-    <main className="pt-[110px] relative">
+    <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
         title={guideData.title}
         subtitle={guideData.subtitle}
         backgroundImage={guideData.headerImage}
       />
-      {guideData.sections.map((section, index) => renderSection(section, index))}
       
-      {/* FAQ Section */}
+      <GuideImageRight {...guideData.sections[0]} />
+      <GuideImageRight {...guideData.sections[1]} />
+      <GuideImageLeft {...guideData.sections[2]} />
+      <GuideImageRight {...guideData.sections[3]} />
+      <GuideImageLeft {...guideData.sections[4]} />
+      <GuideImageRight {...guideData.sections[5]} />
+      <GuideImageLeft {...guideData.sections[6]} />
+      <GuideImageRight {...guideData.sections[7]} />
+      <GuideImageLeft {...guideData.sections[8]} />
+      <GuideImageRight {...guideData.sections[9]} />
+      <GuideImageLeft {...guideData.sections[10]} />
+      <GuideImageRight {...guideData.sections[11]} />
+      <GuideImageCenter {...guideData.sections[12]} />
+
+      {/* Explore Other Guides */}
+      <section className="max-w-6xl mx-auto my-12 sm:my-24 px-4 sm:px-0 border-t border-gray-100 pt-16">
+        <div className="mb-10 text-center sm:text-left">
+          <h2 className="text-combination-200 text-3xl sm:text-[37px] font-[900] mb-4">
+            Explore More Eyecare Guides
+          </h2>
+          <hr className="w-[65px] h-1 bg-combination-100 hidden sm:block mb-8" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {Object.keys(guides)
+              .filter((key) => key !== "page-1")
+              .slice(0, 6)
+              .map((key) => (
+                <a
+                  key={key}
+                  href={key === "page-1" ? "/guide/" : `/guide/${key}/`}
+                  className="group p-6 bg-white border border-gray-200 rounded-xl hover:border-combination-100 hover:shadow-md transition-all"
+                >
+                  <h3 className="text-lg font-bold text-combination-200 group-hover:text-combination-100 transition-colors">
+                    {guides[key].title}
+                  </h3>
+                  <p className="text-neutral-500 text-sm mt-2">
+                    {guides[key].subtitle || "Expert advice and clinical insights from our specialists."}
+                  </p>
+                  <span className="inline-block mt-4 text-combination-100 font-semibold text-sm">
+                    Read Guide →
+                  </span>
+                </a>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section - Moved to bottom */}
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
           <div className="mb-10 text-center sm:text-left">

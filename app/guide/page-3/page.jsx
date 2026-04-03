@@ -13,21 +13,12 @@ import FloatingBookButton from "../../../components/common/guides/FloatingBookBu
 const Page3Guide = () => {
   const guideData = guides["page-3"];
   if (!guideData) return <div>Guide not found</div>;
-  const renderSection = (section, index) => {
-    const commonProps = { key: index, heading: section.heading, subheading: section.subheading, image: section.image, contentTop: section.contentTop, contentBottom: section.contentBottom, points: section.points };
-    switch (section.layout) {
-      case "image-right": return <GuideImageRight {...commonProps} />;
-      case "image-left": return <GuideImageLeft {...commonProps} />;
-      case "image-center": return <GuideImageCenter {...commonProps} />;
-      case "image-full-right": return <GuideImageFullRight {...commonProps} />;
-      case "grid-points": return <GuideCarousel {...commonProps} />;
-      default: return <GuideImageRight {...commonProps} />;
-    }
-  };
   return (
-    <main className="pt-[110px] relative">
+    <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader title={guideData.title} subtitle={guideData.subtitle} backgroundImage={guideData.headerImage} />
-      {guideData.sections?.map((section, index) => renderSection(section, index))}
+      
+      {/* Sections will be added here directly when data is available */}
+      
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
           <div className="mb-10 text-center sm:text-left">

@@ -37,13 +37,14 @@ const GuideImageFullRight = ({
 
         {/* Image Side - Full Height Right */}
         {image?.src && (
-          <div className="w-full sm:w-1/2 flex flex-row items-stretch">
-            <div className="relative w-full overflow-hidden rounded-sm min-h-[300px]">
+          <div className="w-full sm:w-auto flex flex-row items-stretch">
+            <div className="relative overflow-hidden rounded-sm bg-gray-50 min-h-[400px] sm:min-h-[600px]">
               <Image
                 src={image.src}
                 alt={image.alt || heading || "Guide Image"}
-                fill
-                className="object-cover"
+                width={600}
+                height={800}
+                className="w-full h-[400px] object-cover sm:w-[500px] sm:h-[650px]"
                 priority
               />
             </div>

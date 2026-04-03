@@ -36,14 +36,21 @@ const GuideImageCenter = ({
       </div>
       
       {image?.src && (
-        <div className="mb-10 flex justify-center w-full">
-          <div className="relative max-w-4xl w-full overflow-hidden rounded-lg shadow-lg">
+        <div className="mb-10 flex justify-center w-full px-4 text-center">
+          <div 
+            className="relative overflow-hidden rounded-lg shadow-lg border border-gray-100"
+            style={{ 
+              maxWidth: "800px",
+              width: "100%" 
+            }}
+          >
             <Image
               src={image.src}
               alt={image.alt || heading || "Guide Image"}
-              width={image.width || 1000}
-              height={image.height || 500}
-              className="w-full h-auto object-cover"
+              width={800}
+              height={450}
+              className="w-full h-auto object-cover sm:w-[800px] sm:h-[450px]"
+              priority
             />
           </div>
         </div>
