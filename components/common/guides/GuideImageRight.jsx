@@ -19,14 +19,14 @@ const GuideImageRight = ({
         <div className="w-full sm:flex-1 flex flex-col gap-4">
           {heading && (
             <>
-              <h2 className="text-combination-200 text-3xl sm:text-[37px] font-[900] leading-tight">
+              <h2 className="text-primary text-3xl sm:text-[37px] font-[900] leading-tight">
                 {heading}
               </h2>
-              <hr className="w-20 h-1 bg-combination-100 mb-2" />
+              <hr className="w-20 h-1 bg-secondary mb-2" />
             </>
           )}
           {subheading && (
-            <h3 className="text-xl font-bold text-combination-200 -mt-2">
+            <h3 className="text-xl font-bold text-primary -mt-2">
               {subheading}
             </h3>
           )}
@@ -37,17 +37,17 @@ const GuideImageRight = ({
 
         {/* Image Side - Image on Right */}
         {image?.src && (
-          <div className="w-full sm:w-auto flex flex-row items-stretch">
+          <div className="w-full sm:flex-1 flex flex-row items-stretch">
             {/* Decorative Gray Bar */}
             {/* <div className="hidden sm:block w-[4px] bg-gray-300 mr-4 shrink-0" /> */}
             
-            <div className="relative overflow-hidden rounded-sm bg-gray-50 flex items-center justify-center sm:w-[585px] sm:h-[536px]">
+            <div className="relative overflow-hidden rounded-sm bg-gray-50 flex items-center justify-center w-full">
               <Image
                 src={image.src}
                 alt={image.alt || heading || "Guide Image"}
                 width={585}
                 height={536}
-                className="w-full h-full object-cover sm:w-[585px] sm:h-[536px]"
+                className="w-full h-full object-cover"
                 priority
               />
             </div>

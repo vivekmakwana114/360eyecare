@@ -24,11 +24,11 @@ export const guides = {
     subtitle: "Your Vision Shapes Everything You Do",
     featureImage: ScreenHeadachesFeature,
     keyTakeaways: [
-      "Most serious eye conditions develop without symptoms, making regular eye exams essential for catching problems before permanent vision loss occurs.",
-      "Presbyopia, cataracts, and floaters are common age-related changes, but effective treatments exist for all.",
-      "Sudden vision loss or flashing lights require immediate medical attention to prevent permanent damage.",
-      "Many conditions respond well to surgery, injections, or vision therapy if detected early.",
-      "OHIP coverage for seniors, children, and diabetics makes preventive care accessible across Toronto.",
+      "Most serious eye conditions like glaucoma and macular degeneration develop without symptoms, making regular eye exams essential for catching problems before permanent vision loss occurs.",
+      "Presbyopia hits nearly everyone after 40, cataracts develop in most people over 75, and floaters become more common with aging, but treatments exist for most age-related changes.",
+      "Sudden vision loss, flashing lights, or rapidly increasing floaters require immediate medical attention to prevent permanent damage from conditions like retinal detachment.",
+      "Cataracts can be surgically corrected, diabetic retinopathy responds to injections and laser therapy, and childhood amblyopia corrects well with proper treatment before age 7.",
+      "Ontario residents get coverage for diabetic eye exams, pediatric vision screening, and basic eye health services, making preventive care accessible across Toronto.",
     ],
     content: (
       <>
@@ -45,31 +45,6 @@ export const guides = {
     ),
     sections: [
       {
-        id: "intro-summary",
-        // heading: "Eye Problems and Treatments",
-        // image: {
-        //   src: EyeEmergencyImage,
-        //   alt: "Eye Problems and Treatments Overview",
-        // },
-        // contentTop: (
-        //   <>
-        //     <p>
-        //       Your vision shapes everything you do, yet most people ignore eye
-        //       health until it becomes a big issue. Eye problems and their
-        //       treatments vary.
-        //     </p>
-        //     <p>
-        //       To provide you with answers, this comprehensive guide addresses
-        //       the questions patients ask most frequently across Toronto, from
-        //       The Beaches to downtown, so you can recognize symptoms, understand
-        //       treatment options, and know when professional care becomes
-        //       essential for protecting your sight.
-        //     </p>
-        //   </>
-        // ),
-        contentBottom: null,
-      },
-      {
         id: "cataracts",
         heading: "What are Cataracts and How are they Treated?",
         image: {
@@ -78,9 +53,6 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Cataracts occur when the lens of your eyes becomes cloudy, thereby
               blocking light from reaching the retina. Modern cataract surgery
@@ -88,22 +60,34 @@ export const guides = {
               in approximately 15 minutes with a 98% success rate.
             </p>
             <p>
-              The cataract-causing cloudiness is a result of the eye’s lens
+              The cataract-causing cloudiness is a result of the eye&apos;s lens
               gradually accumulating protein clumps. This egg white material
               turns opaque when heated.
+            </p>
+            <p>
+              Toronto&apos;s healthcare system covers surgery through OHIP,
+              though private clinics offer shorter waits and premium lens
+              options. Most patients return to normal activities within days of
+              the procedure.
+            </p>
+            <p>
+              Perhaps the most remarkable aspect of treating cataract is how
+              patients describe seeing colors they didn&apos;t previously
+              notice.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Toronto’s healthcare system covers surgery through OHIP, though
-              private clinics offer shorter waits and premium lens options. Most
-              patients return to normal activities within days of the procedure.
-            </p>
-            <p>
-              Perhaps the most remarkable aspect of treating cataract is how
-              patients describe seeing colors they didn’t previously notice.
+              Read our blog to learn more about cataracts:{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/cataract-prevention-tips-toronto/"
+              >
+                can they be prevented , and tips for protecting your eyes as you
+                age.
+              </a>
             </p>
           </>
         ),
@@ -118,33 +102,43 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
-              Macular degeneration damages the retina’s central area,
+              Macular degeneration damages the retina&apos;s central area,
               responsible for sharp, detailed vision. This progressive condition
               primarily affects people over 60. Early detection through advanced
               imaging significantly improves treatment outcomes.
             </p>
             <p>
-              The macula controls what you see directly ahead – reading,
+              The macula controls what you see directly ahead reading,
               recognizing faces, driving. When it deteriorates, straight lines
-              appear wavy.
+              appear wavy. Eye clinics in Toronto frequently use Optical
+              Coherence Tomography (OCT) scans to catch changes before symptoms
+              develop.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Toronto eye clinics use Optical Coherence Tomography (OCT) scans
-              to catch changes before symptoms develop. Specialists from
-              Yorkville to The Beaches now offer anti-VEGF injections for "wet"
-              cases to stabilize vision.
+              Two types exist: dry and wet. Dry macular degeneration progresses
+              slowly as retinal cells break down. Wet develops when abnormal
+              blood vessels leak fluid under the retina. This causes rapid
+              vision loss.
             </p>
             <p>
+              Specialists from Yorkville to The Beaches now offer anti-VEGF
+              injections for wet cases to stabilize vision in many patients.
               Nutritional supplements containing zinc and antioxidants may slow
-              "dry" progression.
+              dry progression.
+            </p>
+            <p>
+              Read our{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/macular-degeneration-treatment-toronto/"
+              >
+                comprehensive guide on macular degeneration to learn more.
+              </a>
             </p>
           </>
         ),
@@ -158,31 +152,39 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Diabetes damages tiny blood vessels throughout the retina. This
-              causes diabetic retinopathy – the leading cause of blindness in
-              working-age adults. The disease progresses silently.
+              causes diabetic retinopathy, the leading cause of blindness in
+              working-age adults. The disease progresses silently. Early stages
+              show no symptoms while blood vessels develop weak spots called
+              microaneurysms. These leak fluid and blood into the surrounding
+              retinal tissue.
             </p>
             <p>
-              Early stages show no symptoms while blood vessels develop weak
-              spots called microaneurysms. These leak fluid and blood into the
-              surrounding retinal tissue.
+              Treatment options include laser therapy to seal leaking vessels
+              and anti-VEGF injections to reduce swelling. Vitrectomy surgery
+              removes blood and scar tissue in severe cases.
+            </p>
+            <p>
+              OHIP covers annual eye exams for diabetics across Ontario.
+              Optometrists in Toronto recommend exams within five years of Type
+              1 diagnosis and immediately for Type 2.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Treatment options include laser therapy to seal leaking vessels
-              and anti-VEGF injections to reduce swelling. OHIP covers annual
-              eye exams for diabetics across Ontario.
-            </p>
-            <p>
-              Toronto optometrists recommend exams within five years of Type 1
-              diagnosis and immediately for Type 2.
+              The cruelest aspect isn&apos;t the gradual vision loss, but how
+              decades of careful diabetes management can still fail to prevent
+              this condition. Our blog on{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/diabetic-retinopathy-treatment-toronto/"
+              >
+                diabetic retinopathy discusses causes, symptoms, and risk
+                factors.
+              </a>
             </p>
           </>
         ),
@@ -196,31 +198,40 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Glaucoma gradually damages the optic nerve through increased eye
-              pressure, stealing peripheral vision so slowly most people don’t
-              notice until significant loss occurs.
+              pressure, stealing peripheral vision so slowly most people
+              don&apos;t notice until significant loss occurs. Regular pressure
+              monitoring and early treatment with drops, laser therapy, or
+              surgery can preserve remaining vision effectively.
             </p>
             <p>
               This “silent thief of sight” affects over 400,000 Canadians, yet
-              half remain undiagnosed. Family history multiplied your risk
-              significantly.
+              half remain undiagnosed. The peripheral vision loss creates
+              dangerous blind spots. Family history multiplies your risk
+              significantly. Age amplifies it further &dash; one in 100 people
+              over 40 develop glaucoma. African and Hispanic ancestry increases
+              susceptibility.
+            </p>
+            <p>
+              Toronto optometrists routinely measure eye pressure during
+              comprehensive exams. Treatment ranges from daily pressure-lowering
+              drops to minimally invasive surgical procedures.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Age amplifies it further – one in 100 people over 40 develop
-              glaucoma. African and Hispanic ancestry increases susceptibility.
-            </p>
-            <p>
-              Toronto optometrists routinely measure eye pressure during
-              comprehensive exams. Treatment ranges from daily drops to
-              minimally invasive surgery.
+              More information on causes, symptoms, and treatment options can be
+              found in{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/protect-vision-glaucoma-toronto/"
+              >
+                our blog on glaucoma
+              </a>
+              .
             </p>
           </>
         ),
@@ -234,30 +245,44 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Nearsightedness develops when your eyeball grows too long or your
               cornea curves too steeply, causing distant objects to appear
-              blurry while close vision remains clear.
+              blurry while close vision remains clear. Genetics, excessive near
+              work, and reduced outdoor time drive this epidemic affecting over
+              40% of North Americans.
             </p>
             <p>
-              Genetics, excessive near work, and reduced outdoor time drive this
-              epidemic affecting over 40% of North Americans.
+              Your eye focuses light incorrectly when its shape changes during
+              childhood development. Instead of landing precisely on the retina,
+              light rays converge in front of it. This creates sharp vision for
+              reading but makes street signs, whiteboards, and faces across
+              rooms appear fuzzy.
+            </p>
+            <p>
+              Research links reduced outdoor time to increased myopia rates.
+              Natural light exposure appears protective, though scientists
+              debate whether brightness, distance focusing, or physical activity
+              provides the benefit.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Research links natural light exposure to protection from myopia.
-              Treatments include glasses, contact lenses, orthokeratology
-              (overnight reshaping), and LASIK for adults.
+              Treatment options include glasses, contact lenses, orthokeratology
+              (overnight reshaping lenses), and LASIK surgery for adults.
+              Specialized contact lenses can slow progression in children.
             </p>
             <p>
-              Specialized contact lenses can significantly slow progression in
-              children.
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/what-is-myopia-and-how-to-correct-it/"
+              >
+                What is Myopia and how do we correct it
+              </a>{" "}
+              should be your next read. it provides an indepth discussion on all
+              you need to know about Myopia.
             </p>
           </>
         ),
@@ -271,34 +296,34 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Astigmatism occurs when your cornea or lens has an irregular,
               football-shaped curve instead of being perfectly round like a
-              basketball. This uneven surface bends light rays unevenly.
+              basketball. This uneven surface bends light rays unevenly,
+              creating blurred or distorted vision at all distances that cannot
+              be corrected by simply moving closer or farther away.
             </p>
             <p>
               Most people have slight astigmatism without realizing it. Severe
               cases cause headaches, eye strain, and difficulty driving at
-              night.
-            </p>
-          </>
-        ),
-        contentBottom: (
-          <>
-            <p>
-              This condition typically develops during childhood and remains
-              stable. Genetics play the primary role, though injuries can create
-              it later.
+              night. This condition typically develops during childhood and
+              remains stable throughout life. Genetics play the primary role,
+              though eye injuries or surgeries can create astigmatism later.
             </p>
             <p>
               Correction options include glasses, contact lenses, and refractive
-              surgery.
+              surgery.{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/got-astigmatism-eye-condition-warning/"
+              >
+                Our detailed astigmatism blog
+              </a>{" "}
+              explores treatment options and lifestyle impacts thoroughly.
             </p>
           </>
         ),
+        contentBottom: null,
       },
       {
         id: "presbyopia",
@@ -309,30 +334,40 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
-            </p>
             <p>
               Presbyopia steals your ability to focus on close objects as the
-              eye’s natural lens loses flexibility. This affects nearly everyone
-              after 40.
+              eye’s natural lens loses flexibility with age. This universal
+              condition affects nearly everyone after 40, making reading menus,
+              threading needles, and checking phone messages increasingly
+              difficult without holding items at arm’s length.
             </p>
             <p>
-              Your lens changes shape constantly to focus – thick for near, thin
-              for far. Age hardens these fibers like rubber bands left in
-              sunlight.
+              Your lens changes shape constantly to focus on different distances
+              – thick for near vision, thin for far. This process, called
+              accommodation, requires flexible lens fibers. Age hardens these
+              fibers like rubber bands left in sunlight.
+            </p>
+            <p>
+              Toronto adults over 40 notice presbyopia’s onset gradually. The
+              progression is predictable yet personal. Most people need reading
+              glasses around age 45. By 65, accommodation disappears almost
+              completely.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Most people need reading glasses around age 45. Solutions include
-              bifocals, progressive lenses, and multifocal contacts.
-            </p>
-            <p>
-              Monovision LASIK is an option for adults looking for surgical
-              correction of presbyopia.
+              Solutions include reading glasses, bifocals, progressive lenses,
+              and multifocal contacts. Monovision LASIK corrects one eye for
+              distance, one for near vision.{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/what-is-presbyopia-signs-fixes-expert-tips/"
+              >
+                Our comprehensive presbyopia blog
+              </a>{" "}
+              details these options and their trade-offs.
             </p>
           </>
         ),
@@ -346,31 +381,47 @@ export const guides = {
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
+            <p>
+              Lazy eye (amblyopia) develops when one eye becomes weaker because
+              the brain favors input from the stronger eye during childhood
+              development. Early treatment through patching, eye drops, or
+              corrective lenses achieves excellent results in children, but
+              adult correction becomes significantly more challenging once
+              neural pathways solidify.
             </p>
             <p>
-              Lazy eye developments when one eye becomes weaker because the
-              brain favors input from the stronger eye during childhood
-              development.
+              The condition emerges when visual input differs between eyes
+              &ndash; one might be more nearsighted, crossed, or blocked by a
+              droopy eyelid. Your brain essentially &ldquo;turns off&rdquo; the
+              weaker eye to avoid double vision, causing that eye&apos;s visual
+              development to stagnate.
             </p>
             <p>
               Treatment works best before age 7 when neural plasticity peaks.
-              Patching or blurring the stronger eye forces the weaker one to
-              work harder.
+              Patching the stronger eye forces the weaker one to work harder.
+              Eye drops can blur the dominant eye similarly. Toronto children
+              from Yorkville to The Beaches often resist these treatments
+              initially, but compliance determines success.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Adult treatment remains limited but possible through vision
-              therapy. OHIP covers comprehensive pediatric eye exams across
-              Ontario.
+              Adult treatment remains limited but possible. Vision therapy,
+              specialized computer programs, and newer techniques show modest
+              improvements in some cases.
             </p>
             <p>
-              Toronto children from Yorkville to The Beaches often require these
-              treatments for developmental success.
+              OHIP covers comprehensive pediatric eye exams across Ontario,
+              recognizing early detection&apos;s importance.{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/lazy-eye-treatment-for-adults-options/"
+              >
+                Our detailed amblyopia blog
+              </a>{" "}
+              explains treatment protocols and success rates thoroughly.
             </p>
           </>
         ),
@@ -379,35 +430,46 @@ export const guides = {
         id: "color-blindness",
         heading: "What causes Colour Blindness and can it be Treated?",
         image: {
-          src: ColorfulGlassesImage,
+          src: PediatricEyeCareImage,
           alt: "Color blindness perception",
         },
         contentTop: (
           <>
-            <p className="text-combination-100 font-bold mb-2 uppercase tracking-wide text-sm">
-              optometrist toronto
+            <p>
+              Color blindness stems from missing or malfunctioning cone cells in
+              the retina that detect red, green, or blue light wavelengths. This
+              genetic condition, inherited through the X chromosome, affects 8%
+              of men but only 0.5% of women. Currently no cure exists, though
+              specialized glasses and contact lenses can enhance color
+              discrimination for some people.
             </p>
             <p>
-              Color blindness stems from malfunctioning cone cells in the
-              retina. This genetic condition affects 8% of men but only 0.5% of
-              women.
+              Your retina contains three types of cone cells, each sensitive to
+              different light wavelengths. When one type functions improperly or
+              disappears entirely, color perception shifts. Red-green color
+              blindness proves most common, making traffic lights challenging to
+              distinguish.
             </p>
             <p>
-              Currently no cure exists, though specialized EnChroma glasses can
-              enhance color discrimination for some people.
+              Rare cases develop from eye diseases, aging, or medications rather
+              than genetics. Complete color blindness (seeing only grayscales)
+              affects fewer than one in 30,000 people.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Your retina contains three types of cone cells (red, green, blue).
-              Red-green color blindness proved most common, making traffic
-              lights challenging.
-            </p>
-            <p>
-              Rare cases develop from eye diseases, aging, or medications rather
-              than genetics.
+              Treatment options remain limited. EnChroma glasses filter specific
+              wavelengths to enhance color separation. Some contact lenses offer
+              similar benefits.{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/colour-blindness-toronto-guide/"
+              >
+                Our comprehensive colour blindness blog
+              </a>{" "}
+              explores adaptation strategies and assistive technologies.
             </p>
           </>
         ),
@@ -422,25 +484,41 @@ export const guides = {
         contentTop: (
           <>
             <p>
-              Blurry vision results from numerous causes ranging from refractive
-              errors to serious conditions like cataracts or glaucoma.
+              Blurry vision results from numerous causes ranging from simple
+              refractive errors requiring glasses to serious conditions like
+              cataracts, glaucoma, or retinal problems. Sudden onset needs
+              immediate medical attention, while gradual changes often indicate
+              natural aging or prescription updates. Professional diagnosis
+              determines appropriate treatment.
             </p>
             <p>
-              Refractive errors top the list – nearsightedness, farsightedness,
-              and astigmatism all cause focusing problems.
+              Your vision can blur for dozens of reasons. Refractive errors top
+              the list &ndash; nearsightedness, farsightedness, and astigmatism
+              all cause focusing problems. Diabetes triggers retinal swelling.
+              High blood pressure damages delicate eye blood vessels.
+              Medications like antihistamines and antidepressants affect tear
+              production.
+            </p>
+            <p>
+              Age brings presbyopia, cataracts, and macular degeneration. Sudden
+              blurriness accompanied by flashing lights, floating spots, or eye
+              pain signals medical emergencies requiring immediate care.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              Sudden onset needs immediate medical attention. High blood
-              pressure or diabetes can also trigger vision changes by damaging
-              delicate eye blood vessels.
-            </p>
-            <p>
-              Toronto optometrists employ OCT scans and corneal topography to
-              pinpoint causes quickly.
+              Toronto optometrists employ advanced diagnostic equipment &ndash;
+              OCT scans, visual field testing, and corneal topography &ndash; to
+              pinpoint causes quickly.{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/common-causes-blurry-vision/"
+              >
+                Our comprehensive blog on common causes of blurry vision
+              </a>{" "}
+              explores specific conditions and their treatments in detail.
             </p>
           </>
         ),
@@ -455,24 +533,37 @@ export const guides = {
         contentTop: (
           <>
             <p>
-              Eye floaters appear as tiny specks or cobwebs caused by clumps of
-              protein casting shadows on your retina.
+              Eye floaters appear as tiny specks, cobwebs, or squiggly lines
+              drifting across your vision, caused by clumps of protein or cells
+              casting shadows on your retina. Most floaters are harmless
+              age-related changes, but sudden increases accompanied by flashing
+              lights or vision loss require immediate medical attention to rule
+              out retinal detachment.
             </p>
             <p>
-              Most floaters are harmless age-related changes, but sudden
-              increases accompanied by flashing lights require immediate care.
+              These annoying visual distractions develop when the vitreous gel
+              inside your eye shrinks and pulls away from the retina. Think of
+              it like fruit floating in gelatin that&apos;s beginning to
+              separate. The clumps cast shadows that move as your eyes move.
+            </p>
+            <p>
+              Worry when floaters multiply rapidly, especially with flashing
+              lights or curtain-like vision loss. These symptoms suggest retinal
+              tears or detachment requiring emergency surgery.
             </p>
           </>
         ),
         contentBottom: (
           <>
             <p>
-              These develop when the vitreous gel inside your eye shrinks and
-              pulls away from the retina.
-            </p>
-            <p>
-              Worry when floaters multiply rapidly, which may suggest retinal
-              tears or detachment requiring emergency surgery.
+              Our detailed blog{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/eye-floaters-causes-treatment/"
+              >
+                What Causes Floaters and Can They Be Treated?
+              </a>{" "}
+              covers removal options and coping strategies thoroughly.
             </p>
           </>
         ),
@@ -485,12 +576,15 @@ export const guides = {
             <p>
               Understanding eye problems and treatments empowers you to protect
               your vision throughout life. Knowledge helps you recognize
-              symptoms and seek appropriate treatment.
-            </p>
-            <p className="font-bold text-lg text-combination-200">
-              Don’t wait for vision changes to worsen – Book your comprehensive
-              eye exam today and take control of your eye health before problems
-              develop.
+              symptoms and seek appropriate treatment. Don&apos;t wait for
+              vision changes to worsen &ndash;{" "}
+              <a
+                className="text-primary hover:underline"
+                href="https://www.360eyecare.ca/book-eye-exam"
+              >
+                Book your comprehensive eye exam
+              </a>{" "}
+              today and take control of your eye health before problems develop.
             </p>
           </>
         ),
@@ -512,7 +606,7 @@ export const guides = {
       {
         id: 3,
         question:
-          "What’s the difference between an optometrist and ophthalmologist?",
+          "What's the difference between an optometrist and ophthalmologist?",
         answer:
           "Optometrists provide comprehensive eye care, prescribe glasses and contacts, and treat most eye conditions. Ophthalmologists are medical doctors who perform surgery and handle complex diseases. Both practice throughout Yorkville, Bay Street, and The Beaches areas.",
       },

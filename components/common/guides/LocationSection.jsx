@@ -30,11 +30,11 @@ const LocationSection = () => {
   return (
     <section id="locations" className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
       <div className="text-center mb-12">
-        <h2 className="text-combination-200 text-3xl sm:text-[37px] font-[900] mb-4">
+        <h2 className="text-primary text-3xl sm:text-[37px] font-[900] mb-4">
           Visit One of Our Locations
         </h2>
         <div className="flex justify-center">
-          <hr className="w-20 h-1 bg-combination-100" />
+          <hr className="w-20 h-1 bg-secondary" />
         </div>
       </div>
 
@@ -53,7 +53,7 @@ const LocationSection = () => {
 
             {/* Location Details */}
             <div className="flex flex-col gap-3">
-              <h3 className="text-2xl font-bold text-combination-200">
+              <h3 className="text-2xl font-bold text-primary">
                 {loc.name}
               </h3>
               <p className="text-neutral-500 text-base leading-relaxed">
@@ -63,13 +63,13 @@ const LocationSection = () => {
                 <Link
                   href={loc.bookingLink}
                   target={loc.bookingLink.startsWith("http") ? "_blank" : "_self"}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-combination-100 text-white font-bold rounded-md hover:bg-combination-200 transition-colors duration-200 min-w-[160px]"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-bold rounded-md hover:bg-primary transition-colors duration-200 min-w-[160px]"
                 >
                   Book Online
                 </Link>
                 <Link
                   href={`tel:${loc.phone.replace(/-/g, "")}`}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-combination-100 text-combination-100 font-bold rounded-md hover:bg-combination-100 hover:text-white transition-colors duration-200 min-w-[160px]"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-secondary text-secondary font-bold rounded-md hover:bg-secondary hover:text-white transition-colors duration-200 min-w-[160px]"
                 >
                   Call: {loc.phone}
                 </Link>
