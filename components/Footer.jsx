@@ -172,7 +172,7 @@ const Footer = () => {
           {/* Yorkville Location */}
           <div>
             <h3 className="text-lg font-semibold mb-4 text-white">
-              Yorkville Rosedale, Toronto
+              Yorkville, Toronto
             </h3>
             <div className="h-1 w-16 bg-teal-400 mb-4"></div>
 
@@ -183,9 +183,11 @@ const Footer = () => {
                 aria-hidden="true"
               />
               <address className="font-poppins font-normal not-italic leading-[27px] text-[#aeaeae]">
-                Concourse level
+                55 Bloor St W,
                 <br />
-                55 Bloor St W Suite 03,
+                Concourse level, Suite 03,
+                <br />
+                Manulife Centre,
                 <br />
                 Toronto, ON M4W 1A5, Canada
               </address>
@@ -370,18 +372,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Scroll to top button - conditionally rendered */}
-      {showScrollButton && (
-        <div className="fixed bottom-8 right-8 z-50">
-          <button
-            onClick={scrollToTop}
-            className="bg-combination-100 text-white p-3 rounded-full hover:bg-combination-200 focus:outline-none focus:ring-2 focus:ring-teal-300"
-            aria-label="Scroll to top"
-          >
-            <FaChevronUp size={18} aria-hidden="true" />
-          </button>
-        </div>
-      )}
     </footer>
   );
 };

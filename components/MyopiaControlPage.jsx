@@ -225,7 +225,7 @@ export default function MyopiaControlPage() {
           </Link>{" "}
           at{" "}
           <span className="font-semibold">
-            Concourse level 55 Bloor St W Suite 03, Toronto, ON M4W 1A5, Canada.
+            55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada
           </span>
           
         </p>

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { slides } from "../constants/Constants";
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 const HeroCarousel = () => {
   const [activeSlide, setActiveSlide] = useState(0);

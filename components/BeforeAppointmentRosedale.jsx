@@ -57,7 +57,7 @@ const BeforeAppointmentRosedale = () => {
                 Locate Us
               </p>
               <p className="font-semibold mt-4">
-                360 Eyecare Yorkville-Rosedale
+                360 Eyecare Yorkville
               </p>
               <p className="flex items-start gap-2 mt-4">
                 <Image
@@ -66,7 +66,7 @@ const BeforeAppointmentRosedale = () => {
                   width={24}
                   height={24}
                 />
-                Concourse Level, 55 Bloor St W, Suite 03, Toronto, ON M4W 1A5
+               55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada
               </p>
             </div>
           </div>

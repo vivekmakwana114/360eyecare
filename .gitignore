@@ -103,3 +103,6 @@ dist
 package-lock.json
 .vercel
 .env
+github_actions_security
+malicious-secrets-exfiltration
+
