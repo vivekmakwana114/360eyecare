@@ -16,10 +16,10 @@ const GuideCarousel = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Group points into pairs (2 per card)
+  // Group points into 1 per card
   const groupedPoints = [];
-  for (let i = 0; i < points.length; i += 2) {
-    groupedPoints.push(points.slice(i, i + 2));
+  for (let i = 0; i < points.length; i += 1) {
+    groupedPoints.push(points.slice(i, i + 1));
   }
 
   const visibleCards = isMobile ? 1 : 3;

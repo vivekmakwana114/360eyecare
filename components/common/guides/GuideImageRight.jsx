@@ -30,7 +30,7 @@ const GuideImageRight = ({
               {subheading}
             </h3>
           )}
-          <div className="text-neutral-500 text-base leading-relaxed space-y-4">
+          <div className="text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
             {contentTop}
           </div>
         </div>
@@ -56,7 +56,7 @@ const GuideImageRight = ({
       </div>
       
       {contentBottom && (
-        <div className="mt-10 text-neutral-500 text-base leading-relaxed space-y-4">
+        <div className="mt-10 text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
           {contentBottom}
         </div>
       )}

@@ -20,7 +20,7 @@ const GuideKeyTakeaways = ({ takeaways }) => {
           {takeaways.map((point, index) => (
             <li key={index} className="flex gap-3">
               <span className="text-combination-100 mt-1 flex-shrink-0 animate-pulse-slow">•</span>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-neutral-600 leading-relaxed text-justify">
                 {point}
               </p>
             </li>

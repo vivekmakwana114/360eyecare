@@ -30,7 +30,7 @@ const GuideImageCenter = ({
             {subheading}
           </h3>
         )}
-        <div className="text-neutral-500 text-base leading-relaxed space-y-4">
+        <div className="text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
           {contentTop}
         </div>
       </div>
@@ -57,7 +57,7 @@ const GuideImageCenter = ({
       )}
       
       {contentBottom && (
-        <div className="text-neutral-500 text-base leading-relaxed space-y-4 max-w-4xl mx-auto">
+        <div className="text-neutral-500 text-base leading-relaxed space-y-4 max-w-4xl mx-auto text-justify">
           {contentBottom}
         </div>
       )}
