@@ -13,8 +13,8 @@ const GuideImageCenter = ({
   contentBottom,
 }) => {
   return (
-    <section className="max-w-6xl mx-auto mt-8 sm:mt-10 mb-12 sm:mb-16 px-4 sm:px-0 text-center">
-      <div className="max-w-4xl mx-auto mb-10">
+    <section className="max-w-7xl mt-8 sm:mt-10 mb-12 sm:mb-16 sm:px-0 text-center">
+      <div className="max-w-5xl  mb-10">
         {heading && (
           <>
             <h2 className="text-combination-200 text-3xl sm:text-[37px] font-[900] mb-4">
@@ -30,18 +30,19 @@ const GuideImageCenter = ({
             {subheading}
           </h3>
         )}
+        {{}}{" "}
         <div className="text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
           {contentTop}
         </div>
       </div>
-      
+
       {image?.src && (
         <div className="mb-10 flex justify-center w-full px-4 text-center">
-          <div 
+          <div
             className="relative overflow-hidden rounded-lg shadow-lg border border-gray-100"
-            style={{ 
-              maxWidth: "800px",
-              width: "100%" 
+            style={{
+              maxWidth: "1216px",
+              width: "100%",
             }}
           >
             <Image
@@ -55,7 +56,7 @@ const GuideImageCenter = ({
           </div>
         </div>
       )}
-      
+
       {contentBottom && (
         <div className="text-neutral-500 text-base leading-relaxed space-y-4 max-w-4xl mx-auto text-justify">
           {contentBottom}

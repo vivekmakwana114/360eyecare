@@ -18,7 +18,7 @@ const EyeEmergencyGuide = () => {
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
-      text={guideData.title}
+      text={guideData.subtitle}
       />
       
       <GuideFeatureImage 
@@ -28,7 +28,16 @@ const EyeEmergencyGuide = () => {
 
       <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
-      {/* Sections will be added here directly when data is available */}
+      <GuideImageRight {...guideData.sections[0]} />
+      <GuideImageLeft {...guideData.sections[1]} />
+      <GuideImageRight {...guideData.sections[2]} />
+      <GuideImageLeft {...guideData.sections[3]} />
+      <GuideImageRight {...guideData.sections[4]} />
+      <GuideImageLeft {...guideData.sections[5]} />
+      <GuideImageRight {...guideData.sections[6]} />
+      <GuideImageLeft {...guideData.sections[7]} />
+      <GuideImageRight {...guideData.sections[8]} />
+      <GuideImageLeft {...guideData.sections[9]} />
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
