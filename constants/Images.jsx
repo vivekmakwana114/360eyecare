@@ -120,7 +120,13 @@ import eyeCareServicesImage from "../public/location/eyeServiceImage.svg";
 import kewbeachlbcImage from "../public/kewbeachlbc.jpg";
 import kid2kidimage from "../public/kid2kid.avif";
 import ScreenHeadachesFeature from "../public/screen-headaches-feature.png";
+import eyeglasses1 from "../public/eyeglasses1.jpg";
+import eyeglasses2 from "../public/eyeglasses2.jpg";
+import eyeglasses3 from "../public/eyeglasses3.jpg";
 export {
+  eyeglasses1,
+  eyeglasses2,
+  eyeglasses3,
   EyeCareLogo,
   virtualshoppingfagimg,
   FounderImage,
