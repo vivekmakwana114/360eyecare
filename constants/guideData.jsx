@@ -3972,10 +3972,9 @@ export const guides = {
   },
 
   // page - 6
-   "eye-doctor-toronto-optometrist-ophthalmologist-optician": {
+  "eye-doctor-toronto-optometrist-ophthalmologist-optician": {
     title: "Optometrist vs Ophthalmologist vs Optician",
-    subtitle:
-      "Optometrist vs Ophthalmologist: Who Should You See?",
+    subtitle: "Optometrist vs Ophthalmologist: Who Should You See?",
     featureImage: MedicalTeamImage,
     keyTakeaways: [
       "Optometrists handle routine eye care, such as eye exams, prescriptions, and managing common conditions. They're your first stop for vision problems.",
@@ -3989,8 +3988,8 @@ export const guides = {
         <p>
           Not all eye professionals perform the same tasks; they each play
           distinct roles. An optometrist handles exams and prescriptions.
-          Ophthalmologists perform surgery and treat serious conditions. Opticians
-          fit your glasses after the prescription has been written.
+          Ophthalmologists perform surgery and treat serious conditions.
+          Opticians fit your glasses after the prescription has been written.
         </p>
         <p>
           Who you should go to depends on what you need. Let&apos;s break it
@@ -4012,51 +4011,63 @@ export const guides = {
           <>
             <p>
               It is common for people to struggle to differentiate between these
-              professionals. Most often, we use them interchangeably. Here&apos;s
-              what each professional does and what their differences are:
+              professionals. Most often, we use them interchangeably.
+              Here&apos;s what each professional does and what their differences
+              are:
             </p>
-            
           </>
         ),
         contentBottom: (
           <>
-          <div className="space-y-8 mt-4">
+            <div className="space-y-8 mt-4">
               <div>
                 <h4 className="font-bold text-primary mb-2">Optometrist</h4>
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <Image src={OptometryImage} alt="Optometrist" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                  <Image
+                    src={OptometryImage}
+                    alt="Optometrist"
+                    className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  />
                   <p className="flex-1">
                     An optometrist is the person you see for routine eye care.
                     They conduct eye exams and prescribe eyeglasses and contact
                     lenses. They diagnose and manage certain eye conditions and
-                    diseases. When necessary, they refer you to a specialist. So,
-                    optometrists are your first point of contact.
+                    diseases. When necessary, they refer you to a specialist.
+                    So, optometrists are your first point of contact.
                   </p>
                 </div>
               </div>
               <div>
                 <h4 className="font-bold text-primary mb-2">Ophthalmologist</h4>
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <Image src={MedicalTeamImage} alt="Ophthalmologist" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                  <Image
+                    src={MedicalTeamImage}
+                    alt="Ophthalmologist"
+                    className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  />
                   <p className="flex-1">
                     Ophthalmologists do everything an optometrist does, but in
                     addition, they perform eye surgeries. Cataracts, retinal
-                    detachment, and LASIK all fall under their scope of practice.
-                    If your eye condition requires a procedure or medication,
-                    you&apos;re referred to them.
+                    detachment, and LASIK all fall under their scope of
+                    practice. If your eye condition requires a procedure or
+                    medication, you&apos;re referred to them.
                   </p>
                 </div>
               </div>
               <div>
                 <h4 className="font-bold text-primary mb-2">Optician</h4>
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <Image src={ColorfulGlassesImage} alt="Optician" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                  <Image
+                    src={ColorfulGlassesImage}
+                    alt="Optician"
+                    className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  />
                   <p className="flex-1">
                     Opticians don&apos;t examine your eyes or prescribe
-                    medications. What they do is take the prescription provided by
-                    your optometrist and turn it into wearable eyewear. They fit
-                    glasses and adjust frames. When you need eyewear for your
-                    lifestyle, they are the ones to attend to you.
+                    medications. What they do is take the prescription provided
+                    by your optometrist and turn it into wearable eyewear. They
+                    fit glasses and adjust frames. When you need eyewear for
+                    your lifestyle, they are the ones to attend to you.
                   </p>
                 </div>
               </div>
@@ -4068,11 +4079,19 @@ export const guides = {
               <table className="w-full text-sm border-collapse">
                 <thead>
                   <tr className="bg-primary text-white">
-                    <th className="text-left p-3 font-semibold">Professional</th>
+                    <th className="text-left p-3 font-semibold">
+                      Professional
+                    </th>
                     <th className="text-left p-3 font-semibold">Education</th>
-                    <th className="text-left p-3 font-semibold">What They Do</th>
-                    <th className="text-left p-3 font-semibold">Can Prescribe?</th>
-                    <th className="text-left p-3 font-semibold">Can Perform Surgery?</th>
+                    <th className="text-left p-3 font-semibold">
+                      What They Do
+                    </th>
+                    <th className="text-left p-3 font-semibold">
+                      Can Prescribe?
+                    </th>
+                    <th className="text-left p-3 font-semibold">
+                      Can Perform Surgery?
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -4099,9 +4118,15 @@ export const guides = {
                       "No",
                     ],
                   ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
+                    <tr
+                      key={i}
+                      className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}
+                    >
                       {row.map((cell, j) => (
-                        <td key={j} className="p-3 font-medium first:font-semibold">
+                        <td
+                          key={j}
+                          className="p-3 font-medium first:font-semibold"
+                        >
                           {cell}
                         </td>
                       ))}
@@ -4113,7 +4138,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 1 ──────────────────────────────────────────────────────────
       {
         id: "optometrist",
@@ -4153,22 +4178,22 @@ export const guides = {
         contentBottom: (
           <>
             <p>
-              Optometrists hold a Doctor of Optometry (OD) degree &ndash; that&apos;s
-              four years of specialized training after undergrad. They study
-              everything from optics to pharmacology to ocular disease. In
-              Ontario, they must also pass national and provincial licensing
-              exams.
+              Optometrists hold a Doctor of Optometry (OD) degree &ndash;
+              that&apos;s four years of specialized training after undergrad.
+              They study everything from optics to pharmacology to ocular
+              disease. In Ontario, they must also pass national and provincial
+              licensing exams.
             </p>
             <p className="mt-3">
               In Toronto, most people see an optometrist first. They handle
               routine checkups or a sudden vision change. OHIP covers eye exams
-              for kids under 20 and adults over 65. For everyone else,
-              it&apos;s out-of-pocket.
+              for kids under 20 and adults over 65. For everyone else, it&apos;s
+              out-of-pocket.
             </p>
           </>
         ),
       },
- 
+
       // ── Section 2 ──────────────────────────────────────────────────────────
       {
         id: "ophthalmologist",
@@ -4205,8 +4230,8 @@ export const guides = {
           <>
             <p>
               You usually can&apos;t just book an appointment with an
-              ophthalmologist on your own. In Ontario, you need a referral.
-              That typically comes from your optometrist or family doctor after
+              ophthalmologist on your own. In Ontario, you need a referral. That
+              typically comes from your optometrist or family doctor after
               they&apos;ve identified something that requires surgical or
               advanced medical care. It&apos;s a gatekeeping system, but it
               ensures you see the right specialist at the right time.
@@ -4214,7 +4239,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 3 ──────────────────────────────────────────────────────────
       {
         id: "optician",
@@ -4231,8 +4256,8 @@ export const guides = {
         ),
         contentBottom: (
           <>
-          <ul className="list-disc pl-5 space-y-2 mt-3">
-            <li>
+            <ul className="list-disc pl-5 space-y-2 mt-3">
+              <li>
                 <strong>Frame selection:</strong> They help you find frames that
                 fit your face, your style, and your budget. Not every frame
                 works for every prescription, so they guide you toward
@@ -4244,7 +4269,7 @@ export const guides = {
                 matter. Opticians measure everything so your lenses are
                 positioned correctly.
               </li>
-             <li>
+              <li>
                 <strong>Lens options:</strong> They explain what single vision,
                 progressives, blue light filters, and anti-glare coatings do
                 &ndash; and what you need versus what&apos;s just marketing.
@@ -4254,7 +4279,7 @@ export const guides = {
                 pads wear out. Opticians fix these things so your glasses stay
                 comfortable and functional.
               </li>
-          </ul>
+            </ul>
             <p>
               An optometrist checks your eye health and determines your
               prescription, while an optician uses that prescription to craft
@@ -4271,7 +4296,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 4 ──────────────────────────────────────────────────────────
       {
         id: "who-to-see-first",
@@ -4288,10 +4313,19 @@ export const guides = {
               optometrist is your first call.
             </p>
             <ul className="list-disc pl-5 space-y-1 mt-3">
-              <li>Routine eye exams? <strong>Optometrist.</strong></li>
-              <li>Blurry vision or trouble reading? <strong>Optometrist.</strong></li>
-              <li>Itchy, red, or dry eyes? <strong>Optometrist.</strong></li>
-              <li>New glasses or contact lens prescription? <strong>Optometrist.</strong></li>
+              <li>
+                Routine eye exams? <strong>Optometrist.</strong>
+              </li>
+              <li>
+                Blurry vision or trouble reading? <strong>Optometrist.</strong>
+              </li>
+              <li>
+                Itchy, red, or dry eyes? <strong>Optometrist.</strong>
+              </li>
+              <li>
+                New glasses or contact lens prescription?{" "}
+                <strong>Optometrist.</strong>
+              </li>
             </ul>
             <p className="mt-3">
               They handle the day-to-day stuff. And if something looks serious
@@ -4307,9 +4341,18 @@ export const guides = {
               surgery or advanced care is needed:
             </p>
             <ul className="list-disc pl-5 space-y-1 mt-3 mb-3">
-              <li>Cataracts clouding your vision? That&apos;s surgery. <strong>Ophthalmologist.</strong></li>
-              <li>Glaucoma not responding to drops? <strong>Ophthalmologist.</strong></li>
-              <li>Retinal tear or detachment? <strong>Ophthalmologist immediately.</strong></li>
+              <li>
+                Cataracts clouding your vision? That&apos;s surgery.{" "}
+                <strong>Ophthalmologist.</strong>
+              </li>
+              <li>
+                Glaucoma not responding to drops?{" "}
+                <strong>Ophthalmologist.</strong>
+              </li>
+              <li>
+                Retinal tear or detachment?{" "}
+                <strong>Ophthalmologist immediately.</strong>
+              </li>
             </ul>
             <p>
               They step in when the problem goes beyond what an optometrist can
@@ -4324,9 +4367,9 @@ export const guides = {
               getting your vision corrected.
             </p>
             <p className="mt-3">
-              These three professionals aren&apos;t competing &ndash; they&apos;re
-              collaborating. Your optometrist catches the problem. Your
-              ophthalmologist fixes what needs surgical intervention. Your
+              These three professionals aren&apos;t competing &ndash;
+              they&apos;re collaborating. Your optometrist catches the problem.
+              Your ophthalmologist fixes what needs surgical intervention. Your
               optician makes sure you can see clearly every day. Start with an
               optometrist in Toronto for regular care, and they&apos;ll guide
               you to the right person if you need more.
@@ -4334,7 +4377,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 5 ──────────────────────────────────────────────────────────
       {
         id: "choose-right-doctor",
@@ -4350,20 +4393,19 @@ export const guides = {
                 1. Consider Your Age and Eye Health Needs
               </h4>
               <p>
-                A kid getting their first eye exam needs something different than
-                someone managing glaucoma. Children benefit from optometrists
-                who specialise in pediatric care. Older adults may need someone
-                experienced with age-related conditions like cataracts or
-                macular degeneration. If you have diabetes, find an optometrist
-                who does thorough retinal screenings.
+                A kid getting their first eye exam needs something different
+                than someone managing glaucoma. Children benefit from
+                optometrists who specialise in pediatric care. Older adults may
+                need someone experienced with age-related conditions like
+                cataracts or macular degeneration. If you have diabetes, find an
+                optometrist who does thorough retinal screenings.
               </p>
             </div>
-           
           </div>
         ),
         contentBottom: (
           <div className="space-y-4">
-           <div>
+            <div>
               <h4 className="font-bold text-primary mb-1">
                 2. Look for Specialty Services That Match Your Situation
               </h4>
@@ -4413,7 +4455,7 @@ export const guides = {
           </div>
         ),
       },
- 
+
       // ── Section 6 ──────────────────────────────────────────────────────────
       {
         id: "tips-finding-clinic",
@@ -4445,9 +4487,7 @@ export const guides = {
         contentBottom: (
           <div className="space-y-4">
             <div>
-              <h4 className="font-bold text-primary mb-1">
-                Check Credentials
-              </h4>
+              <h4 className="font-bold text-primary mb-1">Check Credentials</h4>
               <p>
                 Make sure the optometrist is licensed with the College of
                 Optometrists of Ontario.
@@ -4477,7 +4517,7 @@ export const guides = {
           </div>
         ),
       },
- 
+
       // ── Conclusion ─────────────────────────────────────────────────────────
       {
         id: "conclusion",
@@ -4532,13 +4572,15 @@ export const guides = {
       },
       {
         id: 4,
-        question: "What's the difference between an optometrist and an optician?",
+        question:
+          "What's the difference between an optometrist and an optician?",
         answer:
           "An optometrist examines your eyes and writes prescriptions. An optician uses that prescription to fit and dispense glasses or contact lenses. One diagnoses, the other provides the eyewear you need to see clearly.",
       },
     ],
   },
 
+  // page - 7
   "pediatric-optometrists-toronto-child-eye-care": {
     title: "Pediatric Eye Care 101",
     subtitle:
@@ -4555,14 +4597,14 @@ export const guides = {
       <>
         <p>
           Taking care of your child&apos;s eyes starts right from birth. This
-          will continue through their teenage years, when you manage their screen
-          time. It&apos;s no small feat to take care of your child&apos;s eyes.
-          This guide covers all that you need to know about taking care of your
-          child&apos;s eyes.
+          will continue through their teenage years, when you manage their
+          screen time. It&apos;s no small feat to take care of your child&apos;s
+          eyes. This guide covers all that you need to know about taking care of
+          your child&apos;s eyes.
         </p>
         <p>
-          Pediatric optometrists in Toronto recommend that you make it a habit to
-          regularly check your child&apos;s eye health to catch issues early
+          Pediatric optometrists in Toronto recommend that you make it a habit
+          to regularly check your child&apos;s eye health to catch issues early
           before they become lifelong problems later on. Small steps today
           prevent big problems tomorrow.
         </p>
@@ -4583,10 +4625,9 @@ export const guides = {
               Vision isn&apos;t fully developed from birth. It takes time and
               grows like a muscle, with constant use and care. However, it
               develops remarkably fast. Babies go from detecting light and
-              shadows to identifying faces and objects in just a few months after
-              birth.
+              shadows to identifying faces and objects in just a few months
+              after birth.
             </p>
-           
           </>
         ),
         contentBottom: (
@@ -4597,23 +4638,27 @@ export const guides = {
                   How Eyes Develop From Infancy to School Age
                 </h4>
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <Image src={PediatricEyeCareImage} alt='Eye Development' className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                  <Image
+                    src={PediatricEyeCareImage}
+                    alt="Eye Development"
+                    className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  />
                   <div className="flex-1">
                     <p>
-                      Newborns see in black and white. They only begin to distinguish
-                      color by the third month. In terms of distance, they can only see
-                      about 8&ndash;12 inches &ndash; enough to see you as you
-                      breastfeed them.
+                      Newborns see in black and white. They only begin to
+                      distinguish color by the third month. In terms of
+                      distance, they can only see about 8&ndash;12 inches
+                      &ndash; enough to see you as you breastfeed them.
                     </p>
                     <p className="mt-2">
-                      By the fifth month, they begin to develop their depth perception.
-                      By this time, they realize that they can touch an object if they
-                      reach for it.
+                      By the fifth month, they begin to develop their depth
+                      perception. By this time, they realize that they can touch
+                      an object if they reach for it.
                     </p>
                     <p className="mt-2">
-                      Through constant use, school-age children refine their vision.
-                      Their eyes learn to work together, track moving objects, and
-                      focus on varying distances.
+                      Through constant use, school-age children refine their
+                      vision. Their eyes learn to work together, track moving
+                      objects, and focus on varying distances.
                     </p>
                   </div>
                 </div>
@@ -4623,15 +4668,40 @@ export const guides = {
                   Key Milestones in Visual Development
                 </h4>
                 <div className="flex flex-col md:flex-row gap-6 items-start">
-                  <Image src={PediatricEyeCareImage} alt='Visual Milestones' className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                  <Image
+                    src={PediatricEyeCareImage}
+                    alt="Visual Milestones"
+                    className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  />
                   <ul className="list-disc pl-5 space-y-1 flex-1">
-                    <li><strong>Birth to 1 month:</strong> Responds to bright light; focuses 8–12 inches away.</li>
-                    <li><strong>2–3 months:</strong> Begins to follow moving objects and notices hands.</li>
-                    <li><strong>4–5 months:</strong> Develops depth perception and color vision.</li>
-                    <li><strong>6–8 months:</strong> Eye-hand coordination improves; reaches objects accurately.</li>
-                    <li><strong>9–12 months:</strong> Judges distances better and deliberately throws objects.</li>
-                    <li><strong>1–2 years:</strong> Color vision fully develops; depth perception improves.</li>
-                    <li><strong>3–5 years:</strong> Visual acuity approaches 20/20.</li>
+                    <li>
+                      <strong>Birth to 1 month:</strong> Responds to bright
+                      light; focuses 8–12 inches away.
+                    </li>
+                    <li>
+                      <strong>2–3 months:</strong> Begins to follow moving
+                      objects and notices hands.
+                    </li>
+                    <li>
+                      <strong>4–5 months:</strong> Develops depth perception and
+                      color vision.
+                    </li>
+                    <li>
+                      <strong>6–8 months:</strong> Eye-hand coordination
+                      improves; reaches objects accurately.
+                    </li>
+                    <li>
+                      <strong>9–12 months:</strong> Judges distances better and
+                      deliberately throws objects.
+                    </li>
+                    <li>
+                      <strong>1–2 years:</strong> Color vision fully develops;
+                      depth perception improves.
+                    </li>
+                    <li>
+                      <strong>3–5 years:</strong> Visual acuity approaches
+                      20/20.
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -4639,7 +4709,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 1 ──────────────────────────────────────────────────────────
       {
         id: "warning-signs",
@@ -4647,32 +4717,31 @@ export const guides = {
         contentTop: (
           <>
             <p>
-              If you feel something is off with your child&apos;s vision, then it
-              probably is. Learn to trust your instincts. Here are some signs you
-              should watch out for:
+              If you feel something is off with your child&apos;s vision, then
+              it probably is. Learn to trust your instincts. Here are some signs
+              you should watch out for:
             </p>
-              <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
-                  <li>Excessive tearing or eye discharge</li>
-                  <li>Constant eye rubbing when not tired</li>
-                  <li>Extreme sensitivity to light</li>
-                </ul>
-                <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
-                  <li>White or gray-white color in the pupil</li>
-                  <li>Eyes that don&apos;t line up by 4 months</li>
-                  <li>One eye turning in or out consistently</li>
-                </ul>
-                <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
-                  <li>Head tilting when trying to see</li>
-                  <li>Difficulty following objects by 3 months</li>
-                  <li>Squinting or closing one eye to see</li>
-                </ul>
-                <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
-                  <li>Sitting too close to screens</li>
-                  <li>Avoiding visual activities or reading</li>
-                </ul>
-              </div>
-            
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+              <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
+                <li>Excessive tearing or eye discharge</li>
+                <li>Constant eye rubbing when not tired</li>
+                <li>Extreme sensitivity to light</li>
+              </ul>
+              <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
+                <li>White or gray-white color in the pupil</li>
+                <li>Eyes that don&apos;t line up by 4 months</li>
+                <li>One eye turning in or out consistently</li>
+              </ul>
+              <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
+                <li>Head tilting when trying to see</li>
+                <li>Difficulty following objects by 3 months</li>
+                <li>Squinting or closing one eye to see</li>
+              </ul>
+              <ul className="list-disc pl-5 space-y-2 text-sm md:text-base">
+                <li>Sitting too close to screens</li>
+                <li>Avoiding visual activities or reading</li>
+              </ul>
+            </div>
           </>
         ),
         contentBottom: (
@@ -4681,13 +4750,13 @@ export const guides = {
               Children rarely complain about vision problems. They don&apos;t
               know what &ldquo;normal&rdquo; vision is, so you need to always be
               on the lookout. Early intervention is very important. Most vision
-              problems can be corrected if caught early by a pediatric optometrist
-              in Toronto.
+              problems can be corrected if caught early by a pediatric
+              optometrist in Toronto.
             </p>
           </>
         ),
       },
- 
+
       // ── Section 2 ──────────────────────────────────────────────────────────
       {
         id: "regular-eye-exams",
@@ -4699,18 +4768,26 @@ export const guides = {
         contentTop: (
           <>
             <p>
-              Children can&apos;t tell if there&apos;s something wrong with their
-              vision. If they see a tree without leaves, they have no idea that
-              they are missing something beautiful. To them, that&apos;s how a
-              tree is supposed to look. For that matter, book regular eye
+              Children can&apos;t tell if there&apos;s something wrong with
+              their vision. If they see a tree without leaves, they have no idea
+              that they are missing something beautiful. To them, that&apos;s
+              how a tree is supposed to look. For that matter, book regular eye
               consultations with optometrists in Toronto to examine their eyes.
               Here&apos;s a recommended eye exam schedule you can use:
             </p>
             <ul className="list-disc pl-5 space-y-1 mt-3">
-              <li><strong>First exam:</strong> 6–12 months old</li>
-              <li><strong>Second exam:</strong> 3 years old</li>
-              <li><strong>Before kindergarten:</strong> 5–6 years old</li>
-              <li><strong>School-aged children:</strong> Annually</li>
+              <li>
+                <strong>First exam:</strong> 6–12 months old
+              </li>
+              <li>
+                <strong>Second exam:</strong> 3 years old
+              </li>
+              <li>
+                <strong>Before kindergarten:</strong> 5–6 years old
+              </li>
+              <li>
+                <strong>School-aged children:</strong> Annually
+              </li>
             </ul>
           </>
         ),
@@ -4720,8 +4797,8 @@ export const guides = {
               When you visit a pediatric optometrist in Toronto, they use
               child-friendly techniques to examine children who won&apos;t sit
               still. They understand that testing a three-year-old requires a
-              different approach from testing an adult. When you visit them, they
-              check the following:
+              different approach from testing an adult. When you visit them,
+              they check the following:
             </p>
             <ul className="list-disc pl-5 space-y-1 mt-3 mb-4">
               <li>Visual acuity (how clearly your child sees)</li>
@@ -4754,7 +4831,7 @@ export const guides = {
           </>
         ),
       },
- 
+
       // ── Section 3 ──────────────────────────────────────────────────────────
       {
         id: "common-conditions",
@@ -4777,16 +4854,24 @@ export const guides = {
                 1. Myopia (Nearsightedness)
               </h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image src={MyopiaImage} alt="Myopia (Nearsightedness)" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={MyopiaImage}
+                  alt="Myopia (Nearsightedness)"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
-                    Myopia is a condition that makes distant objects appear blurry,
-                    while close items remain clear. When a child has myopia, you
-                    will often find them squinting to see the whiteboard or sitting
-                    unusually close to screens. Causes of myopia often include:
+                    Myopia is a condition that makes distant objects appear
+                    blurry, while close items remain clear. When a child has
+                    myopia, you will often find them squinting to see the
+                    whiteboard or sitting unusually close to screens. Causes of
+                    myopia often include:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
-                    <li>Genetics (if you have myopia, your child has a higher risk)</li>
+                    <li>
+                      Genetics (if you have myopia, your child has a higher
+                      risk)
+                    </li>
                     <li>Too much near work without breaks</li>
                     <li>Limited outdoor time during development</li>
                     <li>Extended screen use</li>
@@ -4795,7 +4880,9 @@ export const guides = {
               </div>
               <div className="mt-6 space-y-4">
                 <p className="font-medium text-primary">
-                  To manage myopia, spend at least 2 hours outdoors daily and take regular breaks from near work. Modern management practices include:
+                  To manage myopia, spend at least 2 hours outdoors daily and
+                  take regular breaks from near work. Modern management
+                  practices include:
                 </p>
                 <ul className="list-disc pl-5 space-y-1 ml-4">
                   <li>Special contact lenses are worn at night</li>
@@ -4804,8 +4891,12 @@ export const guides = {
                   <li>Regular breaks during reading or screen time</li>
                 </ul>
                 <p className="font-medium">
-                  <a href="https://www.360eyecare.ca/what-is-myopia-and-how-to-correct-it/" className="text-primary hover:underline">
-                    Learn more about childhood myopia management in our detailed guide.
+                  <a
+                    href="https://www.360eyecare.ca/what-is-myopia-and-how-to-correct-it/"
+                    className="text-primary hover:underline"
+                  >
+                    Learn more about childhood myopia management in our detailed
+                    guide.
                   </a>
                 </p>
               </div>
@@ -4817,13 +4908,17 @@ export const guides = {
                 2. Hyperopia (Farsightedness)
               </h4>
               <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-                <Image src={SpectacleImage} alt="Hyperopia (Farsightedness)" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={SpectacleImage}
+                  alt="Hyperopia (Farsightedness)"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
-                    Children with hyperopia see distant objects more clearly than
-                    close objects. Unlike adults, children&apos;s flexible eye
-                    lenses can often compensate for mild hyperopia, but at a cost.
-                    This constant compensation creates:
+                    Children with hyperopia see distant objects more clearly
+                    than close objects. Unlike adults, children&apos;s flexible
+                    eye lenses can often compensate for mild hyperopia, but at a
+                    cost. This constant compensation creates:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
                     <li>Headaches after reading</li>
@@ -4833,12 +4928,19 @@ export const guides = {
                   </ul>
                   <p className="mt-3">
                     Hyperopia directly impacts learning. A child struggling to
-                    focus on words may seem inattentive when they&apos;re actually
-                    working harder than their peers just to see clearly.
+                    focus on words may seem inattentive when they&apos;re
+                    actually working harder than their peers just to see
+                    clearly.
                   </p>
-                  <p>for more information on how faresightness affetcs childern, <a href="https://www.360eyecare.ca/farsightedness-treatment-toronto-guide/" className="text-primary hover:underline">
-                    read our blog
-                  </a></p>
+                  <p>
+                    for more information on how faresightness affetcs childern,{" "}
+                    <a
+                      href="https://www.360eyecare.ca/farsightedness-treatment-toronto-guide/"
+                      className="text-primary hover:underline"
+                    >
+                      read our blog
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -4849,12 +4951,17 @@ export const guides = {
                 3. Amblyopia (Lazy Eye)
               </h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image src={PediatricEyeCareImage} alt="Amblyopia (Lazy Eye)" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={PediatricEyeCareImage}
+                  alt="Amblyopia (Lazy Eye)"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
-                    Amblyopia occurs when the brain favours one eye over the other.
-                    Gradually, it suppresses vision in the other eye. Amblyopia is
-                    the leading cause of vision loss in children. Common signs include:
+                    Amblyopia occurs when the brain favours one eye over the
+                    other. Gradually, it suppresses vision in the other eye.
+                    Amblyopia is the leading cause of vision loss in children.
+                    Common signs include:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
                     <li>Head tilting</li>
@@ -4866,7 +4973,8 @@ export const guides = {
               </div>
               <div className="mt-6 space-y-4">
                 <p className="font-medium text-primary">
-                  Treatment works best before the age of seven when visual pathways are still developing. Treatment options include:
+                  Treatment works best before the age of seven when visual
+                  pathways are still developing. Treatment options include:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8">
                   <ul className="list-disc pl-5 space-y-1 ml-4">
@@ -4879,11 +4987,16 @@ export const guides = {
                   </ul>
                 </div>
                 <p className="mt-3 text-sm text-gray-600 italic">
-                  Note: Amblyopia becomes much harder to treat after age 10, emphasizing the importance of early checkups.
+                  Note: Amblyopia becomes much harder to treat after age 10,
+                  emphasizing the importance of early checkups.
                 </p>
                 <p className="font-medium">
-                  <a href="https://www.360eyecare.ca/lazy-eye-treatment-for-adults-options/" className="text-primary hover:underline">
-                    Read our blog to learn more about how Amblyopia is treated in detail.
+                  <a
+                    href="https://www.360eyecare.ca/lazy-eye-treatment-for-adults-options/"
+                    className="text-primary hover:underline"
+                  >
+                    Read our blog to learn more about how Amblyopia is treated
+                    in detail.
                   </a>
                 </p>
               </div>
@@ -4895,13 +5008,19 @@ export const guides = {
                 4. Strabismus (Crossed Eyes)
               </h4>
               <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-                <Image src={MedicalTeamImage} alt="Strabismus (Crossed Eyes)" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={MedicalTeamImage}
+                  alt="Strabismus (Crossed Eyes)"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
-                    Strabismus occurs when the eyes don&apos;t align properly. One
-                    eye may turn inward, outward, upward, or downward while the
-                    other focuses straight ahead. Left untreated, strabismus can lead to permanent vision loss as
-                    the brain learns to ignore input from the misaligned eye. Seek help immediately if:
+                    Strabismus occurs when the eyes don&apos;t align properly.
+                    One eye may turn inward, outward, upward, or downward while
+                    the other focuses straight ahead. Left untreated, strabismus
+                    can lead to permanent vision loss as the brain learns to
+                    ignore input from the misaligned eye. Seek help immediately
+                    if:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
                     <li>You notice misalignment after 4 months of age</li>
@@ -4913,25 +5032,28 @@ export const guides = {
               </div>
               <div>
                 <p>Treatment options include:</p>
-               <ul className="list-disc pl-5 space-y-1 mt-2">
-                    <li>Prescription glasses</li>
-                    <li>Vision therapy</li>
-                    <li>Eye muscle surgery</li>
-                    <li>Specialized exercises</li>
-                  </ul>
-                  <p className="mt-4">Left untreated, strabismus can lead to permanent vision loss as the brain learns to ignore input from the misaligned eye.</p>
+                <ul className="list-disc pl-5 space-y-1 mt-2">
+                  <li>Prescription glasses</li>
+                  <li>Vision therapy</li>
+                  <li>Eye muscle surgery</li>
+                  <li>Specialized exercises</li>
+                </ul>
+                <p className="mt-4">
+                  Left untreated, strabismus can lead to permanent vision loss
+                  as the brain learns to ignore input from the misaligned eye.
+                </p>
               </div>
               <div>
-              <h4 className="font-bold text-primary mb-2 mt-2 text-lg">
-                Other Common Concerns
-              </h4>
-             
+                <h4 className="font-bold text-primary mb-2 mt-2 text-lg">
+                  Other Common Concerns
+                </h4>
+
                 <div className="flex-1">
                   <ul className="list-disc pl-5 space-y-2">
                     <li>
-                      <strong>Eye Allergies:</strong> Red, itchy, watery eyes may
-                      mean that your child has allergies. Seasonal pollen, pet
-                      dander, or dust mites are common triggers.
+                      <strong>Eye Allergies:</strong> Red, itchy, watery eyes
+                      may mean that your child has allergies. Seasonal pollen,
+                      pet dander, or dust mites are common triggers.
                     </li>
                     <li>
                       <strong>Digital Eye Strain:</strong> Overuse of digital
@@ -4945,17 +5067,17 @@ export const guides = {
                     </li>
                   </ul>
                   <p className="mt-4">
-                    Pediatric optometrists in Toronto specialise in addressing all
-                    these conditions with child-friendly approaches. Early detection
-                    makes treatment simpler and more effective.
+                    Pediatric optometrists in Toronto specialise in addressing
+                    all these conditions with child-friendly approaches. Early
+                    detection makes treatment simpler and more effective.
                   </p>
                 </div>
               </div>
-            </div> 
+            </div>
           </div>
         ),
       },
- 
+
       // ── Section 4 ──────────────────────────────────────────────────────────
       {
         id: "screen-time-outdoors",
@@ -5009,7 +5131,8 @@ export const guides = {
             </p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
               <li>
-                Natural light triggers dopamine release that regulates eye growth
+                Natural light triggers dopamine release that regulates eye
+                growth
               </li>
               <li>Distance viewing relaxes focusing muscles</li>
               <li>
@@ -5019,58 +5142,74 @@ export const guides = {
             </ul>
             <p className="mt-3">
               Aim for 2 hours of outdoor time daily, even in winter. A Toronto
-              winter walk still provides the light intensity needed for eye health
-              benefits. However, when outdoors, don&apos;t forget UV-protective
-              sunglasses. Children&apos;s clear lenses allow more UV light to
-              reach their retinas than adult eyes.
+              winter walk still provides the light intensity needed for eye
+              health benefits. However, when outdoors, don&apos;t forget
+              UV-protective sunglasses. Children&apos;s clear lenses allow more
+              UV light to reach their retinas than adult eyes.
             </p>
           </>
         ),
       },
- 
+
       // ── Section 6 ──────────────────────────────────────────────────────────
       {
         id: "eye-protection",
         heading: "Protecting Children's Eyes from Injury & Strain",
         contentTop: (
           <div className="space-y-12">
-            <p>
-              Most eye injuries are preventable with simple precautions.
-            </p>
+            <p>Most eye injuries are preventable with simple precautions.</p>
             {/* 1. Sports Eye Protection */}
             <div>
               <h4 className="font-bold text-primary mb-2 text-lg">
                 Sports Eye Protection
               </h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image src={BeachImage} alt="Sports eye protection" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={BeachImage}
+                  alt="Sports eye protection"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
                     A ball traveling 60 mph carries enough force to permanently
                     damage vision. Each year, thousands of children suffer
-                    preventable sports eye injuries. Protection approaches include:
+                    preventable sports eye injuries. Protection approaches
+                    include:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
                     <li>
-                      <strong>High-risk (hockey, baseball):</strong> Full face shields or polycarbonate goggles.
+                      <strong>High-risk (hockey, baseball):</strong> Full face
+                      shields or polycarbonate goggles.
                     </li>
                     <li>
-                      <strong>Racquet sports:</strong> Protective eyewear with secure straps.
+                      <strong>Racquet sports:</strong> Protective eyewear with
+                      secure straps.
                     </li>
                     <li>
-                      <strong>Swimming:</strong> Fitted goggles to prevent chemical irritation.
+                      <strong>Swimming:</strong> Fitted goggles to prevent
+                      chemical irritation.
                     </li>
                     <li>
-                      <strong>Winter sports:</strong> Wrapped eyewear that blocks wind and glare.
+                      <strong>Winter sports:</strong> Wrapped eyewear that
+                      blocks wind and glare.
                     </li>
                   </ul>
                   <p className="mt-4">
-                    Note: Regular glasses can shatter on impact; always use gear meeting ASTM F803 standards.
+                    Note: Regular glasses can shatter on impact; always use gear
+                    meeting ASTM F803 standards.
                   </p>
                 </div>
-              </div> 
-               <p className="mt-4">Look for eyewear meeting ASTM F803 standards ( these are specifically tested for sports safety). Pediatric optometrists in Toronto can fit custom protective eyewear that doesn’t compromise peripheral vision.</p>
-               <p>Eye injuries happen in an instant but can affect vision for life. No game is worth that risk.</p>
+              </div>
+              <p className="mt-4">
+                Look for eyewear meeting ASTM F803 standards ( these are
+                specifically tested for sports safety). Pediatric optometrists
+                in Toronto can fit custom protective eyewear that doesn’t
+                compromise peripheral vision.
+              </p>
+              <p>
+                Eye injuries happen in an instant but can affect vision for
+                life. No game is worth that risk.
+              </p>
             </div>
 
             {/* 2. Sunglasses and UV Protection */}
@@ -5079,26 +5218,38 @@ export const guides = {
                 Sunglasses and UV Protection for Kids
               </h4>
               <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-                <Image src={PediatricEyeCareImage} alt="UV Protection" className="md:w-[45%] w-[100%] h-64 object-cover rounded-md" />
+                <Image
+                  src={PediatricEyeCareImage}
+                  alt="UV Protection"
+                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                />
                 <div className="flex-1">
                   <p>
                     Children&apos;s eyes let in more harmful UV rays than adult
-                    eyes. By age 18, kids have received up to 80% of their lifetime
-                    UV exposure. When choosing sunglasses:
+                    eyes. By age 18, kids have received up to 80% of their
+                    lifetime UV exposure. When choosing sunglasses:
                   </p>
                   <ul className="list-disc pl-5 space-y-1 mt-2">
                     <li>Verify 99–100% UVA/UVB protection (UV400 label).</li>
                     <li>Select impact-resistant polycarbonate lenses.</li>
                     <li>Choose wrapped styles that block side light.</li>
                     <li>Find comfortable frames that children like to wear.</li>
-                    <li>Consider polarized lenses to reduce glare, especially near water</li>
+                    <li>
+                      Consider polarized lenses to reduce glare, especially near
+                      water
+                    </li>
                   </ul>
-                   <p className="mt-2">Even on cloudy days, UV rays penetrate the cover. Make sunglasses a year-round habit.</p>
+                  <p className="mt-2">
+                    Even on cloudy days, UV rays penetrate the cover. Make
+                    sunglasses a year-round habit.
+                  </p>
                 </div>
               </div>
-            <p>Hats with brims provide additional protection, especially during peak sun hours (10am-4pm).</p>
+              <p>
+                Hats with brims provide additional protection, especially during
+                peak sun hours (10am-4pm).
+              </p>
             </div>
-           
           </div>
         ),
         contentBottom: (
@@ -5107,50 +5258,60 @@ export const guides = {
             <h4 className="font-bold text-primary mb-2 text-lg">
               Ergonomics for Reading and Screen Use
             </h4>
-              <div className="flex-1">
-                <p>
-                  Poor posture during visual tasks strains the back and stresses
-                  the entire visual system. </p>
-                  <p>Help your child with these
-                  eye-friendly adjustments:</p>
-                <ul className="list-disc pl-5 space-y-1 mt-2">
-                  <li>
-                    <strong className="text-primary">Proper lighting:</strong> Even illumination without glare; task lighting for reading.
-                  </li>
-                  <li>
-                    <strong className="text-primary">Screen positioning:</strong> Slightly below eye level, arm&apos;s length away.
-                  </li>
-                  <li>
-                    <strong className="text-primary">Reading posture:</strong> Book at a 15-degree angle below eye level.
-                  </li>
-                  <li>
-                    <strong className="text-primary">Seating:</strong> Feet flat, back supported, 90-degree elbows.
-                  </li>
-                </ul>
-                <p className="mt-2">For homework and reading:</p>
-                <ul className="list-disc pl-5 space-y-1 mt-2">
-                  <li>
-                    <p>Create dedicated spaces with proper lighting</p> 
-                  </li>
-                  <li>
+            <div className="flex-1">
+              <p>
+                Poor posture during visual tasks strains the back and stresses
+                the entire visual system.{" "}
+              </p>
+              <p>Help your child with these eye-friendly adjustments:</p>
+              <ul className="list-disc pl-5 space-y-1 mt-2">
+                <li>
+                  <strong className="text-primary">Proper lighting:</strong>{" "}
+                  Even illumination without glare; task lighting for reading.
+                </li>
+                <li>
+                  <strong className="text-primary">Screen positioning:</strong>{" "}
+                  Slightly below eye level, arm&apos;s length away.
+                </li>
+                <li>
+                  <strong className="text-primary">Reading posture:</strong>{" "}
+                  Book at a 15-degree angle below eye level.
+                </li>
+                <li>
+                  <strong className="text-primary">Seating:</strong> Feet flat,
+                  back supported, 90-degree elbows.
+                </li>
+              </ul>
+              <p className="mt-2">For homework and reading:</p>
+              <ul className="list-disc pl-5 space-y-1 mt-2">
+                <li>
+                  <p>Create dedicated spaces with proper lighting</p>
+                </li>
+                <li>
                   <p>Use book stands to maintain ideal angles</p>
-                  </li>
-                  <li>
-                    <p>Ensure chairs allow feet to touch the ground</p> 
-                  </li>
-                  <li>
-                    <p>Keep water nearby to prevent dry eyes</p> 
-                  </li>
-                  <li>
-                    <p>Set timers for regular movement breaks</p> 
-                  </li>
-                </ul>
-                <p className="mt-2">Young bodies adapt to poor positions easily but may develop problems later. Teaching proper visual ergonomics now prevents headaches, neck pain, and vision issues later. Prevention is always easier than treatment. These simple protective measures preserve the gift of healthy vision for your child’s future.</p>
-              </div>
+                </li>
+                <li>
+                  <p>Ensure chairs allow feet to touch the ground</p>
+                </li>
+                <li>
+                  <p>Keep water nearby to prevent dry eyes</p>
+                </li>
+                <li>
+                  <p>Set timers for regular movement breaks</p>
+                </li>
+              </ul>
+              <p className="mt-2">
+                Young bodies adapt to poor positions easily but may develop
+                problems later. Teaching proper visual ergonomics now prevents
+                headaches, neck pain, and vision issues later. Prevention is
+                always easier than treatment. These simple protective measures
+                preserve the gift of healthy vision for your child’s future.
+              </p>
             </div>
+          </div>
         ),
       },
- 
+
       // ── Section 7 ──────────────────────────────────────────────────────────
       {
         id: "emergency-care",
@@ -5176,8 +5337,8 @@ export const guides = {
             </p>
             <p>
               Children&apos;s curiosity often leads to accidents. Chemical
-              splashes, foreign objects, and blunt trauma need urgent professional
-              assessment. 
+              splashes, foreign objects, and blunt trauma need urgent
+              professional assessment.
             </p>
             <p>Get immediate help for:</p>
             <ul className="list-disc pl-5 space-y-1 mt-2 mb-4">
@@ -5189,7 +5350,9 @@ export const guides = {
                 seeking care)
               </li>
               <li>Blunt trauma to the eye area</li>
-              <li>Foreign bodies that don&apos;t rinse out easily with tears</li>
+              <li>
+                Foreign bodies that don&apos;t rinse out easily with tears
+              </li>
               <li>Burns affecting the eyelids or eye surface</li>
             </ul>
           </>
@@ -5198,20 +5361,24 @@ export const guides = {
           <>
             <p>
               Never rub an injured eye. Secure a loose shield (like a paper cup)
-              over severe injuries to prevent pressure while heading to emergency
-              care.
+              over severe injuries to prevent pressure while heading to
+              emergency care.
             </p>
             <p className="mt-3">
-              Most eye emergencies have excellent outcomes when treated promptly.
-              The single biggest factor affecting prognosis is how quickly you
-              seek care.</p><p> Keep emergency contact information readily accessible by
-              posting it on your refrigerator and saving it in your phone. When
-              vision is at stake, every minute counts.
+              Most eye emergencies have excellent outcomes when treated
+              promptly. The single biggest factor affecting prognosis is how
+              quickly you seek care.
+            </p>
+            <p>
+              {" "}
+              Keep emergency contact information readily accessible by posting
+              it on your refrigerator and saving it in your phone. When vision
+              is at stake, every minute counts.
             </p>
           </>
         ),
       },
- 
+
       // ── Conclusion ─────────────────────────────────────────────────────────
       {
         id: "conclusion",
@@ -5222,17 +5389,18 @@ export const guides = {
               Your child&apos;s vision is precious and fragile. Don&apos;t wait
               for symptoms to appear.{" "}
               <a
-                className="text-primary hover:underline" 
+                className="text-primary hover:underline"
                 href="https://www.360eyecare.ca/book-eye-exam"
               >
                 Book a pediatric eye exam with our pediatric optometrists in
                 Toronto today.
               </a>
-               <br/>Clear vision is the greatest gift you can give your child.
+              <br />
+              Clear vision is the greatest gift you can give your child.
             </p>
           </>
         ),
-        contentBottom:null,
+        contentBottom: null,
       },
     ],
     faqs: [
@@ -5263,22 +5431,494 @@ export const guides = {
     ],
   },
 
-  // page - 7
+  // page - 8
   "eye-care-tips-toronto-healthy-vision": {
-    title: "Eye Care 101",
-    subtitle: "How Do I Take Care of My Child’s Eyes? A Complete Guide for Parents",
-    keyTakeaways: [],
+    title: "Top Eye Care Tips for Healthy Vision",
+    subtitle:
+      "Top Eye Care Tips for Healthy Vision: A Complete Guide to Protecting Your Eyes",
+    featureImage: OptometryImage,
+    keyTakeaways: [
+      "Position your screen at arm’s length and slightly below eye level. Follow the 20-20-20 rule (every 20 minutes, look 20 feet away for 20 seconds).",
+      "Wear UV400 sunglasses every time you’re outside, even in winter. UV rays cause cataracts and macular degeneration over time.",
+      "Eye exercises reduce fatigue and make long screen days more comfortable, though they don’t cure vision conditions.",
+      "Use preservative-free artificial tears and a humidifier to keep eyes hydrated. Blink deliberately when using screens.",
+      "Dark leafy greens, fatty fish, and colorful vegetables provide essential vitamins and antioxidants for long-term eye health.",
+    ],
     content: (
-      <p>
-        From cataracts to glaucoma, we provide comprehensive care and management
-        for a wide range of ocular health conditions.
-      </p>
+      <>
+        <p>
+          Our eyes take constant beating from stress, pollution, and prolonged
+          screen time. These occurrences threaten our vision. Yet we ignore them
+          until we notice the first blur. Let’s face the facts: you’ve only got
+          a pair of eyes. Therefore, it makes sense to protect and take good
+          care of them.
+        </p>
+        <p className="mt-4">
+          To give your eyes the care they deserve, this guide offers practical
+          tips on how to protect your eyes and maintain sharp vision for years
+          to come.
+        </p>
+      </>
     ),
-    sections: [],
-    faqs: [],
+    sections: [
+{
+        id: "daily-eye-care-tips",
+        heading: "What Are the Best Daily Eye Care Tips?",
+        image: {
+          src: understandDryEyeImage,
+          alt: "Daily eye care habits",
+        },
+        contentTop: (
+          <div className="space-y-4">
+            <p>
+              Our eyes work hard all day, every day, from the day we are born.
+              To continue enjoying their service, we must care for them, just
+              like we do for our cars. Eye care doesn’t have to be expensive.
+              Simple everyday habits can make a big difference.
+            </p>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                1. Blink More Than You Think You Need To
+              </h4>
+              <p>
+                We blink less when we stare at screens; a whole lot less.
+                Normally, we are supposed to blink 15 times every minute. This
+                number drops down to five or six when we stare at screens.
+                Blinking lubricates our eyes, and when we do this less, our eyes
+                dry out.
+              </p>
+              <p className="mt-4">
+                To improve your blink rate, look away from your screen at
+                something 20 feet away every 20 minutes for 20 seconds, and
+                blink a few times consciously. This is called the 20:20:20 rule.
+                Set a reminder for this exercise if you have to. It sounds
+                silly, but it works.
+              </p>
+            </div>
+          </div>
+        ),
+        contentBottom: (
+          <div className="space-y-4 mt-4">
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                2. Water Isn’t Just for Your Body
+              </h4>
+              <p>
+                If you’re not drinking enough water, your eyes can’t produce
+                enough tears to keep them lubricated. Drink at least eight
+                glasses of water daily, or more if you live in a dry environment
+                or spend time in air-conditioned spaces.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                3. Lighting is Important
+              </h4>
+              <p>
+              Neither dim lighting nor excessive glare is good for your eyes. Your workspace should have even, comfortable lighting. Avoid harsh overhead lights that cast shadows on your screen, and position yourself away from windows that create distracting glare.
+              </p>
+              <p className="mt-4">Place your monitor so windows are to the side, not directly behind or in front of you. Use a desk lamp for additional task lighting if needed.</p>
+              <p className="mt-4">At night, avoid working in complete darkness with a bright screen. Keep some ambient light in the room to reduce eye strain.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                4. Stop Rubbing Your Eyes
+              </h4>
+              <p>
+               I know they itch. I know it feels good in the moment. However, rubbing transfers bacteria from your hands straight to your eyes. It can scratch your cornea and make irritation worse, not better. If your eyes itch, try a cold compress instead, or rinse them with cool water. If the itching persists, consult a doctor about appropriate eye drops.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                5. Build a Routine
+              </h4>
+              <ul className="list-disc ml-5 space-y-1">
+                <li>
+                  <strong>Morning:</strong> Splash your face with cool water and
+                  wash hands before handling contacts.
+                </li>
+                <li>
+                  <strong>Throughout the day:</strong> Follow the 20-20-20 rule
+                  and drink water.
+                </li>
+                <li>
+                  <strong>Evening:</strong> Remove all eye makeup before bed to
+                  prevent infections and irritation.
+                </li>
+              </ul>
+              <p className="mt-4">If your eyes feel tired, place a warm compress over them for a few minutes. This helps your eyelid oil glands function properly and soothes eye strain.</p>
+            </div>
+          </div>
+        ),
+      },
+      // section 1
+      {
+        id: "foods-for-eye-health",
+        heading: "What Foods Improve Eye Health Naturally?",
+        image: {
+          src: EyeEmergencyImage,
+          alt: "Healthy nutrition for eyes",
+        },
+        contentTop: (
+          <div className="space-y-4">
+            <p>
+              You can’t eat your way to perfect vision. No superfood will fix nearsightedness. No amount of carrots will let you throw away your glasses. But nutrition is still very important. Your eyes are complex organs with high metabolic demands. They need specific nutrients to function properly, fight oxidative stress, and resist age-related decline. Feed them right, and you’re stacking the odds in your favor. Here are some nutritional recommendations to help keep your eyes healthy:
+            </p>
+            <div>
+              <h4 className="font-bold text-primary mb-1">1. Vitamin A</h4>
+              <p>
+               Your retina can’t function without vitamin A. It’s essential for producing rhodopsin, a protein that lets your eyes detect light in low-light conditions. Night blindness develops without enough vitamin A. In severe cases, the cornea can deteriorate.
+              </p>
+              <p className="mt-4">Most people in developed countries get enough vitamin A to avoid deficiency. But optimal intake for long-term eye health requires more than just avoiding deficiency.</p>
+            </div>
+          </div>
+        ),
+        contentBottom: (
+          <div className="space-y-4 mt-4">
+            <div>
+              <ul>
+                <li>Good sources : sweet potatoes, carrots, butternut squash, spinach, kale, and red peppers.</li>
+              </ul>
+              <p className="mt-2">Your body converts beta-carotene from these foods into vitamin A. Eating them with a bit of fat helps absorption (beta-carotene is fat-soluble).</p>
+              <p className="mt-2">Animal sources provide pre-formed vitamin A: liver, egg yolks, and dairy products.</p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                2. Lutein and Zeaxanthin
+              </h4>
+              <p>
+               These two carotenoids concentrate in your macula (the part of your retina responsible for central, detailed vision). They filter harmful blue light and neutralise free radicals before they can damage delicate eye tissue.
+              </p>
+              <p className="mt-2">Studies consistently show that higher intake of lutein and zeaxanthin correlates with lower risk of cataracts and age-related macular degeneration.</p>
+              <ul className="list-disc ml-5 mt-2 space-y-1">
+                <li><strong>Where to find them:</strong> Dark leafy greens lead the pack—kale, spinach, collard greens, and Swiss chard are loaded with both.</li>
+                <li><strong>Other sources:</strong> Egg yolks, corn, peas, and orange peppers.</li>
+                <li><strong>Kale is particularly potent:</strong> one cup of cooked kale delivers more lutein and zeaxanthin than most people consume in a week.</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                3. Omega-3 Fatty Acids
+              </h4>
+              <p>
+                Your retina contains high concentrations of DHA, an omega-3 fatty acid essential for eye health. DHA maintains retinal cell membrane integrity and supports tear production. Low omega-3 intake is associated with dry eye syndrome and increased macular degeneration risk.
+              </p>
+              <p>Omega-3s also combat inflammation throughout the body, including in eye tissue.</p>
+              <ul className='list-disc ml-5 space-y-1 mt-2'><li>Best sources: Fatty fish (salmon, mackerel, sardines, and trout) top the list.</li></ul>
+              <p className="mt-2">Wild salmon (particularly from the Pacific Northwest) and Atlantic mackerel are excellent sustainable choices, available fresh or canned.</p>
+              <ul><li><strong>Plant-based options:</strong> Flaxseeds, chia seeds, hemp hearts, and walnuts contain ALA. Your body converts ALA to DHA and EPA, but the conversion rate is low—typically under 10%.</li>
+              <li><strong>For non-fish eaters:</strong> Algae-based omega-3 supplements provide DHA directly without fish, making them suitable for vegetarians and vegans.</li></ul>
+              <p className=" mt-2">For more information on how nutrition improves your eyes, <a className="text-primary hover:underline" href="https://www.360eyecare.ca/healthy-eyes-at-every-age-a-guide-for-the-beaches-yorkville-and-rosedale-residents/">read our blog on nutrition and eye health.</a></p>
+            </div>
+          </div>
+        ),
+      },
+      // section 2
+      {
+        id: "eye-exercises",
+        heading: "Can Eye Exercises Improve Vision?",
+        image: {
+          src: EyeEmergencyImage,
+          alt: "Eye exercise demonstration",
+        },
+        contentTop: (
+          <div className="space-y-4">
+            <p>
+             Eye exercises won’t fix your nearsightedness. They won’t cure astigmatism. If you need glasses, no amount of eye yoga will change that. But that doesn’t mean they’re useless.
+            </p>
+            <p className="mt-2">Eye exercises do have a place; you just need to know what they can and can’t do.</p>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                What Eye Exercises Do
+              </h4>
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Reducing eye strain from screen time</li>
+                <li>Improving your ability to shift focus</li>
+                <li>Relieving tension headaches caused by eye fatigue</li>
+                <li>Improving coordination between your eyes</li>
+              </ul>
+              <p className="mt-2">
+                They make your eyes feel better, more comfortable, and less
+                exhausted at the end of a long day.
+              </p>
+            </div>
+          </div>
+        ),
+        contentBottom: (
+          <div className="space-y-6 mt-4">
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                2. The Big Myth: Fixing Refractive Errors
+              </h4>
+              <p>
+                Nearsightedness, farsightedness, and astigmatism are structural issues.
+                No exercise can change your eye’s physical structure. Some programs
+                online claim otherwise, selling courses that promise you’ll eliminate
+                your need for glasses within weeks. The science doesn’t support
+                these claims.
+              </p>
+              <p className="mt-2">
+                Multiple studies have tested this, and the results are consistent:
+                eye exercises don’t correct refractive errors. If someone tells you
+                otherwise, they’re either misinformed or trying to sell you
+                something.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                3. Where Exercise Helps
+              </h4>
+              <p>
+                Digital eye strain is real. Stare at a screen for hours, and your
+                eyes pay the price. They get dry, and they hurt. Simple exercises can
+                ease this discomfort. They give your eye muscles a break and help
+                them recover.
+              </p>
+              <h5 className="font-bold text-primary mt-4 mb-2">Effective Eye Exercise Techniques:</h5>
+              <div className="space-y-4">
+                <div>
+                  <ul><li className="list-disc ml-5 space-y-1"><strong className="font-semibold text-primary">The 20-20-20 Rule : </strong><span>Every 20 minutes, look at something 20 feet away for 20 seconds. It forces your eyes to refocus and relax.</span></li></ul>
+                </div>
+                <div>
+                  <ul><li className="list-disc ml-5 space-y-1"><strong className="font-semibold text-primary">Palming : </strong><span>Rub your hands together until they’re warm, then cup them gently over your closed eyes for 30 seconds. Do not apply pressure. It’s deeply soothing.</span></li></ul>
+                </div>
+                <div>
+                  <ul><li className="list-disc ml-5 space-y-1"><strong className="font-semibold text-primary">Figure-Eight Tracing : </strong><span>Imagine a giant figure-eight about ten feet in front of you. Trace it slowly with your eyes for 30 seconds, then reverse direction. It helps with flexibility.</span></li></ul>
+                </div>
+                <div>
+                  <ul><li className="list-disc ml-5 space-y-1"><strong className="font-semibold text-primary">Near-and-Far Focusing : </strong><span>Focus on your thumb 10 inches from your face for 15 seconds, then shift to something 20 feet away for 15 seconds. Repeat 10 times to build flexibility.</span></li></ul>
+                </div>
+              </div>
+              <p className="mt-4">
+                These exercises won’t improve your vision, but they will make your
+                eyes feel less tired.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-primary mb-1">
+                4. Convergence Insufficiency Is Different
+              </h4>
+              <p>
+                Some people struggle to use their eyes together properly. Their eyes don’t coordinate well when focusing on close objects. This is called convergence insufficiency. For this specific condition, exercises actually work. Pencil push-ups and other convergence exercises can retrain your eyes to work as a team.
+              </p>
+              <p className="mt-2">
+              But this isn’t about improving general vision. It’s physical therapy for a specific coordination problem. If you suspect you have convergence insufficiency, an eye doctor can diagnose it and guide you through the appropriate exercises.
+              </p>
+            </div>
+          </div>
+        ),
+      },
+      // section 3
+      
+      {
+        id: "protection-sunglasses",
+        heading: "How Do Sunglasses and Safety Eyewear Protect My Vision?",
+        image: {
+          src: GlaucomaImage,
+          alt: "Sunglasses for eye protection",
+        },
+        contentTop: (
+          <div className="space-y-4">
+            <p>
+              Your eyes don’t come with a warning light. They won’t tell you when UV damage is happening. They won’t alert you before flying debris causes permanent harm. By the time you notice something’s wrong, it’s often too late. That’s why it’s important to protect your eyes every single time you’re exposed to risk and not sometimes. Here’s how sunglasses and other safety wear protect your vision.
+            </p>
+          </div>
+        ),
+        contentBottom: (
+          <div className="space-y-4 mt-4">
+            <h4 className="font-medium text-primary">1. UV Rays Are Bad</h4> <p>You know UV rays damage your skin. The same goes for your eyes. Ultraviolet radiation comes from the sun. It’s invisible and accumulates silently over time, causing serious problems. Short-term exposure can give you photokeratitis, essentially a sunburn on your eyeball. It hurts, and your vision gets blurry. It usually heals within a day or two, but it’s miserable while it lasts.</p>
+            <p>Long-term exposure is scarier. Cataracts develop when the lens inside your eye clouds over. UV radiation speeds this process up. Macular degeneration, which destroys central vision, is also linked to UV exposure. Then there’s pterygium, a growth on the white of your eye that can eventually block your vision. None of this is reversible. The damage builds over decades. By the time symptoms appear, you can’t undo what’s been done.</p>
+          <h4 className="font-medium text-primary">2. Not All Sunglasses Are Equal</h4>
+          <p>Dark lenses don’t mean protection. In fact, dark lenses without UV protection are worse than wearing nothing. Your pupils dilate in the darkness, letting in more UV rays.</p>
+          <p>Look for sunglasses labeled UV400. This rating blocks 99-100% of UVA and UVB rays; that’s the standard you need. Some glasses claim to “block UV rays” without specifying how much. Skip those. You want the UV400 label or a guarantee of 100% UV protection.</p>
+          <h4 className="font-medium text-primary">3. The Difference between Polarized and UV400</h4>
+          <p>People confuse these all the time. UV400 protects against ultraviolet radiation. That’s the health benefit; the thing that prevents long-term damage.</p>
+          <p>Polarized lenses reduce glare. They filter out reflected light bouncing off water, snow, car hoods, and pavement. This makes your vision clearer and more comfortable in bright conditions.</p>
+          <p>Here’s the key: polarized lenses don’t necessarily block UV rays, and UV400 lenses aren’t always polarized. You can have one without the other. Ideally, you want both.</p>
+          <p>If you’re driving, fishing, skiing, or spending time near water, polarized lenses make a huge difference. But UV400 protection is non-negotiable, no matter what you’re doing outside.</p>
+          </div>
+        ), 
+      },
+      // section 4
+      {
+        id: "prevent-eye-strain",
+        heading: "What Are the Best Ways to Prevent Eye Strain?",
+        contentTop: (
+          <div className="space-y-4">
+            <p>
+              Your eyes aren’t designed for what you’re putting them through,
+              such as hours of staring at screens, bad lighting, forgetting to
+              blink, ignoring discomfort until it becomes pain, etc. Then you
+              wonder why your head throbs at the end of the day.
+            </p>
+            <p>
+              Eye strain happens because you’re working against your biology
+              without giving your eyes what they need. Fix that, and everything
+              changes. So, here’s how:
+            </p>
+          </div>
+        ),
+        contentBottom: (
+          <div className="space-y-12 mt-8">
+            {/* 1. Workstation Setup */}
+            <div>
+              <h4 className="font-bold text-primary mb-3">
+                1. A Proper workstation setup
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <Image
+                  src={ScreenHeadachesFeature}
+                  alt="Ergonomic workstation"
+                  className="w-full h-auto object-cover rounded-xl shadow-lg border border-gray-100"
+                />
+                
+                <ul className="list-disc ml-5 space-y-3">
+                  <li>
+                    <p className="mb-4">
+                      Most people set up their desk based on what fits or aesthetic
+                      reasons. If the screen is too high, you’ll strain your neck and
+                      dry out your eyes because you’re staring upward with them wide
+                      open. If the screen is too low, you’ll hunch forward,
+                      compressing your spine and forcing your eyes to work harder at
+                      an awkward angle.
+                    </p>
+                  </li>
+                  <li>
+                    <strong>Position your monitor at arm’s length.</strong> If
+                    you can touch the screen with your fingertips when your arm
+                    is fully extended, you’re in the right zone.
+                  </li>
+                  <li>
+                    <strong>
+                      The top of your screen should sit at or slightly below eye
+                      level.
+                    </strong>{" "}
+                    When you look straight ahead naturally, you should be
+                    viewing the upper third of the screen.
+                  </li>
+                  <li>
+                    <strong>Tilt the screen back 10 to 20 degrees</strong> to
+                    match your natural downward viewing angle. If you use a
+                    laptop, get a separate keyboard and prop the laptop up on a
+                    stand.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* 2. Proper Lighting */}
+            <div>
+              <h4 className="font-bold text-primary mb-3">2. Proper Lighting</h4>
+              <p className="mb-6">
+                Overhead fluorescents create glare on your screen and cast harsh
+                shadows. Your eyes constantly adjust between bright spots and
+                dark areas, which exhausts them.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <p>
+                    Ambient lighting works better (soft, indirect light that
+                    fills the room without creating hotspots). Position your
+                    desk perpendicular to windows.
+                  </p>
+                  <p>
+                    Position your desk perpendicular to windows, not facing them or with your back to them. Windows behind you create glare on your screen, while windows in front force your eyes to constantly adjust between bright outdoor light and your dimmer screen.
+                  </p>
+                  <p>If you can’t reposition your desk, use blinds or curtains to control natural light. Add a desk lamp for task lighting when needed. Position it to the side so it illuminates your work without shining in your eyes or reflecting off your screen. At night, don’t work in a dark room with only your bright screen for light. The contrast is too extreme. Keep some ambient lighting on.</p>
+                </div>
+                <Image
+                  src={EyeEmergencyImage}
+                  alt="Proper ambient lighting"
+                  className="w-full h-72 object-cover rounded-xl shadow-lg border border-gray-100 order-first md:order-last"
+                />
+              </div>
+            </div>
+
+            {/* 3. Reading Habits */}
+            <div>
+              <h4 className="font-bold text-primary mb-3">3. Reading Habits</h4>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <Image
+                  src={UnderstandImage1}
+                  alt="Proper reading habits"
+                  className="w-full h-auto object-cover rounded-xl shadow-lg border border-gray-100"
+                />
+                <div className="space-y-4">
+                  <p className="mb-4">
+                    Books and phones require closer focus than computer screens. 
+                    Hold reading material about 16 inches from your eyes. Closer 
+                    than that, and you’re making your eye muscles work overtime.
+                  </p>
+                  <p>
+                    Reading light should come from behind you and shine onto the
+                    page. You don’t want it reflecting off the page into your
+                    eyes.
+                  </p>
+                  <p>
+                    For digital reading, <strong>increase the font size</strong>.
+                    Stop squinting and adjust brightness to match your
+                    environment—not maximum brightness in a dark room or a dim
+                    screen in bright light.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ),
+      },
+      {
+        id: "tips-conclusion",
+        heading: "Conclusion",
+        contentTop: (
+          <div>
+            <p>
+              Your eyes can’t heal themselves from neglect. But small
+              changes—better habits, proper protection, and smart nutrition—make
+              a real difference over time. Don’t wait until problems develop.
+            </p>
+            <p>
+              <a
+                className="text-primary hover:underline font-bold"
+                href="https://www.360eyecare.ca/book-eye-exam"
+              >
+                Book an eye exam today{" "}
+              </a>
+              to catch issues early when they’re still treatable. Your vision is
+              worth protecting.
+            </p>
+          </div>
+        ),
+      },
+    ],
+    faqs: [
+      {
+        id: 1,
+        question: "How often should I get an eye exam?",
+        answer:
+          "Every one to two years for adults, even if your vision seems fine. Some conditions like glaucoma develop silently without symptoms. Early detection is crucial for preventing permanent damage and preserving your sight long-term.",
+      },
+      {
+        id: 2,
+        question: "Can I wear sunglasses indoors to reduce screen glare?",
+        answer:
+          "No. Sunglasses indoors make your pupils dilate, forcing your eyes to work harder in dim conditions. Instead, adjust screen brightness, improve lighting, and use anti-glare screen filters or computer glasses designed for indoor use.",
+      },
+      {
+        id: 3,
+        question: "Do blue light glasses really help with eye strain?",
+        answer:
+          "The evidence is mixed. Blue light isn’t the main cause of eye strain; it’s prolonged focus and reduced blinking. Proper breaks, good ergonomics, and regular blinking often work better than blue light glasses for most people.",
+      },
+      {
+        id: 4,
+        question: "Are expensive sunglasses better for eye protection?",
+        answer:
+          "Not necessarily. Price doesn’t guarantee UV protection. A $20 pair with UV400 rating protects better than $200 designer sunglasses without it. Always check for UV400 or 100% UV protection labels, regardless of cost.",
+      },
+    ],
   },
 
-  // page - 8
+  // page - 9
   "eye-protection-101-toronto-tips": {
     title: "Eye Protection 101",
     keyTakeaways: [],
