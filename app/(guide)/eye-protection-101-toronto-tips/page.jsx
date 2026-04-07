@@ -18,7 +18,7 @@ const EyeProtectionGuide = () => {
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
-      text={guideData.title}
+      text={guideData.subtitle}
       />
       
       <GuideFeatureImage 
@@ -44,7 +44,7 @@ const EyeProtectionGuide = () => {
  
       <GuideImageLeft {...guideData.sections[7]} />
  
-      <GuideImageRight {...guideData.sections[8]} />
+      {/* <GuideImageRight {...guideData.sections[8]} /> */}
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
