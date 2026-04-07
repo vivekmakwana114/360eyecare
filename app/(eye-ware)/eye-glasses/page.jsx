@@ -357,7 +357,7 @@ const pages = () => {
             </div>
             <div className="w-full md:w-[50%] md:pl-4">
               <Image
-                src={eyeglasses}
+                // src={eyeglasses}
                 alt="Eye care professionals with patients"
                 className="object-cover w-full md:w-[45%] mx-auto md:mx-0"
                 width={578}

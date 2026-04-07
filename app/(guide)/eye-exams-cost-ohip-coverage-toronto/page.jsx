@@ -29,6 +29,28 @@ const EyeExamsGuide = () => {
       <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
       {/* Sections will be added here directly when data is available */}
+      <GuideImageRight {...guideData.sections[0]} />
+ 
+      {/* Section 1 – Who Needs an Eye Exam */}
+      <GuideImageLeft {...guideData.sections[1]} />
+ 
+      {/* Section 2 – Step-by-Step Process */}
+      <GuideImageRight {...guideData.sections[2]} />
+ 
+      {/* Section 3 – Cost & OHIP */}
+      <GuideImageLeft {...guideData.sections[3]} />
+ 
+      {/* Section 4 – Age Groups & Needs */}
+      <GuideImageRight {...guideData.sections[4]} />
+ 
+      {/* Section 5 – Technology */}
+      <GuideImageLeft {...guideData.sections[5]} />
+ 
+      {/* Section 6 – How to Find the Right Optometrist */}
+      <GuideImageRight {...guideData.sections[6]} />
+ 
+      {/* Section 7 – Conclusion (no image) */}
+      <GuideImageLeft {...guideData.sections[7]} />
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
