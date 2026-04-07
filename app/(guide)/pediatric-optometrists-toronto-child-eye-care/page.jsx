@@ -18,7 +18,7 @@ const PediatricGuide = () => {
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
-      text={guideData.title}
+      text={guideData.subtitle}
       />
       
       <GuideFeatureImage 
@@ -28,7 +28,31 @@ const PediatricGuide = () => {
 
       <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
-      {/* Sections will be added here directly when data is available */}
+       <GuideImageRight {...guideData.sections[0]} />
+ 
+      {/* Section 1 – Warning Signs */}
+      <GuideImageLeft {...guideData.sections[1]} />
+ 
+      {/* Section 2 – Why Regular Eye Exams Are Essential */}
+      <GuideImageRight {...guideData.sections[2]} />
+ 
+      {/* Section 3 – Myopia & Hyperopia */}
+      <GuideImageLeft {...guideData.sections[3]} />
+ 
+      {/* Section 4 – Amblyopia & Strabismus + Other Concerns */}
+      <GuideImageRight {...guideData.sections[4]} />
+ 
+      {/* Section 5 – Screen Time, Outdoor Play & Healthy Habits */}
+      <GuideImageLeft {...guideData.sections[5]} />
+ 
+      {/* Section 6 – Eye Protection (Sports, UV, Ergonomics) */}
+      <GuideImageRight {...guideData.sections[6]} />
+ 
+      {/* Section 7 – When to Seek Immediate Care */}
+      <GuideImageLeft {...guideData.sections[7]} />
+ 
+      {/* Section 8 – Conclusion */}
+      <GuideImageRight {...guideData.sections[8]} />
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
