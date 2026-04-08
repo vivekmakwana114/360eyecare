@@ -54,9 +54,9 @@ export const guideData = {
               <h4 className="font-bold text-primary mb-2">Optometrist</h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optometrist-toronto.png" width={500} height={300}
+                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optometrist-toronto.png" width={500} height={500}
                   alt="Optometrist"
-                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
                 />
                 <p className="flex-1">
                   An optometrist is the person you see for routine eye care.
@@ -71,9 +71,9 @@ export const guideData = {
               <h4 className="font-bold text-primary mb-2">Ophthalmologist</h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-ophthalmologist-toronto.png" width={500} height={300}
+                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-ophthalmologist-toronto.png" width={500} height={500}
                   alt="Ophthalmologist"
-                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
                 />
                 <p className="flex-1">
                   Ophthalmologists do everything an optometrist does, but in
@@ -88,9 +88,9 @@ export const guideData = {
               <h4 className="font-bold text-primary mb-2">Optician</h4>
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optician-toronto.png" width={500} height={300}
+                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optician-toronto.png" width={500} height={500}
                   alt="Optician"
-                  className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
+                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
                 />
                 <p className="flex-1">
                   Opticians don&apos;t examine your eyes or prescribe

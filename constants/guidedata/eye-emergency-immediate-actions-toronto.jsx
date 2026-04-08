@@ -5,7 +5,7 @@ import Image from "next/image";
 export const guideData = {
   title: "Eye Emergency 101",
   subtitle: "What Should I Do If I Have an Eye Emergency in Toronto?",
-  featureImage: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-prevent-eye-emergencies.png",
+  featureImage: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-eye-emergency-toronto.png",
   keyTakeaways: [
     "Sudden vision loss, severe pain, chemical burns, or eye trauma need immediate medical attention to prevent permanent damage.",
     "Choose the right care level: emergency rooms for severe trauma and chemical burns, optometrists for urgent but stable issues.",
@@ -36,7 +36,7 @@ export const guideData = {
       id: "what-is-eye-emergency",
       heading: "What Counts as an Eye Emergency?",
       image: {
-        src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-eye-emergency-toronto.png",
+        src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-prevent-eye-emergencies.png",
         alt: "Eye emergency Toronto",
       },
       contentTop: (

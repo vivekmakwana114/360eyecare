@@ -6,7 +6,7 @@ export const guideData = {
   title: "Pediatric Eye Care 101",
   subtitle:
     "How Do I Take Care of My Child's Eyes? A Complete Guide for Parents",
-  featureImage: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/beaming-pretty-child-being-great-mood-while-having-session.jpg",
+  featureImage: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-pediatric-optometrist-toronto copy.png",
   keyTakeaways: [
     "Children rarely complain about vision problems. Regular eye exams starting in infancy are essential to catch issues before they affect development.",
     "More outdoor time, less screen time, proper nutrition, and good sleep habits directly impact eye health and can prevent myopia progression.",
@@ -183,7 +183,7 @@ export const guideData = {
       id: "regular-eye-exams",
       heading: "Why Regular Eye Exams Are Essential",
       image: {
-        src: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-pediatric eye-clinic-toronto.png",
+        src: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-regular-eye-exams-for-children-in-toronto.png",
         alt: "Regular pediatric eye exams Toronto",
       },
       contentTop: (

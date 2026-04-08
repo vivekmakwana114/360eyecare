@@ -5,7 +5,7 @@ import Image from "next/image";
 export const guideData = {
   title: "Glasses vs Contact Lenses",
   subtitle: "Should I Choose Glasses or Contact Lenses? A Complete Guide",
-  featureImage: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-difference-between-glasses-and-contact-lenses.png",
+  featureImage: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-glasses-vs-contact-lenses-toronto.png",
   keyTakeaways: [
     'Your choice depends on lifestyle, not which option is "better".',
     "Sports, swimming, and outdoor activities favor contact lenses for freedom and safety.",
@@ -34,7 +34,7 @@ export const guideData = {
       id: "difference",
       heading: "What's the Difference Between Glasses and Contact Lenses?",
       image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-glasses-vs-contact-lenses-toronto.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-difference-between-glasses-and-contact-lenses.png",
         alt: "Glasses vs contact lenses comparison",
       },
       contentTop: (

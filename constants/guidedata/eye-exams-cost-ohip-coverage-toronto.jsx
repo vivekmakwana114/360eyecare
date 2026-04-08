@@ -6,7 +6,7 @@ export const guideData = {
   title: "Complete Guide to Eye Exams in Toronto",
   subtitle:
     "Complete Guide to Eye Exams in Toronto: Cost, OHIP Coverage, and How to Find the Right Optometrist",
-  featureImage: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-in-toronto.png",
+  featureImage: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-toronto.png",
   keyTakeaways: [
     "OHIP covers eye exams in Toronto for kids under 20 and adults over 65.",
     "Adults over 40 need annual exams, while younger people can wait two years between visits.",
@@ -38,7 +38,7 @@ export const guideData = {
       id: "what-is-eye-exam",
       heading: "What is an Eye Exam?",
       image: {
-        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-toronto.png",
+        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-in-toronto.png",
         alt: "Optometrist in Toronto conducting an eye exam with a slit lamp biomicroscope",
       },
       contentTop: (
