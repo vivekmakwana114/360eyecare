@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/pediatric-optometrists-toronto-child-eye-care";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
@@ -12,9 +12,13 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Pediatric Optometrists in Toronto on Caring for Your Child’s Eyes",
+  description: "Protect your child’s vision with tips from pediatric optometrists in Toronto on eye care, early detection, and healthy habits for growing eyes.",
+};
+
 const PediatricGuide = () => {
-  const guideData = guides["pediatric-optometrists-toronto-child-eye-care"];
-  if (!guideData) return <div>Guide not found</div>;
+      if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader

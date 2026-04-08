@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/eye-care-tips-toronto-healthy-vision";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
@@ -12,9 +12,13 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Eye Care Tips Toronto: Secrets to Strong and Healthy Vision",
+  description: "Simple yet effective Eye Care Tips Toronto locals rely on to safeguard eyesight, prevent strain, and support overall eye health.",
+};
+
 const EyeCareTipsGuide = () => {
-  const guideData = guides["eye-care-tips-toronto-healthy-vision"];
-  if (!guideData) return <div>Guide not found</div>;
+      if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader

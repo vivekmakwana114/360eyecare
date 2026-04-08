@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/eye-exams-cost-ohip-coverage-toronto";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
@@ -12,9 +12,13 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Eye Exams Toronto: Cost, OHIP Coverage and How to Choose the Right Optometrist",
+  description: "Get key details on eye exams Toronto including cost, OHIP coverage and smart tips to choose the right optometrist.",
+};
+
 const EyeExamsGuide = () => {
-  const guideData = guides["eye-exams-cost-ohip-coverage-toronto"];
-  if (!guideData) return <div>Guide not found</div>;
+      if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader

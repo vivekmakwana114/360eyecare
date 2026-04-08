@@ -212,7 +212,7 @@ const pages = () => {
         "Indestructible and flexible children's glasses.",
       description:
         "NanoVista’s Nano Indestructible kids eyeglass frames are engineered for maximum durability, comfort, and everyday performance. Made with patented Siliflex™ material, these ultra-flexible, lightweight children’s glasses are designed to bend, twist, and withstand impact—making them ideal for active kids and toddlers. The innovative 3-in-1 system features interchangeable temples and adjustable straps for a secure, customizable fit whether at school, sports, or play. Available in a range of fun colors and sizes, Nano Indestructible frames combine safety, resilience, and style, making them a top choice for parents looking for durable, flexible kids eyewear that lasts.",
-      catalogLink: "https://nano-vista.com/",
+      catalogLink: "https://nano-vista.com/en/collections/nano-indestructible/",
       logoImg: Nanovista1,
     },
     {
@@ -222,7 +222,7 @@ const pages = () => {
         "Designed for effortless style and all-day comfort.",
       description:
         "The AllSaints eyewear collection delivers contemporary, fashion-forward frames with a distinctive rock-and-roll edge. Designed for style-conscious men and women, these premium optical frames feature bold, gender-neutral shapes crafted from high-quality acetate and metal, with signature details like hexagonal hardware, textured finishes, and industrial-inspired elements. Rooted in individuality and authenticity, AllSaints glasses combine modern design with durable craftsmanship, making them an ideal choice for patients seeking designer eyewear that blends edgy style with everyday wearability.",
-      catalogLink: "https://www.allsaints.com/",
+      catalogLink: "https://www.westgroupe.com/US/catalog/index?brandName=AllSaints",
       logoImg: Allsaints,
     },
     {
