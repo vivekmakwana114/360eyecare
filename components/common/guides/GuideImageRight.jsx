@@ -13,7 +13,7 @@ const GuideImageRight = ({
   contentBottom,
 }) => {
   return (
-    <section className="max-w-6xl mx-auto mt-8 sm:mt-10 mb-12 sm:mb-16 px-4 sm:px-0">
+    <section className="max-w-6xl mx-auto mt-8 sm:mt-10 mb-10 sm:mb-16 px-4 sm:px-0">
       <div className="flex flex-col sm:flex-row justify-between items-stretch gap-10 sm:gap-16">
         {/* Content Side */}
         <div className="w-full sm:flex-1 flex flex-col gap-4">
@@ -30,7 +30,7 @@ const GuideImageRight = ({
               {subheading}
             </h3>
           )}
-          <div className="text-neutral-500 text-base leading-relaxed space-y-4">
+          <div className="text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
             {contentTop}
           </div>
         </div>
@@ -56,7 +56,7 @@ const GuideImageRight = ({
       </div>
       
       {contentBottom && (
-        <div className="mt-10 text-neutral-500 text-base leading-relaxed space-y-4">
+        <div className="mt-10 text-neutral-500 text-base leading-relaxed space-y-4 text-justify">
           {contentBottom}
         </div>
       )}

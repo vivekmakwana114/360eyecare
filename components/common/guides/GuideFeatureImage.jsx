@@ -27,7 +27,7 @@ const GuideFeatureImage = ({ image, content }) => {
 
       {content && (
         <div className="max-w-7xl">
-          <div className="text-neutral-600 text-lg leading-relaxed space-y-6 font-light">
+          <div className="text-neutral-600 text-lg leading-relaxed space-y-6 font-light text-justify">
             {content}
           </div>
           <div className="mt-8 flex justify-start">

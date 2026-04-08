@@ -3,10 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { BeachImage, YorkVilleRosedale } from "../../../constants/Images";
 
-/**
- * LocationSection component displaying Beaches and Yorkville offices side-by-side.
- * Used at the bottom of guide pages to provide contact and booking information.
- */
 const LocationSection = () => {
   const locations = [
     {
@@ -14,12 +10,12 @@ const LocationSection = () => {
       address: "2199 Queen Street East, Toronto, ON M4E 1E5",
       phone: "416-698-3937",
       image: BeachImage,
-      bookingLink: "/book-eye-exam/#book-appointment", // Links to Beaches booking section
+      bookingLink: "/book-eye-exam/#book-appointment",
       websiteLink: "/toronto-beaches-optometrist/",
     },
     {
-      name: "360 Eyecare - Yorkville Rosedale",
-      address: "55 Bloor St W Suite 03, Toronto, ON M4W 1A5",
+      name: "360 Eyecare - Yorkville",
+      address: "55 Bloor St W, Concourse level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada",
       phone: "416-901-2725",
       image: YorkVilleRosedale,
       bookingLink: "https://360rosedale.mypatientsportal.com/select-location",
@@ -40,7 +36,7 @@ const LocationSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
         {locations.map((loc, index) => (
-          <div key={index} className="flex flex-col gap-6 group">
+          <div key={index} className="flex flex-col h-full gap-6 group">
             {/* Location Image */}
             <div className="relative aspect-[16/10] overflow-hidden rounded-lg shadow-md transition-transform duration-300 group-hover:shadow-xl">
               <Image
@@ -52,26 +48,26 @@ const LocationSection = () => {
             </div>
 
             {/* Location Details */}
-            <div className="flex flex-col gap-3">
-              <h3 className="text-2xl font-bold text-primary">
-                {loc.name}
-              </h3>
+            <div className="flex flex-col flex-1 gap-3">
+              <h3 className="text-2xl font-bold text-primary">{loc.name}</h3>
               <p className="text-neutral-500 text-base leading-relaxed">
                 {loc.address}
               </p>
-              <div className="mt-2 flex flex-wrap gap-4">
+              <div className="mt-auto pt-4 flex flex-row gap-3">
                 <Link
                   href={loc.bookingLink}
-                  target={loc.bookingLink.startsWith("http") ? "_blank" : "_self"}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-secondary text-white font-bold rounded-md hover:bg-primary transition-colors duration-200 min-w-[160px]"
+                  target={
+                    loc.bookingLink.startsWith("http") ? "_blank" : "_self"
+                  }
+                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-secondary text-white text-sm sm:text-base font-bold rounded-md hover:bg-primary transition-colors duration-200"
                 >
                   Book Online
                 </Link>
                 <Link
                   href={`tel:${loc.phone.replace(/-/g, "")}`}
-                  className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-secondary text-secondary font-bold rounded-md hover:bg-secondary hover:text-white transition-colors duration-200 min-w-[160px]"
+                  className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-white border-2 border-secondary text-secondary text-sm sm:text-base font-bold rounded-md hover:bg-secondary hover:text-white transition-colors duration-200"
                 >
-                  Call: {loc.phone}
+                  Call
                 </Link>
               </div>
             </div>

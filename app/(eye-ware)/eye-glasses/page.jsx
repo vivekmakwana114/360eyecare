@@ -1,7 +1,7 @@
 import Link from "next/link";
 import SubHeader from "../../../components/SubHeader";
 import Image from "next/image";
-import { eyeglasses, eyeglassescommitted } from "../../../constants/Images";
+import { eyeglasses,eyeglasses1, eyeglasses2, eyeglasses3, eyeglassescommitted } from "../../../constants/Images";
 import { FaUserMd } from "react-icons/fa";
 import {
   Brand1,
@@ -29,6 +29,8 @@ import {
   Brand23,
   Brand24,
   Brandmykita,
+  Allsaints,
+  Nanovista,
 } from "../../../constants/brand";
 import Card from "../../../components/Card";
 import BookExamCommon from "../../../components/common/BookExampCommon";
@@ -40,7 +42,7 @@ import HoverCard from "../../../components/HoverCard";
 
 export async function generateMetadata() {
   return {
-    title: "Eyeglasses Toronto | Optical Store Beaches and Rosedale",
+    title: "Eyeglasses Toronto | Optical Store Beaches and Yorkville",
     description:
       "At 360 Eyecare we carry a wide selection of premium fashion and handmade designer eyeglasses. Get your favourite eyeglasses from our store.",
     openGraph: {
@@ -204,6 +206,26 @@ const pages = () => {
       logoImg: Brand14,
     },
     {
+      id: "nanovista",
+      name: "NanoVista",
+      tagline:
+        "Indestructible and flexible children's glasses.",
+      description:
+        "NanoVista’s Nano Indestructible kids eyeglass frames are engineered for maximum durability, comfort, and everyday performance. Made with patented Siliflex™ material, these ultra-flexible, lightweight children’s glasses are designed to bend, twist, and withstand impact—making them ideal for active kids and toddlers. The innovative 3-in-1 system features interchangeable temples and adjustable straps for a secure, customizable fit whether at school, sports, or play. Available in a range of fun colors and sizes, Nano Indestructible frames combine safety, resilience, and style, making them a top choice for parents looking for durable, flexible kids eyewear that lasts.",
+      catalogLink: "https://nano-vista.com/",
+      logoImg: Nanovista,
+    },
+    {
+      id: "allsaints",
+      name: "AllSaints",
+      tagline:
+        "Designed for effortless style and all-day comfort.",
+      description:
+        "The AllSaints eyewear collection delivers contemporary, fashion-forward frames with a distinctive rock-and-roll edge. Designed for style-conscious men and women, these premium optical frames feature bold, gender-neutral shapes crafted from high-quality acetate and metal, with signature details like hexagonal hardware, textured finishes, and industrial-inspired elements. Rooted in individuality and authenticity, AllSaints glasses combine modern design with durable craftsmanship, making them an ideal choice for patients seeking designer eyewear that blends edgy style with everyday wearability.",
+      catalogLink: "https://www.allsaints.com/",
+      logoImg: Allsaints,
+    },
+    {
       id: "all-poets",
       name: "All Poets",
       tagline: "All Poets Eyeglasses: Artistic and Expressive",
@@ -320,7 +342,7 @@ const pages = () => {
 
   return (
     <main className="pt-[110px] bg-[#F6F7F5]">
-      <SubHeader text="Eyeglasses" />
+      <SubHeader text="Eyeglasses frame brands and customizations in Toronto" />
       <div className="max-w-7xl mx-auto px-4 md:px-6 my-8 md:my-16 flex flex-wrap justify-between">
         <div className="w-full">
           {/* Hero section - Made responsive */}
@@ -357,7 +379,7 @@ const pages = () => {
             </div>
             <div className="w-full md:w-[50%] md:pl-4">
               <Image
-                src={eyeglasses}
+                src={eyeglasses1}
                 alt="Eye care professionals with patients"
                 className="object-cover w-full md:w-[45%] mx-auto md:mx-0"
                 width={578}
@@ -371,8 +393,8 @@ const pages = () => {
         <div className="w-full">
           {/* Collection title section - Made responsive */}
           <div className="w-full flex items-center justify-between flex-col text-center px-4">
-            <h2 className="text-combination-200 text-2xl md:text-[40px] font-extrabold font-poppins mt-2 mb-4">
-              Explore Our Designer Eyeglasses Collection
+            <h2 className="text-combination-200 text-2xl md:text-[32px] font-extrabold font-poppins mt-2 mb-4">
+              Explore our curated handcrafted and designer eyeglasses collection
             </h2>
             <hr className="w-16 md:w-24 h-[3px] bg-combination-100 mb-3" />
             <p className="text-neutral-500 max-w-3xl mx-auto">
@@ -411,7 +433,7 @@ const pages = () => {
       <DetailsDescripton
         title="Committed to Your Eye Health"
         description={whyChooseData}
-        image={eyeglassescommitted}
+        image={eyeglasses3}
         bullets={whyChooseDataBullets}
         url={whyChooseLink}
         noCatalog

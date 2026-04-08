@@ -36,7 +36,7 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
           isOpen ? "max-h-[1000px] py-4" : "max-h-0"
         }`}
       >
-        <p>{faq.answer}</p>
+        <p className="text-justify">{faq.answer}</p>
       </div>
     </div>
   );

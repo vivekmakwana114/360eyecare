@@ -4,9 +4,6 @@ import LocationSection from "../../../components/common/guides/LocationSection";
 import { guides } from "../../../constants/guideData";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
-import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
-import GuideImageFullRight from "../../../components/common/guides/GuideImageFullRight";
-import GuideCarousel from "../../../components/common/guides/GuideCarousel";
 import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
 import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeaways";
 import Faqs from "../../../components/Faqs";
@@ -18,7 +15,7 @@ const EyeProblemsGuide = () => {
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader
-      text={guideData.title}
+      text={guideData.subtitle}
       />
       
       <GuideFeatureImage 
@@ -28,15 +25,18 @@ const EyeProblemsGuide = () => {
 
       <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
-      {guideData.sections.map((section, index) => {
-        const SectionComponent = index % 2 === 0 ? GuideImageRight : GuideImageLeft;
-        return (
-          <SectionComponent 
-            key={section.id || index}
-            {...section}
-          />
-        );
-      })}
+      <GuideImageRight {...guideData.sections[0]} />
+      <GuideImageLeft {...guideData.sections[1]} />
+      <GuideImageRight {...guideData.sections[2]} />
+      <GuideImageLeft {...guideData.sections[3]} />
+      <GuideImageRight {...guideData.sections[4]} />
+      <GuideImageLeft {...guideData.sections[5]} />
+      <GuideImageRight {...guideData.sections[6]} />
+      <GuideImageLeft {...guideData.sections[7]} />
+      <GuideImageRight {...guideData.sections[8]} />
+      <GuideImageLeft {...guideData.sections[9]} />
+      <GuideImageRight {...guideData.sections[10]} />
+      <GuideImageLeft {...guideData.sections[11]} />
       
       {guideData.faqs?.length > 0 && (
         <section className="max-w-6xl mx-auto my-12 sm:my-20 px-4 sm:px-0">
