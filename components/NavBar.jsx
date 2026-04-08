@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { EyeCareLogo } from "../constants/Images";
-import { guides } from "../constants/guideData";
 import {
   Sheet,
   SheetContent,

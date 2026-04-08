@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/dry-eye-syndrome-symptoms-causes-treatments-toronto";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
@@ -12,10 +12,13 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Dry Eye Treatment Toronto: Why Eyes Stay Dry and How to Get Relief",
+  description: "Find lasting relief from stubborn dry eyes with advanced dry eye treatment in Toronto tailored to your unique needs.",
+};
+
 const DryEyeGuide = () => {
-  const guideData =
-    guides["dry-eye-syndrome-symptoms-causes-treatments-toronto"];
-  if (!guideData) return <div>Guide not found</div>;
+      if (!guideData) return <div>Guide not found</div>;
 
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">

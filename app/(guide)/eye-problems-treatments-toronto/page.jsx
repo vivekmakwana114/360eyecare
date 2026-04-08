@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/eye-problems-treatments-toronto";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideFeatureImage from "../../../components/common/guides/GuideFeatureImage";
@@ -9,9 +9,14 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Eye Problems and Treatments Explained by an Optometrist Toronto",
+  description: "From blurry vision to dry eyes, an optometrist Toronto breaks down problems and treatments every patient should know.",
+};
+
 const EyeProblemsGuide = () => {
-  const guideData = guides["eye-problems-treatments-toronto"];
-  if (!guideData) return <div>Guide not found</div>;
+
+      if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
       <SubHeader

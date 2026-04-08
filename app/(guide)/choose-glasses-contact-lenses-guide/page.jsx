@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import LocationSection from "../../../components/common/guides/LocationSection";
-import { guides } from "../../../constants/guideData";
+import { guideData } from "../../../constants/guidedata/choose-glasses-contact-lenses-guide";
 import GuideImageRight from "../../../components/common/guides/GuideImageRight";
 import GuideImageLeft from "../../../components/common/guides/GuideImageLeft";
 import GuideImageCenter from "../../../components/common/guides/GuideImageCenter";
@@ -12,8 +12,12 @@ import GuideKeyTakeaways from "../../../components/common/guides/GuideKeyTakeawa
 import Faqs from "../../../components/Faqs";
 import FloatingBookButton from "../../../components/common/guides/FloatingBookButton";
 
+export const metadata = {
+  title: "Glasses vs. Contact Lenses: Choosing the Best Option for Your Eyes",
+  description: "Learn about the pros and cons of glasses vs. contact lenses to choose the best option for your eyes.",
+};
+
 const GlassesGuide = () => {
-  const guideData = guides["choose-glasses-contact-lenses-guide"];
   if (!guideData) return <div>Guide not found</div>;
   return (
     <main className="pt-[110px] pb-10 sm:pb-32 relative">
