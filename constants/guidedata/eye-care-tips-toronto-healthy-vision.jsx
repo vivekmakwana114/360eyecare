@@ -1,19 +1,13 @@
 import Image from "next/image";
-import {
-  EyeEmergencyImage,
-  OptometryImage,
-  GlaucomaImage,
-  UnderstandImage1,
-  ScreenHeadachesFeature,
-  understandDryEyeImage,
-} from "../Images";
- 
 
 export const guideData = {
   title: "Top Eye Care Tips for Healthy Vision",
   subtitle:
     "Top Eye Care Tips for Healthy Vision: A Complete Guide to Protecting Your Eyes",
-  featureImage: OptometryImage,
+  featureImage: {
+    src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-eye-care-tips-toronto.png",
+    alt: "Top Eye Care Tips for Healthy Vision",
+  },
   keyTakeaways: [
     "Position your screen at arm’s length and slightly below eye level. Follow the 20-20-20 rule (every 20 minutes, look 20 feet away for 20 seconds).",
     "Wear UV400 sunglasses every time you’re outside, even in winter. UV rays cause cataracts and macular degeneration over time.",
@@ -43,7 +37,7 @@ export const guideData = {
       id: "daily-eye-care-tips",
       heading: "What Are the Best Daily Eye Care Tips?",
       image: {
-        src: understandDryEyeImage,
+        src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-daily-eye-care-tips-toronto.png",
         alt: "Daily eye care habits",
       },
       contentTop: (
@@ -134,7 +128,7 @@ export const guideData = {
       id: "foods-for-eye-health",
       heading: "What Foods Improve Eye Health Naturally?",
       image: {
-        src: EyeEmergencyImage,
+        src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-foods-improve-eye-health-naturally.png",
         alt: "Healthy nutrition for eyes",
       },
       contentTop: (
@@ -196,13 +190,13 @@ export const guideData = {
       id: "eye-exercises",
       heading: "Can Eye Exercises Improve Vision?",
       image: {
-        src: EyeEmergencyImage,
+        src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-eye-exercises-improve-vision-in-toronto.png",
         alt: "Eye exercise demonstration",
       },
       contentTop: (
         <div className="space-y-4">
           <p>
-           Eye exercises won’t fix your nearsightedness. They won’t cure astigmatism. If you need glasses, no amount of eye yoga will change that. But that doesn’t mean they’re useless.
+            Eye exercises won’t fix your nearsightedness. They won’t cure astigmatism. If you need glasses, no amount of eye yoga will change that. But that doesn’t mean they’re useless.
           </p>
           <p className="mt-2">Eye exercises do have a place; you just need to know what they can and can’t do.</p>
           <div>
@@ -292,7 +286,7 @@ export const guideData = {
       id: "protection-sunglasses",
       heading: "How Do Sunglasses and Safety Eyewear Protect My Vision?",
       image: {
-        src: GlaucomaImage,
+        src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-sunglasses-and-safety-eyewear-in-toronto.png",
         alt: "Sunglasses for eye protection",
       },
       contentTop: (
@@ -321,6 +315,10 @@ export const guideData = {
     {
       id: "prevent-eye-strain",
       heading: "What Are the Best Ways to Prevent Eye Strain?",
+      image: {
+        src: "/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-prevent-eye-strain-in-toronto.png",
+        alt: "Prevent eye strain",
+      },
       contentTop: (
         <div className="space-y-4">
           <p>
@@ -343,12 +341,14 @@ export const guideData = {
             <h4 className="font-bold text-primary mb-3">
               1. A Proper workstation setup
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <Image
-                src={ScreenHeadachesFeature}
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"> */}
+              {/* <Image
+                src={"/guide/Blog 8 - Top Eye Care Tips for Healthy Vision/360eyecare-prevent-eye-strain-in-toronto.png"}
                 alt="Ergonomic workstation"
+                width={500}
+                height={300}
                 className="w-full h-auto object-cover rounded-xl shadow-lg border border-gray-100"
-              />
+              /> */}
               
               <ul className="list-disc ml-5 space-y-3">
                 <li>
@@ -381,7 +381,7 @@ export const guideData = {
                   stand.
                 </li>
               </ul>
-            </div>
+            {/* </div> */}
           </div>
 
           {/* 2. Proper Lighting */}
@@ -392,7 +392,7 @@ export const guideData = {
               shadows. Your eyes constantly adjust between bright spots and
               dark areas, which exhausts them.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"> */}
               <div className="space-y-4">
                 <p>
                   Ambient lighting works better (soft, indirect light that
@@ -404,23 +404,23 @@ export const guideData = {
                 </p>
                 <p>If you can’t reposition your desk, use blinds or curtains to control natural light. Add a desk lamp for task lighting when needed. Position it to the side so it illuminates your work without shining in your eyes or reflecting off your screen. At night, don’t work in a dark room with only your bright screen for light. The contrast is too extreme. Keep some ambient lighting on.</p>
               </div>
-              <Image
+              {/* <Image
                 src={EyeEmergencyImage}
                 alt="Proper ambient lighting"
                 className="w-full h-72 object-cover rounded-xl shadow-lg border border-gray-100 order-first md:order-last"
-              />
-            </div>
+              /> */}
+            {/* </div> */}
           </div>
 
           {/* 3. Reading Habits */}
           <div>
             <h4 className="font-bold text-primary mb-3">3. Reading Habits</h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <Image
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"> */}
+              {/* <Image
                 src={UnderstandImage1}
                 alt="Proper reading habits"
                 className="w-full h-auto object-cover rounded-xl shadow-lg border border-gray-100"
-              />
+              /> */}
               <div className="space-y-4">
                 <p className="mb-4">
                   Books and phones require closer focus than computer screens. 
@@ -439,7 +439,7 @@ export const guideData = {
                   screen in bright light.
                 </p>
               </div>
-            </div>
+            {/* </div> */}
           </div>
         </div>
       ),

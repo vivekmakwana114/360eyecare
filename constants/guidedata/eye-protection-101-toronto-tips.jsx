@@ -1,14 +1,12 @@
-import Image from "next/image";
-import {
-  BeachImage,
-} from "../Images";
-
 
 export const guideData = {
   title: "Eye Protection 101",
   subtitle:
     "Eye Protection 101: Tips to Keep Your Vision Safe at Work, Home, and Outdoors",
-  featureImage: BeachImage,
+  featureImage: {
+    src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-protection-101-toronto.png",
+    alt: "Eye Protection 101",
+  },
   keyTakeaways: [
     "Follow the 20-20-20 rule, position your screen correctly, and control lighting to prevent digital eye strain before it becomes chronic.",
     "Wear sunglasses with 100% UV protection year-round, not just in summer. Pair them with a wide-brimmed hat for maximum coverage.",
@@ -37,6 +35,10 @@ export const guideData = {
     {
       id: "digital-screens",
       heading: "How Can I Protect My Eyes from Digital Screens?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-protection-toronto.png",
+        alt: "Protecting eyes from digital screens",
+      },
       contentTop: (
         <>
           <p>
@@ -124,6 +126,10 @@ export const guideData = {
     {
       id: "sun-protection",
       heading: "What Is the Best Way to Protect My Eyes from the Sun?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-protection-from-the-sun.png",
+        alt: "Sun protection for eyes",
+      },
       contentTop: (
         <>
           <p>
@@ -223,6 +229,10 @@ export const guideData = {
     {
       id: "workplace-safety",
       heading: "How Can I Keep My Eyes Safe at Work?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-safety-at-work-in-toronto.png",
+        alt: "Eye safety at work",
+      },
       contentTop: (
         <>
           <p>
@@ -300,6 +310,10 @@ export const guideData = {
       id: "sports-outdoors",
       heading:
         "How Do I Protect My Eyes During Sports and Outdoor Activities?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-protect-your-eyes-during-sports-and-outdoor-activities.png",
+        alt: "Sports and outdoor eye protection",
+      },
       contentTop: (
         <>
           <p>
@@ -411,6 +425,10 @@ export const guideData = {
     {
       id: "home-safety",
       heading: "What Are the Best Eye Safety Tips for Home?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-safety-tips-for-home-toronto.png",
+        alt: "Eye safety at home",
+      },
       contentTop: (
         <>
           <p>
@@ -488,6 +506,10 @@ export const guideData = {
     {
       id: "eye-injury-first-aid",
       heading: "What Should I Do If I Injure My Eye?",
+      image: {
+        src: "/guide/Blog 9 - Eye Protection 101/360eyecare-eye-injury-toronto.png",
+        alt: "Eye injury first aid",
+      },
       contentTop: (
         <>
           <p>

@@ -13,8 +13,8 @@ const GuideFeatureImage = ({ image, content }) => {
       {image && (
         <div className="relative w-full aspect-[2.02/1] overflow-hidden rounded-2xl shadow-xl border border-gray-100 mb-10 group">
           <Image
-            src={image}
-            alt="Feature Guide Image"
+            src={image.src || image}
+            alt={image.alt || "Feature Guide Image"}
             fill
             sizes="(max-width: 1216px) 100vw, 1216px"
             className="object-cover transition-transform duration-700 group-hover:scale-105"
