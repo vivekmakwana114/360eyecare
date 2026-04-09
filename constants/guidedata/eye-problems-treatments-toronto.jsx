@@ -99,16 +99,17 @@ export const guideData = {
             Coherence Tomography (OCT) scans to catch changes before symptoms
             develop.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <>
           <p>
             Two types exist: dry and wet. Dry macular degeneration progresses
             slowly as retinal cells break down. Wet develops when abnormal
             blood vessels leak fluid under the retina. This causes rapid
             vision loss.
           </p>
+        </>
+      ),
+      contentBottom: (
+        <>
+         
           <p>
             Specialists from Yorkville to The Beaches now offer anti-VEGF
             injections for wet cases to stabilize vision in many patients.
@@ -488,14 +489,15 @@ export const guideData = {
             blurriness accompanied by flashing lights, floating spots, or eye
             pain signals medical emergencies requiring immediate care.
           </p>
+          <p> Toronto optometrists employ advanced diagnostic equipment &ndash;
+            OCT scans, visual field testing, and corneal topography &ndash; to
+            pinpoint causes quickly.{" "}</p>
         </>
       ),
       contentBottom: (
         <>
           <p>
-            Toronto optometrists employ advanced diagnostic equipment &ndash;
-            OCT scans, visual field testing, and corneal topography &ndash; to
-            pinpoint causes quickly.{" "}
+           
             <a
               className="text-primary hover:underline"
               href="https://www.360eyecare.ca/common-causes-blurry-vision/"

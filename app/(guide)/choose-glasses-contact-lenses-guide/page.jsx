@@ -28,11 +28,11 @@ const GlassesGuide = () => {
       <GuideFeatureImage 
         image={guideData.featureImage} 
         content={guideData.content} 
-      />
+      /> 
 
       <GuideKeyTakeaways takeaways={guideData.keyTakeaways} />
       
-      <GuideImageRight  {...guideData.sections[0]}  />   
+      <GuideImageCenter  {...guideData.sections[0]}  />   
       <GuideImageLeft   {...guideData.sections[1]}  />   
       <GuideImageRight  {...guideData.sections[2]}  />   
       <GuideImageLeft   {...guideData.sections[3]}  />   

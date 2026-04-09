@@ -47,14 +47,10 @@ export const guideData = {
             screen right, proper lighting, and blue light filtering glasses or
             screen protectors. We explore these in detail:
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Position Your Screen Correctly
-            </h4>
+            </h3>
             <p>
               Start with distance. Your monitor should sit about 25 inches
               from your face. Not closer. Tilt it back 10 to 20 degrees so
@@ -63,9 +59,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Control Your Lighting
-            </h4>
+            </h3>
             <p>
               Harsh overhead lights create glare. So does sunlight hitting
               your screen directly. For these reasons, position your desk
@@ -75,10 +71,15 @@ export const guideData = {
               work harder.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+          
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Adjust Screen Brightness
-            </h4>
+            </h3>
             <p>
               Brightness should match your environment. Too dim and you
               squint. Too bright and you strain. Most devices let you adjust
@@ -87,9 +88,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Remember to Blink
-            </h4>
+            </h3>
             <p>
               Blink more. Sounds simple, but when you stare at a screen, your
               blink rate drops by half. That dries out your eyes. Make it a
@@ -98,9 +99,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               5. Filter Blue Light
-            </h4>
+            </h3>
             <p>
               Blue light gets a lot of attention. It disrupts sleep and may
               contribute to eye fatigue over time. Blue light glasses filter
@@ -109,9 +110,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Take Regular Breaks
-            </h4>
+            </h3>
             <p>
               Take breaks. The 20-20-20 rule works because it forces your eye
               muscles to relax. Set a timer if you have to. Stand up. Stretch.
@@ -143,14 +144,10 @@ export const guideData = {
             increases your risk of cataracts, macular degeneration, and even
             eye cancer.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Choose Sunglasses with Full UV Protection
-            </h4>
+            </h3>
             <p>
               Dark lenses don&apos;t mean UV protection. Check the label. It
               should say 100% UV protection or UV400, meaning it blocks rays
@@ -160,10 +157,15 @@ export const guideData = {
               both.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+          
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Go for Wraparound or Large Frames
-            </h4>
+            </h3>
             <p>
               UV rays don&apos;t just come from straight ahead. They bounce
               off water, sand, concrete, and even snow. Wraparound styles
@@ -172,7 +174,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">3. Add a Hat</h4>
+            <h3 className="font-bold text-primary mb-1">3. Add a Hat</h3>
             <p>
               A wide-brimmed hat blocks about 50% of UV radiation before it
               even reaches your face. Pair it with sunglasses and you&apos;ve
@@ -181,9 +183,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Limit Exposure During Peak Hours
-            </h4>
+            </h3>
             <p>
               The sun is strongest between 10 a.m. and 4 p.m. That&apos;s
               when UV levels peak. If you can, stay in the shade during this
@@ -191,9 +193,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               5. Don&apos;t Skip Protection on Cloudy Days
-            </h4>
+            </h3>
             <p>
               Clouds don&apos;t block UV rays. Up to 80% can pass through.
               The same goes for winter. Snow reflects up to 80% of UV light,
@@ -201,9 +203,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Protect Kids&apos; Eyes Too
-            </h4>
+            </h3>
             <p>
               Children&apos;s eyes are more vulnerable to UV damage. Their
               lenses let in more light. Start them early with proper
@@ -244,19 +246,15 @@ export const guideData = {
             protocols. Get regular eye exams and report any injuries
             immediately, no matter how minor they seem.
           </p>
-          <p className="mt-3">
+          <p className="mt-2">
             Workplace eye injuries send over 20,000 people to the emergency
             room every year. Most could have been prevented with the right
             protection.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Identify Your Workplace Hazards
-            </h4>
+            </h3>
             <p>
               Not all jobs pose the same risks. Construction sites have flying
               debris. Labs have chemical splashes. Offices have screen glare
@@ -264,10 +262,14 @@ export const guideData = {
               environment. That tells you what protection you need.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-2">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Wear the Right Safety Eyewear
-            </h4>
+            </h3>
             <p>
               Safety glasses aren&apos;t one-size-fits-all. ANSI-rated safety
               glasses handle impact from flying particles. Goggles seal around
@@ -279,9 +281,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Make Sure Eyewear Fits Properly
-            </h4>
+            </h3>
             <p>
               Ill-fitting eyewear is almost as bad as no eyewear. Gaps let
               hazards in. Too tight and you won&apos;t wear them. Adjust the
@@ -291,9 +293,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Know What to Do If an Injury Happens
-            </h4>
+            </h3>
             <p>
               Speed matters with eye injuries. For chemicals, flush your eyes
               with water for at least 15 minutes and get medical help. For
@@ -324,14 +326,10 @@ export const guideData = {
             meet safety standards like ASTM F803, and provide UV protection
             for outdoor use.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Use Sport-Specific Protective Eyewear
-            </h4>
+            </h3>
             <p>
               Regular sunglasses won&apos;t protect you from impact. You need
               eyewear designed for sports. Polycarbonate lenses are the gold
@@ -340,10 +338,14 @@ export const guideData = {
               wrap around or have a strap to keep them secure during movement.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-2">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Check for Safety Certifications
-            </h4>
+            </h3>
             <p>
               Make sure your eyewear meets ASTM F803 standards for sports.
               This certification means it&apos;s been tested for impact
@@ -353,9 +355,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Get the Right Fit
-            </h4>
+            </h3>
             <p>
               Loose eyewear shifts during play and leaves gaps. Too tight and
               it&apos;s distracting. Many sport goggles come with adjustable
@@ -364,9 +366,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Add Prescription Lenses If Needed
-            </h4>
+            </h3>
             <p>
               Don&apos;t play blind because you can&apos;t wear contacts. Many
               protective goggles come with prescription inserts or can be made
@@ -375,9 +377,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               5. Protect Against UV When Outdoors
-            </h4>
+            </h3>
             <p>
               Outdoor sports hit you with a double threat: impact risk and UV
               exposure. Choose protective eyewear that also blocks 100% of
@@ -386,9 +388,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Don&apos;t Forget About Water Activities
-            </h4>
+            </h3>
             <p>
               Swimming pools have chlorine. Lakes and oceans have bacteria and
               debris. Goggles keep your eyes safe from irritation and
@@ -398,9 +400,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               7. Replace Damaged Gear Immediately
-            </h4>
+            </h3>
             <p>
               A scratched or cracked lens compromises protection. Inspect your
               eyewear before each use. If it&apos;s damaged, replace it. Your
@@ -440,19 +442,15 @@ export const guideData = {
             tools and sharp objects safely, and never mix cleaning products,
             which can create toxic fumes.
           </p>
-          <p className="mt-3">
+          <p className="mt-2">
             Most people don&apos;t think about eye safety at home. But
             kitchens, garages, and yards cause thousands of preventable eye
             injuries every year.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Wear Protection During DIY Projects
-            </h4>
+            </h3>
             <p>
               Hammering, drilling, and sawing send particles flying. Wood
               chips, metal shards, and dust don&apos;t care if you&apos;re a
@@ -461,10 +459,14 @@ export const guideData = {
               near your workbench.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-2">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Use Caution with Chemicals and Cleaners
-            </h4>
+            </h3>
             <p>
               Bleach, drain cleaner, and oven spray all splash. Wear safety
               goggles when handling strong chemicals, not just glasses. Goggles
@@ -475,9 +477,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Keep Hazardous Items Away from Kids
-            </h4>
+            </h3>
             <p>
               Children are curious. Cleaning supplies, batteries, and sharp
               tools all look interesting. Store them high or locked away. Teach
@@ -486,9 +488,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Know When to Seek Help
-            </h4>
+            </h3>
             <p>
               Not every eye issue needs an ER visit, but some do. Get help
               fast if you are exposed to chemicals, sustained puncture wounds,
@@ -521,18 +523,14 @@ export const guideData = {
             work, see a doctor. Any injury causing pain, vision changes, or
             bleeding requires immediate professional attention.
           </p>
-          <p className="mt-3">
+          <p className="mt-2">
             Eye injuries escalate fast. What seems minor can turn into
             permanent vision loss if handled wrong.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Don&apos;t Rub Your Eye
-            </h4>
+            </h3>
             <p>
               It&apos;s instinct, but rubbing makes everything worse. It
               pushes particles deeper, scratches your cornea, or spreads
@@ -540,10 +538,15 @@ export const guideData = {
               itches.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-2">
+          
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Handle Chemical Exposure Immediately
-            </h4>
+            </h3>
             <p>
               Time is everything with chemicals. Flush your eye with clean
               water or saline for at least 15 minutes. Use a sink, shower,
@@ -555,9 +558,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Protect Cuts and Puncture Wounds
-            </h4>
+            </h3>
             <p>
               If something penetrates your eye or you have a cut, don&apos;t
               try to remove it. Don&apos;t rinse. Don&apos;t apply pressure.
@@ -587,7 +590,7 @@ export const guideData = {
             need exams at six months, three years, before kindergarten, and
             then every one to two years.
           </p>
-          <p className="mt-3">
+          <p className="mt-2">
             Eye exams catch problems you don&apos;t feel yet.
           </p>
         </>
@@ -615,7 +618,7 @@ export const guideData = {
             </a>
             .
           </p>
-          <p className="mt-3">
+          <p className="mt-2">
             Ready to prioritize your eye health?{" "}
             <a
               className="text-primary hover:underline"

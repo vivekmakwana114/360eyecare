@@ -1,10 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-/**
- * GuideFeatureImage: A component for displaying a large feature image (1216x600)
- * at the start of a guide page, with accompanying content underneath.
- */
+
 const GuideFeatureImage = ({ image, content }) => {
   if (!image && !content) return null;
 

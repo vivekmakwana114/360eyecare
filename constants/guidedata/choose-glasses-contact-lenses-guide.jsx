@@ -33,32 +33,34 @@ export const guideData = {
     {
       id: "difference",
       heading: "What's the Difference Between Glasses and Contact Lenses?",
-      image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-difference-between-glasses-and-contact-lenses.png",
-        alt: "Glasses vs contact lenses comparison",
-      },
+      // image: {
+      //   src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-difference-between-glasses-and-contact-lenses.png",
+      //   alt: "Glasses vs contact lenses comparison",
+      // },
       contentTop: (
-        <>
+        <div className="space-y-4">
           <p>
             Glasses correct vision by placing curved lenses at a distance from
             your eyes, while contact lenses sit directly on your eye&apos;s
             tear film to redirect light. Both achieve the same goal, but in
             different ways.
           </p>
-          <p className="text-primary text-base font-bold">
-            Pros and Cons of Glasses and Contact Lenses
-          </p>
-          <p>
+        </div>
+      ),
+      contentBottom: (
+        <>
+        <h3 className="text-primary font-bold">
+          Pros and Cons of Glasses and Contact Lenses
+        </h3>
+         <p>
             Your decision on which of the two shouldn&apos;t be dependent on
             what worked for your college roommate. Here&apos;s what matters in
             your choice :
           </p>
-        </>
-      ),
-      contentBottom: (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 ">
           <div>
-            <h4 className="font-bold text-primary mb-2">Glasses Pros</h4>
+            
+            <h3 className="font-bold text-primary mb-2">Glasses Pros</h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>There&apos;s zero risk of eye infections</li>
               <li>They last for years with proper care</li>
@@ -68,7 +70,7 @@ export const guideData = {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">Glasses Cons</h4>
+            <h3 className="font-bold text-primary mb-2">Glasses Cons</h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>They&apos;re susceptible to fogging in weather changes</li>
               <li>They have limited peripheral vision</li>
@@ -78,9 +80,9 @@ export const guideData = {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-2">
               Contact Lenses Pros
-            </h4>
+            </h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>They provide a complete field of vision</li>
               <li>No weather interference</li>
@@ -90,9 +92,9 @@ export const guideData = {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-2">
               Contact Lenses Cons
-            </h4>
+            </h3>
             <ul className="list-disc pl-5 space-y-1">
               <li>They need to be maintained daily</li>
               <li>Higher long-term costs</li>
@@ -104,6 +106,7 @@ export const guideData = {
             </ul>
           </div>
         </div>
+        </>
       ),
     },
 
@@ -122,14 +125,10 @@ export const guideData = {
             but their effectiveness depends on your condition and lifestyle
             needs.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Nearsightedness (Myopia)
-            </h4>
+            </h3>
             <p>
               In nearsightedness, distance vision is blurry while close-up
               tasks maintain clarity. Both glasses and contacts are best here,
@@ -139,9 +138,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Farsightedness (Hyperopia)
-            </h4>
+            </h3>
             <p>
               For farsightedness, close-up work strains your eyes while
               distant objects appear clearer. Glasses work immediately and
@@ -150,8 +149,12 @@ export const guideData = {
               reading and computer work once adapted.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">3. Astigmatism</h4>
+            <h3 className="font-bold text-primary mb-1">3. Astigmatism</h3>
             <p>
               With astigmatism, your cornea&apos;s irregular shape creates
               blurry vision at all distances. Standard glasses correct most
@@ -162,7 +165,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">4. Presbyopia</h4>
+            <h3 className="font-bold text-primary mb-1">4. Presbyopia</h3>
             <p>
               Age-related reading difficulty typically starts in your 40s.
               Progressive glasses offer seamless vision correction across all
@@ -172,9 +175,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               5. Severe Refractive Errors
-            </h4>
+            </h3>
             <p>
               Extreme prescriptions create thick, heavy glasses that distort
               your appearance and vision quality. High-index lenses help, but
@@ -199,16 +202,16 @@ export const guideData = {
         <>
           <p>Your daily routine determines which option serves you best.</p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Active and Athletic Lifestyles
-            </h4>
+            </h3>
             <p>
               Contacts win for athletes. They don&apos;t bounce, fog up during
               temperature changes, or limit your peripheral vision when
               tracking a ball. Sports glasses exist, but they create blind
               spots and can shatter.
             </p>
-            <p>
+            <p className="mt-2">
               Swimming requires daily disposable contacts (never wear
               monthlies in water) or prescription goggles. Rock climbing,
               martial arts, and contact sports heavily favor lenses. Your
@@ -221,9 +224,9 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Professional and Office Environments
-            </h4>
+            </h3>
             <p>
               Glasses often project authority and intelligence in corporate
               settings. They&apos;re also practical for computer-heavy jobs
@@ -231,7 +234,7 @@ export const guideData = {
               coatings. There&apos;s no risk of dry eyes during long screen
               sessions.
             </p>
-            <p>
+            <p className="mt-2">
               Contacts work better for jobs that require safety goggles,
               helmets, or frequent temperature changes. Restaurant workers,
               laboratory technicians, and outdoor professionals typically
@@ -240,16 +243,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Social and Appearance Considerations
-            </h4>
+            </h3>
             <p>
               Glasses change your entire look instantly. They can enhance
               facial features, hide under-eye circles, or become a signature
               style element. Dating profiles often perform better with glasses
               since they suggest intelligence and stability.
             </p>
-            <p>
+            <p className="mt-2">
               With contacts, makeup application becomes easier, and when
               wearing sunglasses, they fit properly. During photography and
               special events, the pictures often look better because there are
@@ -257,16 +260,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Budget and Maintenance Preferences
-            </h4>
+            </h3>
             <p>
               Glasses cost more upfront, but they last for years with proper
               care. One pair handles most situations, though many people keep
               backup frames. Annual eye exams and occasional repairs would be
               your main ongoing expenses.
             </p>
-            <p>
+            <p className="mt-2">
               Contacts need consistent monthly spending plus cleaning
               solutions. Daily disposables cost more but eliminate
               maintenance. People who are conscious about their budget often
@@ -283,7 +286,7 @@ export const guideData = {
       id: "comfort",
       heading: "Which Is More Comfortable: Glasses or Contacts?",
       image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-contact-lenses-safety-in-toronto.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-glasses-contacts-comfortable-options-toronto.png",
         alt: "Comfort comparison glasses vs contacts",
       },
       contentTop: (
@@ -294,9 +297,9 @@ export const guideData = {
             creates constant irritation for another.
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Initial Adjustment Period
-            </h4>
+            </h3>
             <p>
               Glasses feel comfortable immediately for most people. Weight
               distribution across your nose bridge and ears might cause minor
@@ -304,7 +307,7 @@ export const guideData = {
               this. Heavy prescriptions need high-index lenses to prevent
               sliding and indentations.
             </p>
-            <p>
+            <p className="mt-2">
               Contacts need patience during the first week. Your eyes produce
               extra tears and blink more frequently as they adapt to foreign
               objects. Soft lenses typically feel comfortable within 2–3 days.
@@ -317,16 +320,16 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. All-Day Wearability
-            </h4>
+            </h3>
             <p>
               Well-fitted glasses should feel weightless after the adjustment
               period. Poorly fitted frames would create headaches, ear pain,
               and nose marks. Adjustable nose pads and lightweight materials
               solve most of these comfort issues.
             </p>
-            <p>
+            <p className="mt-2">
               Quality contacts disappear from conscious awareness once your
               eyes adapt to them. Cheap lenses or improper fits cause burning,
               dryness, and foreign body sensations. Daily disposables are more
@@ -335,15 +338,15 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Environmental Factors
-            </h4>
+            </h3>
             <p>
               Air conditioning can make metal frames cold against your skin.
               They slip during physical exertion and require constant
               adjustment during active days.
             </p>
-            <p>
+            <p className="mt-2">
               Contacts handle temperature changes seamlessly but suffer in dry
               environments like airplanes and heated buildings. Wind
               doesn&apos;t affect vision quality, though dust particles can
@@ -352,16 +355,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Long-Term Comfort Considerations
-            </h4>
+            </h3>
             <p>
               Glasses can cause permanent nose indentations and ear grooving
               with heavy frames. Regular adjustments maintain proper fit as
               your face changes. Prescription changes only require new lenses,
               not complete frame replacement.
             </p>
-            <p>
+            <p className="mt-2">
               Extended contact wear can reduce tear production and corneal
               sensitivity over time. Proper hygiene and regular replacement
               schedules prevent most complications. Some people develop
@@ -381,7 +384,7 @@ export const guideData = {
       id: "cost",
       heading: "How Much Do Glasses and Contact Lenses Cost in Toronto?",
       image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-how-to-take-care-of-glasses-and-contact-lenses.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-glasses-and-contact-lenses-cost-in-toronto.png",
         alt: "Cost of glasses and contact lenses in Toronto",
       },
       contentTop: (
@@ -391,16 +394,16 @@ export const guideData = {
             your prescription, and the level of quality you need.
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Glasses Cost Breakdown
-            </h4>
+            </h3>
             <p>
               Basic frames from budget retailers start at affordable prices,
               while designer options are more expensive. Your prescription
               strength affects lens costs; high prescriptions require special
               materials that increase expenses.
             </p>
-            <p>
+            <p className="mt-2">
               Anti-reflective coatings, blue light filtering, and progressive
               lenses add substantial costs. Single vision prescriptions cost
               less than multifocals or complex astigmatism corrections. Frame
@@ -412,16 +415,16 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Contact Lens Expenses
-            </h4>
+            </h3>
             <p>
               Daily disposables offer convenience but create higher monthly
               costs than weekly or monthly replacements. Toric lenses for
               astigmatism and multifocal options for presbyopia command
               premium pricing over standard spherical lenses.
             </p>
-            <p>
+            <p className="mt-2">
               Cleaning solutions, cases, and rewetting drops add ongoing
               expenses for non-daily lenses. Annual eye exams and contact lens
               fittings represent additional costs beyond the lenses
@@ -429,15 +432,15 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Hidden Costs to Consider
-            </h4>
+            </h3>
             <p>
               Insurance coverage varies widely between employers and plans.
               Many policies provide partial eyewear benefits annually but
               don&apos;t cover premium upgrades or special lenses.
             </p>
-            <p>
+            <p className="mt-2">
               Replacement costs matter more than initial expenses. Glasses
               typically last years with proper care, while contacts require
               consistent monthly purchases. Lost or damaged items create
@@ -453,7 +456,7 @@ export const guideData = {
       id: "safety",
       heading: "Are Contact Lenses Safe for My Eyes?",
       image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-glasses-contacts-comfortable-options-toronto.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-contact-lenses-safety-in-toronto.png",
         alt: "Contact lens safety for eyes",
       },
       contentTop: (
@@ -464,9 +467,9 @@ export const guideData = {
             permanently damage your vision.
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. The Safety Reality
-            </h4>
+            </h3>
             <p>
               Modern contact lenses undergo rigorous FDA testing and safety
               protocols. Millions of people wear them daily without
@@ -476,31 +479,32 @@ export const guideData = {
               experience.
             </p>
           </div>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Infection Risks and Prevention
-            </h4>
+            </h3>
             <p>
               Bacterial infections represent the most serious concern. These
               develop from contaminated lenses, dirty hands during insertion,
               or overwearing beyond recommended schedules. Acanthamoeba
               infections, though rare, can cause blindness if untreated.
             </p>
-            <p>
+           
+          </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+           <p>
               Water exposure creates the biggest danger. Never rinse lenses
               with tap water, swim while wearing them, or shower without
               removing them first. Use only sterile saline or recommended
               cleaning solutions.
             </p>
-          </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Common Complications
-            </h4>
+            </h3>
             <p>
               Dry eyes affect many contact wearers, especially in
               air-conditioned environments or during extended computer use.
@@ -508,7 +512,7 @@ export const guideData = {
               blurred vision. Giant papillary conjunctivitis creates bumps
               under your eyelids from chronic irritation.
             </p>
-            <p>
+            <p className="mt-2">
               Corneal abrasions occur from torn lenses or rough insertion
               techniques. These heal quickly but increase infection
               vulnerability. Allergic reactions to cleaning solutions or lens
@@ -516,16 +520,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Safe Wearing Practices
-            </h4>
+            </h3>
             <p>
               Replace lenses exactly as prescribed &ndash; daily, weekly, or
               monthly. Never extend wear schedules to save money. Clean your
               hands thoroughly before touching lenses. Store them in fresh
               solution, never reused liquid.
             </p>
-            <p>
+            <p className="mt-2">
               Follow the recommended wearing schedule. Your eyes need oxygen,
               and overwearing creates complications even with
               high-breathability materials.
@@ -540,7 +544,7 @@ export const guideData = {
       id: "specialty-lenses",
       heading: "What Are Specialty Lenses and When Are They Needed?",
       image: {
-        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-custom-contact-lenses-toronto.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-specialty-lenses-in-toronto.png",
         alt: "Specialty contact lenses and glasses",
       },
       contentTop: (
@@ -550,14 +554,10 @@ export const guideData = {
             contacts can&apos;t handle effectively, offering hope for people
             with complex eye conditions and demanding visual requirements.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Scleral Contact Lenses
-            </h4>
+            </h3>
             <p>
               These large, rigid lenses vault over your entire cornea and rest
               on the white part of your eye. They create a fluid reservoir
@@ -573,9 +573,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Gas Permeable Specialty Designs
-            </h4>
+            </h3>
             <p>
               Custom rigid lenses correct irregular astigmatism that soft
               lenses can&apos;t handle. Orthokeratology lenses reshape your
@@ -583,39 +583,43 @@ export const guideData = {
               correction. Athletes and pilots often prefer this temporary
               reshaping approach.
             </p>
+          </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
             <p>
               Bifocal and multifocal rigid designs offer sharper vision than
               soft alternatives for presbyopia. High prescriptions achieve
               better optics through rigid materials than thick soft lenses.
             </p>
-          </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Prosthetic and Cosmetic Lenses
-            </h4>
+            </h3>
             <p>
               Artificial eyes and painted lenses restore appearance after
               injury or congenital defects. These don&apos;t improve vision
               but provide psychological benefits and social confidence. Custom
               iris patterns match your natural eye color perfectly.
             </p>
-            <p>
+            <p className="mt-2">
               Theatrical and colored lenses change appearance dramatically but
               require the same prescription fitting as vision-correcting
               lenses.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Advanced Prescription Solutions
-            </h4>
+            </h3>
             <p>
               High-index glasses materials reduce thickness for extreme
               prescriptions. Prism lenses correct double vision from muscle
               imbalances. Occupational lenses optimize vision for specific
               work distances and tasks.
             </p>
-            <p>
+            <p className="mt-2">
               Computer glasses with blue light filtering and anti-reflective
               coatings reduce digital eye strain. Photochromic lenses adapt to
               lighting conditions automatically.
@@ -630,20 +634,20 @@ export const guideData = {
       id: "care",
       heading: "How Do I Take Care of My Glasses and Contact Lenses?",
       image: {
-        // src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-specialty-lenses-in-toronto.png",
+        src: "/guide/Blog 4 - Glasses or Contact Lenses/360eyecare-how-to-take-care-of-glasses-and-contact-lenses.png",
         alt: "Glasses and contact lens care",
       },
       contentTop: (
         <div>
-          <p>
+          <p className="mb-2">
             Proper care extends the life of your eyewear dramatically while
             preventing eye infections and maintaining crystal-clear vision
             through simple daily habits.
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               1. Essential Glasses Maintenance
-            </h4>
+            </h3>
             <p>
               Clean lenses with microfiber cloths and approved cleaning
               solutions, never your shirt or tissues. These materials scratch
@@ -651,7 +655,7 @@ export const guideData = {
               frames under lukewarm water first to remove debris before
               wiping.
             </p>
-            <p>
+            <p className="mt-2">
               Store glasses in protective cases when not wearing them. Leaving
               them lens-down on surfaces creates scratches. Adjust loose
               screws immediately; small problems become expensive repairs
@@ -664,16 +668,16 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               2. Contact Lens Hygiene Protocols
-            </h4>
+            </h3>
             <p>
               Wash hands thoroughly with soap before touching lenses.
               Water-based hand sanitizers don&apos;t eliminate all bacteria
               and can irritate eyes. Use only recommended cleaning solutions,
               never water or saliva for emergency situations.
             </p>
-            <p>
+            <p className="mt-2">
               Replace lens cases every three months minimum. Bacteria colonize
               plastic surfaces despite regular cleaning. Store lenses in fresh
               solution daily; never reuse yesterday&apos;s liquid. Protein
@@ -681,15 +685,15 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               3. Daily vs Extended Wear Care
-            </h4>
+            </h3>
             <p>
               Daily disposables require zero maintenance but cost more
               monthly. Simply discard after single use and start fresh
               tomorrow. Never attempt cleaning or reusing dailies.
             </p>
-            <p>
+            <p className="mt-2">
               Weekly and monthly lenses demand consistent cleaning routines.
               Rub lenses gently with solution, even if using
               &ldquo;no-rub&rdquo; formulas. This mechanical action removes
@@ -697,15 +701,15 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               4. Warning Signs and Replacement Schedules
-            </h4>
+            </h3>
             <p>
               Replace contacts exactly on schedule regardless of remaining
               solution or apparent lens condition. Overwearing creates protein
               buildup and increases infection risks significantly.
             </p>
-            <p>
+            <p className="mt-2">
               Red eyes, excessive tearing, or vision changes require immediate
               lens removal and eye care consultation. Torn or damaged lenses
               must be discarded immediately; never attempt repairs or
@@ -741,14 +745,10 @@ export const guideData = {
             worlds, letting you match your eyewear to daily activities rather
             than forcing one solution onto every situation.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. The Hybrid Approach Benefits
-            </h4>
+            </h3>
             <p>
               Most successful contact wearers own backup glasses for sick
               days, late nights, and lazy mornings. Your eyes need breaks from
@@ -756,17 +756,22 @@ export const guideData = {
               production decreases. Glasses provide instant relief without
               compromising vision quality.
             </p>
-            <p>
+            <p className="mt-2">
               Switching prevents contact lens fatigue and reduces infection
               risks. Overwearing contacts leads to dry eyes and protein
               buildup. Regular glasses days let your corneas breathe and
               recover their natural moisture balance.
             </p>
           </div>
+          
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               2. Activity-Based Selection
-            </h4>
+            </h3>
             <p>
               Contacts work best for sports, outdoor activities, and social
               events where appearance matters. Swimming requires daily
@@ -774,7 +779,7 @@ export const guideData = {
               Hiking and cycling benefit from unobstructed peripheral vision
               that contacts provide.
             </p>
-            <p>
+           <p className="mt-2" >
               Glasses work better for computer-intensive days, air travel, and
               environments with dust or chemicals. Late-night reading sessions
               cause less eye strain with properly fitted glasses than dry
@@ -782,17 +787,18 @@ export const guideData = {
               lenses.
             </p>
           </div>
+           
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               3. Cost Optimization Strategy
-            </h4>
+            </h3>
             <p>
               Daily contact use becomes expensive quickly. Limiting contacts
               to specific activities reduces monthly costs while maintaining
               lifestyle flexibility. Weekend-only contact wear cuts expenses
               dramatically compared to daily use.
             </p>
-            <p>
+            <p className="mt-2">
               Prescription sunglasses eliminate the need for contact-sunglass
               combinations during outdoor activities. Photochromic glasses
               adjust automatically to lighting changes without requiring
@@ -800,16 +806,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1 mt-2">
               4. Practical Switching Tips
-            </h4>
+            </h3>
             <p>
               Keep contact supplies at work and home for spontaneous activity
               changes. Travel with both options; flights delay luggage, but
               you still need vision correction. Gym bags should contain daily
               disposables for unexpected workout opportunities.
             </p>
-            <p>
+            <p className="mt-2">
               Consider prescription strength differences between glasses and
               contacts. Some people require slightly different powers due to
               distance from the eye. Your eye care provider adjusts
@@ -831,14 +837,11 @@ export const guideData = {
             daily routine, priorities, and tolerance for maintenance rather
             than following generic advice or peer pressure.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
+           <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Start with Your Non-Negotiables
-            </h4>
+            </h3>
             <p>
               Identify activities where vision problems create real
               consequences. Pilots and surgeons need absolute clarity without
@@ -846,7 +849,7 @@ export const guideData = {
               resistance. Musicians depend on sheet music clarity under stage
               lighting.
             </p>
-            <p>
+            <p className="mt-2">
               Consider your vanity level honestly. Some people feel incomplete
               without their signature frames. Others hate how glasses change
               their appearance. Neither preference is shallow; comfort with
@@ -854,16 +857,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Assess Your Lifestyle Patterns
-            </h4>
+            </h3>
             <p>
               Track your week realistically. Do you exercise daily or just
               talk about it? Honest gym attendance determines whether contact
               sports benefits matter. Weekend warriors need different
               solutions than daily athletes.
             </p>
-            <p>
+            <p className="mt-2">
               Evaluate your morning routine tolerance. Rushed mornings favor
               glasses &ndash; grab and go versus contact insertion rituals.
               Night owls who stay up late often prefer glasses for end-of-day
@@ -871,16 +874,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Factor in Your Personality Type
-            </h4>
+            </h3>
             <p>
               Organized people handle contact lens maintenance well. Cleaning
               schedules and replacement reminders become routine habits.
               Disorganized personalities often struggle with lens hygiene and
               overextend wearing schedules dangerously.
             </p>
-            <p>
+            <p className="mt-2">
               Risk tolerance matters significantly. Conservative people prefer
               glasses&apos; predictability and lower infection risks.
               Adventurous types embrace contacts despite maintenance
@@ -888,16 +891,16 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Professional Consultation Strategy
-            </h4>
+            </h3>
             <p>
               Book comprehensive eye exams that include contact lens trials.
               Many optometrists offer sample lenses for different brands and
               materials. Real-world testing reveals comfort differences that
               specifications can&apos;t predict.
             </p>
-            <p>
+            <p className="mt-2">
               Discuss lifestyle openly with your eye care provider. Mention
               hobbies, work demands, and appearance preferences. Experienced
               professionals spot patterns and recommend solutions based on
@@ -905,7 +908,9 @@ export const guideData = {
             </p>
           </div>
         </div>
+        </>
       ),
+      contentBottom: null
     },
 
     // ── Conclusion ─────────────────────────────────────────────────────────

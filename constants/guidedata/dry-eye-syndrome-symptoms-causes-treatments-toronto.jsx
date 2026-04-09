@@ -18,7 +18,7 @@ export const guideData = {
     <>
       <p>
         Your eyes burn, they itch, and each time you blink, it feels like
-        there’s sandpaper in your eyes. That is a symptom of dry eye syndrome.
+        there’s sandpaper in your eyes. That is a symptom of dry eye syndrome.{" "}
         <a
           className="text-primary hover:underline"
           href="https://www.360eyecare.ca/dry-eye-syndrome-symptoms-causes-treatments-toronto"
@@ -35,10 +35,10 @@ export const guideData = {
     {
       id: "what-is-dry-eye",
       heading: "What is Dry Eye Syndrome?",
-      image: {
-        src: "/guide/Blog 2 - Dry Eye Treatment Toronto/360eyecare-what-is-dry-eye-syndrome-toronto.png",
-        alt: "Dry eye treatment toronto",
-      },
+      // image: {
+      //   src: "/guide/Blog 2 - Dry Eye Treatment Toronto/360eyecare-what-is-dry-eye-syndrome-toronto.png",
+      //   alt: "Dry eye treatment toronto",
+      // },
       contentTop: (
         <>
           <p>
@@ -47,7 +47,8 @@ export const guideData = {
             enough tears or the tears evaporating too quickly.
           </p>
           <p>
-            Your tear film has three layers: oil, water, and mucus. When one
+            Your tear film has three layers: <br />
+            oil, water, and mucus. When one
             of these layers gets disrupted, you begin to experience dry eyes.
             The condition affects millions worldwide, and Toronto’s harsh
             winters plus indoor heating make it particularly common here
@@ -70,9 +71,9 @@ export const guideData = {
             mildly annoying to genuinely debilitating. Here are some :
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Burning and Stinging Sensations
-            </h4>
+            </h3>
             <p>
               Your eyes feel like someone sprinkled hot sauce directly onto
               them. This burning sensation typically worsens throughout the
@@ -83,9 +84,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Scratchy, Gritty Feeling
-            </h4>
+            </h3>
             <p>
               Every blink feels rough and uncomfortable, as if your eyelids
               are scraping against sandpaper. This grittiness often
@@ -98,9 +99,9 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Redness and Irritation
-            </h4>
+            </h3>
             <p>
               Your eyes look like you&apos;ve been crying or staying up all
               night. The whites become pink or red as blood vessels dilate in
@@ -110,9 +111,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Excessive Watering
-            </h4>
+            </h3>
             <p>
               Paradoxically, dry eyes often produce too many tears. Your body
               recognizes the problem and floods your eyes with reflex tears,
@@ -122,7 +123,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">5. Blurred Vision</h4>
+            <h3 className="font-bold text-primary mb-1">5. Blurred Vision</h3>
             <p>
               Your vision becomes inconsistent and unreliable. Text might
               appear fuzzy one moment and clear the next. This happens because
@@ -133,9 +134,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Light Sensitivity
-            </h4>
+            </h3>
             <p>
               Normal lighting conditions that never bothered you before would
               now begin to cause you some discomfort. Dry eyes can&apos;t
@@ -144,7 +145,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">7. Eye Fatigue</h4>
+            <h3 className="font-bold text-primary mb-1">7. Eye Fatigue</h3>
             <p>
               Your eyes tire quickly during normal activities like reading or
               computer work. The constant strain of trying to maintain clear
@@ -171,9 +172,9 @@ export const guideData = {
             production and quality.
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Age-Related Changes
-            </h4>
+            </h3>
             <p>
               Getting older means your tear glands slow down production. After
               50, both men and women experience decreased tear volume, but
@@ -183,9 +184,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Environmental Factors
-            </h4>
+            </h3>
             <p>
               Toronto&apos;s climate creates a perfect storm for dry eyes.
               Winter&apos;s freezing temperatures and low humidity suck
@@ -200,9 +201,9 @@ export const guideData = {
       contentBottom: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Digital Eye Strain
-            </h4>
+            </h3>
             <p>
               Staring at screens reduces your blink rate by up to 60%. When
               you&apos;re focused on your computer, phone, or tablet, you
@@ -213,9 +214,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Medical Conditions
-            </h4>
+            </h3>
             <p>
               Autoimmune diseases like{" "}
               <a
@@ -234,7 +235,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">5. Medications</h4>
+            <h3 className="font-bold text-primary mb-1">5. Medications</h3>
             <p>
               Your medicine cabinet might be sabotaging your eyes.
               Antihistamines, antidepressants, blood pressure medications, and
@@ -244,9 +245,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Hormonal Changes
-            </h4>
+            </h3>
             <p>
               Hormonal fluctuations can significantly impact tear production.
               Women may experience dry eye symptoms during pregnancy,
@@ -256,9 +257,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               7. Seasonal Allergies
-            </h4>
+            </h3>
             <p>
               Spring pollen doesn&apos;t just make you sneeze &ndash; it
               inflames your entire ocular surface. The constant rubbing and
@@ -277,9 +278,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               8. Contact Lens Wear
-            </h4>
+            </h3>
             <p>
               Even the best contact lenses absorb tears and reduce oxygen flow
               to your cornea. Extended wear makes the problem worse, as
@@ -289,9 +290,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               9. Previous Eye Surgery
-            </h4>
+            </h3>
             <p>
               LASIK and other refractive surgeries temporarily damage the
               nerves responsible for triggering tear production. Most people
@@ -352,22 +353,23 @@ export const guideData = {
           </p>
           <ul className="pt-2 space-y-2">
             <li>
-              <strong className="text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 1. Over-the-Counter Eye Drops:
-              </strong>
+              </h3>
               <p className="text-base pl-4">
                 Artificial tears offer immediate relief for mild symptoms.
                 Look for preservative-free options if you need drops more than
                 four times daily &ndash; preservatives can irritate already
-                sensitive eyes. Gel drops last longer but may blur vision
+                sensitive eyes. 
+                <p className="mt-2">Gel drops last longer but may blur vision
                 temporarily. Some people find success with lipid-based drops
-                that target oil layer deficiency.
+                that target oil layer deficiency.</p>
               </p>
             </li>
             <li>
-              <strong className="text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 2. Prescription Medications:
-              </strong>
+              </h3>
               <p className="text-base pl-4">
                 Restasis and Xiidra reduce inflammation and boost natural tear
                 production, but patience is required &ndash; benefits
@@ -383,7 +385,7 @@ export const guideData = {
         <div>
           <ul className="pt-2 space-y-2">
             <li>
-              <strong className="text-primary">3. Punctal Plugs</strong>
+              <h3 className="font-bold text-primary mb-1">3. Punctal Plugs</h3>
               <p className="text-base pl-4">
                 These tiny devices block your tear drainage ducts, keeping
                 natural and artificial tears on your eye surface longer.
@@ -403,9 +405,9 @@ export const guideData = {
               </p>
             </li>
             <li>
-              <strong className="text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 4. IPL (Intense Pulsed Light) Therapy
-              </strong>
+              </h3>
               <p className="text-base pl-4">
                 Originally developed for skin treatments, IPL targets
                 inflammation around your eyelids that contributes to meibomian
@@ -425,9 +427,9 @@ export const guideData = {
               </p>
             </li>
             <li>
-              <strong className="text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 5. Radiofrequency (RF) Therapy:
-              </strong>
+              </h3>
               <p className="text-base pl-4">
                 RF energy heats and melts hardened oils in your meibomian
                 glands while tightening loose eyelid skin. This dual-action
@@ -446,9 +448,9 @@ export const guideData = {
               </p>
             </li>
             <li>
-              <strong className="text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 6. Lifestyle Modifications:
-              </strong>
+              </h3>
               <p className="text-base pl-4">
                 Increase your blink rate during screen time by following the
                 20-20-20 rule: every 20 minutes, look at something 20 feet
@@ -476,7 +478,7 @@ export const guideData = {
       id: "prevention",
       heading: "How to Prevent Dry Eyes",
       image: {
-        src: "/guide/Blog 2 - Dry Eye Treatment Toronto/360eyecare-optometrist-in-toronto.png",
+        src: "/guide/Blog 2 - Dry Eye Treatment Toronto/360eyecare-how-to-prevent-dry-eyes-in-toronto.png",
         alt: "Dry eye prevention",
       },
       contentTop: (
@@ -487,9 +489,9 @@ export const guideData = {
           </p>
           <div className="space-y-6">
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 1. Control Your Environment
-              </h5>
+              </h3>
               <p>
                 Toronto&apos;s winter air drops to 10-20% humidity indoors,
                 but your eyes need at least 40% to stay comfortable. Run a
@@ -499,9 +501,9 @@ export const guideData = {
               </p>
             </div>
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 2. Master the Art of Blinking
-              </h5>
+              </h3>
               <p>
                 <a
                   href="https://www.nalug.net/the-science-behind-blinking-how-many-times-a-day-does-a-person-blink/#:~:text=According%20to%20scientists%2C%20the%20average%20blink%20lasts%20for,day%2C%20which%20may%20vary%20depending%20on%20several%20factors."
@@ -522,11 +524,11 @@ export const guideData = {
         </div>
       ),
       contentBottom: (
-        <div className="space-y-6">
+        <div className="space-y-4">
           <div>
-            <h5 className="font-bold text-primary">
+            <h3 className="font-bold text-primary mb-1">
               3. Protect Against Wind and Sun
-            </h5>
+            </h3>
             <p>
               Wraparound sunglasses create a moisture chamber around your eyes
               while blocking UV rays that damage tear glands. Even on cloudy
@@ -536,9 +538,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h5 className="font-bold text-primary">
+            <h3 className="font-bold text-primary mb-1">
               4. Stay Hydrated Internally
-            </h5>
+            </h3>
             <p>
               Dehydration affects tear production within hours. Your body
               prioritizes vital organs over tear glands when water runs low.
@@ -547,9 +549,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h5 className="font-bold text-primary">
+            <h3 className="font-bold text-primary mb-1">
               5. Take Regular Screen Breaks
-            </h5>
+            </h3>
             <p>
               The 20-20-20 rule isn&apos;t just marketing &ndash; it works.
               Every 20 minutes, focus on something 20 feet away for 20
@@ -559,9 +561,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h5 className="font-bold text-primary">
+            <h3 className="font-bold text-primary mb-1">
               6. Choose Contact Lenses Wisely
-            </h5>
+            </h3>
             <p>
               Daily disposables reduce protein buildup that irritates eyes. If
               you wear monthlies, replace them exactly on schedule. Sleeping
@@ -587,9 +589,9 @@ export const guideData = {
           </p>
           <div className="space-y-6">
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 1. Troublesome Symptoms
-              </h5>
+              </h3>
               <p>
                 Over-the-counter drops provide temporary relief for normal dry
                 eyes. If you&apos;re using artificial tears more than six
@@ -599,7 +601,7 @@ export const guideData = {
               </p>
             </div>
             <div>
-              <h5 className="font-bold text-primary">2. Vision Changes</h5>
+              <h3 className="font-bold text-primary mb-1">2. Vision Changes</h3>
               <p>
                 Blurry vision that comes and goes with blinking suggests tear
                 film instability. But vision changes that persist even after
@@ -615,9 +617,9 @@ export const guideData = {
         <div className="space-y-6">
           <div className="space-y-6">
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 3. Pain That Interferes With Daily Life
-              </h5>
+              </h3>
               <p>
                 Mild discomfort is manageable. Sharp, stabbing pain or
                 pressure that prevents you from working, reading, or driving
@@ -627,9 +629,9 @@ export const guideData = {
               </p>
             </div>
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 4. Failed Self-Treatment
-              </h5>
+              </h3>
               <p>
                 You&apos;ve tried warm compresses, artificial tears, and
                 environmental changes for a month without improvement.
@@ -639,9 +641,9 @@ export const guideData = {
               </p>
             </div>
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 5. Recurring Infections or Inflammation
-              </h5>
+              </h3>
               <p>
                 Frequent styes, red bumps along your eyelid, or chronic
                 redness suggests underlying meibomian gland dysfunction. These
@@ -650,9 +652,9 @@ export const guideData = {
               </p>
             </div>
             <div>
-              <h5 className="font-bold text-primary">
+              <h3 className="font-bold text-primary mb-1">
                 6. Contact Lens Problems
-              </h5>
+              </h3>
               <p>
                 Your lenses feel uncomfortable within hours of insertion, or
                 you can&apos;t wear them for your usual duration. This often

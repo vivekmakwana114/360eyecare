@@ -37,10 +37,10 @@ export const guideData = {
     {
       id: "what-is-eye-exam",
       heading: "What is an Eye Exam?",
-      image: {
-        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-in-toronto.png",
-        alt: "Optometrist in Toronto conducting an eye exam with a slit lamp biomicroscope",
-      },
+      // image: {
+      //   src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-in-toronto.png",
+      //   alt: "Optometrist in Toronto conducting an eye exam with a slit lamp biomicroscope",
+      // },
       contentTop: (
         <>
           <p>
@@ -64,9 +64,8 @@ export const guideData = {
               className="text-primary hover:underline"
               href="https://www.360eyecare.ca/dilated-eye-exam-importance/"
             >
-              pupil dilation
+              pupil dilation.
             </a>
-            .
           </p>
         </>
       ),
@@ -77,10 +76,10 @@ export const guideData = {
     {
       id: "who-needs-exam",
       heading: "Who Needs an Eye Exam (and How Often)?",
-      image: {
-        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-toronto-optometrists.png",
-        alt: "Eye exams Toronto – who needs them and how often",
-      },
+      // image: {
+      //   src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-toronto-optometrists.png",
+      //   alt: "Eye exams Toronto – who needs them and how often",
+      // },
       contentTop: (
         <>
           <p>
@@ -89,13 +88,14 @@ export const guideData = {
             This is a habit that shouldn&apos;t be encouraged. Eye problems do
             not announce themselves with obvious symptoms. By the time you
             notice something off about your sight, permanent damage may have
-            already been done. Here&apos;s who needs an eye exam, and how
-            often they should have it.
+            already been done. 
           </p>
         </>
       ),
       contentBottom: (
         <>
+        <p>Here&apos;s who needs an eye exam, and how
+            often they should have it.</p>
           <ul className="list-disc pl-5 space-y-2 mt-2">
             <li>
               <strong className="text-primary">Children and teens</strong>{" "}
@@ -228,39 +228,22 @@ export const guideData = {
             process we provide here covers everything you might encounter so
             that you can be adequately prepared.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-8">
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               1. Initial Assessment (5 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 Your appointment starts with paperwork, then general questions
                 about your eye health, family history, complaints you have,
                 and current medications you are on. The receptionist will also
                 check your health card and confirm OHIP eye exam eligibility.
               </p>
-            </div>
           </div>
-          <div>
-            <h4 className="font-bold text-primary mb-2">
+           <div>
+            <h3 className="font-bold text-primary mb-1">
               2. Vision Testing (10 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 The first eye test of the day will be a vision test using the
                 classical eye chart. Your experience may be different because
                 modern facilities use digital charts now. You will be asked to
@@ -269,99 +252,67 @@ export const guideData = {
                 follow a pen or light as it moves in different directions.
               </p>
             </div>
-          </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-8">
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               3. Eye Pressure Check (2 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 The &ldquo;puff of air&rdquo; test, which most clients dread,
                 measures the pressure of the eyeball. High pressure in the
                 eyeball means potential glaucoma. Apart from the air puff
                 method, some offices use a gentler probe instead.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               4. Pupil Dilation (15–30 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 Eye drops are used to make your pupil huge so that the
                 optometrist can see your retina clearly. Doing this feels
                 weird for you and makes you sensitive to light. So we
                 recommend that you bring along sunglasses for a comprehensive
                 eye exam.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               5. Retinal Examination (10 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 The optometrist peers into your dilated eyes with a bright
                 light to check for signs of diabetes, high blood pressure, or
                 retinal tears. Digital cameras are also often used to capture
                 images for your file.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               6. Prescription Update (5 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 If you need glasses or contacts, you would be asked to try
                 different lens strengths until your vision is crisp. The
                 &ldquo;better one or better two&rdquo; routine can feel
                 endless, but it&apos;s all to ensure accuracy.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               7. Results Discussion (5 minutes)
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 At the end of all the tests conducted, the optometrist
                 explains their findings and recommends follow-up care if
                 needed. If serious issues were discovered, you will be
                 referred to specialists immediately.
               </p>
-            </div>
           </div>
-          <div className="space-y-4 pt-4">
+          <div className="space-y-2">
             <p>
               Typically, it takes 45&ndash;75 minutes for a comprehensive eye
               exam, depending on your eye health complexity.
@@ -406,28 +357,29 @@ export const guideData = {
               use private insurance.
             </p>
           </div>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-bold text-primary mb-1">2. Typical Costs</h4>
+                    <div>
+            <h3 className="font-bold text-primary mb-1">2. Typical Costs</h3>
             <p>
               A standard comprehensive eye exam usually falls in the mid-range
               for most working adults. However, if your optometrist recommends
               extra tests, such as retinal photography or a visual field
               analysis, your bill can increase, sometimes nearly doubling.
             </p>
-            <p>
+            <p className="mt-2">
               Private clinics often charge more than community health centers,
               though some optometrists offer payment plans or family packages
               to make care more affordable.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Insurance Benefits
-            </h4>
+            </h3>
             <p>
               If you have extended health benefits through work, your plan may
               cover part or all of your exam. Be sure to check your coverage
@@ -436,7 +388,7 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">4. Extra Fees</h4>
+            <h3 className="font-bold text-primary mb-1">4. Extra Fees</h3>
             <p>
               Contact lens wearers should budget for additional costs.
               Fittings are billed separately from the basic exam, and yearly
@@ -462,10 +414,10 @@ export const guideData = {
     {
       id: "age-groups",
       heading: "Eye Exams for Different Age Groups & Needs",
-      // image: {
-      //   src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-for-different-age-groups-in-toronto.png",
-      //   alt: "Eye exams for different age groups Toronto",
-      // },
+      image: {
+        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-for-different-age-groups-in-toronto.png",
+        alt: "Eye exams for different age groups Toronto",
+      },
       contentTop: (
         <>
           <p>
@@ -473,21 +425,11 @@ export const guideData = {
             Toronto optometrists know this, and they adjust their approach
             accordingly.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-8">
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               1. Children&apos;s Eye Exams
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-for-different-age-groups-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 Kids don&apos;t know what blurry vision is; to them, it&apos;s
                 normal vision. Unfortunately, many eye problems in kids go
                 unnoticed because parents assume good grades mean good vision.
@@ -495,38 +437,29 @@ export const guideData = {
                 early treatment before age seven, while the brain&apos;s
                 visual development window is still open.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               2. Teen and Young Adult Exams
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 Teenagers hide vision problems to avoid wearing glasses
                 because they find glasses &ldquo;uncool.&rdquo; Contact lens
                 consultations should become a norm around the age of
                 14&ndash;16. Many teens develop nearsightedness during growth
                 spurts that parents attribute to increased studying.
               </p>
-            </div>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+          
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               3. Adult Comprehensive Care
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p>
                 Working professionals need exams that meet their daily
                 demands. Computer workers, for example, require specific tests
                 for digital eye strain and blue light sensitivity. Reading
@@ -534,18 +467,11 @@ export const guideData = {
                 those who never needed vision correction before.
               </p>
             </div>
-          </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               4. Senior Eye Health
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-process-in-toronto.png" width={500} height={300}
-                alt="Eye exam process"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <div className="flex-1 space-y-4">
+            </h3>
+              <div className="flex-1 space-y-2">
                 <p>
                   Older adults face cataracts, glaucoma, and macular
                   degeneration risks, and for that matter require special
@@ -558,18 +484,16 @@ export const guideData = {
                   of age to catch complications before vision loss occurs.
                 </p>
               </div>
-            </div>
           </div>
-          <p className="text-primary pt-4">
+          <p className="text-primary">
             For detailed age-specific recommendations and scheduling
             guidelines, see our comprehensive{" "}
             <a
               className="text-primary hover:underline font-medium"
               href="https://www.360eyecare.ca/healthy-eyes-at-every-age-a-guide-for-the-beaches-yorkville-and-rosedale-residents"
             >
-              Healthy Eyes at Every Age Guide
+              Healthy Eyes at Every Age Guide.
             </a>
-            .
           </p>
         </div>
       ),
@@ -589,101 +513,67 @@ export const guideData = {
             Toronto eye care has gone high-tech. Here is some equipment you
             should expect to see at a well-equipped eye clinic:
           </p>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-8">
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               1. Digital Retinal Photography
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-cost-of-eye-exams-in-toronto.png" width={500} height={300}
-                alt="Digital Retinal Photography"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p >
                 Digital retinal cameras capture high-resolution images of your
                 eye&apos;s back wall without dilation drops. These photos
                 become part of your permanent record for optometrists to track
                 tiny changes over the years.
               </p>
             </div>
-          </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               2. Optical Coherence Tomography (OCT)
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-process-in-toronto.png" width={500} height={300}
-                alt="Optical Coherence Tomography"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p >
                 OCT scans create 3D maps of retinal layers. This technology
                 detects glaucoma damage before it is noticed in traditional
                 tests. Not all Toronto clinics have OCT machines due to their
                 hefty price tags.
               </p>
             </div>
-          </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               3. Computerized Visual Field Testing
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exams-toronto.png" width={500} height={300}
-                alt="Computerized Visual Field Testing"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p >
                 Computerized visual field testing replaced manual methods in
                 most modern practices. Patients click a button when they see
                 flashing lights, creating detailed maps of peripheral vision.
                 The process feels like a video game, but it shows blind spots.
               </p>
             </div>
-          </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               4. Telehealth Consultations
-            </h4>
-            <div className="flex flex-col md:flex-row gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-technology-in-toronto.png" width={500} height={300}
-                alt="Telehealth Consultations"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+              <p >
                 Telehealth consultations gained popularity during COVID, but
                 they work better for follow-up appointments than initial
                 exams. You can&apos;t properly assess eye pressure or examine
                 retinas through a computer screen.
               </p>
-            </div>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-2">
+            <h3 className="font-bold text-primary mb-1">
               5. Corneal Topography
-            </h4>
-            <div className="flex flex-col md:flex-row-reverse gap-6 items-start">
-              <Image
-                src="/guide/Blog 5 - Eye Exam in Toronto/360eyecare-toronto-optometrists.png" width={500} height={300}
-                alt="Corneal Topography"
-                className="md:w-[45%] w-[100%] h-64 object-cover rounded-md"
-              />
-              <p className="flex-1">
+            </h3>
+            
+              <p>
                 Contact lens fitting now uses corneal topography to map your
                 eye&apos;s exact curvature. This creates custom fits that
                 reduce irritation and improve comfort compared to traditional
                 trial-and-error methods.
               </p>
             </div>
-          </div>
-          <p className="text-primary pt-4">
+          <p className="text-primary">
             Learn more about{" "}
             <a
               className="text-primary hover:underline font-medium"
@@ -702,7 +592,7 @@ export const guideData = {
       id: "find-optometrist",
       heading: "How to Find the Right Optometrist in Toronto",
       image: {
-        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-eye-exam-near-me.png",
+        src: "/guide/Blog 5 - Eye Exam in Toronto/360eyecare-toronto-optometrists.png",
         alt: "How to find the right optometrist in Toronto",
       },
       contentTop: (
@@ -712,33 +602,29 @@ export const guideData = {
             will show you how:
           </p>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Location and Convenience
-            </h4>
+            </h3>
             <p>
               A convenient clinic near work or home increases the odds
               you&apos;ll actually show up for follow-up appointments. Toronto
               traffic makes cross-city trips for routine care impractical.
             </p>
-            <p>
+            <p className="mt-2">
               Parking availability and subway-accessible locations work well
               for commuters. So choose clinics you can easily access or find
               parking close to. Strip mall locations often offer easier access
               and free parking compared to medical buildings downtown.
             </p>
-            <p>
+            <p className="mt-2">
               Concourse-level clinics beat second or third-floor offices for
               seniors or anyone with mobility issues.
             </p>
           </div>
-        </>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Modern Equipment Standards
-            </h4>
+            </h3>
             <p>
               <a
                 className="text-primary hover:underline"
@@ -751,10 +637,15 @@ export const guideData = {
               might miss early-stage problems that newer technology catches.
             </p>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+          
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Patient Reviews and Reputation
-            </h4>
+            </h3>
             <p>
               <a
                 className="text-primary hover:underline"
@@ -769,9 +660,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Specialist Referral Network
-            </h4>
+            </h3>
             <p>
               Ask about their referral network. Good optometrists have
               established relationships with ophthalmologists, retinal
@@ -780,9 +671,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               5. Insurance and Payment Options
-            </h4>
+            </h3>
             <p>
               Insurance acceptance varies across Toronto practices. Some work
               directly with major providers, while others require upfront
@@ -797,9 +688,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               6. Scheduling Flexibility
-            </h4>
+            </h3>
             <p>
               Weekend and evening hours suit working professionals better than
               traditional 9&ndash;5 schedules. Many newer practices{" "}
@@ -813,9 +704,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               7. Emergency Care Access
-            </h4>
+            </h3>
             <p>
               <a
                 className="text-primary hover:underline"
@@ -829,9 +720,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               8. Trust Your Instincts
-            </h4>
+            </h3>
             <p>
               Trust your gut during the consultation. Optometrists who rush
               through exams or push unnecessary upgrades care more about

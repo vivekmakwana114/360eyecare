@@ -33,10 +33,10 @@ export const guideData = {
       id: "differences",
       heading:
         "What's the Difference Between an Optometrist, Ophthalmologist, and Optician?",
-      image: {
-        src: "/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-difference-between-optometrist-ophthalmologist-and-optician.png",
-        alt: "Eye doctor in Toronto – optometrist vs ophthalmologist vs optician",
-      },
+      // image: {
+      //   src: "/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-difference-between-optometrist-ophthalmologist-and-optician.png",
+      //   alt: "Eye doctor in Toronto – optometrist vs ophthalmologist vs optician",
+      // },
       contentTop: (
         <>
           <p>
@@ -45,20 +45,11 @@ export const guideData = {
             Here&apos;s what each professional does and what their differences
             are:
           </p>
-        </>
-      ),
-      contentBottom: (
-        <>
-          <div className="space-y-8 mt-4">
+           <div className="space-y-4">
             <div>
-              <h4 className="font-bold text-primary mb-2">Optometrist</h4>
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optometrist-toronto.png" width={500} height={500}
-                  alt="Optometrist"
-                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
-                />
-                <p className="flex-1">
+              <h3 className="font-bold text-primary mb-1">Optometrist</h3>
+              
+                <p >
                   An optometrist is the person you see for routine eye care.
                   They conduct eye exams and prescribe eyeglasses and contact
                   lenses. They diagnose and manage certain eye conditions and
@@ -66,16 +57,10 @@ export const guideData = {
                   So, optometrists are your first point of contact.
                 </p>
               </div>
-            </div>
             <div>
-              <h4 className="font-bold text-primary mb-2">Ophthalmologist</h4>
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-ophthalmologist-toronto.png" width={500} height={500}
-                  alt="Ophthalmologist"
-                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
-                />
-                <p className="flex-1">
+              <h3 className="font-bold text-primary mb-1">Ophthalmologist</h3>
+             
+                <p >
                   Ophthalmologists do everything an optometrist does, but in
                   addition, they perform eye surgeries. Cataracts, retinal
                   detachment, and LASIK all fall under their scope of
@@ -83,16 +68,9 @@ export const guideData = {
                   medication, you&apos;re referred to them.
                 </p>
               </div>
-            </div>
             <div>
-              <h4 className="font-bold text-primary mb-2">Optician</h4>
-              <div className="flex flex-col md:flex-row gap-6 items-start">
-                <Image
-                  src="/guide/Blog 6 - Eye Doctor in Toronto/360eyecare-optician-toronto.png" width={500} height={500}
-                  alt="Optician"
-                  className="md:w-[45%] w-[100%] h-[450px] object-cover rounded-md"
-                />
-                <p className="flex-1">
+              <h3 className="font-bold text-primary mb-1">Optician</h3>
+                <p >
                   Opticians don&apos;t examine your eyes or prescribe
                   medications. What they do is take the prescription provided
                   by your optometrist and turn it into wearable eyewear. They
@@ -100,8 +78,11 @@ export const guideData = {
                   your lifestyle, they are the ones to attend to you.
                 </p>
               </div>
-            </div>
           </div>
+        </>
+      ),
+      contentBottom: (
+        <>
           <p className="mb-3">
             Below is a quick comparison table for easy understanding:
           </p>
@@ -254,10 +235,6 @@ export const guideData = {
               sometimes with lasers or injections.
             </li>
           </ul>
-        </>
-      ),
-      contentBottom: (
-        <>
           <p>
             You usually can&apos;t just book an appointment with an
             ophthalmologist on your own. In Ontario, you need a referral. That
@@ -268,6 +245,7 @@ export const guideData = {
           </p>
         </>
       ),
+      contentBottom: null
     },
 
     // ── Section 3 ──────────────────────────────────────────────────────────
@@ -282,10 +260,6 @@ export const guideData = {
             prescription you already have and turn it into eyewear. Services
             they provide include:
           </p>
-        </>
-      ),
-      contentBottom: (
-        <>
           <ul className="list-disc pl-5 space-y-2 mt-3">
             <li>
               <strong>Frame selection:</strong> They help you find frames that
@@ -310,6 +284,11 @@ export const guideData = {
               comfortable and functional.
             </li>
           </ul>
+        </>
+      ),
+      contentBottom: (
+        <>
+          
           <p>
             An optometrist checks your eye health and determines your
             prescription, while an optician uses that prescription to craft
@@ -361,15 +340,16 @@ export const guideData = {
             They handle the day-to-day stuff. And if something looks serious
             during your exam, they&apos;ll send you where you need to go next.
           </p>
-        </>
-      ),
-      contentBottom: (
-        <>
           <p>
             You won&apos;t usually see an ophthalmologist unless someone
             refers you. You&apos;ll be referred to an ophthalmologist when
             surgery or advanced care is needed:
           </p>
+          
+        </>
+      ),
+      contentBottom: (
+        <>
           <ul className="list-disc pl-5 space-y-1 mt-3 mb-3">
             <li>
               Cataracts clouding your vision? That&apos;s surgery.{" "}
@@ -419,9 +399,9 @@ export const guideData = {
       contentTop: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               1. Consider Your Age and Eye Health Needs
-            </h4>
+            </h3>
             <p>
               A kid getting their first eye exam needs something different
               than someone managing glaucoma. Children benefit from
@@ -431,14 +411,10 @@ export const guideData = {
               optometrist who does thorough retinal screenings.
             </p>
           </div>
-        </div>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               2. Look for Specialty Services That Match Your Situation
-            </h4>
+            </h3>
             <p>Not every clinic offers the same services:</p>
             <ul className="list-disc pl-5 space-y-1 mt-2">
               <li>
@@ -458,10 +434,15 @@ export const guideData = {
               </li>
             </ul>
           </div>
+        </div>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
+          
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               3. Location and Accessibility
-            </h4>
+            </h3>
             <p>
               You&apos;re more likely to keep up with eye care if it&apos;s
               convenient. Is the clinic near your home or work? Can you get
@@ -472,9 +453,9 @@ export const guideData = {
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               4. Technology and Advanced Diagnostics
-            </h4>
+            </h3>
             <p>
               Modern equipment catches problems earlier. Digital retinal
               imaging, OCT scans, and visual field testing give a clearer
@@ -497,36 +478,32 @@ export const guideData = {
       contentTop: (
         <div className="space-y-4">
           <div>
-            <h4 className="font-bold text-primary mb-1">Read Reviews</h4>
+            <h3 className="font-bold text-primary mb-1">Read Reviews</h3>
             <p>
               Google reviews and patient testimonials tell you how people
               actually feel about their experience.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               Ask for Recommendations
-            </h4>
+            </h3>
             <p>
               Friends, family, or your family doctor can point you toward
               someone reliable.
             </p>
           </div>
-        </div>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-bold text-primary mb-1">Check Credentials</h4>
+           <div>
+            <h3 className="font-bold text-primary mb-1">Check Credentials</h3>
             <p>
               Make sure the optometrist is licensed with the College of
               Optometrists of Ontario.
             </p>
           </div>
           <div>
-            <h4 className="font-bold text-primary mb-1">
+            <h3 className="font-bold text-primary mb-1">
               Visit the Clinic First
-            </h4>
+            </h3>
             <p>
               If something feels off &ndash; whether it&apos;s the staff, the
               wait time, or how rushed the exam feels &ndash; trust your gut.
@@ -540,12 +517,12 @@ export const guideData = {
               className="text-primary hover:underline"
               href="https://www.360eyecare.ca/optometrist-in-toronto-beaches-guide/"
             >
-              Choosing the Right Optometrist
+              Choosing the Right Optometrist.
             </a>
-            .
           </p>
         </div>
       ),
+      contentBottom: null
     },
 
     // ── Conclusion ─────────────────────────────────────────────────────────
