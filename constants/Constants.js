@@ -1898,7 +1898,7 @@ export const RosedaleFaqData = [
     question: "Q9. Where exactly is your eye clinic located on Bloor Street?",
     answer: (
       <>
-      We're located at <strong>55 Bloor Street West, Suite 03 </strong> on the concourse level of the Manulife Centre, directly at the intersection of <strong>Bay Street and Bloor Street. </strong> Our clinic is steps from Bloor-Yonge subway station and Bay Station, making us easily accessible for anyone searching for an "eye doctor Bloor Street" or "optometrist Bay Street Toronto".
+      We're located at <strong>55 Bloor Street West, Suite 03 </strong> on the concourse level of the <strong>Manulife Centre, Toronto, ON M4W 1A5, Canada</strong>, directly at the intersection of <strong>Bay Street and Bloor Street. </strong> Our clinic is steps from Bloor-Yonge subway station and Bay Station, making us easily accessible for anyone searching for an "eye doctor Bloor Street" or "optometrist Bay Street Toronto".
       </>
     ),
   },

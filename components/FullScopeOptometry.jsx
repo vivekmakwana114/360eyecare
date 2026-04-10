@@ -88,9 +88,8 @@ const FullScopeOptometry = () => {
             <Image
               src={OptometryImage}
               alt="Eye examination equipment"
-              layout="fill"
-              objectFit="cover"
-              className="rounded"
+              fill
+              className="object-cover rounded"
             />
           </div>
         </div>

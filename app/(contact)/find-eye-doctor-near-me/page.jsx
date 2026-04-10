@@ -103,7 +103,7 @@ const page = () => {
               <p className="mb-4 md:mb-6 text-sm sm:text-base">
                 Whether you need an{" "}
                 <span className="font-medium">
-                  optometrist near Yorkville, Rosedale, or The Beaches
+                  optometrist near Yorkville, or The Beaches
                 </span>
                 , <span className="font-medium">360 Eyecare</span> is here to
                 help.
@@ -132,7 +132,7 @@ const page = () => {
                 </Link>
               </p>
               <p className="text-xl sm:text-2xl md:text-[30px] font-extrabold leading-relaxed">
-                Yorkville Rosedale:{" "}
+                Yorkville:{" "}
                 <Link
                   href="tel:4169012725"
                   className="text-combination-200 hover:text-combination-100"
@@ -190,7 +190,7 @@ const page = () => {
             . Ask friends, family, or co-workers about their experiences with
             local optometrists. If you live in{" "}
             <span className="text-[#888888] font-extrabold">
-              Yorkville, Rosedale, or The Beaches
+              Yorkville, The Beaches
             </span>
             , neighbors and colleagues can provide helpful insights.
           </p>
@@ -213,7 +213,7 @@ const page = () => {
             maintain directories of licensed eye doctors in Toronto. Checking
             their databases ensures you find a reputable{" "}
             <span className="text-[#888888] font-extrabold">
-              optometrist near The Beaches, Yorkville, or Rosedale
+              optometrist near The Beaches, Yorkville
             </span>
             .
           </p>
@@ -235,7 +235,7 @@ const page = () => {
           <p className="text-sm sm:text-base">
             If you're looking for a{" "}
             <span className="text-[#888888] font-bold">
-              trusted eye clinic in The Beaches, Yorkville, or Rosedale
+              trusted eye clinic in The Beaches, Yorkville
             </span>
             , 360 Eyecare has locations conveniently serving these areas. We
             offer comprehensive eye exams, prescription eyewear, and specialized
@@ -256,7 +256,7 @@ const page = () => {
             </span>{" "}
             and{" "}
             <span className="text-[#888888] font-bold">
-              360 Eyecare Yorkville Rosedale
+              360 Eyecare Yorkville
             </span>{" "}
             locations provide flexible payment plans for{" "}
             <span className="text-[#888888] font-bold">eye exams</span> for
@@ -267,8 +267,7 @@ const page = () => {
         {/* FAQ 3 */}
         <div className="mb-5 md:mb-6">
           <h3 className="text-xl sm:text-2xl md:text-[30px] text-combination-200 mb-2">
-            3. How do I book an appointment with 360 Eyecare in Yorkville
-            Rosedale or The Beaches?
+            3. How do I book an appointment with 360 Eyecare in Yorkville or The Beaches?
           </h3>
           <p className="text-sm sm:text-base">
             You can book an appointment{" "}
@@ -300,7 +299,7 @@ const page = () => {
           <p className="text-sm sm:text-base">
             Our clinics in{" "}
             <span className="text-[#888888] font-bold">
-              The Beaches, Yorkville Rosedale
+              The Beaches, Yorkville
             </span>{" "}
             carry a{" "}
             <span className="text-[#888888] font-bold">
@@ -322,7 +321,7 @@ const page = () => {
             </span>{" "}
             at both our{" "}
             <span className="text-[#888888] font-bold">
-              Yorkville Rosedale and The Beaches
+              Yorkville and The Beaches
             </span>{" "}
             clinics. Whether you need daily, monthly, or specialty lenses, we'll
             find the right fit for you.

@@ -18,6 +18,7 @@ const nextConfig = {
         hostname: "**",
       },
     ],
+    qualities: [60, 75, 90, 100],
   },
   experimental: {
     optimizeCss: true,
@@ -28,7 +29,6 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production",
   },

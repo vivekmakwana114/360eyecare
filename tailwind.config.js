@@ -27,7 +27,7 @@ module.exports = {
           700: "#023A5A",
           800: "#01283F",
           900: "#001523",
-          DEFAULT: "hsl(var(--primary))",
+          DEFAULT: "#28305F",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
@@ -40,7 +40,7 @@ module.exports = {
           700: "#176D9A",
           800: "#0B4968",
           900: "#052437",
-          DEFAULT: "hsl(var(--secondary))",
+          DEFAULT: "#40BCC8",
           foreground: "hsl(var(--secondary-foreground))",
         },
         neutral: {

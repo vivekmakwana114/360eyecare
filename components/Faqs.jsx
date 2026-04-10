@@ -32,11 +32,11 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
         </div>
       </div>
       <div
-        className={`bg-[#F9F9F9] px-4 overflow-scroll transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 py-4" : "max-h-0"
+        className={`bg-[#F9F9F9] px-4 overflow-hidden transition-all duration-300 ease-in-out ${
+          isOpen ? "max-h-[1000px] py-4" : "max-h-0"
         }`}
       >
-        <p>{faq.answer}</p>
+        <p className="text-justify">{faq.answer}</p>
       </div>
     </div>
   );

@@ -58,8 +58,8 @@ export const ImageSlider = () => {
           <Image
             src={WithOutSpecImage}
             alt="Without Glasses"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             priority
             draggable={false}
           />
@@ -80,8 +80,8 @@ export const ImageSlider = () => {
             <Image
               src={GirWithSpecImage}
               alt="With Glasses"
-              layout="fill"
-              objectFit="cover"
+              fill
+              className="object-cover"
               priority
               draggable={false}
             />

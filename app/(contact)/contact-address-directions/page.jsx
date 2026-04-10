@@ -228,8 +228,8 @@ const Page = () => {
               <h3 className="text-xl font-semibold text-combination-200 mb-2">
                 Our Address
               </h3>
-              <p className="text-neutral-500">Concourse level,</p>
-              <p className="text-neutral-500">55 Bloor St W Suite 03,</p>
+              <p className="text-neutral-500">55 Bloor St W, Concourse level,</p>
+              <p className="text-neutral-500">Suite 03, Manulife Center,</p>
               <p className="text-neutral-500">Toronto, ON M4W 1A5, Canada</p>
             </div>
           </div>

@@ -26,10 +26,10 @@ const InformationData = [
     logoSrc: rosedale360Image,
     affirmSrc: affirmImage,
     name: "360 Eyecare – Yorkville",
-    location: "Concourse level 55 Bloor St W Suite 03",
-    code: "Toronto, ON M4W 1A5, Canada",
+    location: "55 Bloor St W, \nConcourse level, Suite 03,",
+    code: "Manulife Centre, Toronto, \nON M4W 1A5, Canada",
     phone: "416-901-2725",
-    email: "yorkville@360eyecare.ca",
+    email: "yorkville@360eyecare.ca", 
     prequalifiedText: "GET PREQUALIFIED AT YORKVILLE LOCATION",
     prequalifiedLink:
       "https://www.affirm.ca/apps/prequal/?public_api_key=UZQTPQF12DC6FIUA&referring_url=https%3a%2f%2fpaybright.com&device_id=&use_promo=true&page_type=banner&locale=en_CA",
@@ -120,8 +120,8 @@ const Page = () => {
                 </div>
                 <div className="flex flex-col text-neutral-500 text-center md:text-left">
                   <p className="font-bold text-base mb-2">{info.name}</p>
-                  <p className="mb-1">{info.location}</p>
-                  <p className="mb-3">{info.code}</p>
+                  <p className="mb-1 whitespace-pre-line">{info.location}</p>
+                  <p className="mb-3 whitespace-pre-line">{info.code}</p>
                   <p className="text-combination-200 hover:text-combination-100 font-bold mb-2">
                     <span className="font-bold mr-2 text-neutral-500">
                       Phone:

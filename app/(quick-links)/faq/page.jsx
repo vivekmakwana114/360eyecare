@@ -345,7 +345,7 @@ const faqSections = [
         question:
           "Are pediatric eye exams available at your Yorkville and Beaches locations?",
         answer:
-          "Yes, pediatric eye exams are available at both 360 Eyecare locations. Our Yorkville clinic is at 55 Bloor Street West (call 416-901-2725) and our Beaches clinic is at 2199 Queen Street East (call 416-698-3937). Both locations offer comprehensive children's eye care, myopia control programs, and OHIP-covered exams for children under 20.",
+          "Yes, pediatric eye exams are available at both 360 Eyecare locations. Our Yorkville clinic is at 55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada (call 416-901-2725) and our Beaches clinic is at 2199 Queen Street East (call 416-698-3937). Both locations offer comprehensive children's eye care, myopia control programs, and OHIP-covered exams for children under 20.",
       },
       {
         id: "pediatric-eye-care-myopia-control-4",
@@ -436,7 +436,7 @@ const faqSections = [
         id: "location-specific-faqs-3",
         question: "Are eye exams available in Yorkville and Beaches Toronto?",
         answer:
-          "Yes, comprehensive eye exams are available at both locations. Our Yorkville clinic at 55 Bloor Street West serves Yorkville, Rosedale, Bay Street, and downtown Toronto. Our Beaches clinic at 2199 Queen Street East serves the Beaches, Leslieville, and East Toronto. Both locations offer the same services, advanced technology, and experienced optometrists.",
+          "Yes, comprehensive eye exams are available at both locations. Our Yorkville clinic at 55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada serves Yorkville, Rosedale, Bay Street, and downtown Toronto. Our Beaches clinic at 2199 Queen Street East serves the Beaches, Leslieville, and East Toronto. Both locations offer the same services, advanced technology, and experienced optometrists.",
       },
       {
         id: "location-specific-faqs-4",
@@ -569,7 +569,7 @@ const faqSchema = {
       name: "Are pediatric eye exams available at your Yorkville and Beaches locations?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, pediatric eye exams are available at both 360 Eyecare locations. Our Yorkville clinic is at 55 Bloor Street West (call 416-901-2725) and our Beaches clinic is at 2199 Queen Street East (call 416-698-3937). Both locations offer comprehensive children's eye care, myopia control programs, and OHIP-covered exams for children under 20.",
+        text: "Yes, pediatric eye exams are available at both 360 Eyecare locations. Our Yorkville clinic is at 55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada (call 416-901-2725) and our Beaches clinic is at 2199 Queen Street East (call 416-698-3937). Both locations offer comprehensive children's eye care, myopia control programs, and OHIP-covered exams for children under 20.",
       },
     },
     {

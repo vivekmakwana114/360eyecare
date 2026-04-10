@@ -26,7 +26,8 @@ import Vercase from "../public/Brand/Versace.webp";
 import Prada from "../public/Brand/Prada.webp";
 import RudyProject from "../public/Brand/Rudy.webp";
 import Brandmykita from "../public/mykita.png";
-
+import Allsaints from "../public/Brand/allsaints.png"; 
+import Nanovista1 from "../public/Brand/nanovista1.svg"
 export {
   Vercase,
   Prada,
@@ -56,4 +57,6 @@ export {
   Brand22,
   Brand23,
   Brand24,
+  Allsaints,
+  Nanovista1,
 };
