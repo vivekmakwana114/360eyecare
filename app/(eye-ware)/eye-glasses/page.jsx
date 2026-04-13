@@ -31,6 +31,7 @@ import {
   Brandmykita,
   Allsaints,
   Nanovista1,
+  integblack,
 } from "../../../constants/brand";
 import Card from "../../../components/Card";
 import BookExamCommon from "../../../components/common/BookExampCommon";
@@ -118,6 +119,16 @@ const pages = () => {
       catalogLink: "https://integrumeyewear.com/",
       logoImg: Brand5,
     },
+    {
+      id:"integrumBlack",
+      name:"Integrum Black",
+      tagline:"Integrum Eyeglasses: Fusion of Style and Comfort",
+      description:"Integrum Black is a specialized collection dedicated to the highest standards of eyewear construction, defined by the use of premium 7mm Japanese acetate. This substantial material gives each frame a deep, luxurious luster and a weighted, high-end feel that is immediately tactile. The series emphasizes structural integrity through traditional riveted hinges, ensuring the frames are as durable as they are aesthetically refined.  With a focus on iconic, elevated silhouettes, Integrum Black combines sophisticated design with artisan-level details to create a truly distinguished optical experience. Every curve and polished surface reflects a commitment to master-tier craftsmanship, offering a bold yet timeless look for the discerning wearer.",
+      catalogLink:"https://integrumeyewear.com/",
+      logoImg:integblack,
+    },
+
+
     {
       id: "maui-jim",
       name: "Maui Jim",
@@ -342,7 +353,7 @@ const pages = () => {
 
   return (
     <main className="pt-[110px] bg-[#F6F7F5]">
-      <SubHeader text="Eyeglasses frame brands and customizations in Toronto" />
+      <SubHeader text="Eyeglasses Frame Brands and Customization in Toronto" />
       <div className="max-w-7xl mx-auto px-4 md:px-6 my-8 md:my-16 flex flex-wrap justify-between">
         <div className="w-full">
           {/* Hero section - Made responsive */}

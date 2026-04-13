@@ -5,7 +5,7 @@ export const guideData = {
   subtitle:
     "How Do I Take Care of My Child's Eyes? A Complete Guide for Parents",
   featureImage:
-    "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-pediatric-optometrist-toronto copy.png",
+    "/guide/Blog_7_take_care_childs_eye/360eyecare-pediatric-optometrist-toronto copy.png",
   keyTakeaways: [
     "Children rarely complain about vision problems. Regular eye exams starting in infancy are essential to catch issues before they affect development.",
     "More outdoor time, less screen time, proper nutrition, and good sleep habits directly impact eye health and can prevent myopia progression.",
@@ -36,7 +36,7 @@ export const guideData = {
       id: "vision-development",
       heading: "Understanding Children's Vision Development",
       image: {
-        src: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-childrenÔÇÖs-vision-development-toronto.png",
+        src: "/guide/Blog_7_take_care_childs_eye/360eyecare-childrenÔÇÖs-vision-development-toronto.png",
         alt: "Pediatric optometrists in Toronto – children's vision development",
       },
       contentTop: (
@@ -167,7 +167,7 @@ export const guideData = {
       id: "regular-eye-exams",
       heading: "Why Regular Eye Exams Are Essential",
       image: {
-        src: "/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-regular-eye-exams-for-children-in-toronto.png",
+        src: "/guide/Blog_7_take_care_childs_eye/360eyecare-regular-eye-exams-for-children-in-toronto.png",
         alt: "Regular pediatric eye exams Toronto",
       },
       contentTop: (
@@ -456,7 +456,7 @@ export const guideData = {
       id: "screen-time-outdoors",
       heading: "Lifestyle Habits That Support Healthy Vision",
       image:{
-        src:"/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-lifestyle-habits-for-healthy-vision.png",
+        src:"/guide/Blog_7_take_care_childs_eye/360eyecare-lifestyle-habits-for-healthy-vision.png",
         alt:"healthy habits for child eye care",
       },
       contentTop: (
@@ -529,7 +529,7 @@ export const guideData = {
       id: "eye-protection",
       heading: "Protecting Children's Eyes from Injury & Strain",
       image:{
-        src:"/guide/Blog 7 - How Do I Take Care of My ChildÔÇÖs Eyes/360eyecare-children's-eye-protection-toronto.png",
+        src:"/guide/Blog_7_take_care_childs_eye/360eyecare-children's-eye-protection-toronto.png",
         alt:"children's eye protection toronto",
       },
       contentTop: (
