@@ -354,7 +354,7 @@ const pages = () => {
     <main className="pt-[110px] bg-[#F6F7F5]">
       <SubHeader
         text="Eyeglasses Frame Brands and Customization in Toronto"
-        fontClass="font-playfair italic tracking-wide"
+        fontClass="font-figtree tracking-tight"
       />
       <div className="max-w-7xl mx-auto px-4 md:px-6 my-8 md:my-16 flex flex-wrap justify-between">
         <div className="w-full">

@@ -1,4 +1,4 @@
-import { Poppins, Roboto, Lora, Playfair_Display } from "next/font/google";
+import { Poppins, Roboto, Lora, Figtree } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import RootLayout2 from "./RootLayout2";
@@ -30,13 +30,13 @@ const lora = Lora({
   fallback: ["system-ui", "arial"],
 });
 
-const playfair = Playfair_Display({
+const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-figtree",
   display: "swap",
   preload: true,
-  fallback: ["serif"],
+  fallback: ["sans-serif"],
 });
 
 export const metadata = {
@@ -209,7 +209,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${poppins.variable} ${roboto.variable} ${lora.variable} ${playfair.variable}`}
+      className={`${poppins.variable} ${roboto.variable} ${lora.variable} ${figtree.variable}`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
