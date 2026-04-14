@@ -33,10 +33,10 @@ export const guideData = {
     {
       id: "what-is-eye-emergency",
       heading: "What Counts as an Eye Emergency?",
-      image: {
-        src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-common-eye-emergencies-in-toronto.png",
-        alt: "Eye emergency Toronto",
-      },
+      // image: {
+      //   src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-common-eye-emergencies-in-toronto.png",
+      //   alt: "Eye emergency Toronto",
+      // },
       contentTop: (
         <>
           <p>
@@ -564,14 +564,14 @@ export const guideData = {
                 Comprehensive Eye Care Services in Yorkville and Toronto.
               </a>
             </p>
-            <p>
+            <div>
               <h3 className="font-bold text-primary">
                 Transportation Considerations:
               </h3>{" "}
               <p>Don’t drive yourself with vision problems. TTC, taxis, or
               rideshare services prevent accidents while getting you to care
               quickly.</p>
-            </p>
+            </div>
           </div>
         </div>
       ),
@@ -580,7 +580,7 @@ export const guideData = {
       id: "prevention",
       heading: "How Can I Prevent Eye Emergencies?",
       image: {
-        src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-common-eye-emergencies-in-toronto.png",
+        src: "/guide/Blog 3 - Eye Emergency in Toronto/360eyecare-prevent-eye-emergencies.png",
         alt: "Eye safety prevention",
       },
       contentTop: (
@@ -612,6 +612,10 @@ export const guideData = {
               protection.
             </p>
           </div>
+        </div>
+      ),
+      contentBottom: (
+        <div className="space-y-4">
           <div>
             <h3 className="font-bold text-primary mb-1">
               3. Contact Lens Hygiene
@@ -622,10 +626,6 @@ export const guideData = {
               that can permanently scar corneas.
             </p>
           </div>
-        </div>
-      ),
-      contentBottom: (
-        <div className="space-y-4">
           <div>
             <h3 className="font-bold text-primary mb-1">
               4. Chemical Awareness at Home

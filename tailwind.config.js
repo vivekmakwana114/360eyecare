@@ -105,6 +105,7 @@ module.exports = {
         sans: ["Poppins", "Arial", "Helvetica", "sans-serif"],
         heading: ["Montserrat", "Poppins", "sans-serif"],
         poppins: ["Poppins", "Arial", "sans-serif"],
+        figtree: ["var(--font-figtree)", "sans-serif"],
       },
       fontSize: {
         xs: [

@@ -28,7 +28,9 @@ import RudyProject from "../public/Brand/Rudy.webp";
 import Brandmykita from "../public/mykita.png";
 import Allsaints from "../public/Brand/allsaints.png"; 
 import Nanovista1 from "../public/Brand/nanovista1.svg"
+import integblack from '../public/Brand/integblack.png';
 export {
+  integblack,
   Vercase,
   Prada,
   RudyProject,
