@@ -1,7 +1,9 @@
-const SubHeader = ({ text = "Optometrists" }) => {
+const SubHeader = ({ text = "Optometrists", fontClass = "font-poppins" }) => {
   return (
     <div className="w-full bg-brand-subheader py-20 flex justify-center items-center md:px-0 px-4">
-      <h1 className="text-white text-3xl md:text-[32px] font-bold text-center font-poppins leading-[46px] text-wrap ">
+      <h1
+        className={`text-white text-3xl md:text-[32px] font-bold text-center leading-[46px] text-wrap ${fontClass}`}
+      >
         {text}
       </h1>
     </div>

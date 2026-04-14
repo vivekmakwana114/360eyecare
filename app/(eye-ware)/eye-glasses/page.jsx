@@ -128,7 +128,6 @@ const pages = () => {
       logoImg:integblack,
     },
 
-
     {
       id: "maui-jim",
       name: "Maui Jim",
@@ -353,7 +352,10 @@ const pages = () => {
 
   return (
     <main className="pt-[110px] bg-[#F6F7F5]">
-      <SubHeader text="Eyeglasses Frame Brands and Customization in Toronto" />
+      <SubHeader
+        text="Eyeglasses Frame Brands and Customization in Toronto"
+        fontClass="font-playfair italic tracking-wide"
+      />
       <div className="max-w-7xl mx-auto px-4 md:px-6 my-8 md:my-16 flex flex-wrap justify-between">
         <div className="w-full">
           {/* Hero section - Made responsive */}
