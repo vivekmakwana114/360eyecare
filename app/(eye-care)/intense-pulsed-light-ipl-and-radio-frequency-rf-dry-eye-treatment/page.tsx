@@ -154,12 +154,21 @@ const page = () => {
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           How it works
         </h3>
-        <video
+        <div className="w-full aspect-video">
+            {/* <video
           controls
           muted
-          src="https://360eyecare.ca/dashboard/wp-content/uploads/2024/08/Lumecca-Animation-with-Intro-2019-online-video-cutter.com-2.mp4"
-          className="w-full h-full"
-        />
+          src={`https://360eyecare.ca/dashboard/wp-content/uploads/2024/08/Lumecca-Animation-with-Intro-2019-online-video-cutter.com-2.mp4`}
+          className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+        /> */}
+          <iframe
+            src="https://drive.google.com/file/d/1rEwliyxypE4vXNH9mpEbjmCcx50uefHu/preview"
+            title="IPL treatment video"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+          />
+        </div>
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           Benefits of Inmode IPL Therapy
         </h3>
@@ -284,12 +293,20 @@ const page = () => {
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           How it works
         </h3>
-        <video
+        {/* <video
           controls
           muted
           src={`https://www.360eyecare.ca/dashboard/wp-content/uploads/2024/06/video2.mp4`}
           className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
-        />
+        /> */}
+        <iframe
+            src="https://drive.google.com/file/d/1MQeZIDaHRUKdg__R7oYAvhlIvGB9Gqxr/preview"
+            title="IPL treatment video"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            className="md:h-[518px] w-[470px] h-[280px]"
+            // className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+          />
 
         <h3 className="text-combination-200 text-3xl md:text-[30px]  my-6 font-bold ">
           Benefits and Expected Outcomes
