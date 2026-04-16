@@ -13,22 +13,46 @@ export async function POST(req) {
         { status: 400 }
       );
     }
+
+    const smtpHost = process.env.EMAIL_SERVER_HOST;
+    const smtpPort = Number(process.env.EMAIL_SERVER_PORT || 587);
+    const smtpSecure = process.env.EMAIL_SERVER_SECURE === "true";
+    const smtpUser = process.env.EMAIL_SERVER_USER;
+    const smtpPassword = process.env.EMAIL_SERVER_PASSWORD;
+    const senderEmail = process.env.EMAIL_FROM || smtpUser;
+    const recipientEmail = process.env.FOR_BEACHES_LOCATION || process.env.EMAIL_TO;
+
+    if (!smtpHost || !smtpPort || !smtpUser || !smtpPassword || !senderEmail) {
+      console.error("Missing SMTP configuration for virtual shop form", {
+        hasHost: Boolean(smtpHost),
+        hasPort: Boolean(smtpPort),
+        hasUser: Boolean(smtpUser),
+        hasPassword: Boolean(smtpPassword),
+        hasSenderEmail: Boolean(senderEmail),
+        hasRecipientEmail: Boolean(recipientEmail),
+      });
+      return Response.json(
+        { error: "Form is temporarily unavailable" },
+        { status: 500 }
+      );
+    }
+
     // Create a transporter
-    const transporter = await nodemailer.createTransport({
-      host: process.env.NEXT_PUBLIC_EMAIL_SERVER_HOST,
-      port: process.env.NEXT_PUBLIC_EMAIL_SERVER_PORT,
-      secure: process.env.NEXT_PUBLIC_EMAIL_SERVER_SECURE === "true",
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
-        user: process.env.NEXT_PUBLIC_EMAIL_SERVER_USER,
-        pass: process.env.NEXT_PUBLIC_EMAIL_SERVER_PASSWORD,
+        user: smtpUser,
+        pass: smtpPassword,
       },
     });
 
     // Email content
     const mailOptions = {
-      from: email,
+      from: senderEmail,
       replyTo: email,
-      to: process.env.NEXT_FOR_BEACHES_LOCATION,
+      to: recipientEmail,
       subject: "New Virtual Shop Form Submission",
       text: `
         Name: ${name}
@@ -46,6 +70,7 @@ export async function POST(req) {
     };
 
     // Send the email
+    await transporter.verify();
     await transporter.sendMail(mailOptions);
 
     // Return success
@@ -54,7 +79,14 @@ export async function POST(req) {
       message: "Email sent successfully",
     });
   } catch (error) {
-    // console.error("Error sending email:", error);
+    console.error("Error sending virtual shop form email", {
+      message: error?.message,
+      code: error?.code,
+      command: error?.command,
+      response: error?.response,
+      responseCode: error?.responseCode,
+      stack: error?.stack,
+    });
     return Response.json({ error: "Failed to send email" }, { status: 500 });
   }
 }

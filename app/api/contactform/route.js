@@ -30,16 +30,42 @@ export async function POST(req) {
       );
     }
 
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+
+    if (!recaptchaSecret) {
+      console.error("Missing RECAPTCHA_SECRET_KEY configuration");
+      return Response.json(
+        { error: "Form is temporarily unavailable" },
+        { status: 500 }
+      );
+    }
+
     // Verify reCAPTCHA token with Google
     const recaptchaResponse = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.NEXT_PUBLIC_RECAPTCHA_SECRET_KEY}&response=${recaptchaToken}`,
+      `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaToken}`,
       { method: "POST" }
     );
+
+    if (!recaptchaResponse.ok) {
+      console.error("reCAPTCHA verification request failed", {
+        status: recaptchaResponse.status,
+        statusText: recaptchaResponse.statusText,
+      });
+      return Response.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
 
     const recaptchaData = await recaptchaResponse.json();
 
     // If reCAPTCHA verification fails
     if (!recaptchaData.success) {
+      console.error("reCAPTCHA verification unsuccessful", {
+        errorCodes: recaptchaData["error-codes"] || [],
+        hostname: recaptchaData.hostname,
+        action: recaptchaData.action,
+      });
       return Response.json(
         { error: "reCAPTCHA verification failed" },
         { status: 400 }
@@ -47,35 +73,62 @@ export async function POST(req) {
     }
 
     // Determine recipient email based on location
-    let recipientEmail = process.env.NEXT_PUBLIC_EMAIL_TO;
+    let recipientEmail = process.env.EMAIL_TO;
 
     if (location) {
-      if (location.toLowerCase().includes("beaches")) {
-        recipientEmail = process.env.NEXT_FOR_BEACHES_LOCATION;
-      } else if (location.toLowerCase().includes("rosedale")) {
-        recipientEmail = process.env.NEXT_FOR_YORKVILLE_LOCATION;
+      const normalizedLocation = location.toLowerCase();
+
+      if (normalizedLocation.includes("beaches")) {
+        recipientEmail = process.env.FOR_BEACHES_LOCATION;
+      } else if (
+        normalizedLocation.includes("yorkville") ||
+        normalizedLocation.includes("rosedale")
+      ) {
+        recipientEmail = process.env.FOR_YORKVILLE_LOCATION;
       }
     }
 
     // Fallback to default if location-specific email is not configured
     if (!recipientEmail) {
-      recipientEmail = process.env.NEXT_PUBLIC_EMAIL_TO;
+      recipientEmail = process.env.EMAIL_TO;
+    }
+
+    const smtpHost = process.env.EMAIL_SERVER_HOST;
+    const smtpPort = Number(process.env.EMAIL_SERVER_PORT || 587);
+    const smtpSecure = process.env.EMAIL_SERVER_SECURE === "true";
+    const smtpUser = process.env.EMAIL_SERVER_USER;
+    const smtpPassword = process.env.EMAIL_SERVER_PASSWORD;
+    const senderEmail = process.env.EMAIL_FROM || smtpUser;
+
+    if (!smtpHost || !smtpPort || !smtpUser || !smtpPassword || !senderEmail) {
+      console.error("Missing SMTP configuration for contact form", {
+        hasHost: Boolean(smtpHost),
+        hasPort: Boolean(smtpPort),
+        hasUser: Boolean(smtpUser),
+        hasPassword: Boolean(smtpPassword),
+        hasSenderEmail: Boolean(senderEmail),
+        hasRecipientEmail: Boolean(recipientEmail),
+      });
+      return Response.json(
+        { error: "Form is temporarily unavailable" },
+        { status: 500 }
+      );
     }
 
     // Create a transporter
     const transporter = nodemailer.createTransport({
-      host: process.env.NEXT_PUBLIC_EMAIL_SERVER_HOST,
-      port: process.env.NEXT_PUBLIC_EMAIL_SERVER_PORT,
-      secure: process.env.NEXT_PUBLIC_EMAIL_SERVER_SECURE === "true", // true for 465, false for other ports
+      host: smtpHost,
+      port: smtpPort,
+      secure: smtpSecure,
       auth: {
-        user: process.env.NEXT_PUBLIC_EMAIL_SERVER_USER,
-        pass: process.env.NEXT_PUBLIC_EMAIL_SERVER_PASSWORD,
+        user: smtpUser,
+        pass: smtpPassword,
       },
     });
 
     // Email content
     const mailOptions = {
-      from: email,
+      from: senderEmail,
       replyTo: email,
       to: recipientEmail,
       subject: "New Contact Form Submission",
@@ -103,6 +156,7 @@ export async function POST(req) {
       `,
     };
 
+    await transporter.verify();
     await transporter.sendMail(mailOptions);
 
     // Return success
@@ -111,6 +165,14 @@ export async function POST(req) {
       message: "Email sent successfully",
     });
   } catch (error) {
+    console.error("Error sending contact form email", {
+      message: error?.message,
+      code: error?.code,
+      command: error?.command,
+      response: error?.response,
+      responseCode: error?.responseCode,
+      stack: error?.stack,
+    });
     return Response.json({ error: "Failed to send email" }, { status: 500 });
   }
 }

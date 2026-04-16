@@ -10,7 +10,7 @@ const LocationSelect = ({ onChange, value }) => {
 
   const locations = [
     "Beaches (2199 Queen St. East)",
-    "Rosedale with Yorkville (Concourse level, 55 Bloor St W Suite 03, Toronto, ON M4W 1A5, Canada)",
+    "Yorkville (Concourse level, 55 Bloor St W Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada)",
   ];
 
   // Update selectedLocation when value prop changes

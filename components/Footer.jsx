@@ -363,7 +363,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="py-6 text-center text-sm font-[400] font-poppins not-italic leading-[27px] text-[#aeaeae]">
-          Copyright © 2025
+          Copyright © 2026
           <Link href={"/"} className="text-white hover:text-combination-100">
             {" "}
             360 EyeCare

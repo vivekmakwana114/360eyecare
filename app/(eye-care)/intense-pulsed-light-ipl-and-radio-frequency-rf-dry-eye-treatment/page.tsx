@@ -154,12 +154,19 @@ const page = () => {
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           How it works
         </h3>
-        <video
-          controls
-          muted
-          src="https://360eyecare.ca/dashboard/wp-content/uploads/2024/08/Lumecca-Animation-with-Intro-2019-online-video-cutter.com-2.mp4"
-          className="w-full h-full"
-        />
+        <div className="w-full aspect-video">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/E44vqABjBOo?si=2Lix09cwpKFzNSxF"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+          ></iframe>
+        </div>
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           Benefits of Inmode IPL Therapy
         </h3>
@@ -284,10 +291,12 @@ const page = () => {
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
           How it works
         </h3>
-        <video
-          controls
-          muted
-          src={`https://www.360eyecare.ca/dashboard/wp-content/uploads/2024/06/video2.mp4`}
+        <iframe
+          src="https://www.youtube.com/embed/z30SFaNWIuw"
+          title="RF treatment video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
           className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
         />
 

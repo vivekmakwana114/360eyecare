@@ -192,7 +192,7 @@ const FormSection = ({ css }) => {
 
       <div className="mt-4">
         <label htmlFor="promoCode" className="block text-gray-700 mb-2">
-          Enter Promo Code here if you have one:
+          Enter Promo Code here if you have one: (Optional)
         </label>
         <input
           id="promoCode"
