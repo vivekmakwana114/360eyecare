@@ -15,6 +15,7 @@ const FormSection = ({ css }) => {
     watch,
     formState: { errors },
   } = useForm({
+    mode: "onChange",
     defaultValues: {
       name: "",
       email: "",
@@ -110,9 +111,10 @@ const FormSection = ({ css }) => {
     <form
       className="flex flex-col gap-4 w-full max-w-full sm:px-0 mx-auto"
       onSubmit={handleSubmit(onSubmit)}
+      noValidate
     >
       {/* Hidden input for location to register with react-hook-form */}
-      <input type="hidden" {...register("location")} />
+      <input type="hidden" {...register("location", { required: "Location is required" })} />
 
       <div className="w-full">
         <LocationSelect
@@ -142,13 +144,19 @@ const FormSection = ({ css }) => {
           {...register("email", {
             required: "Email is required",
             pattern: {
-              value: /\S+@\S+\.\S+/,
+              value:
+                /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
               message: "Please enter a valid email address",
+            },
+            maxLength: {
+              value: 30,
+              message: "Email cannot exceed 30 characters",
             },
           })}
           type="email"
           className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="*Email:"
+          maxLength={30}
         />
         {errors.email && (
           <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -162,6 +170,10 @@ const FormSection = ({ css }) => {
             pattern: {
               value: /^[0-9+\-\s()]+$/,
               message: "Please enter a valid phone number",
+            },
+            maxLength: {
+              value: 15,
+              message: "Phone number cannot exceed 15 digits",
             },
           })}
           className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
