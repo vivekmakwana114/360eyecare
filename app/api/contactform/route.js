@@ -15,9 +15,9 @@ export async function POST(req) {
       recaptchaToken,
     } = body;
     // Validate required fields
-    if (!name || !email || !phone) {
+    if (!name || !email || !phone || !location) {
       return Response.json(
-        { error: "Name, email, and phone are required" },
+        { error: "Name, email, phone, location are required" },
         { status: 400 }
       );
     }
