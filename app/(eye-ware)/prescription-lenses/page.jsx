@@ -203,7 +203,7 @@ const page = () => {
         title="Need Help Choosing?"
         phones={[
           { label: "Beaches", number: "416-698-3937" },
-          { label: "Rosedale", number: "416-901-2725" },
+          { label: "Yorkville", number: "416-901-2725" },
         ]}
         description="Our experts are here to assist you in finding the perfect prescription lenses for your needs."
         buttonText="Book Appointment"

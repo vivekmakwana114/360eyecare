@@ -116,7 +116,7 @@ const ContactLensesToronto = () => {
               href={"toronto-rosedale-optometrist/"}
               className="text-combination-200 hover:text-combination-100"
             >
-              360 Eyecare Yorkville Rosedale
+              360 Eyecare Yorkville
             </Link>
             . All types of contact lenses are available at our optical store.
           </p>

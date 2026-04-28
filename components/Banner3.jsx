@@ -10,7 +10,7 @@ const Banner3 = () => {
         </h2>
         <p className="text-sm md:text-[16px] max-w-full leading-relaxed">
           Experience the best vision care at 360 Eyecare, serving Yorkville and
-          Rosedale. Whether you need a routine check-up, treatment for dry eye,
+          The Beaches. Whether you need a routine check-up, treatment for dry eye,
           pediatric eye care, or emergency services, we're here to help.
         </p>
         <Link

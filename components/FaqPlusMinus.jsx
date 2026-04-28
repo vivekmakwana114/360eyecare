@@ -7,7 +7,7 @@ const faqData = [
   {
     id: 1,
     question:
-      "How much does an eye exam cost in The Beaches, Rosedale and Yorkville, Toronto?",
+      "How much does an eye exam cost in The Beaches and Yorkville, Toronto?",
     answer:
       "Usually, these exams are covered by your private vision or health care plan. Your eye exam will be covered by OHIP if you are 65 and over, 19 and under, or have specific conditions that are deemed insurable by OHIP. Please call our office to inquire further.",
   },
@@ -52,13 +52,13 @@ const faqData = [
     question:
       "Do you offer pediatric eye exams in Yorkville and The Beaches, Toronto?",
     answer:
-      "Yes, we specialize in providing gentle and thorough pediatric eye exams to ensure your child's vision health. Our optometrists are experienced in examining children of all ages and strive to make the experience comfortable and enjoyable for young patients. You can book an eye exam with eye doctor near you at The Beaches or Yorkville Rosedale.",
+      "Yes, we specialize in providing gentle and thorough pediatric eye exams to ensure your child's vision health. Our optometrists are experienced in examining children of all ages and strive to make the experience comfortable and enjoyable for young patients. You can book an eye exam with eye doctor near you at The Beaches or Yorkville.",
   },
   {
     id: 9,
     question: "Can I schedule an eye exam online?",
     answer:
-      "Yes, you can easily schedule your eye exam online through our website. Simply select your preferred location (Beaches, Toronto, or Rosedale, Toronto), choose a convenient date and time, and our team will confirm your appointment.",
+      "Yes, you can easily schedule your eye exam online through our website. Simply select your preferred location (Beaches, Toronto, or Yorkville, Toronto), choose a convenient date and time, and our team will confirm your appointment.",
   },
 ];
 

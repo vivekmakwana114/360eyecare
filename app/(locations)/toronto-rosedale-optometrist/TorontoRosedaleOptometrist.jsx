@@ -59,7 +59,7 @@ const TorontoRosedaleOptometrist = () => {
             Experience premium eye care with our optometrist, Dr. Sam Baraam,
             and our caring eye doctors in Yorkville. Conveniently located on
             Bloor Street West near Bay Street, serving Yorkville, The Annex, 
-            Downtown Toronto, and Rosedale with comprehensive eye exams,
+            Downtown Toronto with comprehensive eye exams,
             advanced dry eye treatment, and personalized vision solutions.
           </>
         }
@@ -159,7 +159,7 @@ const TorontoRosedaleOptometrist = () => {
         searchText={`*Searching for "eye doctor Bloor Street", "optometrist near Queen's Park", "Bay Street eye clinic", or "Church Street optometrist"? "We're your closest, best eye care on Bloor Street West!`}
       />
 
-      <ReviewsCarousel title="Happy Clients!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" reviewText="4.9/5 stars based on 185+ Google reviews" />
+      <ReviewsCarousel title="Happy Clients!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" reviewText="4.9/5 stars based on 205+ Google reviews" />
 
       <DryFaqs
         faqData={RosedaleFaqData}
@@ -168,7 +168,7 @@ const TorontoRosedaleOptometrist = () => {
 
       <GoogleMapEmbed
         src="https://www.google.com/maps?q=360+Eyecare+-+Yorkville+Rosedale,+55+Bloor+St+W,+Toronto,+ON+M4W+1A5,+Canada&output=embed"
-        title="360 Eyecare Yorkville Rosedale Location"
+        title="360 Eyecare Yorkville Location"
       />
     </main>
   );

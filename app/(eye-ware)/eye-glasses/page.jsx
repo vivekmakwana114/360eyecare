@@ -47,7 +47,7 @@ export async function generateMetadata() {
     description:
       "At 360 Eyecare we carry a wide selection of premium fashion and handmade designer eyeglasses. Get your favourite eyeglasses from our store.",
     openGraph: {
-      title: "Eyeglasses Toronto | Optical Store Beaches and Rosedale",
+      title: "Eyeglasses Toronto | Optical Store Beaches and Yorkville",
       description:
         "At 360 Eyecare we carry a wide selection of premium fashion and handmade designer eyeglasses. Get your favourite eyeglasses from our store.",
       url: "https://www.360eyecare.ca/eye-glasses/",
@@ -412,7 +412,7 @@ const pages = () => {
             <hr className="w-16 md:w-24 h-[3px] bg-combination-100 mb-3" />
             <p className="text-neutral-500 max-w-3xl mx-auto">
               Discover a wide range of premium eyeglasses in Beaches and
-              Rosedale from top brands.
+              Yorkville from top brands.
             </p>
           </div>
           {/* Brand cards grid - Made responsive */}
@@ -436,7 +436,7 @@ const pages = () => {
         title="Need Assistance?"
         phones={[
           { label: "Beaches", number: "416-698-3937" },
-          { label: "Rosedale", number: "416-901-2725" },
+          { label: "Yorkville", number: "416-901-2725" },
         ]}
         description="Our team is here to help. Whether you have questions about our services or need support, we're just a phone call away."
         buttonText="Book Appointment"
