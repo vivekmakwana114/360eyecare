@@ -8,13 +8,13 @@ import Choose360EyeCare from "../../../components/Choose360EyeCare";
 
 export async function generateMetadata() {
   return {
-    title: "Eye Doctor Near Me: Optometrist Near Beaches Yorkville Rosedale",
+    title: "Eye Doctor Near Me: Optometrist Near Beaches Yorkville",
     description:
-      "Are you looking for optometrist near in Beaches, Yorkville and Rosedale, Toronto? Just look for Eye Doctor Near Me.",
+      "Are you looking for optometrist near in Beaches, Yorkville, Toronto? Just look for Eye Doctor Near Me.",
     openGraph: {
-      title: "Eye Doctor Near Me: Optometrist Near Beaches Yorkville Rosedale",
+      title: "Eye Doctor Near Me: Optometrist Near Beaches Yorkville",
       description:
-        "Are you looking for optometrist near in Beaches, Yorkville and Rosedale, Toronto? Just look for Eye Doctor Near Me.",
+        "Are you looking for optometrist near in Beaches, Yorkville, Toronto? Just look for Eye Doctor Near Me.",
       url: "https://www.360eyecare.ca/find-eye-doctor-near-me/",
       siteName: "360 Eyecare",
       type: "website",
@@ -164,7 +164,7 @@ const page = () => {
           <ul className="list-disc pl-5 sm:pl-8 mb-3 md:mb-4 text-[#888888] font-extrabold text-sm sm:text-base">
             <li>"Optometrist near me"</li>
             <li>"Eye doctor near Yorkville"</li>
-            <li>"Eye clinic near Rosedale"</li>
+            {/* <li>"Eye clinic near Rosedale"</li> */}
             <li>"Optometry near The Beaches Toronto"</li>
           </ul>
           <p className="text-sm sm:text-base">

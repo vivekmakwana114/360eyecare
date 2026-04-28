@@ -47,7 +47,7 @@ const NearYou = () => {
           </Link>
         </div>
 
-        {/* Yorkville Rosedale Location */}
+        {/* Yorkville Location */}
         <div className="flex flex-col items-center w-full max-w-md lg:max-w-none">
           <div className="relative w-full h-[250px] md:h-[350px] lg:w-[600px] lg:h-[397px]">
             <Image
@@ -77,7 +77,7 @@ const NearYou = () => {
       </div>
 
       {/* <ReviewsCarousel title="Happy Clients of The Beaches!" data={mockBeachesReviews} href="https://360eyecare.ca/book-my-eye-exam" />
-      <ReviewsCarousel title="Happy Clients of Yorkville Rosedale!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" /> */}
+      <ReviewsCarousel title="Happy Clients of Yorkville!" data={mockRosedaleReviews} href="https://360rosedale.mypatientsportal.com/select-location" /> */}
     </div>
   );
 };

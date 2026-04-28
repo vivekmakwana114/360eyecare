@@ -60,7 +60,7 @@ const EyeClinicNearYou = () => {
           </h3>
           <hr className="w-20 h-1 bg-combination-100 mb-4" />
           <p className="text-neutral-500 text-base mb-4">
-            Conveniently located in Yorkville and Rosedale, this optometry
+            Conveniently located in Yorkville. This optometry
             clinic provides:
           </p>
           <ul className="list-inside mb-6">
@@ -79,12 +79,12 @@ const EyeClinicNearYou = () => {
 
           <p className="text-neutral-500 text-base font-extrabold mb-4">
             📍 Looking for an 'eye doctor near Yorkville' or 'optometrist near
-            Rosedale'? Visit{" "}
+             Toronto'? Visit{" "}
             <Link
               href="/toronto-rosedale-optometrist"
               className="text-combination-200 hover:text-combination-100"
             >
-              360 Eyecare Yorkville
+              360 Eyecare Yorkville 
             </Link>{" "}
             for expert care.
           </p>

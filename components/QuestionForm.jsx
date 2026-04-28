@@ -167,8 +167,14 @@ const QuestionForm = () => {
             {...register("dateOfBirth", {
               required: "Date of Birth is required",
             })}
-            type="date"
+            type="text"
+            onFocus={(e) => (e.target.type = "date")}
+            onBlur={(e) => {
+              if (!e.target.value) e.target.type = "text";
+              register("dateOfBirth").onBlur(e);
+            }}
             className="border border-[#E1E6EB] px-3 py-2 rounded-md placeholder:text-[#E1E6EB] placeholder:font-[400] w-full focus:outline-none focus:border-[#28305F]"
+            placeholder="Date of Birth"
           />
           {errors.dateOfBirth && (
             <p className="text-red-500 text-sm">{errors.dateOfBirth.message}</p>

@@ -436,7 +436,7 @@ const faqSections = [
         id: "location-specific-faqs-3",
         question: "Are eye exams available in Yorkville and Beaches Toronto?",
         answer:
-          "Yes, comprehensive eye exams are available at both locations. Our Yorkville clinic at 55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada serves Yorkville, Rosedale, Bay Street, and downtown Toronto. Our Beaches clinic at 2199 Queen Street East serves the Beaches, Leslieville, and East Toronto. Both locations offer the same services, advanced technology, and experienced optometrists.",
+          "Yes, comprehensive eye exams are available at both locations. Our Yorkville clinic at 55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada serves Yorkville, Bay Street, and downtown Toronto. Our Beaches clinic at 2199 Queen Street East serves the Beaches, Leslieville, and East Toronto. Both locations offer the same services, advanced technology, and experienced optometrists.",
       },
       {
         id: "location-specific-faqs-4",

@@ -32,7 +32,7 @@ const Choose360EyeCare = () => {
               },
               {
                 head: "✔  Convenient Locations – ",
-                para: "Serving The Beaches, Yorkville, and Rosedale with easily accessible clinics.",
+                para: "Serving The Beaches, Yorkville with easily accessible clinics.",
               },
               {
                 head: "✔  Personalized Care – ",

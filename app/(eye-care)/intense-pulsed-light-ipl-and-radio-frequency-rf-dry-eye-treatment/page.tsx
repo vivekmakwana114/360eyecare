@@ -37,7 +37,7 @@ const page = () => {
     <main className="pt-[110px]">
       <SubHeader text="IPL Therapy and RF Therapy – Advanced Dry Eye Treatments" />
 
-      <div className="max-w-6xl mx-auto my-8 md:my-16 px-4 md:px-0">
+      <div className="max-w-[1200px] mx-auto my-8 md:my-16 px-4 md:px-0">
         <h3 className="text-combination-200 text-3xl md:text-[37px] font-bold mb-4">
           Advanced Dry Eye Treatments
         </h3>
@@ -98,7 +98,7 @@ const page = () => {
           alt="Lumecca Before and After Treatment"
           width={1200}
           height={518}
-          className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px] object-contain"
+          className="md:w-[1200px] md:h-[518px] w-full h-auto object-contain"
         />
 
         <h2 className="text-combination-200 text-3xl md:text-[37px] font-bold mb-4 mt-6">
@@ -164,7 +164,7 @@ const page = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
-            className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+            className="md:w-[1200px] md:h-[518px] w-full h-[280px]"
           ></iframe>
         </div>
         <h3 className="text-combination-200 text-3xl md:text-[24px]  my-6 font-bold ">
@@ -297,7 +297,7 @@ const page = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          className="md:w-[1200px] md:h-[518px] w-[470px] h-[280px]"
+          className="md:w-[1200px] md:h-[518px] w-full h-[280px]"
         />
 
         <h3 className="text-combination-200 text-3xl md:text-[30px]  my-6 font-bold ">
@@ -505,7 +505,7 @@ const page = () => {
             href={"/toronto-rosedale-optometrist"}
             className="text-combination-200 hover:text-combination-100"
           >
-            360 Eyecare Yorkville Rosedale
+            360 Eyecare Yorkville
           </Link>
           . Our expertise, cutting-edge technology, and commitment to
           patient-centered care make us the ideal choice for managing and
@@ -513,10 +513,10 @@ const page = () => {
           take the first step towards lasting relief and healthier eyes.
         </p>
         <div className="bg-white py-12">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row gap-8 ">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row gap-8">
               {/* Left content */}
-              <div className="flex-1 space-y-6 w-[60%]">
+              <div className="md:w-3/5 space-y-6 w-full">
                 <h1 className="text-3xl md:text-3xl font-extrabold text-combination-200">
                   Seek Relief from Dry Eyes Today
                 </h1>
@@ -532,7 +532,7 @@ const page = () => {
                     className="max-w-[450px] max-w-w-[490px] w-[323px] md:w-[490px] h-[350px]"
                     title="Advanced Dry Eye Treatments | IPL and RF Eye Treatment Toronto"
                   /> */}
-                  <div className="w-[340px] md:w-[550px]">
+                  <div className="w-[280px] md:w-[550px]">
                     <FormSection css={{}} />
                   </div>
                 </div>

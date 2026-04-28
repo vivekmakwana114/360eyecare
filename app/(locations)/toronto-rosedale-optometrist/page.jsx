@@ -1,14 +1,14 @@
 import TorontoRosedaleOptometrist from "./TorontoRosedaleOptometrist";
 export async function generateMetadata() {
   return {
-    title: "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
+    title: "360 Eyecare Yorkville Toronto | Optometrist | Eye Doctor",
     description:
-      "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
+      "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville. Book eye doctor for your eye exam or Call 416-901-2725!",
     openGraph: {
       title:
-        "360 Eyecare Yorkville Rosedale Toronto | Optometrist | Eye Doctor",
+        "360 Eyecare Yorkville Toronto | Optometrist | Eye Doctor",
       description:
-        "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville Rosedale. Book eye doctor for your eye exam or Call 416-901-2725!",
+        "Get best eye care from team of trusted optometrist - 360 Eyecare Yorkville. Book eye doctor for your eye exam or Call 416-901-2725!",
       siteName: "360 Eyecare",
       type: "website",
     },

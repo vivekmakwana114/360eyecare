@@ -1,13 +1,13 @@
 import BookEyeExam from "./BookEyeExam";
 export async function generateMetadata() {
   return {
-    title: "Book an Eye Exam Beaches & Yorkville Rosedale Toronto",
+    title: "Book an Eye Exam Beaches & Yorkville Toronto",
     description:
-      "Book an eye exam appointment online or call to schedule. The Beaches: 416-698-3937 | Yorkville Rosedale: 416-901-2725.",
+      "Book an eye exam appointment online or call to schedule. The Beaches: 416-698-3937 | Yorkville: 416-901-2725.",
     openGraph: {
-      title: "Book an Eye Exam Beaches & Yorkville Rosedale Toronto",
+      title: "Book an Eye Exam Beaches & Yorkville Toronto",
       description:
-        "Book an eye exam appointment online or call to schedule. The Beaches: 416-698-3937 | Yorkville Rosedale: 416-901-2725.",
+        "Book an eye exam appointment online or call to schedule. The Beaches: 416-698-3937 | Yorkville: 416-901-2725.",
       url: "https://www.360eyecare.ca/book-eye-exam/",
       siteName: "360 Eyecare",
       type: "website",

@@ -13,7 +13,7 @@ export const generateMetadata = () => {
   return {
     title: "Optometric and Optical Centre Toronto | About Us | 360 Eyecare",
     description:
-      "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Rosedale and Beaches locations.",
+      "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Yorkville and Beaches locations.",
     keywords:
       "eye care Toronto, optometrist Toronto, comprehensive eye exams, prescription eyewear, contact lenses, vision care, dry eye treatment, myopia control, 360 Eyecare",
     viewport: "width=device-width, initial-scale=1",
@@ -23,7 +23,7 @@ export const generateMetadata = () => {
       url: "https://www.360eyecare.ca/about-us",
       title: "Optometric and Optical Centre Toronto | About Us | 360 Eyecare",
       description:
-        "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Rosedale and Beaches locations.",
+        "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Yorkville and Beaches locations.",
       images: [
         {
           url: "https://www.360eyecare.ca/wp-content/uploads/2022/10/360eyecare.jpg",
@@ -37,7 +37,7 @@ export const generateMetadata = () => {
       card: "summary_large_image",
       title: "Optometric and Optical Centre Toronto | About Us | 360 Eyecare",
       description:
-        "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Rosedale and Beaches locations.",
+        "360 Eyecare is optometric and optical centre in Toronto for full eyecare services. Clinics in Yorkville and Beaches locations.",
       images: [
         "https://www.360eyecare.ca/wp-content/uploads/2022/10/360eyecare.jpg",
       ],

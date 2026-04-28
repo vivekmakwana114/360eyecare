@@ -189,7 +189,7 @@ She is passionate about her profession and strives to provide quality patient-ce
 
 Dr. Chen is licensed by the College of Optometrists of Ontario and is certified to prescribe Therapeutic Pharmaceutical Agents in Canada. She is a member of both the Ontario Association of Optometrists and the Canadian Association of Optometrists.
 
-Dr. Chen is excited to be a member of the distinguished team at 360 Eyecare and practices out of the Downtown office – Rosedale. She conducts eye examinations with full fluency in English and Mandarin.
+Dr. Chen is excited to be a member of the distinguished team at 360 Eyecare and practices out of the Downtown office – Yorkville. She conducts eye examinations with full fluency in English and Mandarin.
 
 In her spare time, she enjoys exercising, travelling, reading, and being a foodie`,
   },
@@ -232,7 +232,7 @@ She gained a plethora of practical experience during her rotations at the Detroi
 
 Dr Swatch enjoys learning and staying abreast of the latest developments in eye care in order to best serve her patients’ needs. In her spare time, she loves to bake and is an avid fashion and interior design lover.
 
-She currently works at the Yorkville Rosedale location and looks forward to serving the community`,
+She currently works at the Yorkville location and looks forward to serving the community`,
   },
 ];
 
@@ -1812,7 +1812,7 @@ export const RosedaleFaqData = [
     answer: (
       <>
         Yes, 360 Eyecare Yorkville accommodates urgent eye care needs and
-        emergency appointments at our Yorkville-Rosedale location. Call-
+        emergency appointments at our Yorkville location. Call-
          <strong>416-901-2725 </strong> for same-day availability. We reserve time slots for urgent
         cases including eye injuries, sudden vision changes, and severe eye
         pain.

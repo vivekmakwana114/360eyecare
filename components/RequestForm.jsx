@@ -241,12 +241,16 @@ const RequestForm = () => {
               </label>
               <div className="relative">
                 <input
-                  type="date"
+                  type="text"
                   id="dateOfBirth"
                   name="dateOfBirth"
                   value={formData.dateOfBirth}
                   onChange={handleInputChange}
-                  placeholder="dd/mm/yyyy"
+                  onFocus={(e) => (e.target.type = "date")}
+                  onBlur={(e) => {
+                    if (!e.target.value) e.target.type = "text";
+                  }}
+                  placeholder="Date of Birth"
                   className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:border-combination-100"
                 />
               </div>
@@ -260,12 +264,16 @@ const RequestForm = () => {
               </label>
               <div className="relative">
                 <input
-                  type="date"
+                  type="text"
                   id="preferredDate"
                   name="preferredDate"
                   value={formData.preferredDate}
                   onChange={handleInputChange}
-                  placeholder="dd/mm/yyyy"
+                  onFocus={(e) => (e.target.type = "date")}
+                  onBlur={(e) => {
+                    if (!e.target.value) e.target.type = "text";
+                  }}
+                  placeholder="Preferred Date"
                   className={`w-full border ${
                     errors.preferredDate ? "border-red-500" : "border-gray-300"
                   } p-2 rounded focus:outline-none focus:border-combination-100`}

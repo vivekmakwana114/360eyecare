@@ -12,11 +12,11 @@ export async function generateMetadata() {
   return {
     title: "Eye Exams Toronto - Book an Eye Tests at Beaches and Yorkville",
     description:
-      "Eye exams Toronto for comprehensive eye examination to all ages. Get your eyes tested at our eye clinic at The Beaches, Yorkville, Rosedale.",
+      "Eye exams Toronto for comprehensive eye examination to all ages. Get your eyes tested at our eye clinic at The Beaches, Yorkville.",
     openGraph: {
       title: "Eye Exams Toronto - Book an Eye Tests at Beaches and Yorkville",
       description:
-        "Eye exams Toronto for comprehensive eye examination to all ages. Get your eyes tested at our eye clinic at The Beaches, Yorkville, Rosedale.",
+        "Eye exams Toronto for comprehensive eye examination to all ages. Get your eyes tested at our eye clinic at The Beaches, Yorkville.",
       url: "https://www.360eyecare.ca/eye-exams/",
       siteName: "360 Eyecare",
       type: "website",
@@ -132,7 +132,7 @@ const page = () => {
           </p>
           <p className="text-neutral-500 text-base  leading-relaxed">
             Our goal is to help everyone in the Toronto area (The Beaches,
-            Yorkville, Rosedale and nearby) see to their maximum potential with
+            Yorkville and nearby) see to their maximum potential with
             optimum optical lenses and visual aids because we know how important
             your ocular health is. We strive to provide the full circle of care
             to all our patients.
@@ -201,8 +201,8 @@ const page = () => {
               <hr className="w-24 h-1 bg-combination-100 mb-3" />
               <p className="text-neutral-500 text-sm sm:text-base  leading-relaxed mb-6">
                 Book your eye exams in Toronto with our optometrists today at
-                any of our 360 Eyecare locations at The Beaches or Yorkville
-                Rosedale. We look forward to providing you with the complete
+                any of our 360 Eyecare locations at The Beaches or Yorkville.
+                We look forward to providing you with the complete
                 circle of care for all your eye care and eyewear needs.
               </p>
               <Link
@@ -250,7 +250,7 @@ const page = () => {
             href="/toronto-rosedale-optometrist"
             className="text-combination-200 hover:text-combination-100"
           >
-            360 Eyecare – Yorkville Rosedale{" "}
+            360 Eyecare – Yorkville{" "}
           </Link>
           , or{" "}
           <Link

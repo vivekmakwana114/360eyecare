@@ -187,7 +187,12 @@ const FormSection = ({ css }) => {
       <div className="w-full">
         <input
           {...register("dob")}
-          type="date"
+          type="text"
+          onFocus={(e) => (e.target.type = "date")}
+          onBlur={(e) => {
+            if (!e.target.value) e.target.type = "text";
+            register("dob").onBlur(e);
+          }}
           className="w-full bg-gray-50 border border-gray-300 px-4 py-3 sm:py-4 rounded text-gray-700 focus:outline-none focus:ring-1 focus:ring-combination-100 text-sm sm:text-base"
           placeholder="Date of Birth"
         />

@@ -3,7 +3,7 @@ import Script from "next/script";
 export const metadata = {
   title: "Optometrist in Yorkville - 360 Eyecare",
   description:
-    "Comprehensive eye exams, contact lenses, and eyewear at 360 Eyecare Yorkville - Rosedale.",
+    "Comprehensive eye exams, contact lenses, and eyewear at 360 Eyecare Yorkville.",
 };
 
 export default function YorkvilleLayout({ children }) {
@@ -141,7 +141,7 @@ export default function YorkvilleLayout({ children }) {
 
   return (
     <>
-      {/*  Location-schema - yorkville rosedale JSON-LD schema */}
+      {/*  Location-schema - yorkville JSON-LD schema */}
       <Script
         id="yorkville-schema-jsonld"
         type="application/ld+json"

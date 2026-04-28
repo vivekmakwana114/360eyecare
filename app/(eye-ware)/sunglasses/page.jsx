@@ -54,7 +54,7 @@ const page = () => {
             Discover a wide range of designer and affordable sunglasses brands
             at our premium sunglasses store in Toronto. We offer an extensive
             collection of high-quality sunglasses from leading brands, all
-            available at our Beaches and Rosedale locations.
+            available at our Beaches and Yorkville locations.
           </p>
         </div>
       </div>

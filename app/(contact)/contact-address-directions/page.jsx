@@ -11,11 +11,11 @@ export async function generateMetadata() {
   return {
     title: "Address and Directions | Toronto Eyecare Clinic | 360 Eyecare",
     description:
-      "Visit 360 Eyecare in Beaches & Rosedale for eye exams, glasses & sunglasses. Get address and directions for both locations.",
+      "Visit 360 Eyecare in Beaches for eye exams, glasses & sunglasses. Get address and directions for both locations.",
     openGraph: {
       title: "Address and Directions | Toronto Eyecare Clinic | 360 Eyecare",
       description:
-        "Visit 360 Eyecare in Beaches & Rosedale for eye exams, glasses & sunglasses. Get address and directions for both locations.",
+        "Visit 360 Eyecare in Beaches for eye exams, glasses & sunglasses. Get address and directions for both locations.",
       url: "https://www.360eyecare.ca/contact-address-directions/",
       siteName: "360 Eyecare",
       type: "website",
@@ -145,7 +145,7 @@ const Page = () => {
         {/* Contact Information Column */}
         <div className="flex flex-col w-full md:w-[40%]">
           <h2 className="text-combination-200 text-3xl md:text-[37px] font-bold mb-4">
-            360 Eyecare - Yorkville Rosedale
+            360 Eyecare - Yorkville
           </h2>
           <hr className="w-[65px] h-[2px] bg-combination-100 mb-8" />
 
@@ -239,7 +239,7 @@ const Page = () => {
         <div className="w-full md:w-[60%] h-[400px] md:h-[600px] rounded-lg overflow-hidden">
           <GoogleMapEmbed
             src="https://www.google.com/maps?q=360+Eyecare+-+Yorkville+Rosedale,+55+Bloor+St+W,+Toronto,+ON+M4W+1A5,+Canada&output=embed"
-            title="360 Eyecare Yorkville Rosedale Location"
+            title="360 Eyecare Yorkville Location"
           />
         </div>
       </div>

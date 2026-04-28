@@ -58,7 +58,7 @@ const NavBar = () => {
           link: "/toronto-beaches-optometrist/",
         },
         {
-          name: "360 Eyecare - Yorkville Rosedale",
+          name: "360 Eyecare - Yorkville",
           link: "/toronto-rosedale-optometrist/",
         },
       ],
