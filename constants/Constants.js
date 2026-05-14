@@ -24,7 +24,6 @@ import {
   SamBarramImage,
   smileImage,
   SportsVisionImage,
-  swatchImage,
   TearOsmolarityImage,
   VisionThreapImage,
 } from "./Images";
@@ -218,21 +217,6 @@ Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr
 Dr. Shahid is an active member of the Ontario Association of Optometrists and the Canadian Association of Optometrists and is certified to prescribe Therapeutic Pharmaceutical Agents. Outside of the clinic, she has published an article in glaucoma research and has presented at the American Academy of Optometry. She has also received various honours during her clinical training, including membership with the Golden Key International Optometric Honour Society and Beta Sigma Kappa Honour Society.
 
 Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients. She is fluent in English and Urdu. During her spare time, she loves travelling, reading and photography`,
-  },
-  {
-    id: 6,
-    name: "Dr. Deepinder Swatch",
-    slug: "dr-deepinder-swatch",
-    image: swatchImage.src,
-    description:
-      "Dr. Deepinder Swatch has been certified to treat and manage ocular disease and is dedicated to providing thorough eye care.",
-    longDescription: `Dr. Deepinder Swatch graduated from the University of Toronto with her Hon. Bachelor of Science in Biology, Chemistry and Philosophy in 2000. She then attended the Illinois College of Optometry and obtained her Doctorate of Optometry in 2005.
-
-She gained a plethora of practical experience during her rotations at the Detroit Veteran’s Hospital, the Kresge Eye Institute and the Illinois Eye Institute. She has been NBEO certified to treat and manage ocular disease in the US since 2005 and Canada since 2006. After working briefly in the US, she moved back to Ontario in 2006 and has been practicing in a private practice setting ever since. She takes pride in providing very thorough and complete eye care to her patients.
-
-Dr Swatch enjoys learning and staying abreast of the latest developments in eye care in order to best serve her patients’ needs. In her spare time, she loves to bake and is an avid fashion and interior design lover.
-
-She currently works at the Yorkville location and looks forward to serving the community`,
   },
 ];
 
