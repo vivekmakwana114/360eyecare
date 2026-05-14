@@ -26,7 +26,6 @@ import AlinaShahidImage from "../public/doctors/AlinaShahid.webp";
 import AnitaSritharanImage from "../public/doctors/AnitaSritharan.webp";
 import GillImage from "../public/doctors/Gill.webp";
 import GinaChenImage from "../public/doctors/GinaChen.webp";
-import swatchImage from "../public/doctors/swatch.webp";
 import MeetOptometryImage from "../public/Meetoptometrist.webp";
 import EyeChairImage from "../public/EyeChair.webp";
 import SamBarramImage2 from "../public/doctors/sambarram2.webp";
@@ -232,7 +231,6 @@ export {
   AnitaSritharanImage,
   GillImage,
   GinaChenImage,
-  swatchImage,
   MeetOptometryImage,
   EyeChairImage,
   SamBarramImage2,

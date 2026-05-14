@@ -81,7 +81,6 @@ const staticPages = [
   createPage("/team-members/dr-gina-chen", { priority: 0.7 }),
   createPage("/team-members/dr-harmandeep-gill", { priority: 0.7 }),
   createPage("/team-members/dr-alina-shahid", { priority: 0.7 }),
-  createPage("/team-members/dr-deepinder-swatch", { priority: 0.7 }),
 
   // Eye health
   createPage("/common-eye-conditions", { priority: 0.7 }),
