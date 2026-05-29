@@ -140,6 +140,7 @@ export const optometrists = [
   {
     id: 1,
     name: "Dr. Sam Baraam",
+    alt: "Dr. Sam Baraam Optometrist at 360 Eyecare",
     slug: "dr-sam-baraam",
     image: SamBarramImage.src,
     description: (
@@ -163,6 +164,7 @@ Dr. Baraam is the founder and president of 360 Eyecare, practicing at the Beache
   {
     id: 2,
     name: "Dr. Anita Sritharan",
+    alt: "Dr. Anita Sritharan Optometrist at 360 Eyecare",
     slug: "dr-anita-sritharan",
     image: AnitaSritharanImage.src,
     description:
@@ -177,7 +179,22 @@ On her spare time, she enjoys baking, swimming, and travelling`,
   },
   {
     id: 3,
+    name: "Dr. Alina Shahid",
+    alt: "Dr. Alina Shahid Optometrist at 360 Eyecare",
+    slug: "dr-alina-shahid",
+    image: AlinaShahidImage.src,
+    description:
+      "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
+    longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
+
+Dr. Shahid is an active member of the Ontario Association of Optometrists and the Canadian Association of Optometrists and is certified to prescribe Therapeutic Pharmaceutical Agents. Outside of the clinic, she has published an article in glaucoma research and has presented at the American Academy of Optometry. She has also received various honours during her clinical training, including membership with the Golden Key International Optometric Honour Society and Beta Sigma Kappa Honour Society.
+
+Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients. She is fluent in English and Urdu. During her spare time, she loves travelling, reading and photography`,
+  },
+  {
+    id: 4,
     name: "Dr. Gina Chen",
+    alt: "Dr. Gina Chen Optometrist at 360 Eyecare",
     slug: "dr-gina-chen",
     image: GinaChenImage.src,
     description:
@@ -193,8 +210,9 @@ Dr. Chen is excited to be a member of the distinguished team at 360 Eyecare and 
 In her spare time, she enjoys exercising, travelling, reading, and being a foodie`,
   },
   {
-    id: 4,
+    id: 5,
     name: "Dr. Harmandeep Gill",
+    alt: "Dr. Harmandeep Gill Optometrist at 360 Eyecare",
     slug: "dr-harmandeep-gill",
     image: GillImage.src,
     description:
@@ -204,19 +222,6 @@ In her spare time, she enjoys exercising, travelling, reading, and being a foodi
 During his final year of optometry school, he completed his training in Detroit, Michigan at the John D. Dingell Veterans Affairs Medical Centre. While at the hospital, he gained clinical experience in the treatment and management of ocular diseases.
 
 Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr. Gill enjoys photography, basketball, and squash`,
-  },
-  {
-    id: 5,
-    name: "Dr. Alina Shahid",
-    slug: "dr-alina-shahid",
-    image: AlinaShahidImage.src,
-    description:
-      "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
-    longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
-
-Dr. Shahid is an active member of the Ontario Association of Optometrists and the Canadian Association of Optometrists and is certified to prescribe Therapeutic Pharmaceutical Agents. Outside of the clinic, she has published an article in glaucoma research and has presented at the American Academy of Optometry. She has also received various honours during her clinical training, including membership with the Golden Key International Optometric Honour Society and Beta Sigma Kappa Honour Society.
-
-Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients. She is fluent in English and Urdu. During her spare time, she loves travelling, reading and photography`,
   },
 ];
 
@@ -1670,44 +1675,64 @@ export const bookeyeexamFaqdata = [
 export const torontoBeachesFaqData = [
   {
     id: 1,
-    question: "Q1. Where exactly is your optometry clinic located in the Beaches?",
-    answer:(
+    question:
+      "Q1. Where exactly is your optometry clinic located in the Beaches?",
+    answer: (
       <>
-      We're located at 2199 Queen Street East in the heart of the Beaches shopping and cultural district. Our clinic is easily accessible by the 501 Queen streetcar, just a 3-minute walk from Woodbine Beach, and close to Kew Gardens Park. Perfect for anyone searching for an "optometrist Queen Street East" or "eye doctor near Woodbine Beach."
+        We're located at 2199 Queen Street East in the heart of the Beaches
+        shopping and cultural district. Our clinic is easily accessible by the
+        501 Queen streetcar, just a 3-minute walk from Woodbine Beach, and close
+        to Kew Gardens Park. Perfect for anyone searching for an "optometrist
+        Queen Street East" or "eye doctor near Woodbine Beach."
       </>
-    )
-      
+    ),
   },
   {
     id: 2,
     question: "Q2. Do you offer walk-in eye exams in the Beaches?",
-    answer:(
+    answer: (
       <>
-      Yes, we welcome walk-in appointments when possible! However, to ensure minimal wait times and guaranteed service, we recommend <strong>booking online or calling 416-698-3937</strong>. We offer extended hours including evenings and Saturdays to accommodate busy Beaches residents and visitors.
+        Yes, we welcome walk-in appointments when possible! However, to ensure
+        minimal wait times and guaranteed service, we recommend{" "}
+        <strong>booking online or calling 416-698-3937</strong>. We offer
+        extended hours including evenings and Saturdays to accommodate busy
+        Beaches residents and visitors.
       </>
-    )
+    ),
   },
   {
     id: 3,
-    question:
-      "Q3. What makes you the best optometrist in the Beaches Toronto?",
-    answer:(
+    question: "Q3. What makes you the best optometrist in the Beaches Toronto?",
+    answer: (
       <>
-      Dr. Sam Baraam brings specialized expertise in <strong>Ortho-K myopia control, advanced dry eye therapy, and comprehensive family eye care</strong> to the Beaches community. Our clinic features cutting-edge diagnostic technology, therapeutic optometry services, and a deep commitment to the local beach lifestyle. We understand the unique vision needs of our active, family-oriented community.
-
+        Dr. Sam Baraam brings specialized expertise in{" "}
+        <strong>
+          Ortho-K myopia control, advanced dry eye therapy, and comprehensive
+          family eye care
+        </strong>{" "}
+        to the Beaches community. Our clinic features cutting-edge diagnostic
+        technology, therapeutic optometry services, and a deep commitment to the
+        local beach lifestyle. We understand the unique vision needs of our
+        active, family-oriented community.
       </>
-    )
+    ),
   },
   {
     id: 4,
     question: "Q4.How often should I schedule eye exams for my family?",
     answer: (
       <>
-       <strong>Children & Teens: </strong>Annual exams (OHIP covered until age 20) - especially important for active beach kids<br/>
-<strong>Adults (20-64):</strong> Every 1-2 years, annually if you have risk factors or wear contacts<br/>
-<strong>Seniors 65+:</strong> Annual comprehensive exams (OHIP covered)<br/>
-<strong>Active individuals:</strong> More frequent assessments for sports vision and UV protection needs<br/>
-
+        <strong>Children & Teens: </strong>Annual exams (OHIP covered until age
+        20) - especially important for active beach kids
+        <br />
+        <strong>Adults (20-64):</strong> Every 1-2 years, annually if you have
+        risk factors or wear contacts
+        <br />
+        <strong>Seniors 65+:</strong> Annual comprehensive exams (OHIP covered)
+        <br />
+        <strong>Active individuals:</strong> More frequent assessments for
+        sports vision and UV protection needs
+        <br />
       </>
     ),
   },
@@ -1716,8 +1741,14 @@ export const torontoBeachesFaqData = [
     question: "Q5. Do you provide emergency eye care in the Beaches?",
     answer: (
       <>
-        Absolutely! We handle urgent eye issues including <strong>beach-related injuries, sand irritation, foreign objects, infections, and sudden vision changes.</strong> Call - <strong>416-698-3937</strong> immediately for same-day emergency appointments. Our location on Queen Street East makes us easily accessible for urgent care needs.
-
+        Absolutely! We handle urgent eye issues including{" "}
+        <strong>
+          beach-related injuries, sand irritation, foreign objects, infections,
+          and sudden vision changes.
+        </strong>{" "}
+        Call - <strong>416-698-3937</strong> immediately for same-day emergency
+        appointments. Our location on Queen Street East makes us easily
+        accessible for urgent care needs.
       </>
     ),
   },
@@ -1727,14 +1758,22 @@ export const torontoBeachesFaqData = [
     answer: (
       <>
         We provide the most advanced dry eye treatments available:
-<ul className="list-disc list-inside space-y-1">
-  <li><strong>IPL (Intense Pulsed Light) Therapy -</strong>Targets inflammation and improves gland function
-</li>
-<li><strong>Radiofrequency Treatment -</strong>Gentle warming to stimulate natural tear production</li>
-<li><strong>Meibomian Gland Expression -</strong>Professional techniques to clear blocked glands
-</li>
-</ul>
-These FDA-approved treatments provide lasting relief, especially beneficial for beach residents dealing with wind and sun exposure.
+        <ul className="list-disc list-inside space-y-1">
+          <li>
+            <strong>IPL (Intense Pulsed Light) Therapy -</strong>Targets
+            inflammation and improves gland function
+          </li>
+          <li>
+            <strong>Radiofrequency Treatment -</strong>Gentle warming to
+            stimulate natural tear production
+          </li>
+          <li>
+            <strong>Meibomian Gland Expression -</strong>Professional techniques
+            to clear blocked glands
+          </li>
+        </ul>
+        These FDA-approved treatments provide lasting relief, especially
+        beneficial for beach residents dealing with wind and sun exposure.
       </>
     ),
   },
@@ -1743,35 +1782,68 @@ These FDA-approved treatments provide lasting relief, especially beneficial for 
     question: "Q7. Do you offer Ortho-K lenses for myopia control?",
     answer: (
       <>
-      Yes! We're specialists in <strong>Ortho-K (Orthokeratology) overnight lenses</strong> that reshape your cornea while you sleep, allowing clear vision during the day without glasses or contacts. This revolutionary treatment is particularly popular with Beaches residents who enjoy swimming, beach sports, and active lifestyles. Dr. Baraam provides comprehensive Ortho-K consultations and ongoing management.
-        </>
+        Yes! We're specialists in{" "}
+        <strong>Ortho-K (Orthokeratology) overnight lenses</strong> that reshape
+        your cornea while you sleep, allowing clear vision during the day
+        without glasses or contacts. This revolutionary treatment is
+        particularly popular with Beaches residents who enjoy swimming, beach
+        sports, and active lifestyles. Dr. Baraam provides comprehensive Ortho-K
+        consultations and ongoing management.
+      </>
     ),
   },
   {
     id: 8,
-    question: "Q8. What should I expect during my Beaches eye exam appointment?",
+    question:
+      "Q8. What should I expect during my Beaches eye exam appointment?",
     answer: (
       <>
-       Your comprehensive 60-minute examination includes:
-<ul>
-  <li><strong>1. Health History & Lifestyle Assessment (10 minutes) -</strong> Including beach activity and sun exposure habits</li>
-<li><strong>2. Visual Acuity & Prescription Testing (15 minutes) - </strong>Precise measurements for optimal vision</li>
-<li><strong>3. Advanced Diagnostic Imaging (15 minutes) - </strong>Digital retinal photography and OCT scanning</li>
-<li><strong>4. Eye Health Evaluation (10 minutes) - </strong>Pressure testing and comprehensive screening</li>
-<li><strong>5. Personalized Consultation (10 minutes) - </strong>Treatment recommendations and lifestyle advice</li>
-</ul>
-These FDA-approved treatments provide lasting relief, especially beneficial for beach residents dealing with wind and sun exposure.
+        Your comprehensive 60-minute examination includes:
+        <ul>
+          <li>
+            <strong>
+              1. Health History & Lifestyle Assessment (10 minutes) -
+            </strong>{" "}
+            Including beach activity and sun exposure habits
+          </li>
+          <li>
+            <strong>
+              2. Visual Acuity & Prescription Testing (15 minutes) -{" "}
+            </strong>
+            Precise measurements for optimal vision
+          </li>
+          <li>
+            <strong>3. Advanced Diagnostic Imaging (15 minutes) - </strong>
+            Digital retinal photography and OCT scanning
+          </li>
+          <li>
+            <strong>4. Eye Health Evaluation (10 minutes) - </strong>Pressure
+            testing and comprehensive screening
+          </li>
+          <li>
+            <strong>5. Personalized Consultation (10 minutes) - </strong>
+            Treatment recommendations and lifestyle advice
+          </li>
+        </ul>
+        These FDA-approved treatments provide lasting relief, especially
+        beneficial for beach residents dealing with wind and sun exposure.
       </>
     ),
   },
   {
     id: 9,
     question: "Q9. Are you conveniently located for TTC transit users?",
-    answer:(
-      <>Extremely convenient! Take the <strong>501 Queen streetcar</strong> east directly to our location, or take the <strong>Bloor-Danforth subway to Woodbine Station</strong> then the 92 Woodbine bus south to Queen Street. We're also bike-friendly with easy access to the Martin Goodman Trail and Beaches Boardwalk for those cycling to appointments.
+    answer: (
+      <>
+        Extremely convenient! Take the <strong>501 Queen streetcar</strong> east
+        directly to our location, or take the{" "}
+        <strong>Bloor-Danforth subway to Woodbine Station</strong> then the 92
+        Woodbine bus south to Queen Street. We're also bike-friendly with easy
+        access to the Martin Goodman Trail and Beaches Boardwalk for those
+        cycling to appointments.
       </>
-    )
-  }
+    ),
+  },
 ];
 
 export const RosedaleFaqData = [
@@ -1785,8 +1857,8 @@ export const RosedaleFaqData = [
         <strong>Adults 65+:</strong> Annual eye exams (OHIP covered) <br />
         <strong>Children:</strong> Before school starts, then annually (OHIP
         covered until age 20) <br />
-        <strong>High-risk patients:</strong>More frequent exams as recommended by your
-        optometrist
+        <strong>High-risk patients:</strong>More frequent exams as recommended
+        by your optometrist
       </>
     ),
   },
@@ -1797,32 +1869,44 @@ export const RosedaleFaqData = [
       <>
         Yes, 360 Eyecare Yorkville accommodates urgent eye care needs and
         emergency appointments at our Yorkville location. Call-
-         <strong>416-901-2725 </strong> for same-day availability. We reserve time slots for urgent
-        cases including eye injuries, sudden vision changes, and severe eye
-        pain.
+        <strong>416-901-2725 </strong> for same-day availability. We reserve
+        time slots for urgent cases including eye injuries, sudden vision
+        changes, and severe eye pain.
       </>
     ),
   },
   {
     id: 3,
     question: "Q3. What insurance do you accept for eye exams in Toronto?",
-    answer:
-    (
+    answer: (
       <>
-      We accept most major insurance plans including Sun Life, Manulife, Great-West Life, Blue Cross, Green Shield, Chambers of Commerce plans, etc. We offer direct billing so you don't pay upfront for covered services. OHIP covers eye exams for children under 20 and adults 65+, plus those with specific medical conditions.
+        We accept most major insurance plans including Sun Life, Manulife,
+        Great-West Life, Blue Cross, Green Shield, Chambers of Commerce plans,
+        etc. We offer direct billing so you don't pay upfront for covered
+        services. OHIP covers eye exams for children under 20 and adults 65+,
+        plus those with specific medical conditions.
       </>
-    )
+    ),
   },
   {
     id: 4,
     question: "Q4. What advanced dry eye treatments do you offer?",
     answer: (
       <>
-      Our eye clinic features the latest FDA-approved treatments for chronic dry eye syndrome:<br/>
-        <strong>IPL (Intense Pulsed Light) therapy - </strong> Reduces inflammation and improves meibomian gland function<br />
-        <strong>RF (Radiofrequency) treatment - </strong> Gentle heating to stimulate natural tear production<br />
-        <strong>Meibomian gland expression - </strong>  Manual techniques to clear blocked glands<br/>
-       These treatments provide long-lasting relief for patients who haven't found success with traditional eye drops.
+        Our eye clinic features the latest FDA-approved treatments for chronic
+        dry eye syndrome:
+        <br />
+        <strong>IPL (Intense Pulsed Light) therapy - </strong> Reduces
+        inflammation and improves meibomian gland function
+        <br />
+        <strong>RF (Radiofrequency) treatment - </strong> Gentle heating to
+        stimulate natural tear production
+        <br />
+        <strong>Meibomian gland expression - </strong> Manual techniques to
+        clear blocked glands
+        <br />
+        These treatments provide long-lasting relief for patients who haven't
+        found success with traditional eye drops.
       </>
     ),
   },
@@ -1831,58 +1915,89 @@ export const RosedaleFaqData = [
     question: "Q5. Do you offer contact lens fittings in Yorkville?",
     answer: (
       <>
-      Yes, we provide comprehensive contact lens fittings including specialty lenses for astigmatism, presbyopia, and keratoconus. Our services include:
-       <ul className="list-disc list-inside space-y-1">
-        <li>Professional measurements and fitting</li>
-        <li>Free trial lenses to ensure comfort</li>
+        Yes, we provide comprehensive contact lens fittings including specialty
+        lenses for astigmatism, presbyopia, and keratoconus. Our services
+        include:
+        <ul className="list-disc list-inside space-y-1">
+          <li>Professional measurements and fitting</li>
+          <li>Free trial lenses to ensure comfort</li>
 
-<li>Insertion and removal training</li>
-<li>Follow-up appointments included</li>
-<li>Daily, weekly, and monthly lens options available</li>
-       </ul>
+          <li>Insertion and removal training</li>
+          <li>Follow-up appointments included</li>
+          <li>Daily, weekly, and monthly lens options available</li>
+        </ul>
       </>
     ),
   },
-   {
+  {
     id: 6,
     question: "Q6. What should I expect during my eye exam appointment?",
     answer: (
       <>
-      Your 60-minute comprehensive eye exam includes:<br/>
-        <strong>1. Medical History Review (5 minutes) - </strong> Discussion of health and vision concerns<br />
-        <strong>2. Visual Acuity Testing (10 minutes) - </strong> Reading charts to measure vision clarity<br />
-        <strong>3. Refraction Test (15 minutes) -</strong> Determining your exact prescription<br/>
-        <strong>4. Eye Health Examination (15 minutes) - </strong>Dilated exam of retina and optic nerve<br/>
-        <strong>5. Pressure Testing (5 minutes) -</strong>Glaucoma screening<br/>
-        <strong>6. Results & Recommendations (10 minutes) -</strong>Discussion of findings and next steps<br/>
+        Your 60-minute comprehensive eye exam includes:
+        <br />
+        <strong>1. Medical History Review (5 minutes) - </strong> Discussion of
+        health and vision concerns
+        <br />
+        <strong>2. Visual Acuity Testing (10 minutes) - </strong> Reading charts
+        to measure vision clarity
+        <br />
+        <strong>3. Refraction Test (15 minutes) -</strong> Determining your
+        exact prescription
+        <br />
+        <strong>4. Eye Health Examination (15 minutes) - </strong>Dilated exam
+        of retina and optic nerve
+        <br />
+        <strong>5. Pressure Testing (5 minutes) -</strong>Glaucoma screening
+        <br />
+        <strong>6. Results & Recommendations (10 minutes) -</strong>Discussion
+        of findings and next steps
+        <br />
       </>
     ),
   },
-   {
+  {
     id: 7,
-    question: "Q7. Can I bring my child for an eye exam at your Yorkville clinic?",
+    question:
+      "Q7. Can I bring my child for an eye exam at your Yorkville clinic?",
     answer: (
       <>
-      Absolutely! We specialize in pediatric eye care with child-friendly equipment and techniques. Children's eye exams are fully covered by OHIP until age 20. We recommend first eye exams before starting school, then annually. Our pediatric services include early detection of learning-related vision problems and myopia management programs.
+        Absolutely! We specialize in pediatric eye care with child-friendly
+        equipment and techniques. Children's eye exams are fully covered by OHIP
+        until age 20. We recommend first eye exams before starting school, then
+        annually. Our pediatric services include early detection of
+        learning-related vision problems and myopia management programs.
       </>
     ),
   },
-   {
+  {
     id: 8,
-    question: "Q8. Are you the closest optometrist to Queen's Park and University of Toronto?",
+    question:
+      "Q8. Are you the closest optometrist to Queen's Park and University of Toronto?",
     answer: (
       <>
-      Yes! We're only an <strong>8-minute walk south from Queen's Park </strong> via Avenue Road to Bloor Street. For University of Toronto students and staff, we're the closest full-service optometry clinic - just one subway stop from St. George Station to Bay Station, or a pleasant 10-minute walk along Bloor Street. Perfect for anyone searching "optometrist near Queen's Park" or "eye doctor University of Toronto."
-
+        Yes! We're only an{" "}
+        <strong>8-minute walk south from Queen's Park </strong> via Avenue Road
+        to Bloor Street. For University of Toronto students and staff, we're the
+        closest full-service optometry clinic - just one subway stop from St.
+        George Station to Bay Station, or a pleasant 10-minute walk along Bloor
+        Street. Perfect for anyone searching "optometrist near Queen's Park" or
+        "eye doctor University of Toronto."
       </>
     ),
   },
-   {
+  {
     id: 9,
     question: "Q9. Where exactly is your eye clinic located on Bloor Street?",
     answer: (
       <>
-      We're located at <strong>55 Bloor Street West, Suite 03 </strong> on the concourse level of the <strong>Manulife Centre, Toronto, ON M4W 1A5, Canada</strong>, directly at the intersection of <strong>Bay Street and Bloor Street. </strong> Our clinic is steps from Bloor-Yonge subway station and Bay Station, making us easily accessible for anyone searching for an "eye doctor Bloor Street" or "optometrist Bay Street Toronto".
+        We're located at <strong>55 Bloor Street West, Suite 03 </strong> on the
+        concourse level of the{" "}
+        <strong>Manulife Centre, Toronto, ON M4W 1A5, Canada</strong>, directly
+        at the intersection of <strong>Bay Street and Bloor Street. </strong>{" "}
+        Our clinic is steps from Bloor-Yonge subway station and Bay Station,
+        making us easily accessible for anyone searching for an "eye doctor
+        Bloor Street" or "optometrist Bay Street Toronto".
       </>
     ),
   },
@@ -1925,7 +2040,6 @@ export const eyeCareServiceData = [
       "Myopia control and management",
       "Sports vision assessments",
       "OHIP coverage for children under 20",
-
     ],
   },
   {
@@ -1942,7 +2056,7 @@ export const eyeCareServiceData = [
     ],
   },
   {
-    id:5,
+    id: 5,
     head: "Ortho-K & Contact Lens Specialists",
     icon: "/location/icons/emergencyeye.svg",
     para: [
@@ -1951,7 +2065,7 @@ export const eyeCareServiceData = [
       "GSpecialty lens fittings (keratoconus, astigmatism)",
       "Daily, weekly, and monthly lens options",
       "Professional insertion and care training",
-    ]
+    ],
   },
   {
     id: 6,
