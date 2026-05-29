@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
           url: doctor.image,
           width: 800,
           height: 600,
-          alt: doctor.name,
+          alt: doctor.alt || doctor.name,
         },
       ],
     },

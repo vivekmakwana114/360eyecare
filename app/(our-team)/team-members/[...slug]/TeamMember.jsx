@@ -53,7 +53,7 @@ const TeamMember = ({ doctor }) => {
           <div className="w-full md:w-[25%]">
             <Image
               src={doctor.image}
-              alt={doctor.name}
+              alt={doctor.alt}
               width={275}
               height={275}
               className="md:w-[275px] md:h-[275px] w-full h-full object-contain"

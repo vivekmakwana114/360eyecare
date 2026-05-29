@@ -32,6 +32,7 @@ export default function OptometristTeam() {
                 key={doctor.id}
                 name={doctor.name}
                 image={doctor.image}
+                alt={doctor.alt}
                 description={doctor.description}
                 slug={doctor.slug}
                 onReadMore={handleNavigation}
@@ -44,7 +45,14 @@ export default function OptometristTeam() {
   );
 }
 
-function OptometristCard({ name, image, description, slug, onReadMore }) {
+function OptometristCard({
+  name,
+  alt,
+  image,
+  description,
+  slug,
+  onReadMore,
+}) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -61,7 +69,7 @@ function OptometristCard({ name, image, description, slug, onReadMore }) {
         >
           <Image
             src={image}
-            alt={name}
+            alt={alt}
             className="object-cover w-full"
             width={450}
             height={500}
