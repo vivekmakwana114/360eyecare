@@ -3,14 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const MeetOurFounder = ({ title, description, ctaText, ctaLink, imageAlt, onCtaClick }) => {
+const MeetOurFounder = ({ title, description, ctaText, ctaLink, imageAlt, onCtaClick, imageSrc }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 pt-4 md:pt-14">
       <div className="flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Image Container */}
         <div className="w-full md:w-[40%]">
           <Image
-            src={FounderImage}
+            src={imageSrc || FounderImage}
             alt={imageAlt || "Dr Sam Baraam Optometrist"}
             width={483}
             height={566}
