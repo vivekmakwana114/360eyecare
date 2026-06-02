@@ -40,11 +40,12 @@ const NavBar = () => {
       dropdown: null,
     },
     {
-      name: "Our Team",
+      name: "About Us",
       link: "/about-us",
       dropdown: [
         { name: "About 360 Eyecare", link: "/about-us/" },
         { name: "Our Optometrists", link: "/optometrists/" },
+        { name: "Our Team", link: "/our-team/" },
         { name: "Giving Back", link: "/giving-back/" },
         { name: "Career Opportunities", link: "/career-opportunities/" },
       ],

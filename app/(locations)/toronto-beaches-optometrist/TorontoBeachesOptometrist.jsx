@@ -2,7 +2,7 @@
 import LocationHeroSection from "../../../components/LocationHeroSection";
 import GoogleMapEmbed from "../../../components/GoogleMapEmbed";
 import Link from "next/link";
-import { locationHeroBeaches } from "constants/Images";
+import { locationHeroBeaches, SamBarramImage } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "../../../components/MeetOurFounder";
 import ExpertiseSection from "../../../components/ExpertiseSection";
@@ -130,6 +130,7 @@ const TorontoBeachesOptometrist = () => {
         ctaLink="/book-eye-exam"
         onCtaClick={scrollToForm}
         imageAlt="Dr Sam Baraam Optometrist Beaches Toronto"
+        imageSrc={SamBarramImage}
       />
 
       <ExpertiseSection

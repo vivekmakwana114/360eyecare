@@ -3,7 +3,7 @@ import GoogleMapEmbed from "../../../components/GoogleMapEmbed";
 import Link from "next/link";
 import LocationHeroSection from "../../../components/LocationHeroSection";
 import ExpertiseSection from "../../../components/ExpertiseSection";
-import { locationHeroYorkVille } from "constants/Images";
+import { locationHeroYorkVille, SamBarramImage } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "components/MeetOurFounder";
 import Banner3 from "../../../components/Banner3";
@@ -84,6 +84,7 @@ const TorontoRosedaleOptometrist = () => {
         ctaText="Book with Dr. Baraam"
         ctaLink="https://360rosedale.mypatientsportal.com/select-location"
         imageAlt="Dr Sam Baraam Optometrist Yorkville Toronto"
+        imageSrc={SamBarramImage}
       />
 
       <ExpertiseSection
