@@ -11,8 +11,6 @@ import EyeExam from "../../../components/EyeExam";
 import LocationServices from "../../../components/LocationServices";
 import Image from "next/image";
 import Insurance from "../../../components/Insurance";
-
-
 import BeforeAppointmentRosedale from "../../../components/BeforeAppointmentRosedale";
 import mockRosedaleReviews from "../../../constants/rosedaleReviews.json";
 

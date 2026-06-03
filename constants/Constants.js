@@ -26,6 +26,17 @@ import {
   SportsVisionImage,
   TearOsmolarityImage,
   VisionThreapImage,
+  TeamBrandonImage,
+  TeamAlinaShahidImage,
+  TeamAnitaSritharanImage,
+  TeamSamBaraamImage,
+  TeamHannahImage,
+  TeamJuliaImage,
+  TeamLilyImage,
+  TeamLucelImage,
+  TeamMelanieImage,
+  TeamMiaImage,
+  TeamVanessaImage,
 } from "./Images";
 import { Eye, CheckSquare, Clock, Shield, Heart, User } from "lucide-react";
 
@@ -2485,3 +2496,62 @@ export const theBeachesAccessPoints = [
       "Street parking available on Queen Street East and side streets",
   },
 ];
+
+export const teamMembers = [
+  {
+    name: "Dr. Sam Baraam",
+    role: "Optometrist",
+    image: TeamSamBaraamImage,
+  },
+  {
+    name: "Dr. Anita Sritharan",
+    role: "Optometrist",
+    image: TeamAnitaSritharanImage,
+  },
+  {
+    name: "Dr. Alina Shahid",
+    role: "Optometrist",
+    image: TeamAlinaShahidImage,
+  },
+  {
+    name: "Brandon",
+    role: "Optician",
+    image: TeamBrandonImage,
+  },
+  {
+    name: "Lucel",
+    role: "Optician",
+    image: TeamLucelImage,
+  },
+  {
+    name: "Hannah",
+    role: "Administrative Lead",
+    image: TeamHannahImage,
+  },
+  {
+    name: "Lily",
+    role: "Administrative Lead",
+    image: TeamLilyImage,
+  },
+  {
+    name: "Mia",
+    role: "Ophthalmic Technician",
+    image: TeamMiaImage,
+  },
+  {
+    name: "Vanessa",
+    role: "Ophthalmic Technician",
+    image: TeamVanessaImage,
+  },
+  {
+    name: "Julia",
+    role: "Optometric Assistant",
+    image: TeamJuliaImage,
+  },
+  {
+    name: "Melanie",
+    role: "Optometric Assistant",
+    image: TeamMelanieImage,
+  },
+];
+

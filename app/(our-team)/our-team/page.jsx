@@ -1,6 +1,7 @@
 import SubHeader from "../../../components/SubHeader";
 import Image from "next/image";
 import Link from "next/link";
+import { teamMembers } from "../../../constants/Constants";
 
 export const generateMetadata = () => {
   return {
@@ -26,64 +27,6 @@ export const generateMetadata = () => {
     },
   };
 };
-
-const teamMembers = [
-  {
-    name: "Dr. Sam Baraam",
-    role: "Optometrist",
-    image: "/ourteam/Dr Sam Baraam, Optometrist.webp",
-  },
-  {
-    name: "Dr. Anita Sritharan",
-    role: "Optometrist",
-    image: "/ourteam/Dr Anita Sritharan, Optometrist.webp",
-  },
-  {
-    name: "Dr. Alina Shahid",
-    role: "Optometrist",
-    image: "/ourteam/Dr Alina Shahid, Optometrist.webp",
-  },
-  {
-    name: "Brandon",
-    role: "Optician",
-    image: "/ourteam/Brandon, Optician.webp",
-  },
-  {
-    name: "Lucel",
-    role: "Optician",
-    image: "/ourteam/Lucel, Optician.webp",
-  },
-  {
-    name: "Hannah",
-    role: "Administrative Lead",
-    image: "/ourteam/Hannah, Administrative Lead.webp",
-  },
-  {
-    name: "Lily",
-    role: "Administrative Lead",
-    image: "/ourteam/Lily, Administrative Lead.webp",
-  },
-  {
-    name: "Mia",
-    role: "Ophthalmic Technician",
-    image: "/ourteam/Mia, Ophthalmic Technician.webp",
-  },
-  {
-    name: "Vanessa",
-    role: "Ophthalmic Technician",
-    image: "/ourteam/Vanessa, Ophthalmic Technician.webp",
-  },
-  {
-    name: "Julia",
-    role: "Optometric Assistant",
-    image: "/ourteam/Julia, Optometric Assistant.webp",
-  },
-  {
-    name: "Melanie",
-    role: "Optometric Assistant",
-    image: "/ourteam/Melanie, Optometric Assistant.webp",
-  },
-];
 
 const SectionDivider = () => (
   <div className="w-16 h-[2px] bg-combination-100 mb-6"></div>
