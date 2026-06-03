@@ -122,7 +122,30 @@ import ScreenHeadachesFeature from "../public/screen-headaches-feature.png";
 import eyeglasses1 from "../public/eyeglasses1.jpg";
 import eyeglasses2 from "../public/eyeglasses2.jpg";
 import eyeglasses3 from "../public/eyeglasses3.jpg";
+import TeamBrandonImage from "../public/ourteam/Brandon_Optician.webp";
+import TeamAlinaShahidImage from "../public/ourteam/Dr_Alina_Shahid_Optometrist.webp";
+import TeamAnitaSritharanImage from "../public/ourteam/Dr_Anita_Sritharan_Optometrist.webp";
+import TeamSamBaraamImage from "../public/ourteam/Dr_Sam_Baraam_Optometrist.webp";
+import TeamHannahImage from "../public/ourteam/Hannah_Administrative_Lead.webp";
+import TeamJuliaImage from "../public/ourteam/Julia_Optometric_Assistant.webp";
+import TeamLilyImage from "../public/ourteam/Lily_Administrative_Lead.webp";
+import TeamLucelImage from "../public/ourteam/Lucel_Optician.webp";
+import TeamMelanieImage from "../public/ourteam/Melanie_Optometric_Assistant.webp";
+import TeamMiaImage from "../public/ourteam/Mia_Ophthalmic_Technician.webp";
+import TeamVanessaImage from "../public/ourteam/Vanessa_Ophthalmic_Technician.webp";
+
 export {
+  TeamBrandonImage,
+  TeamAlinaShahidImage,
+  TeamAnitaSritharanImage,
+  TeamSamBaraamImage,
+  TeamHannahImage,
+  TeamJuliaImage,
+  TeamLilyImage,
+  TeamLucelImage,
+  TeamMelanieImage,
+  TeamMiaImage,
+  TeamVanessaImage,
   eyeglasses1,
   eyeglasses2,
   eyeglasses3,
