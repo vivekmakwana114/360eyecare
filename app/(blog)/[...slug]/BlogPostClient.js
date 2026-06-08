@@ -232,7 +232,7 @@ const BlogPostClient = ({ post: initialPost }) => {
             alt={data.title.rendered || "Blog post image"}
             width={1200}
             height={600}
-            className="w-full h-[191px] md:h-[400px] lg:h-[600px] object-cover mt-6 border border-[#E1E6EB] rounded-[10px]"
+            className="w-full h-auto mt-6 border border-[#E1E6EB] rounded-[10px]"
             priority
           />
         )}

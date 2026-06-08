@@ -2,7 +2,7 @@
 import LocationHeroSection from "../../../components/LocationHeroSection";
 import GoogleMapEmbed from "../../../components/GoogleMapEmbed";
 import Link from "next/link";
-import { locationHeroBeaches, SamBarramImage } from "constants/Images";
+import { locationHeroBeaches, SamBarramImage_copy } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "../../../components/MeetOurFounder";
 import ExpertiseSection from "../../../components/ExpertiseSection";
@@ -130,7 +130,7 @@ const TorontoBeachesOptometrist = () => {
         ctaLink="/book-eye-exam"
         onCtaClick={scrollToForm}
         imageAlt="Dr Sam Baraam Optometrist Beaches Toronto"
-        imageSrc={SamBarramImage}
+        imageSrc={SamBarramImage_copy}
       />
 
       <ExpertiseSection
@@ -152,10 +152,10 @@ const TorontoBeachesOptometrist = () => {
             <strong>
               Cataract Co-Management 
             </strong>{" "}
-           - Pre and post-surgical care specialist
+           - Pre and post-surgical care
           </>,
           <>
-            <strong>Pediatric Eye Care Specialist</strong> - Child vision development expertise
+            <strong>Pediatric Eye Care</strong> - Child vision development expertise
           </>,
         ]}
         experience={[

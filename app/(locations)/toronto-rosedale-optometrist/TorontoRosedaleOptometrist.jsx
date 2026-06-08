@@ -3,7 +3,7 @@ import GoogleMapEmbed from "../../../components/GoogleMapEmbed";
 import Link from "next/link";
 import LocationHeroSection from "../../../components/LocationHeroSection";
 import ExpertiseSection from "../../../components/ExpertiseSection";
-import { locationHeroYorkVille, SamBarramImage } from "constants/Images";
+import { locationHeroYorkVille, SamBarramImage_copy } from "constants/Images";
 import { useState, useEffect } from "react";
 import MeetOurFounder from "components/MeetOurFounder";
 import Banner3 from "../../../components/Banner3";
@@ -82,7 +82,7 @@ const TorontoRosedaleOptometrist = () => {
         ctaText="Book with Dr. Baraam"
         ctaLink="https://360rosedale.mypatientsportal.com/select-location"
         imageAlt="Dr Sam Baraam Optometrist Yorkville Toronto"
-        imageSrc={SamBarramImage}
+        imageSrc={SamBarramImage_copy}
       />
 
       <ExpertiseSection
@@ -102,16 +102,16 @@ const TorontoRosedaleOptometrist = () => {
           </>,
           <>
             <strong>
-              College of Optometrists in Vision Development (COVD)
+             Canadian National Boards (CSAO)
             </strong>{" "}
-            - Member
+            - Certified
           </>,
           <>
             <strong>Advanced Dry Eye Treatment</strong> - IPL and RF Therapy
             Experienced
           </>,
           <>
-            <strong>Pediatric Eye Care Specialist</strong> - Child vision
+            <strong>Pediatric Eye Care</strong> - Child vision
             development expertise
           </>,
         ]}

@@ -52,36 +52,45 @@ export default function OurTeamPage() {
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 w-full">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-sm border border-neutral-100 overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-md"
-              >
-                {/* Image Container */}
-                <div className="relative overflow-hidden aspect-[4/5] bg-gray-50">
-                  <Image
-                    src={member.image}
-                    alt={`${member.name} - ${member.role}`}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                    className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                    priority={index < 4}
-                  />
-                  {/* Subtle color highlight bar on hover */}
-                  <div className="absolute bottom-0 left-0 w-full h-[6px] bg-[#41BBC8] transform translate-y-full transition-transform duration-350 ease-in-out group-hover:translate-y-0" />
-                </div>
+            {teamMembers.map((member, index) => {
+              const card = (
+                <div
+                  className="bg-white rounded-lg shadow-sm border border-neutral-100 overflow-hidden flex flex-col group transition-all duration-300 hover:shadow-md h-full"
+                >
+                  {/* Image Container */}
+                  <div className="relative overflow-hidden aspect-[4/5] bg-gray-50">
+                    <Image
+                      src={member.image}
+                      alt={`${member.name} - ${member.role}`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                      className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+                      priority={index < 4}
+                    />
+                    {/* Subtle color highlight bar on hover */}
+                    <div className="absolute bottom-0 left-0 w-full h-[6px] bg-[#41BBC8] transform translate-y-full transition-transform duration-350 ease-in-out group-hover:translate-y-0" />
+                  </div>
 
-                {/* Info Container */}
-                <div className="p-5 flex flex-col justify-center items-center text-center">
-                  <h3 className="font-poppins font-bold text-lg text-[#28305F] tracking-wide mb-1">
-                    {member.name}
-                  </h3>
-                  <span className="font-medium text-[#41BBC8] text-xs uppercase tracking-widest font-poppins">
-                    {member.role}
-                  </span>
+                  {/* Info Container */}
+                  <div className="p-5 flex flex-col justify-center items-center text-center">
+                    <h3 className="font-poppins font-bold text-lg text-[#28305F] tracking-wide mb-1">
+                      {member.name}
+                    </h3>
+                    <span className="font-medium text-[#41BBC8] text-xs uppercase tracking-widest font-poppins">
+                      {member.role}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+
+              return member.slug ? (
+                <Link key={index} href={`/team-members/${member.slug}`}>
+                  {card}
+                </Link>
+              ) : (
+                <div key={index}>{card}</div>
+              );
+            })}
           </div>
         </div>
       </section>
