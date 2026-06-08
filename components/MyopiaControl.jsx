@@ -76,7 +76,7 @@ const MyopiaControl = () => {
                     <span className="text-neutral-600">
                       <strong>Source: </strong>
                       <Link
-                        href="https://www.hoyavision.com/ca/vision-products/myopia/miyosmart/"
+                        href="https://www.hoyavision.com/en-ca/vision-products/miyosmartvr25/"
                         className=" text-combination-200 hover:text-combination-100"
                         target="_blank"
                         rel="noopener noreferrer"

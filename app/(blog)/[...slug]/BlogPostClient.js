@@ -24,43 +24,24 @@ const BlogPostClient = ({ post: initialPost }) => {
   const [error, setError] = useState(null);
   const [shareUrl, setShareUrl] = useState("");
 
-  // Clean text function
   const cleanText = (text) => {
     if (!text) return "";
     return he.decode(text);
   };
+
+  const stripDashboardHrefs = (html) =>
+    html
+      ?.replace(/href="\/dashboard\//g, 'href="/')
+      .replace(
+        /href="https?:\/\/(?:www\.)?360eyecare\.ca\/dashboard\//gi,
+        'href="https://www.360eyecare.ca/',
+      );
 
   // Set share URL
   useEffect(() => {
     if (typeof window !== "undefined") {
       const cleanSlug = Array.isArray(slug) ? slug.join("/") : slug;
       setShareUrl(`${window.location.origin}/${cleanSlug}`);
-    }
-  }, [slug]);
-
-  // Add canonical meta tag to prevent duplicate canonical
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Remove any existing canonical tags
-      const allCanonicals = document.querySelectorAll('link[rel="canonical"]');
-      allCanonicals.forEach((canonical) => canonical.remove());
-
-      // Add the correct canonical
-      const link = document.createElement("link");
-      link.rel = "canonical";
-      link.href = `https://360eyecare.ca/${slug}`;
-      document.head.appendChild(link);
-
-      return () => {
-        // Cleanup - safely remove the link
-        try {
-          if (link && link.parentNode) {
-            link.parentNode.removeChild(link);
-          }
-        } catch (error) {
-          console.warn("Error removing canonical tag:", error);
-        }
-      };
     }
   }, [slug]);
 
@@ -106,11 +87,11 @@ const BlogPostClient = ({ post: initialPost }) => {
           },
           content: {
             ...postData[0].content,
-            rendered: cleanText(postData[0].content.rendered),
+            rendered: stripDashboardHrefs(cleanText(postData[0].content.rendered)),
           },
           excerpt: {
             ...postData[0].excerpt,
-            rendered: cleanText(postData[0].excerpt.rendered),
+            rendered: stripDashboardHrefs(cleanText(postData[0].excerpt.rendered)),
           },
         };
 
