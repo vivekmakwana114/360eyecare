@@ -22,6 +22,7 @@ import {
   RetinalImage,
   RFTherapyImage,
   SamBarramImage,
+  SamBarramImage_copy,
   smileImage,
   SportsVisionImage,
   TearOsmolarityImage,
@@ -154,6 +155,8 @@ export const optometrists = [
     alt: "Dr. Sam Baraam Optometrist at 360 Eyecare",
     slug: "dr-sam-baraam",
     image: SamBarramImage.src,
+    metaTitle: "Dr. Sam Baraam - Optometrist in Yorkville & Beaches | 360 Eyecare",
+    metaDescription: "Meet Dr. Sam Baraam at 360 Eyecare Beaches and Yorkville Toronto. Book a comprehensive eye exam and receive personalized vision and eye care.",
     description: (
       <>
         Dr. Sam Baraam is a certified optometrist with advanced training in
@@ -178,6 +181,8 @@ Dr. Baraam is the founder and president of 360 Eyecare, practicing at the Beache
     alt: "Dr. Anita Sritharan Optometrist at 360 Eyecare",
     slug: "dr-anita-sritharan",
     image: AnitaSritharanImage.src,
+    metaTitle: "Dr. Anita Sritharan - Optometrist at 360 Eyecare Yorkville & Beaches",
+    metaDescription: "Meet Dr. Anita Sritharan at 360 Eyecare Toronto. Book an eye exam and get professional care for your vision and long-term eye health.",
     description:
       "Dr. Anita Sritharan is dedicated to providing patient-centered eye care and developing unique treatment plans based on individual needs.",
     longDescription: `Dr. Anita Sritharan is a dedicated optometrist providing full-scope optometry with a special interest in dry eye treatments and myopia control. She has extensive experience managing conditions such as blepharitis, meibomian gland dysfunction, ocular rosacea, styes, and chalazions. To offer her patients the most effective treatments, she provides advanced in-office treatments, including intense pulsed light (IPL) and radio frequency (RF Therapy). Additionally, Dr. Sritharan specializes in fitting specialty contact lenses, including RGPs and OrthoK lenses.
@@ -194,6 +199,8 @@ On her spare time, she enjoys baking, swimming, and travelling`,
     alt: "Dr. Alina Shahid Optometrist at 360 Eyecare",
     slug: "dr-alina-shahid",
     image: AlinaShahidImage.src,
+    metaTitle: "Dr. Alina Shahid - Optometrist at 360 Eyecare | Toronto",
+    metaDescription: "Learn more about Dr. Alina Shahid at 360 Eyecare Toronto. Schedule an eye exam for expert vision care and eye health support.",
     description:
       "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
     longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
@@ -208,6 +215,8 @@ Dr. Shahid is passionate about providing thorough eye care and building trusting
     alt: "Dr. Gina Chen Optometrist at 360 Eyecare",
     slug: "dr-gina-chen",
     image: GinaChenImage.src,
+    metaTitle: "Dr. Gina Chen - Optometrist in Toronto | 360 Eyecare",
+    metaDescription: "Get expert eye care from Dr. Gina Chen at 360 Eyecare Toronto. Schedule your eye exam and protect your vision today.",
     description:
       "Dr. Gina Chen is a passionate optometrist specializing in Orthokeratology lenses and enjoys practicing comprehensive eye care.",
     longDescription: `Dr. Gina Chen received both her Doctor of Optometry degree and Bachelor of Science degree with honours from the University of Waterloo. During her clinical studies, she obtained extensive training with a focus in retinal diseases, cataracts, and dry eye diseases at the Eye Associates of Pinellas in Pinellas Park, Florida.
@@ -226,6 +235,8 @@ In her spare time, she enjoys exercising, travelling, reading, and being a foodi
     alt: "Dr. Harmandeep Gill Optometrist at 360 Eyecare",
     slug: "dr-harmandeep-gill",
     image: GillImage.src,
+    metaTitle: "Dr. Harmandeep Gill - Optometrist in Toronto | 360 Eyecare",
+    metaDescription: "Meet Dr. Harmandeep Gill at 360 Eyecare Toronto. Book a comprehensive eye exam and receive personalized vision care.",
     description:
       "Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at University of Toronto.",
     longDescription: `Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at the University of Toronto. He went on to receive his Doctor of Optometry from the University of Waterloo.
@@ -2502,16 +2513,19 @@ export const teamMembers = [
     name: "Dr. Sam Baraam",
     role: "Optometrist",
     image: TeamSamBaraamImage,
+    slug: "dr-sam-baraam",
   },
   {
     name: "Dr. Anita Sritharan",
     role: "Optometrist",
     image: TeamAnitaSritharanImage,
+    slug: "dr-anita-sritharan",
   },
   {
     name: "Dr. Alina Shahid",
     role: "Optometrist",
     image: TeamAlinaShahidImage,
+    slug: "dr-alina-shahid",
   },
   {
     name: "Brandon",

@@ -22,6 +22,7 @@ import MedicalTeamImage from "../public/Medical-team.webp";
 import BgFooterImage from "../public/footer-bg.jpg";
 import GivingBackImage from "../public/giving-back.webp";
 import SamBarramImage from "../public/doctors/SamBaraam.jpg";
+import SamBarramImage_copy from "../public/doctors/SamBaraam_copy.jpg";
 import AlinaShahidImage from "../public/doctors/AlinaShahid.jpg";
 import AnitaSritharanImage from "../public/doctors/AnitaSritharan.jpg";
 import GillImage from "../public/doctors/Gill.webp";
@@ -250,6 +251,7 @@ export {
   BgFooterImage,
   GivingBackImage,
   SamBarramImage,
+  SamBarramImage_copy,
   AlinaShahidImage,
   AnitaSritharanImage,
   GillImage,

@@ -35,18 +35,18 @@ const nextConfig = {
 
   async redirects() {
     return [
-      // Redirect WordPress dashboard URLs to clean blog URLs
+      // 301 redirect all /dashboard/* URLs to their clean equivalents
       {
-        source: '/dashboard/blog/:slug',
-        destination: '/:slug',
+        source: '/dashboard/:path*',
+        destination: '/:path*',
         permanent: true,
       },
-      // // Redirect any /dashboard/ routes to clean URLs
-      // {
-      //   source: '/dashboard/:slug((?!wp-json|wp-admin|wp-content).*)',
-      //   destination: '/:slug*',
-      //   permanent: true,
-      // },
+      // Block /public/ directory from being accessible as a URL
+      {
+        source: '/public/:path*',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   async headers() {

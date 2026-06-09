@@ -44,9 +44,7 @@ export async function generateMetadata({ params }) {
 
     // Clean the slug and create canonical URL
     const cleanSlug = Array.isArray(slug) ? slug.join("/") : slug;
-    const cleanCanonical = `https://360eyecare.ca/${cleanSlug}`;
-    console.log(yoastData.og_url,"og_url");
-    console.log(yoastData.canonical,"canonical");
+    const cleanCanonical = `https://www.360eyecare.ca/${cleanSlug}`;
 
     // CRITICAL: Clean Yoast data to remove dashboard URLs
     if (yoastData) {

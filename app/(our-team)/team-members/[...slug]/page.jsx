@@ -11,18 +11,20 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const firstSentence = doctor.longDescription
-    ? doctor.longDescription.split(".")[0] + "."
-    : "";
-
-  const description = doctor.description || firstSentence;
+  const title = doctor.metaTitle || `${doctor.name} | Optometrist at 360 Eyecare`;
+  const description = doctor.metaDescription || doctor.description || "";
 
   return {
-    title: `${doctor.name} | Optometrist at Your Clinic`,
-    description: description,
+    title,
+    description,
+    alternates: {
+      canonical: `https://www.360eyecare.ca/team-members/${doctor.slug}`,
+    },
     openGraph: {
-      title: `${doctor.name} | Optometrist`,
-      description: description,
+      title,
+      description,
+      url: `https://www.360eyecare.ca/team-members/${doctor.slug}`,
+      siteName: "360 Eyecare",
       images: [
         {
           url: doctor.image,
@@ -34,8 +36,8 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${doctor.name} | Optometrist`,
-      description: description,
+      title,
+      description,
       images: [typeof doctor.image === "string" ? doctor.image : null],
     },
   };

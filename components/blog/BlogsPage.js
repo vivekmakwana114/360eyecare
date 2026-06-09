@@ -104,14 +104,18 @@ const BlogsPage = () => {
           >
             <div className="flex flex-col gap-4">
               {post?.yoast_head_json?.og_image?.[0]?.url ? (
-                <Image
-                  src={post?.yoast_head_json?.og_image?.[0]?.url}
-                  alt={cleanHtmlContent(post.title.rendered)}
-                  width={367}
-                  height={210}
-                  className="w-full h-[210px] object-cover rounded cursor-pointer"
+                <div
+                  className="relative w-full h-[210px] overflow-hidden rounded cursor-pointer"
                   onClick={() => router.push(`/${post.slug}`)}
-                />
+                >
+                  <Image
+                    src={post?.yoast_head_json?.og_image?.[0]?.url}
+                    alt={cleanHtmlContent(post.title.rendered)}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 387px"
+                    className="object-contain"
+                  />
+                </div>
               ) : null}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-row gap-4 sm:gap-8">

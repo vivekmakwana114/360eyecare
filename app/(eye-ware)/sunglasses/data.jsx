@@ -42,7 +42,7 @@ export const data = [
     title: "Tom Ford",
     description:
       "Tom Ford Sunglasses offer refined design, intelligent glamour, and innovative details. All Tom Ford Sunglasses feature lenses of extraordinary quality and are handmade in Italy. If you are looking for top-quality eyewear that will have people taking notice, Tom Ford is the brand for you.",
-    url: "https://www.tomfordfashion.com/en-us/404",
+    url: "https://www.tomfordfashion.com/en-us/sunglasses/",
   },
   {
     image: Brand6,
