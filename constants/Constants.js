@@ -2528,6 +2528,18 @@ export const teamMembers = [
     slug: "dr-alina-shahid",
   },
   {
+    name: "Dr. Gina Chen",
+    role: "Optometrist",
+    image: GinaChenImage,
+    slug: "dr-gina-chen",
+  },
+  {
+    name: "Dr. Harmandeep Gill",
+    role: "Optometrist",
+    image: GillImage,
+    slug: "dr-harmandeep-gill",
+  },
+  {
     name: "Brandon",
     role: "Optician",
     image: TeamBrandonImage,

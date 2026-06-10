@@ -2,7 +2,8 @@ import { optometrists } from "../../../../constants/Constants.js";
 import TeamMember from "./TeamMember";
 
 export async function generateMetadata({ params }) {
-  const doctor = optometrists.find((doc) => doc.slug == params.slug);
+  const { slug } = await params;
+  const doctor = optometrists.find((doc) => doc.slug == slug);
 
   if (!doctor) {
     return {
@@ -43,8 +44,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function TeamMemberPage({ params }) {
-  const doctor = optometrists.find((doc) => doc.slug == params.slug);
+export default async function TeamMemberPage({ params }) {
+  const { slug } = await params;
+  const doctor = optometrists.find((doc) => doc.slug == slug);
 
   return <TeamMember doctor={doctor} />;
 }
