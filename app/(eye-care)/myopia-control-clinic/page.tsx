@@ -2,7 +2,7 @@ import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import Banner from "../../../components/Banner";
 import Link from "next/link";
-import { myopiaImage } from "../../../constants/Images";
+import { MyopiaImage } from "../../../constants/Images";
 import Image from "next/image";
 import MyopiaControl from "../../../components/MyopiaControl";
 import MyopiaControlPage from "../../../components/MyopiaControlPage";
@@ -84,7 +84,7 @@ const page = () => {
           <div className="w-full md:w-1/2 mt-4 md:mt-0">
             <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-[292px]">
               <Image
-                src={myopiaImage}
+                src={MyopiaImage}
                 alt="Myopia Control Treatment"
                 fill
                 className="rounded-lg object-cover"

@@ -482,13 +482,12 @@ const page = () => {
           </p>
         </div>
         <div className="w-full sm:w-[585px] flex flex-row items-end">
-          <div className="hidden sm:block w-[30px] h-[280px] bg-gray-100" />
           <Image
             src={EyeEmergencyImage}
             alt="Eye Emergency"
-            width={585}
-            height={536}
-            className="w-full h-auto"
+            width={555}
+            height={580}
+            className="w-full h-[580px] object-cover rounded-r-lg shadow-sm"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { VirtualConsultImage } from "constants/Images";
+import { SamBarramImage, VirtualConsultImage } from "constants/Images";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -481,7 +481,7 @@ const RequestForm = () => {
 
       <div className="md:w-1/3 mt-6 md:mt-0">
         <Image
-          src={VirtualConsultImage}
+          src={SamBarramImage}
           width={380}
           height={549}
           alt="Optometrist with eye test equipment"

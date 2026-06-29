@@ -1,7 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import Link from "next/link";
-import { advancedDiagnosticsImage } from "../../../constants/Images";
+import { advancedDiagnostics_2 } from "../../../constants/Images";
 import Image from "next/image";
 import AdvancedDiagnosisService from "../../../components/AdvancedDiagnosisService";
 
@@ -52,13 +52,13 @@ const page = () => {
           </Link>
         </div>
         <div className="w-full sm:w-[585px] flex flex-row items-end">
-          <div className="hidden sm:block w-[30px] h-[280px] bg-gray-100" />
+          <div className="hidden sm:block w-[30px] h-[520px] bg-gray-100 rounded-l-lg" />
           <Image
-            src={advancedDiagnosticsImage}
+            src={advancedDiagnostics_2}
             alt="Advanced Diagnostics"
-            width={585}
-            height={536}
-            className="w-full h-auto"
+            width={555}
+            height={520}
+            className="w-full h-[520px] object-cover rounded-r-lg shadow-sm"
           />
         </div>
       </div>

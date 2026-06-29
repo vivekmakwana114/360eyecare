@@ -4,7 +4,7 @@ import AboutUsSection from "../../../components/AboutUsSection";
 
 import Link from "next/link";
 import Image from "next/image";
-import { SpectacleImage } from "../../../constants/Images";
+import { EyeExamImage } from "../../../constants/Images";
 import FaqPlusMinus from "../../../components/FaqPlusMinus";
 import EyeExamTools from "../../../components/EyeExamTools";
 import { eyeexamsCardData } from "constants/Constants";
@@ -184,9 +184,8 @@ const page = () => {
         <div className="bg-white">
           <div className="p-4 sm:p-6 md:p-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start md:justify-between gap-6 sm:gap-8">
             <div className="flex items-end">
-              <div className="w-[30px] h-[180px] bg-gray-200 hidden md:block"></div>
               <Image
-                src={SpectacleImage}
+                src={EyeExamImage}
                 alt="spectacle-image"
                 height={320}
                 width={500}

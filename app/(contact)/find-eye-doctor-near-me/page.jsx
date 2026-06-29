@@ -1,6 +1,6 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
-import { findeyedoctorImage } from "../../../constants/Images";
+import { OptomeristTeam } from "../../../constants/Images";
 import Link from "next/link";
 import Image from "next/image";
 import EyeClinicNearYou from "../../../components/EyeClinicNearYou";
@@ -69,7 +69,7 @@ const page = () => {
 
         <div className="flex flex-col md:w-1/2">
           <Image
-            src={findeyedoctorImage}
+            src={OptomeristTeam}
             alt="Book Eye Exam"
             width={585}
             height={390}

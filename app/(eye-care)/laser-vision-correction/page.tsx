@@ -9,8 +9,8 @@ import Benefits from "../../../components/Benefits";
 import { benefitsData, laservisiondata } from "../../../constants/Constants";
 import LaserVisionService from "../../../components/LaserVisionService";
 import {
-  LaserCorrectionImage,
-  LaserVisionServiceImage,
+  PatientScaledImage,
+  laservisioncorrection2,
 } from "../../../constants/Images";
 
 export async function generateMetadata() {
@@ -58,13 +58,12 @@ const page = () => {
           </Link>
         </div>
         <div className="w-full sm:w-[585px] flex flex-row items-end">
-          <div className="hidden sm:block w-[30px] h-[280px] bg-gray-100" />
           <Image
-            src={LaserCorrectionImage}
+            src={PatientScaledImage}
             alt="Laser Correction"
             width={585}
-            height={536}
-            className="w-full h-auto"
+            height={236}
+            className="w-full h-[380px] object-cover rounded-r-lg shadow-sm"
           />
         </div>
       </div>
@@ -76,7 +75,7 @@ const page = () => {
       />
       <LaserVisionService
         data={laservisiondata}
-        image={LaserCorrectionImage}
+        image={laservisioncorrection2}
         imageTitle="Why Choose Us!"
         imageDesc="Experienced doctors with extensive training in laser vision correction management"
       />
