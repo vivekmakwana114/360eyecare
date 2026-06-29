@@ -1,10 +1,7 @@
 import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import { TiTick } from "react-icons/ti";
-import {
-  eyeCareServiceImage,
-  eyeconditionImage,
-} from "../../../constants/Images";
+import { eyeCareServiceImage, eyecondition_2 } from "../../../constants/Images";
 import Image from "next/image";
 import CommonEyeSlider from "../../../components/CommonEyeSlider";
 import Banner2 from "../../../components/Banner2";
@@ -56,9 +53,9 @@ const page = () => {
           </p>
         </div>
         <div className="w-full sm:w-[585px] flex flex-row items-end">
-          <div className="hidden sm:block w-[30px] h-[280px] bg-gray-100" />
+          <div className="hidden sm:block w-[30px] h-[180px] bg-gray-100" />
           <Image
-            src={eyeconditionImage}
+            src={eyecondition_2}
             alt="Understanding Dry Eye"
             width={585}
             height={536}

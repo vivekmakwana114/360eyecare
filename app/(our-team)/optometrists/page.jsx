@@ -1,7 +1,7 @@
 import SubHeader from "../../../components/SubHeader";
 import OptometristTeam from "../../../components/OptometristTeam";
 import Image from "next/image";
-import { MeetOptometryImage } from "constants/Images";
+import { EquipmentHandle, MeetOptometristTeam } from "constants/Images";
 import Link from "next/link";
 
 export const generateMetadata = () => {
@@ -65,16 +65,31 @@ const Optometrists = () => {
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row bg-white overflow-hidden">
             {/* Image Container */}
-            <div className="lg:w-1/2 w-full">
-              <div className="relative ">
-                <Image
-                  src={MeetOptometryImage}
-                  alt="Eye care professionals with patients"
-                  className="object-cover w-full h-full"
-                  width={578}
-                  height={668}
-                  priority
-                />
+            <div className="lg:w-1/2 w-full flex items-center justify-center p-6 md:p-10">
+              <div className="relative w-full max-w-[480px] aspect-[4/5]">
+                {/* Top Left Image */}
+                <div className="w-[100%] aspect-[5/5] relative rounded-lg overflow-hidden shadow-lg z-10">
+                  <Image
+                    src={MeetOptometristTeam}
+                    alt="Meet Optometrist"
+                    className="object-cover w-full h-full"
+                    width={400}
+                    height={500}
+                    priority
+                  />
+                </div>
+                {/* Bottom Right Image */}
+                <div className="w-[78%] aspect-[4/3] absolute -bottom-10 -right-10 rounded-lg overflow-hidden shadow-2xl z-20 border-8 border-white bg-white">
+                  <div className="w-full h-full">
+                    <Image
+                      src={EquipmentHandle}
+                      alt="Eye care professionals with patients"
+                      className="object-cover w-full h-full"
+                      width={360}
+                      height={270}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 

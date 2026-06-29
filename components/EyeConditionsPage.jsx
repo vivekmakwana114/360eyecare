@@ -1,9 +1,9 @@
 import Image from "next/image";
 import {
-  UnderstandImage1,
+  Understanding_1,
   UnderstandImage2,
-  UnderstandImage3,
-  UnderstandImage4,
+  whatifdonothing,
+  EyeExam,
 } from "../constants/Images";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Link from "next/link";
@@ -27,9 +27,9 @@ const EyeConditionsPage = () => {
               {/* Left Column with Image */}
               <div className="w-full sm:w-1/2">
                 <Image
-                  src={UnderstandImage1}
+                  src={Understanding_1}
                   alt="Eye examination process"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-[300px] object-cover rounded"
                 />
               </div>
 
@@ -53,11 +53,14 @@ const EyeConditionsPage = () => {
             {/* Bottom Image Section */}
             <div className="flex flex-col sm:flex-row items-end mt-6 sm:mt-8">
               <div className="hidden sm:block w-12 h-32 lg:h-40 bg-combination-100"></div>
-              <div className="w-full">
+              <div className="w-full relative h-[400px] rounded overflow-hidden shadow-sm">
                 <Image
-                  src={UnderstandImage4}
+                  src={EyeExam}
                   alt="Child eye examination"
-                  className="w-full h-auto object-cover"
+                  fill
+                  sizes="(max-width: 640px) 100vw, 555px"
+                  className="object-cover"
+                  priority
                 />
               </div>
             </div>
@@ -69,14 +72,14 @@ const EyeConditionsPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="w-full h-48 sm:h-40 md:h-48">
                 <Image
-                  src={UnderstandImage2}
+                  src={Understanding_1}
                   alt="Eye examination equipment"
                   className="w-full h-full object-cover rounded"
                 />
               </div>
               <div className="w-full h-48 sm:h-40 md:h-48">
                 <Image
-                  src={UnderstandImage3}
+                  src={whatifdonothing}
                   alt="Eye examination"
                   className="w-full h-full object-cover rounded"
                 />

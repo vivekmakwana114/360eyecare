@@ -6,7 +6,7 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { LuMonitorDot, LuScanEye } from "react-icons/lu";
 import Image from "next/image";
 import Link from "next/link";
-import { MeetOptometryImage } from "../../../constants/Images";
+import { MeetOptometrist1, MeetOptometrist2 } from "../../../constants/Images";
 import { ImageSlider } from "components/common/ImageSlider";
 
 export const generateMetadata = () => {
@@ -96,16 +96,32 @@ const AboutUs = () => {
         <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row bg-white overflow-hidden">
             {/* Image Container */}
-            <div className="lg:w-1/2 w-full">
-              <div className="relative ">
-                <Image
-                  src={MeetOptometryImage}
-                  alt="Eye care professionals with patients"
-                  className="object-cover w-full h-full"
-                  width={578}
-                  height={668}
-                  priority
-                />
+            <div className="lg:w-1/2 w-full flex items-center justify-center p-6 md:p-10">
+              <div className="relative w-full max-w-[480px] aspect-[4/5]">
+                {/* Top Left Image */}
+                <div className="w-[100%] aspect-[5/5] relative rounded-lg overflow-hidden shadow-lg z-10">
+                  <Image
+                    src={MeetOptometrist1}
+                    alt="Meet Optometrist"
+                    className="object-cover w-full h-full"
+                    width={400}
+                    height={500}
+                    priority
+                  />
+                </div>
+                {/* Bottom Right Image */}
+                <div className="w-[78%] aspect-[4/3] absolute -bottom-10 -right-10 rounded-lg overflow-hidden shadow-2xl z-20 border-8 border-white bg-white">
+                  {/* <div className="absolute top-0 left-0 right-0 h-3 bg-combination-100 z-30" /> */}
+                  <div className="w-full h-full">
+                    <Image
+                      src={MeetOptometrist2}
+                      alt="Eye care professionals with patients"
+                      className="object-cover w-full h-full"
+                      width={360}
+                      height={270}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 

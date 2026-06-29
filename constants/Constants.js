@@ -3,6 +3,7 @@ import {
   AlinaShahidImage,
   AnitaSritharanImage,
   CataractImage,
+  Cataract2,
   ContactLenspediaImage,
   cornealImage,
   DiabeticImage,
@@ -668,7 +669,7 @@ export const eyeExamTools = [
     height: "354",
     width: "531",
     icon: <FaSearchLocation size={24} />,
-    image: "/eyeexam/eyeexam7.webp",
+    image: "/eyeexam/EyeExam.webp",
     title: "The Visual Fields Test",
 
     content:
@@ -684,7 +685,7 @@ export const commonEyeServices = [
   {
     label: "Cataracts",
     icon: "/commoneye/cataracts.png",
-    image: CataractImage,
+    image: Cataract2,
     title: "Understanding Cataracts and Treatment Options",
     description:
       "Cataracts are a common age-related eye condition that causes cloudy vision. Our clinic offers advanced surgical and non-surgical treatments to restore clear vision and improve quality of life. Our team of experts will guide you through the diagnosis, treatment, and recovery process, ensuring personalized care every step of the way.",

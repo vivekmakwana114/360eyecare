@@ -2,7 +2,7 @@
 import { Playfair_Display } from "next/font/google";
 import Image from "next/image";
 import React, { useState } from "react";
-import { whatifidonothing } from "../constants/Images";
+import { whatifdonothing } from "../constants/Images";
 
 // Placeholder for images until you have actual imports
 const placeholderIcons = {
@@ -135,13 +135,14 @@ const WhatHappensIfIDoNothing = () => {
           <div className="w-full lg:w-80 flex flex-col gap-6 md:gap-8">
             {/* Image container */}
             <div className="flex justify-center">
-              <div className="relative w-80 h-auto md:h-full max-h-[510px]">
+              <div className="relative w-80 h-[300px] md:h-[510px]">
                 <Image
-                  src={whatifidonothing}
+                  src={whatifdonothing}
                   alt="Patient eye examination"
                   width={380}
-                  height={569}
+                  height={510}
                   className="object-cover w-full h-full"
+                  priority
                 />
               </div>
             </div>

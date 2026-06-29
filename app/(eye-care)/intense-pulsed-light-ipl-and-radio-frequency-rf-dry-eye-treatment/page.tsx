@@ -8,7 +8,7 @@ import {
   InModeIPLDryImage,
   LumeccaBeforeAfterImage,
   LummericaImage,
-  OptometryImage,
+  Optometry6,
 } from "../../../constants/Images";
 import { ChevronRight } from "lucide-react";
 import FormSection from "components/FormSection";
@@ -541,7 +541,7 @@ const page = () => {
               {/* Right image - using a placeholder since we can't load external images */}
               <div className="flex-1">
                 <Image
-                  src={OptometryImage}
+                  src={Optometry6}
                   alt="Eye examination equipment"
                   width={585}
                   height={536}

@@ -1,6 +1,6 @@
 import SubHeader from "../../../components/SubHeader";
 import Image from "next/image";
-import { MedicalTeamImage } from "../../../constants/Images";
+import { MedicalTeam } from "../../../constants/Images";
 export const generateMetadata = () => {
   return {
     title: "Career Opportunities | 360 Eyecare",
@@ -65,7 +65,7 @@ const CareerOpportunities = () => {
         {/* Image Container - Full width on mobile, 50% on desktop */}
         <div className="w-full md:w-[50%] order-1 md:order-2 mb-6 md:mb-0">
           <Image
-            src={MedicalTeamImage}
+            src={MedicalTeam}
             alt="Medical professionals shaking hands"
             width={585}
             height={390}

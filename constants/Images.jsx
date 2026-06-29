@@ -1,13 +1,15 @@
 import EyeCareLogo from "../public/360Logo.webp";
 import OptometryImage from "../public/Optometry.webp";
+import Optometry6 from "../public/Optometry6.webp";
 import PatientScaledImage from "../public/PatientScaledImage.webp";
 import PediatricEyeCareImage from "../public/Pediatric-Eye-Care.webp";
 import EyeExamIcon from "../public/Icons/HeroIcon1.webp";
 import EyeExamImage from "../public/Optometry1.webp";
+import EyeExam from "../public/eyeexam/EyeExam.webp";
 import ContactLensIcon from "../public/Icons/HeroIcon2.webp";
 import ContactLensImage from "../public/Optometry2.webp";
 import MyopiaIcon from "../public/Icons/HeroIcon3.webp";
-import MyopiaImage from "../public/Optometry3.webp";
+import MyopiaImage from "../public/myopia1.webp";
 import DryEyeIcon from "../public/Icons/HeroIcon1.webp";
 import DryEyeImage from "../public/Optometry4.webp";
 import PediatricIcon from "../public/Icons/HeroIcon3.webp";
@@ -18,7 +20,7 @@ import IrritatingEyeImage from "../public/irritatingeye.webp";
 import WithOutSpecImage from "../public/withoutSpec.webp";
 import GirWithSpecImage from "../public/withSpect3.webp";
 import WithSpecImage from "../public/withSpect.png";
-import MedicalTeamImage from "../public/Medical-team.webp";
+import MedicalTeam from "../public/MedicalTeam.webp";
 import BgFooterImage from "../public/footer-bg.jpg";
 import GivingBackImage from "../public/giving-back.webp";
 import SamBarramImage from "../public/doctors/SamBaraam.jpg";
@@ -27,7 +29,10 @@ import AlinaShahidImage from "../public/doctors/AlinaShahid.jpg";
 import AnitaSritharanImage from "../public/doctors/AnitaSritharan.jpg";
 import GillImage from "../public/doctors/Gill.webp";
 import GinaChenImage from "../public/doctors/GinaChen.webp";
-import MeetOptometryImage from "../public/Meetoptometrist.webp";
+import MeetOptometrist1 from "../public/MeetOptometrist1.webp";
+import MeetOptometrist2 from "../public/MeetOptometrist2.webp";
+import MeetOptometristTeam from "../public/MeetOptometristTeam.webp";
+import EquipmentHandle from "../public/EquipmentHandle.webp";
 import EyeChairImage from "../public/EyeChair.webp";
 import SamBarramImage2 from "../public/doctors/sambarram2.webp";
 import EyeCareSetup from "../public/eyecaresetup.webp";
@@ -40,28 +45,30 @@ import SpectacleImage from "../public/spectacle.webp";
 import YTThumbnail1 from "../public/youtubethumbnail1.jpg";
 import dryEyeImage from "../public/dryeyeclinic.webp";
 import understandDryEyeImage from "../public/understanddryeye.webp";
-import whatifidonothing from "../public/whatifdonothing.webp";
+import whatifdonothing from "../public/whatifdonothing.webp";
 import symptomsDryImage from "../public/dry-eye.webp";
-import eyeconditionImage from "../public/eye-condition.jpg";
+import eyecondition_2 from "../public/eye-condition_2.webp";
 import CataractImage from "../public/Cataracts.webp";
+import Cataract2 from "../public/Cataracts2.webp";
 import GlaucomaImage from "../public/Glaucoma-jpg.webp";
 import DryEyeSyndromeImage from "../public/Dry-Eye-Syndrome-jpg.webp";
 import DiabeticImage from "../public/Diabetic-Retinopathy.webp";
 import MacularImage from "../public/Macular-Degeneration-scaled.webp";
 import eyeCareServiceImage from "../public/our-eye-care.jpg";
+import Understanding_1 from "../public/understanding_1.webp"; 
 import UnderstandImage1 from "../public/understand1.webp";
 import UnderstandImage2 from "../public/understand2.webp";
 import UnderstandImage3 from "../public/understand3.webp";
 import UnderstandImage4 from "../public/understand4.webp";
-import EyeEmergencyImage from "../public/Emergency-Eye-Clinic-scaled.webp";
-import eyeemergenciesImage from "../public/eye-emergencies.webp";
+import EyeEmergencyImage from "../public/EmergencyEyeScaled.webp";
+import eyeemergenciesImage from "../public/advancedDiagnostics_2.webp";
 import LaserCorrectionImage from "../public/lasercorrection.jpg";
-import advancedDiagnosticsImage from "../public/advancedDiagnostics.webp";
+import advancedDiagnostics_2 from "../public/advancedDiagnostics_2.webp";
 import LaserVisionServiceImage from "../public/laservisioncorrection.webp";
 import prkImage from "../public/PRK-Laser-Vision-Correction-jpg.webp";
 import lasikImage from "../public/LASIK.webp";
 import smileImage from "../public/SMILE-Laser-Eye-Surgery-jpg.webp";
-import octImage from "../public/OCT-Machine-jpg.webp";
+import octImage from "../public/OCT-Machine-jpg_2.webp";
 import cornealImage from "../public/Corneal-Topography-jpg.webp";
 import MeibographyImage from "../public/Antares.webp";
 import TearOsmolarityImage from "../public/Tear-Osmolarity-Testing-jpeg.webp";
@@ -85,10 +92,10 @@ import myopiaImage from "../public/myopia-1.webp";
 import childeyeexam from "../public/child-eye-exam.webp";
 import pediatriceyeexam from "../public/pediatric-eye-care2.webp";
 import visioneyeexam from "../public/Vision-Health-jpg.webp";
-
+import OptomeristTeam from "../public/OptomeristTeam.webp";
 import eyeglasses from "../public/Eyeglasses.webp";
 import InModeIPLDryImage from "../public/inmodeIpl.webp";
-
+import laservisioncorrection2 from "../public/laservisioncorrection2.webp";
 import ThumbnailDryEyeImage1 from "../public/dryeyeclinicytthumbnail1.jpg";
 import ThumbnailDryEyeImage2 from "../public/dryeyeclinicytthumbnail2.jpg";
 import LummericaImage from "../public/TechnologyLogo_Lumecca_Teal-600x191.webp";
@@ -186,11 +193,13 @@ export {
   YTThumbnail1,
   dryEyeImage,
   VisionThreapImage,
+  EyeExam,
   OrthoImage2,
   myopiaImage,
   ContactLenspediaImage,
   OrthoImage,
   childVisionImage,
+  laservisioncorrection2,
   ExpertisePediatricImage,
   PediatricEyeImage,
   SportsVisionImage,
@@ -205,12 +214,13 @@ export {
   RetinalImage,
   IPLTherapyImage,
   RFTherapyImage,
+  Understanding_1,
   UnderstandImage1,
   eyeemergenciesImage,
   prkImage,
   lasikImage,
   smileImage,
-  advancedDiagnosticsImage,
+  advancedDiagnostics_2,
   LaserVisionServiceImage,
   LaserCorrectionImage,
   EyeEmergencyImage,
@@ -220,19 +230,22 @@ export {
   eyeCareServiceImage,
   understandDryEyeImage,
   CataractImage,
+  Cataract2,
+  OptomeristTeam,
   GlaucomaImage,
   DryEyeSyndromeImage,
   DiabeticImage,
   MacularImage,
-  eyeconditionImage,
+  eyecondition_2,
   symptomsDryImage,
   opticalShopImage,
   rosevaleChairImage,
   OptometryImage,
+  Optometry6,
   PatientScaledImage,
   PediatricEyeCareImage,
   EyeExamIcon,
-  whatifidonothing,
+  whatifdonothing,
   EyeExamImage,
   ContactLensIcon,
   ContactLensImage,
@@ -247,7 +260,7 @@ export {
   IrritatingEyeImage,
   WithOutSpecImage,
   WithSpecImage,
-  MedicalTeamImage,
+  MedicalTeam,
   BgFooterImage,
   GivingBackImage,
   SamBarramImage,
@@ -256,7 +269,10 @@ export {
   AnitaSritharanImage,
   GillImage,
   GinaChenImage,
-  MeetOptometryImage,
+  MeetOptometrist1,
+  MeetOptometrist2,
+  MeetOptometristTeam,
+  EquipmentHandle,
   EyeChairImage,
   SamBarramImage2,
   EyeCareSetup,

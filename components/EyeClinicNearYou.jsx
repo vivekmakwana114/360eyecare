@@ -9,88 +9,93 @@ const EyeClinicNearYou = () => {
       </h2>
       <hr className="w-[65px] h-[2px] bg-combination-100 mb-8" />
 
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-8 items-stretch">
         {/* Beaches Location */}
-        <div className="flex flex-col gap-4 md:w-1/2">
-          <h3 className="text-combination-200 text-2xl md:text-[37px] font-extrabold mb-2 leading-10">
-            360 Eyecare Beaches – Your Local Eye Clinic in The Beaches
-          </h3>
-          <hr className="w-20 h-1 bg-combination-100 mb-4" />
-          <p className="text-neutral-500 text-base mb-4">
-            Located in The Beaches, Toronto, this clinic offers top-quality eye
-            care, including:
-          </p>
-          <ul className="list-inside mb-6">
-            {[
-              "✔  Comprehensive eye exams",
-              "✔  Prescription glasses & sunglasses",
-              "✔  Contact lens fittings",
-              "✔  Dry eye treatment",
-              "✔  Eye disease management",
-            ].map((item, index) => (
-              <li key={index} className="ml-4 mb-2 text-neutral-500">
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-md rounded-2xl p-6 sm:p-8 md:w-1/2 transition-all duration-300">
+          <div className="flex-1 flex flex-col">
+            <h3 className="text-combination-200 text-xl sm:text-2xl font-extrabold mb-3 leading-snug min-h-[64px] sm:min-h-[80px] md:min-h-[96px] flex items-center">
+              360 Eyecare Beaches – Your Local Eye Clinic in The Beaches
+            </h3>
+            <hr className="w-16 h-1 bg-combination-100 mb-6" />
+            <p className="text-neutral-500 text-sm sm:text-base mb-4">
+              Located in The Beaches, Toronto, this clinic offers top-quality eye
+              care, including:
+            </p>
+            <ul className="list-none mb-6 pl-0">
+              {[
+                "Comprehensive eye exams",
+                "Prescription glasses & sunglasses",
+                "Contact lens fittings",
+                "Dry eye treatment",
+                "Eye disease management",
+              ].map((item, index) => (
+                <li key={index} className="ml-0 mb-3 text-neutral-500 text-sm sm:text-base flex items-start">
+                  <span className="text-combination-100 mr-2 flex-shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-          <p className="text-neutral-500 text-base font-extrabold mb-4">
-            📍 Visit{" "}
-            <Link
-              href="/toronto-beaches-optometrist"
-              className="text-combination-200 hover:text-combination-100"
-            >
-              360 Eyecare Beaches
-            </Link>{" "}
-            if you're searching for an 'optometrist near The Beaches' or 'eye
-            doctor near The Beaches Toronto'.
-          </p>
+            <p className="text-neutral-500 text-sm sm:text-base font-semibold mb-6 mt-auto">
+              📍 Visit{" "}
+              <Link
+                href="/toronto-beaches-optometrist"
+                className="text-combination-200 hover:text-combination-100 font-extrabold underline decoration-2 underline-offset-4"
+              >
+                360 Eyecare Beaches
+              </Link>{" "}
+              if you're searching for an 'optometrist near The Beaches' or 'eye
+              doctor near The Beaches Toronto'.
+            </p>
+          </div>
           <Link
             href="tel:4166983937"
-            className="bg-combination-100 hover:text-combination-100 hover:bg-combination-200 text-white font-extrabold py-3 px-8 rounded-md transition-colors duration-200 shadow-md w-fit"
+            className="bg-combination-100 hover:text-combination-100 hover:bg-combination-200 text-white font-extrabold py-3 px-8 rounded-md transition-colors duration-200 shadow-md w-full text-center text-sm sm:text-base mt-2"
           >
             Call: 416-698-3937
           </Link>
         </div>
 
         {/* Yorkville Location */}
-        <div className="flex flex-col gap-4 md:w-1/2 mt-8 md:mt-0">
-          <h3 className="text-combination-200 text-2xl md:text-[37px] font-extrabold mb-2 leading-10">
-            360 Eyecare Yorkville – Premium Optometry Care
-          </h3>
-          <hr className="w-20 h-1 bg-combination-100 mb-4" />
-          <p className="text-neutral-500 text-base mb-4">
-            Conveniently located in Yorkville. This optometry
-            clinic provides:
-          </p>
-          <ul className="list-inside mb-6">
-            {[
-              "✔  Advanced eye exams & vision testing",
-              "✔  Designer eyewear & prescription lenses",
-              "✔  Specialty contact lenses",
-              "✔  Management of glaucoma, cataracts, and other eye conditions",
-              "✔  Dry eye therapy",
-            ].map((item, index) => (
-              <li key={index} className="ml-4 mb-2 text-neutral-500">
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div className="flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-md rounded-2xl p-6 sm:p-8 md:w-1/2 transition-all duration-300 mt-8 md:mt-0">
+          <div className="flex-1 flex flex-col">
+            <h3 className="text-combination-200 text-xl sm:text-2xl font-extrabold mb-3 leading-snug min-h-[64px] sm:min-h-[80px] md:min-h-[96px] flex items-center">
+              360 Eyecare Yorkville – Premium Optometry Care
+            </h3>
+            <hr className="w-16 h-1 bg-combination-100 mb-6" />
+            <p className="text-neutral-500 text-sm sm:text-base mb-4">
+              Conveniently located in Yorkville. This optometry clinic provides:
+            </p>
+            <ul className="list-none mb-6 pl-0">
+              {[
+                "Advanced eye exams & vision testing",
+                "Designer eyewear & prescription lenses",
+                "Specialty contact lenses",
+                "Management of glaucoma, cataracts, and other eye conditions",
+                "Dry eye therapy",
+              ].map((item, index) => (
+                <li key={index} className="ml-0 mb-3 text-neutral-500 text-sm sm:text-base flex items-start">
+                  <span className="text-combination-100 mr-2 flex-shrink-0">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
 
-          <p className="text-neutral-500 text-base font-extrabold mb-4">
-            📍 Looking for an 'eye doctor near Yorkville' or 'optometrist near
-             Toronto'? Visit{" "}
-            <Link
-              href="/toronto-rosedale-optometrist"
-              className="text-combination-200 hover:text-combination-100"
-            >
-              360 Eyecare Yorkville 
-            </Link>{" "}
-            for expert care.
-          </p>
+            <p className="text-neutral-500 text-sm sm:text-base font-semibold mb-6 mt-auto">
+              📍 Looking for an 'eye doctor near Yorkville' or 'optometrist near
+              Toronto'? Visit{" "}
+              <Link
+                href="/toronto-rosedale-optometrist"
+                className="text-combination-200 hover:text-combination-100 font-extrabold underline decoration-2 underline-offset-4"
+              >
+                360 Eyecare Yorkville
+              </Link>{" "}
+              for expert care.
+            </p>
+          </div>
           <Link
             href="tel:4169012725"
-            className="bg-combination-100 hover:text-combination-100 hover:bg-combination-200 text-white font-extrabold py-3 px-8 rounded-md transition-colors duration-200 shadow-md w-fit"
+            className="bg-combination-100 hover:text-combination-100 hover:bg-combination-200 text-white font-extrabold py-3 px-8 rounded-md transition-colors duration-200 shadow-md w-full text-center text-sm sm:text-base mt-2"
           >
             Call: 416-901-2725
           </Link>
@@ -99,5 +104,4 @@ const EyeClinicNearYou = () => {
     </div>
   );
 };
-
 export default EyeClinicNearYou;
