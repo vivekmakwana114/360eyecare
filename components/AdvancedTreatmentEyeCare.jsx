@@ -41,9 +41,9 @@ const AdvancedTreatmentEyeCare = () => {
   return (
     <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
-        <h1 className="text-[37px] font-bold text-combination-200 text-center mb-2 font-poppins">
+        <h2 className="text-[37px] font-bold text-combination-200 text-center mb-2 font-poppins">
           Advanced Treatments for Dry Eye
-        </h1>
+        </h2>
         <div className="w-24 h-1 bg-combination-100 mx-auto mb-6"></div>
         <p className="text-center text-gray-600 mb-12">
           For those who haven't found relief with traditional dry eye treatments

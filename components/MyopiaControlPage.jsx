@@ -5,9 +5,9 @@ export default function MyopiaControlPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 ">
       <section className="mb-12">
-        <h1 className="text-3xl font-extrabold text-combination-200 mb-4">
+        <h2 className="text-3xl font-extrabold text-combination-200 mb-4">
           Monitoring and Follow-up
-        </h1>
+        </h2>
         <hr className="w-20 h-1 bg-combination-100 mb-4" />
 
         <p className="text-neutral-500 text-base mb-2">

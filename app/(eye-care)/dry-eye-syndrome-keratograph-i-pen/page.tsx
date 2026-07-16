@@ -304,7 +304,7 @@ const MGDSection = () => (
 const page = () => {
   return (
     <main className="pt-[110px]">
-      <SubHeader text="Dry Eye Clinic" />
+      <SubHeader text="Dry Eye Clinic Toronto" />
       <VideoSection />
       <IntroSection />
       <UnderstandingDryEye />

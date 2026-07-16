@@ -121,9 +121,9 @@ const FaqPlusMinus = () => {
   return (
     <div className="w-full max-w-7xl bg-white mx-auto p-4 font-sans">
       <div className="mb-6">
-        <h1 className="text-3xl font-bold text-combination-200 mb-2">
+        <h2 className="text-3xl font-bold text-combination-200 mb-2">
           Eye Exams FAQs
-        </h1>
+        </h2>
         <div className="w-12 h-1 bg-combination-100 mb-4"></div>
         <p className="text-neutral-500 text-base">
           Firstly, if you are considering eye exams in Toronto but still have

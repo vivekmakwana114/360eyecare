@@ -517,9 +517,9 @@ const page = () => {
             <div className="flex flex-col md:flex-row gap-8">
               {/* Left content */}
               <div className="md:w-3/5 space-y-6 w-full">
-                <h1 className="text-3xl md:text-3xl font-extrabold text-combination-200">
+                <h2 className="text-3xl md:text-3xl font-extrabold text-combination-200">
                   Seek Relief from Dry Eyes Today
-                </h1>
+                </h2>
 
                 <p className="text-neutral-500 text-base md:text-lg">
                   Contact us to schedule an appointment and find relief from dry

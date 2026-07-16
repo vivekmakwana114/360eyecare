@@ -197,9 +197,9 @@ const EyeExamTools = () => {
 
                     {/* Right content */}
                     <div className="">
-                      <h1 className="text-2xl md:text-3xl font-bold text-combination-200  mb-6 md:mb-8">
+                      <h2 className="text-2xl md:text-3xl font-bold text-combination-200  mb-6 md:mb-8">
                         {eyeExamTools[selected]?.title}
-                      </h1>
+                      </h2>
                       {eyeExamTools[selected]?.description && (
                         <p className="text-neutral-600 mb-6 text-[15px] ">
                           {eyeExamTools[selected]?.description}

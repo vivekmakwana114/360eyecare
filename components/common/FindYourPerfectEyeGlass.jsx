@@ -23,9 +23,9 @@ const FindYourPerfectEyeGlass = () => {
         <div className="flex flex-col md:flex-row justify-between gap-6  mb-16">
           {/* Left Column */}
           <div className="w-full md:max-w-[55%]">
-            <h1 className="text-3xl sm:text-4xl font-bold text-combination-200 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-combination-200 mb-4">
               Understanding Miyosmart: A Breakthrough in Myopia Control
-            </h1>
+            </h2>
             <div className="w-24 h-1 bg-combination-100 mb-8"></div>
 
             <div className="flex flex-col gap-6">

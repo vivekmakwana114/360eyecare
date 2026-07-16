@@ -17,9 +17,9 @@ const EyeConditionsPage = () => {
         <div className="flex flex-col lg:flex-row justify-between items-start mb-8 sm:mb-16 gap-8">
           {/* Left Column with Title */}
           <div className="w-full lg:max-w-[712px]">
-            <h1 className="text-3xl sm:text-4xl font-bold text-combination-200 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-combination-200 mb-4">
               Understanding Common Eye Conditions
-            </h1>
+            </h2>
             <div className="w-24 h-1 bg-combination-100 mb-6 sm:mb-8"></div>
 
             {/* Top Image and CTA Section */}

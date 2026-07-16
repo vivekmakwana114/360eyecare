@@ -25,9 +25,9 @@ const Banner = ({
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl px-4">
-        <h1 className="text-[40px] font-bold mb-3 text-white font-poppins">
+        <h2 className="text-[40px] font-bold mb-3 text-white font-poppins">
           {title}
-        </h1>
+        </h2>
         <p className="text-base mb-4 tracking-wide font-poppins">
           {description}
         </p>
