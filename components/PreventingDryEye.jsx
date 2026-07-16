@@ -4,9 +4,9 @@ const PreventingDryEye = () => {
   return (
     <div className=" bg-brand-blue">
       <div className="mx-auto max-w-7xl text-white p-10 rounded-lg">
-        <h1 className="text-[37px] font-extrabold mb-4 text-white">
+        <h2 className="text-[37px] font-extrabold mb-4 text-white">
           Preventing Dry Eye
-        </h1>
+        </h2>
 
         <div className="border-t-2 border-cyan-400 w-48 mb-6"></div>
 

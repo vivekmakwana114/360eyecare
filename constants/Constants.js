@@ -135,19 +135,26 @@ export const OptometryServices = [
 
 export const slides = [
   {
-    title: "360 Eyecare",
-    subtitle: "Your Neighbourhood Optometry Clinic",
+    title: "Toronto Optometrists",
+    subtitle: "Expert Eye Care Near You in Yorkville & The Beaches",
     buttonText: "Book an Eye Exam",
     buttonLink: "/book-eye-exam",
     image: "/Slider1.webp",
   },
-  {
-    title: "Toronto Optometrists",
-    subtitle: "Providing You with Expert Eye Care",
-    buttonText: "About Us",
-    buttonLink: "/about-us",
-    image: "/Slider2.webp",
-  },
+  // {
+  //   title: "360 Eyecare",
+  //   subtitle: "Your Neighbourhood Optometry Clinic",
+  //   buttonText: "Book an Eye Exam",
+  //   buttonLink: "/book-eye-exam",
+  //   image: "/Slider1.webp",
+  // },
+  // {
+  //   title: "Toronto Optometrists",
+  //   subtitle: "Providing You with Expert Eye Care",
+  //   buttonText: "About Us",
+  //   buttonLink: "/about-us",
+  //   image: "/Slider2.webp",
+  // },
 ];
 export const optometrists = [
   {

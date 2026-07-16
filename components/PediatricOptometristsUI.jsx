@@ -75,9 +75,9 @@ const PediatricOptometristsUI = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-16">
           {/* Left Column */}
           <div className="md:max-w-xl lg:max-w-2xl w-full">
-            <h1 className="text-3xl lg:text-4xl font-bold text-combination-200 mb-4 max-w-lg">
+            <h2 className="text-3xl lg:text-4xl font-bold text-combination-200 mb-4 max-w-lg">
               Why Choose Our Pediatric Optometrists in Toronto?
-            </h1>
+            </h2>
             <div className="w-24 h-1 bg-combination-100 mb-8"></div>
 
             <div className="flex flex-col sm:flex-row gap-6">

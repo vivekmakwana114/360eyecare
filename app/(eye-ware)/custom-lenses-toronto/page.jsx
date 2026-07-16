@@ -152,9 +152,9 @@ const page = () => {
 
       <div className="max-w-6xl mx-auto h-auto">
         {/* Background "FAQ" text */}
-        <h1 className="relative text-[120px] font-extrabold text-gray-200 top-10 left-4 z-0 select-none">
+        <div className="relative text-[120px] font-extrabold text-gray-200 top-10 left-4 z-0 select-none" aria-hidden="true">
           FAQ
-        </h1>
+        </div>
 
         {/* Foreground text */}
         <h2 className="ml-4 text-3xl md:text-4xl font-extrabold font-poppins text-combination-200 z-10">

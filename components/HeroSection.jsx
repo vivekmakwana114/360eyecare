@@ -114,7 +114,7 @@ const HeroCarousel = () => {
                         <motion.h1
                           key={`title-${activeSlide}`}
                           initial={{ y: 60, opacity: 0 }}
-                          className="font-lora text-[28px] md:text-[78px] font-bold text-brand-blue md:mb-2 mb-1 text-nowrap"
+                          className="font-lora text-[20px] md:text-[50px] font-bold text-brand-blue md:mb-2 mb-1 text-nowrap"
                           animate={{ y: 0, opacity: 1 }}
                           transition={{
                             duration: 0.6,
@@ -134,7 +134,7 @@ const HeroCarousel = () => {
                             delay: 0.1,
                           }}
                           initial={{ y: 60, opacity: 0 }}
-                          className="font-lora text-[24px] font-semibold md:text-[40px] text-brand-blue md:mb-8 mb-6"
+                          className="font-lora text-[20px] font-semibold md:text-[30px] text-brand-blue md:mb-8 mb-6 max-w-[280px] md:max-w-[480px] break-words"
                         >
                           {slide.subtitle}
                         </motion.h2>
@@ -169,7 +169,7 @@ const HeroCarousel = () => {
       ))}
 
       {/* Carousel indicators */}
-      <div className="absolute md:bottom-8 bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 md:mt-0 pt-4">
+      {/* <div className="absolute md:bottom-8 bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-3 md:mt-0 pt-4">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -182,7 +182,7 @@ const HeroCarousel = () => {
             <span className="sr-only">Slide {index + 1}</span>
           </button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
