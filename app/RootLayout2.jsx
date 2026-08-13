@@ -9,6 +9,7 @@ const RootLayout2 = ({ children }) => {
   const hideLayout =
     usePathname() === "/shop/" ||
     usePathname() === "/book-eye-consultation-yorkville" ||
+    usePathname() === "/book-eye-exam-yorkville" ||
     usePathname() === "/thank-you";
 
   return (
