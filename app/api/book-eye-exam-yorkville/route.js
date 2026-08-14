@@ -11,7 +11,6 @@ export async function POST(req) {
       lookingFor,
       preferredDate,
       preferredTime,
-      recaptchaToken,
     } = body;
 
     // Validate required fields
@@ -28,46 +27,6 @@ export async function POST(req) {
           error:
             "Full name, email, phone, service interest, preferred date, and preferred time are required.",
         },
-        { status: 400 }
-      );
-    }
-
-    // Validate reCAPTCHA token
-    if (!recaptchaToken) {
-      return Response.json(
-        { error: "Please verify that you are not a robot." },
-        { status: 400 }
-      );
-    }
-
-    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
-
-    if (!recaptchaSecret) {
-      console.error("Missing RECAPTCHA_SECRET_KEY configuration");
-      return Response.json(
-        { error: "Form is temporarily unavailable." },
-        { status: 500 }
-      );
-    }
-
-    // Verify reCAPTCHA token with Google
-    const recaptchaResponse = await fetch(
-      `https://www.google.com/recaptcha/api/siteverify?secret=${recaptchaSecret}&response=${recaptchaToken}`,
-      { method: "POST" }
-    );
-
-    if (!recaptchaResponse.ok) {
-      return Response.json(
-        { error: "reCAPTCHA verification failed." },
-        { status: 400 }
-      );
-    }
-
-    const recaptchaData = await recaptchaResponse.json();
-
-    if (!recaptchaData.success) {
-      return Response.json(
-        { error: "reCAPTCHA verification failed." },
         { status: 400 }
       );
     }

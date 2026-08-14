@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import ReCAPTCHA from "react-google-recaptcha";
 import {
   CheckCircle2,
   MapPin,
@@ -24,7 +23,6 @@ import GoogleMapEmbed from "../GoogleMapEmbed";
 
 const BookEyeExamYorkvillePage = () => {
   const router = useRouter();
-  const recaptchaRef = useRef(null);
 
   // Form State
   const [formData, setFormData] = useState({
@@ -33,10 +31,9 @@ const BookEyeExamYorkvillePage = () => {
     email: "",
     lookingFor: "Eye Exam + New Glasses",
     preferredDate: "",
-    preferredTime: "Morning (9:00 AM - 12:00 PM)",
+    preferredTime: "",
   });
 
-  const [captchaToken, setCaptchaToken] = useState(null);
   const [status, setStatus] = useState({
     submitting: false,
     error: null,
@@ -55,21 +52,9 @@ const BookEyeExamYorkvillePage = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleCaptchaChange = (token) => {
-    setCaptchaToken(token);
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitting: false, error: null });
-
-    if (!captchaToken) {
-      setStatus({
-        submitting: false,
-        error: "Please verify that you are not a robot.",
-      });
-      return;
-    }
 
     try {
       setStatus({ submitting: true, error: null });
@@ -79,10 +64,7 @@ const BookEyeExamYorkvillePage = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...formData,
-          recaptchaToken: captchaToken,
-        }),
+        body: JSON.stringify(formData),
       });
 
       const resData = await response.json();
@@ -98,10 +80,6 @@ const BookEyeExamYorkvillePage = () => {
         submitting: false,
         error: err.message || "Something went wrong. Please try again.",
       });
-      if (recaptchaRef.current) {
-        recaptchaRef.current.reset();
-        setCaptchaToken(null);
-      }
     }
   };
 
@@ -112,25 +90,21 @@ const BookEyeExamYorkvillePage = () => {
     "I'm Not Sure",
   ];
 
-  const timeOptions = [
-    "Morning (9:00 AM - 12:00 PM)",
-    "Afternoon (12:00 PM - 4:00 PM)",
-    "Evening (4:00 PM - 7:00 PM)",
-  ];
+
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 font-sans">
       {/* Top Header / Branding Bar */}
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+      <header className="sticky top-0 z-40 bg-white backdrop-blur-md border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="360 Eyecare Logo"
               width={160}
-              height={45}
+              height={40}
               priority
-              className="h-auto w-36 sm:w-44 object-contain"
+              className="h-auto w-36 sm:w-38 object-contain"
             />
           </Link>
           <div className="flex items-center gap-3 sm:gap-4">
@@ -152,21 +126,23 @@ const BookEyeExamYorkvillePage = () => {
       </header>
 
       {/* 1. HERO SECTION */}
-      <section className="relative bg-gradient-to-br from-[#28305F] via-[#204060] to-[#034D76] text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#28305F] via-[#204060] to-[#034D76] text-white py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#40BCC8_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column: Content */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-sm font-medium text-[#40BCC8]">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded text-xs sm:text-sm font-medium text-[#40BCC8]">
               <Eye className="w-4 h-4" />
               <span>360 Eyecare Yorkville Toronto</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-poppins">
               Book Your Eye Exam & Find Your Perfect Eyewear
             </h1>
-            <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl">
-              Complete eye care and eyewear in one convenient Yorkville location
-              — get a comprehensive eye exam with an experienced optometrist and
-              explore prescription glasses tailored to your vision, lifestyle, and
+            <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Complete eye care and eyewear in one convenient Yorkville location.
+              <br />
+              Get a comprehensive eye exam with an experienced optometrist and
+              explore prescription glasses personalized to your vision, lifestyle, and
               personal style.
             </p>
 
@@ -176,10 +152,12 @@ const BookEyeExamYorkvillePage = () => {
                 "Advanced Diagnostic Technology",
                 "Quality Eyewear & Glasses",
                 "Convenient Yorkville Location",
+                "Same block on Bay Street",
+                "Street Parking Available",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-slate-100">
                   <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0" />
-                  <span>{item}</span>
+                  <span className="text-sm md:text-md">{item}</span>
                 </div>
               ))}
             </div>
@@ -191,35 +169,20 @@ const BookEyeExamYorkvillePage = () => {
               >
                 BOOK MY EYE EXAM
               </button>
-              <a
-                href="tel:416-901-2725"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/30 text-base font-semibold px-6 py-4 rounded-xl transition-all"
-              >
-                <Phone className="w-5 h-5 text-[#40BCC8]" />
-                Call 416-901-2725
-              </a>
             </div>
           </div>
 
-          <div className="lg:col-span-5 hidden lg:block">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+          {/* Right Column: Image */}
+          <div className="lg:col-span-5 w-full">
+            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[480px] xl:h-[500px]">
               <Image
-                src="/optometry-yorkville.jpg"
+                src="/location/HeroYorkville.png"
                 alt="360 Eyecare Yorkville Clinic"
-                width={600}
-                height={450}
-                className="object-cover w-full h-[420px]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover w-full h-full"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#28305F]/80 via-transparent to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-xl bg-white/95 backdrop-blur-md text-slate-900 shadow-lg">
-                <p className="font-bold text-sm text-[#034D76]">
-                  Dr. Sam Baraam & Optometry Team
-                </p>
-                <p className="text-xs text-slate-600">
-                  55 Bloor St W (Manulife Centre), Yorkville, Toronto
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -233,7 +196,7 @@ const BookEyeExamYorkvillePage = () => {
               Book Your Eye Exam
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Take the first step toward clearer vision and better eye health.
+              Take the first step toward clearer vision and better eye health.<br/>
               Fill out the form below and book your appointment at 360 Eyecare Yorkville.
             </p>
           </div>
@@ -332,7 +295,8 @@ const BookEyeExamYorkvillePage = () => {
                   min={new Date().toISOString().split("T")[0]}
                   value={formData.preferredDate}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900"
+                  placeholder="Select Date"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 placeholder:text-slate-400"
                 />
               </div>
 
@@ -340,30 +304,19 @@ const BookEyeExamYorkvillePage = () => {
                 <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Preferred Time*
                 </label>
-                <select
+                <input
+                  type="time"
                   name="preferredTime"
                   required
                   value={formData.preferredTime}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white"
-                >
-                  {timeOptions.map((time) => (
-                    <option key={time} value={time}>
-                      {time}
-                    </option>
-                  ))}
-                </select>
+                  placeholder="Select Time"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                />
               </div>
             </div>
 
-            {/* reCAPTCHA */}
-            <div className="flex justify-center pt-2">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6Ld7e00qAAAAAJ1N5i2797v904v2-e565985"}
-                onChange={handleCaptchaChange}
-              />
-            </div>
+
 
             <button
               type="submit"
@@ -395,13 +348,13 @@ const BookEyeExamYorkvillePage = () => {
       </section>
 
       {/* 3. VALUE PROPOSITION */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
+      <section className="py-16 sm:py-24 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto mb-16 space-y-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#28305F] font-poppins md:whitespace-nowrap">
             Your Eye Exam Is More Than a Vision Check
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            At 360 Eyecare Yorkville, we look beyond your prescription. Our comprehensive
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+            At 360 Eyecare Yorkville, we look beyond your prescription.<br /> Our comprehensive
             eye exams assess your vision and overall eye health using modern diagnostic technology.
             Once your exam is complete, our team can also help you explore eyewear options that suit your
             prescription, lifestyle and personal style.
@@ -446,7 +399,7 @@ const BookEyeExamYorkvillePage = () => {
                 <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
                   {card.title}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   {card.description}
                 </p>
               </div>
@@ -467,7 +420,7 @@ const BookEyeExamYorkvillePage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 mb-12 relative">
             {[
               {
                 step: "1",
@@ -495,22 +448,37 @@ const BookEyeExamYorkvillePage = () => {
                 desc: "Leave your visit knowing you've taken care of both your vision and your eyewear needs.",
               },
             ].map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 relative flex flex-col justify-between"
-              >
-                <div>
-                  <span className="w-10 h-10 rounded-full bg-[#40BCC8] text-[#28305F] font-bold text-lg flex items-center justify-center mb-4">
-                    {item.step}
-                  </span>
-                  <h3 className="font-bold text-lg text-white mb-2 font-poppins">
-                    {item.title}
-                  </h3>
-                  <p className="text-slate-300 text-xs leading-relaxed">
-                    {item.desc}
-                  </p>
+              <React.Fragment key={idx}>
+                <div className="bg-white/5 border border-white/10 hover:border-[#40BCC8]/40 rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:bg-white/10 group">
+                  <div>
+                    <span className="w-10 h-10 rounded-full bg-[#40BCC8] text-[#28305F] font-bold text-lg flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
+                      {item.step}
+                    </span>
+                    <h3 className="font-bold text-lg text-white mb-2 font-poppins">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Desktop Step Connector: Dashed Line with Right Triangle Pointer */}
+                  {idx < 4 && (
+                    <div className="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 w-6 lg:w-8 items-center z-20 pointer-events-none">
+                      <div className="flex-1 border-t-2 border-dashed border-white"></div>
+                      <div className="w-0 h-0 border-y-4 border-y-transparent border-l-[7px] border-l-white -ml-0.5 shrink-0"></div>
+                    </div>
+                  )}
                 </div>
-              </div>
+
+                {/* Mobile Step Connector: Vertical Dashed Line with Down Triangle Pointer */}
+                {idx < 4 && (
+                  <div className="md:hidden flex flex-col items-center justify-center my-2 pointer-events-none h-9 w-full">
+                    <div className="h-5 border-l-2 border-dashed border-white"></div>
+                    <div className="w-0 h-0 border-x-4 border-x-transparent border-t-[7px] border-t-white -mt-0.5 shrink-0"></div>
+                  </div>
+                )}
+              </React.Fragment>
             ))}
           </div>
 
@@ -570,41 +538,83 @@ const BookEyeExamYorkvillePage = () => {
               <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
                 {item.title}
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* 6. INSURANCE / OHIP */}
-      <section className="py-16 sm:py-20 bg-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-md">
-          <div className="max-w-3xl mx-auto space-y-6 text-center">
-            <h2 className="text-3xl font-extrabold text-[#28305F] font-poppins">
+      <section className="py-16 sm:py-24 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
               Your Eye Exam May Be Covered
             </h2>
-            <p className="text-slate-600 text-base leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg">
               Depending on your age, medical circumstances and insurance plan, you may be eligible for coverage.
             </p>
-            <p className="text-slate-600 text-base leading-relaxed">
-              <strong>360 Eyecare Yorkville offers direct billing</strong> for many major insurance providers,
-              including Sun Life, Manulife, GreenShield, Blue Cross, Desjardins and Great-West Life.
-            </p>
-            <p className="text-slate-600 text-base leading-relaxed">
-              <strong>OHIP coverage</strong> may also be available for eligible patients, including children under 20,
-              adults 65+ and certain patients with specific medical conditions.
-            </p>
-            <p className="text-xs text-slate-500 italic">
-              Coverage varies by individual plan and eligibility. Please confirm your coverage with your insurance provider or our clinic.
-            </p>
+          </div>
 
-            <div className="pt-4">
-              <button
-                onClick={scrollToForm}
-                className="bg-[#204060] hover:bg-[#034D76] text-white font-bold text-base px-8 py-4 rounded-xl shadow-md transition-all"
-              >
-                BOOK MY EYE EXAM
-              </button>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left Column: Image matching right column height */}
+            <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 min-h-[300px] lg:min-h-full w-full">
+              <Image
+                src="/PatientScaledImage.webp"
+                alt="Eye Exam Coverage & Insurance - 360 Eyecare"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
+
+            {/* Right Column: 2 Cards + Disclaimer + CTA Button */}
+            <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: ShieldCheck,
+                    title: "Direct Insurance Billing",
+                    desc: "360 Eyecare Yorkville offers direct billing for many major insurance providers, including Sun Life, Manulife, GreenShield, Blue Cross, Desjardins and Great-West Life.",
+                  },
+                  {
+                    icon: Users,
+                    title: "OHIP Government Coverage",
+                    desc: "OHIP coverage may also be available for eligible patients, including children under 20, adults 65+, and certain patients with specific medical conditions.",
+                  },
+                ].map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start gap-4 sm:gap-5"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-[#40BCC8]/15 text-[#034D76] flex items-center justify-center shrink-0">
+                      <card.icon className="w-6 h-6" />
+                    </div>
+                    <div className="space-y-1">
+                      <h3 className="font-bold text-lg text-[#28305F] font-poppins">
+                        {card.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+
+                <p className="text-xs text-slate-500 italic pt-1">
+                  Some additional tests or medications recommended by our optometrists may not be covered by individual plans or by OHIP. Please confirm your coverage at your appointment.
+                </p>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  onClick={scrollToForm}
+                  className="bg-[#204060] hover:bg-[#034D76] text-white font-bold text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all w-full sm:w-auto"
+                >
+                  BOOK MY EYE EXAM
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -654,13 +664,12 @@ const BookEyeExamYorkvillePage = () => {
                     <Star key={i} className="w-4 h-4 fill-amber-400" />
                   ))}
                 </div>
-                <p className="text-slate-600 text-sm italic leading-relaxed">
+                <p className="text-slate-600 text-sm md:text-base italic leading-relaxed">
                   "{review.quote}"
                 </p>
               </div>
               <div className="pt-6 border-t border-slate-100 mt-6">
-                <p className="font-bold text-[#034D76] text-sm">{review.author}</p>
-                <p className="text-xs text-slate-400">Verified Google Patient</p>
+                <p className="font-bold text-[#034D76] text-sm md:text-base">{review.author}</p>
               </div>
             </div>
           ))}
@@ -689,7 +698,7 @@ const BookEyeExamYorkvillePage = () => {
                   </p>
                 </div>
               </div>
-              <p className="text-xs text-slate-500 pt-2 border-t border-slate-100">
+              <p className="text-sm text-slate-500 pt-2 border-t border-slate-100">
                 Located at Bloor & Bay, our Yorkville clinic is easily accessible from
                 Bloor-Yonge Station, Bay Station and the surrounding downtown Toronto neighbourhoods.
               </p>
@@ -727,11 +736,11 @@ const BookEyeExamYorkvillePage = () => {
       {/* 12. FINAL CTA */}
       <section className="py-20 bg-gradient-to-br from-[#28305F] to-[#034D76] text-white text-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins">
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins">
             Ready to Take Care of Your Vision?
           </h2>
           <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Book your eye exam at 360 Eyecare Yorkville and take the next step toward clearer vision and eyewear you'll love. Whether you're due for a routine eye exam, need an updated prescription or are ready to explore new glasses, our team is here to help.
+            Book your eye exam at 360 Eyecare Yorkville and take the next step toward clearer vision and eyewear you'll love.<br/><br/> Whether you're due for a routine eye exam, need an updated prescription or are ready to explore new glasses, our team is here to help.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
@@ -741,17 +750,11 @@ const BookEyeExamYorkvillePage = () => {
               BOOK MY EYE EXAM
             </button>
           </div>
-          <p className="text-sm text-slate-300 pt-2">
-            Prefer to speak with us?{" "}
-            <a href="tel:416-901-2725" className="text-[#40BCC8] font-bold underline">
-              416-901-2725
-            </a>
-          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#1e2447] text-slate-400 py-8 text-center text-xs px-4">
+      <footer className="bg-[#1e2447] text-slate-400 py-8 text-center text-sm px-4">
         <p>© {new Date().getFullYear()} 360 Eyecare Yorkville. All rights reserved.</p>
       </footer>
     </div>
