@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -20,6 +20,137 @@ import {
   Eye,
 } from "lucide-react";
 import GoogleMapEmbed from "../GoogleMapEmbed";
+
+// Custom 24-Hour 5-Minute Time Picker Component
+const Custom5MinTimePicker = ({ value, onChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const parseTime = (val) => {
+    if (!val) return { hour: "09", minute: "00" };
+    const parts = val.split(":");
+    return {
+      hour: parts[0] || "09",
+      minute: parts[1] || "00",
+    };
+  };
+
+  const { hour, minute } = parseTime(value);
+
+  const hours = Array.from({ length: 24 }, (_, i) =>
+    String(i + 1).padStart(2, "0")
+  );
+  const minutes = [
+    "00",
+    "05",
+    "10",
+    "15",
+    "20",
+    "25",
+    "30",
+    "35",
+    "40",
+    "45",
+    "50",
+    "55",
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const selectHour = (h) => {
+    onChange(`${h}:${minute}`);
+  };
+
+  const selectMinute = (m) => {
+    onChange(`${hour}:${m}`);
+  };
+
+  return (
+    <div className="relative w-full" ref={dropdownRef}>
+      <button
+        type="button"
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white flex items-center justify-between text-left"
+      >
+        <span className={value ? "text-slate-900 font-medium" : "text-slate-400"}>
+          {value || "Select Preferred Time"}
+        </span>
+        <Clock className="w-5 h-5 text-[#40BCC8] shrink-0" />
+      </button>
+
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white rounded-2xl border border-slate-200 shadow-2xl p-4 font-sans space-y-3">
+          <div className="grid grid-cols-2 gap-4 h-56">
+            {/* Scrollable Hours Column (01 to 24) */}
+            <div className="flex flex-col space-y-1">
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-wider text-center pb-1.5 border-b border-slate-100">
+                Hour
+              </div>
+              <div className="h-44 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
+                {hours.map((h) => (
+                  <button
+                    key={h}
+                    type="button"
+                    onClick={() => selectHour(h)}
+                    className={`w-full py-2 rounded text-sm font-bold transition-all text-center ${
+                      hour === h
+                        ? "bg-[#40BCC8] text-[#28305F] shadow-sm scale-105"
+                        : "hover:bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    {h}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Scrollable Minutes Column (ONLY 5-minute steps) */}
+            <div className="flex flex-col space-y-1 border-l border-slate-100 pl-3">
+              <div className="text-xs font-bold text-slate-500 uppercase tracking-wider text-center pb-1.5 border-b border-slate-100">
+                Minute
+              </div>
+              <div className="h-44 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
+                {minutes.map((m) => (
+                  <button
+                    key={m}
+                    type="button"
+                    onClick={() => selectMinute(m)}
+                    className={`w-full py-2 rounded text-sm font-bold transition-all text-center ${
+                      minute === m
+                        ? "bg-[#40BCC8] text-[#28305F] shadow-sm scale-105"
+                        : "hover:bg-slate-100 text-slate-600"
+                    }`}
+                  >
+                    {m}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Action */}
+          <div className="pt-2 border-t border-slate-100 flex justify-end items-center">
+            <button
+              type="button"
+              onClick={() => setIsOpen(false)}
+              className="bg-[#204060] text-white text-xs font-bold px-4 py-2 rounded-xl hover:bg-[#034D76] transition-all"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
 const BookEyeExamYorkvillePage = () => {
   const router = useRouter();
@@ -165,7 +296,7 @@ const BookEyeExamYorkvillePage = () => {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={scrollToForm}
-                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] text-base font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5"
               >
                 BOOK MY EYE EXAM
               </button>
@@ -304,27 +435,26 @@ const BookEyeExamYorkvillePage = () => {
                 <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Preferred Time*
                 </label>
-                <input
-                  type="time"
-                  name="preferredTime"
-                  required
+                <Custom5MinTimePicker
                   value={formData.preferredTime}
-                  onChange={handleInputChange}
-                  placeholder="Select Time"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white placeholder:text-slate-400"
+                  onChange={(val) =>
+                    setFormData((prev) => ({ ...prev, preferredTime: val }))
+                  }
                 />
               </div>
             </div>
 
 
 
-            <button
-              type="submit"
-              disabled={status.submitting}
-              className="w-full bg-[#204060] hover:bg-[#034D76] text-white text-base font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50"
-            >
-              {status.submitting ? "SUBMITTING..." : "BOOK MY EYE EXAM"}
-            </button>
+            <div className="flex justify-center pt-2">
+              <button
+                type="submit"
+                disabled={status.submitting}
+                className="bg-[#204060] hover:bg-[#034D76] text-white text-base font-bold px-9 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50"
+              >
+                {status.submitting ? "SUBMITTING..." : "BOOK MY EYE EXAM"}
+              </button>
+            </div>
 
             <div className="pt-2 text-center space-y-3">
               <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
@@ -745,7 +875,7 @@ const BookEyeExamYorkvillePage = () => {
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={scrollToForm}
-              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] font-bold text-lg px-9 py-4 rounded-xl shadow-xl transition-all transform hover:-translate-y-0.5"
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5"
             >
               BOOK MY EYE EXAM
             </button>
