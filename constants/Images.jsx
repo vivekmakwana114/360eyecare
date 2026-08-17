@@ -55,7 +55,7 @@ import DryEyeSyndromeImage from "../public/Dry-Eye-Syndrome-jpg.webp";
 import DiabeticImage from "../public/Diabetic-Retinopathy.webp";
 import MacularImage from "../public/Macular-Degeneration-scaled.webp";
 import eyeCareServiceImage from "../public/our-eye-care.jpg";
-import Understanding_1 from "../public/understanding_1.webp"; 
+import Understanding_1 from "../public/Understanding_1.webp"; 
 import UnderstandImage1 from "../public/understand1.webp";
 import UnderstandImage2 from "../public/understand2.webp";
 import UnderstandImage3 from "../public/understand3.webp";
