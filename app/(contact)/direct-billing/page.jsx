@@ -43,7 +43,7 @@ const plans = [
   "Johnston Group (Maximum Benefit)",
 ];
 
-const page = () => {
+const DirectBillingPage = () => {
   return (
     <main className="pt-[110px] bg-[#F9F9F9]">
       <SubHeader text="Direct Billing" />
@@ -99,4 +99,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DirectBillingPage;
