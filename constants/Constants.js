@@ -39,6 +39,8 @@ import {
   TeamMelanieImage,
   TeamMiaImage,
   TeamVanessaImage,
+  TeamSavannahVecchiarelli,
+  SavannahVecchiarelliImage,
 } from "./Images";
 import { Eye, CheckSquare, Clock, Shield, Heart, User } from "lucide-react";
 
@@ -252,6 +254,17 @@ In her spare time, she enjoys exercising, travelling, reading, and being a foodi
 During his final year of optometry school, he completed his training in Detroit, Michigan at the John D. Dingell Veterans Affairs Medical Centre. While at the hospital, he gained clinical experience in the treatment and management of ocular diseases.
 
 Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr. Gill enjoys photography, basketball, and squash`,
+  },
+  {
+    id: 6,
+    name: "Dr. Savannah Vecchiarelli",
+    alt: "Dr. Savannah Vecchiarelli Optometrist at 360 Eyecare",
+    slug: "dr-savannah-vecchiarelli", // Used for URL: /team-members/dr-savannah-vecchiarelli
+    image: SavannahVecchiarelliImage.src,
+    metaTitle: "Dr. Savannah Vecchiarelli - Optometrist in Toronto | 360 Eyecare",
+    metaDescription: "Meet Dr. Savannah Vecchiarelli at 360 Eyecare Toronto. Book a comprehensive eye exam...",
+    description: "Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto.",
+    longDescription: `Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto, gaining valuable experience in ocular disease management, contact lens fitting, and dry eye treatment. Dr Savannah Vecchiarelli enjoys caring for patients of all ages and helping them achieve and maintain optimal eye health. Her clinical interests include comprehensive primary eye care, myopia control, ocular disease management, and helping patients find vision correction options that best suit their lifestyle and visual needs. Outside of the clinic, Dr. Vecchiarelli enjoys painting, travelling, and Pilates.`,
   },
 ];
 
@@ -2546,6 +2559,12 @@ export const teamMembers = [
     role: "Optometrist",
     image: GillImage,
     slug: "dr-harmandeep-gill",
+  },
+  {
+    name: "Dr. Savannah Vecchiarelli",
+    role: "Optometrist",
+    image: TeamSavannahVecchiarelli,
+    slug: "dr-savannah-vecchiarelli",
   },
   {
     name: "Brandon",
