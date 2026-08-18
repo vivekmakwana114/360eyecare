@@ -64,6 +64,7 @@ const staticPages = [
   { url: `${SITE_URL}/team-members/dr-gina-chen/`,          changefreq: "monthly", priority: 0.7 },
   { url: `${SITE_URL}/team-members/dr-harmandeep-gill/`,    changefreq: "monthly", priority: 0.7 },
   { url: `${SITE_URL}/team-members/dr-alina-shahid/`,       changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-savannah-vecchiarelli/`, changefreq: "monthly", priority: 0.7 },
 
   // Company
   { url: `${SITE_URL}/giving-back/`,                        changefreq: "monthly", priority: 0.5 },

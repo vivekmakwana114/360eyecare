@@ -31,6 +31,24 @@ export async function POST(req) {
       );
     }
 
+    // Validate phone digit count (max 15 digits)
+    const phoneDigits = String(phone).replace(/\D/g, "");
+    if (phoneDigits.length > 15) {
+      return Response.json(
+        { error: "Phone number cannot exceed 15 digits." },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(String(email).trim())) {
+      return Response.json(
+        { error: "Please enter a valid email address (e.g. name@example.com)." },
+        { status: 400 }
+      );
+    }
+
     const smtpHost = process.env.EMAIL_SERVER_HOST;
     const smtpPort = Number(process.env.EMAIL_SERVER_PORT || 587);
     const smtpSecure = process.env.EMAIL_SERVER_SECURE === "true";

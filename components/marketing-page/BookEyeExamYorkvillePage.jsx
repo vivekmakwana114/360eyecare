@@ -21,39 +21,114 @@ import {
 } from "lucide-react";
 import GoogleMapEmbed from "../GoogleMapEmbed";
 
-// Custom 24-Hour 5-Minute Time Picker Component
-const Custom5MinTimePicker = ({ value, onChange }) => {
+// Helper to get operating hours per weekday based on Yorkville clinic schedule:
+// Mon, Tue, Thu, Fri: 9:00 AM - 6:00 PM
+// Wed: 9:00 AM - 7:00 PM
+// Sat: 9:00 AM - 4:00 PM
+// Sun: Closed
+const getOperatingHours = (dateStr) => {
+  if (!dateStr) {
+    return {
+      isClosed: false,
+      start: 9,
+      end: 18,
+      dayName: "Weekday",
+      displayRange: "9:00 AM – 6:00 PM",
+    };
+  }
+  const [y, m, d] = dateStr.split("-").map(Number);
+  const dateObj = new Date(y, m - 1, d);
+  const day = dateObj.getDay();
+
+  if (day === 0) {
+    return {
+      isClosed: true,
+      start: 0,
+      end: 0,
+      dayName: "Sunday",
+      displayRange: "Closed on Sundays",
+    };
+  } else if (day === 3) {
+    return {
+      isClosed: false,
+      start: 9,
+      end: 19,
+      dayName: "Wednesday",
+      displayRange: "9:00 AM – 7:00 PM",
+    };
+  } else if (day === 6) {
+    return {
+      isClosed: false,
+      start: 9,
+      end: 16,
+      dayName: "Saturday",
+      displayRange: "9:00 AM – 4:00 PM",
+    };
+  } else {
+    const dayNames = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    return {
+      isClosed: false,
+      start: 9,
+      end: 18,
+      dayName: dayNames[day],
+      displayRange: "9:00 AM – 6:00 PM",
+    };
+  }
+};
+
+// Custom Time Picker Component (Half-Hourly, Weekday-specific 12-Hour AM/PM Format)
+const CustomTimePicker = ({ value, onChange, preferredDate }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
+  const schedule = getOperatingHours(preferredDate);
+
+  // Generate available hours in 12-hour AM/PM format
+  const hoursList = [];
+  if (!schedule.isClosed) {
+    for (let h = schedule.start; h <= schedule.end; h++) {
+      const period = h >= 12 ? "PM" : "AM";
+      const displayH = h % 12 === 0 ? 12 : h % 12;
+      const formattedH = String(displayH).padStart(2, "0");
+      hoursList.push({
+        rawHour: h,
+        displayH: formattedH,
+        period,
+        label: `${formattedH} ${period}`,
+      });
+    }
+  }
+
+  // Half-hourly minutes (00, 30)
+  const minutes = ["00", "30"];
+
   const parseTime = (val) => {
-    if (!val) return { hour: "09", minute: "00" };
-    const parts = val.split(":");
-    return {
-      hour: parts[0] || "09",
-      minute: parts[1] || "00",
-    };
+    if (!val) return { hourObj: hoursList[0] || null, minute: "00" };
+    // Expected format: "09:00 AM" or "02:30 PM"
+    const match = val.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)$/i);
+    if (match) {
+      const hStr = String(Number(match[1])).padStart(2, "0");
+      const pStr = match[3].toUpperCase();
+      const found = hoursList.find(
+        (item) => item.displayH === hStr && item.period === pStr
+      );
+      return {
+        hourObj: found || hoursList[0] || null,
+        minute: match[2] === "30" ? "30" : "00",
+      };
+    }
+    return { hourObj: hoursList[0] || null, minute: "00" };
   };
 
-  const { hour, minute } = parseTime(value);
-
-  const hours = Array.from({ length: 24 }, (_, i) =>
-    String(i + 1).padStart(2, "0")
-  );
-  const minutes = [
-    "00",
-    "05",
-    "10",
-    "15",
-    "20",
-    "25",
-    "30",
-    "35",
-    "40",
-    "45",
-    "50",
-    "55",
-  ];
+  const { hourObj, minute } = parseTime(value);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -65,13 +140,25 @@ const Custom5MinTimePicker = ({ value, onChange }) => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const selectHour = (h) => {
-    onChange(`${h}:${minute}`);
+  const selectHour = (item) => {
+    if (!item) return;
+    onChange(`${item.displayH}:${minute} ${item.period}`);
   };
 
   const selectMinute = (m) => {
-    onChange(`${hour}:${m}`);
+    const currentH = hourObj || hoursList[0];
+    if (!currentH) return;
+    onChange(`${currentH.displayH}:${m} ${currentH.period}`);
   };
+
+  if (schedule.isClosed) {
+    return (
+      <div className="w-full px-4 py-3 rounded-xl border border-rose-200 bg-rose-50/70 text-rose-700 font-medium text-sm flex items-center justify-between">
+        <span>Closed on Sundays. Please pick Mon-Sat.</span>
+        <Clock className="w-5 h-5 text-rose-400 shrink-0" />
+      </div>
+    );
+  }
 
   return (
     <div className="relative w-full" ref={dropdownRef}>
@@ -83,36 +170,47 @@ const Custom5MinTimePicker = ({ value, onChange }) => {
         <span className={value ? "text-slate-900 font-medium" : "text-slate-400"}>
           {value || "Select Preferred Time"}
         </span>
-        <Clock className="w-5 h-5 text-[#40BCC8] shrink-0" />
+        <Clock className="w-5 h-5 text-slate-900 shrink-0" />
       </button>
 
       {isOpen && (
         <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white rounded-2xl border border-slate-200 shadow-2xl p-4 font-sans space-y-3">
+          <div className="text-xs font-bold text-[#034D76] bg-slate-100 px-3 py-1.5 rounded-lg flex items-center justify-between">
+            <span>{schedule.dayName} Hours</span>
+            <span className="text-slate-500 font-normal">{schedule.displayRange}</span>
+          </div>
+
           <div className="grid grid-cols-2 gap-4 h-56">
-            {/* Scrollable Hours Column (01 to 24) */}
+            {/* Scrollable Hours Column */}
             <div className="flex flex-col space-y-1">
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider text-center pb-1.5 border-b border-slate-100">
                 Hour
               </div>
               <div className="h-44 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
-                {hours.map((h) => (
-                  <button
-                    key={h}
-                    type="button"
-                    onClick={() => selectHour(h)}
-                    className={`w-full py-2 rounded text-sm font-bold transition-all text-center ${
-                      hour === h
-                        ? "bg-[#40BCC8] text-[#28305F] shadow-sm scale-105"
-                        : "hover:bg-slate-100 text-slate-600"
-                    }`}
-                  >
-                    {h}
-                  </button>
-                ))}
+                {hoursList.map((item) => {
+                  const isSelected =
+                    hourObj &&
+                    hourObj.displayH === item.displayH &&
+                    hourObj.period === item.period;
+                  return (
+                    <button
+                      key={item.label}
+                      type="button"
+                      onClick={() => selectHour(item)}
+                      className={`w-full py-2 rounded text-sm font-bold transition-all text-center ${
+                        isSelected
+                          ? "bg-[#40BCC8] text-[#28305F] shadow-sm scale-105"
+                          : "hover:bg-slate-100 text-slate-600"
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Scrollable Minutes Column (ONLY 5-minute steps) */}
+            {/* Scrollable Minutes Column (Half-Hourly: 00, 30) */}
             <div className="flex flex-col space-y-1 border-l border-slate-100 pl-3">
               <div className="text-xs font-bold text-slate-500 uppercase tracking-wider text-center pb-1.5 border-b border-slate-100">
                 Minute
@@ -129,7 +227,7 @@ const Custom5MinTimePicker = ({ value, onChange }) => {
                         : "hover:bg-slate-100 text-slate-600"
                     }`}
                   >
-                    {m}
+                    :{m}
                   </button>
                 ))}
               </div>
@@ -137,7 +235,10 @@ const Custom5MinTimePicker = ({ value, onChange }) => {
           </div>
 
           {/* Footer Action */}
-          <div className="pt-2 border-t border-slate-100 flex justify-end items-center">
+          <div className="pt-2 border-t border-slate-100 flex justify-between items-center">
+            <span className="text-xs text-slate-500 font-medium">
+              {schedule.dayName}: {schedule.displayRange}
+            </span>
             <button
               type="button"
               onClick={() => setIsOpen(false)}
@@ -165,6 +266,11 @@ const BookEyeExamYorkvillePage = () => {
     preferredTime: "",
   });
 
+  const [fieldErrors, setFieldErrors] = useState({
+    phone: "",
+    email: "",
+  });
+
   const [status, setStatus] = useState({
     submitting: false,
     error: null,
@@ -178,14 +284,77 @@ const BookEyeExamYorkvillePage = () => {
     }
   };
 
+  const validatePhone = (val) => {
+    if (!val.trim()) return "Phone number is required.";
+    const digitCount = val.replace(/\D/g, "").length;
+    if (digitCount > 15) {
+      return "Phone number cannot exceed 15 digits.";
+    }
+    if (digitCount < 7) {
+      return "Please enter a valid phone number (at least 7 digits).";
+    }
+    return "";
+  };
+
+  const validateEmail = (val) => {
+    if (!val || !val.trim()) return "Email address is required.";
+    // Strict email regex requiring local part, @, domain, and valid 2+ char TLD (e.g. .com, .ca)
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(val.trim())) {
+      return "Please enter a valid email address (e.g. jane@example.com).";
+    }
+    return "";
+  };
+
+  const handleBlur = (e) => {
+    const { name, value } = e.target;
+    if (name === "phone") {
+      setFieldErrors((prev) => ({ ...prev, phone: validatePhone(value) }));
+    } else if (name === "email") {
+      setFieldErrors((prev) => ({ ...prev, email: validateEmail(value) }));
+    }
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "phone") {
+      const err = validatePhone(value);
+      setFieldErrors((prev) => ({ ...prev, phone: err }));
+    } else if (name === "email") {
+      const err = validateEmail(value);
+      setFieldErrors((prev) => ({ ...prev, email: err }));
+    } else if (name === "preferredDate") {
+      const schedule = getOperatingHours(value);
+      if (schedule.isClosed) {
+        setFormData((prev) => ({ ...prev, preferredTime: "" }));
+      }
+    }
+
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus({ submitting: false, error: null });
+
+    const phoneErr = validatePhone(formData.phone);
+    const emailErr = validateEmail(formData.email);
+
+    if (phoneErr || emailErr) {
+      setFieldErrors({ phone: phoneErr, email: emailErr });
+      return;
+    }
+
+    const schedule = getOperatingHours(formData.preferredDate);
+    if (schedule.isClosed) {
+      setStatus({
+        submitting: false,
+        error:
+          "360 Eyecare Yorkville is closed on Sundays. Please pick a date from Monday to Saturday.",
+      });
+      return;
+    }
 
     try {
       setStatus({ submitting: true, error: null });
@@ -296,7 +465,7 @@ const BookEyeExamYorkvillePage = () => {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={scrollToForm}
-                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5"
               >
                 BOOK MY EYE EXAM
               </button>
@@ -338,7 +507,7 @@ const BookEyeExamYorkvillePage = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} noValidate className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                 Full Name*
@@ -365,9 +534,19 @@ const BookEyeExamYorkvillePage = () => {
                   required
                   value={formData.phone}
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                   placeholder="e.g. 416-901-2725"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    fieldErrors.phone
+                      ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
+                      : "border-slate-300 focus:border-[#40BCC8] focus:ring-[#40BCC8]/20"
+                  } focus:ring-2 outline-none transition-all text-slate-900 placeholder:text-slate-400`}
                 />
+                {fieldErrors.phone && (
+                  <p className="mt-1.5 text-xs text-rose-600 font-medium">
+                    {fieldErrors.phone}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -380,9 +559,19 @@ const BookEyeExamYorkvillePage = () => {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
+                  onBlur={handleBlur}
                   placeholder="e.g. jane@example.com"
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 placeholder:text-slate-400"
+                  className={`w-full px-4 py-3 rounded-xl border ${
+                    fieldErrors.email
+                      ? "border-rose-400 focus:border-rose-500 focus:ring-rose-200"
+                      : "border-slate-300 focus:border-[#40BCC8] focus:ring-[#40BCC8]/20"
+                  } focus:ring-2 outline-none transition-all text-slate-900 placeholder:text-slate-400`}
                 />
+                {fieldErrors.email && (
+                  <p className="mt-1.5 text-xs text-rose-600 font-medium">
+                    {fieldErrors.email}
+                  </p>
+                )}
               </div>
             </div>
 
@@ -435,8 +624,9 @@ const BookEyeExamYorkvillePage = () => {
                 <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                   Preferred Time*
                 </label>
-                <Custom5MinTimePicker
+                <CustomTimePicker
                   value={formData.preferredTime}
+                  preferredDate={formData.preferredDate}
                   onChange={(val) =>
                     setFormData((prev) => ({ ...prev, preferredTime: val }))
                   }
@@ -615,7 +805,7 @@ const BookEyeExamYorkvillePage = () => {
           <div className="text-center">
             <button
               onClick={scrollToForm}
-              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all"
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
               BOOK MY EYE EXAM
             </button>
@@ -875,7 +1065,7 @@ const BookEyeExamYorkvillePage = () => {
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={scrollToForm}
-              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-[#28305F] font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5"
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5"
             >
               BOOK MY EYE EXAM
             </button>
