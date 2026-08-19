@@ -9,6 +9,14 @@ export default function ThankYouPage() {
   const router = useRouter();
 
   useEffect(() => {
+    if (typeof window !== "undefined" && typeof (window as any).gtag === "function") {
+      (window as any).gtag("event", "generate_lead", {
+        event_category: "marketing_thank_you",
+        event_label: "Thank You Page Landed",
+        value: 1,
+      });
+    }
+
     const timer = setTimeout(() => {
       router.push("/");
     }, 5000);

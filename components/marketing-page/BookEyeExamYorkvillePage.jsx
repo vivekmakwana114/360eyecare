@@ -373,6 +373,15 @@ const BookEyeExamYorkvillePage = () => {
         throw new Error(resData.error || "Failed to submit booking request.");
       }
 
+      // Track Google Analytics lead conversion event
+      if (typeof window !== "undefined" && typeof window.gtag === "function") {
+        window.gtag("event", "generate_lead", {
+          event_category: "marketing_form",
+          event_label: "Book Eye Exam Yorkville",
+          value: 1,
+        });
+      }
+
       // Success -> Redirect to Thank You page
       router.push("/thank-you");
     } catch (err) {
@@ -450,14 +459,14 @@ const BookEyeExamYorkvillePage = () => {
               {[
                 "Comprehensive Eye Exam",
                 "Advanced Diagnostic Technology",
-                "Curated handcrafted and designer eyeglasses",
                 "Convenient Yorkville Location",
+                "Curated handcrafted & designer eyeglasses",
                 "OCT scan and retinal imaging",
                 "Street Parking Available",
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 text-sm text-slate-100">
-                  <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0" />
-                  <span className="text-sm md:text-md">{item}</span>
+                <div key={idx} className="flex items-start gap-2 text-sm text-slate-100 text-left">
+                  <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" />
+                  <span className="text-sm md:text-md sm:text-nowrap text-left">{item}</span>
                 </div>
               ))}
             </div>
