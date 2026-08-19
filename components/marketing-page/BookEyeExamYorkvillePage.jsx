@@ -386,7 +386,7 @@ const BookEyeExamYorkvillePage = () => {
   const lookingForOptions = [
     "Eye Exam + New Glasses",
     "Eye Exam Only",
-    "Contact Lenses",
+    "Eye Exam + Contact Lenses",
     "I'm Not Sure",
   ];
 
@@ -450,9 +450,9 @@ const BookEyeExamYorkvillePage = () => {
               {[
                 "Comprehensive Eye Exam",
                 "Advanced Diagnostic Technology",
-                "Quality Eyewear & Glasses",
+                "Curated handcrafted and designer eyeglasses",
                 "Convenient Yorkville Location",
-                "Same block on Bay Street",
+                "OCT scan and retinal imaging",
                 "Street Parking Available",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-2 text-sm text-slate-100">
