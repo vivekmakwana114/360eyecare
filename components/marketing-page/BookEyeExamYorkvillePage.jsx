@@ -285,12 +285,15 @@ const BookEyeExamYorkvillePage = () => {
   };
 
   const validatePhone = (val) => {
-    if (!val.trim()) return "Phone number is required.";
-    const digitCount = val.replace(/\D/g, "").length;
-    if (digitCount > 15) {
+    const trimmed = String(val || "").trim();
+    if (!trimmed) return "Phone number is required.";
+    if (!/^\d+$/.test(trimmed)) {
+      return "Phone number must contain only digits.";
+    }
+    if (trimmed.length > 15) {
       return "Phone number cannot exceed 15 digits.";
     }
-    if (digitCount < 7) {
+    if (trimmed.length < 7) {
       return "Please enter a valid phone number (at least 7 digits).";
     }
     return "";
@@ -319,8 +322,12 @@ const BookEyeExamYorkvillePage = () => {
     const { name, value } = e.target;
 
     if (name === "phone") {
-      const err = validatePhone(value);
+      // Keep only numeric digits and limit to 15 characters
+      const cleanedValue = value.replace(/\D/g, "").slice(0, 15);
+      const err = validatePhone(cleanedValue);
       setFieldErrors((prev) => ({ ...prev, phone: err }));
+      setFormData((prev) => ({ ...prev, phone: cleanedValue }));
+      return;
     } else if (name === "email") {
       const err = validateEmail(value);
       setFieldErrors((prev) => ({ ...prev, email: err }));
@@ -406,7 +413,7 @@ const BookEyeExamYorkvillePage = () => {
       {/* Top Header / Branding Bar */}
       <header className="sticky top-0 z-40 bg-white backdrop-blur-md border-b border-slate-100 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+          <span className="flex items-center gap-2">
             <Image
               src="/logo.png"
               alt="360 Eyecare Logo"
@@ -415,7 +422,7 @@ const BookEyeExamYorkvillePage = () => {
               priority
               className="h-auto w-36 sm:w-38 object-contain"
             />
-          </Link>
+          </span>
           <div className="flex items-center gap-3 sm:gap-4">
             <a
               href="tel:416-901-2725"
@@ -541,6 +548,7 @@ const BookEyeExamYorkvillePage = () => {
                   type="tel"
                   name="phone"
                   required
+                  maxLength={15}
                   value={formData.phone}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
