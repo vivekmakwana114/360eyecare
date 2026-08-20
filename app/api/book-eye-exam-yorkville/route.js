@@ -31,11 +31,17 @@ export async function POST(req) {
       );
     }
 
-    // Validate phone digit count (max 15 digits)
-    const phoneDigits = String(phone).replace(/\D/g, "");
-    if (phoneDigits.length > 15) {
+    // Validate phone number (only digits, 7 to 15 digits)
+    const phoneStr = String(phone || "").trim();
+    if (!/^\d+$/.test(phoneStr)) {
       return Response.json(
-        { error: "Phone number cannot exceed 15 digits." },
+        { error: "Phone number must contain only digits." },
+        { status: 400 }
+      );
+    }
+    if (phoneStr.length < 7 || phoneStr.length > 15) {
+      return Response.json(
+        { error: "Phone number must be between 7 and 15 digits." },
         { status: 400 }
       );
     }
