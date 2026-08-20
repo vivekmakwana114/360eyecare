@@ -41,6 +41,8 @@ import {
   TeamVanessaImage,
   TeamSavannahVecchiarelli,
   SavannahVecchiarelliImage,
+  TeamHashimPervaiz,
+  HashimPervaizImage,
 } from "./Images";
 import { Eye, CheckSquare, Clock, Shield, Heart, User } from "lucide-react";
 
@@ -165,8 +167,10 @@ export const optometrists = [
     alt: "Dr. Sam Baraam Optometrist at 360 Eyecare",
     slug: "dr-sam-baraam",
     image: SamBarramImage.src,
-    metaTitle: "Dr. Sam Baraam - Optometrist in Yorkville & Beaches | 360 Eyecare",
-    metaDescription: "Meet Dr. Sam Baraam at 360 Eyecare Beaches and Yorkville Toronto. Book a comprehensive eye exam and receive personalized vision and eye care.",
+    metaTitle:
+      "Dr. Sam Baraam - Optometrist in Yorkville & Beaches | 360 Eyecare",
+    metaDescription:
+      "Meet Dr. Sam Baraam at 360 Eyecare Beaches and Yorkville Toronto. Book a comprehensive eye exam and receive personalized vision and eye care.",
     description: (
       <>
         Dr. Sam Baraam is a certified optometrist with advanced training in
@@ -191,8 +195,10 @@ Dr. Baraam is the founder and president of 360 Eyecare, practicing at the Beache
     alt: "Dr. Anita Sritharan Optometrist at 360 Eyecare",
     slug: "dr-anita-sritharan",
     image: AnitaSritharanImage.src,
-    metaTitle: "Dr. Anita Sritharan - Optometrist at 360 Eyecare Yorkville & Beaches",
-    metaDescription: "Meet Dr. Anita Sritharan at 360 Eyecare Toronto. Book an eye exam and get professional care for your vision and long-term eye health.",
+    metaTitle:
+      "Dr. Anita Sritharan - Optometrist at 360 Eyecare Yorkville & Beaches",
+    metaDescription:
+      "Meet Dr. Anita Sritharan at 360 Eyecare Toronto. Book an eye exam and get professional care for your vision and long-term eye health.",
     description:
       "Dr. Anita Sritharan is dedicated to providing patient-centered eye care and developing unique treatment plans based on individual needs.",
     longDescription: `Dr. Anita Sritharan is a dedicated optometrist providing full-scope optometry with a special interest in dry eye treatments and myopia control. She has extensive experience managing conditions such as blepharitis, meibomian gland dysfunction, ocular rosacea, styes, and chalazions. To offer her patients the most effective treatments, she provides advanced in-office treatments, including intense pulsed light (IPL) and radio frequency (RF Therapy). Additionally, Dr. Sritharan specializes in fitting specialty contact lenses, including RGPs and OrthoK lenses.
@@ -210,7 +216,8 @@ On her spare time, she enjoys baking, swimming, and travelling`,
     slug: "dr-alina-shahid",
     image: AlinaShahidImage.src,
     metaTitle: "Dr. Alina Shahid - Optometrist at 360 Eyecare | Toronto",
-    metaDescription: "Learn more about Dr. Alina Shahid at 360 Eyecare Toronto. Schedule an eye exam for expert vision care and eye health support.",
+    metaDescription:
+      "Learn more about Dr. Alina Shahid at 360 Eyecare Toronto. Schedule an eye exam for expert vision care and eye health support.",
     description:
       "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
     longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
@@ -226,7 +233,8 @@ Dr. Shahid is passionate about providing thorough eye care and building trusting
     slug: "dr-gina-chen",
     image: GinaChenImage.src,
     metaTitle: "Dr. Gina Chen - Optometrist in Toronto | 360 Eyecare",
-    metaDescription: "Get expert eye care from Dr. Gina Chen at 360 Eyecare Toronto. Schedule your eye exam and protect your vision today.",
+    metaDescription:
+      "Get expert eye care from Dr. Gina Chen at 360 Eyecare Toronto. Schedule your eye exam and protect your vision today.",
     description:
       "Dr. Gina Chen is a passionate optometrist specializing in Orthokeratology lenses and enjoys practicing comprehensive eye care.",
     longDescription: `Dr. Gina Chen received both her Doctor of Optometry degree and Bachelor of Science degree with honours from the University of Waterloo. During her clinical studies, she obtained extensive training with a focus in retinal diseases, cataracts, and dry eye diseases at the Eye Associates of Pinellas in Pinellas Park, Florida.
@@ -246,7 +254,8 @@ In her spare time, she enjoys exercising, travelling, reading, and being a foodi
     slug: "dr-harmandeep-gill",
     image: GillImage.src,
     metaTitle: "Dr. Harmandeep Gill - Optometrist in Toronto | 360 Eyecare",
-    metaDescription: "Meet Dr. Harmandeep Gill at 360 Eyecare Toronto. Book a comprehensive eye exam and receive personalized vision care.",
+    metaDescription:
+      "Meet Dr. Harmandeep Gill at 360 Eyecare Toronto. Book a comprehensive eye exam and receive personalized vision care.",
     description:
       "Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at University of Toronto.",
     longDescription: `Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at the University of Toronto. He went on to receive his Doctor of Optometry from the University of Waterloo.
@@ -261,10 +270,40 @@ Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr
     alt: "Dr. Savannah Vecchiarelli Optometrist at 360 Eyecare",
     slug: "dr-savannah-vecchiarelli", // Used for URL: /team-members/dr-savannah-vecchiarelli
     image: SavannahVecchiarelliImage.src,
-    metaTitle: "Dr. Savannah Vecchiarelli - Optometrist in Toronto | 360 Eyecare",
-    metaDescription: "Meet Dr. Savannah Vecchiarelli at 360 Eyecare Toronto. Book a comprehensive eye exam...",
-    description: "Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto.",
+    metaTitle:
+      "Dr. Savannah Vecchiarelli - Optometrist in Toronto | 360 Eyecare",
+    metaDescription:
+      "Meet Dr. Savannah Vecchiarelli at 360 Eyecare Toronto. Book a comprehensive eye exam...",
+    description:
+      "Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto.",
     longDescription: `Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto, gaining valuable experience in ocular disease management, contact lens fitting, and dry eye treatment. Dr Savannah Vecchiarelli enjoys caring for patients of all ages and helping them achieve and maintain optimal eye health. Her clinical interests include comprehensive primary eye care, myopia control, ocular disease management, and helping patients find vision correction options that best suit their lifestyle and visual needs. Outside of the clinic, Dr. Vecchiarelli enjoys painting, travelling, and Pilates.`,
+  },
+  {
+    id: 7,
+    name: "Dr. Hashim Pervaiz",
+    alt: "Dr. Hashim Pervaiz Optometrist at 360 Eyecare",
+    slug: "dr-hashim-pervaiz",
+    image: HashimPervaizImage.src,
+    metaTitle:
+      "Dr. Hashim Pervaiz - Optometrist in Toronto | 360 Eyecare",
+    metaDescription:
+      "Meet Dr. Hashim Pervaiz at 360 Eyecare Toronto. Book a comprehensive eye exam with Dr. Pervaiz for personalized vision and eye care.",
+    description:
+      "Dr. Hashim Pervaiz earned his Honours Bachelor of Science in Health Studies from the University of Waterloo before completing his Doctor of Optometry at Nova Southeastern University in Fort Lauderdale, Florida.",
+    longDescription: `Dr. Hashim Pervaiz earned his Honours Bachelor of Science in Health Studies from the
+University of Waterloo before completing his Doctor of Optometry at Nova Southeastern
+University in Fort Lauderdale, Florida.
+During his clinical training, Dr. Pervaiz completed an ocular disease externship at the Erie VA
+Medical Center, where he gained experience diagnosing and managing a wide range of ocular
+conditions. He also completed a vision rehabilitation/therapy externship at the State University
+of New York (SUNY) College of Optometry.
+Dr. Pervaiz has special interests in pediatric optometry, vision therapy, and ocular disease. He
+is passionate about providing comprehensive, full-scope eye care and takes a personalized
+approach to each patient’s unique visual needs.
+Dr. Pervaiz is an active member of the Ontario Association of Optometrists and the Canadian
+Association of Optometrists. He is committed to providing thorough, evidence-based care while
+building trusting relationships with his patients.
+Outside of the clinic, Dr. Pervaiz enjoys hockey, travelling, and working out.`,
   },
 ];
 
@@ -2567,6 +2606,12 @@ export const teamMembers = [
     slug: "dr-savannah-vecchiarelli",
   },
   {
+    name: "Dr. Hashim Pervaiz",
+    role: "Optometrist",
+    image: TeamHashimPervaiz,
+    slug: "dr-hashim-pervaiz",
+  },
+  {
     name: "Brandon",
     role: "Optician",
     image: TeamBrandonImage,
@@ -2607,4 +2652,3 @@ export const teamMembers = [
     image: TeamMelanieImage,
   },
 ];
-

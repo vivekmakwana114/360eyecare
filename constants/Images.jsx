@@ -30,6 +30,7 @@ import AnitaSritharanImage from "../public/doctors/AnitaSritharan.jpg";
 import GillImage from "../public/doctors/Gill.webp";
 import GinaChenImage from "../public/doctors/GinaChen.webp";
 import SavannahVecchiarelliImage from "../public/doctors/savannahvecchiarelli.png";
+import HashimPervaizImage from "../public/doctors/Hashim Pervaiz.png";
 import MeetOptometrist1 from "../public/MeetOptometrist1.webp";
 import MeetOptometrist2 from "../public/MeetOptometrist2.webp";
 import MeetOptometristTeam from "../public/MeetOptometristTeam.webp";
@@ -143,6 +144,7 @@ import TeamMelanieImage from "../public/ourteam/Melanie_Optometric_Assistant.web
 import TeamMiaImage from "../public/ourteam/Mia_Ophthalmic_Technician.webp";
 import TeamVanessaImage from "../public/ourteam/Vanessa_Ophthalmic_Technician.webp";
 import TeamSavannahVecchiarelli from "../public/ourteam/TeamSavannahVecchiarelli.png";  
+import TeamHashimPervaiz from "../public/ourteam/Hashim Pervaiz.png";
 
 export {
   TeamBrandonImage,
@@ -151,6 +153,7 @@ export {
   TeamSamBaraamImage,
   TeamHannahImage,
   TeamSavannahVecchiarelli,
+  TeamHashimPervaiz,
   TeamJuliaImage,
   TeamLilyImage,
   TeamLucelImage,
@@ -273,6 +276,7 @@ export {
   GillImage,
   GinaChenImage,
   SavannahVecchiarelliImage,
+  HashimPervaizImage,
   MeetOptometrist1,
   MeetOptometrist2,
   MeetOptometristTeam,
