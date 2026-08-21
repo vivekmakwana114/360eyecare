@@ -26,7 +26,7 @@ export default function OptometristTeam() {
             care professionals.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
             {optometrists.map((doctor) => (
               <OptometristCard
                 key={doctor.id}
@@ -61,23 +61,19 @@ function OptometristCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden">
-        <div
-          className={`transition-transform duration-300 ease-in-out ${
+      <div className="relative overflow-hidden aspect-[4/5] bg-gray-50">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+          className={`object-cover transition-transform duration-500 ease-in-out ${
             isHovered ? "scale-105" : "scale-100"
           }`}
-        >
-          <Image
-            src={image}
-            alt={alt}
-            className="object-cover w-full"
-            width={450}
-            height={500}
-          />
-        </div>
+        />
         {/* Bottom border on hover */}
         <div
-          className={`absolute bottom-0 left-0 w-full h-2 transition-all duration-300 ${
+          className={`absolute bottom-0 left-0 w-full h-2 transition-all duration-300 z-10 ${
             isHovered ? "bg-[#5BC4BC]" : "bg-transparent"
           }`}
         />

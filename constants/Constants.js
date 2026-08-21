@@ -211,81 +211,11 @@ On her spare time, she enjoys baking, swimming, and travelling`,
   },
   {
     id: 3,
-    name: "Dr. Alina Shahid",
-    alt: "Dr. Alina Shahid Optometrist at 360 Eyecare",
-    slug: "dr-alina-shahid",
-    image: AlinaShahidImage.src,
-    metaTitle: "Dr. Alina Shahid - Optometrist at 360 Eyecare | Toronto",
-    metaDescription:
-      "Learn more about Dr. Alina Shahid at 360 Eyecare Toronto. Schedule an eye exam for expert vision care and eye health support.",
-    description:
-      "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
-    longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
-
-Dr. Shahid is an active member of the Ontario Association of Optometrists and the Canadian Association of Optometrists and is certified to prescribe Therapeutic Pharmaceutical Agents. Outside of the clinic, she has published an article in glaucoma research and has presented at the American Academy of Optometry. She has also received various honours during her clinical training, including membership with the Golden Key International Optometric Honour Society and Beta Sigma Kappa Honour Society.
-
-Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients. She is fluent in English and Urdu. During her spare time, she loves travelling, reading and photography`,
-  },
-  {
-    id: 4,
-    name: "Dr. Gina Chen",
-    alt: "Dr. Gina Chen Optometrist at 360 Eyecare",
-    slug: "dr-gina-chen",
-    image: GinaChenImage.src,
-    metaTitle: "Dr. Gina Chen - Optometrist in Toronto | 360 Eyecare",
-    metaDescription:
-      "Get expert eye care from Dr. Gina Chen at 360 Eyecare Toronto. Schedule your eye exam and protect your vision today.",
-    description:
-      "Dr. Gina Chen is a passionate optometrist specializing in Orthokeratology lenses and enjoys practicing comprehensive eye care.",
-    longDescription: `Dr. Gina Chen received both her Doctor of Optometry degree and Bachelor of Science degree with honours from the University of Waterloo. During her clinical studies, she obtained extensive training with a focus in retinal diseases, cataracts, and dry eye diseases at the Eye Associates of Pinellas in Pinellas Park, Florida.
-
-She is passionate about her profession and strives to provide quality patient-centred eye care. Her main clinical experiences include primary care, ocular health and therapeutics, contact lenses, pediatrics, and refractive surgery co-management. As nearsightedness is a fast-growing eye condition in children, Dr. Chen has a professional interest in myopia control to slow the progression of nearsightedness in young patients through Orthokeratology (OrthoK) and innovative soft contact lenses.
-
-Dr. Chen is licensed by the College of Optometrists of Ontario and is certified to prescribe Therapeutic Pharmaceutical Agents in Canada. She is a member of both the Ontario Association of Optometrists and the Canadian Association of Optometrists.
-
-Dr. Chen is excited to be a member of the distinguished team at 360 Eyecare and practices out of the Downtown office – Yorkville. She conducts eye examinations with full fluency in English and Mandarin.
-
-In her spare time, she enjoys exercising, travelling, reading, and being a foodie`,
-  },
-  {
-    id: 5,
-    name: "Dr. Harmandeep Gill",
-    alt: "Dr. Harmandeep Gill Optometrist at 360 Eyecare",
-    slug: "dr-harmandeep-gill",
-    image: GillImage.src,
-    metaTitle: "Dr. Harmandeep Gill - Optometrist in Toronto | 360 Eyecare",
-    metaDescription:
-      "Meet Dr. Harmandeep Gill at 360 Eyecare Toronto. Book a comprehensive eye exam and receive personalized vision care.",
-    description:
-      "Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at University of Toronto.",
-    longDescription: `Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at the University of Toronto. He went on to receive his Doctor of Optometry from the University of Waterloo.
-
-During his final year of optometry school, he completed his training in Detroit, Michigan at the John D. Dingell Veterans Affairs Medical Centre. While at the hospital, he gained clinical experience in the treatment and management of ocular diseases.
-
-Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr. Gill enjoys photography, basketball, and squash`,
-  },
-  {
-    id: 6,
-    name: "Dr. Savannah Vecchiarelli",
-    alt: "Dr. Savannah Vecchiarelli Optometrist at 360 Eyecare",
-    slug: "dr-savannah-vecchiarelli", // Used for URL: /team-members/dr-savannah-vecchiarelli
-    image: SavannahVecchiarelliImage.src,
-    metaTitle:
-      "Dr. Savannah Vecchiarelli - Optometrist in Toronto | 360 Eyecare",
-    metaDescription:
-      "Meet Dr. Savannah Vecchiarelli at 360 Eyecare Toronto. Book a comprehensive eye exam...",
-    description:
-      "Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto.",
-    longDescription: `Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto, gaining valuable experience in ocular disease management, contact lens fitting, and dry eye treatment. Dr Savannah Vecchiarelli enjoys caring for patients of all ages and helping them achieve and maintain optimal eye health. Her clinical interests include comprehensive primary eye care, myopia control, ocular disease management, and helping patients find vision correction options that best suit their lifestyle and visual needs. Outside of the clinic, Dr. Vecchiarelli enjoys painting, travelling, and Pilates.`,
-  },
-  {
-    id: 7,
     name: "Dr. Hashim Pervaiz",
     alt: "Dr. Hashim Pervaiz Optometrist at 360 Eyecare",
     slug: "dr-hashim-pervaiz",
     image: HashimPervaizImage.src,
-    metaTitle:
-      "Dr. Hashim Pervaiz - Optometrist in Toronto | 360 Eyecare",
+    metaTitle: "Dr. Hashim Pervaiz - Optometrist in Toronto | 360 Eyecare",
     metaDescription:
       "Meet Dr. Hashim Pervaiz at 360 Eyecare Toronto. Book a comprehensive eye exam with Dr. Pervaiz for personalized vision and eye care.",
     description:
@@ -304,6 +234,71 @@ Dr. Pervaiz is an active member of the Ontario Association of Optometrists and t
 Association of Optometrists. He is committed to providing thorough, evidence-based care while
 building trusting relationships with his patients.
 Outside of the clinic, Dr. Pervaiz enjoys hockey, travelling, and working out.`,
+  },
+  {
+    id: 4,
+    name: "Dr. Savannah Vecchiarelli",
+    alt: "Dr. Savannah Vecchiarelli Optometrist at 360 Eyecare",
+    slug: "dr-savannah-vecchiarelli",
+    image: SavannahVecchiarelliImage.src,
+    metaTitle:
+      "Dr. Savannah Vecchiarelli - Optometrist in Toronto | 360 Eyecare",
+    metaDescription:
+      "Meet Dr. Savannah Vecchiarelli at 360 Eyecare Toronto. Book a comprehensive eye exam...",
+    description:
+      "Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto.",
+    longDescription: `Dr. Savannah Vecchiarelli earned her Doctor of Optometry degree from the University of Waterloo and completed her clinical externship training in Toronto, gaining valuable experience in ocular disease management, contact lens fitting, and dry eye treatment. Dr Savannah Vecchiarelli enjoys caring for patients of all ages and helping them achieve and maintain optimal eye health. Her clinical interests include comprehensive primary eye care, myopia control, ocular disease management, and helping patients find vision correction options that best suit their lifestyle and visual needs. Outside of the clinic, Dr. Vecchiarelli enjoys painting, travelling, and Pilates.`,
+  },
+  {
+    id: 5,
+    name: "Dr. Alina Shahid",
+    alt: "Dr. Alina Shahid Optometrist at 360 Eyecare",
+    slug: "dr-alina-shahid",
+    image: AlinaShahidImage.src,
+    metaTitle: "Dr. Alina Shahid - Optometrist at 360 Eyecare | Toronto",
+    metaDescription:
+      "Learn more about Dr. Alina Shahid at 360 Eyecare Toronto. Schedule an eye exam for expert vision care and eye health support.",
+    description:
+      "Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients.",
+    longDescription: `Dr. Alina Shahid graduated from McMaster University with her Bachelor of Science, majoring in Molecular Biology and Genetics. She then completed her Doctor of Optometry from Illinois College of Optometry in Chicago. Dr. Shahid has clinical experience serving diverse patient populations, with extensive training in ocular disease, contact lenses, pediatrics and dry eye disease. Her special interests include the treatment and management of glaucoma, myopia control and refractive surgery co-management. She is licensed to practice optometry in both the U.S. and Canada.
+Dr. Shahid is an active member of the Ontario Association of Optometrists and the Canadian Association of Optometrists and is certified to prescribe Therapeutic Pharmaceutical Agents. Outside of the clinic, she has published an article in glaucoma research and has presented at the American Academy of Optometry. She has also received various honours during her clinical training, including membership with the Golden Key International Optometric Honour Society and Beta Sigma Kappa Honour Society.
+Dr. Shahid is passionate about providing thorough eye care and building trusting relationships with her patients. She is fluent in English and Urdu. During her spare time, she loves travelling, reading and photography`,
+  },
+  {
+    id: 6,
+    name: "Dr. Harmandeep Gill",
+    alt: "Dr. Harmandeep Gill Optometrist at 360 Eyecare",
+    slug: "dr-harmandeep-gill",
+    image: GillImage.src,
+    metaTitle: "Dr. Harmandeep Gill - Optometrist in Toronto | 360 Eyecare",
+    metaDescription:
+      "Meet Dr. Harmandeep Gill at 360 Eyecare Toronto. Book a comprehensive eye exam and receive personalized vision care.",
+    description:
+      "Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at University of Toronto.",
+    longDescription: `Dr. Harmandeep Gill completed his Bachelor of Science in Biochemistry and Molecular Biology at the University of Toronto. He went on to receive his Doctor of Optometry from the University of Waterloo.
+During his final year of optometry school, he completed his training in Detroit, Michigan at the John D. Dingell Veterans Affairs Medical Centre. While at the hospital, he gained clinical experience in the treatment and management of ocular diseases.
+Dr. Gill works at the Yorkville location in Toronto. Outside of patient care, Dr. Gill enjoys photography, basketball, and squash`,
+  },
+  {
+    id: 7,
+    name: "Dr. Gina Chen",
+    alt: "Dr. Gina Chen Optometrist at 360 Eyecare",
+    slug: "dr-gina-chen",
+    image: GinaChenImage.src,
+    metaTitle: "Dr. Gina Chen - Optometrist in Toronto | 360 Eyecare",
+    metaDescription:
+      "Get expert eye care from Dr. Gina Chen at 360 Eyecare Toronto. Schedule your eye exam and protect your vision today.",
+    description:
+      "Dr. Gina Chen is a passionate optometrist specializing in Orthokeratology lenses and enjoys practicing comprehensive eye care.",
+    longDescription: `Dr. Gina Chen received both her Doctor of Optometry degree and Bachelor of Science degree with honours from the University of Waterloo. During her clinical studies, she obtained extensive training with a focus in retinal diseases, cataracts, and dry eye diseases at the Eye Associates of Pinellas in Pinellas Park, Florida.
+
+She is passionate about her profession and strives to provide quality patient-centred eye care. Her main clinical experiences include primary care, ocular health and therapeutics, contact lenses, pediatrics, and refractive surgery co-management. As nearsightedness is a fast-growing eye condition in children, Dr. Chen has a professional interest in myopia control to slow the progression of nearsightedness in young patients through Orthokeratology (OrthoK) and innovative soft contact lenses.
+
+Dr. Chen is licensed by the College of Optometrists of Ontario and is certified to prescribe Therapeutic Pharmaceutical Agents in Canada. She is a member of both the Ontario Association of Optometrists and the Canadian Association of Optometrists.
+
+Dr. Chen is excited to be a member of the distinguished team at 360 Eyecare and practices out of the Downtown office – Yorkville. She conducts eye examinations with full fluency in English and Mandarin.
+
+In her spare time, she enjoys exercising, travelling, reading, and being a foodie`,
   },
 ];
 
@@ -2582,22 +2577,10 @@ export const teamMembers = [
     slug: "dr-anita-sritharan",
   },
   {
-    name: "Dr. Alina Shahid",
+    name: "Dr. Hashim Pervaiz",
     role: "Optometrist",
-    image: TeamAlinaShahidImage,
-    slug: "dr-alina-shahid",
-  },
-  {
-    name: "Dr. Gina Chen",
-    role: "Optometrist",
-    image: GinaChenImage,
-    slug: "dr-gina-chen",
-  },
-  {
-    name: "Dr. Harmandeep Gill",
-    role: "Optometrist",
-    image: GillImage,
-    slug: "dr-harmandeep-gill",
+    image: TeamHashimPervaiz,
+    slug: "dr-hashim-pervaiz",
   },
   {
     name: "Dr. Savannah Vecchiarelli",
@@ -2606,10 +2589,22 @@ export const teamMembers = [
     slug: "dr-savannah-vecchiarelli",
   },
   {
-    name: "Dr. Hashim Pervaiz",
+    name: "Dr. Alina Shahid",
     role: "Optometrist",
-    image: TeamHashimPervaiz,
-    slug: "dr-hashim-pervaiz",
+    image: TeamAlinaShahidImage,
+    slug: "dr-alina-shahid",
+  },
+  {
+    name: "Dr. Harmandeep Gill",
+    role: "Optometrist",
+    image: GillImage,
+    slug: "dr-harmandeep-gill",
+  },
+  {
+    name: "Dr. Gina Chen",
+    role: "Optometrist",
+    image: GinaChenImage,
+    slug: "dr-gina-chen",
   },
   {
     name: "Brandon",

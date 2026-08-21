@@ -18,6 +18,10 @@ export async function generateMetadata() {
     alternates: {
       canonical: "https://www.360eyecare.ca/blog/",
     },
+    robots: {
+    index: true,
+    follow: true,
+  },
   };
 }
 
