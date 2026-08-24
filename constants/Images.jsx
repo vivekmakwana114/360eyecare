@@ -29,6 +29,8 @@ import AlinaShahidImage from "../public/doctors/AlinaShahid.jpg";
 import AnitaSritharanImage from "../public/doctors/AnitaSritharan.jpg";
 import GillImage from "../public/doctors/Gill.webp";
 import GinaChenImage from "../public/doctors/GinaChen.webp";
+import SavannahVecchiarelliImage from "../public/doctors/savannahvecchiarelli.png";
+import HashimPervaizImage from "../public/doctors/HashimPervaiz.png";
 import MeetOptometrist1 from "../public/MeetOptometrist1.webp";
 import MeetOptometrist2 from "../public/MeetOptometrist2.webp";
 import MeetOptometristTeam from "../public/MeetOptometristTeam.webp";
@@ -55,7 +57,7 @@ import DryEyeSyndromeImage from "../public/Dry-Eye-Syndrome-jpg.webp";
 import DiabeticImage from "../public/Diabetic-Retinopathy.webp";
 import MacularImage from "../public/Macular-Degeneration-scaled.webp";
 import eyeCareServiceImage from "../public/our-eye-care.jpg";
-import Understanding_1 from "../public/understanding_1.webp"; 
+import Understanding_1 from "../public/Understanding_1.webp"; 
 import UnderstandImage1 from "../public/understand1.webp";
 import UnderstandImage2 from "../public/understand2.webp";
 import UnderstandImage3 from "../public/understand3.webp";
@@ -141,6 +143,8 @@ import TeamLucelImage from "../public/ourteam/Lucel_Optician.webp";
 import TeamMelanieImage from "../public/ourteam/Melanie_Optometric_Assistant.webp";
 import TeamMiaImage from "../public/ourteam/Mia_Ophthalmic_Technician.webp";
 import TeamVanessaImage from "../public/ourteam/Vanessa_Ophthalmic_Technician.webp";
+import TeamSavannahVecchiarelli from "../public/ourteam/TeamSavannahVecchiarelli.png";  
+import TeamHashimPervaiz from "../public/ourteam/HashimPervaiz.png";
 
 export {
   TeamBrandonImage,
@@ -148,6 +152,8 @@ export {
   TeamAnitaSritharanImage,
   TeamSamBaraamImage,
   TeamHannahImage,
+  TeamSavannahVecchiarelli,
+  TeamHashimPervaiz,
   TeamJuliaImage,
   TeamLilyImage,
   TeamLucelImage,
@@ -269,6 +275,8 @@ export {
   AnitaSritharanImage,
   GillImage,
   GinaChenImage,
+  SavannahVecchiarelliImage,
+  HashimPervaizImage,
   MeetOptometrist1,
   MeetOptometrist2,
   MeetOptometristTeam,
