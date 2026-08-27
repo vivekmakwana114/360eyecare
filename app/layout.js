@@ -236,7 +236,7 @@ export default function RootLayout({ children }) {
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-68FLR804EH"
           strategy="afterInteractive"
-        />
+        /> 
         <Script id="google-analytics" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
