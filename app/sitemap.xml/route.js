@@ -1,5 +1,8 @@
 import { getServerSideSitemap } from "next-sitemap";
 import axios from "axios";
+import fs from "fs";
+import path from "path";
+import { optometrists } from "@/constants/Constants.js";
 
 const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL || "https://www.360eyecare.ca"
@@ -9,87 +12,181 @@ const WORDPRESS_API_URL =
   process.env.NEXT_PUBLIC_BLOG_BASE_URL ||
   `${SITE_URL}/dashboard/wp-json/wp/v2`;
 
-// Static pages — URLs must exactly match the canonical declared in each page's metadata.
-// Trailing slashes are included here because every static page's canonical uses them.
+// Routes to exclude from sitemap (e.g. form confirmation, marketing landing pages, internal tools)
+const EXCLUDED_ROUTES = new Set([
+  "/thank-you",
+  "/virtual-consult-consent-form",
+  "/book-eye-consultation-yorkville",
+  "/book-eye-exam-yorkville",
+]);
+
+/*
+// Static pages — Previously hardcoded array (kept as reference)
 const staticPages = [
   // Homepage
   { url: `${SITE_URL}/`,                                    changefreq: "daily",  priority: 1.0 },
 
   // Core navigation
-  { url: `${SITE_URL}/about-us/`,                           changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/blog/`,                               changefreq: "daily",  priority: 0.9 },
-  { url: `${SITE_URL}/optometrists/`,                       changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/our-team/`,                           changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/faq/`,                                changefreq: "weekly", priority: 0.6 },
+  { url: `${SITE_URL}/about-us`,                           changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/blog`,                               changefreq: "daily",  priority: 0.9 },
+  { url: `${SITE_URL}/optometrists`,                       changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/our-team`,                           changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/faq`,                                changefreq: "weekly", priority: 0.6 },
 
   // Eye care services
-  { url: `${SITE_URL}/eye-exams/`,                          changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/pediatric-eye-exams/`,                changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/laser-vision-correction/`,            changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/myopia-control-clinic/`,              changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/orthokeratology-treatment/`,          changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/advanced-diagnostics-eye-exams/`,     changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/dry-eye-syndrome-keratograph-i-pen/`, changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment/`, changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/common-eye-conditions/`,              changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/eye-emergencies/`,                    changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/eye-exams`,                          changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/pediatric-eye-exams`,                changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/laser-vision-correction`,            changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/myopia-control-clinic`,              changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/orthokeratology-treatment`,          changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/advanced-diagnostics-eye-exams`,     changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/dry-eye-syndrome-keratograph-i-pen`, changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/intense-pulsed-light-ipl-and-radio-frequency-rf-dry-eye-treatment`, changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/common-eye-conditions`,              changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/eye-emergencies`,                    changefreq: "weekly", priority: 0.8 },
 
   // Eyewear & products
-  { url: `${SITE_URL}/eye-glasses/`,                        changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/contact-lenses-faq/`,                 changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/prescription-lenses/`,                changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/custom-lenses/`,                      changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/custom-lenses-toronto/`,              changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/sunglasses-catalog/`,                 changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/maui-jim-lens-technology/`,           changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/miyosmart/`,                          changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/buying-eyeglasses-selection-guide/`,  changefreq: "weekly", priority: 0.6 },
+  { url: `${SITE_URL}/eye-glasses`,                        changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/contact-lenses-faq`,                 changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/prescription-lenses`,                changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/custom-lenses`,                      changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/custom-lenses-toronto`,              changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/sunglasses-catalog`,                 changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/maui-jim-lens-technology`,           changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/miyosmart`,                          changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/buying-eyeglasses-selection-guide`,  changefreq: "weekly", priority: 0.6 },
+  { url: `${SITE_URL}/shop`,                               changefreq: "weekly", priority: 0.7 },
 
   // Locations
-  { url: `${SITE_URL}/toronto-beaches-optometrist/`,        changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/toronto-rosedale-optometrist/`,       changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/find-eye-doctor-near-me/`,            changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/contact-address-directions/`,         changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/toronto-beaches-optometrist`,        changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/toronto-rosedale-optometrist`,       changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/find-eye-doctor-near-me`,            changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/contact-address-directions`,         changefreq: "weekly", priority: 0.7 },
 
   // Booking & patient info
-  { url: `${SITE_URL}/book-eye-exam/`,                      changefreq: "weekly", priority: 0.8 },
-  { url: `${SITE_URL}/direct-billing/`,                     changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/payment-plans/`,                      changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/virtual-consult/`,                    changefreq: "weekly", priority: 0.7 },
-  { url: `${SITE_URL}/virtual-shopping/`,                   changefreq: "weekly", priority: 0.6 },
+  { url: `${SITE_URL}/book-eye-exam`,                      changefreq: "weekly", priority: 0.8 },
+  { url: `${SITE_URL}/direct-billing`,                     changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/payment-plans`,                      changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/virtual-consult`,                    changefreq: "weekly", priority: 0.7 },
+  { url: `${SITE_URL}/virtual-shopping`,                   changefreq: "weekly", priority: 0.6 },
 
   // Team members
-  { url: `${SITE_URL}/team-members/dr-sam-baraam/`,         changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-anita-sritharan/`,    changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-gina-chen/`,          changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-harmandeep-gill/`,    changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-alina-shahid/`,       changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-savannah-vecchiarelli/`, changefreq: "monthly", priority: 0.7 },
-  { url: `${SITE_URL}/team-members/dr-hashim-pervaiz/`,    changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-sam-baraam`,         changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-anita-sritharan`,    changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-gina-chen`,          changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-harmandeep-gill`,    changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-alina-shahid`,       changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-savannah-vecchiarelli`, changefreq: "monthly", priority: 0.7 },
+  { url: `${SITE_URL}/team-members/dr-hashim-pervaiz`,    changefreq: "monthly", priority: 0.7 },
 
   // Company
-  { url: `${SITE_URL}/giving-back/`,                        changefreq: "monthly", priority: 0.5 },
-  { url: `${SITE_URL}/career-opportunities/`,               changefreq: "monthly", priority: 0.5 },
+  { url: `${SITE_URL}/giving-back`,                        changefreq: "monthly", priority: 0.5 },
+  { url: `${SITE_URL}/career-opportunities`,               changefreq: "monthly", priority: 0.5 },
 
   // Legal
-  { url: `${SITE_URL}/privacy-policy/`,                     changefreq: "yearly",  priority: 0.3 },
-  { url: `${SITE_URL}/terms-conditions/`,                   changefreq: "yearly",  priority: 0.3 },
-  { url: `${SITE_URL}/shipping-return-policy/`,             changefreq: "yearly",  priority: 0.3 },
-
-  // Excluded (not indexed):
-  // /thank-you                    — marketing funnel page
-  // /virtual-consult-consent-form — form page
-  // /book-eye-consultation-yorkville — marketing landing page
-  // /shop                         — embedded widget page
+  { url: `${SITE_URL}/privacy-policy`,                     changefreq: "yearly",  priority: 0.3 },
+  { url: `${SITE_URL}/terms-conditions`,                   changefreq: "yearly",  priority: 0.3 },
+  { url: `${SITE_URL}/shipping-return-policy`,             changefreq: "yearly",  priority: 0.3 },
 ];
+*/
 
-// Paths owned by static Next.js pages — used to deduplicate WordPress post slugs
-// so the same path never appears twice in the sitemap.
-const staticPaths = new Set(
-  staticPages.map((p) => new URL(p.url).pathname.replace(/\/$/, ""))
-);
+// Recursively scans the app directory for page routes
+function getAppRoutes(dir, baseRoute = "") {
+  let routes = [];
+  if (!fs.existsSync(dir)) return routes;
 
-async function getAllWordPressPosts() {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name.startsWith(".") || entry.name.startsWith("@")) continue;
+      if (entry.name === "api" || entry.name === "sitemap.xml") continue;
+
+      // Handle Route Groups (e.g. (eye-care), (blog), etc.) - they do not appear in URL paths
+      if (entry.name.startsWith("(") && entry.name.endsWith(")")) {
+        routes.push(...getAppRoutes(fullPath, baseRoute));
+      } else {
+        routes.push(...getAppRoutes(fullPath, `${baseRoute}/${entry.name}`));
+      }
+    } else if (/^page\.(jsx?|tsx|mdx)$/.test(entry.name)) {
+      routes.push(baseRoute === "" ? "/" : baseRoute);
+    }
+  }
+  return routes;
+}
+
+// Assigns change frequency and priority dynamically based on route type
+function getPageMetadata(route) {
+  if (route === "/") {
+    return { changefreq: "daily", priority: 1.0 };
+  }
+  if (route === "/blog") {
+    return { changefreq: "daily", priority: 0.9 };
+  }
+  if (
+    route === "/privacy-policy" ||
+    route === "/terms-conditions" ||
+    route === "/shipping-return-policy"
+  ) {
+    return { changefreq: "yearly", priority: 0.3 };
+  }
+  if (route === "/giving-back" || route === "/career-opportunities") {
+    return { changefreq: "monthly", priority: 0.5 };
+  }
+  if (route.startsWith("/team-members/")) {
+    return { changefreq: "monthly", priority: 0.7 };
+  }
+  if (route === "/faq" || route === "/virtual-shopping") {
+    return { changefreq: "weekly", priority: 0.6 };
+  }
+  return { changefreq: "weekly", priority: 0.8 };
+}
+
+// Generates static page entries dynamically
+function getDynamicStaticPages() {
+  const appDir = path.join(process.cwd(), "app");
+  const discoveredRoutes = getAppRoutes(appDir);
+  const staticPagesList = [];
+
+  for (const route of discoveredRoutes) {
+    // Skip excluded routes (forms, thank-you, marketing funnels)
+    if (EXCLUDED_ROUTES.has(route)) continue;
+
+    // Skip root catch-all or dynamic post routes (e.g. /[...slug] which handles WordPress posts)
+    if (route === "/[...slug]" || (route.startsWith("/[") && !route.startsWith("/team-members"))) {
+      continue;
+    }
+
+    // Expand team members dynamic route into individual doctor pages
+    if (route === "/team-members/[...slug]" || route.startsWith("/team-members/[")) {
+      if (Array.isArray(optometrists)) {
+        for (const doc of optometrists) {
+          if (doc.slug) {
+            const memberPath = `/team-members/${doc.slug}`;
+            const meta = getPageMetadata(memberPath);
+            staticPagesList.push({
+              url: `${SITE_URL}${memberPath}`,
+              path: memberPath,
+              ...meta,
+            });
+          }
+        }
+      }
+      continue;
+    }
+
+    const meta = getPageMetadata(route);
+    staticPagesList.push({
+      url: route === "/" ? `${SITE_URL}/` : `${SITE_URL}${route}`,
+      path: route,
+      ...meta,
+    });
+  }
+
+  return staticPagesList;
+}
+
+async function getAllWordPressPosts(staticPaths) {
   let allPosts = [];
   let page = 1;
   const perPage = 100;
@@ -141,11 +238,14 @@ async function getAllWordPressPosts() {
 
 export async function GET() {
   try {
-    const wordPressPosts = await getAllWordPressPosts();
+    const staticPagesList = getDynamicStaticPages();
+    const staticPaths = new Set(staticPagesList.map((p) => p.path));
+
+    const wordPressPosts = await getAllWordPressPosts(staticPaths);
     const lastmod = new Date().toISOString();
 
     const allUrls = [
-      ...staticPages.map((p) => ({
+      ...staticPagesList.map((p) => ({
         loc: p.url,
         lastmod,
         changefreq: p.changefreq,
@@ -164,3 +264,4 @@ export async function GET() {
 }
 
 export const revalidate = 3600;
+
