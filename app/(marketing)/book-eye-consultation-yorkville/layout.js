@@ -30,15 +30,12 @@ export const generateMetadata = () => {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppins.variable} antialiased min-h-svh  flex flex-col  w-full mx-auto`}
-        suppressHydrationWarning={true}
-      >
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <div
+      className={`${poppins.variable} antialiased min-h-svh flex flex-col w-full mx-auto`}
+    >
+      <Header />
+      {children}
+      <Footer />
+    </div>
   );
 }

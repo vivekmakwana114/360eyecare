@@ -7,11 +7,16 @@ import { usePathname } from "next/navigation";
 
 const RootLayout2 = ({ children }) => {
   const pathname = usePathname();
-  const hideLayout =
-    pathname === "/shop/" ||
-    pathname === "/book-eye-consultation-yorkville" ||
-    pathname === "/book-eye-exam-yorkville" ||
-    pathname === "/thank-you";
+  const cleanPath = pathname ? pathname.replace(/\/$/, "") : "";
+
+  const hiddenRoutes = [
+    "/shop",
+    "/book-eye-consultation-yorkville",
+    "/book-eye-exam-yorkville",
+    "/thank-you",
+  ];
+
+  const hideLayout = hiddenRoutes.includes(cleanPath);
 
   return (
     <>
