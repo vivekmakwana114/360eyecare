@@ -18,7 +18,6 @@ const BrandList = ({
     { name: "Versace" },
     { name: "Prada" },
     { name: "Burberry" },
-    { name: "Rudy Project" },
     { name: "Ray-Ban" },
   ],
 }) => {
