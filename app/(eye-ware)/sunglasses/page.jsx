@@ -36,7 +36,6 @@ const page = () => {
     { name: "Versace" },
     { name: "Prada" },
     { name: "Burberry" },
-    { name: "Rudy Project" },
   ];
 
   return (

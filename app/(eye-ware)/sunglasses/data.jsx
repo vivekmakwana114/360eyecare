@@ -26,7 +26,6 @@ import {
   Vercase,
   Brandmykita,
   Prada,
-  RudyProject,
 } from "../../../constants/brand";
 
 export const data = [
@@ -113,12 +112,5 @@ export const data = [
     description:
       "Prada represents the best of Italian culture and tradition. It is one of the most innovative, prestigious, and widely recognized brands in the fashion and luxury goods industries. With a keen attention to detail and new trends, Prada’s eyewear collection reflects this approach with unmistakable style, refined elegance, and uncompromising quality.",
     url: "http://prada.com/ca/en/women/sunglasses.html",
-  },
-  {
-    image: RudyProject,
-    title: "Rudy Project",
-    description:
-      "Rudy Project is an established brand primarily because of its performance sunglasses, RX solutions, goggles, and helmets, which are of the highest technical level.",
-    url: "https://www.rudyprojectna.com/collections/all-rudy-project-sunglasses",
   },
 ];
