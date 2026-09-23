@@ -13,6 +13,7 @@ const RootLayout2 = ({ children }) => {
     "/shop",
     "/book-eye-consultation-yorkville",
     "/book-eye-exam-yorkville",
+    "/book-eye-exam-the-beaches",
     "/thank-you",
   ];
 

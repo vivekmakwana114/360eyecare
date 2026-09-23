@@ -18,6 +18,7 @@ const EXCLUDED_ROUTES = new Set([
   "/virtual-consult-consent-form",
   "/book-eye-consultation-yorkville",
   "/book-eye-exam-yorkville",
+  "/book-eye-exam-the-beaches",
 ]);
 
 /*
