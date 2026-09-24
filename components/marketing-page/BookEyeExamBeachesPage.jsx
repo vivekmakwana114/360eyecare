@@ -445,30 +445,27 @@ const BookEyeExamBeachesPage = () => {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded text-xs sm:text-sm font-medium text-[#40BCC8]">
               <Eye className="w-4 h-4" />
-              <span>360 Eyecare The Beaches Toronto</span>
+              <span>Your Trusted Eye Care & Eyewear Clinic in The Beaches</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-poppins">
-              Book Your Eye Exam & Find Your Perfect Eyewear
+              10+ Years Serving Patients in The Beaches | Highly Rated by Patients | Comprehensive Eye Care & Eyewear
             </h1>
             <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Complete eye care and eyewear in one convenient Beaches location.
-              <br />
-              Get a comprehensive eye exam with an experienced optometrist and
-              explore prescription glasses personalized to your vision, lifestyle, and
-              personal style.
+              Get comprehensive eye exams, professional optometric care and quality eyewear at 360 Eyecare in The Beaches.
+              {/* <br /> */}
+              Our experienced team provides personalized vision and eye care for patients in The Beaches and surrounding Toronto communities.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
               {[
-                "Comprehensive Eye Exam",
-                "Advanced Diagnostic Technology",
-                "Convenient Beaches Location",
-                "Curated handcrafted & designer eyeglasses",
-                "OCT scan and retinal imaging",
-                "Street Parking Available",
+                "⭐ Highly Rated by Our Patients",
+                "✓ 10+ Years of Eye Care Experience",
+                "✓ Convenient Beaches Location",
+                "✓ Comprehensive Eye Care & Eyewear",
+                "📍Conveniently Located in The Beaches",
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-2 text-sm text-slate-100 text-left">
-                  <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" />
+                  {/* <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" /> */}
                   <span className="text-sm md:text-md sm:text-nowrap text-left">{item}</span>
                 </div>
               ))}
@@ -477,10 +474,16 @@ const BookEyeExamBeachesPage = () => {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={scrollToForm}
-                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
               >
                 BOOK MY EYE EXAM
               </button>
+              <a
+                href="tel:+14166983937"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center inline-flex items-center justify-center"
+              >
+                Call Our Clinic
+              </a>
             </div>
           </div>
 
