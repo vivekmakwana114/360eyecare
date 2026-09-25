@@ -702,10 +702,13 @@ const BookEyeExamBeachesPage = () => {
 
       {/* 3. VALUE PROPOSITION */}
       <section className="py-8 sm:py-12 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-5xl mx-auto mb-16 space-y-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#28305F] font-poppins md:whitespace-nowrap">
-            Everything You Need for Your Vision, All in One Place
+        <div className="text-center max-w-5xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
+            Complete Eye Care & Eyewear in The Beaches
           </h2>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+            Everything You Need for Your Vision, All in One Place
+          </h3>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
             {/* At 360 Eyecare The Beaches, we look beyond your prescription.<br /> Our comprehensive
             eye exams assess your vision and overall eye health using modern diagnostic technology.
@@ -780,14 +783,13 @@ const BookEyeExamBeachesPage = () => {
 
       {/* 3. WHY CHOOSE 360 EYECARE? */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-[#40BCC8]/10 text-[#034D76] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
-            <Sparkles className="w-4 h-4 text-[#40BCC8]" />
-            <span>Why Choose 360 Eyecare</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-            Trusted Eye Care in The Beaches
+            Why Choose 360 Eyecare?
           </h2>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+            Trusted Eye Care in The Beaches
+          </h3>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Choosing an eye care provider is about more than finding the closest
             clinic. It's about finding a team you can trust with your vision.
@@ -850,13 +852,12 @@ const BookEyeExamBeachesPage = () => {
       <section className="py-16 sm:py-24 bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 bg-[#40BCC8]/15 text-[#034D76] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
-              <Eye className="w-4 h-4 text-[#40BCC8]" />
-              <span>Eye Exams in The Beaches</span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-              Comprehensive Eye Exams for Your Vision & Eye Health
+              Eye Exams in The Beaches
             </h2>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+              Comprehensive Eye Exams for Your Vision & Eye Health
+            </h3>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Regular eye exams are an important part of maintaining healthy
               vision. At 360 Eyecare, our optometry team performs comprehensive
@@ -919,14 +920,13 @@ const BookEyeExamBeachesPage = () => {
 
       {/* 5. EYEWEAR & OPTICAL */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 bg-[#40BCC8]/10 text-[#034D76] px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold">
-            <Glasses className="w-4 h-4 text-[#40BCC8]" />
-            <span>Eyewear & Optical</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-            Find Eyewear That Fits Your Vision & Lifestyle
+            Eyewear & Optical
           </h2>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+            Find Eyewear That Fits Your Vision & Lifestyle
+          </h3>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             Looking for new glasses, frames or sunglasses in The Beaches?
             <br className="hidden sm:inline" /> At 360 Eyecare, your eye care and
@@ -1001,14 +1001,13 @@ const BookEyeExamBeachesPage = () => {
 
       {/* 6. PERSONALIZED CARE FROM AN EXPERIENCED TEAM */}
       <section className="py-16 sm:py-24 bg-gradient-to-br from-[#28305F] via-[#204060] to-[#034D76] text-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium text-[#40BCC8]">
-            <Users className="w-4 h-4" />
-            <span>Personalized Care From An Experienced Team</span>
-          </div>
+        <div className="max-w-5xl mx-auto text-center space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins text-white leading-tight">
-            Your Vision Deserves Personal Attention
+            Personalized Care From An Experienced Team
           </h2>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#40BCC8] font-poppins">
+            Your Vision Deserves Personal Attention
+          </h3>
           <div className="space-y-4 max-w-3xl mx-auto text-slate-200 text-base sm:text-lg leading-relaxed">
             <p>
               At 360 Eyecare, we believe eye care should be personalized to each
@@ -1041,8 +1040,11 @@ const BookEyeExamBeachesPage = () => {
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-            Trusted by Patients Across Toronto
+            Patient Reviews
           </h2>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+            Trusted by Patients Across Toronto
+          </h3>
           <p className="text-slate-600 text-base sm:text-lg">
             See what our patients have to say about their experience with 360 Eyecare.
           </p>
@@ -1103,8 +1105,11 @@ const BookEyeExamBeachesPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold font-poppins text-white">
-              Your Visit, Made Simple
+              What to Expect
             </h2>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#40BCC8] font-poppins">
+              Your Visit, Made Simple
+            </h3>
             <p className="text-slate-300 text-base">
               Four simple steps from booking to your personalized vision solution.
             </p>
@@ -1183,8 +1188,11 @@ const BookEyeExamBeachesPage = () => {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="max-w-3xl space-y-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-              Your Local Eye Care Clinic in The Beaches
+              The Beaches Location
             </h2>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#034D76] font-poppins">
+              Your Local Eye Care Clinic in The Beaches
+            </h3>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
               Conveniently located in The Beaches, 360 Eyecare provides
               comprehensive eye care and eyewear services for patients in the
