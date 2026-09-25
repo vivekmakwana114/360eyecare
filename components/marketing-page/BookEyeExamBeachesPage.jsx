@@ -118,7 +118,7 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
       const hStr = String(Number(match[1])).padStart(2, "0");
       const pStr = match[3].toUpperCase();
       const found = hoursList.find(
-        (item) => item.displayH === hStr && item.period === pStr
+        (item) => item.displayH === hStr && item.period === pStr,
       );
       return {
         hourObj: found || hoursList[0] || null,
@@ -167,7 +167,9 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white flex items-center justify-between text-left"
       >
-        <span className={value ? "text-slate-900 font-medium" : "text-slate-400"}>
+        <span
+          className={value ? "text-slate-900 font-medium" : "text-slate-400"}
+        >
           {value || "Select Preferred Time"}
         </span>
         <Clock className="w-5 h-5 text-slate-900 shrink-0" />
@@ -177,7 +179,9 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
         <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white rounded-2xl border border-slate-200 shadow-2xl p-4 font-sans space-y-3">
           <div className="text-xs font-bold text-[#034D76] bg-slate-100 px-3 py-1.5 rounded-lg flex items-center justify-between">
             <span>{schedule.dayName} Hours</span>
-            <span className="text-slate-500 font-normal">{schedule.displayRange}</span>
+            <span className="text-slate-500 font-normal">
+              {schedule.displayRange}
+            </span>
           </div>
 
           <div className="grid grid-cols-2 gap-4 h-56">
@@ -448,12 +452,15 @@ const BookEyeExamBeachesPage = () => {
               <span>Your Trusted Eye Care & Eyewear Clinic in The Beaches</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-poppins">
-              10+ Years Serving Patients in The Beaches | Highly Rated by Patients | Comprehensive Eye Care & Eyewear
+              10+ Years Serving Patients in The Beaches | Highly Rated by
+              Patients | Comprehensive Eye Care & Eyewear
             </h1>
             <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Get comprehensive eye exams, professional optometric care and quality eyewear at 360 Eyecare in The Beaches.
+              Get comprehensive eye exams, professional optometric care and
+              quality eyewear at 360 Eyecare in The Beaches.
               {/* <br /> */}
-              Our experienced team provides personalized vision and eye care for patients in The Beaches and surrounding Toronto communities.
+              Our experienced team provides personalized vision and eye care for
+              patients in The Beaches and surrounding Toronto communities.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
@@ -464,9 +471,14 @@ const BookEyeExamBeachesPage = () => {
                 "✓ Comprehensive Eye Care & Eyewear",
                 "📍Conveniently Located in The Beaches",
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-sm text-slate-100 text-left">
+                <div
+                  key={idx}
+                  className="flex items-start gap-2 text-sm text-slate-100 text-left"
+                >
                   {/* <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" /> */}
-                  <span className="text-sm md:text-md sm:text-nowrap text-left">{item}</span>
+                  <span className="text-sm md:text-md sm:text-nowrap text-left">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -504,15 +516,20 @@ const BookEyeExamBeachesPage = () => {
       </section>
 
       {/* 2. BOOKING FORM SECTION */}
-      <section id="lead-form" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 scroll-mt-24">
+      <section
+        id="lead-form"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 scroll-mt-24"
+      >
         <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
           <div className="text-center max-w-xl mx-auto mb-8 space-y-2">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#28305F] font-poppins">
               Book Your Eye Exam
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Take the first step toward clearer vision and better eye health.<br/>
-              Fill out the form below and book your appointment at 360 Eyecare The Beaches.
+              Take the first step toward clearer vision and better eye health.
+              <br />
+              Fill out the form below and book your appointment at 360 Eyecare
+              The Beaches.
             </p>
           </div>
 
@@ -664,7 +681,8 @@ const BookEyeExamBeachesPage = () => {
               <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-[#40BCC8]" />
                 <span>
-                  Your information is secure and will only be used to help schedule and confirm your appointment.
+                  Your information is secure and will only be used to help
+                  schedule and confirm your appointment.
                 </span>
               </div>
               <p className="text-sm font-medium text-slate-600">
@@ -682,44 +700,53 @@ const BookEyeExamBeachesPage = () => {
       </section>
 
       {/* 3. VALUE PROPOSITION */}
-      <section className="py-16 sm:py-24 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+      <section className="py-8 sm:py-12 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-5xl mx-auto mb-16 space-y-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#28305F] font-poppins md:whitespace-nowrap">
-            Your Eye Exam Is More Than a Vision Check
+            Everything You Need for Your Vision, All in One Place
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-            At 360 Eyecare The Beaches, we look beyond your prescription.<br /> Our comprehensive
+            {/* At 360 Eyecare The Beaches, we look beyond your prescription.<br /> Our comprehensive
             eye exams assess your vision and overall eye health using modern diagnostic technology.
             Once your exam is complete, our team can also help you explore eyewear options that suit your
-            prescription, lifestyle and personal style.
+            prescription, lifestyle and personal style. */}
+            From comprehensive eye exams to eyewear and contact lenses, 360
+            Eyecare provides personalized vision care to help you and your
+            family see clearly and maintain healthy eyes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {[
             {
               icon: Stethoscope,
-              title: "Comprehensive Eye Care",
+              title: "Comprehensive Eye Exams",
               description:
-                "Get a complete assessment of your vision and eye health with personalized recommendations.",
+                "Thorough assessments of your vision and eye health performed by our experienced optometry team.",
             },
             {
               icon: Sparkles,
-              title: "Modern Diagnostic Technology",
+              title: "Professional Optometric Care",
               description:
-                "Our Beaches clinic uses advanced technology, including digital retinal imaging and OCT scanning, to provide a more detailed assessment of your eyes.",
+                "Personalized recommendations based on your vision, eye health and individual needs.",
             },
             {
               icon: Eye,
-              title: "Personalized Vision Solutions",
+              title: "Prescription Eyewear",
               description:
-                "Whether you need glasses, contact lenses or simply want to understand your eye health better, we'll help you understand your options.",
+                "Explore glasses and frames that fit your prescription, lifestyle and personal style.",
             },
             {
-              icon: Award,
-              title: "Eyewear in One Convenient Location",
+              icon: Eye,
+              title: "Contact Lenses",
               description:
-                "After your exam, explore quality glasses and designer eyewear without having to visit another location. The Beaches clinic offers designer eyewear and glasses as part of its services.",
+                "Discover contact lens options suited to your vision requirements and lifestyle.",
+            },
+            {
+              icon: Eye,
+              title: "Sunglasses",
+              description:
+                "Explore prescription and non-prescription sunglasses for everyday wear and eye protection.",
             },
           ].map((card, idx) => (
             <div
@@ -739,6 +766,14 @@ const BookEyeExamBeachesPage = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-center">
+          <button
+            onClick={scrollToForm}
+            className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            BOOK MY EYE EXAM
+          </button>
         </div>
       </section>
 
@@ -834,8 +869,8 @@ const BookEyeExamBeachesPage = () => {
             Eye Care You Can Trust in The Beaches
           </h2>
           <p className="text-slate-600 text-base sm:text-lg">
-            At 360 Eyecare, our goal is to provide personalized eye care in a welcoming,
-            professional environment.
+            At 360 Eyecare, our goal is to provide personalized eye care in a
+            welcoming, professional environment.
           </p>
         </div>
 
@@ -872,7 +907,9 @@ const BookEyeExamBeachesPage = () => {
               <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
                 {item.title}
               </h3>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -886,7 +923,8 @@ const BookEyeExamBeachesPage = () => {
               Your Eye Exam May Be Covered
             </h2>
             <p className="text-slate-600 text-base sm:text-lg">
-              Depending on your age, medical circumstances and insurance plan, you may be eligible for coverage.
+              Depending on your age, medical circumstances and insurance plan,
+              you may be eligible for coverage.
             </p>
           </div>
 
@@ -937,7 +975,9 @@ const BookEyeExamBeachesPage = () => {
                 ))}
 
                 <p className="text-xs text-slate-500 italic pt-1">
-                  Some additional tests or medications recommended by our optometrists may not be covered by individual plans or by OHIP. Please confirm your coverage at your appointment.
+                  Some additional tests or medications recommended by our
+                  optometrists may not be covered by individual plans or by
+                  OHIP. Please confirm your coverage at your appointment.
                 </p>
               </div>
 
@@ -1003,7 +1043,9 @@ const BookEyeExamBeachesPage = () => {
                 </p>
               </div>
               <div className="pt-6 border-t border-slate-100 mt-6">
-                <p className="font-bold text-[#034D76] text-sm md:text-base">{review.author}</p>
+                <p className="font-bold text-[#034D76] text-sm md:text-base">
+                  {review.author}
+                </p>
               </div>
             </div>
           ))}
@@ -1031,9 +1073,9 @@ const BookEyeExamBeachesPage = () => {
                 </div>
               </div>
               <p className="text-sm text-slate-500 pt-2 border-t border-slate-100">
-                Located right on Queen Street East in the heart of The Beaches, our clinic
-                is easily accessible from Upper Beaches, Leslieville, and the surrounding
-                East Toronto neighbourhoods.
+                Located right on Queen Street East in the heart of The Beaches,
+                our clinic is easily accessible from Upper Beaches, Leslieville,
+                and the surrounding East Toronto neighbourhoods.
               </p>
             </div>
 
@@ -1073,7 +1115,12 @@ const BookEyeExamBeachesPage = () => {
             Ready to Take Care of Your Vision?
           </h2>
           <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Book your eye exam at 360 Eyecare The Beaches and take the next step toward clearer vision and eyewear you'll love.<br/><br/> Whether you're due for a routine eye exam, need an updated prescription or are ready to explore new glasses, our team is here to help.
+            Book your eye exam at 360 Eyecare The Beaches and take the next step
+            toward clearer vision and eyewear you'll love.
+            <br />
+            <br /> Whether you're due for a routine eye exam, need an updated
+            prescription or are ready to explore new glasses, our team is here
+            to help.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
@@ -1088,7 +1135,10 @@ const BookEyeExamBeachesPage = () => {
 
       {/* Footer */}
       <footer className="bg-[#1e2447] text-slate-400 py-8 text-center text-sm px-4">
-        <p>© {new Date().getFullYear()} 360 Eyecare The Beaches. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} 360 Eyecare The Beaches. All rights
+          reserved.
+        </p>
       </footer>
     </div>
   );
