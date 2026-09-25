@@ -31,16 +31,16 @@ import {
 const HERO_DOCTORS = [
   {
     name: "Dr. Sam Baraam",
-    position: "Optometrist & Founder, 360 Eyecare",
-    qualification: "Doctor of Optometry – Pennsylvania College of Optometry",
+    position: "Lead Optometrist",
+    // qualification: "Doctor of Optometry – Pennsylvania College of Optometry",
     image: TeamSamBaraamImage,
     alt: "Dr. Sam Baraam, Optometrist at 360 Eyecare The Beaches",
   },
   {
     name: "Dr. Anita Sritharan",
     position: "Optometrist",
-    qualification:
-      "Doctor of Optometry (with Distinction) – University of Waterloo",
+    // qualification:
+    //   "Doctor of Optometry (with Distinction) – University of Waterloo",
     image: TeamAnitaSritharanImage,
     alt: "Dr. Anita Sritharan, Optometrist at 360 Eyecare The Beaches",
   },
@@ -94,19 +94,19 @@ const DoctorCarousel = ({ doctors }) => {
               alt={doctor.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover object-top w-full h-full"
+              className="object-cover object-[50%_40%] w-full h-full"
               priority={idx === 0}
             />
 
-            {/* Doctor info card: always visible, fades with its slide */}
-            <div className="absolute left-4 right-4 top-4 sm:left-auto sm:max-w-xs bg-white/95 backdrop-blur-sm text-left rounded-xl shadow-xl px-4 py-3">
-              <p className="font-bold text-[#28305F] text-base font-poppins">
+            {/* Doctor info card: compact, always visible, bottom-left; fades with its slide */}
+            <div className="absolute left-3 bottom-3 max-w-[75%] sm:max-w-[260px] bg-white/95 backdrop-blur-sm text-left rounded-lg shadow-lg px-3 py-2 border-l-4 border-[#40BCC8]">
+              <p className="font-bold text-[#28305F] text-sm leading-tight font-poppins">
                 {doctor.name}
               </p>
-              <p className="text-sm font-semibold text-[#034D76]">
+              <p className="text-xs font-semibold text-[#034D76] leading-snug mt-0.5">
                 {doctor.position}
               </p>
-              <p className="text-xs text-slate-600 mt-0.5">
+              <p className="text-xs text-slate-600 leading-snug">
                 {doctor.qualification}
               </p>
             </div>
@@ -114,8 +114,8 @@ const DoctorCarousel = ({ doctors }) => {
         );
       })}
 
-      {/* Dot navigation */}
-      <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center gap-2">
+      {/* Dot navigation (bottom-right, clear of the doctor info card) */}
+      <div className="absolute bottom-4 right-4 z-20 flex gap-2">
         {doctors.map((doctor, idx) => (
           <button
             key={doctor.name}
@@ -568,11 +568,11 @@ const BookEyeExamBeachesPage = () => {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-poppins">
               Your Trusted Eye Care & Eyewear Clinic in The Beaches
             </h1>
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#40BCC8] leading-snug font-poppins">
+            <p className="text-lg sm:text-xl lg:text-lg font-medium text-[#40BCC8] leading-snug font-poppins">
               10+ Years Serving Patients in The Beaches | Highly Rated by
               Patients | Comprehensive Eye Care & Eyewear
-            </h2>
-            <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            </p>
+            <p className="text-slate-200 text-base sm:text-md leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Get comprehensive eye exams, professional optometric care and
               quality eyewear at 360 Eyecare in The Beaches. Dr. Sam and Dr.
               Anita lead our clinical team, providing personalized vision and
