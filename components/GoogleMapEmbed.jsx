@@ -1,12 +1,17 @@
 "use client";
 
-const GoogleMapEmbed = ({ src }) => {
+const GoogleMapEmbed = ({
+  src,
+  className = "h-[500px]",
+  title = "Google Map",
+}) => {
   return (
-    <div className="relative w-full  font-sans">
+    <div className="relative w-full h-full font-sans flex-1 flex flex-col">
       {/* Google Maps iFrame */}
       <iframe
         src={src}
-        className="w-full h-[500px] border-0"
+        title={title}
+        className={`w-full border-0 flex-1 ${className}`}
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

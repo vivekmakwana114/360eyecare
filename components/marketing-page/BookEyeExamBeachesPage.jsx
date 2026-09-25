@@ -18,8 +18,132 @@ import {
   Sparkles,
   ArrowRight,
   Eye,
+  Glasses,
 } from "lucide-react";
 import GoogleMapEmbed from "../GoogleMapEmbed";
+import {
+  TeamSamBaraamImage,
+  TeamAnitaSritharanImage,
+  eyeglasses,
+} from "constants/Images";
+
+// Doctors shown in the hero carousel (Beaches clinic optometrists)
+const HERO_DOCTORS = [
+  {
+    name: "Dr. Sam Baraam",
+    position: "Lead Optometrist",
+    // qualification: "Doctor of Optometry – Pennsylvania College of Optometry",
+    image: TeamSamBaraamImage,
+    alt: "Dr. Sam Baraam, Optometrist at 360 Eyecare The Beaches",
+    // Per-breakpoint crop so the head sits near the top of the frame
+    // (mobile 4:5, sm 4:3, lg fixed height). Full literal strings for Tailwind JIT.
+    imagePosition: "object-[50%_100%] sm:object-[50%_30%] lg:object-[50%_62%]",
+  },
+  {
+    name: "Dr. Anita Sritharan",
+    position: "Optometrist",
+    // qualification:
+    //   "Doctor of Optometry (with Distinction) – University of Waterloo",
+    image: TeamAnitaSritharanImage,
+    alt: "Dr. Anita Sritharan, Optometrist at 360 Eyecare The Beaches",
+    imagePosition: "object-[50%_70%] sm:object-[50%_22%] lg:object-[50%_48%]",
+  },
+];
+
+const CAROUSEL_INTERVAL_MS = 4000;
+
+// Auto-rotating doctor image carousel with a name/position/qualification tooltip.
+// Pauses while hovered or focused, and does not auto-rotate for reduced-motion users.
+const DoctorCarousel = ({ doctors }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused || doctors.length < 2) return;
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (prefersReducedMotion) return;
+
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % doctors.length);
+    }, CAROUSEL_INTERVAL_MS);
+    return () => clearInterval(timer);
+  }, [isPaused, doctors.length]);
+
+  return (
+    <div
+      className="group relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/5] sm:aspect-[4/3] lg:aspect-auto lg:h-[480px] xl:h-[500px]"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+      onFocus={() => setIsPaused(true)}
+      onBlur={() => setIsPaused(false)}
+      tabIndex={0}
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Our Beaches optometrists"
+    >
+      {doctors.map((doctor, idx) => {
+        const isActive = idx === activeIndex;
+        return (
+          <div
+            key={doctor.name}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+              isActive ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
+            aria-hidden={!isActive}
+          >
+            <Image
+              src={doctor.image}
+              alt={doctor.alt}
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className={`object-cover w-full h-full ${doctor.imagePosition}`}
+              priority={idx === 0}
+            />
+
+            {/* Doctor info card: flush against the frame's left edge, so it reads as
+                a tab coming out of the left wall. Slides out from that edge when its
+                slide becomes active (the frame's overflow-hidden clips it while hidden). */}
+            <div
+              className={`absolute left-0 bottom-6 max-w-[80%] sm:max-w-[270px] bg-white/95 backdrop-blur-sm text-left rounded-r-lg shadow-[4px_4px_14px_rgba(0,0,0,0.25)] pl-4 pr-4 py-2 border-l-[5px] border-[#40BCC8] transition-transform duration-500 ease-out motion-reduce:transition-none ${
+                isActive ? "translate-x-0 delay-300" : "-translate-x-full"
+              }`}
+            >
+              <p className="font-bold text-[#28305F] text-sm leading-tight font-poppins">
+                {doctor.name}
+              </p>
+              <p className="text-xs font-semibold text-[#034D76] leading-snug mt-0.5">
+                {doctor.position}
+              </p>
+              <p className="text-xs text-slate-600 leading-snug">
+                {doctor.qualification}
+              </p>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Dot navigation (bottom-right, clear of the doctor info card) */}
+      <div className="absolute bottom-4 right-4 z-20 flex gap-2">
+        {doctors.map((doctor, idx) => (
+          <button
+            key={doctor.name}
+            type="button"
+            onClick={() => setActiveIndex(idx)}
+            aria-label={`Show ${doctor.name}`}
+            aria-current={idx === activeIndex}
+            className={`h-2.5 rounded-full transition-all ${
+              idx === activeIndex
+                ? "w-6 bg-[#40BCC8]"
+                : "w-2.5 bg-white/70 hover:bg-white"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 // Helper to get operating hours per weekday based on Beaches clinic schedule:
 // Mon, Thu: 9:00 AM - 7:00 PM
@@ -118,7 +242,7 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
       const hStr = String(Number(match[1])).padStart(2, "0");
       const pStr = match[3].toUpperCase();
       const found = hoursList.find(
-        (item) => item.displayH === hStr && item.period === pStr
+        (item) => item.displayH === hStr && item.period === pStr,
       );
       return {
         hourObj: found || hoursList[0] || null,
@@ -167,7 +291,9 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:border-[#40BCC8] focus:ring-2 focus:ring-[#40BCC8]/20 outline-none transition-all text-slate-900 bg-white flex items-center justify-between text-left"
       >
-        <span className={value ? "text-slate-900 font-medium" : "text-slate-400"}>
+        <span
+          className={value ? "text-slate-900 font-medium" : "text-slate-400"}
+        >
           {value || "Select Preferred Time"}
         </span>
         <Clock className="w-5 h-5 text-slate-900 shrink-0" />
@@ -177,7 +303,9 @@ const CustomTimePicker = ({ value, onChange, preferredDate }) => {
         <div className="absolute top-full left-0 right-0 mt-2 z-50 bg-white rounded-2xl border border-slate-200 shadow-2xl p-4 font-sans space-y-3">
           <div className="text-xs font-bold text-[#034D76] bg-slate-100 px-3 py-1.5 rounded-lg flex items-center justify-between">
             <span>{schedule.dayName} Hours</span>
-            <span className="text-slate-500 font-normal">{schedule.displayRange}</span>
+            <span className="text-slate-500 font-normal">
+              {schedule.displayRange}
+            </span>
           </div>
 
           <div className="grid grid-cols-2 gap-4 h-56">
@@ -445,31 +573,38 @@ const BookEyeExamBeachesPage = () => {
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3.5 py-1.5 rounded text-xs sm:text-sm font-medium text-[#40BCC8]">
               <Eye className="w-4 h-4" />
-              <span>360 Eyecare The Beaches Toronto</span>
+              <span>360 Eyecare The Beaches</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight font-poppins">
-              Book Your Eye Exam & Find Your Perfect Eyewear
+              Your Trusted Eye Care & Eyewear Clinic in The Beaches
             </h1>
-            <p className="text-slate-200 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Complete eye care and eyewear in one convenient Beaches location.
-              <br />
-              Get a comprehensive eye exam with an experienced optometrist and
-              explore prescription glasses personalized to your vision, lifestyle, and
-              personal style.
+            <p className="text-lg sm:text-xl lg:text-lg font-medium text-[#40BCC8] leading-snug font-poppins">
+              10+ Years Serving Patients in The Beaches | Highly Rated by
+              Patients | Comprehensive Eye Care & Eyewear
+            </p>
+            <p className="text-slate-200 text-base sm:text-md leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Get comprehensive eye exams, professional optometric care and
+              quality eyewear at 360 Eyecare in The Beaches. Dr. Sam and Dr.
+              Anita lead our clinical team, providing personalized vision and
+              eye care for patients in The Beaches and surrounding Toronto
+              communities.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
               {[
-                "Comprehensive Eye Exam",
-                "Advanced Diagnostic Technology",
-                "Convenient Beaches Location",
-                "Curated handcrafted & designer eyeglasses",
-                "OCT scan and retinal imaging",
-                "Street Parking Available",
+                "⭐ Highly Rated by Our Patients",
+                "✓ 10+ Years of Eye Care Experience",
+                "✓ Comprehensive Eye Care & Eyewear",
+                "📍Conveniently Located in The Beaches",
               ].map((item, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-sm text-slate-100 text-left">
-                  <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-md sm:text-nowrap text-left">{item}</span>
+                <div
+                  key={idx}
+                  className="flex items-start gap-2 text-sm text-slate-100 text-left"
+                >
+                  {/* <CheckCircle2 className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" /> */}
+                  <span className="text-sm md:text-md sm:text-nowrap text-left">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -477,39 +612,41 @@ const BookEyeExamBeachesPage = () => {
             <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button
                 onClick={scrollToForm}
-                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
               >
                 BOOK MY EYE EXAM
               </button>
+              <a
+                href="tel:+14166983937"
+                className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center inline-flex items-center justify-center"
+              >
+                Call Our Clinic
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Image */}
+          {/* Right Column: Doctor Carousel */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/3] sm:aspect-[16/10] lg:aspect-auto lg:h-[480px] xl:h-[500px]">
-              <Image
-                src="/location/HeroBeaches.png"
-                alt="360 Eyecare Beaches Clinic"
-                fill
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover w-full h-full"
-                priority
-              />
-            </div>
+            <DoctorCarousel doctors={HERO_DOCTORS} />
           </div>
         </div>
       </section>
 
       {/* 2. BOOKING FORM SECTION */}
-      <section id="lead-form" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 scroll-mt-24">
+      <section
+        id="lead-form"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-100 scroll-mt-24"
+      >
         <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl border border-slate-200 p-6 sm:p-10">
           <div className="text-center max-w-xl mx-auto mb-8 space-y-2">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#28305F] font-poppins">
               Book Your Eye Exam
             </h2>
             <p className="text-slate-600 text-sm sm:text-base">
-              Take the first step toward clearer vision and better eye health.<br/>
-              Fill out the form below and book your appointment at 360 Eyecare The Beaches.
+              Take the first step toward clearer vision and better eye health.
+              <br />
+              Fill out the form below and book your appointment at 360 Eyecare
+              The Beaches.
             </p>
           </div>
 
@@ -661,7 +798,8 @@ const BookEyeExamBeachesPage = () => {
               <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
                 <ShieldCheck className="w-4 h-4 text-[#40BCC8]" />
                 <span>
-                  Your information is secure and will only be used to help schedule and confirm your appointment.
+                  Your information is secure and will only be used to help
+                  schedule and confirm your appointment.
                 </span>
               </div>
               <p className="text-sm font-medium text-slate-600">
@@ -679,16 +817,18 @@ const BookEyeExamBeachesPage = () => {
       </section>
 
       {/* 3. VALUE PROPOSITION */}
-      <section className="py-16 sm:py-24 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-5xl mx-auto mb-16 space-y-4">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#28305F] font-poppins md:whitespace-nowrap">
-            Your Eye Exam Is More Than a Vision Check
+      <section className="py-8 sm:py-12 px-2 sm:px-4 lg:px-6 max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
+            Complete Eye Care & Eyewear in The Beaches
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
-            At 360 Eyecare The Beaches, we look beyond your prescription.<br /> Our comprehensive
-            eye exams assess your vision and overall eye health using modern diagnostic technology.
-            Once your exam is complete, our team can also help you explore eyewear options that suit your
-            prescription, lifestyle and personal style.
+          <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+            Everything You Need for Your Vision, All in One Place
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-7xl">
+            From comprehensive eye exams to eyewear and contact lenses, 360
+            Eyecare provides personalized vision care to help you and your
+            family see clearly and maintain healthy eyes.
           </p>
         </div>
 
@@ -696,27 +836,27 @@ const BookEyeExamBeachesPage = () => {
           {[
             {
               icon: Stethoscope,
-              title: "Comprehensive Eye Care",
+              title: "Comprehensive Eye Exams",
               description:
-                "Get a complete assessment of your vision and eye health with personalized recommendations.",
+                "Thorough assessments of your vision and eye health from Dr. Sam or Dr. Anita.",
             },
             {
               icon: Sparkles,
-              title: "Modern Diagnostic Technology",
+              title: "Professional Optometric Care",
               description:
-                "Our Beaches clinic uses advanced technology, including digital retinal imaging and OCT scanning, to provide a more detailed assessment of your eyes.",
+                "Personalized recommendations based on your vision, eye health and individual needs.",
+            },
+            {
+              icon: Glasses,
+              title: "Prescription Eyewear",
+              description:
+                "Explore glasses and frames that fit your prescription, lifestyle and personal style, with help from Lucel, Mia or Vanessa.",
             },
             {
               icon: Eye,
-              title: "Personalized Vision Solutions",
+              title: "Contact Lenses",
               description:
-                "Whether you need glasses, contact lenses or simply want to understand your eye health better, we'll help you understand your options.",
-            },
-            {
-              icon: Award,
-              title: "Eyewear in One Convenient Location",
-              description:
-                "After your exam, explore quality glasses and designer eyewear without having to visit another location. The Beaches clinic offers designer eyewear and glasses as part of its services.",
+                "Discover contact lens options suited to your vision requirements and lifestyle.",
             },
           ].map((card, idx) => (
             <div
@@ -737,102 +877,28 @@ const BookEyeExamBeachesPage = () => {
             </div>
           ))}
         </div>
-      </section>
-
-      {/* 4. EYE EXAM + EYEWEAR JOURNEY */}
-      <section className="py-16 sm:py-24 bg-[#28305F] text-white px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
-            <h2 className="text-3xl sm:text-4xl font-extrabold font-poppins text-white">
-              From Eye Exam to Your New Glasses
-            </h2>
-            <p className="text-slate-300 text-base">
-              Five simple steps to exceptional vision and personalized eyewear.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 lg:gap-8 mb-12 relative">
-            {[
-              {
-                step: "1",
-                title: "Book Your Eye Exam",
-                desc: "Choose a convenient appointment at our Beaches clinic.",
-              },
-              {
-                step: "2",
-                title: "Get Your Vision Checked",
-                desc: "Our optometrist will assess your vision and eye health and determine your prescription.",
-              },
-              {
-                step: "3",
-                title: "Explore Your Eyewear Options",
-                desc: "If you need glasses, browse eyewear options that complement your prescription, lifestyle and personal style.",
-              },
-              {
-                step: "4",
-                title: "Choose Your Lenses & Frames",
-                desc: "Our team can help you find the right combination of lenses and frames for your needs.",
-              },
-              {
-                step: "5",
-                title: "See Clearly. Look Great.",
-                desc: "Leave your visit knowing you've taken care of both your vision and your eyewear needs.",
-              },
-            ].map((item, idx) => (
-              <React.Fragment key={idx}>
-                <div className="bg-white/5 border border-white/10 hover:border-[#40BCC8]/40 rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:bg-white/10 group">
-                  <div>
-                    <span className="w-10 h-10 rounded-full bg-[#40BCC8] text-[#28305F] font-bold text-lg flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
-                      {item.step}
-                    </span>
-                    <h3 className="font-bold text-lg text-white mb-2 font-poppins">
-                      {item.title}
-                    </h3>
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-
-                  {/* Desktop Step Connector: Dashed Line with Right Triangle Pointer */}
-                  {idx < 4 && (
-                    <div className="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 w-6 lg:w-8 items-center z-20 pointer-events-none">
-                      <div className="flex-1 border-t-2 border-dashed border-white"></div>
-                      <div className="w-0 h-0 border-y-4 border-y-transparent border-l-[7px] border-l-white -ml-0.5 shrink-0"></div>
-                    </div>
-                  )}
-                </div>
-
-                {/* Mobile Step Connector: Vertical Dashed Line with Down Triangle Pointer */}
-                {idx < 4 && (
-                  <div className="md:hidden flex flex-col items-center justify-center my-2 pointer-events-none h-9 w-full">
-                    <div className="h-5 border-l-2 border-dashed border-white"></div>
-                    <div className="w-0 h-0 border-x-4 border-x-transparent border-t-[7px] border-t-white -mt-0.5 shrink-0"></div>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <button
-              onClick={scrollToForm}
-              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all"
-            >
-              BOOK MY EYE EXAM
-            </button>
-          </div>
+        <div className="pt-6 flex flex-col sm:flex-row gap-4 justify-center lg:justify-center">
+          <button
+            onClick={scrollToForm}
+            className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            BOOK MY EYE EXAM
+          </button>
         </div>
       </section>
 
-      {/* 5. WHY 360 EYECARE THE BEACHES */}
+      {/* 3. WHY CHOOSE 360 EYECARE? */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="max-w-7xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-            Eye Care You Can Trust in The Beaches
+            Why Choose 360 Eyecare?
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
-            At 360 Eyecare, our goal is to provide personalized eye care in a welcoming,
-            professional environment.
+          <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+            Trusted Eye Care in The Beaches
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Choosing an eye care provider is about more than finding the closest
+            clinic. It's about finding a team you can trust with your vision.
           </p>
         </div>
 
@@ -840,110 +906,119 @@ const BookEyeExamBeachesPage = () => {
           {[
             {
               icon: Award,
-              title: "10+ Years of Experience",
-              desc: "Dr. Sam Baraam and our experienced optometrists bring over 10 years of optometric excellence to 360 Eyecare The Beaches.",
+              title: "15+ Years of Eye Care Experience",
+              desc: "Dr. Sam and Dr. Anita bring more than 15 years of combined experience providing professional eye care and vision services. They are both certified optometrists.",
             },
             {
-              icon: Users,
-              title: "10,000+ Satisfied Patients",
-              desc: "Thousands of patients have trusted 360 Eyecare with their vision care.",
+              icon: Star,
+              title: "Highly Rated by Our Patients",
+              desc: "Our commitment to personalized care and patient experience has helped us build a strong reputation among our patients.",
             },
             {
               icon: Stethoscope,
-              title: "Experienced Team",
-              desc: "Our skilled optometrists and staff are committed to providing personalized care for patients of all ages.",
+              title: "Comprehensive Care",
+              desc: "From eye exams and optometric care to prescription eyewear and contact lenses, access multiple vision services in one convenient location.",
             },
             {
               icon: Sparkles,
-              title: "Advanced Technology",
-              desc: "Modern diagnostic tools help our team assess your vision and identify potential eye-health concerns.",
+              title: "Personalized Recommendations",
+              desc: "We take the time to understand your vision needs and help you choose solutions suited to your lifestyle.",
             },
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"
+              className="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center flex flex-col items-center justify-between"
             >
-              <div className="w-14 h-14 rounded-2xl bg-[#034D76]/10 text-[#034D76] flex items-center justify-center mb-6">
-                <item.icon className="w-7 h-7" />
+              <div>
+                <div className="w-14 h-14 rounded-2xl bg-[#034D76]/10 text-[#034D76] flex items-center justify-center mb-6 mx-auto">
+                  <item.icon className="w-7 h-7 text-[#034D76]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
-                {item.title}
-              </h3>
-              <p className="text-slate-600 text-sm md:text-base leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
+
+        <div className="pt-10 flex justify-center">
+          <button
+            onClick={scrollToForm}
+            className="bg-[#204060] hover:bg-[#034D76] text-white text-base font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            BOOK AN APPOINTMENT
+          </button>
+        </div>
       </section>
 
-      {/* 6. INSURANCE / OHIP */}
+      {/* 4. EYE EXAMS IN THE BEACHES */}
       <section className="py-16 sm:py-24 bg-slate-100 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
+          <div className="max-w-7xl mx-auto space-y-3">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-              Your Eye Exam May Be Covered
+              Eye Exams in The Beaches
             </h2>
-            <p className="text-slate-600 text-base sm:text-lg">
-              Depending on your age, medical circumstances and insurance plan, you may be eligible for coverage.
+            <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+              Comprehensive Eye Exams for Your Vision & Eye Health
+            </h3>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+              Regular eye exams are an important part of maintaining healthy
+              vision. At 360 Eyecare, Dr. Sam and Dr. Anita perform
+              comprehensive eye examinations to assess your vision and overall
+              eye health.
+            </p>
+            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+              Whether you're due for a routine examination, experiencing changes
+              in your vision or looking for ongoing eye care, Dr. Baraam or Dr.
+              Anita can help.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
-            {/* Left Column: Image matching right column height */}
-            <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 min-h-[300px] lg:min-h-full w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            {/* Left Column: Image */}
+            <div className="lg:col-span-5 relative rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 aspect-[4/3] lg:aspect-auto lg:h-[460px] w-full">
               <Image
                 src="/PatientScaledImage.webp"
-                alt="Eye Exam Coverage & Insurance - 360 Eyecare"
+                alt="Comprehensive Eye Exams at 360 Eyecare The Beaches"
                 fill
                 sizes="(max-width: 1024px) 100vw, 45vw"
                 className="object-cover w-full h-full"
-                priority
               />
             </div>
 
-            {/* Right Column: 2 Cards + Disclaimer + CTA Button */}
-            <div className="lg:col-span-7 flex flex-col justify-between space-y-4">
-              <div className="space-y-4">
+            {/* Right Column: Your Eye Exam Includes Checklist */}
+            <div className="lg:col-span-7 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-md space-y-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#28305F] font-poppins">
+                Your Eye Exam Includes:
+              </h3>
+              <ul className="space-y-4">
                 {[
-                  {
-                    icon: ShieldCheck,
-                    title: "Direct Insurance Billing",
-                    desc: "360 Eyecare The Beaches offers direct billing for many major insurance providers, including Sun Life, Manulife, GreenShield, Blue Cross, Desjardins and Canada Life.",
-                  },
-                  {
-                    icon: Users,
-                    title: "OHIP Government Coverage",
-                    desc: "OHIP coverage may also be available for eligible patients, including children under 20, adults 65+, and certain patients with specific medical conditions.",
-                  },
-                ].map((card, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-start gap-4 sm:gap-5"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-[#40BCC8]/15 text-[#034D76] flex items-center justify-center shrink-0">
-                      <card.icon className="w-6 h-6" />
+                  "Vision assessment",
+                  "Eye health evaluation including OCT scans and retinal imaging.",
+                  "Prescription assessment",
+                  "Personalized recommendations",
+                  "Discussion of your vision and eye care needs",
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="w-6 h-6 rounded-full bg-[#40BCC8]/15 text-[#034D76] flex items-center justify-center shrink-0 mt-0.5">
+                      <CheckCircle2 className="w-4 h-4 text-[#40BCC8]" />
                     </div>
-                    <div className="space-y-1">
-                      <h3 className="font-bold text-lg text-[#28305F] font-poppins">
-                        {card.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                        {card.desc}
-                      </p>
-                    </div>
-                  </div>
+                    <span className="text-slate-700 text-base sm:text-lg font-medium leading-relaxed">
+                      {item}
+                    </span>
+                  </li>
                 ))}
+              </ul>
 
-                <p className="text-xs text-slate-500 italic pt-1">
-                  Some additional tests or medications recommended by our optometrists may not be covered by individual plans or by OHIP. Please confirm your coverage at your appointment.
-                </p>
-              </div>
-
-              <div className="pt-2">
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={scrollToForm}
-                  className="bg-[#204060] hover:bg-[#034D76] text-white font-bold text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all w-full sm:w-auto"
+                  className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
                 >
-                  BOOK MY EYE EXAM
+                  BOOK AN EYE EXAM
                 </button>
               </div>
             </div>
@@ -951,13 +1026,140 @@ const BookEyeExamBeachesPage = () => {
         </div>
       </section>
 
-      {/* 10. PATIENT REVIEWS */}
+      {/* 5. EYEWEAR & OPTICAL */}
       <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="max-w-7xl mx-auto mb-16 space-y-3">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
-            Trusted by Patients in The Beaches
+            Eyewear & Optical
           </h2>
-          <div className="flex items-center justify-center gap-1 text-amber-400">
+          <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+            Find Eyewear That Fits Your Vision & Lifestyle
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            Looking for new glasses, frames or sunglasses in The Beaches? At 360
+            Eyecare, your eye care and eyewear needs can be handled in one
+            convenient location. Explore eyewear options based on your
+            prescription, lifestyle and personal preferences, with guidance from
+            our opticians Lucel, Mia and Vanessa.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: Glasses,
+              title: "Prescription Glasses",
+              description:
+                "Find frames and lenses suited to your prescription and everyday needs.",
+            },
+            {
+              icon: Sparkles,
+              title: "Frames & Eyewear",
+              description:
+                "Explore styles designed to complement your personal look, with help from Lucel, Mia or Vanessa.",
+            },
+            {
+              icon: Eye,
+              title: "Sunglasses",
+              description:
+                "Choose prescription or non-prescription sunglasses for everyday use and protection.",
+            },
+            {
+              icon: Award,
+              title: "Contact Lenses",
+              description:
+                "Get professional guidance from Dr. Sam or Dr. Anita when choosing contact lenses for your vision needs.",
+            },
+          ].map((card, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#40BCC8]/15 text-[#034D76] flex items-center justify-center mb-6">
+                  <card.icon className="w-6 h-6 text-[#034D76]" />
+                </div>
+                <h3 className="text-xl font-bold text-[#28305F] mb-3 font-poppins">
+                  {card.title}
+                </h3>
+                <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                  {card.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
+          
+           <Link
+            href="/eye-glasses"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#204060] hover:bg-[#034D76] text-white text-base font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            Explore Eyewear
+          </Link>
+          <button
+            onClick={scrollToForm}
+            className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
+          >
+            BOOK AN EYE EXAM
+          </button>
+        </div>
+      </section>
+
+      {/* 6. PERSONALIZED CARE FROM AN EXPERIENCED TEAM */}
+      <section className="py-16 sm:py-24 bg-gradient-to-br from-[#28305F] via-[#204060] to-[#034D76] text-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins text-white leading-tight">
+            Personalized Care From An Experienced Team
+          </h2>
+          <h3 className="text-xl sm:text-2xl font-medium text-[#40BCC8] font-poppins">
+            Your Vision Deserves Personal Attention
+          </h3>
+          <div className="space-y-4 max-w-7xl mx-auto text-slate-200 text-base sm:text-lg leading-relaxed">
+            <p>
+              At 360 Eyecare, we believe eye care should be personalized to each
+              patient.
+            </p>
+            <p>
+              Dr. Sam and Dr. Anita take the time to understand your concerns,
+              assess your vision and eye health, and recommend appropriate
+              solutions based on your individual needs.
+            </p>
+            <p>
+              Whether you're visiting for your first eye exam or returning for
+              ongoing care, you can expect professional service and a
+              patient-focused experience.
+            </p>
+          </div>
+
+          <div className="pt-6 flex justify-start">
+            <button
+              onClick={scrollToForm}
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
+            >
+              BOOK AN EYE EXAM
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. PATIENT REVIEWS */}
+      <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto mb-16 space-y-3">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
+            Patient Reviews
+          </h2>
+          <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+            Trusted by Patients Across Toronto
+          </h3>
+          <p className="text-slate-600 text-base sm:text-lg">
+            See what our patients have to say about their experience with 360
+            Eyecare.
+          </p>
+          <div className="flex items-center justify-start gap-1 text-amber-400 pt-2">
             {[...Array(5)].map((_, i) => (
               <Star key={i} className="w-5 h-5 fill-amber-400" />
             ))}
@@ -987,7 +1189,7 @@ const BookEyeExamBeachesPage = () => {
           ].map((review, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between"
+              className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow"
             >
               <div className="space-y-4">
                 <div className="flex gap-1 text-amber-400">
@@ -1000,92 +1202,259 @@ const BookEyeExamBeachesPage = () => {
                 </p>
               </div>
               <div className="pt-6 border-t border-slate-100 mt-6">
-                <p className="font-bold text-[#034D76] text-sm md:text-base">{review.author}</p>
+                <p className="font-bold text-[#034D76] text-sm md:text-base">
+                  {review.author}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 11. LOCATION */}
-      <section className="py-16 sm:py-24 bg-slate-100 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-5 space-y-6">
-            <h2 className="text-3xl font-extrabold text-[#28305F] font-poppins">
-              Conveniently Located in The Beaches
+      {/* 8. WHAT TO EXPECT */}
+      <section className="py-16 sm:py-24 bg-[#28305F] text-white px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto mb-16 space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-poppins text-white">
+              What to Expect
             </h2>
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-4 shadow-sm">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-6 h-6 text-[#40BCC8] shrink-0 mt-1" />
-                <div className="space-y-1">
-                  <p className="font-bold text-lg text-[#28305F]">
-                    360 Eyecare Beaches
-                  </p>
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    2199 Queen St E<br />
-                    Toronto, ON M4E 1E5
-                  </p>
-                </div>
-              </div>
-              <p className="text-sm text-slate-500 pt-2 border-t border-slate-100">
-                Located right on Queen Street East in the heart of The Beaches, our clinic
-                is easily accessible from Upper Beaches, Leslieville, and the surrounding
-                East Toronto neighbourhoods.
-              </p>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://www.google.com/maps?q=360+Eyecare+-+Beaches,+2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-[#204060] hover:bg-[#034D76] text-white font-bold px-6 py-3.5 rounded-xl shadow transition-all text-sm"
-              >
-                <MapPin className="w-4 h-4 text-[#40BCC8]" />
-                GET DIRECTIONS
-              </a>
-              <a
-                href="tel:416-698-3937"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 border border-slate-300 text-[#034D76] font-bold px-6 py-3.5 rounded-xl shadow-sm transition-all text-sm"
-              >
-                <Phone className="w-4 h-4 text-[#40BCC8]" />
-                CALL 416-698-3937
-              </a>
-            </div>
+            <h3 className="text-xl sm:text-2xl font-medium text-[#40BCC8] font-poppins">
+              Your Visit, Made Simple
+            </h3>
+            <p className="text-slate-300 text-base">
+              Four simple steps from booking to your personalized vision
+              solution.
+            </p>
           </div>
 
-          <div className="lg:col-span-7 h-[400px] rounded-3xl overflow-hidden shadow-lg border border-slate-200">
-            <GoogleMapEmbed
-              src="https://www.google.com/maps?q=360+Eyecare+-+Beaches,+2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada&output=embed"
-              title="360 Eyecare Beaches Location"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8 mb-12 relative">
+            {[
+              {
+                step: "01",
+                title: "Book Your Appointment",
+                desc: "Choose a convenient appointment time at our The Beaches clinic.",
+              },
+              {
+                step: "02",
+                title: "Comprehensive Eye Examination",
+                desc: "Dr. Sam or Dr. Anita assesses your vision and eye health.",
+              },
+              {
+                step: "03",
+                title: "Discuss Your Results",
+                desc: "We'll explain your results and answer your questions.",
+              },
+              {
+                step: "04",
+                title: "Find the Right Vision Solution",
+                desc: "If you need glasses, contact lenses or other eyewear, Lucel, Mia or Vanessa can help you explore your options.",
+              },
+            ].map((item, idx) => (
+              <React.Fragment key={idx}>
+                <div className="bg-white/5 border border-white/10 hover:border-[#40BCC8]/40 rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:bg-white/10 group">
+                  <div>
+                    <span className="w-10 h-10 rounded-full bg-[#40BCC8] text-[#28305F] font-bold text-base flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
+                      {item.step}
+                    </span>
+                    <h3 className="font-bold text-lg text-white mb-2 font-poppins">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Desktop Step Connector: Dashed Line with Right Triangle Pointer */}
+                  {idx < 3 && (
+                    <div className="hidden md:flex absolute left-full top-1/2 -translate-y-1/2 w-6 lg:w-8 items-center z-20 pointer-events-none">
+                      <div className="flex-1 border-t-2 border-dashed border-white"></div>
+                      <div className="w-0 h-0 border-y-4 border-y-transparent border-l-[7px] border-l-white -ml-0.5 shrink-0"></div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Mobile Step Connector: Vertical Dashed Line with Down Triangle Pointer */}
+                {idx < 3 && (
+                  <div className="md:hidden flex flex-col items-center justify-center my-2 pointer-events-none h-9 w-full">
+                    <div className="h-5 border-l-2 border-dashed border-white"></div>
+                    <div className="w-0 h-0 border-x-4 border-x-transparent border-t-[7px] border-t-white -mt-0.5 shrink-0"></div>
+                  </div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <button
+              onClick={scrollToForm}
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-base px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5"
+            >
+              BOOK AN EYE EXAM
+            </button>
           </div>
         </div>
       </section>
 
-      {/* 12. FINAL CTA */}
+      {/* 9. THE BEACHES LOCATION */}
+      <section className="py-16 sm:py-24 bg-slate-100 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-8">
+          <div className="max-w-7xl space-y-3">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#28305F] font-poppins">
+              The Beaches Location
+            </h2>
+            <h3 className="text-xl sm:text-2xl font-medium text-[#034D76] font-poppins">
+              Your Local Eye Care Clinic in The Beaches
+            </h3>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Conveniently located in The Beaches, 360 Eyecare provides
+              comprehensive eye care and eyewear services for patients in the
+              local community and surrounding Toronto neighbourhoods.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
+            {/* Left Column: Address Card with Actions */}
+            <div className="lg:col-span-5 bg-white p-6 sm:p-7 rounded-3xl border border-slate-200 space-y-5 shadow-sm flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-6 h-6 text-[#40BCC8] shrink-0 mt-1" />
+                  <div className="space-y-1">
+                    <p className="font-bold text-lg text-[#28305F]">
+                      360 Eyecare – The Beaches
+                    </p>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      2199 Queen St E<br />
+                      Toronto, ON M4E 1E5
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 pt-3 border-t border-slate-100">
+                  <Phone className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Phone
+                    </p>
+                    <a
+                      href="tel:416-698-3937"
+                      className="font-bold text-[#034D76] hover:text-[#40BCC8] text-sm"
+                    >
+                      416-698-3937
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 pt-3 border-t border-slate-100">
+                  <Clock className="w-5 h-5 text-[#40BCC8] shrink-0 mt-0.5" />
+                  <div className="space-y-1 text-sm text-slate-600">
+                    <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+                      Clinic Hours
+                    </p>
+                    <div className="space-y-0.5 text-xs sm:text-sm">
+                      <p>
+                        <span className="font-medium text-slate-700">
+                          Mon & Thu:
+                        </span>{" "}
+                        9:00 AM – 7:00 PM
+                      </p>
+                      <p>
+                        <span className="font-medium text-slate-700">
+                          Tuesday:
+                        </span>{" "}
+                        9:00 AM – 8:00 PM
+                      </p>
+                      <p>
+                        <span className="font-medium text-slate-700">
+                          Wed & Fri:
+                        </span>{" "}
+                        9:00 AM – 6:00 PM
+                      </p>
+                      <p>
+                        <span className="font-medium text-slate-700">
+                          Saturday:
+                        </span>{" "}
+                        10:00 AM – 5:00 PM
+                      </p>
+                      <p>
+                        <span className="font-medium text-slate-700">
+                          Sunday:
+                        </span>{" "}
+                        Closed
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://www.google.com/maps?q=360+Eyecare+-+Beaches,+2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#204060] hover:bg-[#034D76] text-white font-bold px-4 py-3 rounded-xl shadow transition-all text-xs sm:text-sm text-center"
+                >
+                  <MapPin className="w-4 h-4 text-[#40BCC8]" />
+                  GET DIRECTIONS
+                </a>
+                <a
+                  href="tel:416-698-3937"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-300 text-[#034D76] font-bold px-4 py-3 rounded-xl shadow-sm transition-all text-xs sm:text-sm text-center"
+                >
+                  <Phone className="w-4 h-4 text-[#40BCC8]" />
+                  CALL CLINIC
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Map matching the card height */}
+            <div className="lg:col-span-7 min-h-[380px] h-full rounded-3xl overflow-hidden shadow-sm border border-slate-200 flex flex-col">
+              <GoogleMapEmbed
+                src="https://www.google.com/maps?q=360+Eyecare+-+Beaches,+2199+Queen+St+E,+Toronto,+ON+M4E+1E5,+Canada&output=embed"
+                title="360 Eyecare Beaches Location"
+                className="h-full min-h-[380px]"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 11. FINAL CTA */}
       <section className="py-20 bg-gradient-to-br from-[#28305F] to-[#034D76] text-white text-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-7xl mx-auto space-y-6">
           <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins">
             Ready to Take Care of Your Vision?
           </h2>
-          <p className="text-slate-200 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Book your eye exam at 360 Eyecare The Beaches and take the next step toward clearer vision and eyewear you'll love.<br/><br/> Whether you're due for a routine eye exam, need an updated prescription or are ready to explore new glasses, our team is here to help.
+          <h3 className="text-xl sm:text-2xl font-medium text-[#40BCC8] font-poppins">
+            Book Your Eye Exam at 360 Eyecare – The Beaches
+          </h3>
+          <p className="text-slate-200 text-base sm:text-lg mx-auto leading-relaxed">
+            Experience trusted, professional eye care from Dr. Sam and Dr.
+            Anita, with convenient access to eyewear in The Beaches.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={scrollToForm}
-              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5"
+              className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg"
             >
-              BOOK MY EYE EXAM
+              BOOK AN EYE EXAM
             </button>
+            <a
+              href="tel:416-698-3937"
+              className="bg-white/10 hover:bg-white/20 border border-white/30 text-white font-bold text-lg px-9 py-4 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-sm inline-flex items-center gap-2"
+            >
+              <Phone className="w-5 h-5 text-[#40BCC8]" />
+              Call The Beaches Clinic
+            </a>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-[#1e2447] text-slate-400 py-8 text-center text-sm px-4">
-        <p>© {new Date().getFullYear()} 360 Eyecare The Beaches. All rights reserved.</p>
+        <p>
+          © {new Date().getFullYear()} 360 Eyecare The Beaches. All rights
+          reserved.
+        </p>
       </footer>
     </div>
   );
