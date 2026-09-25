@@ -35,6 +35,9 @@ const HERO_DOCTORS = [
     // qualification: "Doctor of Optometry – Pennsylvania College of Optometry",
     image: TeamSamBaraamImage,
     alt: "Dr. Sam Baraam, Optometrist at 360 Eyecare The Beaches",
+    // Per-breakpoint crop so the head sits near the top of the frame
+    // (mobile 4:5, sm 4:3, lg fixed height). Full literal strings for Tailwind JIT.
+    imagePosition: "object-[50%_100%] sm:object-[50%_30%] lg:object-[50%_62%]",
   },
   {
     name: "Dr. Anita Sritharan",
@@ -43,6 +46,7 @@ const HERO_DOCTORS = [
     //   "Doctor of Optometry (with Distinction) – University of Waterloo",
     image: TeamAnitaSritharanImage,
     alt: "Dr. Anita Sritharan, Optometrist at 360 Eyecare The Beaches",
+    imagePosition: "object-[50%_70%] sm:object-[50%_22%] lg:object-[50%_48%]",
   },
 ];
 
@@ -94,12 +98,18 @@ const DoctorCarousel = ({ doctors }) => {
               alt={doctor.alt}
               fill
               sizes="(max-width: 1024px) 100vw, 45vw"
-              className="object-cover object-[50%_40%] w-full h-full"
+              className={`object-cover w-full h-full ${doctor.imagePosition}`}
               priority={idx === 0}
             />
 
-            {/* Doctor info card: compact, always visible, bottom-left; fades with its slide */}
-            <div className="absolute left-3 bottom-3 max-w-[75%] sm:max-w-[260px] bg-white/95 backdrop-blur-sm text-left rounded-lg shadow-lg px-3 py-2 border-l-4 border-[#40BCC8]">
+            {/* Doctor info card: flush against the frame's left edge, so it reads as
+                a tab coming out of the left wall. Slides out from that edge when its
+                slide becomes active (the frame's overflow-hidden clips it while hidden). */}
+            <div
+              className={`absolute left-0 bottom-6 max-w-[80%] sm:max-w-[270px] bg-white/95 backdrop-blur-sm text-left rounded-r-lg shadow-[4px_4px_14px_rgba(0,0,0,0.25)] pl-4 pr-4 py-2 border-l-[5px] border-[#40BCC8] transition-transform duration-500 ease-out motion-reduce:transition-none ${
+                isActive ? "translate-x-0 delay-300" : "-translate-x-full"
+              }`}
+            >
               <p className="font-bold text-[#28305F] text-sm leading-tight font-poppins">
                 {doctor.name}
               </p>
