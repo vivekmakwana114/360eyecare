@@ -21,7 +21,11 @@ import {
   Glasses,
 } from "lucide-react";
 import GoogleMapEmbed from "../GoogleMapEmbed";
-import { TeamSamBaraamImage, TeamAnitaSritharanImage, eyeglasses } from "constants/Images";
+import {
+  TeamSamBaraamImage,
+  TeamAnitaSritharanImage,
+  eyeglasses,
+} from "constants/Images";
 
 // Doctors shown in the hero carousel (Beaches clinic optometrists)
 const HERO_DOCTORS = [
@@ -824,7 +828,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Stethoscope,
               title: "Comprehensive Eye Exams",
               description:
-                "Thorough assessments of your vision and eye health performed by our experienced optometry team.",
+                "Thorough assessments of your vision and eye health from Dr. Sam or Dr. Anita.",
             },
             {
               icon: Sparkles,
@@ -836,7 +840,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Glasses,
               title: "Prescription Eyewear",
               description:
-                "Explore glasses and frames that fit your prescription, lifestyle and personal style.",
+                "Explore glasses and frames that fit your prescription, lifestyle and personal style, with help from Lucel, Mia or Vanessa.",
             },
             {
               icon: Eye,
@@ -844,7 +848,6 @@ const BookEyeExamBeachesPage = () => {
               description:
                 "Discover contact lens options suited to your vision requirements and lifestyle.",
             },
-            
           ].map((card, idx) => (
             <div
               key={idx}
@@ -894,7 +897,7 @@ const BookEyeExamBeachesPage = () => {
             {
               icon: Award,
               title: "15+ Years of Eye Care Experience",
-              desc: "Our team brings more than 15 years of experience providing professional eye care and vision services.",
+              desc: "Dr. Sam and Dr. Anita bring more than 15 years of combined experience providing professional eye care and vision services. They are both certified optometrists.",
             },
             {
               icon: Star,
@@ -953,12 +956,14 @@ const BookEyeExamBeachesPage = () => {
             </h3>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Regular eye exams are an important part of maintaining healthy
-              vision. At 360 Eyecare, our optometry team performs comprehensive
-              eye examinations to assess your vision and overall eye health.
+              vision. At 360 Eyecare, Dr. Sam and Dr. Anita perform
+              comprehensive eye examinations to assess your vision and overall
+              eye health.
             </p>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Whether you're due for a routine examination, experiencing changes
-              in your vision or looking for ongoing eye care, our team can help.
+              in your vision or looking for ongoing eye care, Dr. Baraam or Dr.
+              Anita can help.
             </p>
           </div>
 
@@ -1021,10 +1026,11 @@ const BookEyeExamBeachesPage = () => {
             Find Eyewear That Fits Your Vision & Lifestyle
           </h3>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            Looking for new glasses, frames or sunglasses in The Beaches? At
-            360 Eyecare, your eye care and eyewear needs can be handled in one
-            convenient location. Explore eyewear options based on your prescription, lifestyle and
-            personal preferences, with guidance from our team.
+            Looking for new glasses, frames or sunglasses in The Beaches? At 360
+            Eyecare, your eye care and eyewear needs can be handled in one
+            convenient location. Explore eyewear options based on your
+            prescription, lifestyle and personal preferences, with guidance from
+            our opticians Lucel, Mia and Vanessa.
           </p>
         </div>
 
@@ -1040,7 +1046,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Sparkles,
               title: "Frames & Eyewear",
               description:
-                "Explore styles designed to complement your personal look.",
+                "Explore styles designed to complement your personal look, with help from Lucel, Mia or Vanessa.",
             },
             {
               icon: Eye,
@@ -1052,7 +1058,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Award,
               title: "Contact Lenses",
               description:
-                "Get professional guidance when choosing contact lenses for your vision needs.",
+                "Get professional guidance from Dr. Sam or Dr. Anita when choosing contact lenses for your vision needs.",
             },
           ].map((card, idx) => (
             <div
@@ -1075,12 +1081,15 @@ const BookEyeExamBeachesPage = () => {
         </div>
 
         <div className="pt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
-            onClick={scrollToForm}
+          
+           <Link
+            href="/eye-glasses"
+            target="_blank"
+            rel="noopener noreferrer"
             className="bg-[#204060] hover:bg-[#034D76] text-white text-base font-bold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5 text-center"
           >
             Explore Eyewear
-          </button>
+          </Link>
           <button
             onClick={scrollToForm}
             className="bg-[#40BCC8] hover:bg-[#34a4b0] text-white text-base font-bold px-8 py-4 rounded-xl hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-center"
@@ -1105,9 +1114,9 @@ const BookEyeExamBeachesPage = () => {
               patient.
             </p>
             <p>
-              Our team takes the time to understand your concerns, assess your
-              vision and eye health, and recommend appropriate solutions based
-              on your individual needs.
+              Dr. Sam and Dr. Anita take the time to understand your concerns,
+              assess your vision and eye health, and recommend appropriate
+              solutions based on your individual needs.
             </p>
             <p>
               Whether you're visiting for your first eye exam or returning for
@@ -1218,7 +1227,7 @@ const BookEyeExamBeachesPage = () => {
               {
                 step: "02",
                 title: "Comprehensive Eye Examination",
-                desc: "Our optometry team assesses your vision and eye health.",
+                desc: "Dr. Sam or Dr. Anita assesses your vision and eye health.",
               },
               {
                 step: "03",
@@ -1228,7 +1237,7 @@ const BookEyeExamBeachesPage = () => {
               {
                 step: "04",
                 title: "Find the Right Vision Solution",
-                desc: "If you need glasses, contact lenses or other eyewear, our team can help you explore your options.",
+                desc: "If you need glasses, contact lenses or other eyewear, Lucel, Mia or Vanessa can help you explore your options.",
               },
             ].map((item, idx) => (
               <React.Fragment key={idx}>
@@ -1409,8 +1418,8 @@ const BookEyeExamBeachesPage = () => {
             Book Your Eye Exam at 360 Eyecare – The Beaches
           </h3>
           <p className="text-slate-200 text-base sm:text-lg mx-auto leading-relaxed">
-            Experience trusted, professional eye care and convenient access to
-            eyewear in The Beaches.
+            Experience trusted, professional eye care from Dr. Sam and Dr.
+            Anita, with convenient access to eyewear in The Beaches.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
@@ -1426,19 +1435,6 @@ const BookEyeExamBeachesPage = () => {
               <Phone className="w-5 h-5 text-[#40BCC8]" />
               Call The Beaches Clinic
             </a>
-          </div>
-
-          <div className="pt-6 border-t border-white/10 max-w-2xl mx-auto text-xs sm:text-sm text-slate-300 flex flex-col items-center justify-center gap-1.5">
-            <span className="font-semibold text-white text-sm sm:text-base">
-              360 Eyecare – The Beaches
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-slate-300">
-              <span>2199 Queen St E, Toronto</span>
-              <span>•</span>
-              <a href="tel:416-698-3937" className="hover:text-white underline">
-                416-698-3937
-              </a>
-            </div>
           </div>
         </div>
       </section>
