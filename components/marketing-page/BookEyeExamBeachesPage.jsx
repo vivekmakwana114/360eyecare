@@ -584,8 +584,8 @@ const BookEyeExamBeachesPage = () => {
             </p>
             <p className="text-slate-200 text-base sm:text-md leading-relaxed max-w-2xl mx-auto lg:mx-0">
               Get comprehensive eye exams, professional optometric care and
-              quality eyewear at 360 Eyecare in The Beaches. Dr. Sam and Dr.
-              Anita lead our clinical team, providing personalized vision and
+              quality eyewear at 360 Eyecare in The Beaches. Dr. Sam Baraam and
+              Dr. Anita Sritharan lead our clinical team, providing personalized vision and
               eye care for patients in The Beaches and surrounding Toronto
               communities.
             </p>
@@ -838,7 +838,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Stethoscope,
               title: "Comprehensive Eye Exams",
               description:
-                "Thorough assessments of your vision and eye health from Dr. Sam or Dr. Anita.",
+                "Thorough assessments of your vision and eye health from Dr. Sam Baraam or Dr. Anita Sritharan.",
             },
             {
               icon: Sparkles,
@@ -907,7 +907,7 @@ const BookEyeExamBeachesPage = () => {
             {
               icon: Award,
               title: "15+ Years of Eye Care Experience",
-              desc: "Dr. Sam and Dr. Anita bring more than 15 years of combined experience providing professional eye care and vision services. They are both certified optometrists.",
+              desc: "Dr. Sam Baraam and Dr. Anita Sritharan bring more than 15 years of combined experience providing professional eye care and vision services. They are both certified optometrists.",
             },
             {
               icon: Star,
@@ -966,14 +966,14 @@ const BookEyeExamBeachesPage = () => {
             </h3>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Regular eye exams are an important part of maintaining healthy
-              vision. At 360 Eyecare, Dr. Sam and Dr. Anita perform
-              comprehensive eye examinations to assess your vision and overall
-              eye health.
+              vision. At 360 Eyecare, Dr. Sam Baraam and Dr. Anita Sritharan
+              perform comprehensive eye examinations to assess your vision and
+              overall eye health.
             </p>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
               Whether you're due for a routine examination, experiencing changes
-              in your vision or looking for ongoing eye care, Dr. Baraam or Dr.
-              Anita can help.
+              in your vision or looking for ongoing eye care, Dr. Sam Baraam or
+              Dr. Anita Sritharan can help.
             </p>
           </div>
 
@@ -1068,7 +1068,7 @@ const BookEyeExamBeachesPage = () => {
               icon: Award,
               title: "Contact Lenses",
               description:
-                "Get professional guidance from Dr. Sam or Dr. Anita when choosing contact lenses for your vision needs.",
+                "Get professional guidance from Dr. Sam Baraam or Dr. Anita Sritharan when choosing contact lenses for your vision needs.",
             },
           ].map((card, idx) => (
             <div
@@ -1124,7 +1124,7 @@ const BookEyeExamBeachesPage = () => {
               patient.
             </p>
             <p>
-              Dr. Sam and Dr. Anita take the time to understand your concerns,
+              Dr. Sam Baraam and Dr. Anita Sritharan take the time to understand your concerns,
               assess your vision and eye health, and recommend appropriate
               solutions based on your individual needs.
             </p>
@@ -1237,7 +1237,7 @@ const BookEyeExamBeachesPage = () => {
               {
                 step: "02",
                 title: "Comprehensive Eye Examination",
-                desc: "Dr. Sam or Dr. Anita assesses your vision and eye health.",
+                desc: "Dr. Sam Baraam or Dr. Anita Sritharan assesses your vision and eye health.",
               },
               {
                 step: "03",
@@ -1428,8 +1428,9 @@ const BookEyeExamBeachesPage = () => {
             Book Your Eye Exam at 360 Eyecare – The Beaches
           </h3>
           <p className="text-slate-200 text-base sm:text-lg mx-auto leading-relaxed">
-            Experience trusted, professional eye care from Dr. Sam and Dr.
-            Anita, with convenient access to eyewear in The Beaches.
+            Experience trusted, professional eye care from Dr. Sam Baraam and
+            Dr. Anita Sritharan, with convenient access to eyewear in The
+            Beaches.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
