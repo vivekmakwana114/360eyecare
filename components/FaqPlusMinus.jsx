@@ -2,63 +2,100 @@
 import { useState } from "react";
 import { Plus, Minus, ArrowUp } from "lucide-react";
 
-// Updated FAQ Data based on screenshot
+// Eye exam FAQ data. Each answer is an array of blocks:
+// a string renders as a paragraph, { list: [...] } renders as a bullet list.
 const faqData = [
   {
     id: 1,
     question:
       "How much does an eye exam cost in The Beaches and Yorkville, Toronto?",
-    answer:
-      "Usually, these exams are covered by your private vision or health care plan. Your eye exam will be covered by OHIP if you are 65 and over, 19 and under, or have specific conditions that are deemed insurable by OHIP. Please call our office to inquire further.",
+    answer: [
+      "The cost of a comprehensive eye exam at 360 Eyecare depends on your age and coverage. In Ontario, OHIP covers annual eye exams for children and youth under 20 and for adults 65 and older. So if you fall into either category, your routine exam at our Yorkville or Beaches clinic is covered at no cost to you, unless additional tests are recommended by the optometrist.",
+      "For adults between 20 and 64, OHIP does not cover routine eye exams, but many extended health benefit plans do either fully or partially. If you're unsure what your plan covers, it's worth checking before you book. Our front desk team at both locations can also help clarify what to expect when you call.",
+      "Out-of-pocket costs for a comprehensive exam vary depending on the complexity of the appointment and any additional testing required. Contact either clinic directly for current pricing.",
+    ],
   },
   {
     id: 2,
     question: "How often should I get my eyes examined?",
-    answer:
-      "This depends on your age and previously diagnosed conditions, but a good rule of thumb is to have your eyes regularly checked every 1 to 2 years. The sooner we can spot potential vision issues developing, the easier it is to correct. Knowing when to visit an eye doctor to get your eyes checked is important. Not only is this information advisable, but it could also save you from potentially developing advanced eye conditions that might not have symptoms at early stages. Only your optometrist can determine how frequently you should be seen for an examination. However, the Canadian Association of Optometrists recommends the following as the minimum frequency for routine eye examinations: Infants and toddlers should undergo their first eye examination between the ages of 6 and 9 months. Preschool Children 2 to 5 years of age should undergo at least one eye examination in this period. Schoolchildren aged 6 to 19 years should undergo an eye examination annually. Adults aged 20 to 39 years should undergo an eye examination every 2 to 3 years. Adults aged 40 to 64 years should undergo an eye examination every 2 years. Adults aged 65 years or older should undergo an eye examination annually. The risk of developing ocular disease is higher at 65 years of age and older. Our doctors at 360 Eyecare in Toronto strongly advocate following the recommended frequency of visits to your optometrist. These exams will detect early signs of many age-related eye diseases such as glaucoma, cataracts, and macular degeneration.",
+    answer: [
+      "The Canadian Association of Optometrists recommends the following schedule as a general guide:",
+      {
+        list: [
+          "Infants and toddlers: first exam between 6 and 9 months",
+          "Children (2–5 years): at least one exam before starting school",
+          "School-age children and teens (6–19): annually",
+          "Adults (20–39): every 2 to 3 years, or annually if you wear contacts or have risk factors",
+          "Adults (40–64): every 2 years",
+          "Adults 65 and older: annually",
+        ],
+      },
+      "That said, these are minimums. If you're experiencing changes in your vision, frequent headaches, eye strain from screen use, or have a family history of glaucoma, macular degeneration, or diabetes, your optometrist may recommend more frequent visits. Both our Yorkville and Beaches clinics can help you establish a monitoring schedule based on your individual risk profile.",
+    ],
   },
   {
     id: 3,
     question: "How flexible are the appointment times?",
-    answer:
-      "We try to cater to our patient's needs, thus, we will try to accommodate you as soon as possible. We also have appointments outside of working hours and on Saturdays, so you can have lots of possibilities for scheduling your eye exam in the The Beaches and Yorkville, Toronto.",
+    answer: [
+      "Both 360 Eyecare locations offer extended hours on weekday evenings and Saturday appointments, which makes fitting an exam around a full work schedule significantly easier than it used to be.",
+      "The Yorkville clinic on Bloor Street West is particularly convenient for patients working in the downtown core. The Beaches clinic on Queen Street East offers easy access via the 501 streetcar.",
+      "Walk-in appointments are welcome when availability allows, but booking online is the easiest way to secure your preferred time at either location.",
+    ],
   },
   {
     id: 4,
-    question: "How do I have to prepare for my eye exam?",
-    answer:
-      "Although not a lot of preparation is required, please be ready to answer questions about what prescription drugs you use and relevant family history. Also, if you currently wear glasses or contact lenses, please bring them with you. Lastly, if your exam requires your pupils to be dilated, we advise having someone else drive you.",
+    question: "How do I prepare for my eye test?",
+    answer: [
+      "Not much preparation is required, but a few things will make your appointment run more smoothly:",
+      {
+        list: [
+          "Bring your current glasses or contact lenses, even if your prescription feels outdated.",
+          "If you wear contacts, consider arriving in glasses.",
+          "Bring your OHIP card and any extended health benefit information.",
+          "Have a list of any medications you're currently taking, including eye drops.",
+          "If this is your first visit to 360 Eyecare, note any family history of eye conditions like glaucoma, macular degeneration, or retinal detachment.",
+          "If you're likely to have your pupils dilated, consider arranging a ride home or bringing sunglasses.",
+        ],
+      },
+    ],
   },
   {
     id: 5,
     question: "What should I expect during an eye exam?",
-    answer:
-      "During a comprehensive eye exam at our clinics, our optometrists will perform various tests to assess your vision and eye health. These may include visual acuity tests, refraction assessments, eye pressure measurements, and retinal examinations.",
+    answer: [
+      "A comprehensive eye exam at 360 Eyecare typically runs between 45 and 60 minutes for a new patient, though follow-up appointments are often shorter. You'll move through a structured sequence of assessments, with each test building on the last.",
+      "Nothing about a standard comprehensive exam is painful. Some tests involve brief puffs of air or bright lights, and dilation drops (when used) cause temporary blurring and light sensitivity that can last a couple of hours. Your optometrist will walk you through what each test involves and what they're looking for as you go.",
+    ],
   },
   {
     id: 6,
     question: "How long does an eye exam take?",
-    answer:
-      "Eye exams can take up to 40 to 60 minutes depending on the tests needed to be done. Most exams are completed in 30 to 40 minutes. Please allow extra time if you are a new patient and required to fill out paperwork before your examination.",
+    answer: [
+      "For a new patient undergoing a full comprehensive exam, expect to set aside 45 to 60 minutes. That includes the intake process, all assessments, imaging, and a consultation with your optometrist to go through results and recommendations. Returning patients with straightforward histories typically move through more quickly. If your appointment involves additional testing, your optometrist will let you know in advance so you can plan accordingly.",
+    ],
   },
   {
     id: 7,
     question: "Does my insurance cover eye exams?",
-    answer:
-      "Although we do accept most types of vision and health insurance plans, it's best to ask a few days in advance or when booking your appointment so we can check for you ahead of time.",
+    answer: [
+      "It depends on your age and your plan. OHIP covers routine annual eye exams for Ontarians under 20 and 65 and older. For adults between 20 and 64, coverage depends entirely on your extended health benefits package. Most employer-sponsored plans include some level of vision care, though the specific amount and frequency vary. Direct billing is available at both our Yorkville and Beaches locations for many major insurers. Ask our front desk team when you book, and we'll confirm what we can process on your behalf.",
+    ],
   },
   {
     id: 8,
     question:
       "Do you offer pediatric eye exams in Yorkville and The Beaches, Toronto?",
-    answer:
-      "Yes, we specialize in providing gentle and thorough pediatric eye exams to ensure your child's vision health. Our optometrists are experienced in examining children of all ages and strive to make the experience comfortable and enjoyable for young patients. You can book an eye exam with eye doctor near you at The Beaches or Yorkville.",
+    answer: [
+      "Yes, and it's one of the things we're particularly experienced with. Our optometrists see children as young as six months old, and we're trained to conduct thorough assessments even with patients who can't yet read a letter chart. Pediatric eye exams are covered by OHIP until age 20, which means there's no cost barrier to getting your child's vision checked annually.",
+      "Early detection matters enormously in pediatric eye care. Conditions like amblyopia (lazy eye), strabismus (eye turns), and myopia progress most quickly during childhood. If your child is school-age and hasn't had an eye exam recently, it's worth booking sooner. Both our Beaches and Yorkville clinics are set up to make the experience as calm and comfortable as possible for younger patients.",
+    ],
   },
   {
     id: 9,
     question: "Can I schedule an eye exam online?",
-    answer:
-      "Yes, you can easily schedule your eye exam online through our website. Simply select your preferred location (Beaches, Toronto, or Yorkville, Toronto), choose a convenient date and time, and our team will confirm your appointment.",
+    answer: [
+      "Yes. Online booking is available for both the Yorkville and Beaches locations directly through the 360 Eyecare website. Select your preferred clinic, choose a date and time that works, and you'll receive a confirmation. If you have specific questions before booking, you're welcome to call either clinic directly or reach out through the website contact form.",
+    ],
   },
 ];
 
@@ -93,10 +130,22 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
       </div>
       <div
         className={`bg-white px-4 overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 py-4" : "max-h-0"
+          isOpen ? "max-h-[1200px] py-4" : "max-h-0"
         }`}
       >
-        <p>{faq.answer}</p>
+        <div className="flex flex-col gap-3">
+          {faq.answer.map((block, index) =>
+            typeof block === "string" ? (
+              <p key={index}>{block}</p>
+            ) : (
+              <ul key={index} className="list-disc pl-5 space-y-1">
+                {block.list.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            )
+          )}
+        </div>
       </div>
     </div>
   );

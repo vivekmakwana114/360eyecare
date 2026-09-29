@@ -625,20 +625,13 @@ export const eyeExamTools = [
     label: "Visual Acuity & Snellen Chart",
     icon: <FaEye size={24} />,
     image: "/eyeexam/eyeexam1.webp",
-    title: "Visual Acuity & The Snellen Chart",
+    title: "The Snellen Chart — Visual Acuity Testing",
     description:
-      "The eye chart, officially known as the Snellen chart, is typically the first thing people think of when one says the phrase “eye exam”. The chart has several rows of letters of different sizes, with the largest letter on top and descending in size as you travel down the chart. Many patients recognize it for the big “E” at the top.",
+      "The eye chart is the oldest tool in the room and still one of the most useful. Developed by Dutch ophthalmologist Dr. Herman Snellen in the 1860s, the chart measures visual acuity by asking you to read rows of letters that decrease in size from top to bottom. The result tells your optometrist how your vision compares to a statistically “standard” eye at a given distance.",
     content:
-      "The Snellen chart is used to measure visual acuity. Its creator, Dr. Herman Snellen, created the chart in the 1860s to help measure his patient’s visual ability when compared to what a “standard”, “healthy” or “emmetropic” eye can read from specific distances.",
+      "Modern clinics, including 360 Eyecare, use digitized versions of the chart, which allow the optometrist to randomize letters between readings (eliminating memorization by frequent patients), adjust line size instantly, and operate the chart from a much smaller room using a mirror system. It sounds like a small upgrade. In practice, it makes the test more reliable and the appointment more efficient.",
     paragraph1:
-      "The standard distance for acuity is six meters or 20 feet, and by adjusting the size of the letters on the chart, it can simulate what something would look like at further or closer distances. The patient is asked to read lines on the chart, and their ability to do so is compared to the results of the “standard” eye; when paired together, the result is the patient’s visual acuity.",
-    paragraph2:
-      "For example, if the smallest line a patient can read on the chart is the one designated as “20/40”, then that means that the patient must be 20 feet away to read what a “standard” eye can read clearly at 40 feet. This test is done with and without visual aid devices (glasses, contact lenses, etc.), and is used in conjunction with the phoropter to determine the refractive power required to get as close to 20/20 visual acuity as possible. Depending on a patient’s eyes, they may be able to achieve 20/20 acuity without visual aids, or with the use of visual aids.",
-    title2: "What is Visual Acuity used for?",
-    paragraph3:
-      "Visual acuity is used as an indicator as to whether a patient may require glasses to legally drive – without glasses, a patient may only be able to achieve 20/80, but with glasses, they can comfortably achieve 20/20, for example. Visual acuity is also used to help diagnose and legally define low vision or blindness.",
-    paragraph4:
-      "Over the years the eye chart has become digitized, allowing the optometrist to randomize the letters to prevent chart memorization by frequent patients. Digitizing the chart also allows the optometrist to flip through the acuity lines at the press of a button, and to easily highlight specific lines for patients to read. With the use of a mirror, the optometrist can use the chart without the exam room needing to be 20 feet in length, making the space more efficient.",
+      "Visual acuity is used for establishing whether corrective lenses are needed, legally defining low vision or blindness, determining fitness to drive without glasses, and tracking vision changes over time.",
     height: "243",
     width: "243",
   },
@@ -648,14 +641,11 @@ export const eyeExamTools = [
     width: "533",
     icon: <FaMedkit size={24} />,
     image: "/eyeexam/eyeexam2.webp",
-    title: "The Phoropter",
-
+    title: "The Phoropter — Refraction Testing",
     content:
-      "One of the staple devices in the eye exam room, its design has had a few changes and modernizations as technology advanced. Also known as a refractor, the phoropter is typically mounted on an arm set up next to the exam chair that can swing and be manipulated in front of the patient’s eyes and face. The device contains many different lenses that can cycle in front of the patient’s eyes via manual or remote control. The optometrist can test and measure the patient’s refractive error by having the patient look through these lenses and evaluate how well they can see the eye chart at the other end of the room.",
+      "If the Snellen chart tells your optometrist that your vision needs correction, the phoropter tells them how much. This is the instrument you look through while your optometrist cycles through lens combinations to land on the precise prescription that gives you your clearest, most comfortable vision.",
     paragraph1:
-      "The phoropter contains lenses that help measure spherical power, astigmatism power axis of rotation, and even prism power and direction. Older phoropters were controlled manually by the optometrist spinning specific dials while asking for subjective feedback from the patient as to the level of clarity of their vision with the current selection of lenses. Modern phoropters are controlled remotely with a separate control panel that can save multiple lens selections and combinations at once, allowing the optometrist to rapidly switch between lenses and hone in on the patient’s prescription. With the click of a button, the final readings can then be added to the patient’s chart and easily printed for – or even emailed to – the patient for their use.",
-    paragraph2:
-      "While phoropters have been around since the 1910s, their design, and function as binocular refraction devices have changed very little, only becoming more efficient as technology has advanced.",
+      "At 360 Eyecare, we use digital phoropter technology rather than the traditional manual version. Digital phoropters switch between lens options faster and more smoothly, which reduces patient fatigue during testing and produces more reliable results, particularly for patients with complex prescriptions or those who find the manual version difficult to judge.",
   },
   {
     label: "The Slit Lamp",
@@ -663,13 +653,9 @@ export const eyeExamTools = [
     width: "243",
     icon: <FaLightbulb size={24} />,
     image: "/eyeexam/eyeexam3.webp",
-    title: "The Slit Lamp",
+    title: "The Slit Lamp — Anterior Segment Microscopy",
     content:
-      "The second staple of an optometrist’s exam room, the slit lamp is a powerful binocular microscope that the optometrist will use to examine the physical structures of the eye and evaluate a patient’s eye health. With the patient’s head positioned on the chin rest and against the forehead rest, the optometrist can look through the microscope and examine various points of interest from the front through to the back of the eye. The optometrist can examine the surface of the eye, the lids, and the meibomian glands along the lid margins, or the tear film and evaluate its effectiveness. ",
-    paragraph1:
-      "By manipulating the powerful light attached to the unit, the optometrist can bounce light inside the eye to see a cross-section of the layers of the cornea, and examine the anterior chamber and the lens between the anterior and posterior chambers. With stronger magnification, the optometrist can look further through an appropriately sized pupil (typically dilated) to see the back of the eye, where the retina, macula, and optic nerve head are.",
-    paragraph2:
-      "The slit lamp will typically have several smaller devices attached to it that can swing into position as needed. This may include a smaller bright light to aid in achieving a highly detailed view inside the eye or a tonometer to accurately measure the fluid pressure within the eye. While many devices and tools within healthcare have become digital and automatic, the slit lamp relies on the training and intricate manual control of the optometrist and remains one of the most useful tools of diagnostics in the optometrist’s arsenal.",
+      "The slit lamp is a binocular microscope mounted on a table, and it gives optometrists a highly magnified view of the front structures of the eye. The narrow beam of light it projects can be angled and focused to illuminate specific layers of tissue, making it the primary tool for detecting corneal conditions like keratoconus, surface infections, early cataracts, inflammatory conditions, and meibomian gland dysfunction.",
   },
   {
     label: "The Auto Refractor",
@@ -677,14 +663,9 @@ export const eyeExamTools = [
     width: "244",
     icon: <FaRobot size={24} />,
     image: "/eyeexam/eyeexam4.webp",
-    title: "The Auto Refractor",
+    title: "The Auto Refractor — Objective Baseline Measurement",
     content:
-      "One of the newer tools at an optometrist’s disposal, the auto-refractor is now a common element either in the exam rooms or during the pretest before the exam with the optometrist. It is a machine with a computer on board that uses light and a digital camera to give a rough measurement of the surface of a patient’s eyes. This provides the doctor with a general reading of the high points and low points of the surface of the eye (known as the keratometry or k-readings) which is useful when determining the best fit for soft contact lenses. The auto-refractor can also give a rough estimate of the patient’s starting or neutral refractive error. While it only provides a rough estimate, it provides a useful starting point for the optometrist in the exam room to work with in determining an accurate refraction and prescription for the patient.",
-
-    paragraph1:
-      "Some auto-refractors are fitted with an additional device that uses a pin-point light to measure corneal thickness and ocular fluid pressure less invasively than older methods. The more memorable element of these auto-refractors is the “puff of air” that shoots out of the machine towards the patient’s eye. Sensors on the patient’s side of the machine then measure the pressure of the air that bounces back off the patient’s eye and calculate the internal pressure of the fluids. This method of testing is considered to be preferred as it does not involve touching the patient or the eye, and can be done without administering numbing drops.",
-    paragraph2:
-      "Auto-refractors can be manually controlled by a trained technician or staff member or can be fully automatic and capable of switching between the patient’s eyes and its functions without operator input, making the pretesting stage quick and efficient.",
+      "Before your optometrist runs the subjective refraction with the phoropter, an autorefractor gives them an objective starting point. You look into the device at a small image — usually a hot air balloon or a house at the end of a road — while it automatically measures how light focuses on your retina. The reading isn’t a final prescription, but it significantly narrows the range the optometrist needs to test, making the phoropter portion of your exam faster and more precise.",
   },
   {
     label: "The Retinal Camera",
@@ -692,17 +673,11 @@ export const eyeExamTools = [
     width: "531",
     icon: <FaCamera size={24} />,
     image: "/eyeexam/eyeexam5.webp",
-    title: "The Retinal Camera",
-
+    title: "The Retinal Camera — Posterior Imaging",
     content:
-      "Another newer device that’s become a fixture for optometrists and ophthalmologists alike, the retinal camera is a powerful device with a custom camera system, microscope, and onboard computer that is capable of producing high-quality images of the structures located within the back of the eye. Known as fundus photography, the image captured can show the retina, macula, optic nerve, and all the veins and vessels all at once and in impeccable detail.",
-
+      "A high-resolution digital camera captures detailed photographs of the retina, macula, optic nerve head, and surrounding blood vessels. These images serve two purposes. First, they allow your optometrist to assess the current health of these structures in far greater detail than direct observation alone. Second, they create a documented visual record that makes it possible to detect and measure change over time, which is how conditions like glaucoma, diabetic retinopathy, and macular degeneration are caught and monitored before they cause significant vision loss.",
     paragraph1:
-      "While the slit lamp allows the optometrist to look at the same structures themselves, the photo is useful in seeing the whole of the rear of the eye as one image, and seeing the normally small parts of the eye at a much larger scale and level of detail only available with digital photography. Fundus photography can help detect retina or vitreous tears, damage caused by diabetic eye disease, swelling of the optic nerve, and early warning signs of glaucoma.",
-    paragraph2:
-      "Some cameras have also been modified with an additional scanning function, and using light waves can produce a cross-section scan of the retinal layers and the macula. Known as the Optical Coherence Tomography, or OCT scan, the scans can help the optometrist detect changes in retinal layer thickness, detect separations or irregularities, and aid in diagnosing conditions such as macular degeneration or diabetic eye disease. OCT scans can help guide treatment plans for conditions like glaucoma.",
-    paragraph3:
-      "The photos and scans produced by these retinal cameras have been invaluable in the early detection of eye-related diseases and conditions, and more and more optometrists are implementing them as a standard part of a regular exam.",
+      "At 360 Eyecare, retinal images are provided to every patient after their exam for their own records.",
   },
   {
     label: "The OCT",
@@ -710,13 +685,11 @@ export const eyeExamTools = [
     width: "531",
     icon: <FaMicroscope size={24} />,
     image: "/eyeexam/eyeexam6.webp",
-    title: "The OCT (Optical Coherence Tomography)",
+    title: "The OCT — Optical Coherence Tomography",
     content:
-      "Devices like the slit lamp and retinal camera allow optometrists a clear view of the back surface of the eye, but what if a diagnosis requires a deeper look? Conditions such as diabetic retinopathy and glaucoma can cause tissue damage within the layers of specialized cells that make up the retina. Still, that damage may not be visible on the uppermost layer. Age-related macular degeneration will cause the macula to become thinner over time, or cause abnormal blood vessels to grow and burst underneath the retina. So how can an optometrist look deeper within those retinal layers?",
+      "The OCT is arguably the most significant technological advancement in optometry in the past generation. It produces cross-sectional images of the retina at a microscopic level.",
     paragraph1:
-      "The OCT, or optical coherence tomography, is another type of imaging test that uses waves of light to capture a cross-section scan of the retina and macula area in the back of the eye. This allows the optometrist to look for changes in retinal layer thickness or density or for any abnormal growths or separation within the layers. It is not an x-ray and does not need to touch the eye at all for these scans, it is more comparable to a quick ultrasound using light instead of sound to produce a clearer image.",
-    paragraph2:
-      "Because of the importance of the retina and macula, and the limited nature of regeneration or recovery from damage, the OCT has become the standard test alongside retinal imaging for patients diagnosed with or suspected to have diabetes, glaucoma, and macular degeneration.",
+      "OCT is particularly valuable for early glaucoma detection, monitoring macular degeneration, assessing optic nerve health, and evaluating patients with diabetes or other systemic conditions that affect retinal tissue. What makes it so clinically important is that it can detect structural changes in the eye before those changes produce any symptoms the patient would notice.",
   },
   {
     label: "The Visual Fields Test",
@@ -724,14 +697,11 @@ export const eyeExamTools = [
     width: "531",
     icon: <FaSearchLocation size={24} />,
     image: "/eyeexam/EyeExam.webp",
-    title: "The Visual Fields Test",
-
+    title: "The Visual Fields Test — Perimetry",
     content:
-      "the devices and instruments in this article, the visual fields test is just as important for diagnosing severe conditions. The visual fields test measures the total width of a patient’s area of vision while they focus on a single point straight ahead, also known as the measure of peripheral vision ability in degrees. This test can detect any blind spots a patient might have or a decrease in peripheral ability over time due to conditions such as glaucoma",
-    paragragph1:
-      "The ways the visual fields test is administered can vary depending on whether the optometrist or ophthalmologist wants to run a basic check or a more in-depth examination. The detailed visual field test involves the patient looking into a machine called a perimeter and staring at a predetermined fixed point on the screen inside. The patient is then instructed to press a button every time they see a blinking light or moving line appear somewhere else on the screen without looking away from the center. The test is done per eye, with the untested eye covered for the duration, and can take anywhere from three to ten minutes to complete depending on the testing type.",
-    paragraph2:
-      "In some cases, a patient may only need to have visual field screening once. Other patients may need regular screening on a yearly or bi-annual basis. Certain jobs and careers require a visual field test as a part of their application process, and at least a basic visual field screening is required for new drivers getting their license in Ontario. Should you find yourself requiring a visual field test for any reason, a quick call to your regular optometrist to see if they provide that testing is recommended.",
+      "Peripheral vision loss is one of the most dangerous things that can happen to your eyes, partly because it tends to happen gradually and symmetrically. The visual fields test maps the full extent of your field of vision while you focus on a central point, identifying any blind spots, gaps, or areas of reduced sensitivity.",
+    paragraph1:
+      "Manual confrontation testing gives a quick gross assessment. Automated perimetry is used for more specific screening. It’s the standard tool for glaucoma monitoring and is also used when neurological conditions affecting the visual pathway are a concern. A tumour pressing on the optic chiasm, for example, produces a characteristic pattern of visual field loss that this test can identify.",
   },
 ];
 

@@ -15,10 +15,17 @@ const EyeExamTools = () => {
           Eye Exam Tools and Technology
         </h3>
         <hr className="w-[65px] h-[2px] bg-combination-100 mb-3 sm:mb-4" />
+        <p className="text-neutral-500 text-sm sm:text-base font-normal text-center max-w-3xl px-2 mb-3">
+          The experience of getting an Eye Test has changed over the past two
+          decades. Optometrists now have access to tools that make every
+          assessment faster, more precise, and more informative than what was
+          possible even ten years ago.
+        </p>
         <p className="text-neutral-500 text-sm sm:text-base font-normal text-center max-w-3xl px-2">
-          But hold on a moment. Phoropter? Visual fields? Retinal camera? There
-          are still a lot of terms here that can be confusing. Let's break it
-          down to some of the most common elements of an eye exam, shall we?
+          At both our Yorkville and Beaches clinics, 360 Eyecare invests in
+          diagnostic technology that gives our optometrists a clearer picture of
+          your eye health. Below are the primary instruments you&apos;re likely
+          to encounter during your appointment, and what each one actually does.
         </p>
       </div>
 
@@ -101,6 +108,11 @@ const EyeExamTools = () => {
                             <p className="text-neutral-700 text-xs sm:text-sm md:text-base leading-relaxed">
                               {tool.content}
                             </p>
+                            {tool.paragraph1 && (
+                              <p className="text-neutral-700 text-xs sm:text-sm md:text-base leading-relaxed">
+                                {tool.paragraph1}
+                              </p>
+                            )}
                             {tool.paragraph2 && (
                               <p className="text-neutral-700 text-xs sm:text-sm md:text-base leading-relaxed">
                                 {tool.paragraph2}
@@ -166,7 +178,8 @@ const EyeExamTools = () => {
           </div>
 
           {/* Desktop Content Area */}
-          <div className="relative bg-gray-100 rounded-lg px-6 py-8 min-h-[800px]">
+          {/* Height follows the active tab's content; mode="wait" ensures only one tab is mounted at a time */}
+          <div className="bg-gray-100 rounded-lg pb-8 overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected}
@@ -174,7 +187,7 @@ const EyeExamTools = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -50 }}
                 transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full h-full"
+                className="w-full"
               >
                 <div className="flex flex-col gap-4">
                   <div className="flex flex-col md:flex-row gap-8 px-6 py-8">
