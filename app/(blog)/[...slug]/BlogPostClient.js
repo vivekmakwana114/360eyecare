@@ -206,14 +206,17 @@ const BlogPostClient = ({ post: initialPost }) => {
   return (
     <main className="pt-[110px] min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured Image */}
+        {/* Featured Image: locked to 1200x600 (2:1). WordPress featured images are
+            uploaded at this size; aspect ratio + object-cover keeps the frame fixed
+            (no layout shift) even if an off-size image slips through. */}
         {data?.yoast_head_json?.og_image?.[0]?.url && (
           <Image
             src={data.yoast_head_json.og_image[0].url}
             alt={data.title.rendered || "Blog post image"}
             width={1200}
             height={600}
-            className="w-full h-auto mt-6 border border-[#E1E6EB] rounded-[10px]"
+            sizes="(max-width: 1280px) 100vw, 1216px"
+            className="w-full aspect-[2/1] object-cover mt-6 border border-[#E1E6EB] rounded-[10px]"
             priority
           />
         )}
