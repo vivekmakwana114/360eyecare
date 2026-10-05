@@ -33,10 +33,27 @@ const FAQItem = ({ faq, isOpen, toggleFAQ }) => {
       </div>
       <div
         className={`bg-white px-4 overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 py-4" : "max-h-0"
+          isOpen ? "max-h-[1200px] py-4" : "max-h-0"
         }`}
       >
-        {faq.answer}
+        {Array.isArray(faq.answer) ? (
+          // Block answers: a string is a paragraph, { list } is a bullet list
+          <div className="flex flex-col gap-3">
+            {faq.answer.map((block, index) =>
+              typeof block === "string" ? (
+                <p key={index}>{block}</p>
+              ) : (
+                <ul key={index} className="list-disc pl-5 space-y-1">
+                  {block.list.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              )
+            )}
+          </div>
+        ) : (
+          faq.answer
+        )}
       </div>
     </div>
   );
