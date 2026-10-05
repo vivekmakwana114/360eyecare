@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
+import { trackEvent, MARKETING_FORM_LOCATIONS } from "@/lib/analytics";
 
 export default function ThankYouPage() {
   const router = useRouter();
@@ -16,6 +17,15 @@ export default function ThankYouPage() {
         value: 1,
       });
     }
+
+    // GA4: attribute the thank-you view to the marketing page that sent the user here.
+    // Only whitelisted values are forwarded so arbitrary query strings don't pollute reports.
+    const locationParam = new URLSearchParams(window.location.search).get("location");
+    const formLocation =
+      locationParam && MARKETING_FORM_LOCATIONS.includes(locationParam)
+        ? locationParam
+        : "unknown";
+    trackEvent("booking_thank_you_view", { form_location: formLocation });
 
     const timer = setTimeout(() => {
       router.push("/");

@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export const metadata = {
   title: "Book an Eye Exam in The Beaches, Toronto | 360 Eyecare",
   description:
@@ -45,6 +47,20 @@ export default function BookEyeExamTheBeachesLayout({ children }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Google Analytics */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-68FLR804EH"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-68FLR804EH');
+        `}
+      </Script>
       {children}
     </>
   );

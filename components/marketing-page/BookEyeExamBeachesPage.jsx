@@ -21,6 +21,7 @@ import {
   Glasses,
 } from "lucide-react";
 import GoogleMapEmbed from "../GoogleMapEmbed";
+import { trackEvent } from "@/lib/analytics";
 import {
   TeamSamBaraamImage,
   TeamAnitaSritharanImage,
@@ -404,6 +405,17 @@ const BookEyeExamBeachesPage = () => {
     error: null,
   });
 
+  // GA4: fire booking_form_start only once per page visit
+  const hasTrackedFormStart = useRef(false);
+  const handleFormFocus = () => {
+    if (hasTrackedFormStart.current) return;
+    hasTrackedFormStart.current = true;
+    trackEvent("booking_form_start", {
+      form_location: "beaches",
+      form_name: "Book Eye Exam The Beaches",
+    });
+  };
+
   // Handle auto-scroll to lead form
   const scrollToForm = () => {
     const element = document.getElementById("lead-form");
@@ -515,8 +527,15 @@ const BookEyeExamBeachesPage = () => {
         });
       }
 
-      // Success -> Redirect to Thank You page
-      router.push("/thank-you");
+      // GA4: form-specific submit event for the start -> submit funnel
+      trackEvent("booking_form_submit", {
+        form_location: "beaches",
+        form_name: "Book Eye Exam The Beaches",
+        looking_for: formData.lookingFor,
+      });
+
+      // Success -> Redirect to Thank You page (location is read there for GA4)
+      router.push("/thank-you?location=beaches");
     } catch (err) {
       setStatus({
         submitting: false,
@@ -656,7 +675,12 @@ const BookEyeExamBeachesPage = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} noValidate className="space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            onFocus={handleFormFocus}
+            noValidate
+            className="space-y-6"
+          >
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1.5">
                 Full Name*

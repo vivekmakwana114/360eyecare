@@ -1622,67 +1622,120 @@ export const virtualShoppingFaqs = [
   },
 ];
 
-// FAQ Data
+// Booking destinations per clinic (same targets as the /book-eye-exam page)
+export const BOOK_YORKVILLE_URL =
+  "https://360rosedale.mypatientsportal.com/select-location";
+export const BOOK_BEACHES_URL = "/book-eye-exam#book-appointment";
+
+// Dry eye FAQ data. An answer is either a string, or an array of blocks:
+// a string renders as a paragraph, { list: [...] } renders as a bullet list.
 export const dryFaqdata = [
   {
     id: 1,
     question: "What is dry eye?",
     answer:
-      "Dry eye is a common condition where your eyes do not produce enough tears or the right quality of tears to keep the eyes moist and comfortable. This can lead to irritation, redness, and discomfort.",
+      "Dry eye disease (DED) is a chronic condition affecting the tear film. When the tear film becomes unstable, either because your eyes don't produce enough tears or because your tears evaporate too quickly, the result is a cycle of ocular surface inflammation and discomfort that tends to worsen over time without treatment.",
   },
   {
     id: 2,
-    question: "What causes dry eye?",
-    answer:
-      "Dry eye can be caused by a variety of factors, including aging, hormonal changes, environmental conditions, certain medications, and prolonged screen time. Other causes include underlying health conditions like autoimmune diseases and eyelid issues that affect tear production.",
+    question: "What causes dry eyes?",
+    answer: [
+      "Dry eye has two primary causes, which often overlap:",
+      "Evaporative dry eye, the most common type, occurs when the meibomian glands in the eyelids fail to produce sufficient or adequate-quality oil to stabilise the tear film.",
+      "Aqueous deficient dry eye occurs when the lacrimal glands don't produce enough tear fluid. It's associated with autoimmune conditions like Sjögren's syndrome, aging, hormonal changes particularly around menopause, and medications including antihistamines, antidepressants, and certain blood pressure drugs.",
+    ],
   },
   {
     id: 3,
     question: "What are the symptoms of dry eye?",
     answer:
-      "Common symptoms of dry eye include a stinging or burning sensation, gritty feeling, redness, sensitivity to light, blurred vision, and excessive tearing. If you experience these symptoms frequently, you may have dry eye syndrome.",
+      "The most common symptoms include burning or stinging, grittiness, redness, blurry or fluctuating vision, light sensitivity, eye fatigue, and, counterintuitively, excessive tearing.",
   },
   {
     id: 4,
     question: "How is dry eye diagnosed?",
-    answer:
-      "An eye care professional can diagnose dry eye through a comprehensive eye exam. They may use tests to measure tear production, tear film quality, and the overall health of your eyes.",
+    answer: [
+      "A proper dry eye diagnosis requires a structured clinical assessment that goes beyond a symptom questionnaire. At 360 Eyecare's Yorkville and Beaches clinics, dry eye assessment includes:",
+      {
+        list: [
+          "OCULUS Keratograph 5M imaging",
+          "i-PEN osmolarity testing",
+          "Tear Breakup Time (TBUT)",
+          "Schirmer tear test",
+          "Ocular surface staining",
+          "Lid margin and meibomian gland examination",
+        ],
+      },
+    ],
   },
   {
     id: 5,
-    question: "How can I prevent dry eye?",
-    answer:
-      "Preventing dry eye involves proper hydration, regular blink exercises, ergonomic adjustments to reduce eye strain, and maintaining a healthy diet rich in Omega 3. Using a humidifier, avoiding smoke and pollution, practicing good eyelid hygiene, and using artificial tears can also help alleviate dry eye symptoms.",
+    question: "How can I prevent dry eyes?",
+    answer: [
+      "Prevention focuses on protecting meibomian gland health and minimising the environmental and behavioural factors that destabilise the tear film:",
+      {
+        list: [
+          "Blink fully and deliberately during screen use",
+          "Use a humidifier during Toronto's heating season to maintain indoor humidity between 40 and 60 percent",
+          "Wear wraparound sunglasses or close-fitting frames outdoors, particularly in wind",
+          "Supplement with triglyceride-form omega-3 fatty acids",
+          "Use preservative-free lubricating drops proactively in dry environments rather than reactively once symptoms are established",
+          "Attend annual comprehensive eye exams",
+        ],
+      },
+    ],
   },
   {
     id: 6,
     question: "What treatments are available for dry eye disease?",
-    answer:
-      "Treatment options for dry eye include over-the-counter artificial tears, prescription eye drops, lifestyle changes, and in some cases, medical procedures. Advanced treatments like dry eye treatment with RF (Radiofrequency) and IPL (intense pulse light) are also available at specialized clinics like 360 Eyecare Clinics.",
+    answer: [
+      {
+        list: [
+          "Preservative-free artificial tears, lubricating ointments at night, warm compresses, eyelid hygiene, omega-3 supplementation, and environmental modifications",
+          "Cyclosporine eye drops (Restasis, Cequa), topical corticosteroids for acute inflammation, and low-dose oral doxycycline for MGD-driven inflammation",
+          "InMode IPL therapy",
+          "InMode RF therapy",
+          "Thermal pulsation",
+          "Punctal plug insertion",
+          "Scleral lens fitting for severe refractory cases",
+        ],
+      },
+    ],
   },
   {
     id: 7,
-    question: "Can dry eye be cured?",
-    answer:
-      "While there is no permanent cure for dry eye, the condition can be managed effectively with the right treatment and lifestyle adjustments. Regular eye exams and following your eye care professional's recommendations can help keep symptoms under control.",
+    question: "Can dry eyes be cured?",
+    answer: [
+      "It depends on the type and the underlying cause. For some patients (particularly those whose dry eye is driven by a correctable factor like medication side effects, vitamin deficiency, or an environmental trigger) addressing the root cause can resolve the condition significantly or completely.",
+      "For the majority of patients with MGD-driven evaporative dry eye, dry eye is a chronic condition that requires ongoing management rather than a one-time cure. The goal of treatment is to restore tear film stability, protect meibomian gland health, slow gland atrophy, and reduce symptoms to a level that doesn't meaningfully affect daily life.",
+    ],
   },
   {
     id: 8,
     question: "Is dry eye a serious condition?",
     answer:
-      "While dry eye is usually not serious in the early stages, it can cause significant discomfort and affect your quality of life. In severe cases, it can lead to complications like eye infections or damage to the corneal surface. It is important to seek treatment if you experience persistent symptoms.",
+      "More serious than it's typically given credit for. At the mild end, dry eye is an intermittent nuisance. At the moderate to severe end, it affects reading ability, driving comfort, screen tolerance, sleep quality, and contact lens wear.",
   },
   {
     id: 9,
-    question: "Can contact lenses cause dry eye?",
+    question: "Can contact lenses cause dry eyes?",
     answer:
-      "Yes, contact lenses can contribute to dry eye by reducing tear film stability and increasing evaporation. If you wear contact lenses and experience dry eye symptoms, discuss alternative options or solutions with your eye care professional.",
+      "Contact lenses are one of the most significant modifiable risk factors for dry eye and MGD. They disrupt tear film stability by sitting on the ocular surface and interfering with the normal spread of the lipid layer. They increase tear evaporation. This doesn't mean contact lens wearers are destined for dry eye, but it does mean that MGD management is particularly important for this group, and that contact lens-related dry eye symptoms that aren't responding to rewetting drops are usually a signal that the underlying gland health needs to be assessed rather than just the lens type changed.",
   },
   {
     id: 10,
     question: "Are there any home remedies for dry eye?",
-    answer:
-      "Home remedies for dry eye include staying hydrated, using warm compresses, practicing good eyelid hygiene, and taking regular breaks from screen time. However, it is important to consult with an eye care professional for a comprehensive treatment plan tailored to your specific needs.",
+    answer: [
+      {
+        list: [
+          "Warm compresses",
+          "Eyelid hygiene",
+          "Omega-3 supplementation",
+          "Environmental modifications",
+          "Conscious blinking practice",
+        ],
+      },
+    ],
   },
 ];
 

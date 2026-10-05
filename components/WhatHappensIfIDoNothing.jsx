@@ -22,54 +22,42 @@ const placeholderIcons = {
 const consequenceData = [
   {
     id: "01",
-    icon: "/eyecare/persistent.png",
-    title: "Persistent Discomfort",
+    icon: "/eyecare/decreased.png",
+    title: "Accelerated Gland Dropout",
     description:
-      "Symptoms like dryness, irritation, burning, and redness may worsen over time, leading to ongoing discomfort and reduced quality of life.",
+      "Gland dropout accelerates; secretory tissue lost to atrophy cannot regenerate.",
   },
   {
     id: "02",
-    icon: "/eyecare/reduced.png",
-    title: "Reduced Quality of Life",
+    icon: "/eyecare/corneal.png",
+    title: "Worsening Tear Film Instability",
     description:
-      "Chronic eye discomfort and visual disturbances can significantly impact daily activities, work performance, and overall well-being.",
+      "Tear film instability worsens, increasing corneal surface damage.",
   },
   {
     id: "03",
-    icon: "/eyecare/compromised.png",
-    title: "Compromised Vision",
+    icon: "/eyecare/Inflammation.png",
+    title: "Compounding Inflammation",
     description:
-      "Severe or untreated MGD may lead to blurry vision, affecting visual clarity and quality.",
+      "Chronic inflammation compounds, raising the risk of conjunctivitis and epithelial erosions.",
   },
   {
     id: "04",
-    icon: "/eyecare/corneal.png",
-    title: "Corneal Damage",
+    icon: "/eyecare/complications.png",
+    title: "Contact Lens Intolerance",
     description:
-      "Chronic dryness and tear film instability can increase the risk of corneal damage, including epithelial erosions and corneal ulcers.",
+      "Contact lens wear becomes increasingly uncomfortable and eventually intolerable.",
   },
   {
     id: "05",
-    icon: "/eyecare/Inflammation.png",
-    title: "Inflammation",
+    icon: "/eyecare/compromised.png",
+    title: "Declining Vision Quality",
     description:
-      "Inadequate lubrication and inflammation associated with MGD can contribute to ongoing eyelid (blepharitis) and eye surface (conjunctivitis) inflammation, potentially causing long-term damage.",
-  },
-  {
-    id: "06",
-    icon: "/eyecare/complications.png",
-    title: "Complications with Contact Lenses",
-    description:
-      "Individuals who wear contact lenses may experience increased discomfort, dryness, and intolerance to lenses due to compromised tear film and ocular surface health.",
-  },
-  {
-    id: "07",
-    icon: "/eyecare/decreased.png",
-    title: "Decreased Tear Film Stability",
-    description:
-      "Without proper gland function, the tear film may become unstable, increasing tear evaporation and exacerbating dry eye symptoms.",
+      "Vision quality degrades as corneal surface irregularity increases.",
   },
 ];
+
+const lastCard = consequenceData[consequenceData.length - 1];
 
 const WhatHappensIfIDoNothing = () => {
   return (
@@ -78,12 +66,13 @@ const WhatHappensIfIDoNothing = () => {
         {/* Title section */}
         <div className="md:ml-12 ml-0">
           <h2 className="text-3xl md:text-4xl font-bold text-white">
-            What happens if I do nothing?
+            What Happens If MGD Goes Untreated?
           </h2>
           <div className="w-16 h-0.5 bg-combination-100 mt-2" />
           <p className="text-white text-opacity-80 mt-4">
-            If you choose not to address MGD and leave it untreated, several
-            potential consequences may occur:
+            MGD is a progressive condition. It doesn&apos;t plateau, and it
+            doesn&apos;t resolve on its own. Left unmanaged, it follows a
+            predictable trajectory:
           </p>
         </div>
 
@@ -116,19 +105,6 @@ const WhatHappensIfIDoNothing = () => {
                 />
               ))}
             </div>
-
-            {/* Third row - 2 cards (not 3) */}
-            <div className="flex flex-wrap gap-6 md:gap-8">
-              {consequenceData.slice(4, 6).map((card) => (
-                <ConsequenceCard
-                  key={card.id}
-                  id={card.id}
-                  icon={card.icon}
-                  title={card.title}
-                  description={card.description}
-                />
-              ))}
-            </div>
           </div>
 
           {/* Right side container for image and last card */}
@@ -150,25 +126,13 @@ const WhatHappensIfIDoNothing = () => {
             {/* Last card below the image */}
             <div className="flex justify-center">
               <ConsequenceCard
-                key={consequenceData[6].id}
-                id={consequenceData[6].id}
-                icon={consequenceData[6].icon}
-                title={consequenceData[6].title}
-                description={consequenceData[6].description}
+                id={lastCard.id}
+                icon={lastCard.icon}
+                title={lastCard.title}
+                description={lastCard.description}
               />
             </div>
           </div>
-        </div>
-
-        {/* Bottom info text */}
-        <div className="mt-8 text-white text-opacity-80 md:ml-12 ml-0">
-          <p>
-            MGD is a chronic condition that typically requires ongoing
-            management to control symptoms and prevent complications. Seeking
-            treatment and adopting appropriate lifestyle modifications can help
-            alleviate discomfort, improve tear film stability, and maintain
-            long-term eye health.
-          </p>
         </div>
       </div>
     </div>
