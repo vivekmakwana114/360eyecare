@@ -17,11 +17,7 @@ import Image from "next/image";
 import WhatHappensIfIDoNothing from "../../../components/WhatHappensIfIDoNothing";
 import Symptoms from "../../../components/Symptoms";
 import DryFaqs from "../../../components/DryFaqs";
-import {
-  BOOK_BEACHES_URL,
-  BOOK_YORKVILLE_URL,
-  dryFaqdata,
-} from "constants/Constants";
+import { dryEyeClinics as clinics, dryFaqdata } from "constants/Constants";
 
 export async function generateMetadata() {
   return {
@@ -46,34 +42,6 @@ export async function generateMetadata() {
 const linkClass = "text-combination-200 hover:text-combination-100";
 const bookButtonClass =
   "bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white text-center font-bold py-3 px-8 rounded-md transition-colors duration-200 shadow-md";
-
-const clinics = [
-  {
-    name: "360 Eyecare Yorkville",
-    shortName: "Yorkville",
-    pageHref: "/toronto-rosedale-optometrist",
-    addressLines: [
-      "55 Bloor Street West, Suite 03",
-      "Manulife Centre, Toronto, ON M4W 1A5",
-    ],
-    phone: "416-901-2725",
-    email: "yorkville@360eyecare.ca",
-    description:
-      "Steps from Bay Station — serving Yorkville, The Annex, Bay Street corridor, Church-Wellesley Village, and the University of Toronto campus.",
-    bookHref: BOOK_YORKVILLE_URL,
-  },
-  {
-    name: "360 Eyecare Beaches",
-    shortName: "The Beaches",
-    pageHref: "/toronto-beaches-optometrist",
-    addressLines: ["2199 Queen Street East", "Toronto, ON M4E 1E5"],
-    phone: "416-698-3937",
-    email: "beaches@360eyecare.ca",
-    description:
-      "Accessible via the 501 Queen streetcar and Woodbine Station — serving The Beaches, Leslieville, Upper Beaches, East Danforth, and surrounding east end communities.",
-    bookHref: BOOK_BEACHES_URL,
-  },
-];
 
 const longTermHabits = [
   {
