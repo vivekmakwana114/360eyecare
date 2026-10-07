@@ -1627,6 +1627,100 @@ export const BOOK_YORKVILLE_URL =
   "https://360rosedale.mypatientsportal.com/select-location";
 export const BOOK_BEACHES_URL = "/book-eye-exam#book-appointment";
 
+// Clinic contact cards shared by the dry eye and IPL/RF service pages
+export const dryEyeClinics = [
+  {
+    name: "360 Eyecare Yorkville",
+    shortName: "Yorkville",
+    pageHref: "/toronto-rosedale-optometrist",
+    addressLines: [
+      "55 Bloor Street West, Suite 03",
+      "Manulife Centre, Toronto, ON M4W 1A5",
+    ],
+    phone: "416-901-2725",
+    email: "yorkville@360eyecare.ca",
+    description:
+      "Steps from Bay Station — serving Yorkville, The Annex, Bay Street corridor, Church-Wellesley Village, and the University of Toronto campus.",
+    bookHref: BOOK_YORKVILLE_URL,
+  },
+  {
+    name: "360 Eyecare Beaches",
+    shortName: "The Beaches",
+    pageHref: "/toronto-beaches-optometrist",
+    addressLines: ["2199 Queen Street East", "Toronto, ON M4E 1E5"],
+    phone: "416-698-3937",
+    email: "beaches@360eyecare.ca",
+    description:
+      "Accessible via the 501 Queen streetcar and Woodbine Station — serving The Beaches, Leslieville, Upper Beaches, East Danforth, and surrounding east end communities.",
+    bookHref: BOOK_BEACHES_URL,
+  },
+];
+
+// IPL & RF dry eye treatment FAQs. Answers are plain strings so they can
+// also be serialised into the page's FAQPage JSON-LD schema.
+export const iplRfFaqdata = [
+  {
+    id: 1,
+    question: "What is the difference between IPL and RF for dry eye?",
+    answer:
+      "IPL uses light energy to eliminate the abnormal blood vessels driving eyelid inflammation and thermally stimulate the meibomian glands. RF uses radiofrequency heat to liquefy blocked meibum and stimulate collagen in the eyelid tissue. IPL is most effective for rosacea-associated dry eye; RF works across all skin tones and adds structural collagen benefits IPL doesn't provide. Many patients benefit from both in combination.",
+  },
+  {
+    id: 2,
+    question: "How many sessions do I need?",
+    answer:
+      "IPL requires four sessions spaced two to four weeks apart. RF typically requires three to four sessions on the same schedule. Both are followed by maintenance sessions every six to twelve months depending on your response.",
+  },
+  {
+    id: 3,
+    question: "How long do results last?",
+    answer:
+      "Most patients experience meaningful relief for six to twelve months following a full treatment course. Maintenance sessions extend that duration. Results are tracked objectively using Keratograph and i-PEN measurements at follow-up appointments.",
+  },
+  {
+    id: 4,
+    question: "Is IPL or RF painful?",
+    answer:
+      "Neither treatment requires anaesthesia. IPL produces a brief warming sensation and flash of light with each pulse. RF feels like a warm, gentle massage. Both are well-tolerated and require no recovery time.",
+  },
+  {
+    id: 5,
+    question: "Can I have IPL if I have darker skin?",
+    answer:
+      "IPL is not appropriate for Fitzpatrick skin types V and VI, or for recently tanned skin. RF has no skin tone contraindications and is appropriate for all skin tones. Your optometrist will assess skin type at your consultation and recommend accordingly.",
+  },
+  {
+    id: 6,
+    question: "Do I need a referral to book?",
+    answer:
+      "No referral required. New patients are welcome at both our Yorkville and Beaches clinics. Book directly online or by phone.",
+  },
+  {
+    id: 7,
+    question: "Is IPL or RF covered by insurance?",
+    answer:
+      "IPL and RF for dry eye are not currently covered by OHIP. Some extended health benefit plans include coverage for in-office dry eye procedures — check your plan details before booking. Our team can provide itemised receipts for benefit submission.",
+  },
+  {
+    id: 8,
+    question: "What happens at the first appointment?",
+    answer:
+      "Your first appointment is a comprehensive dry eye assessment. It includes Keratograph 5M meibography, i-PEN osmolarity testing, lid margin examination, and a full review of your history and symptoms. Treatment recommendations are made based on those findings.",
+  },
+  {
+    id: 9,
+    question: "Can I combine IPL and RF in the same appointment?",
+    answer:
+      "Yes. At 360 Eyecare, combined IPL and RF therapy is often delivered in the same appointment, with RF immediately preceding or following IPL. The two treatments address complementary aspects of MGD and together produce more comprehensive improvement than either alone.",
+  },
+  {
+    id: 10,
+    question: "How soon will I notice improvement?",
+    answer:
+      "Most patients notice meaningful symptom improvement after sessions two and three. The full benefit of a treatment course is typically apparent four to six weeks after the final session, as the inflammatory response continues to resolve and, in the case of RF, collagen remodelling develops.",
+  },
+];
+
 // Dry eye FAQ data. An answer is either a string, or an array of blocks:
 // a string renders as a paragraph, { list: [...] } renders as a bullet list.
 export const dryFaqdata = [

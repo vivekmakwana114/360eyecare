@@ -17,11 +17,8 @@ import Image from "next/image";
 import WhatHappensIfIDoNothing from "../../../components/WhatHappensIfIDoNothing";
 import Symptoms from "../../../components/Symptoms";
 import DryFaqs from "../../../components/DryFaqs";
-import {
-  BOOK_BEACHES_URL,
-  BOOK_YORKVILLE_URL,
-  dryFaqdata,
-} from "constants/Constants";
+import ClinicBookingCards from "../../../components/ClinicBookingCards";
+import { dryEyeClinics as clinics, dryFaqdata } from "constants/Constants";
 
 export async function generateMetadata() {
   return {
@@ -46,34 +43,6 @@ export async function generateMetadata() {
 const linkClass = "text-combination-200 hover:text-combination-100";
 const bookButtonClass =
   "bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white text-center font-bold py-3 px-8 rounded-md transition-colors duration-200 shadow-md";
-
-const clinics = [
-  {
-    name: "360 Eyecare Yorkville",
-    shortName: "Yorkville",
-    pageHref: "/toronto-rosedale-optometrist",
-    addressLines: [
-      "55 Bloor Street West, Suite 03",
-      "Manulife Centre, Toronto, ON M4W 1A5",
-    ],
-    phone: "416-901-2725",
-    email: "yorkville@360eyecare.ca",
-    description:
-      "Steps from Bay Station — serving Yorkville, The Annex, Bay Street corridor, Church-Wellesley Village, and the University of Toronto campus.",
-    bookHref: BOOK_YORKVILLE_URL,
-  },
-  {
-    name: "360 Eyecare Beaches",
-    shortName: "The Beaches",
-    pageHref: "/toronto-beaches-optometrist",
-    addressLines: ["2199 Queen Street East", "Toronto, ON M4E 1E5"],
-    phone: "416-698-3937",
-    email: "beaches@360eyecare.ca",
-    description:
-      "Accessible via the 501 Queen streetcar and Woodbine Station — serving The Beaches, Leslieville, Upper Beaches, East Danforth, and surrounding east end communities.",
-    bookHref: BOOK_BEACHES_URL,
-  },
-];
 
 const longTermHabits = [
   {
@@ -553,41 +522,7 @@ const BookConsultationSection = () => (
       appointments available. New patients are welcome at both clinics.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
-      {clinics.map((clinic) => (
-        <div
-          key={clinic.name}
-          className="bg-gray-50 rounded-lg p-6 flex flex-col gap-3"
-        >
-          <h3 className="text-combination-200 text-lg sm:text-xl font-bold">
-            <Link href={clinic.pageHref} className="hover:text-combination-100">
-              {clinic.name}
-            </Link>
-          </h3>
-          <address className="not-italic text-neutral-500 text-sm sm:text-base leading-relaxed">
-            {clinic.addressLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
-            <a href={`tel:+1-${clinic.phone}`} className={`${linkClass} block`}>
-              📞 {clinic.phone}
-            </a>
-            <a href={`mailto:${clinic.email}`} className={`${linkClass} block`}>
-              ✉ {clinic.email}
-            </a>
-          </address>
-          <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
-            {clinic.description}
-          </p>
-          <div className="mt-auto pt-2">
-            <Link href={clinic.bookHref} className={`${bookButtonClass} inline-block`}>
-              Book a Dry Eye Consultation — {clinic.shortName}
-            </Link>
-          </div>
-        </div>
-      ))}
-    </div>
+    <ClinicBookingCards bookLabel="Book a Dry Eye Consultation" />
   </div>
 );
 
