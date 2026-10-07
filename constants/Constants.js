@@ -1044,30 +1044,30 @@ export const Orthokeratology = [
   {
     id: "01",
     icon: "/eyecare/persistent.png",
-    title: "Non-Surgical and Reversible",
+    title: "Non-Surgical and Fully Reversible",
     description:
-      "Unlike LASIK or other refractive surgeries, Ortho-K is non-invasive and completely reversible. If the patient discontinues wearing the lenses, the cornea gradually returns to its original shape.",
+      "Unlike LASIK and other refractive surgeries, Ortho-K produces no permanent change to corneal structure. The reshaping effect is temporary, maintained by nightly lens wear and reversible within one to two days of discontinuation as the corneal epithelium returns to its original profile. This makes Ortho-K an ideal option for patients who want the functional benefits of surgical vision correction without the permanence or surgical risk, and for children whose prescriptions are still changing and for whom surgery is not yet appropriate or available. If your prescription changes, the lenses can be updated. If you decide to stop, your cornea returns to exactly where it started.",
   },
   {
     id: "02",
     icon: "/eyecare/complications.png",
     title: "Freedom from Daytime Eyewear",
     description:
-      "Ortho-K allows patients to experience clear vision without glasses or contact lenses during the day, which can be especially beneficial for athletes, swimmers, and individuals in dusty or dry environments.",
+      "Ortho-K eliminates the need for glasses or daytime contact lenses during waking hours, providing a quality of visual freedom that typically requires refractive surgery to achieve any other way. For active patients, this is transformative: swimmers don't need prescription goggles, contact sport athletes don't risk lens displacement or glasses damage, and outdoor enthusiasts don't contend with lenses drying out in wind or glasses fogging in temperature changes. For children in Toronto who swim competitively, play hockey, or are involved in year-round sport, Ortho-K removes the daily friction of managing eyewear around physical activity in a way that no other myopia control treatment does.",
   },
   {
     id: "03",
     icon: "/homeIcons/doctorwithbp.png",
     title: "Slows Myopia Progression in Children",
     description:
-      "Research has shown that Ortho-K can help slow the progression of myopia in children, reducing the risk of developing high myopia and associated complications later in life.",
+      "Beyond its vision correction function, Ortho-K is one of the most effective myopia control treatments available. The peripheral defocus pattern created by the reshaped cornea inhibits the retinal signal that drives axial elongation, producing 40 to 60 percent reduction in myopia progression compared to standard single-vision correction in clinical trials. For a child currently progressing at -0.50D per year, this difference compounds significantly over the six to ten years of the typical active progression period, potentially resulting in a final prescription that is two to three dioptres lower than it would have been with standard correction alone. Lower final prescription means meaningfully lower lifetime risk of glaucoma, retinal detachment, macular degeneration, and cataract.",
   },
   {
     id: "04",
     icon: "/homeIcons/vision.png",
     title: "Comfort and Convenience",
     description:
-      "For those who find daytime contact lenses uncomfortable or inconvenient, Ortho-K provides a comfortable alternative that fits seamlessly into their nighttime routine.",
+      "For patients who find daytime contact lenses uncomfortable due to dry eye, long screen hours, air-conditioned environments, or simply the fatigue of extended lens wear, Ortho-K removes the discomfort entirely. Lenses are worn during sleep, when comfort during wear is irrelevant. Waking hours are lens-free. For patients who've struggled with dry, irritated eyes from daily contact lens wear, or who work in environments that make sustained lens wear difficult, Ortho-K frequently represents a significant quality-of-life improvement. In Toronto's dry winter months, when forced-air heating depletes indoor humidity and accelerates contact lens dehydration, the daytime lens-free advantage of Ortho-K is particularly appreciated by patients who've experienced contact lens discomfort year-round.",
   },
 ];
 
@@ -1711,6 +1711,70 @@ export const myopiaFaqdata = [
     question: "Do you offer myopia control at both Toronto locations?",
     answer:
       "Yes. Full myopia control programs, including all four treatment modalities, are available at both our Yorkville clinic on Bloor Street West and our Beaches clinic on Queen Street East. New patients are welcome at both locations without a referral.",
+  },
+];
+
+// Orthokeratology (Ortho-K) FAQs. Plain-string answers (also used for JSON-LD).
+export const orthoFaqdata = [
+  {
+    id: 1,
+    question: "How long does Ortho-K take to work?",
+    answer:
+      "Most patients notice significant vision improvement from the first morning after wear. Full, stable correction typically takes one to two weeks of consistent nightly use as the corneal reshape reaches its target profile.",
+  },
+  {
+    id: 2,
+    question: "How long does the vision correction last throughout the day?",
+    answer:
+      "Most patients with prescriptions up to -3.00D maintain clear unaided vision for the full waking day (16 to 18 hours) without top-up lens wear. Patients with higher prescriptions may notice some vision degradation by late afternoon, which typically improves as their eyes adjust to the treatment over the first few weeks.",
+  },
+  {
+    id: 3,
+    question: "Is Ortho-K safe for children?",
+    answer:
+      "Yes. Ortho-K is approved by Health Canada and has been used safely in children for over two decades. The primary safety requirement is consistent adherence to the lens care and hygiene protocol, particularly avoiding any tap water contact with the lenses.",
+  },
+  {
+    id: 4,
+    question: "What happens if I stop wearing Ortho-K lenses?",
+    answer:
+      "The cornea gradually returns to its original shape within one to two days of lens discontinuation. Your original prescription is fully restored.",
+  },
+  {
+    id: 5,
+    question: "Can Ortho-K correct astigmatism?",
+    answer:
+      "Yes, in many cases. Toric Ortho-K lens designs can manage astigmatism up to approximately -1.75D simultaneously with myopia correction. Higher levels of astigmatism may limit what's achievable. Your optometrist will assess this at the candidacy evaluation.",
+  },
+  {
+    id: 6,
+    question: "How much does Ortho-K cost in Toronto?",
+    answer:
+      "Ortho-K involves initial fitting fees covering the assessment, corneal topography mapping, and custom lens fabrication, as well as the lenses themselves and follow-up visits. Costs vary depending on the complexity of the fit and the lens design required. OHIP does not cover Ortho-K. Some extended health benefit plans include partial coverage for contact lens fittings.",
+  },
+  {
+    id: 7,
+    question: "How often do Ortho-K lenses need to be replaced?",
+    answer:
+      "Typically every one to two years, depending on wear patterns and deposit accumulation. Replacement may also be triggered by prescription changes that require updated lens parameters, particularly relevant for children whose myopia is still actively progressing.",
+  },
+  {
+    id: 8,
+    question: "Can I wear Ortho-K lenses if I have dry eye?",
+    answer:
+      "Mild to moderate dry eye is not necessarily a contraindication for Ortho-K, since the lenses are worn during sleep rather than during waking hours when dry eye symptoms are most pronounced. Significant dry eye that is not adequately managed may affect lens tolerance and corneal surface health; your optometrist will assess this at the fitting appointment and may recommend dry eye treatment before proceeding with Ortho-K.",
+  },
+  {
+    id: 9,
+    question: "Do I still need glasses with Ortho-K?",
+    answer:
+      "Most patients with prescriptions within the treatable range achieve full correction and don't need glasses during the day. A pair of glasses with your current prescription is recommended as a backup for days when lenses aren't worn and for the early weeks of treatment before full correction is achieved.",
+  },
+  {
+    id: 10,
+    question: "Is Ortho-K an alternative to laser eye surgery?",
+    answer:
+      "Ortho-K produces comparable daytime vision freedom to laser eye surgery. It's an excellent option for patients not yet eligible for surgery (too young, or prescription still changing), patients who want the freedom of surgery-free vision without committing permanently, or patients whose prescriptions or corneal anatomy make them poor surgical candidates.",
   },
 ];
 
