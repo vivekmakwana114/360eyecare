@@ -1656,6 +1656,64 @@ export const dryEyeClinics = [
   },
 ];
 
+// Myopia control clinic FAQs. Plain-string answers (also used for JSON-LD).
+export const myopiaFaqdata = [
+  {
+    id: 1,
+    question: "What is myopia control?",
+    answer:
+      "Myopia control refers to evidence-based treatments that slow the progression of nearsightedness in children.",
+  },
+  {
+    id: 2,
+    question: "At what age should myopia control start?",
+    answer:
+      "As early as myopia is detected and showing signs of progression, typically between ages six and fourteen.",
+  },
+  {
+    id: 3,
+    question: "How effective is myopia control?",
+    answer:
+      "Clinical trials consistently show 40 to 60 percent reduction in myopia progression compared to standard single-vision correction, depending on the treatment modality and the individual child.",
+  },
+  {
+    id: 4,
+    question: "Which myopia control treatment is best for my child?",
+    answer:
+      "It depends on your child's age, prescription, progression rate, corneal anatomy, and ability to handle contact lenses. Spectacle lenses are the lowest-barrier starting point. Ortho-K and MiSight offer strong efficacy with added convenience benefits. Atropine is uniquely flexible, usable at any age and combinable with optical modalities. Your optometrist will recommend the most appropriate option based on a full assessment.",
+  },
+  {
+    id: 5,
+    question: "Does myopia control stop myopia completely?",
+    answer:
+      "No, myopia control slows progression; it doesn't stop it entirely. The goal is to meaningfully reduce the final prescription your child reaches in adulthood, and thereby reduce their lifetime risk of myopia-associated eye disease.",
+  },
+  {
+    id: 6,
+    question: "Is Ortho-K safe for children?",
+    answer:
+      "Yes. Ortho-K is approved by Health Canada and has been used safely in children for over two decades. As with all contact lens wear, proper lens hygiene and care protocols are essential. Your optometrist will ensure your child and family are thoroughly trained before lenses are dispensed.",
+  },
+  {
+    id: 7,
+    question: "Does myopia control work once myopia has stabilised?",
+    answer:
+      "Myopia control is most effective during the active progression years, typically ages six to eighteen. Once myopia has stabilised, the focus shifts to monitoring and ensuring the final prescription remains stable into adulthood.",
+  },
+  {
+    id: 8,
+    question: "Is myopia control covered by OHIP or insurance?",
+    answer:
+      "OHIP does not cover myopia control treatments. Many extended health benefit plans include some coverage for contact lens fittings and eyewear; check your plan details.",
+  },
+  {
+    id: 9,
+    question: "Do you offer myopia control at both Toronto locations?",
+    answer:
+      "Yes. Full myopia control programs, including all four treatment modalities, are available at both our Yorkville clinic on Bloor Street West and our Beaches clinic on Queen Street East. New patients are welcome at both locations without a referral.",
+  },
+];
+
 // IPL & RF dry eye treatment FAQs. Answers are plain strings so they can
 // also be serialised into the page's FAQPage JSON-LD schema.
 export const iplRfFaqdata = [

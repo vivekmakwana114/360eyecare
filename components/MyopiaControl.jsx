@@ -3,329 +3,495 @@ import { useState } from "react";
 import { HoyaImage, ZeissImage } from "../constants/Images";
 import Image from "next/image";
 import Link from "next/link";
-const MyopiaControl = () => {
-  const [selected, setSelected] = useState(0);
 
-  const treatments = [
-    {
-      label: "Spectacle Therapy",
-      icon: "/homeIcons/eyetest.png",
-      // title: "Spectacle Therapy",
-      description:
-        "Spectacle therapy with specialized lenses can play a role in myopia control. These lenses are designed to manipulate how light enters the eye, potentially slowing down the elongation of the eyeball.",
-      content: (
-        <div>
+const linkClass = "text-combination-200 hover:text-combination-100";
+const subHeadingClass = "text-xl font-bold text-combination-200 mt-6 mb-3";
+const bulletListClass =
+  "list-disc list-outside pl-5 space-y-2 text-neutral-500";
+
+// Label + body bullet used throughout the lens / drop breakdowns
+const LabelledItem = ({ label, children }) => (
+  <li>
+    <strong className="text-gray-500">{label}</strong>{" "}
+    <span className="text-neutral-600">{children}</span>
+  </li>
+);
+
+const SimpleList = ({ items }) => (
+  <ul className={bulletListClass}>
+    {items.map((item) => (
+      <li key={item}>{item}</li>
+    ))}
+  </ul>
+);
+
+const treatments = [
+  {
+    label: "Spectacle Therapy",
+    icon: "/homeIcons/eyetest.png",
+    title: "Spectacle Therapy for Myopia Control",
+    description:
+      "Specially designed lenses including MiyoSmart (Hoya) and MyoCare (Zeiss) that use peripheral defocus technology to slow axial elongation while providing full distance correction. The lowest-barrier option for younger children or those not ready for contact lenses.",
+    content: (
+      <div>
+        <p className="text-neutral-500 mb-4">
+          Specialised myopia control spectacle lenses are the most accessible
+          and lowest-barrier treatment option. They look and function like
+          regular glasses, require no contact lens handling, and are appropriate
+          for children as young as six. For families whose children aren&apos;t
+          ready for contact lenses, or who prefer to start with a non-contact
+          approach, spectacle therapy is typically the first-line
+          recommendation at 360 Eyecare.
+        </p>
+        <p className="text-neutral-500 mb-8">
+          Both lenses we offer (MiyoSmart by Hoya and MyoCare by Zeiss) work
+          through peripheral defocus technology, creating a central zone of
+          clear, sharp vision alongside a peripheral zone of controlled blur
+          that signals the eye to reduce its axial elongation. The mechanism is
+          distinct from standard single-vision lenses, which correct central
+          vision but leave peripheral defocus in a pattern that may actually
+          encourage axial growth.
+        </p>
+
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="md:w-2/5">
+            <div className="bg-neutral-100 rounded-lg p-4 h-full flex items-center justify-center">
+              <Image
+                src={HoyaImage}
+                alt="MiyoSmart myopia control lens by Hoya"
+                width={446}
+                height={409}
+                className="max-w-full h-auto"
+              />
+            </div>
+          </div>
+          <div className="md:w-3/5">
+            <section className="text-base text-neutral-700">
+              <h3 className="text-3xl font-bold mb-6 text-combination-200">
+                MiyoSmart Lenses by Hoya
+              </h3>
+              <ul className="space-y-6 list-disc list-outside pl-5">
+                <LabelledItem label="Technology:">
+                  <Link
+                    href="/miyosmart"
+                    className={linkClass}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    MiyoSmart lenses
+                  </Link>{" "}
+                  incorporate Hoya&apos;s Defocus Incorporated Multiple
+                  Segments (D.I.M.S.) technology, a honeycomb array of 396
+                  small defocus segments surrounding a central clear zone. The
+                  segments create simultaneous peripheral blur that signals the
+                  retina to inhibit axial elongation, while the central zone
+                  provides full distance correction.
+                </LabelledItem>
+                <LabelledItem label="Clinical evidence:">
+                  A two-year randomised clinical trial involving 183 children
+                  aged 8 to 13 with myopia between -1.00D and -5.00D found that
+                  MiyoSmart lenses produced a 59% reduction in myopia
+                  progression measured by cycloplegic spherical equivalent
+                  refraction and a 60% reduction in axial length elongation
+                  compared to standard single-vision lenses. A subsequent
+                  three-year study confirmed sustained efficacy, with no rebound
+                  effect observed when treatment was discontinued.{" "}
+                  <strong>Source: </strong>
+                  <Link
+                    href="https://www.hoyavision.com/en-ca/vision-products/miyosmartvr25/"
+                    className={linkClass}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    MiyoSmart spectacle performance
+                  </Link>
+                  .
+                </LabelledItem>
+                <LabelledItem label="Best suited for:">
+                  Children aged 6 and older who prefer glasses over contact
+                  lenses; younger children not yet ready for contact lens
+                  handling; families looking for a straightforward,
+                  high-compliance starting point for myopia control.
+                </LabelledItem>
+              </ul>
+            </section>
+          </div>
+        </div>
+
+        <div className="mt-8">
           <div className="flex flex-col md:flex-row gap-6">
-            <div className="md:w-2/5">
+            <div className="md:w-3/5 order-2 md:order-1">
+              <section className="text-base text-neutral-700">
+                <h3 className="text-3xl font-bold mb-6 text-combination-200">
+                  MyoCare Lenses by Zeiss
+                </h3>
+                <ul className="space-y-6 list-disc list-outside pl-5">
+                  <LabelledItem label="Technology:">
+                    MyoCare lenses use Zeiss DualZone technology, a central
+                    clear zone for sharp distance vision surrounded by a
+                    peripheral treatment zone incorporating multiple defocus
+                    elements. Similar in principle to D.I.M.S. but with a
+                    distinct optical design and segment configuration.
+                  </LabelledItem>
+                  <LabelledItem label="Clinical evidence:">
+                    A 12-month multicentre trial involving 240 children aged 6
+                    to 13 with myopia between -0.75D and -5.00D found that
+                    MyoCare lenses slowed myopia progression by an average of
+                    0.31D and reduced axial elongation by 0.13mm compared to
+                    single-vision lenses, a relative efficacy of approximately
+                    48% and 41% respectively. <strong>Source: </strong>
+                    <Link
+                      href="https://reviewofmm.com/zeiss-shares-data-on-myocare-efficacy-at-arvo-2024/"
+                      className={linkClass}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Zeiss data on MyoCare efficacy 2024
+                    </Link>
+                    .
+                  </LabelledItem>
+                  <LabelledItem label="Best suited for:">
+                    Children preferring glasses; those for whom MiyoSmart lenses
+                    are not the optimal optical fit; patients whose optometrist
+                    determines the Zeiss optical design better matches their
+                    visual requirements.
+                  </LabelledItem>
+                </ul>
+              </section>
+            </div>
+            <div className="md:w-2/5 order-1 md:order-2">
               <div className="bg-neutral-100 rounded-lg p-4 h-full flex items-center justify-center">
                 <Image
-                  src={HoyaImage}
-                  alt="MiyoSmart Lens"
-                  width={446}
-                  height={409}
+                  src={ZeissImage}
+                  alt="MyoCare myopia control lens by Zeiss"
+                  width={300}
+                  height={300}
                   className="max-w-full h-auto"
                 />
               </div>
             </div>
-            <div className="md:w-3/5">
-              <section className="text-base text-neutral-700">
-                <h3 className="text-3xl font-bold mb-6 text-combination-200">
-                  MiyoSmart Lenses by Hoya
-                </h3>
-                <ul className="space-y-6 list-disc list-inside">
-                  <li>
-                    <strong className="text-gray-500 ">Technology:</strong>{" "}
-                    <span className="text-neutral-600 text-combination-200">
-                      <Link
-                        href="/miyosmart"
-                        className="text-combination-200 hover:text-combination-100"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        MiyoSmart lenses
-                      </Link>{" "}
-                      incorporate Defocus Incorporated Multiple Segments
-                      (D.I.M.S.) technology. These tiny segments within the lens
-                      create a central clear zone for sharp vision and a
-                      peripheral zone with a slight blur. This peripheral blur
-                      is thought to signal the eye to reduce its axial
-                      elongation.
-                    </span>
-                  </li>
-                  <li>
-                    <strong className="text-gray-500 ">
-                      Benefits and Effectiveness:
-                    </strong>{" "}
-                    <span className="text-neutral-600">
-                      Studies have shown promising results with MiyoSmart lenses
-                      in slowing myopia progression by an average of 60%.
-                    </span>
-                  </li>
-                  <li>
-                    <strong className="text-gray-500 ">
-                      Clinical Studies:
-                    </strong>{" "}
-                    <span className="text-neutral-600">
-                      A 2-year randomized clinical trial involving 183 Chinese
-                      children aged 8-13 with myopia between -1.00D and -5.00D
-                      found that the MiYOSMART lens provided a 59% reduction in
-                      myopia progression measured by cycloplegic spherical
-                      equivalent refraction and a 60% reduction in axial length
-                      elongation compared to single vision lenses
-                    </span>{" "}
-                    <span className="text-neutral-600">
-                      <strong>Source: </strong>
-                      <Link
-                        href="https://www.hoyavision.com/en-ca/vision-products/miyosmartvr25/"
-                        className=" text-combination-200 hover:text-combination-100"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Miyosmart spectacle performance
-                      </Link>
-                      .
-                    </span>
-                  </li>
-                </ul>
-              </section>
-            </div>
           </div>
+        </div>
 
-          <div className="mt-8">
-            <div className="flex flex-col md:flex-row gap-6">
-              <div className="md:w-3/5 order-2 md:order-1">
-                <section className="text-base text-neutral-700">
-                  <h3 className="text-3xl font-bold mb-6 text-combination-200">
-                    MyoCare Lenses by Zeiss
-                  </h3>
-                  <ul className="space-y-6 list-disc list-inside">
-                    <li>
-                      <strong className="text-gray-500 ">Technology:</strong>{" "}
-                      <span className="text-neutral-600">
-                        MyoCare lenses utilize DualZone technology. Similar to
-                        MiyoSmart lenses, they have a central clear zone and a
-                        peripheral zone with a slight defocus.
-                      </span>
-                    </li>
-                    <li>
-                      <strong className="text-gray-500 ">
-                        Benefits and Effectiveness:
-                      </strong>{" "}
-                      <span className="text-neutral-600">
-                        Research suggests MyoCare lenses can be effective in
-                        slowing myopia progression, with studies showing an
-                        average reduction of around 59%.
-                      </span>
-                    </li>
-                    <div>
-                      <strong className="text-gray-500 ">
-                        Clinical Studies:
-                      </strong>{" "}
-                      <span className="text-neutral-600">
-                        Clinical Studies: In a 12-month multi-center trial in
-                        China involving 240 children aged 6-13 with myopia
-                        between -0.75D and -5.00D, ZEISS MyoCare lenses slowed
-                        myopia progression by an average of 0.31D and axial
-                        elongation by 0.13 mm compared to single vision lenses,
-                        a relative efficacy of 48% and 41% respectively
-                      </span>{" "}
-                      <span className="text-neutral-600">
-                        <strong>[Source: </strong>
-                        <Link
-                          href="https://reviewofmm.com/zeiss-shares-data-on-myocare-efficacy-at-arvo-2024/"
-                          className="text-combination-200 hover:text-combination-100"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Zeiss data on Myocare efficacy 2024
-                        </Link>
-                        ].
-                      </span>
-                    </div>
-                  </ul>
-                </section>
-              </div>
-              <div className="md:w-2/5 order-1 md:order-2">
-                <div className="bg-neutral-100 rounded-lg p-4 h-full flex items-center justify-center">
-                  <Image
-                    src={ZeissImage}
-                    alt="MyoCare Lens"
-                    width={300}
-                    height={300}
-                    className="max-w-full h-auto"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-    },
-    {
-      label: "Orthokeratology (Ortho-K)",
-      icon: "/homeIcons/ortho1.png",
-      // title: "Orthokeratology (Ortho-K)",
-      description:
-        "Ortho-K involves wearing specially designed rigid gas permeable contact lenses overnight. These lenses gently reshape the cornea while you sleep, providing clear vision throughout the day without the need for daytime glasses or contacts.",
-      content: (
-        <div>
-          <ul className="space-y-4 list-disc">
-            <li>
-              <strong className="text-gray-500 ">How It Works:</strong>{" "}
-              <Link
-                href="orthokeratology-treatment/"
-                className="text-combination-200 hover:text-combination-100"
-              >
-                Ortho-K lenses
-              </Link>{" "}
-              apply gentle pressure to flatten the central cornea, temporarily
-              correcting nearsightedness. The reshaping effect typically lasts
-              for 24-48 hours.
-            </li>
-            <li>
-              <strong className="text-gray-500 ">
-                Benefits in Myopia Control:
-              </strong>
-              Studies suggest Ortho-K can effectively slow myopia progression in
-              children.
-            </li>
-            <li>
-              <strong className="text-gray-500 ">
-                Safety, Effectiveness, and Clinical Studies:
-              </strong>
-              Ortho-K is considered a safe and effective treatment for myopia
-              control when properly fitted and cared for by an eye care
-              professional. Numerous clinical trials have shown its
-              effectiveness in slowing myopia progression.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      label: "Soft Contact Lenses",
-      icon: "/homeIcons/contactlens.png",
-      // title: "Soft Contact Lenses for Myopia Control",
-      description:
-        "While traditional soft contact lenses primarily correct vision, newer designs incorporate specific features to potentially slow myopia progression.",
-      content: (
-        <ul className="space-y-4 list-disc">
-          <li className="text-xl font-bold mb-4">
-            MiSight Lenses by CooperVision
-          </li>
-          <ul className="space-y-4 list-disc pl-4">
-            <li>
-              <strong className="text-gray-500 ">Technology :</strong> MiSight
-              lenses utilize a concentric zone design with alternating clear and
-              concentric rings. This design is thought to manage peripheral
-              defocus, potentially impacting myopia progression.
-            </li>
-            <li>
-              <strong className="text-gray-500 ">
-                Benefits and Effectiveness:
-              </strong>
-              Studies have shown MiSight lenses to be effective in slowing
-              myopia progression in children, with an average reduction of
-              around 59%.
-            </li>
-            <li>
-              <strong className="text-gray-500 ">Clinical Studies:</strong>A
-              3-year clinical trial demonstrated a significant decrease in
-              myopia progression in children wearing MiSight lenses compared to{" "}
-              <Link
-                href={"/prescription-lenses"}
-                className="text-combination-200 hover:text-combination-100"
-              >
-                single vision lenses{" "}
-              </Link>
-              [Source:{" "}
-              <Link
-                href={
-                  "https://www.myopiaprofile.com/articles/five-things-we-know-about-misight"
-                }
-                className="text-combination-200 hover:text-combination-100"
-              >
-                The MiSight 1 day clinical trial
-              </Link>
-              ]
-            </li>
-          </ul>
+        <h3 className={subHeadingClass}>Choosing Between MiyoSmart and MyoCare</h3>
+        <p className="text-neutral-500 mb-4">
+          Both lenses are clinically validated and represent a significant
+          improvement over standard single-vision correction for myopia
+          progression. The choice between them depends on optical fitting
+          considerations, the child&apos;s prescription profile, and in some
+          cases frame compatibility. Your optometrist at 360 Eyecare will
+          recommend the most appropriate option based on your child&apos;s full
+          assessment findings rather than brand preference.
+        </p>
+        <p className="text-neutral-500">
+          The most important factor for either lens is consistent wear.
+          Children who remove their glasses for sports, leave them at school,
+          or wear them inconsistently will get substantially less benefit.
+          Compliance is a clinical input worth discussing honestly at the
+          assessment appointment.
+        </p>
+      </div>
+    ),
+  },
+  {
+    label: "Orthokeratology (Ortho-K)",
+    icon: "/homeIcons/ortho1.png",
+    title: "Orthokeratology (Ortho-K) — Overnight Vision Correction and Myopia Control",
+    description:
+      "Custom gas-permeable contact lenses worn overnight that gently reshape the cornea during sleep, providing clear unaided vision through the day while simultaneously slowing myopia progression through peripheral defocus signalling. Approved by Health Canada. Particularly well-suited to active children and teenagers who prefer not to wear glasses or daytime lenses.",
+    content: (
+      <div>
+        <p className="text-neutral-500 mb-4">
+          <Link href="/orthokeratology-treatment" className={linkClass}>
+            Orthokeratology
+          </Link>
+          , commonly called Ortho-K, uses custom-designed rigid gas-permeable
+          contact lenses worn overnight to gently reshape the cornea during
+          sleep. By morning, the lenses are removed, and the reshaped cornea
+          provides clear unaided vision throughout the day. The reshaping
+          effect is temporary and reversible; the cornea returns to its
+          original shape if lenses are discontinued, making Ortho-K a fully
+          reversible treatment.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Ortho-K is approved by Health Canada and has one of the strongest
+          evidence bases of any myopia control modality. It works through two
+          mechanisms simultaneously: it provides functional clear daytime
+          vision, and the peripheral optical profile created by the reshaped
+          cornea generates the defocus signal that inhibits axial elongation.
+        </p>
+
+        <h3 className={subHeadingClass}>Clinical Evidence</h3>
+        <p className="text-neutral-500 mb-4">
+          Studies consistently show Ortho-K slows axial elongation by 40 to 60
+          percent compared to standard single-vision correction, placing it
+          among the most effective optical myopia control options available. A
+          2019 meta-analysis of multiple randomised controlled trials confirmed
+          significant reduction in axial elongation in Ortho-K wearers versus
+          control groups across diverse populations. Combination therapy
+          (Ortho-K alongside low-dose atropine) has demonstrated enhanced
+          efficacy in children with rapidly progressing myopia in several
+          published trials.
+        </p>
+
+        <h3 className={subHeadingClass}>What to Expect</h3>
+        <p className="text-neutral-500 mb-4">
+          Custom lenses are designed based on precise corneal topography
+          measurements taken at your child&apos;s assessment appointment.
+          Initial fitting involves a series of follow-up visits to assess the
+          reshaping response and refine lens parameters, typically three to
+          four visits in the first month. Once the fit is optimised, follow-up
+          appointments are scheduled every three to six months.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Lens insertion and removal is performed at home each night. Children
+          typically adapt to the routine within one to two weeks. The lenses
+          must be cleaned and stored properly between wearings. Your
+          optometrist will provide detailed care instructions and ensure your
+          child and the family are comfortable with the process before lenses
+          are dispensed.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Ortho-K typically requires a minimum prescription of -0.75D to be
+          clinically appropriate, and works best for prescriptions up to
+          approximately -5.00D to -6.00D, depending on corneal anatomy.
+          Astigmatism up to certain levels can be simultaneously managed with
+          Ortho-K lens design.
+        </p>
+
+        <h3 className={subHeadingClass}>Who Is Ortho-K Best Suited For?</h3>
+        <SimpleList
+          items={[
+            "Children and teenagers aged 8 and older who can reliably handle lens insertion and removal",
+            "Active children who prefer not to wear glasses or daytime lenses during sports and activities",
+            "Children whose prescriptions fall within the appropriate range for corneal reshaping",
+            "Families whose children have rapidly progressing myopia and want an effective control option",
+            "Children interested in the convenience of clear unaided daytime vision",
+          ]}
+        />
+      </div>
+    ),
+  },
+  {
+    label: "Soft Contact Lenses",
+    icon: "/homeIcons/contactlens.png",
+    title: "Soft Contact Lenses for Myopia Control — MiSight 1 Day",
+    description:
+      "Daily disposable lenses including MiSight 1 Day (CooperVision), the first soft contact lens approved specifically for myopia control, using dual-focus optics to simultaneously correct vision and reduce the peripheral hyperopic defocus that drives axial elongation.",
+    content: (
+      <div>
+        <p className="text-neutral-500 mb-4">
+          MiSight 1 Day by CooperVision is the first and currently only soft
+          contact lens approved specifically for myopia control by Health
+          Canada and the FDA. Unlike standard soft contact lenses that correct
+          vision only, MiSight uses ActivControl dual-focus optics to
+          simultaneously correct distance vision and generate the peripheral
+          defocus signal that inhibits axial elongation.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          As a daily disposable lens, MiSight eliminates the lens care and
+          cleaning routine required with reusable lenses; each day begins with
+          a fresh lens, reducing the risk of deposits, infections, and the
+          compliance issues associated with cleaning regimens. This makes
+          MiSight one of the most practical soft lens options for children.
+        </p>
+
+        <h3 className={subHeadingClass}>Clinical Evidence</h3>
+        <p className="text-neutral-500 mb-4">
+          A three-year randomised clinical trial (the longest prospective
+          myopia control study conducted with a soft contact lens at the time
+          of publication) demonstrated that MiSight lenses slowed myopia
+          progression by an average of 59% and reduced axial elongation by 52%
+          compared to standard{" "}
+          <Link href="/prescription-lenses" className={linkClass}>
+            single-vision
+          </Link>{" "}
+          contact lenses. Importantly, the study also showed no significant
+          rebound in progression rate after discontinuation, which has been a
+          concern with some other myopia control modalities.{" "}
+          <strong>Source: </strong>
+          <Link
+            href="https://www.myopiaprofile.com/articles/five-things-we-know-about-misight"
+            className={linkClass}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            The MiSight 1 day clinical trial
+          </Link>
+          .
+        </p>
+
+        <h3 className={subHeadingClass}>What to Expect</h3>
+        <p className="text-neutral-500 mb-4">
+          MiSight lenses are typically introduced from age 8 to 10 onwards,
+          once a child demonstrates sufficient maturity and dexterity to handle
+          daily disposable lens insertion and removal. A contact lens fitting
+          appointment establishes the correct lens parameters, and an initial
+          training session ensures your child and the family are comfortable
+          with the insertion, removal, and handling process before lenses are
+          dispensed.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Follow-up appointments are typically scheduled every six months, with
+          axial length and refractive measurements taken at each visit to
+          monitor treatment response.
+        </p>
+
+        <h3 className={subHeadingClass}>Who Is MiSight Best Suited For?</h3>
+        <SimpleList
+          items={[
+            "Children aged 8 and older ready for contact lens wear",
+            "Children who prefer contact lenses over glasses for aesthetic or lifestyle reasons",
+            "Active children for whom glasses are impractical during sports or activities",
+            "Children who find Ortho-K insertion uncomfortable or who aren't suitable candidates for corneal reshaping",
+            "Families wanting a Health Canada and FDA-approved dedicated myopia control contact lens",
+          ]}
+        />
+      </div>
+    ),
+  },
+  {
+    label: "Atropine Therapy",
+    icon: "/homeIcons/atro.png",
+    title: "Low-Dose Atropine Therapy for Myopia Control",
+    description:
+      "Daily eye drops at concentrations of 0.01% to 0.05% that slow myopia progression through a retinal mechanism distinct from optical defocus. Not available commercially. Must be prescribed by an optometrist and compounded by a specialised pharmacy. Effective as a standalone treatment and as a combination therapy alongside optical modalities for rapid progressors.",
+    content: (
+      <div>
+        <p className="text-neutral-500 mb-4">
+          Low-dose atropine eye drops have one of the longest and most
+          thoroughly researched evidence bases of any myopia control treatment,
+          with major clinical trials spanning over two decades. Atropine works
+          through a retinal mechanism that is distinct from the peripheral
+          defocus approach used by optical myopia control modalities, making it
+          uniquely valuable as both a standalone treatment and as a combination
+          therapy that can be layered with Ortho-K or MiSight for enhanced
+          efficacy in children with rapidly progressing myopia.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Atropine at myopia control concentrations is not available
+          commercially. It must be prescribed by an optometrist and compounded
+          by a specialised pharmacy to the appropriate concentration, typically
+          0.01% to 0.05%.
+        </p>
+
+        <h3 className={subHeadingClass}>How It Works</h3>
+        <p className="text-neutral-500 mb-4">
+          The precise mechanism by which atropine slows myopia progression is
+          not fully established, but the evidence consistently points to a
+          retinal rather than a purely accommodative pathway. Early theories
+          focused on atropine&apos;s ability to relax the ciliary muscle.
+          Still, the concentrations used for myopia control (0.01% to 0.05%)
+          have minimal effect on accommodation, yet still produce meaningful
+          slowing of progression. Current research suggests atropine acts
+          directly on retinal receptors involved in the signalling cascade that
+          drives axial elongation.
+        </p>
+
+        <h3 className={subHeadingClass}>Concentration and Efficacy</h3>
+        <p className="text-neutral-500 mb-4">
+          Concentration selection is a clinical judgment based on the
+          child&apos;s progression rate, age, tolerance, and whether atropine is
+          being used as a standalone or combination treatment:
+        </p>
+        <ul className={`${bulletListClass} mb-4`}>
+          <LabelledItem label="0.01% atropine —">
+            the lowest effective concentration, producing minimal side effects
+            including negligible pupil dilation, no meaningful blur at near, and
+            no light sensitivity in most patients. The ATOM2 trial demonstrated
+            approximately 50% reduction in myopia progression at this
+            concentration over two years, with minimal side effects.
+          </LabelledItem>
+          <LabelledItem label="0.05% atropine —">
+            the concentration with the strongest evidence base for efficacy. The
+            LAMP study demonstrated that 0.05% atropine produced greater slowing
+            of both myopia progression and axial elongation than 0.025% or
+            0.01%, while remaining well-tolerated in the majority of patients.
+            Side effects are mild — slight pupil dilation and minimal light
+            sensitivity in some patients — and typically don&apos;t require
+            photochromic lenses or reading glasses.{" "}
+            <strong>Source: </strong>
+            <Link
+              href="https://www.aoa.org/news/clinical-eye-care/diseases-and-conditions/atropine-in-myopia-control?sso=y"
+              className={linkClass}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              American Optometric Association
+            </Link>
+            .
+          </LabelledItem>
         </ul>
-      ),
-    },
-    {
-      label: "Atropine Therapy",
-      icon: "/homeIcons/atro.png",
-      // title: "Atropine Therapy",
-      description:
-        "Atropine eye drops have been used for many years to dilate the pupil during eye exams. Recent research suggests that low-dose atropine drops can be a safe and effective method for myopia control.",
-      content: (
-        <div>
-          <ul className="space-y-4 list-disc  pl-4">
-            <li>
-              <strong className="text-neutral-500 ">How It Works:</strong>
-              Atropine works by relaxing the focusing muscle within the eye,
-              which may influence the eye's growth pattern and potentially slow
-              myopia progression.
-            </li>
-            <li>
-              <strong className="text-neutral-500 ">
-                Concentration Matters:
-              </strong>
-              Higher concentrations of atropine can cause significant side
-              effects like light sensitivity. However, low-dose atropine (0.01%
-              – 0.05%) has been shown to be effective with minimal side effects.
-            </li>
-            <li>
-              <strong className="text-neutral-500 ">
-                Clinical Evidence for 0.05% Atropine:
-              </strong>
-              Extensive research supports the use of 0.05% atropine for myopia
-              control. Studies have shown significant reductions in myopia
-              progression, ranging from 50% to 70% [Source:{" "}
-              <Link
-                href={
-                  "https://www.aoa.org/news/clinical-eye-care/diseases-and-conditions/atropine-in-myopia-control?sso=y"
-                }
-                className="text-combination-200 hover:text-combination-100"
-              >
-                American Optometric Association
-              </Link>
-              ].
-            </li>
-          </ul>
+        <p className="text-neutral-500 mb-4">
+          Higher concentrations (0.1%, 0.5%, 1.0%) produce stronger short-term
+          suppression but are associated with significant side effects and a
+          well-documented rebound effect on discontinuation. They are not used
+          in current myopia control practice.
+        </p>
 
-          <p className="mb-4 text-neutral-500 mt-6">
-            <span className="text-lg font-semibold mb-3 text-neutral-500">
-              Benefits of Low-dose Atropine :{" "}
-            </span>
-            Low-dose atropine is a safe and effective option for myopia control,
-            with minimal side effects at the recommended concentration.
-          </p>
+        <h3 className={subHeadingClass}>What to Expect</h3>
+        <p className="text-neutral-500 mb-4">
+          Atropine drops are applied once daily at bedtime, one drop per eye.
+          The bedtime timing minimises any pupillary dilation effects during
+          waking hours. Most children tolerate the drops well, with minimal
+          awareness of side effects at 0.01% to 0.05% concentrations.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Follow-up appointments are scheduled every three to six months to
+          monitor axial length and refractive progression and assess treatment
+          response. Concentration may be adjusted based on response. Children
+          who progress despite 0.01% atropine may be stepped up to 0.05%, or
+          combination therapy with an optical modality may be introduced.
+        </p>
+        <p className="text-neutral-500 mb-4">
+          Treatment is typically continued until myopia stabilises, usually in
+          the late teenage years with a gradual tapering protocol rather than
+          abrupt discontinuation to minimise rebound risk.
+        </p>
 
-          <p className=" text-neutral-500 mt-6">
-            It's important to note that choosing the most suitable treatment
-            method depends on your child's individual needs and preferences.
-            Consulting with an eye care professional experienced in myopia
-            control is crucial to determine the best course of action for your
-            child's vision.
-          </p>
-        </div>
-      ),
-    },
-  ];
+        <h3 className={subHeadingClass}>Who Is Atropine Best Suited For?</h3>
+        <SimpleList
+          items={[
+            "Children of any age whose myopia is progressing: atropine can be used from as young as four to five years in appropriate cases",
+            "Younger children not yet ready for contact lens handling who need more than spectacle therapy alone",
+            "Children with rapidly progressing myopia as an add-on to optical modalities for enhanced efficacy",
+            "Children for whom contact lens options are not appropriate or tolerated",
+            "Patients transitioning off other myopia control treatments who need bridging therapy",
+          ]}
+        />
+      </div>
+    ),
+  },
+];
+
+const MyopiaControl = () => {
+  const [selected, setSelected] = useState(0);
 
   return (
     <div className="w-full py-8 md:py-16 bg-[#F9F9F9]">
       <div className="flex flex-col justify-center items-center px-4">
-        <h3 className="text-3xl md:text-4xl font-bold text-combination-200 mb-3 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-combination-200 mb-3 text-center">
           Myopia Control Treatment Methods
-        </h3>
+        </h2>
         <hr className="w-20 h-1 bg-combination-100 mb-4" />
+        <p className="text-neutral-500 text-base font-normal text-center max-w-6xl mb-3">
+          There is no single best myopia control treatment. The right option
+          depends on your child&apos;s age, prescription, rate of progression,
+          corneal anatomy, and willingness to handle contact lenses or comply
+          with daily drops. What the evidence does clearly support is that all
+          four established treatment modalities (specialised spectacle lenses,
+          orthokeratology, soft contact lenses, and low-dose atropine) produce
+          meaningful slowing of myopia progression compared to standard
+          single-vision correction, and that combination approaches can enhance
+          outcomes further.
+        </p>
         <p className="text-neutral-500 text-base font-normal text-center max-w-6xl">
-          Beyond preventive measures, there are several treatment methods
-          available to help control myopia progression in children. Here's a
-          closer look at some of the most common options:
+          At 360 Eyecare, treatment recommendations are based on a
+          comprehensive assessment rather than a single preferred modality. Our
+          optometrists at both the Yorkville and Beaches clinics are experienced
+          with all four approaches and will recommend the option or combination
+          most appropriate for your child&apos;s specific clinical picture.
+          Select a treatment below for details.
         </p>
       </div>
 
@@ -356,27 +522,9 @@ const MyopiaControl = () => {
                   <span className="font-semibold text-sm">
                     {treatment.label}
                   </span>
-                  {/* <svg
-                    className={`ml-auto w-5 h-5 transition-transform ${
-                      isActive ? "transform rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg> */}
                 </button>
                 {isActive && (
                   <div className="bg-gray-50 rounded-lg px-4 py-6 mb-4">
-                    <h2 className="text-xl font-bold text-blue-600 mb-3">
-                      {treatment.title}
-                    </h2>
                     <p className="text-neutral-600 text-sm mb-6">
                       {treatment.description}
                     </p>
@@ -425,16 +573,25 @@ const MyopiaControl = () => {
             })}
           </div>
 
-          {/* Desktop Content Area */}
-          <div className="relative rounded-lg p-8 min-h-[500px] shadow-sm bg-[#F9F9F9] ">
-            <h2 className="text-2xl font-bold text-blue-600 mb-3">
-              {treatments[selected]?.title}
-            </h2>
-            <p className="text-neutral-600 text-base mb-6">
-              {treatments[selected]?.description}
-            </p>
-            {treatments[selected]?.content}
-          </div>
+          {/* Desktop Content Area: every panel is rendered (inactive ones
+              hidden with CSS) so all treatment copy is in the server HTML
+              for search engines, not just the default tab. */}
+          {treatments.map((treatment, index) => (
+            <div
+              key={treatment.label}
+              className={`relative rounded-lg p-8 min-h-[500px] shadow-sm bg-[#F9F9F9] ${
+                selected === index ? "" : "hidden"
+              }`}
+            >
+              <h2 className="text-2xl font-bold text-combination-200 mb-3">
+                {treatment.title}
+              </h2>
+              <p className="text-neutral-600 text-base mb-6">
+                {treatment.description}
+              </p>
+              {treatment.content}
+            </div>
+          ))}
         </div>
       </div>
     </div>
