@@ -3,7 +3,19 @@
 import { pediatricEyeService } from "../constants/Constants";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
+
+// Optional per-service "read more" link (service.link = { href, label })
+const ServiceLink = ({ link }) =>
+  link ? (
+    <Link
+      href={link.href}
+      className="text-combination-200 hover:text-combination-100 font-semibold"
+    >
+      {link.label} →
+    </Link>
+  ) : null;
 
 const PediatricSlider = () => {
   const [selected, setSelected] = useState(0);
@@ -32,6 +44,7 @@ const PediatricSlider = () => {
             <p className="text-neutral-600 text-sm mb-4">
               {service.description}
             </p>
+            <ServiceLink link={service.link} />
           </div>
         </div>
       </div>
@@ -42,12 +55,14 @@ const PediatricSlider = () => {
     <div className="w-full py-8 md:py-16 bg-white">
       <div className="flex flex-col justify-center items-center px-4">
         <h3 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
-          Our Pediatric Optometric Services
+          Our Pediatric Optometry Services
         </h3>
         <hr className="w-[65px] h-[2px] bg-combination-100 mb-4" />
-        <p className="text-neutral-500 text-base font-normal text-center">
-          We offer specialized pediatric optometric services in Toronto to
-          ensure your child’s vision health
+        <p className="text-neutral-500 text-base font-normal text-center max-w-3xl">
+          360 Eyecare&apos;s pediatric optometry program at both the Yorkville
+          and Beaches clinics covers the full range of children&apos;s eye care
+          from routine annual exams through to specialized treatment for vision
+          conditions that affect learning, development, and daily function.
         </p>
       </div>
 
@@ -146,7 +161,7 @@ const PediatricSlider = () => {
           </div>
 
           {/* Desktop Content Area */}
-          <div className="relative bg-gray-50 rounded-lg min-h-[517px] overflow-hidden">
+          <div className="relative bg-gray-50 rounded-lg min-h-auto overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected}
@@ -176,6 +191,7 @@ const PediatricSlider = () => {
                     <p className="text-neutral-600 mb-6 text-[15px]">
                       {pediatricEyeService[selected]?.description}
                     </p>
+                    <ServiceLink link={pediatricEyeService[selected]?.link} />
                   </div>
                 </div>
               </motion.div>

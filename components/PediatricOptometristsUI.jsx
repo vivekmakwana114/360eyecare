@@ -4,12 +4,10 @@ import {
   UnderstandImage1,
   UnderstandImage2,
   UnderstandImage3,
-  UnderstandImage4,
 } from "../constants/Images";
 import { TfiBriefcase } from "react-icons/tfi";
 import { TfiUser } from "react-icons/tfi";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const PediatricOptometristsUI = () => {
@@ -57,64 +55,60 @@ const PediatricOptometristsUI = () => {
     };
   }, []);
 
-  const benefitsList = [
-    "Specialized exams tailored to children's unique eye health needs.",
-    "Gentle and friendly approach to ensure your child feels comfortable.",
-    "Early detection and treatment of vision problems for optimal development.",
-    "State-of-the-art technology for accurate and thorough evaluations.",
-    "Focus on patient education and preventive care.",
-    "Expertise in managing pediatric eye conditions and vision therapy.",
-    "Personalized care plans to address your child's specific vision needs.",
-    "Trusted by families in Toronto for exceptional pediatric eye care.",
+  // "Why Children's Eye Exams Matter" copy, rendered under the image gallery
+  const whyItMatters = [
+    "Comprehensive pediatric eye exams do more than check whether your child needs glasses. They assess the full visual system, how each eye focuses individually, how the eyes work together as a team, how the brain processes what the eyes send it, and the structural health of every part of the eye. That complete picture is what allows early detection of conditions that, if caught and treated during the developmental window, respond far better than they would if left until the problem becomes obvious.",
+    "The developmental window matters enormously for certain conditions. Amblyopia can be effectively treated with patching, optical correction, or vision therapy when caught before age seven or eight. After that window, the neural pathways that determine visual acuity become increasingly fixed, and treatment becomes progressively less effective. The same applies to strabismus, accommodative esotropia, and several binocular vision disorders.",
+    "At 360 Eyecare, we see children as young as six months old at both our Yorkville and Beaches locations. An infant doesn't need to read a letter chart for us to assess their visual health; we use objective testing techniques specifically designed for pre-verbal patients.",
   ];
+  const imageClass = "w-full h-auto aspect-[3/2] object-cover rounded-lg";
 
   return (
     <section className="bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-16">
+      {/* Same container as the page's other sections so edges line up */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-0 py-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-combination-200 mb-4">
+          Why Children&apos;s Eye Exams Matter
+        </h2>
+        <div className="w-24 h-1 bg-combination-100 mb-8"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Column */}
-          <div className="md:max-w-xl lg:max-w-2xl w-full">
-            <h2 className="text-3xl lg:text-4xl font-bold text-combination-200 mb-4 max-w-lg">
-              Why Choose Our Pediatric Optometrists in Toronto?
-            </h2>
-            <div className="w-24 h-1 bg-combination-100 mb-8"></div>
-
-            <div className="flex flex-col sm:flex-row gap-6">
-              {/* Feature Image */}
-              <div className="mb-4 sm:mb-0">
-                <Image
-                  src={UnderstandImage1}
-                  alt="Child having eye examination"
-                  width={328}
-                  height={220}
-                  className="w-full sm:w-80 h-auto object-cover rounded-lg"
-                  priority
-                />
-              </div>
-
-              {/* Introduction and CTA */}
-              <div className="flex flex-col justify-between p-2 sm:p-4">
-                <p className="text-gray-600 mb-6 text-base">
-                  Our pediatric optometrists in Toronto are dedicated to
-                  exceptional care for your child's vision. With specialized
-                  expertise in pediatric eye care and a focus on gentle,
-                  compassionate treatment, we ensure a positive experience for
-                  your child.
-                </p>
-
-                <Link
-                  href="/book-eye-exam"
-                  className="bg-combination-100 text-white hover:text-combination-100 px-6 py-3 rounded-full hover:bg-white hover:border hover:border-combination-100 transition duration-300 w-max"
-                  aria-label="Book Your Pediatric Eye Examination"
-                >
-                  Book Your Pediatric Eye Examination
-                </Link>
-              </div>
-            </div>
+          <div className="flex flex-col gap-6">
+            <Image
+              src={UnderstandImage1}
+              alt="Child having eye examination"
+              className={imageClass}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              priority
+            />
+            <p className="text-gray-600 text-base">
+              Vision is involved in roughly 80 percent of what children learn
+              in their early years. Reading, writing, hand-eye coordination,
+              spatial awareness, and the ability to copy from a board all depend
+              on a visual system that&apos;s developing correctly. When that
+              system has an undetected problem, the learning difficulty it
+              creates is often attributed to everything except the eyes.
+            </p>
+            <p className="text-gray-600 text-base">
+              Children rarely complain about their vision. Studies consistently
+              show that children adapt to and compensate for vision problems in
+              ways that mask the condition from parents and teachers, often for
+              years. A child with amblyopia typically has no awareness of it
+              whatsoever. A child with convergence insufficiency may be labelled
+              an inattentive reader before anyone checks their binocular vision.
+              A myopic child may simply stop participating in activities that
+              involve distance vision without being able to articulate why.
+            </p>
+            <Link
+              href="/book-eye-exam"
+              className="bg-combination-100 text-white hover:text-combination-100 px-6 py-3 rounded-full hover:bg-white hover:border hover:border-combination-100 transition duration-300 w-max"
+              aria-label="Book Your Pediatric Eye Examination"
+            >
+              Book Your Pediatric Eye Examination
+            </Link>
 
             {/* Stats Section */}
-            <div className="flex flex-wrap gap-12 mt-12 justify-between mr-20">
+            <div className="flex flex-wrap gap-12 mt-4">
               {statsData.map((item, index) => (
                 <div key={index} className="flex flex-col gap-3">
                   <div className="flex flex-row gap-3 items-center mb-2">
@@ -129,54 +123,28 @@ const PediatricOptometristsUI = () => {
             </div>
           </div>
 
-          {/* Right Column */}
-          <div className="w-full md:w-auto">
-            {/* Image Gallery */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <div className="w-full sm:w-64 h-48 mb-4 sm:mb-0">
-                <Image
-                  src={UnderstandImage2}
-                  alt="Modern eye examination equipment"
-                  width={256}
-                  height={192}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="w-full sm:w-64 h-48">
-                <Image
-                  src={UnderstandImage3}
-                  alt="Optometrist conducting eye examination"
-                  width={256}
-                  height={192}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
+          <div className="flex flex-col gap-6">
+            {/* Image Gallery: two side by side from sm up */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <Image
+                src={UnderstandImage2}
+                alt="Modern eye examination equipment"
+                className={imageClass}
+                sizes="(min-width: 768px) 25vw, (min-width: 640px) 50vw, 100vw"
+              />
+              <Image
+                src={UnderstandImage3}
+                alt="Optometrist conducting eye examination"
+                className={imageClass}
+                sizes="(min-width: 768px) 25vw, (min-width: 640px) 50vw, 100vw"
+              />
             </div>
 
-            {/* Benefits Section */}
-            <div className="mt-8">
-              <div className="bg-gray-50 px-6 py-3 rounded-lg mb-6 inline-block">
-                <h3 className="text-gray-500 font-medium">
-                  Our Pediatric Eye Exams
-                </h3>
-              </div>
-
-              <h2 className="text-2xl lg:text-3xl font-bold text-combination-200 mb-6">
-                Comprehensive Care for Your Child's Vision Health
-              </h2>
-
-              <ul className="space-y-3">
-                {benefitsList.map((benefit, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <FaArrowRightLong
-                      size={16}
-                      className="text-combination-100 mt-1.5"
-                    />
-                    <span className="text-gray-600">{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {whyItMatters.map((para) => (
+              <p key={para} className="text-gray-600 text-base">
+                {para}
+              </p>
+            ))}
           </div>
         </div>
       </div>

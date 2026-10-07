@@ -967,76 +967,102 @@ export const pediatricEyeService = [
     label: "Vision Therapy",
     icon: "/homeIcons/EFP.png",
     image: VisionThreapImage,
-    title: "OCT Scans for Detailed Eye Analysis",
+    title: "Vision Therapy",
     description:
-      "Our pediatric optometrists in Toronto provide personalized vision therapy programs to address visual problems that cannot be treated with eyeglasses or contact lenses. Vision therapy is a highly effective non-surgical treatment for lazy eye (amblyopia), eye turns (strabismus), and certain visual processing disorders. Vision therapy helps improve children’s visual skills and abilities through customized exercises and activities, leading to better academic performance and overall quality of life.",
+      "Vision therapy is a structured, evidence-based treatment program for visual conditions that can't be corrected with glasses or contact lenses alone, including amblyopia (lazy eye), strabismus (eye turns), convergence insufficiency, accommodative disorders, and certain visual processing difficulties. Programs are customised to each child's specific condition and typically involve a combination of in-office sessions and at-home exercises. Vision therapy helps children develop the visual skills their eyes lack, improving reading comfort, academic performance, and overall quality of life in ways that optical correction alone doesn't achieve.",
   },
 
   {
     label: "Myopia Control",
     icon: "/homeIcons/MYO.png",
     image: MyopiaPediaImage,
-    title: "Effective Myopia Control Treatments for Kids",
+    title: "Myopia Control",
     description:
-      "Myopia, or nearsightedness, is a common vision problem that often develops during childhood and can worsen over time. Our pediatric optometrists offer specialized myopia control treatments in Toronto to slow myopia progression in children. These treatments, such as orthokeratology (Ortho-K) and multifocal contact lenses, are safe and effective and can help reduce the risk of future eye health issues associated with high myopia.",
+      "Myopia is the most rapidly increasing vision condition in school-age children, and the rate of progression during the development years directly determines the lifetime prescription and associated health risks your child carries into adulthood. At 360 Eyecare, myopia control programs include specialised spectacle lenses (MiyoSmart, MyoCare), orthokeratology (Ortho-K), MiSight soft contact lenses, and low-dose atropine.",
+    // Optional "read more" link rendered under the description by PediatricSlider
+    link: {
+      href: "/myopia-control-clinic/",
+      label: "Full details on the Myopia Control page",
+    },
   },
   {
     label: "Pediatric Eye Exams",
     icon: "/homeIcons/PED.png",
     image: PediatricEyeImage,
-    title: "Comprehensive Pediatric Eye Exams in Toronto",
+    title: "Comprehensive Pediatric Eye Exams",
     description:
-      "Regular eye exams are essential for monitoring your child’s eye health and vision development. Our pediatric optometrists in Toronto conduct comprehensive eye exams specifically designed for children to detect and treat vision problems early. These exams include visual acuity testing, binocular vision assessment, eye health evaluation, and more.We create a comfortable and child-friendly environment to ensure a positive experience for your child during the exam.",
+      "Annual comprehensive eye exams structured specifically for children covering visual acuity, refractive status, binocular vision, ocular health, and developmental appropriateness. OHIP-covered for all patients under 20.",
   },
   {
     label: "Contact Lens Fitting",
     icon: "/homeIcons/contactlens.png",
     image: ContactLenspediaImage,
-    title: "Expert Contact Lens Fitting for Children",
+    title: "Contact Lens Fitting for Children",
     description:
-      "Contact lenses can be a safe and effective vision correction option for children. Our pediatric optometrists in Toronto specialize in fitting contact lenses for kids, ensuring proper fit, comfort, and vision quality. Whether your child needs contact lenses for sports, activities, or daily wear, we provide personalized fitting services to meet their visual needs and lifestyle.",
+      "Contact lenses are appropriate for many children from around age 10 to 12 depending on maturity and motivation. We fit daily disposable soft lenses for general vision correction and myopia control (MiSight), as well as orthokeratology lenses for overnight wear. Every contact lens fitting includes thorough training in insertion, removal, and care to ensure your child is confident and safe before lenses are dispensed.",
   },
   {
     label: "Sports Vision",
     icon: "/homeIcons/mypio.png",
     image: SportsVisionImage,
-    title: "Enhancing Sports Performance Through Vision Training",
+    title: "Sports Vision",
     description:
-      "Sports vision training focuses on improving visual skills essential for optimal sports performance. Our pediatric optometrists in Toronto offer specialized sports vision training programs to help young athletes enhance their hand-eye coordination, depth perception, visual reaction time, and tracking abilities. By improving these visual skills, young athletes can improve their performance, reduce the risk of sports-related injuries, and gain a competitive edge on the field or court.",
+      "Children involved in competitive sports benefit from optimised vision that goes beyond basic distance correction. Sports vision assessment evaluates dynamic visual acuity, eye-hand coordination, depth perception, peripheral awareness, and reaction time. Contact lens options, sports-specific eyewear, and protective eyewear recommendations are available for young athletes at both locations.",
   },
 ];
 
+// Pediatric eye exam FAQs. The "Q. " prefix is display-only; the page strips
+// it when building the FAQPage JSON-LD.
 export const faqDatapediatric = [
   {
     id: 1,
     question: "Q. At what age should my child have their first eye exam?",
     answer:
-      "Children should have their first eye exam at around six months of age, followed by another exam at three years old, and then before starting school. After that, yearly exams are recommended.",
+      "Between six and nine months of age. Early assessment detects conditions like strabismus and amblyopia during the window when treatment is most effective. The Canadian Association of Optometrists recommends exams at 6 to 9 months, age 2 to 5, and annually from school age.",
   },
   {
     id: 2,
     question:
       "Q. What are common signs that my child may have a vision problem?",
     answer:
-      "Common signs of vision problems in children include frequent eye rubbing, squinting, tilting the head to see better, holding reading materials close to the face, and complaining of headaches or eye strain.",
+      "Squinting, sitting unusually close to screens or boards, avoiding reading, losing their place frequently while reading, tilting the head to one side, covering one eye, frequent eye rubbing, headaches after school, and eyes that appear misaligned are all signs worth investigating. Children rarely self-report vision problems. These behavioural signs are often the only indication something is wrong.",
   },
   {
     id: 3,
     question: "Q. Can my child wear contact lenses?",
     answer:
-      "Yes, contact lenses can be a safe and effective option for children, but it depends on their age, maturity level, and ability to handle and care for the lenses. Our optometrists can help determine if contact lenses are suitable for your child.",
+      "Yes, from around age 10 to 12 depending on maturity and motivation. Daily disposable lenses are the preferred option for children. They are simple to care for, hygienic, and available in myopia control options including MiSight. Orthokeratology lenses worn overnight are another option for appropriate candidates. Your optometrist will assess readiness at the appointment.",
   },
   {
     id: 4,
     question: "Q. How can I protect my child's eyes during sports?",
     answer:
-      "To protect your child’s eyes during sports, make sure they wear protective eyewear designed for the sport they’re playing. Regular eyeglasses or sunglasses are not sufficient for protecting the eyes during sports",
+      "Polycarbonate lenses are the standard recommendation for sports eyewear. They are impact-resistant and significantly stronger than standard lens materials. Sport-specific frames with secure fits are available at both 360 Eyecare locations.",
   },
   {
     id: 5,
-    question: "Q. What is vision therapy, and how can it help my child?",
+    question: "Q. What is vision therapy and how can it help my child?",
     answer:
-      "Vision therapy is a customized program of eye exercises and activities designed to improve visual skills and abilities. It can help children with various vision problems, such as lazy eye (amblyopia), eye alignment issues (strabismus), and focusing problems.",
+      "Vision therapy is a structured treatment program for visual conditions that glasses can't fix, including amblyopia, strabismus, convergence insufficiency, and accommodative disorders. Programs are individualised to each child's condition and typically involve weekly in-office sessions alongside daily home exercises.",
+  },
+  {
+    id: 6,
+    question: "Q. Is my child's eye exam covered by OHIP?",
+    answer:
+      "Yes, one comprehensive eye exam per year is fully covered by OHIP for all children and youth under 20 in Ontario. Bring your child's OHIP card to the appointment and we direct-bill on your behalf.",
+  },
+  {
+    id: 7,
+    question: "Q. How long does a pediatric eye exam take?",
+    answer:
+      "For a first appointment, allow 45 to 60 minutes, particularly for younger children where the exam may need to be paced around the child's attention and cooperation. Follow-up appointments for established patients are typically 30 to 45 minutes. If dilation drops are used, allow additional time for the pupil to return to normal before driving.",
+  },
+  {
+    id: 8,
+    question:
+      "Q. My child's school did a vision screening. Do they still need an eye exam?",
+    answer:
+      "Yes. School vision screenings check basic distance visual acuity only. They miss the majority of binocular vision disorders, focusing problems, and conditions affecting reading and learning that a comprehensive eye exam would detect. A passed school screening does not mean your child's vision is healthy. It means their distance acuity on that day met a basic threshold.",
   },
 ];
 
