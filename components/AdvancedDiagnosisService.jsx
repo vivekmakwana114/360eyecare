@@ -1,49 +1,73 @@
 "use client";
 
-import { advanceddiagnosticsService } from "../constants/Constants";
+import {
+  advanceddiagnosticsMoreTools,
+  advanceddiagnosticsService,
+} from "../constants/Constants";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
+// list-inside keeps bullets clear of the floated image on desktop
+const listClass =
+  "list-disc list-inside marker:text-combination-100 mb-4 space-y-2";
+
+// Bullet with an optional bold lead-in ({ head, para }) or a plain string
+const Point = ({ point }) =>
+  typeof point === "string" ? (
+    <li>{point}</li>
+  ) : (
+    <li>
+      <strong className="text-combination-200">{point.head}:</strong>{" "}
+      {point.para}
+    </li>
+  );
+
+// One diagnostic tool. On desktop the image floats left so the copy wraps
+// around and under it, whatever its length (no empty column beside it).
+const ServicePanel = ({ service }) => (
+  <div className="flow-root text-neutral-600 text-[15px] leading-relaxed">
+    <Image
+      src={service.image}
+      alt={service.title}
+      sizes="(min-width: 768px) 45vw, 100vw"
+      className="w-full h-auto aspect-[3/2] object-cover rounded-lg mb-6 md:float-left md:w-[45%] md:mr-8 md:mb-4"
+    />
+    <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-4">
+      {service.title}
+    </h3>
+    {service.paragraphs.map((para) => (
+      <p key={para} className="mb-4">
+        {para}
+      </p>
+    ))}
+    {service.points && (
+      <ul className={listClass}>
+        {service.points.map((point) => (
+          <Point
+            key={typeof point === "string" ? point : point.head}
+            point={point}
+          />
+        ))}
+      </ul>
+    )}
+    {service.closing?.map((para) => (
+      <p key={para} className="mb-4">
+        {para}
+      </p>
+    ))}
+  </div>
+);
+
 const AdvancedDiagnosisService = () => {
   const [selected, setSelected] = useState(0);
-
-  // Function to render the content for a service
-  const renderServiceContent = (service) => {
-    return (
-      <div className="bg-gray-50 rounded-lg px-4 py-6 mb-4">
-        <div className="flex flex-col gap-6">
-          {/* Image */}
-          <div className="w-full">
-            <Image
-              src={service.image}
-              alt={service.label}
-              width={600}
-              height={400}
-              className="rounded-lg w-full object-cover h-48"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="w-full">
-            <h2 className="text-xl font-bold text-brand-blue mb-2">
-              {service.title}
-            </h2>
-            <p className="text-neutral-600 text-sm mb-4">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full py-8 md:py-16 bg-[#F9F9F9]">
       <div className="flex flex-col justify-center items-center px-4">
-        <h3 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
-          Advanced Diagnostic Tools for Comprehensive Eye Exams
-        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
+          Our Diagnostic Technology
+        </h2>
         <hr className="w-[65px] h-[2px] bg-combination-100 mb-4" />
         <p className="text-neutral-500 text-base font-normal text-center">
           Discover the cutting-edge tests and tools we use for thorough eye
@@ -63,12 +87,12 @@ const AdvancedDiagnosisService = () => {
                   className={`w-full p-4 rounded-lg text-center cursor-pointer transition-all duration-200 flex items-center justify-center mb-1 ${
                     isActive
                       ? "bg-combination-100 text-white shadow-md"
-                      : "bg-gray-50 text-combination-200 hover:bg-gray-100"
+                      : "bg-white text-combination-200 hover:bg-gray-100"
                   }`}
                 >
                   <Image
                     src={service.icon}
-                    alt={service.label}
+                    alt=""
                     width={32}
                     height={32}
                     className={`h-8 w-auto mr-3 ${
@@ -76,21 +100,6 @@ const AdvancedDiagnosisService = () => {
                     }`}
                   />
                   <span className="font-semibold text-sm">{service.label}</span>
-                  {/* <svg
-                    className={`ml-auto w-5 h-5 transition-transform ${
-                      isActive ? "transform rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg> */}
                 </button>
                 <AnimatePresence>
                   {isActive && (
@@ -101,7 +110,9 @@ const AdvancedDiagnosisService = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      {renderServiceContent(service)}
+                      <div className="bg-white rounded-lg px-4 py-6 mb-4">
+                        <ServicePanel service={service} />
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -111,8 +122,8 @@ const AdvancedDiagnosisService = () => {
         </div>
 
         {/* Desktop Tabs */}
-        <div className="hidden md:block bg-white">
-          <div className="flex flex-nowrap justify-center gap-2 mb-10 py-6 px-4">
+        <div className="hidden md:block bg-white rounded-lg">
+          <div className="flex flex-nowrap justify-center gap-2 py-6 px-4">
             {advanceddiagnosticsService.map((tool, index) => {
               const isActive = selected === index;
               return (
@@ -130,7 +141,7 @@ const AdvancedDiagnosisService = () => {
                   )}
                   <Image
                     src={tool.icon}
-                    alt={tool.label}
+                    alt=""
                     width={32}
                     height={32}
                     className={`h-8 w-auto mb-2 ${
@@ -145,42 +156,49 @@ const AdvancedDiagnosisService = () => {
             })}
           </div>
 
-          {/* Desktop Content Area */}
-          <div className="relative bg-gray-50 rounded-lg min-h-[517px] overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selected}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="w-full px-6 py-8"
-              >
-                <div className="flex flex-col md:flex-row gap-8">
-                  {/* Left image */}
-                  <div className="md:w-1/2">
-                    <Image
-                      src={advanceddiagnosticsService[selected]?.image}
-                      alt={advanceddiagnosticsService[selected]?.label}
-                      width={600}
-                      height={400}
-                      className="rounded-lg w-full object-cover"
-                    />
-                  </div>
-
-                  {/* Right content */}
-                  <div className="md:w-1/2">
-                    <h2 className="text-2xl font-bold text-brand-blue mb-4">
-                      {advanceddiagnosticsService[selected]?.title}
-                    </h2>
-                    <p className="text-neutral-600 mb-6 text-[15px]">
-                      {advanceddiagnosticsService[selected]?.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          {/* Every panel is rendered (inactive ones hidden) so all of the
+              copy is in the server HTML, not just the first tab's. */}
+          <div className="px-6 pb-4 pt-4">
+            {advanceddiagnosticsService.map((service, index) => {
+              const isActive = selected === index;
+              return (
+                <motion.div
+                  key={service.label}
+                  initial={false}
+                  animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className={isActive ? "block" : "hidden"}
+                >
+                  <ServicePanel service={service} />
+                </motion.div>
+              );
+            })}
           </div>
+        </div>
+
+        {/* Tools without a tab image */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          {advanceddiagnosticsMoreTools.map((tool) => (
+            <div
+              key={tool.title}
+              className="bg-white rounded-lg p-6 border-t-4 border-combination-100 flex flex-col gap-3"
+            >
+              <div className="flex items-center gap-3">
+                {tool.icon}
+                <h3 className="text-lg sm:text-xl font-bold text-brand-blue">
+                  {tool.title}
+                </h3>
+              </div>
+              {tool.paragraphs.map((para) => (
+                <p
+                  key={para}
+                  className="text-neutral-600 text-[15px] leading-relaxed"
+                >
+                  {para}
+                </p>
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -65,6 +65,7 @@ import UnderstandImage4 from "../public/understand4.webp";
 import EyeEmergencyImage from "../public/EmergencyEyeScaled.webp";
 import eyeemergenciesImage from "../public/advancedDiagnostics_2.webp";
 import LaserCorrectionImage from "../public/lasercorrection.jpg";
+import advancedDiagnostics from "../public/advancedDiagnostics.webp";
 import advancedDiagnostics_2 from "../public/advancedDiagnostics_2.webp";
 import LaserVisionServiceImage from "../public/laservisioncorrection.webp";
 import prkImage from "../public/PRK-Laser-Vision-Correction-jpg.webp";
@@ -226,6 +227,7 @@ export {
   prkImage,
   lasikImage,
   smileImage,
+  advancedDiagnostics,
   advancedDiagnostics_2,
   LaserVisionServiceImage,
   LaserCorrectionImage,
