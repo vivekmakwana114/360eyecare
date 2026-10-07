@@ -1,238 +1,165 @@
-import Link from "next/link";
 import React from "react";
+import ClinicBookingCards from "./ClinicBookingCards";
+
+const diagnosticTools = [
+  {
+    head: "Autorefraction and cycloplegic refraction:",
+    para: "Measures the full refractive error of the eye with the accommodation system relaxed, providing the most accurate prescription measurement and the best baseline for tracking progression over time. Cycloplegic refraction is the gold standard for myopia measurement in children.",
+  },
+  {
+    head: "Ocular biometry — axial length measurement:",
+    para: "The most direct measure of myopia progression. A non-contact instrument measures the front-to-back length of the eyeball with precision to hundredths of a millimetre. Axial length measurements taken at each monitoring visit allow your optometrist to track structural progression independently of prescription changes, detecting progression earlier and assessing treatment response more precisely.",
+  },
+  {
+    head: "Corneal topography:",
+    para: "Particularly important for Ortho-K patients, it maps the shape of the corneal surface to confirm appropriate lens-induced reshaping and identify any fitting adjustments needed. Also used at baseline for all contact lens candidates.",
+  },
+  {
+    head: "Slit lamp examination:",
+    para: "Examines the anterior segment of the eye to assess overall ocular health and, for contact lens wearers, to check for any lens-related complications.",
+  },
+];
+
+const visitFrequency = [
+  {
+    head: "Every 3 months",
+    para: "for children in the initial stages of a new treatment, younger children with rapidly progressing myopia, or those whose most recent assessment showed progression despite current treatment",
+  },
+  {
+    head: "Every 6 months",
+    para: "for children whose treatment is producing stable, well-controlled progression",
+  },
+  {
+    head: "Annually",
+    para: "for children whose myopia has stabilised and who are in a maintenance phase",
+  },
+];
+
+const followUpItems = [
+  "Visual acuity and refractive error measurement",
+  "Axial length measurement to assess structural progression",
+  "Assessment of treatment compliance and any side effects or tolerability issues",
+  "Review of Ortho-K lens fit or contact lens wearing patterns where applicable",
+  "Discussion of findings and any recommended adjustments to the treatment plan",
+  "Updated prescription where needed",
+];
+
+const listClass = "list-disc list-outside pl-8 mb-6 space-y-3 text-neutral-500";
 
 export default function MyopiaControlPage() {
   return (
     <div className="max-w-7xl mx-auto px-6 py-8 ">
       <section className="mb-12">
         <h2 className="text-3xl font-extrabold text-combination-200 mb-4">
-          Monitoring and Follow-up
+          Monitoring and Follow-Up
         </h2>
         <hr className="w-20 h-1 bg-combination-100 mb-4" />
-
         <p className="text-neutral-500 text-base mb-2">
-          Once a myopia control treatment plan is established, regular follow-up
-          appointments are essential for monitoring its effectiveness and
-          tracking your child's eye health. These visits allow your eye doctor
-          to assess any changes in your child's vision and make adjustments to
-          the treatment plan if necessary.
+          Myopia control is not a set-and-forget treatment. It&apos;s an ongoing
+          program that requires regular assessment to confirm the chosen
+          approach is working, identify when adjustments are needed, and track
+          the structural progression of the condition over time. At 360
+          Eyecare, monitoring is built into every myopia control program from
+          the start.
         </p>
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
+        <h3 className="text-3xl font-bold text-combination-200 mb-4">
           Why Regular Follow-Ups Matter
-        </h2>
+        </h3>
         <p className="text-neutral-500 text-base mb-2">
-          Myopia progression can vary significantly from child to child. Regular
-          checkups allow for early detection of any potential issues and ensure
-          the chosen treatment plan remains effective in slowing down myopia
-          progression.
+          Myopia progression varies significantly between children. Two
+          children of the same age with the same starting prescription can
+          progress at very different rates depending on genetics, visual
+          environment, outdoor time, and treatment response. Regular follow-up
+          allows your optometrist to detect when a treatment approach is no
+          longer keeping pace with progression and intervene before significant
+          additional elongation occurs.
+        </p>
+        <p className="text-neutral-500 text-base mb-2">
+          The key insight is that prescription changes alone don&apos;t tell the
+          full story. A child&apos;s glasses prescription can remain relatively
+          stable while axial length continues to elongate, meaning the
+          structural progression of myopia is outpacing what the prescription
+          measurement captures. At 360 Eyecare, we measure axial length at
+          monitoring visits alongside refractive error, giving a more sensitive
+          and clinically meaningful picture of treatment response than
+          prescription changes alone.
         </p>
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
-          Equipment and techniques
-        </h2>
-        <p className="text-neutral-500 text-base mb-2">
-          Eye care professionals use various tools and techniques to assess your
-          child's eye health and track myopia progression. Some of the most
-          common methods include:
-        </p>
-        <ul className="list-disc pl-8 mb-6 space-y-3 text-gray-700">
-          <li>
-            <span className="font-bold text-neutral-500">
-              Autorefraction and Retinoscopy:
-            </span>{" "}
-            These tests measure the focusing power of the eye, providing
-            valuable information about your child's refractive error
-            (nearsightedness, farsightedness, or astigmatism).
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">Ocular Biometry:</span>{" "}
-            This advanced technology uses light waves to measure the length of
-            the eyeball. Since eyeball elongation is a key factor in myopia
-            progression, monitoring this dimension is crucial.
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Slit Lamp Examination:
-            </span>{" "}
-            This examination allows the doctor to examine the health of the
-            eye's structures, including the cornea, lens, and retina.
-          </li>
+        <h3 className="text-3xl font-bold text-combination-200 mb-4">
+          Diagnostic Tools Used at Monitoring Appointments
+        </h3>
+        <ul className={listClass}>
+          {diagnosticTools.map((tool) => (
+            <li key={tool.head}>
+              <span className="font-bold text-neutral-500">{tool.head}</span>{" "}
+              {tool.para}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
+        <h3 className="text-3xl font-bold text-combination-200 mb-4">
           Frequency of Follow-Up Visits
-        </h2>
+        </h3>
+        <ul className={listClass}>
+          {visitFrequency.map((item) => (
+            <li key={item.head}>
+              <span className="font-bold text-neutral-500">{item.head}</span> —{" "}
+              {item.para}
+            </li>
+          ))}
+        </ul>
         <p className="text-neutral-500 text-base mb-2">
-          The frequency of follow-up appointments will depend on the specific
-          treatment method used and your child's individual needs. Generally,
-          visits can be expected:
+          Your optometrist will recommend the appropriate monitoring frequency
+          at each visit based on current findings.
         </p>
-        <ul className="list-disc pl-8 mb-6 space-y-3 text-gray-700">
-          <li>
-            <span className="font-bold text-neutral-500">Every 3-6 months</span>{" "}
-            during the initial stages of treatment, particularly for younger
-            children or those with rapidly progressing myopia.
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Every 6-12 months
-            </span>{" "}
-            once the treatment plan seems to be effectively controlling
-            progression.
-          </li>
+      </section>
+
+      <section className="mb-12">
+        <h3 className="text-3xl font-bold text-combination-200 mb-4">
+          What Happens at Follow-Up Appointments
+        </h3>
+        <ul className={listClass}>
+          {followUpItems.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
         </ul>
       </section>
 
       <section className="mb-12">
         <h2 className="text-3xl font-bold text-combination-200 mb-4">
-          What to Expect During Follow-Up Visits
-        </h2>
-        <p className="text-gray-700 mb-6">
-          During these visits, you can expect:
-        </p>
-        <ul className="list-disc pl-8 mb-6 space-y-3 text-gray-700">
-          <li>
-            <span className="font-bold text-neutral-500">Vision Testing:</span>{" "}
-            Your child's visual acuity will be assessed to determine if their
-            vision has changed.
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Refractive Error Measurement:
-            </span>{" "}
-            Tests like autorefraction or retinoscopy will be performed to
-            measure any changes in your child's prescription.
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Eye Health Examination:
-            </span>{" "}
-            The doctor will examine the eye's structures using a slit lamp to
-            ensure overall eye health.
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Discussion and Adjustments:
-            </span>{" "}
-            The doctor will discuss the findings, assess the effectiveness of
-            the treatment plan, and make adjustments if needed. This might
-            involve modifying spectacle lens design, changing contact lens
-            parameters, or adjusting the dosage of atropine drops.
-          </li>
-        </ul>
-        <p className="text-neutral-500 text-base mb-2">
-          Open communication with your eye care professional is vital. Don't
-          hesitate to ask questions or voice any concerns you may have about
-          your child's vision or the treatment plan. By working together, you
-          can ensure your child receives the best possible care for their myopia
-          and safeguard their vision for the future.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
-          Final Thoughts
+          Protect Your Child&apos;s Vision — Book a Myopia Control Consultation
+          in Toronto
         </h2>
         <hr className="w-20 h-1 bg-combination-100 mb-4" />
         <p className="text-neutral-500 text-base mb-2">
-          Myopia, or nearsightedness, is a growing concern for children. The
-          Myopia Control Clinic offers a comprehensive approach to managing and
-          slowing the progression of myopia, protecting your child's vision for
-          the future.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
-          Our Approach:
-        </h2>
-        <p className="text-neutral-500 text-base mb-2">
-          We at 360 Eyecare use a range of evidence-based treatment methods,
-          including:
-        </p>
-        <ul className="list-disc pl-8 mb-6 space-y-3 text-gray-700">
-          <li>
-            <span className="font-bold text-neutral-500">
-              Specially designed spectacle lenses
-            </span>{" "}
-            like MiyoSmart or MyoCare lenses
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Orthokeratology (Ortho-K) lenses
-            </span>{" "}
-            for overnight vision correction
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Soft contact lenses
-            </span>{" "}
-            designed for myopia control, such as MiSight lenses
-          </li>
-          <li>
-            <span className="font-bold text-neutral-500">
-              Low-dose atropine eye drops
-            </span>{" "}
-            for safe and effective progression control
-          </li>
-        </ul>
-        <p className="text-neutral-500 text-base mb-2">
-          <span className="font-bold">Regular follow-up appointments</span> are
-          crucial to monitor progress and ensure the chosen treatment remains
-          effective.
+          Myopia that progresses unchecked through the development years is
+          harder to manage and carries greater long-term health consequences
+          than myopia caught and treated early. If your child has been
+          diagnosed with myopia, or if you&apos;re concerned about their
+          distance vision, the right starting point is a dedicated myopia
+          control assessment.
         </p>
         <p className="text-neutral-500 text-base mb-2">
-          We understand the importance of your child's vision. If you're
-          concerned about myopia or have questions about myopia control options,
-          we encourage you to schedule an appointment.
+          At 360 Eyecare&apos;s Yorkville and Beaches clinics, myopia control
+          assessments include axial length measurement, cycloplegic refraction,
+          corneal topography where indicated, and a full treatment discussion
+          based on your child&apos;s specific clinical picture. We offer all
+          four evidence-based myopia control modalities (spectacle lenses,
+          Ortho-K, MiSight, and atropine) and will recommend the approach most
+          appropriate for your child rather than defaulting to a single
+          preferred treatment.
         </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-3xl font-bold text-combination-200 mb-4">
-          Taking Action:
-        </h2>
-        <p className="text-gray-700 mb-6">
-          Protect your child's vision for a lifetime of clear sight. Contact our
-          Myopia Control Clinic today at{" "}
-          <span className="font-semibold">
-            Beaches: 416-698-3937, Yorkville: 416-901-2725
-          </span>{" "}
-          to schedule an appointment or visit our{" "}
-          <Link
-            className="font-semibold text-combination-200"
-            href={"/toronto-beaches-optometrist"}
-          >
-            Beaches Optometry
-          </Link>{" "}
-          at{" "}
-          <span className="font-semibold">
-            2199 Queen Street East, Toronto, ON M4E 1E5
-          </span>{" "}
-          or our{" "}
-          <Link
-            className="font-semibold text-combination-200"
-            href={"/toronto-rosedale-optometrist"}
-          >
-            Yorkville Optometry
-          </Link>{" "}
-          at{" "}
-          <span className="font-semibold">
-            55 Bloor St W, Concourse Level, Suite 03, Manulife Centre, Toronto, ON M4W 1A5, Canada
-          </span>
-          
+        <p className="text-neutral-500 text-base mb-4 font-semibold">
+          No referral required. New patients welcome at both locations.
         </p>
-        <p className="text-neutral-500 text-base mb-2">
-          Remember, early intervention is important. Together, we can ensure
-          your child's eyes stay focused on a bright future.
-        </p>
+        <ClinicBookingCards bookLabel="Book a Myopia Control Consultation" />
       </section>
     </div>
   );
