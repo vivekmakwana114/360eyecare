@@ -11,6 +11,7 @@ import {
 } from "../../../constants/Images";
 import FormSection from "components/FormSection";
 import DryFaqs from "../../../components/DryFaqs";
+import ClinicBookingCards from "../../../components/ClinicBookingCards";
 import { dryEyeClinics as clinics, iplRfFaqdata } from "constants/Constants";
 
 const pageTitle =
@@ -858,53 +859,7 @@ const page = () => {
         </h3>
         <BulletList items={firstAppointmentItems} className="mb-6" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
-          {clinics.map((clinic) => (
-            <div
-              key={clinic.name}
-              className="bg-gray-50 rounded-lg p-6 flex flex-col gap-3"
-            >
-              <h3 className="text-combination-200 text-lg sm:text-xl font-bold">
-                <Link
-                  href={clinic.pageHref}
-                  className="hover:text-combination-100"
-                >
-                  {clinic.name}
-                </Link>
-              </h3>
-              <address className="not-italic text-neutral-500 text-sm sm:text-base leading-relaxed">
-                {clinic.addressLines.map((line) => (
-                  <span key={line} className="block">
-                    {line}
-                  </span>
-                ))}
-                <a
-                  href={`tel:+1-${clinic.phone}`}
-                  className={`${linkClass} block`}
-                >
-                  📞 {clinic.phone}
-                </a>
-                <a
-                  href={`mailto:${clinic.email}`}
-                  className={`${linkClass} block`}
-                >
-                  ✉ {clinic.email}
-                </a>
-              </address>
-              <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
-                {clinic.description}
-              </p>
-              <div className="mt-auto pt-2">
-                <Link
-                  href={clinic.bookHref}
-                  className={`${bookButtonClass} inline-block`}
-                >
-                  Book an IPL/RF Consultation — {clinic.shortName}
-                </Link>
-              </div>
-            </div>
-          ))}
-        </div>
+        <ClinicBookingCards bookLabel="Book an IPL/RF Consultation" />
 
         <div className="bg-white py-12">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">

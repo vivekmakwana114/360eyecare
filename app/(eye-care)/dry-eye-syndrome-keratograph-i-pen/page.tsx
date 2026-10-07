@@ -17,6 +17,7 @@ import Image from "next/image";
 import WhatHappensIfIDoNothing from "../../../components/WhatHappensIfIDoNothing";
 import Symptoms from "../../../components/Symptoms";
 import DryFaqs from "../../../components/DryFaqs";
+import ClinicBookingCards from "../../../components/ClinicBookingCards";
 import { dryEyeClinics as clinics, dryFaqdata } from "constants/Constants";
 
 export async function generateMetadata() {
@@ -521,41 +522,7 @@ const BookConsultationSection = () => (
       appointments available. New patients are welcome at both clinics.
     </p>
 
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
-      {clinics.map((clinic) => (
-        <div
-          key={clinic.name}
-          className="bg-gray-50 rounded-lg p-6 flex flex-col gap-3"
-        >
-          <h3 className="text-combination-200 text-lg sm:text-xl font-bold">
-            <Link href={clinic.pageHref} className="hover:text-combination-100">
-              {clinic.name}
-            </Link>
-          </h3>
-          <address className="not-italic text-neutral-500 text-sm sm:text-base leading-relaxed">
-            {clinic.addressLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
-            <a href={`tel:+1-${clinic.phone}`} className={`${linkClass} block`}>
-              📞 {clinic.phone}
-            </a>
-            <a href={`mailto:${clinic.email}`} className={`${linkClass} block`}>
-              ✉ {clinic.email}
-            </a>
-          </address>
-          <p className="text-neutral-500 text-sm sm:text-base leading-relaxed">
-            {clinic.description}
-          </p>
-          <div className="mt-auto pt-2">
-            <Link href={clinic.bookHref} className={`${bookButtonClass} inline-block`}>
-              Book a Dry Eye Consultation — {clinic.shortName}
-            </Link>
-          </div>
-        </div>
-      ))}
-    </div>
+    <ClinicBookingCards bookLabel="Book a Dry Eye Consultation" />
   </div>
 );
 
