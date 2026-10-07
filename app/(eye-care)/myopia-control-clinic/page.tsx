@@ -125,11 +125,7 @@ const lifestyleTips = [
   },
   {
     head: "Schedule annual myopia monitoring (more frequently if progression is rapid):",
-    para: "Myopia that is being actively monitored can be managed; myopia that is discovered at a threshold it took three years to reach silently cannot be rewound. Children with a family history of myopia, or those already diagnosed, should have eye exams at least annually and more frequently if their optometrist has recommended myopia control treatment. At 360 Eyecare, children in active myopia control programs are typically seen every three to six months, depending on the treatment modality and the rate of progression at baseline.",
-  },
-  {
-    head: "Ensure proper nutrition and sleep.",
-    para: "",
+    para: "Myopia that is being actively monitored can be managed; myopia that is discovered at a threshold it took three years to reach silently cannot be rewound. Children with a family history of myopia, or those already diagnosed, should have eye exams at least annually and more frequently if their optometrist has recommended myopia control treatment. At 360 Eyecare, children in active myopia control programs are typically seen every three to six months, depending on the treatment modality and the rate of progression at baseline. Ensure proper nutrition and sleep.",
   },
 ];
 
@@ -338,7 +334,7 @@ const page = () => {
       </div>
 
       {/* Factors Section */}
-      <div className="max-w-6xl mx-auto my-6 sm:my-16 px-4 sm:px-6 lg:px-0 flex flex-col">
+      <div className="max-w-6xl mx-auto my-6 sm:my-14 px-4 sm:px-6 lg:px-0 flex flex-col">
         <h2 className="text-combination-200 text-2xl sm:text-3xl md:text-[37px] font-[900] mb-4">
           Factors Contributing to Myopia Progression
         </h2>
@@ -380,7 +376,7 @@ const page = () => {
         </p>
         <ul className="list-disc list-outside ml-5 text-neutral-500 text-base">
           {lifestyleTips.map((tip) => (
-            <li key={tip.head} className="mb-3">
+            <li key={tip.head} className="mb-2">
               <strong>{tip.head}</strong> {tip.para}
             </li>
           ))}
@@ -408,7 +404,7 @@ const page = () => {
           error evaluation, and a full discussion of treatment options matched
           to your child&apos;s age, prescription, and lifestyle.
         </p>
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-8 text-base mb-6 text-neutral-500">
+        <div className="flex flex-col gap-4 text-base mb-6 text-neutral-500">
           <p>
             <strong>360 Eyecare Yorkville</strong> — 55 Bloor St W, Manulife
             Centre

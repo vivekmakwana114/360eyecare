@@ -95,17 +95,7 @@ const treatments = [
                   refraction and a 60% reduction in axial length elongation
                   compared to standard single-vision lenses. A subsequent
                   three-year study confirmed sustained efficacy, with no rebound
-                  effect observed when treatment was discontinued.{" "}
-                  <strong>Source: </strong>
-                  <Link
-                    href="https://www.hoyavision.com/en-ca/vision-products/miyosmartvr25/"
-                    className={linkClass}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    MiyoSmart spectacle performance
-                  </Link>
-                  .
+                  effect observed when treatment was discontinued.
                 </LabelledItem>
                 <LabelledItem label="Best suited for:">
                   Children aged 6 and older who prefer glasses over contact
@@ -139,15 +129,7 @@ const treatments = [
                     MyoCare lenses slowed myopia progression by an average of
                     0.31D and reduced axial elongation by 0.13mm compared to
                     single-vision lenses, a relative efficacy of approximately
-                    48% and 41% respectively. <strong>Source: </strong>
-                    <Link
-                      href="https://reviewofmm.com/zeiss-shares-data-on-myocare-efficacy-at-arvo-2024/"
-                      className={linkClass}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Zeiss data on MyoCare efficacy 2024
-                    </Link>
+                    48% and 41% respectively.
                     .
                   </LabelledItem>
                   <LabelledItem label="Best suited for:">
@@ -302,23 +284,10 @@ const treatments = [
           myopia control study conducted with a soft contact lens at the time
           of publication) demonstrated that MiSight lenses slowed myopia
           progression by an average of 59% and reduced axial elongation by 52%
-          compared to standard{" "}
-          <Link href="/prescription-lenses" className={linkClass}>
-            single-vision
-          </Link>{" "}
-          contact lenses. Importantly, the study also showed no significant
-          rebound in progression rate after discontinuation, which has been a
-          concern with some other myopia control modalities.{" "}
-          <strong>Source: </strong>
-          <Link
-            href="https://www.myopiaprofile.com/articles/five-things-we-know-about-misight"
-            className={linkClass}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            The MiSight 1 day clinical trial
-          </Link>
-          .
+          compared to standard contact lenses. Importantly, the study also
+          showed no significant rebound in progression rate after
+          discontinuation, which has been a concern with some other myopia
+          control modalities.
         </p>
 
         <h3 className={subHeadingClass}>What to Expect</h3>
@@ -409,17 +378,7 @@ const treatments = [
             0.01%, while remaining well-tolerated in the majority of patients.
             Side effects are mild — slight pupil dilation and minimal light
             sensitivity in some patients — and typically don&apos;t require
-            photochromic lenses or reading glasses.{" "}
-            <strong>Source: </strong>
-            <Link
-              href="https://www.aoa.org/news/clinical-eye-care/diseases-and-conditions/atropine-in-myopia-control?sso=y"
-              className={linkClass}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              American Optometric Association
-            </Link>
-            .
+            photochromic lenses or reading glasses.
           </LabelledItem>
         </ul>
         <p className="text-neutral-500 mb-4">
@@ -469,12 +428,13 @@ const MyopiaControl = () => {
 
   return (
     <div className="w-full py-8 md:py-16 bg-[#F9F9F9]">
-      <div className="flex flex-col justify-center items-center px-4">
+      {/* Same container as the page's other sections so paragraph widths line up */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-bold text-combination-200 mb-3 text-center">
           Myopia Control Treatment Methods
         </h2>
         <hr className="w-20 h-1 bg-combination-100 mb-4" />
-        <p className="text-neutral-500 text-base font-normal text-center max-w-6xl mb-3">
+        <p className="w-full text-neutral-500 text-base font-normal mb-3">
           There is no single best myopia control treatment. The right option
           depends on your child&apos;s age, prescription, rate of progression,
           corneal anatomy, and willingness to handle contact lenses or comply
@@ -485,7 +445,7 @@ const MyopiaControl = () => {
           single-vision correction, and that combination approaches can enhance
           outcomes further.
         </p>
-        <p className="text-neutral-500 text-base font-normal text-center max-w-6xl">
+        <p className="w-full text-neutral-500 text-base font-normal mb-3">
           At 360 Eyecare, treatment recommendations are based on a
           comprehensive assessment rather than a single preferred modality. Our
           optometrists at both the Yorkville and Beaches clinics are experienced
@@ -493,9 +453,12 @@ const MyopiaControl = () => {
           most appropriate for your child&apos;s specific clinical picture.
           Select a treatment below for details.
         </p>
+        <h3 className="w-full text-combination-200 text-xl sm:text-2xl md:text-[30px] font-[900] mt-4">
+          The four evidence-based myopia control treatments we offer:
+        </h3>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-8 md:mt-12 px-4">
+      <div className="max-w-6xl mx-auto mt-6 px-4 sm:px-6 lg:px-0">
         {/* Mobile Accordion Layout */}
         <div className="md:hidden">
           {treatments.map((treatment, index) => {
