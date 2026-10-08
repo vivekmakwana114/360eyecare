@@ -11,7 +11,6 @@ import {
   GillImage,
   GinaChenImage,
   GlaucomaImage,
-  IPLTherapyImage,
   lasikImage,
   MacularImage,
   MeibographyImage,
@@ -21,7 +20,6 @@ import {
   PerimetryImage,
   prkImage,
   RetinalImage,
-  RFTherapyImage,
   SamBarramImage,
   SamBarramImage_copy,
   smileImage,
@@ -894,71 +892,200 @@ export const laservisionService = [
   },
 ];
 
+// Diagnostic tools shown as tabs on the advanced diagnostics page.
+// paragraphs → intro copy; points (optional) → bullets, either plain strings
+// or { head, para } with a bold lead-in; closing (optional) → copy after them.
 export const advanceddiagnosticsService = [
   {
     label: "OCT Scans",
     icon: "/advanceddiagnosis/oct.png",
     image: octImage,
-    title: "OCT Scans for Detailed Eye Analysis",
-    description:
-      "OCT (Optical Coherence Tomography) provides high-resolution, cross-sectional retina and optic nerve images. It helps in the early detection and management of eye diseases such as glaucoma, macular degeneration, and diabetic retinopathy. OCT’s noninvasive nature makes it a valuable tool for monitoring and managing various eye conditions.",
-  },
-
-  {
-    label: "Corneal Topography",
-    icon: "/advanceddiagnosis/corneal.png",
-    image: cornealImage,
-    title: "Corneal Topography for Corneal Health Assessment",
-    description:
-      "Corneal topography maps the curvature and shape of the cornea, aiding in diagnosing conditions such as astigmatism, keratoconus, and corneal dystrophies. It is also used in preoperative evaluations for procedures like LASIK and contact lens fittings. This technology provides detailed information about the cornea, helping eye care professionals to customize treatment plans for each patient.",
-  },
-  {
-    label: "Meibography",
-    icon: "/advanceddiagnosis/meibography.png",
-    image: MeibographyImage,
-    title: "Meibography for Meibomian Gland Assessment",
-    description:
-      "Meibography is used to assess the meibomian glands responsible for producing the oily layer of the tear film. This test helps diagnose and manage meibomian gland dysfunction (MGD), a common cause of dry eye syndrome. By evaluating the structure and function of the meibomian glands, meibography helps eye care professionals determine the most appropriate treatment for MGD.  Such treatments include warm compress therapy, lid hygiene,  meibomian gland expression, Omega 3 fatty acids, or procedures such as Intense pulse light (IPL) or Radiofrequency (RF).",
-  },
-  {
-    label: "Tear Osmolarity Testing",
-    icon: "/advanceddiagnosis/tear.png",
-    image: TearOsmolarityImage,
-    title: "Tear Osmolarity Testing for Dry Eye Diagnosis",
-    description:
-      "Tear osmolarity testing measures the salt content in tears, an indicator of tear film stability. This test is useful in the diagnosis and management of dry eye disease. The iPen device collects a tear sample, which is then analyzed to determine tear osmolarity levels. By assessing tear osmolarity, eye care professionals can better understand the underlying causes of dry eye and develop personalized treatment plans to improve tear film stability and relieve dry eye symptoms.",
-  },
-  {
-    label: "Perimetry & the Zeiss Humphrey",
-    icon: "/advanceddiagnosis/perimetry.png",
-    image: PerimetryImage,
-    title: "Perimetry for Visual Field Assessment",
-    description:
-      "Perimetry is a test that measures the entire area of peripheral vision that can be seen while the eye is focused on a central point. The Zeiss Humphrey visual field analyzer is a tool used for this test. Perimetry is important for detecting and monitoring conditions that cause visual field loss, such as glaucoma, optic nerve damage, and neurological disorders. By regularly performing perimetry, eye care professionals can assess the progression of these conditions and adjust treatment plans accordingly.",
+    title: "Optical Coherence Tomography (OCT)",
+    paragraphs: [
+      "OCT is the most significant technological advancement in optometry in a generation. It produces cross-sectional images of the retinal layers at a microscopic level using light waves rather than radiation, without any contact with the eye. Think of it as an ultrasound for the eye, but with far greater resolution.",
+      "At 360 Eyecare, OCT is used to:",
+    ],
+    points: [
+      {
+        head: "Detect and monitor glaucoma",
+        para: "measuring the thickness of the retinal nerve fibre layer around the optic nerve with micrometre precision, detecting thinning that indicates glaucoma-related nerve damage years before visual field loss becomes measurable.",
+      },
+      {
+        head: "Assess macular health",
+        para: "imaging the individual cellular layers of the macula to detect macular degeneration, epiretinal membranes, macular holes, and cystoid macular oedema.",
+      },
+      {
+        head: "Monitor diabetic retinopathy",
+        para: "detecting and quantifying retinal oedema and structural changes associated with diabetic eye disease.",
+      },
+      {
+        head: "Evaluate the optic nerve",
+        para: "assessing cup-to-disc ratio and nerve head topography for glaucoma risk stratification.",
+      },
+      {
+        head: "Assess corneal and anterior segment structures",
+        para: "anterior segment OCT can image the corneal layers, angle anatomy, and anterior chamber in detail relevant to glaucoma, corneal disease, and surgical planning.",
+      },
+    ],
+    closing: [
+      "The non-invasive nature of OCT means it can be repeated at every exam, creating a longitudinal structural record that makes change detectable at the earliest possible stage rather than waiting for it to become clinically apparent.",
+    ],
   },
   {
     label: "Retinal Imaging",
     icon: "/advanceddiagnosis/retinal.png",
     image: RetinalImage,
-    title: "Retinal Imaging for Comprehensive Retina Evaluation",
-    description:
-      "Retinal imaging uses specialized cameras to capture detailed images of the retina, blood vessels, and optic nerve head. These images help in the early detection and management of various eye diseases, including diabetic retinopathy, age-related macular degeneration, and retinal detachments. Retinal imaging is a non-invasive procedure that provides valuable information about the retina’s health, allowing eye care professionals to detect and monitor eye conditions more effectively.",
+    title: "Digital Retinal Imaging",
+    paragraphs: [
+      "High-resolution digital photography of the posterior structures captured without requiring pupil dilation in most cases. Retinal images serve two distinct clinical functions: immediate assessment of the current health of posterior structures, and a documented photographic baseline against which future exams can be compared.",
+      "At 360 Eyecare, retinal images are taken at every comprehensive exam and provided to patients for their own records. The ability to compare current retinal photographs with images from previous years is what makes subtle changes visible at a stage when intervention is still effective.",
+      "Conditions detected through retinal imaging include: diabetic retinopathy, hypertensive retinopathy, age-related macular degeneration, retinal vein occlusion, glaucoma, retinal detachment risk factors, optic nerve abnormalities, and in some cases systemic conditions including multiple sclerosis and certain intracranial pathologies that produce visible changes at the optic nerve head.",
+    ],
   },
   {
-    label: "IPL Therapy",
-    icon: "/advanceddiagnosis/ipl.png",
-    image: IPLTherapyImage,
-    title: "Advanced IPL Therapy for Dry Eye",
-    description:
-      "Intense Pulsed Light (IPL) therapy effectively treats dry eye by targeting inflammation and improving tear film stability. It uses controlled light pulses to reduce blockages in the meibomian glands, providing lasting relief and significantly improving overall eye health and comfort for patients suffering from chronic dry eye.",
+    label: "Corneal Topography",
+    icon: "/advanceddiagnosis/corneal.png",
+    image: cornealImage,
+    title: "Corneal Topography",
+    paragraphs: [
+      "Corneal topography produces a detailed, colour-coded map of the corneal surface curvature, measuring thousands of points across the cornea to produce a three-dimensional profile of its shape. It is the primary diagnostic tool for keratoconus and other corneal ectasias, and is essential for contact lens fitting, particularly Ortho-K and scleral lens design.",
+      "At 360 Eyecare, corneal topography is used for:",
+    ],
+    points: [
+      {
+        head: "Keratoconus screening and monitoring",
+        para: "detecting the irregular corneal steepening and thinning that characterises keratoconus, often before it produces noticeable visual symptoms. Early detection allows intervention before significant corneal distortion occurs.",
+      },
+      {
+        head: "Ortho-K lens design",
+        para: "the topography map is the primary data input for custom Ortho-K lens fabrication, and is measured at every Ortho-K monitoring visit to assess the reshaping response.",
+      },
+      {
+        head: "Contact lens fitting",
+        para: "assessing corneal shape for standard and specialty lens fitting, including scleral lenses for irregular corneas.",
+      },
+      {
+        head: "Pre-surgical screening",
+        para: "identifying candidates unsuitable for LASIK or other refractive surgery due to subclinical keratoconus or corneal irregularity.",
+      },
+    ],
   },
   {
-    label: "RF Therapy",
-    icon: "/advanceddiagnosis/rf.png",
-    image: RFTherapyImage,
-    title: "Innovative RF Therapy for Dry Eye",
-    description:
-      "Radiofrequency (RF) therapy enhances dry eye treatment by stimulating collagen production and improving meibomian gland function. This non-invasive technique helps restore natural tear production, alleviating discomfort and irritation. Offering a comfortable and effective solution, RF therapy provides significant relief for chronic dry eye sufferers, improving their overall eye health.",
+    label: "Meibography",
+    icon: "/advanceddiagnosis/meibography.png",
+    image: MeibographyImage,
+    title: "Meibography — OCULUS Keratograph 5M",
+    paragraphs: [
+      "Meibography uses infrared imaging to visualise the structure and function of the meibomian glands in the upper and lower eyelids. It is the only diagnostic method that allows direct assessment of gland integrity without any invasive procedure.",
+      "At 360 Eyecare, meibography is performed using the OCULUS Keratograph 5M, the most advanced dry eye imaging system available in community optometry. The Keratograph simultaneously provides:",
+    ],
+    points: [
+      "Infrared meibography of upper and lower lid glands.",
+      {
+        head: "Non-invasive tear breakup time (NIKBUT)",
+        para: "objective tear film stability measurement without dye.",
+      },
+      {
+        head: "Tear meniscus height measurement",
+        para: "assessing the aqueous tear reservoir.",
+      },
+      {
+        head: "Lipid layer assessment",
+        para: "evaluating the oily outer tear film layer.",
+      },
+      {
+        head: "Standardised bulbar redness grading",
+        para: "objective ocular surface inflammation measurement.",
+      },
+    ],
+    closing: [
+      "Meibography findings directly determine treatment decisions for dry eye and MGD, distinguishing patients who will respond to warm compresses and drops from those who need in-office interventions like IPL or RF, and establishing baseline gland structure against which treatment response is measured at follow-up.",
+    ],
+  },
+  {
+    label: "Tear Osmolarity Testing",
+    icon: "/advanceddiagnosis/tear.png",
+    image: TearOsmolarityImage,
+    title: "Tear Osmolarity Testing — i-PEN",
+    paragraphs: [
+      "Tear osmolarity is the most sensitive and specific objective biomarker for dry eye disease currently available. Elevated osmolarity confirms tear film instability and correlates with disease severity.",
+      "The i-PEN osmolarity system measures tear osmolarity in seconds with a brief, painless touch of a sterile sensor tip to the lower lid margin. At 360 Eyecare, osmolarity testing is standard at every dry eye assessment and at follow-up appointments during dry eye treatment, providing an objective, numerical measure of treatment response that doesn't rely solely on symptom reports.",
+    ],
+  },
+  {
+    label: "Perimetry & the Zeiss Humphrey",
+    icon: "/advanceddiagnosis/perimetry.png",
+    image: PerimetryImage,
+    title: "Perimetry — Zeiss Humphrey Visual Field Analyser",
+    paragraphs: [
+      "Automated perimetry maps the full extent of the visual field, identifying any areas of reduced sensitivity or blind spots that may indicate glaucomatous damage, neurological pathology, or other conditions affecting the visual pathway. The Zeiss Humphrey Field Analyser is the clinical gold standard for perimetry; its SITA testing algorithms minimise test time while maximising sensitivity and reliability.",
+      "At 360 Eyecare, visual field testing is performed when clinically indicated for glaucoma suspects and monitoring, for patients with elevated intraocular pressure, for neurological concerns, and for any patient presenting with symptoms of peripheral vision loss. The Humphrey printout produces a standardised, documented record that can be compared between visits to detect progression.",
+    ],
+  },
+];
+
+// Diagnostic tools without a tab image, shown as cards under the tabs
+export const advanceddiagnosticsMoreTools = [
+  {
+    title: "Pachymetry — Corneal Thickness Measurement",
+    icon: <FaDiagnoses className="text-combination-100" size={32} />,
+    paragraphs: [
+      "Pachymetry measures the thickness of the cornea at multiple points across its surface. Corneal thickness is clinically significant in two primary contexts: glaucoma risk assessment (thin corneas are associated with higher risk of glaucomatous damage and can cause intraocular pressure readings to be underestimated), and refractive surgery candidacy (minimum corneal thickness thresholds must be met for safe LASIK or PRK).",
+      "At 360 Eyecare, pachymetry findings are integrated with intraocular pressure measurements and OCT optic nerve data to produce a comprehensive glaucoma risk profile rather than treating any single measurement in isolation.",
+    ],
+  },
+  {
+    title: "Auto Refraction",
+    icon: <MdVisibility className="text-combination-100" size={32} />,
+    paragraphs: [
+      "The autorefractor provides an objective baseline measurement of refractive error before the subjective phoropter examination. The patient looks into the device at a small target image while it automatically measures how light focuses on the retina, producing an objective starting prescription that significantly narrows the range the optometrist needs to test manually. This makes the subjective refraction faster, more precise, and more reliable, particularly for patients with complex prescriptions or those who find the \"which is better\" comparisons difficult to judge.",
+    ],
+  },
+];
+
+// Advanced diagnostics FAQs. Plain-string answers (also used for JSON-LD).
+export const advancedDiagnosticsFaqs = [
+  {
+    id: 1,
+    question: "What is an OCT scan and do I need one?",
+    answer:
+      "OCT (Optical Coherence Tomography) produces microscopic cross-sectional images of the retinal layers and optic nerve. It's the most sensitive tool available for early detection of glaucoma, macular degeneration, and diabetic retinopathy.",
+  },
+  {
+    id: 2,
+    question: "Is the OCT scan covered by OHIP?",
+    answer:
+      "The comprehensive eye exam is OHIP-covered for patients under 20 and 65 and older. OCT scanning as a supplementary test may involve an additional fee for adults between 20 and 64. Your optometrist will advise you in advance if additional testing fees apply to your appointment.",
+  },
+  {
+    id: 3,
+    question: "What is corneal topography used for?",
+    answer:
+      "Corneal topography maps the curvature of the corneal surface in detail. It's used to screen for keratoconus, design custom Ortho-K and scleral lenses, assess candidates for refractive surgery, and monitor corneal health in contact lens wearers.",
+  },
+  {
+    id: 4,
+    question: "What does the Keratograph 5M do?",
+    answer:
+      "The OCULUS Keratograph 5M is an advanced corneal imaging system used primarily for dry eye assessment. It measures tear film stability, images the meibomian glands with infrared light, assesses the oily tear film layer, and measures the tear reservoir along the lower lid, providing a comprehensive picture of dry eye type and severity without drops or dye.",
+  },
+  {
+    id: 5,
+    question: "What is tear osmolarity testing?",
+    answer:
+      "Tear osmolarity measures the concentration of the tear film. The i-PEN device used at 360 Eyecare measures it in seconds with a painless touch to the lower lid. Elevated osmolarity confirms dry eye and helps track whether treatment is working.",
+  },
+  {
+    id: 6,
+    question: "What is a visual field test?",
+    answer:
+      "A visual field test maps the full extent of your peripheral vision. It's used to screen for glaucoma, detect neurological conditions affecting the visual pathway, and monitor any patient with known visual field loss. The Zeiss Humphrey Field Analyser used at 360 Eyecare is the clinical gold standard for this test.",
+  },
+  {
+    id: 7,
+    question: "Do I need to have my pupils dilated for these tests?",
+    answer:
+      "Not for most of them. OCT, corneal topography, meibography, and retinal imaging can all be performed without dilation in the majority of patients. Dilation may be recommended for a more thorough posterior segment examination in certain clinical situations. Your optometrist will advise you if this applies to your appointment.",
   },
 ];
 
