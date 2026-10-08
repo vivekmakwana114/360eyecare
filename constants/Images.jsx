@@ -63,6 +63,7 @@ import UnderstandImage2 from "../public/understand2.webp";
 import UnderstandImage3 from "../public/understand3.webp";
 import UnderstandImage4 from "../public/understand4.webp";
 import EyeEmergencyImage from "../public/EmergencyEyeScaled.webp";
+import EmergencyEyeClinicImage from "../public/Emergency-Eye-Clinic-scaled.webp";
 import eyeemergenciesImage from "../public/advancedDiagnostics_2.webp";
 import LaserCorrectionImage from "../public/lasercorrection.jpg";
 import advancedDiagnostics from "../public/advancedDiagnostics.webp";
@@ -232,6 +233,7 @@ export {
   LaserVisionServiceImage,
   LaserCorrectionImage,
   EyeEmergencyImage,
+  EmergencyEyeClinicImage,
   UnderstandImage2,
   UnderstandImage3,
   UnderstandImage4,
