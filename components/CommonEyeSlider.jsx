@@ -1,48 +1,106 @@
 "use client";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { commonEyeServices } from "../constants/Constants";
+
+const listClass = "list-disc pl-5 marker:text-combination-100 space-y-2";
+
+// One section card (Symptoms, Diagnosis, Treatment, ...)
+const SectionCard = ({ section, fullWidth }) => (
+  <div
+    className={`bg-gray-50 rounded-lg p-5 flex flex-col gap-3 ${
+      fullWidth ? "md:col-span-2" : ""
+    }`}
+  >
+    <h4 className="text-combination-200 text-lg font-bold">{section.heading}</h4>
+    {section.paragraphs?.map((para) => (
+      <p key={para}>{para}</p>
+    ))}
+    {section.list && (
+      <ul className={listClass}>
+        {section.list.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    )}
+    {section.points && (
+      <ul className={listClass}>
+        {section.points.map((point) => (
+          <li key={point.head}>
+            <strong className="text-combination-200">{point.head}:</strong>{" "}
+            {point.para}
+          </li>
+        ))}
+      </ul>
+    )}
+    {section.closing?.map((para) => (
+      <p key={para}>{para}</p>
+    ))}
+  </div>
+);
+
+// One condition. On desktop the image fills a left column matching the
+// intro's height; the section cards then sit in a two-column grid below.
+// Sections marked `half` pair up side by side; the rest span both columns.
+const ServicePanel = ({ service }) => (
+  <div className="text-neutral-600 text-[15px] leading-relaxed">
+    <div className="grid grid-cols-1 md:grid-cols-[45%_1fr] gap-6 md:gap-8 items-stretch">
+      {/* fill + absolute positioning: on desktop the image takes the text
+          column's height (cropped to fit) without adding height of its own */}
+      <div className="relative w-full aspect-[3/2] md:aspect-auto md:min-h-[280px] rounded-lg overflow-hidden">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          sizes="(min-width: 768px) 45vw, 100vw"
+          className="object-cover"
+        />
+      </div>
+      {/* Text stays in its own column instead of wrapping under the image */}
+      <div>
+        <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-4">
+          {service.title}
+        </h3>
+        {service.paragraphs.map((para) => (
+          <p key={para} className="mb-4">
+            {para}
+          </p>
+        ))}
+        {service.link && (
+          <Link
+            href={service.link.href}
+            className="inline-block bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white font-bold py-3 px-6 rounded-md transition-colors duration-200 shadow-md"
+          >
+            {service.link.label}
+          </Link>
+        )}
+      </div>
+    </div>
+    {service.sections.length > 0 && (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+        {service.sections.map((section) => (
+          <SectionCard
+            key={section.heading}
+            section={section}
+            fullWidth={!section.half}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+);
 
 const CommonEyeSlider = () => {
   const [selected, setSelected] = useState(0);
 
-  // Function to render the content for a service
-  const renderServiceContent = (service) => {
-    return (
-      <div className="bg-gray-50 rounded-lg px-4 py-6 mb-4">
-        <div className="flex flex-col gap-6">
-          {/* Image */}
-          <div className="w-full">
-            <Image
-              src={service.image}
-              alt={service.label}
-              width={600}
-              height={400}
-              className="rounded-lg w-full object-cover h-48"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="w-full">
-            <h2 className="text-xl font-bold text-brand-blue mb-2">
-              {service.title}
-            </h2>
-            <p className="text-neutral-600 text-sm mb-4">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
     <div className="w-full py-8 md:py-16 bg-[#F9F9F9]">
       <div className="flex flex-col justify-center items-center px-4">
-        <h3 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
           Common Eye Conditions and Treatments
-        </h3>
+        </h2>
         <hr className="w-[65px] h-[2px] bg-combination-100 mb-4" />
         <p className="text-neutral-500 text-base font-normal text-center">
           Learn about serious eye conditions like cataracts, glaucoma, and more.
@@ -62,36 +120,19 @@ const CommonEyeSlider = () => {
                   className={`w-full p-4 rounded-lg text-center cursor-pointer transition-all duration-200 flex items-center justify-center mb-1 ${
                     isActive
                       ? "bg-combination-100 text-white shadow-md"
-                      : "bg-gray-50 text-combination-200 hover:bg-gray-100"
+                      : "bg-white text-combination-200 hover:bg-gray-100"
                   }`}
                 >
                   <Image
                     src={service.icon}
-                    alt={service.label}
+                    alt=""
                     width={36}
                     height={36}
                     className={`h-8 w-auto mr-3 ${
                       isActive ? "filter brightness-0 invert" : ""
                     }`}
                   />
-                  <span className="font-semibold text-sm ">
-                    {service.label}
-                  </span>
-                  {/* <svg
-                    className={`ml-auto w-5 h-5 transition-transform ${
-                      isActive ? "transform rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg> */}
+                  <span className="font-semibold text-sm">{service.label}</span>
                 </button>
                 <AnimatePresence>
                   {isActive && (
@@ -102,7 +143,9 @@ const CommonEyeSlider = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      {renderServiceContent(service)}
+                      <div className="bg-white rounded-lg px-4 py-6 mb-4">
+                        <ServicePanel service={service} />
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -112,18 +155,18 @@ const CommonEyeSlider = () => {
         </div>
 
         {/* Desktop Tabs */}
-        <div className="hidden md:block">
-          <div className="flex flex-wrap justify-around gap-4 mb-10 bg-white py-6 px-2">
+        <div className="hidden md:block bg-white rounded-lg">
+          <div className="flex flex-nowrap justify-center gap-3 py-6 px-4">
             {commonEyeServices.map((service, index) => {
               const isActive = selected === index;
               return (
                 <button
                   key={service.label}
                   onClick={() => setSelected(index)}
-                  className={`relative flex flex-col items-center justify-center w-40 lg:w-48 p-4  text-center cursor-pointer transition-all duration-200 ${
+                  className={`relative flex flex-col items-center justify-center flex-1 max-w-[200px] p-4 rounded-t-lg text-center cursor-pointer transition-all duration-200 ${
                     isActive
                       ? "bg-combination-100 text-white shadow-md"
-                      : "bg-gray-50 text-combination-200 hover:bg-gray-100 hover:text-combination-100 "
+                      : "bg-gray-50 text-combination-200 hover:bg-gray-100 hover:text-combination-100"
                   }`}
                 >
                   {isActive && (
@@ -133,12 +176,12 @@ const CommonEyeSlider = () => {
                     width={36}
                     height={36}
                     src={service.icon}
-                    alt={service.label}
+                    alt=""
                     className={`mx-auto mb-2 h-8 w-auto ${
                       isActive ? "filter brightness-0 invert" : ""
                     }`}
                   />
-                  <div className="font-semibold text-sm lg:text-base ">
+                  <div className="font-semibold text-sm lg:text-base">
                     {service.label}
                   </div>
                 </button>
@@ -146,41 +189,23 @@ const CommonEyeSlider = () => {
             })}
           </div>
 
-          {/* Desktop Content Area */}
-          <div className="relative bg-neutral-400 rounded-lg px-6 py-8 min-h-[517px] overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selected}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full"
-              >
-                <div className="flex flex-col md:flex-row gap-8 px-6 py-8">
-                  {/* Left image */}
-                  <div className="md:w-1/2">
-                    <Image
-                      src={commonEyeServices[selected]?.image}
-                      alt={commonEyeServices[selected]?.label}
-                      width={600}
-                      height={400}
-                      className="rounded-lg w-full object-cover"
-                    />
-                  </div>
-
-                  {/* Right content */}
-                  <div className="md:w-1/2">
-                    <h2 className="text-2xl font-bold text-brand-blue mb-4">
-                      {commonEyeServices[selected]?.title}
-                    </h2>
-                    <p className="text-neutral-600 mb-6 text-[15px]">
-                      {commonEyeServices[selected]?.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          {/* Every panel is rendered (inactive ones hidden) so all of the
+              copy is in the server HTML, not just the first tab's. */}
+          <div className="px-6 pb-6 pt-4">
+            {commonEyeServices.map((service, index) => {
+              const isActive = selected === index;
+              return (
+                <motion.div
+                  key={service.label}
+                  initial={false}
+                  animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className={isActive ? "block" : "hidden"}
+                >
+                  <ServicePanel service={service} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
