@@ -865,30 +865,167 @@ export const pediatricEyeData = [
   },
 ];
 
+// Laser vision correction procedures shown as tabs on the laser vision page.
+// paragraphs → description; recovery and bestFor → labelled lines under it.
 export const laservisionService = [
   {
     label: "PRK",
     icon: "/laser/prk.png",
     image: prkImage,
-    title: "PRK Laser Vision Correction Treatment",
-    description:
-      "PRK (Photorefractive Keratectomy) is a type of laser eye surgery used to correct nearsightedness, farsightedness, and astigmatism. It involves removing the cornea’s outer layer before reshaping it with an excimer laser. PRK is often recommended for patients with thin corneas or other corneal irregularities. The procedure typically takes less than 15 minutes per eye, and most patients experience improved vision within a few days to a week. PRK is a safe and effective option for vision correction, offering long-lasting results and minimal risk of complications. If you’re considering PRK, our experienced team can help determine if you’re a candidate and guide you through the process.",
+    title: "PRK — Photorefractive Keratectomy",
+    paragraphs: [
+      "PRK is the original laser vision correction procedure, predating LASIK by several years, and remains the gold standard for patients with thin corneas, certain corneal irregularities, or high-risk lifestyles where a corneal flap could be a concern.",
+      "In PRK, the epithelium (the outermost cellular layer of the cornea) is gently removed, and an excimer laser reshapes the underlying corneal stroma directly. The epithelium regenerates naturally over three to five days following surgery. There is no corneal flap, which eliminates flap-related complications and makes PRK the preferred choice for patients involved in contact sports, combat roles, or other activities where a direct blow to the eye is a realistic risk.",
+    ],
+    recovery:
+      "Slower than LASIK, most patients experience discomfort and reduced visual clarity for three to seven days as the epithelium heals. Full visual stabilisation typically takes four to six weeks, though many patients are functional within a week.",
+    bestFor:
+      "Patients with thin corneas; patients whose topography shows borderline findings that make LASIK less appropriate; patients in high-risk physical occupations or contact sports; patients with lower prescriptions where the ablation depth required for LASIK would leave insufficient stromal bed thickness.",
   },
   {
     label: "LASIK",
     icon: "/laser/lasik.png",
     image: lasikImage,
-    title: "LASIK Laser Vision Correction Treatment",
-    description:
-      "LASIK (Laser-Assisted In Situ Keratomileusis) is a popular laser eye surgery that reshapes the cornea to correct refractive errors such as nearsightedness, farsightedness, and astigmatism. It involves creating a thin flap in the cornea using a femtosecond laser and an excimer laser to reshape the underlying corneal tissue. LASIK is known for its quick recovery time and high success rate, with many patients achieving 20/25 vision or better after the procedure. LASIK offers a permanent solution for vision correction, reducing or eliminating the need for glasses or contact lenses. If you’re interested in LASIK, our skilled LASIK surgeons can determine if you’re a suitable candidate and provide personalized care throughout your journey to clearer vision.",
+    title: "LASIK — Laser-Assisted In Situ Keratomileusis",
+    paragraphs: [
+      "LASIK is the most commonly performed refractive surgery globally. A thin corneal flap is created, and the flap is lifted to allow excimer laser reshaping of the stromal bed underneath. The flap is then repositioned, adhering without sutures through natural corneal adhesion.",
+      "The key advantage of LASIK over PRK is recovery speed. The corneal epithelium is preserved under the flap, so healing is faster and discomfort is significantly less. Most LASIK patients achieve functional vision within 24 to 48 hours.",
+    ],
+    recovery:
+      "Most patients are functional within one to two days, with stable vision typically achieved within two to four weeks. Some patients notice halos or glare at night in the early weeks of recovery, which typically resolves as healing progresses.",
+    bestFor:
+      "Patients with adequate corneal thickness, normal topography, and prescriptions within the treatable range who want the fastest recovery and are not in high-risk physical environments where flap integrity could be compromised.",
   },
   {
     label: "SMILE",
     icon: "/laser/bladeless.png",
     image: smileImage,
-    title: "SMILE Laser Vision Correction Treatment",
+    title: "SMILE — Small Incision Lenticule Extraction",
+    paragraphs: [
+      "SMILE is the newest generation of laser vision correction and the only flapless, all-laser procedure currently available. A femtosecond laser creates a small disc of corneal tissue inside the intact cornea, which is then extracted through a small incision without creating a corneal flap. The cornea is reshaped by the removal of this tissue disc.",
+      "SMILE avoids both the flap complications of LASIK and the epithelial removal of PRK. Corneal nerves are less disrupted than in LASIK, which may reduce the severity and duration of post-operative dry eye, a meaningful advantage for patients with borderline pre-operative tear film health.",
+    ],
+    recovery:
+      "Intermediate between PRK and LASIK. Most patients achieve functional vision within one to three days, with full stabilisation over four to six weeks.",
+    bestFor:
+      "Patients with mild to moderate myopia (currently approved for myopia and myopic astigmatism, not hyperopia); patients concerned about flap integrity; patients with borderline dry eye who are otherwise suitable candidates; patients seeking the most technologically current option.",
+  },
+];
+
+// What the laser vision candidacy assessment evaluates
+export const laserCandidacyFactors = [
+  {
+    title: "Prescription Range",
     description:
-      "SMILE(Small Incision Lenticule Extraction) is an innovative laser vision correction procedure that corrects myopia (nearsightedness) and astigmatism. Unlike LASIK, which creates a corneal flap, SMILE uses a femtosecond laser to create a small, lens-shaped piece of tissue within the cornea, which is then removed through a small incision. This gentle, minimally invasive procedure preserves more of the cornea’s structural integrity compared to LASIK, making it a suitable option for patients with thin corneas or those at higher risk of dry eye syndrome. SMILE offers rapid visual recovery, with many patients achieving clear vision within a few days. If you’re considering SMILE, our experienced ophthalmologists can assess your candidacy and provide personalized guidance to help you achieve your vision correction goals.",
+      "Laser vision correction can address myopia, hyperopia, and astigmatism within certain ranges. LASIK and SMILE are most effective for myopia up to approximately -8.00D to -10.00D depending on corneal thickness; PRK has a similar range but may be preferred for lower prescriptions or thinner corneas. Hyperopia correction is possible up to approximately +4.00D to +6.00D. Prescriptions outside these ranges, or prescriptions that are still changing year-on-year, may not be appropriate for laser correction at the current time.",
+  },
+  {
+    title: "Prescription Stability",
+    description:
+      "Laser correction produces a permanent change to the corneal shape ideally matched to a stable prescription. Candidates should have had a stable prescription for at least one to two years before surgery. This is relevant for younger patients whose myopia may still be progressing; proceeding with surgery while the prescription is changing produces a result that may not remain accurate as the eye continues to change.",
+  },
+  {
+    title: "Corneal Thickness and Shape",
+    description:
+      "The laser removes corneal tissue to reshape the refractive surface. Pachymetry measurement determines whether sufficient tissue exists for the planned ablation depth. Corneal topography screens for keratoconus and other corneal irregularities. Subclinical keratoconus that appears normal on basic examination can be detected on topography, which is why this test is essential before any refractive surgery recommendation.",
+  },
+  {
+    title: "Tear Film and Dry Eye",
+    description:
+      "Laser surgery temporarily disrupts corneal nerve fibres, reducing corneal sensation and reflexive tear production for weeks to months post-operatively. Patients with pre-existing significant dry eye are at higher risk of severe post-operative dry eye that can affect visual quality and recovery comfort. Tear film assessment, including Keratograph 5M tear film analysis and i-PEN osmolarity testing, is part of the pre-surgical evaluation at 360 Eyecare, and significant dry eye may need to be treated before proceeding with surgery.",
+  },
+  {
+    title: "Age and General Health",
+    description:
+      "Most refractive surgeons recommend waiting until at least age 18 to 21, when the cornea and prescription have typically reached adult stability. For patients over 40, the natural development of presbyopia needs to be factored into the surgical plan, as distance-only laser correction will still require reading glasses for near work. Certain systemic conditions, medications, and autoimmune conditions are contraindications for laser surgery and will be identified during the pre-surgical health review.",
+  },
+];
+
+export const laserNotCandidates = [
+  "Patients with keratoconus or irregular corneal topography",
+  "Patients with inadequate corneal thickness for the planned ablation",
+  "Patients with significant uncontrolled dry eye disease",
+  "Patients with unstable, still-progressing prescriptions",
+  "Patients with certain systemic or autoimmune conditions",
+  "Patients who are pregnant or breastfeeding",
+  "Patients with unrealistic expectations about surgical outcomes",
+];
+
+// Co-management steps, from consultation through post-operative care
+export const laserCoManagementSteps = [
+  {
+    title: "Pre-surgical consultation",
+    paragraphs: [
+      "Your first appointment is a comprehensive candidacy assessment, which typically takes 60 to 90 minutes. It includes corneal topography, pachymetry, tear film assessment with the Keratograph 5M and i-PEN osmolarity testing, a full refractive assessment, and a complete ocular health evaluation. At the end of the appointment, your optometrist will give you a clear assessment of your candidacy, discuss which procedure, if any, is appropriate for your situation, and answer any questions you have before you make any decision.",
+      "If you're a suitable candidate and decide to proceed, your optometrist coordinates the referral to a refractive surgeon and communicates your clinical findings and assessment. You'll receive a detailed summary of your pre-surgical measurements.",
+    ],
+  },
+  {
+    title: "Pre-operative preparation",
+    paragraphs: [
+      "Contact lens wearers must discontinue lens wear before surgery. Soft lenses typically two weeks before; rigid gas-permeable lenses four to six weeks or longer, as the cornea needs time to return to its natural shape before accurate measurements can be taken. Your optometrist will advise you on the specific timeline based on your lens type and wearing history.",
+      "If dry eye is identified during the pre-surgical assessment, a course of treatment may be recommended before surgery to optimise the ocular surface and reduce the risk of post-operative dry eye.",
+    ],
+  },
+  {
+    title: "Surgery",
+    paragraphs: [
+      "The surgical procedure is performed at the refractive surgery centre by the ophthalmologist. 360 Eyecare optometrists do not perform laser surgery. Most procedures take 15 to 30 minutes for both eyes combined.",
+    ],
+  },
+  {
+    title: "Post-operative care",
+    paragraphs: [
+      "Post-operative follow-up begins the day after surgery and continues over the following weeks and months. Visits are typically scheduled at one day, one week, one month, and three months post-operatively, with additional visits if there are any concerns about healing or refractive outcome.",
+      "At each post-operative visit at 360 Eyecare, your optometrist assesses visual acuity and refraction, examines the corneal surface and the flap, manages any post-operative dry eye symptoms, and monitors your healing trajectory. If the refractive outcome at the three-month assessment is not within the expected range, your optometrist will discuss enhancement candidacy with the surgical team.",
+    ],
+  },
+];
+
+// Laser vision correction FAQs. Plain-string answers (also used for JSON-LD).
+export const laserVisionFaqs = [
+  {
+    id: 1,
+    question: "Does 360 Eyecare perform laser eye surgery?",
+    answer:
+      "No, 360 Eyecare optometrists provide laser vision correction co-management instead. It is the pre-surgical candidacy assessment and post-operative care surrounding the procedure. The surgery itself is performed by a refractive ophthalmologist at a surgical facility. We coordinate the referral and manage your care before and after.",
+  },
+  {
+    id: 2,
+    question: "What's the difference between LASIK, PRK, and SMILE?",
+    answer:
+      "All three use laser technology to reshape the cornea and correct refractive errors. LASIK creates a corneal flap for faster recovery. PRK removes the epithelium, resulting in slower recovery but no flap, making it preferable for thin corneas and high-risk lifestyles. SMILE is the newest option, which is flapless and all-laser, with the smallest incision and potentially less post-operative dry eye. Your optometrist will advise which is most appropriate for your situation.",
+  },
+  {
+    id: 3,
+    question: "How do I know if I'm a candidate for laser vision correction?",
+    answer:
+      "A pre-surgical candidacy assessment determines this. Not everyone is a candidate; conditions like keratoconus, thin corneas, significant dry eye, and unstable prescriptions are contraindications. The assessment at 360 Eyecare gives you an honest, independent answer.",
+  },
+  {
+    id: 4,
+    question:
+      "How long do I need to stop wearing contact lenses before the assessment?",
+    answer:
+      "Soft contact lens wearers should discontinue lens wear for at least two weeks before the pre-surgical assessment. Rigid gas-permeable lens wearers typically need four to six weeks or longer. The cornea needs time to return to its natural shape before accurate topography and pachymetry measurements can be taken.",
+  },
+  {
+    id: 5,
+    question: "Will I still need glasses after laser vision correction?",
+    answer:
+      "Most patients achieve 20/20 or better without glasses for distance following laser correction. However, patients over 40 will typically still need reading glasses for near work as presbyopia develops, regardless of laser surgery. Some patients opt for monovision correction (one eye optimised for distance and one for near), which reduces reading glass dependence. Your optometrist will discuss realistic expectations for your specific situation.",
+  },
+  {
+    id: 6,
+    question: "How long does post-operative care last?",
+    answer:
+      "Standard post-operative monitoring visits are scheduled at one day, one week, one month, and three months after surgery. Most patients are discharged from active post-operative care at the three-month visit once the refractive outcome has stabilised. Annual comprehensive eye exams continue as normal thereafter.",
+  },
+  {
+    id: 7,
+    question: "Is laser vision correction covered by OHIP or insurance?",
+    answer:
+      "No. Laser vision correction is an elective procedure and is not covered by OHIP. Some extended health benefit plans include partial coverage for refractive surgery; check your plan.",
   },
 ];
 

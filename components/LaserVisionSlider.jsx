@@ -4,53 +4,55 @@ import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
+// One procedure. On desktop the image floats left so the copy wraps around
+// and under it, whatever its length (no empty column beside it).
+const ServicePanel = ({ service }) => (
+  <div className="flow-root text-neutral-600 text-[15px] leading-relaxed">
+    <Image
+      src={service.image}
+      alt={service.title}
+      sizes="(min-width: 768px) 45vw, 100vw"
+      className="w-full h-auto aspect-[3/2] object-cover rounded-lg mb-6 md:float-left md:w-[45%] md:mr-8 md:mb-4"
+    />
+    <h3 className="text-xl md:text-2xl font-bold text-brand-blue mb-4">
+      {service.title}
+    </h3>
+    {service.paragraphs.map((para) => (
+      <p key={para} className="mb-4">
+        {para}
+      </p>
+    ))}
+    <p className="mb-4">
+      <strong className="text-combination-200">Recovery:</strong>{" "}
+      {service.recovery}
+    </p>
+    <p className="mb-4">
+      <strong className="text-combination-200">Best suited for:</strong>{" "}
+      {service.bestFor}
+    </p>
+  </div>
+);
+
 const LaserVisionSlider = () => {
   const [selected, setSelected] = useState(0);
-
-  // Function to render the content for a service
-  const renderServiceContent = (service) => {
-    return (
-      <div className="bg-gray-50 rounded-lg px-4 py-6 mb-4">
-        <div className="flex flex-col gap-6">
-          {/* Image */}
-          <div className="w-full">
-            <Image
-              src={service.image}
-              alt={service.label}
-              width={600}
-              height={400}
-              className="rounded-lg w-full object-cover h-48"
-            />
-          </div>
-
-          {/* Content */}
-          <div className="w-full">
-            <h2 className="text-xl font-bold text-brand-blue mb-2">
-              {service.title}
-            </h2>
-            <p className="text-neutral-600 text-sm mb-4">
-              {service.description}
-            </p>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full py-8 md:py-16 bg-[#F9F9F9]">
       <div className="flex flex-col justify-center items-center px-4">
-        <h3 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
-          Types of Laser Vision Correction Procedures
-        </h3>
+        <h2 className="text-3xl md:text-4xl font-bold text-brand-blue mb-2 text-center">
+          Types of Laser Vision Correction
+        </h2>
         <hr className="w-[65px] h-[2px] bg-combination-100 mb-4" />
-        <p className="text-neutral-500 text-base font-normal text-center">
-          Explore our advanced laser vision correction treatments for clear,
-          improved vision.
+        <p className="text-neutral-500 text-base font-normal text-center max-w-3xl">
+          Three primary laser vision correction procedures are performed at
+          surgical centres in Toronto. Your co-managing optometrist at 360
+          Eyecare will discuss which is most appropriate for your prescription,
+          corneal anatomy, and lifestyle — or whether any of them is
+          appropriate at all.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto mt-8 md:mt-12 px-4 ">
+      <div className="max-w-6xl mx-auto mt-8 md:mt-12 px-4">
         {/* Mobile Accordion Layout */}
         <div className="md:hidden">
           {laservisionService.map((service, index) => {
@@ -62,12 +64,12 @@ const LaserVisionSlider = () => {
                   className={`w-full p-4 rounded-lg text-center cursor-pointer transition-all duration-200 flex items-center justify-center mb-1 ${
                     isActive
                       ? "bg-combination-100 text-white shadow-md"
-                      : "bg-gray-50 text-combination-200 hover:bg-gray-100"
+                      : "bg-white text-combination-200 hover:bg-gray-100"
                   }`}
                 >
                   <Image
                     src={service.icon}
-                    alt={service.label}
+                    alt=""
                     width={36}
                     height={36}
                     className={`h-8 w-auto mr-3 ${
@@ -75,21 +77,6 @@ const LaserVisionSlider = () => {
                     }`}
                   />
                   <span className="font-semibold text-sm">{service.label}</span>
-                  {/* <svg
-                    className={`ml-auto w-5 h-5 transition-transform ${
-                      isActive ? "transform rotate-180" : ""
-                    }`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg> */}
                 </button>
                 <AnimatePresence>
                   {isActive && (
@@ -100,7 +87,9 @@ const LaserVisionSlider = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      {renderServiceContent(service)}
+                      <div className="bg-white rounded-lg px-4 py-6 mb-4">
+                        <ServicePanel service={service} />
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -110,18 +99,18 @@ const LaserVisionSlider = () => {
         </div>
 
         {/* Desktop Tabs */}
-        <div className="hidden md:block bg-white">
-          <div className="flex flex-wrap justify-around gap-4 mb-10 py-2 px-4">
+        <div className="hidden md:block bg-white rounded-lg">
+          <div className="flex flex-nowrap justify-center gap-4 py-6 px-4">
             {laservisionService.map((service, index) => {
               const isActive = selected === index;
               return (
                 <button
                   key={service.label}
                   onClick={() => setSelected(index)}
-                  className={`relative flex flex-col items-center justify-center  lg:w-[332px] p-4  text-center cursor-pointer transition-all duration-200 ${
+                  className={`relative flex flex-col items-center justify-center flex-1 max-w-[332px] p-4 rounded-t-lg text-center cursor-pointer transition-all duration-200 ${
                     isActive
                       ? "bg-combination-100 text-white shadow-md"
-                      : "bg-gray-50 text-combination-200 hover:bg-gray-100 hover:text-combination-100 "
+                      : "bg-gray-50 text-combination-200 hover:bg-gray-100 hover:text-combination-100"
                   }`}
                 >
                   {isActive && (
@@ -129,7 +118,7 @@ const LaserVisionSlider = () => {
                   )}
                   <Image
                     src={service.icon}
-                    alt={service.label}
+                    alt=""
                     width={36}
                     height={36}
                     className={`mx-auto mb-2 h-8 w-auto ${
@@ -144,41 +133,23 @@ const LaserVisionSlider = () => {
             })}
           </div>
 
-          {/* Desktop Content Area */}
-          <div className="relative bg-neutral-400 rounded-lg px-6 py-8 min-h-[517px] overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={selected}
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -50 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full"
-              >
-                <div className="flex flex-col md:flex-row gap-8 px-6 py-8">
-                  {/* Left image */}
-                  <div className="md:w-1/2">
-                    <Image
-                      src={laservisionService[selected]?.image}
-                      alt={laservisionService[selected]?.label}
-                      width={600}
-                      height={400}
-                      className="rounded-lg w-full object-cover"
-                    />
-                  </div>
-
-                  {/* Right content */}
-                  <div className="md:w-1/2">
-                    <h2 className="text-2xl font-bold text-brand-blue mb-4">
-                      {laservisionService[selected]?.title}
-                    </h2>
-                    <p className="text-neutral-600 mb-6 text-[15px]">
-                      {laservisionService[selected]?.description}
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+          {/* Every panel is rendered (inactive ones hidden) so all of the
+              copy is in the server HTML, not just the first tab's. */}
+          <div className="px-6 pb-4 pt-4">
+            {laservisionService.map((service, index) => {
+              const isActive = selected === index;
+              return (
+                <motion.div
+                  key={service.label}
+                  initial={false}
+                  animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className={isActive ? "block" : "hidden"}
+                >
+                  <ServicePanel service={service} />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
