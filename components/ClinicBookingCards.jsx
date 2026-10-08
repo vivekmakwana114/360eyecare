@@ -5,7 +5,13 @@ const linkClass = "text-combination-200 hover:text-combination-100";
 const bookButtonClass =
   "bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white text-center font-bold py-3 px-4 rounded-md transition-colors duration-200 shadow-md";
 
-const ClinicBookingCards = ({ bookLabel, clinics = dryEyeClinics }) => (
+// `callNow` swaps the booking link for a tap-to-call button
+// ("Call Yorkville Now — 416-901-2725"), used on the eye emergencies page.
+const ClinicBookingCards = ({
+  bookLabel = "Book an Appointment",
+  clinics = dryEyeClinics,
+  callNow = false,
+}) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
     {clinics.map((clinic) => (
       <div
@@ -34,12 +40,21 @@ const ClinicBookingCards = ({ bookLabel, clinics = dryEyeClinics }) => (
           {clinic.description}
         </p>
         <div className="mt-auto pt-2">
-          <Link
-            href={clinic.bookHref}
-            className={`${bookButtonClass} block w-full`}
-          >
-            {bookLabel} — {clinic.shortName}
-          </Link>
+          {callNow ? (
+            <a
+              href={`tel:+1-${clinic.phone}`}
+              className={`${bookButtonClass} block w-full`}
+            >
+              Call {clinic.shortName} Now — {clinic.phone}
+            </a>
+          ) : (
+            <Link
+              href={clinic.bookHref}
+              className={`${bookButtonClass} block w-full`}
+            >
+              {bookLabel} — {clinic.shortName}
+            </Link>
+          )}
         </div>
       </div>
     ))}

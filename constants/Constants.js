@@ -776,6 +776,339 @@ export const eyeemergencyData = [
   },
 ];
 
+// Eye emergencies triage lists. Items are { head, para? }: head renders bold.
+export const eyeEmergencyTriage = {
+  clinic: [
+    { head: "Corneal abrasions (scratched eye)" },
+    { head: "Foreign body in the eye", para: "eyelash, grit, small particles that haven't penetrated the eye." },
+    { head: "Acute red eye", para: "sudden conjunctivitis, uveitis, or significant inflammation." },
+    { head: "Subconjunctival haemorrhage", para: "red patch on the white of the eye." },
+    { head: "Contact lens-related complications", para: "acute infection, stuck lens, significant discomfort." },
+    { head: "Mild to moderate chemical splash", para: "after immediate flushing with water for at least 15 minutes." },
+    { head: "New onset of floaters", para: "without flashing lights or vision loss." },
+    { head: "Stye or eyelid abscess", para: "requiring assessment and treatment." },
+    { head: "Sudden eye pain with a red eye", para: "possible iritis or anterior uveitis." },
+    { head: "Suspected early pink eye", para: "that is rapidly worsening." },
+  ],
+  er: [
+    { head: "Penetrating eye injury", para: "anything that has punctured or entered the eye itself." },
+    { head: "Severe chemical burn", para: "particularly alkali products (bleach, oven cleaner, cement) which penetrate rapidly and require immediate irrigation and hospital management." },
+    { head: "Sudden complete or near-complete vision loss", para: "in one or both eyes." },
+    { head: "Eye injury following significant blunt force trauma" },
+    { head: "Symptoms suggesting stroke alongside vision changes", para: "sudden facial drooping, arm weakness, speech difficulty." },
+    { head: "Acute angle-closure glaucoma", para: "severe pain, nausea, vomiting, and halos around lights. Go to ER immediately; this is a time-critical emergency." },
+    { head: "Retinal detachment", para: "advancing shadow or curtain across the visual field; requires same-day surgical evaluation." },
+  ],
+};
+
+// Common eye emergencies. paragraphs and notes are strings or { head, para }
+// (bold lead-in); lists are { heading, items }; action is the closing
+// instruction.
+export const eyeEmergencyConditions = [
+  {
+    id: "chemical-exposure",
+    title: "Chemical Exposure",
+    paragraphs: [
+      "Chemical exposure to the eye, even from common household products, can cause serious damage. Alkali chemicals (bleach, ammonia, oven cleaners, cement) are particularly dangerous because they penetrate the corneal tissue rapidly, causing progressive damage long after the initial contact. Acid chemicals cause immediate pain but tend to be somewhat self-limiting as they coagulate corneal proteins. Both require urgent treatment.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "Burning or stinging sensation",
+          "Redness and significant tearing",
+          "Blurred vision",
+          "Sensitivity to light",
+          "Feeling that something is in the eye",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "Irrigate the eye immediately with large volumes of clean water or saline; hold the eye open under a running tap, use an eye wash station, or pour from a bottle. Continue flushing for a minimum of 15 to 20 minutes without stopping.",
+          "Do not rub the eye",
+          "Remove contact lenses if present and easy to remove; do not delay irrigation to do this",
+          "After flushing, seek emergency eye care immediately; call 360 Eyecare or go to the nearest ER depending on the severity and the chemical involved",
+        ],
+      },
+    ],
+  },
+  {
+    id: "foreign-object",
+    title: "Foreign Object in the Eye",
+    paragraphs: [
+      "Foreign bodies range from eyelashes and dust particles to metal shavings, glass fragments, and wood splinters, which can scratch the cornea, embed in the tissue, or penetrate the eye entirely. The distinction matters enormously for management.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "Persistent feeling of something in the eye that doesn't resolve with blinking",
+          "Redness and tearing",
+          "Pain or significant discomfort, particularly with blinking",
+          "Blurred vision",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "Do not rub the eye; rubbing can embed a superficial particle into the corneal tissue or cause additional scratching.",
+          "Try blinking rapidly or flushing with clean water or saline to dislodge a superficial particle.",
+          "If the object doesn't flush out, if there is significant pain, or if you suspect the object may have penetrated the eye, do not attempt further removal. Cover the eye loosely and seek immediate care.",
+          "For metal particles specifically: rust rings form rapidly on the cornea and require professional removal. Call 360 Eyecare as soon as possible.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "corneal-abrasion",
+    title: "Corneal Abrasion",
+    paragraphs: [
+      "A corneal abrasion is a scratch on the surface of the cornea. They're extremely common and extremely painful, caused by foreign objects, fingernails, contact lens edges, or even a forceful rub of the eye. Despite the significant discomfort, most corneal abrasions heal well with appropriate treatment.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "Sharp, significant eye pain, often described as a feeling of grit despite nothing being visible",
+          "Sensitivity to light",
+          "Tearing",
+          "Redness",
+          "Blurred vision",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "Do not rub the eye",
+          "Keep the eye closed or covered with a clean, loose dressing if the pain is severe",
+          "Remove contact lenses if wearing them",
+          "Call 360 Eyecare. Corneal abrasions are the most common presentation we see for emergency appointments and are very effectively managed with antibiotic drops and appropriate pain management",
+        ],
+      },
+    ],
+  },
+  {
+    id: "sudden-vision-loss",
+    title: "Sudden Vision Loss",
+    paragraphs: [
+      "Sudden vision loss, whether partial or complete, in one or both eyes, is a medical emergency until proven otherwise. The causes range from relatively benign (ocular migraine) to immediately sight-threatening (retinal artery occlusion, retinal detachment) to life-threatening (stroke). The only way to determine which is causing your symptoms is prompt professional assessment.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "Complete or partial loss of vision occurring suddenly",
+          "Vision that appears blurred, distorted, or significantly changed from normal",
+          "A grey or black area obscuring part of the visual field",
+        ],
+      },
+      {
+        heading: "Possible causes",
+        items: [
+          "Retinal detachment. Requires urgent surgical intervention",
+          "Retinal artery or vein occlusion",
+          "Optic neuritis",
+          "Ischaemic optic neuropathy",
+          "Stroke or TIA: seek emergency care immediately if other neurological symptoms are present",
+        ],
+      },
+    ],
+    action: {
+      label: "Immediate action",
+      text: "Call 360 Eyecare immediately or go directly to the nearest emergency room. Do not wait to see if vision returns. Time to treatment directly determines the visual outcome in most causes of sudden vision loss.",
+    },
+  },
+  {
+    id: "eye-trauma",
+    title: "Eye Trauma",
+    paragraphs: [
+      "Eye trauma encompasses any physical injury to the eye or surrounding structures from a direct blow during sport or an accident, or a penetrating injury from a sharp object. The severity ranges enormously, and the appropriate response depends on the nature and mechanism of the injury.",
+      {
+        head: "Blunt force trauma",
+        para: "can cause a subconjunctival haemorrhage (red patch on the white of the eye, usually benign), hyphaema (blood in the anterior chamber, requires urgent assessment), orbital fracture, or posterior segment damage including retinal tear or detachment.",
+      },
+      {
+        head: "Penetrating trauma",
+        para: "anything that has broken the integrity of the eye itself is a surgical emergency. Do not apply pressure. Do not remove the object if it is embedded. Stabilise the object if possible, cover the eye loosely without any pressure, and go directly to the nearest hospital emergency room.",
+      },
+    ],
+    lists: [
+      {
+        heading: "Symptoms requiring immediate care",
+        items: [
+          "Pain and significant swelling around the eye",
+          "Visible blood in or on the eye",
+          "Any change in vision following trauma",
+          "Double vision",
+          "The eye appearing sunken or the eyelid structure visibly disrupted",
+        ],
+      },
+      {
+        heading: "Immediate actions",
+        items: [
+          "For blunt trauma: apply a cold compress to the surrounding area only, no direct pressure on the eye",
+          "For penetrating trauma: stabilise, cover loosely, go to ER immediately",
+          "For any trauma with vision change: seek immediate professional assessment. Call 360 Eyecare or go to the ER depending on severity",
+        ],
+      },
+    ],
+  },
+  {
+    id: "acute-angle-closure-glaucoma",
+    title: "Acute Angle-Closure Glaucoma",
+    paragraphs: [
+      "Acute angle-closure glaucoma is a true ophthalmic emergency. Without treatment within hours, permanent and severe optic nerve damage can occur. It is characterised by a very specific cluster of symptoms that, once recognised, should prompt immediate action.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "Severe, sudden eye pain",
+          "Headache, nausea, and vomiting alongside eye pain",
+          "Sudden blurred vision",
+          "Halos or rainbow-coloured rings around lights",
+          "Redness of the eye",
+          "The eye may feel hard to the touch",
+        ],
+      },
+    ],
+    action: {
+      label: "Immediate action",
+      text: "Go directly to the nearest hospital emergency room. This is not a condition to manage at home or wait for a clinic appointment. Intraocular pressure must be reduced urgently to prevent permanent vision loss. Call ahead while on the way so the emergency team is prepared.",
+    },
+  },
+  {
+    id: "retinal-detachment",
+    title: "Retinal Detachment",
+    paragraphs: [
+      "Retinal detachment occurs when the retina separates from its underlying supportive tissue at the back of the eye. Once detached, the retina cannot function, and if the central retina (macula) detaches before surgical repair, the chances of recovering full central vision are significantly reduced. Retinal detachment is a surgical emergency.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms",
+        items: [
+          "A sudden significant increase in floaters, especially many new floaters appearing at once",
+          "Flashes of light, particularly in peripheral vision",
+          "A shadow, curtain, or dark area spreading across part of the visual field — this is the retina detaching progressively",
+          "Blurred vision",
+        ],
+      },
+    ],
+    notes: [
+      {
+        head: "Important distinction",
+        para: "A small number of new floaters alongside flashes of light may indicate a posterior vitreous detachment (PVD), a common, usually benign age-related change where the gel inside the eye separates from the retina. PVD can occasionally cause a retinal tear, which can then progress to detachment. Any new onset of flashes and floaters should be assessed urgently to rule out this progression.",
+      },
+    ],
+    action: {
+      label: "Immediate action",
+      text: "If you notice a curtain or shadow advancing across your vision, go directly to the nearest hospital emergency room with ophthalmology coverage. For new floaters and flashes without vision loss, call 360 Eyecare for an urgent same-day assessment.",
+    },
+  },
+  {
+    id: "severe-eye-pain",
+    title: "Severe Eye Pain",
+    paragraphs: [
+      "Severe eye pain without an obvious cause is always worth urgent assessment. The differential diagnosis includes conditions that are rapidly treatable with no lasting consequences (corneal abrasion, iritis) and conditions that are time-critical emergencies (acute glaucoma, corneal ulcer, endophthalmitis). Severity of pain does not always predict severity of underlying condition; some serious conditions present with moderate pain and some minor conditions produce severe pain.",
+    ],
+    lists: [
+      {
+        heading: "Possible causes",
+        items: [
+          "Acute angle-closure glaucoma",
+          "Corneal abrasion or ulcer",
+          "Iritis or uveitis (inflammation inside the eye)",
+          "Severe eye infection",
+          "Foreign body that isn't immediately visible",
+        ],
+      },
+    ],
+    action: {
+      label: "Immediate action",
+      text: "Call 360 Eyecare. Describe your symptoms, including when the pain started, whether it's constant or intermittent, whether vision is affected, and whether you have any associated nausea, vomiting, or headache. Our team will advise whether you need an urgent appointment or emergency room assessment.",
+    },
+  },
+  {
+    id: "flashes-and-floaters",
+    title: "Flashes of Light and Floaters",
+    paragraphs: [
+      "Floaters are extremely common and usually benign, caused by condensations in the vitreous gel inside the eye. Flashes of light in peripheral vision are caused by the vitreous pulling on the retina. Individually and in small numbers, these symptoms are usually not urgent.",
+      "The concern arises with sudden onset, many new floaters appearing at once, floaters accompanied by persistent flashing lights, or any associated shadow or curtain in the visual field. This combination can indicate a retinal tear or early detachment requiring same-day assessment.",
+    ],
+    lists: [
+      {
+        heading: "Symptoms requiring urgent assessment",
+        items: [
+          "A sudden significant increase in floaters — more than a few appearing at once",
+          "Persistent flashing lights in peripheral vision, particularly in one eye",
+          "Any shadow, curtain, or dark area in the visual field alongside flashes or floaters",
+          "Floaters following eye trauma",
+        ],
+      },
+    ],
+    action: {
+      label: "Action",
+      text: "Call 360 Eyecare for an urgent same-day assessment. Do not wait to see if symptoms resolve. Retinal tears are most effectively treated before they progress to detachment.",
+    },
+  },
+];
+
+export const eyeEmergencyBring = [
+  "Your OHIP card",
+  "Any current glasses or contact lenses",
+  "If chemical exposure occurred: the product label or container if safely accessible — this helps identify the chemical and guide treatment",
+  "A list of any current medications, particularly blood thinners or eye drops",
+];
+
+export const eyeEmergencyAvoid = [
+  "Do not rub the eye",
+  "Do not apply any drops, ointments, or home remedies unless advised by a medical professional",
+  "Do not attempt to remove an embedded object",
+  "Do not drive if your vision is significantly affected",
+];
+
+// Eye emergency FAQs. Plain-string answers (also used for JSON-LD).
+export const eyeEmergencyFaqs = [
+  {
+    id: 1,
+    question: "Are you open for eye emergencies?",
+    answer:
+      "Both 360 Eyecare locations offer same-day emergency appointments during clinic hours. Call us as soon as possible — Yorkville at 416-901-2725 and The Beaches at 416-698-3937. Outside clinic hours, go to your nearest hospital emergency room with ophthalmology coverage.",
+  },
+  {
+    id: 2,
+    question: "Do I need an appointment for an eye emergency?",
+    answer:
+      "Call us first rather than walking in. This allows us to prepare for your visit and assess urgency over the phone. Same-day appointments are prioritised for emergency presentations.",
+  },
+  {
+    id: 3,
+    question: "Should I go to the ER or call 360 Eyecare?",
+    answer:
+      "Call 360 Eyecare for: corneal abrasions, foreign bodies, acute red eye, contact lens complications, new floaters without vision loss, and sudden eye pain with a red eye. Go directly to the ER for: penetrating injuries, severe chemical burns, sudden complete vision loss, symptoms of stroke, acute angle-closure glaucoma, and a curtain or shadow advancing across your visual field. If you're unsure, call us; we'll direct you appropriately.",
+  },
+  {
+    id: 4,
+    question: "Is an emergency eye exam covered by OHIP?",
+    answer:
+      "Yes, urgent and emergency eye examinations are covered by OHIP for eligible patients (under 20 and 65 and older). For adults between 20 and 64, emergency eye exams may not be covered under routine OHIP funding.",
+  },
+  {
+    id: 5,
+    question: "What eye emergencies can an optometrist treat?",
+    answer:
+      "Ontario optometrists are licensed to diagnose and treat a wide range of urgent eye conditions, including corneal abrasions, foreign body removal, acute conjunctivitis, iritis and uveitis, subconjunctival haemorrhage, contact lens-related infections, and early assessment of flashes and floaters. Conditions requiring surgery or hospital-level intervention are managed through immediate referral.",
+  },
+  {
+    id: 6,
+    question:
+      "My eye has been red and uncomfortable for a day is that an emergency?",
+    answer:
+      "It warrants assessment rather than waiting to see if it resolves. Red eye with significant pain, vision change, or light sensitivity should be assessed the same day. Red eye with mild discomfort and no vision change can typically be assessed within 24 to 48 hours. Call us and describe your symptoms; we'll advise on the appropriate urgency.",
+  },
+];
+
 export const selectionGuideData = [
   {
     id: "01",
