@@ -5,8 +5,8 @@ import SubHeader from "../../../components/SubHeader";
 import Faqs from "../../../components/Faqs";
 import ClinicBookingCards from "../../../components/ClinicBookingCards";
 import {
-  EmergencyEyeClinicImage,
-  EyeEmergencyImage,
+  DigitalStainImage,
+  findeyedoctorImage,
 } from "../../../constants/Images";
 import {
   dryEyeClinics,
@@ -146,11 +146,11 @@ const IntroSection = () => (
     </div>
     <div className="flex flex-col gap-4">
       <Image
-        src={EyeEmergencyImage}
-        alt="Optometrist with a patient at a 360 Eyecare clinic in Toronto"
+        src={findeyedoctorImage}
+        alt="Optometrist examining a patient's eye at the slit lamp"
         sizes="(min-width: 768px) 50vw, 100vw"
         priority
-        className="w-full h-auto aspect-[16/9] object-cover object-[center_30%] rounded-lg shadow-sm"
+        className="w-full h-auto aspect-[16/9] object-cover rounded-lg shadow-sm"
       />
       <p className="text-combination-200 font-bold text-lg">
         If you&apos;re experiencing an eye emergency, call us now:
@@ -352,8 +352,8 @@ const ExpectSection = () => (
         </p>
       </div>
       <Image
-        src={EmergencyEyeClinicImage}
-        alt="Patient being examined by an optometrist during an emergency eye appointment"
+        src={DigitalStainImage}
+        alt="Optometrist examining a patient at the slit lamp during an emergency eye appointment"
         sizes="(min-width: 768px) 50vw, 100vw"
         className="w-full h-auto aspect-[3/2] object-cover rounded-lg"
       />

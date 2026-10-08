@@ -3,7 +3,6 @@ import {
   AlinaShahidImage,
   AnitaSritharanImage,
   CataractImage,
-  Cataract2,
   ContactLenspediaImage,
   cornealImage,
   DiabeticImage,
@@ -15,7 +14,7 @@ import {
   MacularImage,
   MeibographyImage,
   MyopiaPediaImage,
-  octImage,
+  OCTScanImage,
   PediatricEyeImage,
   PerimetryImage,
   prkImage,
@@ -712,7 +711,7 @@ export const commonEyeServices = [
   {
     label: "Cataracts",
     icon: "/commoneye/cataracts.png",
-    image: Cataract2,
+    image: CataractImage,
     title: "Cataracts",
     paragraphs: [
       "A cataract is a clouding of the crystalline lens inside the eye. As the proteins in the lens gradually clump together over time, they scatter and block light rather than focusing it clearly, producing the characteristic symptoms of cataract: blurred or hazy vision, increased glare and light sensitivity, fading of colours, difficulty seeing at night, and the need for progressively stronger reading glasses.",
@@ -1667,7 +1666,7 @@ export const advanceddiagnosticsService = [
   {
     label: "OCT Scans",
     icon: "/advanceddiagnosis/oct.png",
-    image: octImage,
+    image: OCTScanImage,
     title: "Optical Coherence Tomography (OCT)",
     paragraphs: [
       "OCT is the most significant technological advancement in optometry in a generation. It produces cross-sectional images of the retinal layers at a microscopic level using light waves rather than radiation, without any contact with the eye. Think of it as an ultrasound for the eye, but with far greater resolution.",

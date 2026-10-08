@@ -2,7 +2,7 @@ import React from "react";
 import SubHeader from "../../../components/SubHeader";
 import { TiTick } from "react-icons/ti";
 import {
-  eyeCareServiceImage,
+  EyeConditionExamImage,
   eyecondition_2,
   visioneyeexam,
 } from "../../../constants/Images";
@@ -234,11 +234,10 @@ const page = () => {
         <div className="w-full sm:w-[585px] flex flex-row items-end mb-8 sm:mb-0">
           <div className="hidden sm:block w-[30px] h-[280px] bg-gray-100" />
           <Image
-            src={eyeCareServiceImage}
-            alt="Understanding Dry Eye"
-            width={585}
-            height={536}
-            className="w-full h-auto"
+            src={EyeConditionExamImage}
+            alt="Optometrist using diagnostic equipment at 360 Eyecare"
+            sizes="(min-width: 640px) 585px, 100vw"
+            className="w-full h-auto aspect-[570/645] object-cover object-[35%_center]"
           />
         </div>
       </div>

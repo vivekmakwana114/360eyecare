@@ -73,6 +73,9 @@ import prkImage from "../public/PRK-Laser-Vision-Correction-jpg.webp";
 import lasikImage from "../public/LASIK.webp";
 import smileImage from "../public/SMILE-Laser-Eye-Surgery-jpg.webp";
 import octImage from "../public/OCT-Machine-jpg_2.webp";
+import OCTScanImage from "../public/OCT-Machine-jpg.webp";
+import DigitalStainImage from "../public/digital-stain2.webp";
+import EyeConditionExamImage from "../public/eye-condition.jpg";
 import cornealImage from "../public/Corneal-Topography-jpg.webp";
 import MeibographyImage from "../public/Antares.webp";
 import TearOsmolarityImage from "../public/Tear-Osmolarity-Testing-jpeg.webp";
@@ -213,6 +216,9 @@ export {
   SportsVisionImage,
   MyopiaPediaImage,
   octImage,
+  OCTScanImage,
+  DigitalStainImage,
+  EyeConditionExamImage,
   cornealImage,
   pediatricGirlImage,
   pediatricEyeImage,
