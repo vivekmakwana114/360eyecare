@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import {
-  UnderstandImage1,
-  UnderstandImage2,
-  UnderstandImage3,
+  PediatricEyeCareImage,
+  PediatricImage,
+  pediatriceyeexam,
 } from "../constants/Images";
 import { TfiBriefcase } from "react-icons/tfi";
 import { TfiUser } from "react-icons/tfi";
@@ -75,7 +75,7 @@ const PediatricOptometristsUI = () => {
           {/* Left Column */}
           <div className="flex flex-col gap-6">
             <Image
-              src={UnderstandImage1}
+              src={pediatriceyeexam}
               alt="Child having eye examination"
               className={imageClass}
               sizes="(min-width: 768px) 50vw, 100vw"
@@ -127,14 +127,14 @@ const PediatricOptometristsUI = () => {
             {/* Image Gallery: two side by side from sm up */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Image
-                src={UnderstandImage2}
-                alt="Modern eye examination equipment"
+                src={PediatricEyeCareImage}
+                alt="Optometrist fitting a trial frame on a child"
                 className={imageClass}
                 sizes="(min-width: 768px) 25vw, (min-width: 640px) 50vw, 100vw"
               />
               <Image
-                src={UnderstandImage3}
-                alt="Optometrist conducting eye examination"
+                src={PediatricImage}
+                alt="Child wearing a trial frame during an eye exam"
                 className={imageClass}
                 sizes="(min-width: 768px) 25vw, (min-width: 640px) 50vw, 100vw"
               />

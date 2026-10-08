@@ -7,7 +7,7 @@ import {
   FormaImage,
   LumeccaBeforeAfterImage,
   LummericaImage,
-  Optometry6,
+  IPLTherapyImage,
 } from "../../../constants/Images";
 import FormSection from "components/FormSection";
 import DryFaqs from "../../../components/DryFaqs";
@@ -884,11 +884,10 @@ const page = () => {
 
               <div className="flex-1">
                 <Image
-                  src={Optometry6}
-                  alt="Dry eye examination equipment at 360 Eyecare"
-                  width={585}
-                  height={536}
-                  className="w-full h-auto"
+                  src={IPLTherapyImage}
+                  alt="IPL dry eye treatment with protective eye shields"
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="w-full h-auto aspect-[3/2] object-cover"
                 />
               </div>
             </div>

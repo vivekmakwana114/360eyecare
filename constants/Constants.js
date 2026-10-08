@@ -3,7 +3,6 @@ import {
   AlinaShahidImage,
   AnitaSritharanImage,
   CataractImage,
-  Cataract2,
   ContactLenspediaImage,
   cornealImage,
   DiabeticImage,
@@ -15,7 +14,7 @@ import {
   MacularImage,
   MeibographyImage,
   MyopiaPediaImage,
-  octImage,
+  OCTScanImage,
   PediatricEyeImage,
   PerimetryImage,
   prkImage,
@@ -703,46 +702,344 @@ export const eyeExamTools = [
   },
 ];
 
+// Common eye conditions shown as tabs on the common eye conditions page.
+// paragraphs → intro copy beside the image; sections → cards below it, each
+// with optional paragraphs, list (plain strings), points ({ head, para }) and
+// closing. half: true pairs two adjacent sections side by side on desktop.
+// link (optional) → { href, label } to a dedicated service page.
 export const commonEyeServices = [
   {
     label: "Cataracts",
     icon: "/commoneye/cataracts.png",
-    image: Cataract2,
-    title: "Understanding Cataracts and Treatment Options",
-    description:
-      "Cataracts are a common age-related eye condition that causes cloudy vision. Our clinic offers advanced surgical and non-surgical treatments to restore clear vision and improve quality of life. Our team of experts will guide you through the diagnosis, treatment, and recovery process, ensuring personalized care every step of the way.",
+    image: CataractImage,
+    title: "Cataracts",
+    paragraphs: [
+      "A cataract is a clouding of the crystalline lens inside the eye. As the proteins in the lens gradually clump together over time, they scatter and block light rather than focusing it clearly, producing the characteristic symptoms of cataract: blurred or hazy vision, increased glare and light sensitivity, fading of colours, difficulty seeing at night, and the need for progressively stronger reading glasses.",
+      "Cataracts are the leading cause of reversible vision loss worldwide. They develop slowly and are primarily age-related. The majority of people over 75 have some degree of cataract formation, but they can also result from eye trauma, prolonged corticosteroid use, certain systemic conditions including diabetes, and significant UV exposure over a lifetime.",
+    ],
+    sections: [
+      {
+        heading: "Symptoms",
+        list: [
+          "Blurred, hazy, or foggy vision that doesn't improve with updated glasses",
+          "Increased sensitivity to glare from headlights, sunlight, and bright overhead lighting",
+          "Halos around lights, especially at night",
+          "Colours appearing faded, yellowed, or washed out",
+          "Difficulty driving at night or in low contrast conditions",
+          "Frequent prescription changes as the lens opacity progresses",
+        ],
+      },
+      {
+        heading: "Diagnosis and Monitoring at 360 Eyecare",
+        paragraphs: [
+          "Cataracts are diagnosed during the comprehensive eye exam through slit lamp examination of the anterior segment and dilated posterior segment assessment. At 360 Eyecare, we document cataract development photographically and track progression over time, monitoring visual acuity, contrast sensitivity, and glare disability to assess functional impact.",
+          "Early-stage cataracts that aren't significantly affecting daily function are monitored rather than treated. When cataracts reach the point of meaningfully affecting vision, quality of life, or safety, surgical referral is appropriate.",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Cataracts cannot be reversed with drops, nutrition, or non-surgical interventions. The only effective treatment is surgical removal of the cloudy lens and replacement with an artificial intraocular lens (IOL). Cataract surgery is one of the most commonly performed and most successful surgeries in medicine, with high rates of visual recovery.",
+          "At 360 Eyecare, we don't perform cataract surgery. This is carried out by an ophthalmologist at a surgical facility. We provide pre-operative assessment and co-management, and we manage post-operative care including monitoring healing and optimising the final refractive outcome following surgery. Patients who have had cataract surgery continue their routine eye care at 360 Eyecare.",
+        ],
+      },
+    ],
   },
   {
     label: "Glaucoma",
     icon: "/commoneye/glaucoma.png",
     image: GlaucomaImage,
-    title: "Managing Glaucoma: Diagnosis to Treatment",
-    description:
-      "Glaucoma is a group of eye diseases that can lead to vision loss if left untreated. Our clinic specializes in early detection and personalized treatment plans to manage glaucoma effectively. From medication to surgical options, we offer comprehensive care to preserve your vision and enhance your quality of life.",
+    title: "Glaucoma",
+    paragraphs: [
+      "Glaucoma is a group of eye conditions characterised by progressive damage to the optic nerve. It is one of the leading causes of irreversible blindness worldwide and affects an estimated 400,000 Canadians, roughly half of whom don't know they have it. The damage glaucoma causes is permanent, but when detected early, its progression can be significantly slowed or halted with treatment.",
+      "The most common form, primary open-angle glaucoma, develops without noticeable symptoms in its early and middle stages. The peripheral vision is affected first, and the brain compensates so effectively that most patients don't notice the loss until it's advanced. By the time a patient notices visual field changes in daily life, significant irreversible damage has typically already occurred. This is why glaucoma screening through regular comprehensive eye exams is the only reliable early detection strategy.",
+    ],
+    sections: [
+      {
+        heading: "Risk Factors",
+        half: true,
+        list: [
+          "Age over 60",
+          "Family history of glaucoma",
+          "Elevated intraocular pressure (IOP)",
+          "Thin central corneal thickness",
+          "African or Caribbean ancestry",
+          "History of eye trauma, prolonged corticosteroid use, or other eye conditions affecting drainage",
+        ],
+      },
+      {
+        heading: "Symptoms",
+        half: true,
+        paragraphs: [
+          "Primary open-angle glaucoma is largely asymptomatic until late-stage.",
+          "Late-stage open-angle glaucoma symptoms include tunnel vision and progressive peripheral field loss, though at this point significant irreversible damage has already occurred.",
+        ],
+      },
+      {
+        heading: "Diagnosis and Monitoring at 360 Eyecare",
+        paragraphs: [
+          "Glaucoma assessment at 360 Eyecare integrates multiple diagnostic data points; no single measurement is sufficient for accurate risk stratification:",
+        ],
+        points: [
+          {
+            head: "Intraocular pressure measurement",
+            para: "tonometry assesses the pressure inside the eye; elevated pressure is the primary treatable risk factor.",
+          },
+          {
+            head: "OCT nerve fibre layer analysis",
+            para: "measures the thickness of the retinal nerve fibre layer around the optic nerve with micrometre precision, detecting thinning years before visual field loss becomes measurable.",
+          },
+          {
+            head: "Optic nerve assessment",
+            para: "slit lamp examination and photography of the optic disc, assessing cup-to-disc ratio and nerve head morphology.",
+          },
+          {
+            head: "Visual field testing",
+            para: "automated Humphrey perimetry maps the full visual field, detecting any areas of peripheral sensitivity loss.",
+          },
+          {
+            head: "Pachymetry",
+            para: "corneal thickness measurement, integrated with IOP readings to produce corrected pressure values and assess risk.",
+          },
+        ],
+        closing: [
+          "Patients with elevated IOP, suspicious optic nerve appearance, family history, or other risk factors are placed on a monitoring schedule with more frequent assessment to detect any progression at the earliest possible stage.",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Glaucoma treatment aims to lower intraocular pressure, the primary modifiable factor in slowing optic nerve damage. First-line treatment is typically prescription eye drops that reduce IOP either by decreasing aqueous production or improving drainage. For patients who don't achieve adequate pressure control with drops, laser treatment (SLT — selective laser trabeculoplasty) or surgical procedures may be recommended through specialist referral.",
+          "At 360 Eyecare, we prescribe and manage glaucoma eye drop therapy, monitor treatment response through regular IOP measurement and OCT imaging, and coordinate referral to ophthalmology when surgical intervention or specialist co-management is needed.",
+        ],
+      },
+    ],
   },
   {
     label: "Dry Eye",
     icon: "/commoneye/dryEye.png",
     image: DryEyeSyndromeImage,
-    title: "Relief from Dry Eye: Causes and Treatments",
-    description:
-      "Dry eye syndrome is a common condition that occurs when the eyes do not produce enough or poor-quality tears. Our clinic provides advanced diagnostic testing to determine the underlying cause of dry eye and offers personalized treatment plans to alleviate symptoms and improve eye comfort. From prescription eye drops to lifestyle changes, we tailor our approach to meet your unique needs and improve your overall eye health.",
+    title: "Dry Eye Disease",
+    paragraphs: [
+      "Dry eye disease (DED) is one of the most common conditions we manage at 360 Eyecare and one of the most frequently undertreated. It's a chronic condition affecting the tear film, caused by either insufficient tear production or poor tear quality leading to rapid evaporation. Symptoms include burning, grittiness, redness, fluctuating vision, light sensitivity, and, paradoxically, excessive tearing.",
+      "At 360 Eyecare, dry eye assessment and treatment is a clinical specialty at both our Yorkville and Beaches locations. We use the OCULUS Keratograph 5M for meibomian gland imaging and tear film analysis, and the i-PEN osmolarity system for objective severity measurement. Treatment ranges from prescription drops and warm compresses through to advanced in-office procedures including InMode IPL and RF therapy.",
+      "For full clinical detail on dry eye disease, diagnosis, and treatment options at 360 Eyecare, see our dedicated Dry Eye Clinic page.",
+    ],
+    sections: [],
+    link: {
+      href: "/dry-eye-syndrome-keratograph-i-pen",
+      label: "Learn More — Dry Eye Clinic at 360 Eyecare",
+    },
   },
   {
     label: "Diabetic Retinopathy",
     icon: "/commoneye/diabetic.png",
     image: DiabeticImage,
-    title: "Diabetic Retinopathy: Prevention and Treatment",
-    description:
-      "Diabetic retinopathy is a serious eye condition that affects people with diabetes. If not properly managed, it can lead to vision loss. Our clinic specializes in the early detection and treatment of diabetic retinopathy, offering comprehensive eye exams and advanced treatments to preserve vision and prevent complications. With a focus on patient education and proactive care, we help our patients maintain healthy vision and overall well-being.",
+    title: "Diabetic Retinopathy",
+    paragraphs: [
+      "Diabetic retinopathy is a complication of diabetes affecting the blood vessels of the retina, a sensitive tissue at the back of the eye. It is the leading cause of vision loss in working-age adults in Canada, and affects a significant proportion of people living with both Type 1 and Type 2 diabetes. As with glaucoma, it typically develops without symptoms in its early stages.",
+      "High blood sugar levels damage the tiny blood vessels supplying the retina, causing them to leak fluid, develop abnormal new vessels, or both. The early stage involves microaneurysms, haemorrhages, and fluid accumulation. The advanced stage involves the growth of fragile new blood vessels that can bleed into the vitreous or cause tractional retinal detachment, both of which can cause rapid and severe vision loss.",
+    ],
+    sections: [
+      {
+        heading: "Symptoms",
+        paragraphs: [
+          "Early diabetic retinopathy typically produces no symptoms. As the condition progresses, patients may notice:",
+        ],
+        list: [
+          "Blurred or fluctuating vision",
+          "Dark spots or floaters",
+          "Vision that varies throughout the day as blood sugar fluctuates",
+          "Difficulty with colour perception",
+          "Vision loss",
+        ],
+      },
+      {
+        heading: "Diagnosis and Monitoring at 360 Eyecare",
+        paragraphs: [
+          "All patients with diabetes should have a comprehensive dilated eye exam annually and more frequently if retinopathy is present. At 360 Eyecare, diabetic eye assessments include:",
+        ],
+        points: [
+          {
+            head: "Dilated fundus examination",
+            para: "direct assessment of the retina, optic nerve, and retinal blood vessels through a dilated pupil.",
+          },
+          {
+            head: "Digital retinal imaging",
+            para: "high-resolution photographs of the posterior pole providing a documented baseline for tracking change over time.",
+          },
+          {
+            head: "OCT",
+            para: "cross-sectional imaging of the retinal layers to detect macular oedema, which is the most common cause of vision loss in diabetic retinopathy.",
+          },
+        ],
+        closing: [
+          "Findings are documented and communicated to the patient's diabetes care team as part of the integrated management of diabetic eye disease.",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Early and moderate diabetic retinopathy without macular oedema is managed through monitoring, optimisation of blood sugar control, blood pressure management, and lifestyle modification. Advanced retinopathy, macular oedema, or proliferative disease is managed through referral to a retinal specialist for intravitreal injection therapy (anti-VEGF), laser photocoagulation, or surgical intervention where indicated.",
+        ],
+      },
+    ],
   },
   {
     label: "Macular Degeneration",
     icon: "/commoneye/mascular.png",
     image: MacularImage,
-    title: "Macular Degeneration: Symptoms and Treatments",
+    title: "Macular Degeneration",
+    paragraphs: [
+      "Age-related macular degeneration (AMD) is the leading cause of central vision loss in adults over 50 in the developed world. It affects the macula. Peripheral vision is typically preserved even in advanced AMD, but the loss of central vision has a profound impact on daily function and quality of life.",
+      "AMD exists in two forms. Dry AMD, the more common form, accounting for approximately 85 to 90 percent of cases, involves the gradual accumulation of drusen deposits beneath the retina and progressive thinning of macular tissue. It advances slowly over years and may remain relatively stable for long periods before progressing.",
+      "Wet AMD is less common but responsible for the majority of severe vision loss from AMD. It involves the growth of abnormal new blood vessels beneath the retina that leak fluid and blood, causing rapid and sometimes dramatic central vision loss.",
+    ],
+    sections: [
+      {
+        heading: "Risk Factors",
+        half: true,
+        list: [
+          "Age over 50",
+          "Smoking",
+          "Family history of AMD",
+          "Lighter iris colour",
+          "Prolonged UV exposure without adequate eye protection",
+          "Cardiovascular disease and hypertension",
+          "Diet low in antioxidants and omega-3 fatty acids",
+        ],
+      },
+      {
+        heading: "Symptoms",
+        half: true,
+        list: [
+          "Blurred or distorted central vision",
+          "A blurry or blank spot in the centre of vision",
+          "Difficulty reading or recognising faces despite adequate lighting",
+          "Colours appearing less vivid or distinct",
+          "Increased difficulty adapting from bright to dim light",
+        ],
+      },
+      {
+        heading: "Diagnosis and Monitoring at 360 Eyecare",
+        paragraphs: ["AMD is assessed and monitored at 360 Eyecare using:"],
+        points: [
+          {
+            head: "OCT",
+            para: "the primary imaging tool for AMD assessment; cross-sectional retinal imaging detects drusen accumulation, geographic atrophy, and the presence of subretinal fluid or neovascularisation associated with wet AMD with a precision not achievable through clinical examination alone.",
+          },
+          {
+            head: "Digital retinal photography",
+            para: "documents drusen distribution and macular appearance for longitudinal comparison.",
+          },
+          {
+            head: "Amsler grid testing",
+            para: "a simple but effective screening tool for detecting metamorphopsia; patients with AMD or at high risk are provided with an Amsler grid for home monitoring, with instructions to seek urgent assessment if new distortion appears.",
+          },
+        ],
+        closing: [
+          "Patients with early and intermediate AMD are monitored on a regular schedule with OCT at each visit to detect any conversion to wet AMD, which is the primary concern during monitoring. Wet AMD requires urgent referral for intravitreal injection therapy, where early treatment significantly improves the chances of preserving useful central vision.",
+        ],
+      },
+      {
+        heading: "Treatment",
+        paragraphs: [
+          "Dry AMD has no approved pharmacological treatment in Canada at the time of writing, though research into complement inhibitors and other targets is active. Management focuses on risk factor modification and nutritional supplementation. The AREDS2 formula (vitamin C, vitamin E, lutein, zeaxanthin, zinc, and copper) has demonstrated a 25 percent reduction in progression risk in intermediate AMD in the landmark AREDS2 clinical trial.",
+          "Wet AMD is treated with intravitreal anti-VEGF injections administered by a retinal specialist. These injections inhibit the abnormal blood vessel growth driving wet AMD and, when started promptly, can stabilise or in many cases improve central vision. 360 Eyecare treats any new presentation of wet AMD symptoms or OCT findings as an urgent referral.",
+        ],
+      },
+    ],
+  },
+];
+
+// Additional conditions shown as cards. link (optional) → { href, label }.
+export const additionalEyeConditions = [
+  {
+    title: "Myopia (Nearsightedness)",
     description:
-      "Macular degeneration is a leading cause of vision loss in older adults. Our clinic offers state-of-the-art diagnostic testing and personalized treatment plans to manage macular degeneration effectively. From lifestyle modifications to advanced therapies, we provide comprehensive care to slow the progression of the disease and preserve your vision. Our team of experts is committed to helping you maintain healthy vision and quality of life.",
+      "The most rapidly increasing refractive condition worldwide. Myopia occurs when the eyeball grows too long, causing light to focus in front of rather than on the retina. Beyond corrective glasses and contact lenses, 360 Eyecare offers a full myopia control program for children to slow progression and reduce long-term disease risk. See our Myopia Control page for full detail.",
+    link: { href: "/myopia-control-clinic", label: "Myopia Control" },
+  },
+  {
+    title: "Hyperopia (Farsightedness)",
+    description:
+      "Occurs when the eyeball is too short or the cornea too flat, causing difficulty focusing at near, and in significant hyperopia, at distance as well. Corrected with glasses or contact lenses. Young patients with high hyperopia are also screened for accommodative esotropia.",
+  },
+  {
+    title: "Astigmatism",
+    description:
+      "A refractive error caused by the cornea or lens having an irregular shape, causing light to focus at multiple points rather than a single point on the retina. Produces blurred or distorted vision at all distances. Corrected with toric glasses lenses or toric contact lenses. Corneal topography is used when astigmatism is irregular or when contact lens fitting is planned.",
+  },
+  {
+    title: "Presbyopia",
+    description:
+      "The gradual loss of near focusing ability that affects everyone from approximately age 40 onwards, caused by the crystalline lens losing its flexibility with age. Not a disease but an inevitable physiological change. Managed with reading glasses, bifocals, progressive lenses, or multifocal contact lenses.",
+  },
+  {
+    title: "Keratoconus",
+    description:
+      "A progressive condition in which the cornea gradually thins and bulges into a cone shape, causing increasing irregular astigmatism and progressive vision distortion that cannot be fully corrected with standard glasses. Detected through corneal topography often before it produces noticeable visual symptoms. Early detection allows referral for corneal cross-linking, which halts progression. Advanced keratoconus is managed with scleral contact lenses at 360 Eyecare.",
+  },
+  {
+    title: "Blepharitis",
+    description:
+      "Chronic inflammation of the eyelid margins usually caused by bacterial overgrowth, meibomian gland dysfunction, or demodex mite infestation. Produces red, itchy, crusty eyelid margins and is a common contributor to dry eye symptoms. Managed with eyelid hygiene, warm compresses, topical or oral antibiotics where indicated, and for demodex-associated blepharitis, IPL therapy.",
+  },
+  {
+    title: "Conjunctivitis (Pink Eye)",
+    description:
+      "Inflammation of the conjunctiva caused by bacterial infection, viral infection, or allergic reaction. The three types have different presentations, different treatments, and different contagion profiles. Bacterial conjunctivitis typically responds to antibiotic drops; viral conjunctivitis resolves without specific treatment; allergic conjunctivitis is managed with antihistamine drops and allergen avoidance. Bacterial and viral conjunctivitis look similar but are managed differently.",
+  },
+  {
+    title: "Amblyopia (Lazy Eye)",
+    description:
+      "Reduced visual acuity in one eye caused by the visual system failing to develop normal connections between that eye and the brain, typically due to strabismus, significant refractive error differences between the eyes, or deprivation in early childhood. Amblyopia is effectively treated with optical correction and patching, but the treatment window narrows significantly after age seven to eight as visual pathways mature. Early detection through pediatric eye exams is critical.",
+  },
+  {
+    title: "Strabismus (Eye Turns)",
+    description:
+      "A condition where the eyes are not aligned (one or both eyes turn in, out, up, or down) either constantly or intermittently. Causes amblyopia if untreated in childhood, and causes double vision and disrupted depth perception in adults. Management includes glasses correction, prism lenses, vision therapy, and in some cases surgical referral.",
+  },
+];
+
+// Common eye conditions FAQs. Plain-string answers.
+export const commonEyeConditionsFaqs = [
+  {
+    id: 1,
+    question: "Can eye conditions be prevented?",
+    answer:
+      "Many can be detected early enough to prevent serious vision loss, which is functionally as important as prevention. Glaucoma, diabetic retinopathy, and macular degeneration cause irreversible damage silently, and regular comprehensive eye exams are the only reliable way to catch them before vision is significantly affected.",
+  },
+  {
+    id: 2,
+    question:
+      "How often should I have my eyes examined if I have a diagnosed eye condition?",
+    answer:
+      "It depends on the condition and its severity. Glaucoma suspects and patients with diabetic retinopathy typically require monitoring every three to six months. Stable dry AMD is typically monitored every six to twelve months. Your optometrist will recommend a monitoring schedule at every appointment based on current findings.",
+  },
+  {
+    id: 3,
+    question: "Does OHIP cover eye condition management?",
+    answer:
+      "OHIP covers annual comprehensive eye exams for patients under 20 and 65 and older. For adults between 20 and 64, OHIP covers assessments for specific medical conditions including diabetic eye disease, glaucoma, and certain other conditions when clinically indicated. Supplementary testing fees may apply for advanced imaging. Your optometrist will advise on what is covered at the time of booking.",
+  },
+  {
+    id: 4,
+    question: "Can an optometrist treat glaucoma?",
+    answer:
+      "Yes. Ontario optometrists are licensed to prescribe and manage glaucoma medications. They conduct the monitoring required to assess treatment response and disease progression, and coordinate referral to ophthalmology when surgical or laser intervention is needed.",
+  },
+  {
+    id: 5,
+    question: "I've been told I have drusen. Should I be concerned?",
+    answer:
+      "Drusen are deposits beneath the retinal pigment epithelium and are the hallmark early finding in dry AMD. Small drusen are very common and often benign. Larger or more numerous drusen indicate intermediate AMD and a higher risk of progression to advanced disease. Your optometrist will advise on the appropriate monitoring frequency and whether AREDS2 supplementation is recommended based on your specific findings.",
+  },
+  {
+    id: 6,
+    question: "My vision is fine, do I still need an eye exam?",
+    answer:
+      "Yes. Glaucoma, early diabetic retinopathy, and early macular degeneration all develop without noticeable vision changes. By the time vision is affected, significant damage has often already occurred. Annual eye exams detect these conditions at the stage when treatment is most effective.",
   },
 ];
 
@@ -1369,7 +1666,7 @@ export const advanceddiagnosticsService = [
   {
     label: "OCT Scans",
     icon: "/advanceddiagnosis/oct.png",
-    image: octImage,
+    image: OCTScanImage,
     title: "Optical Coherence Tomography (OCT)",
     paragraphs: [
       "OCT is the most significant technological advancement in optometry in a generation. It produces cross-sectional images of the retinal layers at a microscopic level using light waves rather than radiation, without any contact with the eye. Think of it as an ultrasound for the eye, but with far greater resolution.",
