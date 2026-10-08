@@ -3,11 +3,8 @@ import { dryEyeClinics } from "../constants/Constants";
 
 const linkClass = "text-combination-200 hover:text-combination-100";
 const bookButtonClass =
-  "bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white text-center font-bold py-3 px-8 rounded-md transition-colors duration-200 shadow-md";
+  "bg-combination-100 hover:bg-combination-200 hover:text-combination-100 text-white text-center font-bold py-3 px-4 rounded-md transition-colors duration-200 shadow-md";
 
-// Two-up Yorkville / Beaches contact cards with a per-clinic booking button.
-// `bookLabel` is the service-specific prefix, e.g. "Book a Dry Eye Consultation";
-// the clinic's short name is appended automatically.
 const ClinicBookingCards = ({ bookLabel, clinics = dryEyeClinics }) => (
   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
     {clinics.map((clinic) => (
@@ -39,7 +36,7 @@ const ClinicBookingCards = ({ bookLabel, clinics = dryEyeClinics }) => (
         <div className="mt-auto pt-2">
           <Link
             href={clinic.bookHref}
-            className={`${bookButtonClass} inline-block`}
+            className={`${bookButtonClass} block w-full`}
           >
             {bookLabel} — {clinic.shortName}
           </Link>
